@@ -120,6 +120,144 @@ const list = (xs: string[]) => `[${xs.join(', ')}]`
 const or = (v: unknown, empty = 'not recorded') =>
   v === null || v === undefined || v === '' ? empty : String(v)
 
+// A tool result above roughly 50 KB is not shown to Claude inline: the harness
+// saves it to a file outside the roots the session guard allows, so the record
+// arrived as a 2 KB preview once it had grown past that. Everything record_read
+// returns stays under this many UTF-8 bytes; what does not fit is fetched one
+// session or one topic page at a time.
+const READ_BUDGET = 40_000
+const bytes = (s: string) => {
+  let n = 0
+  for (const ch of s) {
+    const c = ch.codePointAt(0) ?? 0
+    n += c < 0x80 ? 1 : c < 0x800 ? 2 : c < 0x10000 ? 3 : 4
+  }
+  return n
+}
+const json = (v: unknown) => JSON.stringify(v, null, 1)
+
+// How much of one session the overview shows: its row in the table only, its
+// fields without the timeline, or everything.
+type Detail = 'row' | 'core' | 'full'
+function sessionView(s: Session, detail: Detail) {
+  if (detail === 'full') return s
+  const { notes, pages_used, ...core } = s
+  return core
+}
+const sessionRow = (s: Session) =>
+  [
+    s.number,
+    s.date,
+    s.status,
+    s.mood ?? '-',
+    s.phq9 ?? '-',
+    s.gad7 ?? '-',
+    s.risk_flag ? `yes: ${s.risk_note.replace(/\s+/g, ' ')}` : 'no',
+  ].join(' | ')
+
+type TopicPage = { slug: string; title: string; summary: string; updated: string; body: string | null }
+
+// The record as one text that fits READ_BUDGET. The profile, the formulation
+// and a table with one short row per session are always there. The rest is
+// added while it fits, in the order a session needs it: the last two sessions
+// in full, the topic pages, the summaries of earlier sessions, then their
+// timelines, newest first.
+function recordOverview(rec: CbtRecord, pages: TopicPage[]): string {
+  const sessions = rec.sessions
+  const detail: Detail[] = sessions.map(() => 'row')
+  const whole = new Set<string>()
+  let first = 0
+
+  const render = () => {
+    const out = [
+      `RECORD OVERVIEW: ${sessions.length} sessions, ${pages.length} topic pages.`,
+      '',
+      'PROFILE',
+      json(rec.profile),
+      '',
+      'FORMULATION',
+      rec.formulation ? json(rec.formulation) : 'None yet.',
+      '',
+      'SESSIONS: number | date | status | mood | PHQ-9 | GAD-7 | risk',
+    ]
+    if (first > 0) out.push(`Sessions 1 to ${first} are not listed.`)
+    out.push(...sessions.slice(first).map(sessionRow), '', 'SESSION DETAIL (oldest first)')
+    sessions.forEach((s, i) => {
+      const d = detail[i] ?? 'row'
+      if (d !== 'row')
+        out.push(
+          `--- session ${s.number}: ${d === 'full' ? 'in full' : 'timeline notes and pages_used left out'} ---`,
+          json(sessionView(s, d)),
+        )
+    })
+    if (detail.every(d => d === 'row')) out.push('None shown.')
+    out.push('', 'TOPIC PAGES')
+    if (!pages.length) out.push('None yet.')
+    for (const t of pages)
+      if (t.body !== null && whole.has(t.slug)) out.push(`=== topics\\${t.slug}.md ===`, t.body)
+      else
+        out.push(
+          `=== topics\\${t.slug}.md: ${t.body === null ? 'page file missing' : 'summary only'} ===`,
+          `${t.title}: ${t.summary} (updated ${t.updated})`,
+        )
+    const isShortened =
+      first > 0 || detail.some(d => d !== 'full') || pages.some(t => t.body !== null && !whole.has(t.slug))
+    if (isShortened)
+      out.push(
+        '',
+        'Some parts above are shortened so the record fits in one result. For one session in full call record_read with session_number; for one topic page in full call record_read with topic_slug.',
+      )
+    return out.join('\n')
+  }
+  const fits = () => bytes(render()) <= READ_BUDGET
+  const raise = (i: number, d: Detail) => {
+    const was = detail[i] ?? 'row'
+    detail[i] = d
+    if (fits()) return true
+    detail[i] = was
+    return false
+  }
+
+  // Only a record of some hundreds of sessions has a table over a quarter of
+  // the budget: then its oldest rows go.
+  const table = () => bytes(sessions.slice(first).map(sessionRow).join('\n'))
+  while (table() > READ_BUDGET / 4 && first < sessions.length - 1) first++
+  const newestFirst = sessions.map((_, i) => i).reverse()
+  for (const i of newestFirst.slice(0, 2)) if (!raise(i, 'full')) break
+  for (const t of [...pages].sort((a, b) => b.updated.localeCompare(a.updated))) {
+    if (t.body === null) continue
+    whole.add(t.slug)
+    if (!fits()) whole.delete(t.slug)
+  }
+  for (const d of ['core', 'full'] as const)
+    for (const i of newestFirst) {
+      if (detail[i] === d || detail[i] === 'full') continue
+      if (!raise(i, d)) break
+    }
+  return clipped(render(), 'Call record_read with session_number or topic_slug for the parts you need.')
+}
+
+// One session or one topic page, cut only if that alone is over the budget.
+function sessionInFull(s: Session): string {
+  const notes = [...s.notes]
+  const render = () =>
+    [
+      `SESSION ${s.number}`,
+      json({ ...s, notes }),
+      ...(notes.length < s.notes.length
+        ? [`The first ${s.notes.length - notes.length} timeline notes are left out so this fits.`]
+        : []),
+    ].join('\n')
+  while (bytes(render()) > READ_BUDGET && notes.length) notes.shift()
+  return render()
+}
+function clipped(text: string, whereTheRestIs: string): string {
+  if (bytes(text) <= READ_BUDGET) return text
+  let cut = text.slice(0, READ_BUDGET)
+  while (bytes(cut) > READ_BUDGET - 400) cut = cut.slice(0, -500)
+  return `${cut}\n\n[Cut here so this fits. ${whereTheRestIs}]`
+}
+
 // Writes the person's record as a small wiki: router, profile, formulation,
 // a session index and one page per session. Pages link to knowledge graph
 // pages and vocabulary ids, so the record joins the same graph.
@@ -359,8 +497,14 @@ export const register: Register = on => {
     await $.tool.register({
       name: 'record_read',
       description:
-        'Read the person\'s CBT self-help record: profile, formulation, and every earlier session (mood, measures, homework, risk notes). Call first in every session.',
-      inputSchema: { type: 'object', properties: {} },
+        'Read the person\'s CBT self-help record. With no arguments: an overview that always fits one result, with the profile, the formulation, every earlier session (mood, measures, homework, risk notes) and the topic pages; when the record is large, older sessions and some topic pages are shortened and the overview says which. Call it this way first in every session. With session_number: that one session in full, timeline notes included. With topic_slug: that one topic page in full.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          session_number: { type: 'number', description: 'Return only this session, in full' },
+          topic_slug: { type: 'string', description: 'Return only this topic page, in full' },
+        },
+      },
       isDeferred: false,
     })
     await $.tool.register({
@@ -463,8 +607,18 @@ export const register: Register = on => {
     await $.tool.register({
       name: 'session_close',
       description:
-        'Close the current session and end session mode, after the summary, practice task and feedback have been written with session_note. Accepts the same fields as a last update. Call at once if the person leaves early or safety ended the session.',
-      inputSchema: { type: 'object', properties: SESSION_FIELDS },
+        'Close the current session and end session mode, after the summary, practice task and feedback have been written with session_note. Accepts the same fields as a last update. Call at once if the person leaves early or safety ended the session. If the session stopped before anything worth keeping happened (for example the person left at once to do something else), pass discard: true and nothing else: the session is removed from the record instead of saved.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          ...SESSION_FIELDS,
+          discard: {
+            type: 'boolean',
+            description:
+              'True removes this session from the record instead of saving it. Only for a session with nothing worth keeping; refused if any risk came up.',
+          },
+        },
+      },
       isDeferred: false,
     })
 
@@ -496,7 +650,7 @@ export const register: Register = on => {
   on('command.run', { command: 'cbt-end' }, async $ => {
     if (!(await read($, active))) return { text: 'No CBT self-help session is running.' }
     void $.prompt.submit({
-      text: '[Wrap-up] I would like to end the session now. Please briefly summarize, agree a practice task, ask for my feedback, then close the session.',
+      text: '[Wrap-up] I would like to end the session now. Please briefly summarize, agree a practice task, ask for my feedback, then close the session. If nothing worth keeping has happened yet, skip those and close it with discard instead.',
     })
     return { text: 'Wrapping up the session.' }
   })
@@ -591,14 +745,28 @@ export const register: Register = on => {
       const rec = await loadRecord($)
       if (rec.sessions.length === 0 && !rec.formulation && Object.keys(rec.profile).length === 0)
         return { result: 'No record yet: this is the first session.' }
-      const topics: string[] = []
-      for (const t of rec.topics ?? []) {
-        const path = `${DATA}\\topics\\${t.slug}.md`
-        if (await $.fs.exists(path)) topics.push(`=== topics\\${t.slug}.md ===\n${String(await $.fs.read(path))}`)
+      const topicPath = (slug: string) => `${DATA}\\topics\\${slug}.md`
+      const topicBody = async (slug: string) =>
+        (await $.fs.exists(topicPath(slug))) ? String(await $.fs.read(topicPath(slug))) : null
+
+      if (typeof args.session_number === 'number') {
+        const s = rec.sessions.find(x => x.number === args.session_number)
+        if (!s) return { deny: `No session ${args.session_number} in the record: it has sessions 1 to ${rec.sessions.length}.` }
+        return { result: sessionInFull(s) }
       }
-      return {
-        result: [JSON.stringify({ ...rec, topics: undefined }, null, 2), '', 'TOPIC PAGES', ...topics].join('\n'),
+      if (typeof args.topic_slug === 'string' && args.topic_slug) {
+        const known = (rec.topics ?? []).map(t => t.slug)
+        const body = known.includes(args.topic_slug) ? await topicBody(args.topic_slug) : null
+        if (body === null)
+          return { deny: `No topic page "${args.topic_slug}". Topic pages: ${known.join(', ') || 'none yet'}.` }
+        return {
+          result: clipped(body, `Read the rest from ${topicPath(args.topic_slug)} with the Read tool and an offset.`),
+        }
       }
+
+      const pages: TopicPage[] = []
+      for (const t of rec.topics ?? []) pages.push({ ...t, body: await topicBody(t.slug) })
+      return { result: recordOverview(rec, pages) }
     }
 
     if (tool === TOOL('topic_write')) {
@@ -673,6 +841,17 @@ export const register: Register = on => {
       const rec = await loadRecord($)
       const current = [...rec.sessions].reverse().find(s => s.status === 'open')
       if (!current) return { deny: 'No session is open. The person starts one with /cbt-session.' }
+      if (tool === TOOL('session_close') && args.discard === true) {
+        if (current.risk_flag || args.risk_flag === true)
+          return { deny: 'Not discarded: risk came up in this session, so it is kept. Close it without discard.' }
+        rec.sessions = rec.sessions.filter(s => s !== current)
+        await saveRecord($, rec)
+        // $.fs cannot delete: the page is emptied, and the next session, which
+        // takes the same number, writes over it.
+        await $.fs.write(`${DATA}\\sessions\\session-${pad(current.number)}.md`, '')
+        await setActive($, false)
+        return { result: `Session ${current.number} discarded: nothing was saved. Session mode is now off.` }
+      }
       for (const k of ['mood', 'phq9', 'gad7'] as const) if (typeof args[k] === 'number') current[k] = args[k]
       for (const k of ['agenda', 'homework_review', 'summary', 'homework', 'feedback', 'risk_note'] as const)
         if (typeof args[k] === 'string') current[k] = args[k]

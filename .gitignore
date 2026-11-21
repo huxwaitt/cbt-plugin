@@ -4,6 +4,10 @@
 # Never commit personal session records
 .cbt-self-help/
 _data.json
+formulation-latest.json
+
+# Local Claude Code settings
+.claude/settings.local.json
 
 # Knowledge graph: rebuilt by kg/_tools/tests/run-tests.ps1 on every run
 kg/_tools/tests/fixture/broken/

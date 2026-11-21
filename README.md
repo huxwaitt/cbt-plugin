@@ -13,7 +13,7 @@ findahelpline.com.
 | Command | What it does |
 |---|---|
 | `/cbt-session` | Shows the notice and starts a session. Claude follows the CBT session structure from the knowledge graph: mood check and safety screen, homework review, agenda, one piece of work, summary, practice task, feedback. |
-| `/cbt-end` | Wraps up and closes the session (it is saved step by step as it goes). |
+| `/cbt-end` | Wraps up and closes the session (it is saved step by step as it goes). A session that stopped before anything worth keeping happened is discarded, not saved. |
 | `/cbt-record` | Shows your saved record: goals, mood and questionnaire scores over time, current practice task. |
 | `/cbt-formulation` | Exports your formulation so the formulation page can import it. |
 | `/cbt-forget confirm` | Erases your record. |
