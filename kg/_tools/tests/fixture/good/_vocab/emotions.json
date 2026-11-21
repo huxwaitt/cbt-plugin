@@ -1,0 +1,76 @@
+{
+  "scheme": "emotions",
+  "prefix": "em",
+  "title": "Emotions",
+  "description": "Fixture scheme.",
+  "version": "1.0.0",
+  "sources": [
+    "Beck-2021 § Ch. 3"
+  ],
+  "concepts": [
+    {
+      "id": "em.sad",
+      "label": "Sad",
+      "alt_labels": [],
+      "definition": "Low, down or unhappy feeling.",
+      "client_wording": "Low, down or unhappy feeling.",
+      "example": "",
+      "group": "",
+      "broader": null,
+      "related": [],
+      "see": [],
+      "sources": [
+        "Beck-2021 § Ch. 3"
+      ],
+      "valence": "negative"
+    },
+    {
+      "id": "em.anxious",
+      "label": "Anxious",
+      "alt_labels": [],
+      "definition": "Worried, tense or afraid about what might happen.",
+      "client_wording": "Worried, tense or afraid about what might happen.",
+      "example": "",
+      "group": "",
+      "broader": null,
+      "related": [],
+      "see": [],
+      "sources": [
+        "Beck-2021 § Ch. 3"
+      ],
+      "valence": "negative"
+    },
+    {
+      "id": "em.guilty",
+      "label": "Guilty",
+      "alt_labels": [],
+      "definition": "Feeling one has done wrong | let someone down.",
+      "client_wording": "Feeling one has done wrong | let someone down.",
+      "example": "",
+      "group": "",
+      "broader": "em.sad",
+      "related": [],
+      "sources": [
+        "Beck-2021 § Ch. 3"
+      ],
+      "valence": "negative"
+    },
+    {
+      "id": "em.down",
+      "label": "Down",
+      "alt_labels": [],
+      "definition": "Retired duplicate of sad.",
+      "client_wording": "Retired duplicate of sad.",
+      "example": "",
+      "group": "",
+      "broader": null,
+      "related": [],
+      "see": [],
+      "sources": [
+        "Beck-2021 § Ch. 3"
+      ],
+      "deprecated": true,
+      "replaced_by": "em.sad"
+    }
+  ]
+}

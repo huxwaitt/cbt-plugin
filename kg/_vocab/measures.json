@@ -1,0 +1,1321 @@
+{
+  "scheme": "measures",
+  "prefix": "ms",
+  "title": "Measures and instruments",
+  "description": "Standardized and idiographic instruments used in CBT for screening, severity, outcome, process, competence and risk monitoring. Each concept carries page, construct, items (core or main-form item count), format, licensing (public-domain: reproduce without a request; free-with-permission: copyrighted but free for clinical or non-commercial use under stated terms or on request; proprietary: purchase or paid license), licensing_note and population. Used to tag measurement slots and pages.",
+  "version": "1.0.0",
+  "sources": [
+    "PHQ-Screeners § Instructions",
+    "NCPTSD-PCL-5 § Scoring and interpretation",
+    "C-SSRS-Site § About the scale",
+    "Lambert-etal-2018 § Results"
+  ],
+  "concepts": [
+    {
+      "id": "ms.phq-9",
+      "label": "Patient Health Questionnaire-9 (PHQ-9)",
+      "alt_labels": [
+        "PHQ9"
+      ],
+      "definition": "Nine-item self-report of DSM depressive symptoms over the past two weeks, scored 0 to 27, with severity cutpoints at 5, 10, 15 and 20.",
+      "client_wording": "A short questionnaire about how often depression symptoms have bothered you over the last two weeks.",
+      "example": "Score 14 (moderate); item 9 is endorsed, so suicide risk is assessed in the same session.",
+      "group": "depression",
+      "broader": null,
+      "related": [
+        "ms.phq-2",
+        "ms.c-ssrs"
+      ],
+      "see": ["02-risk.ongoing-risk-monitoring", "02-risk.pitfall-unaddressed-positive-screen", "04-treatment-planning.combining-with-medication", "04-treatment-planning.guideline-map", "04-treatment-planning.managing-non-response", "04-treatment-planning.pitfall-continuing-without-review", "04-treatment-planning.stepped-care", "05-session-structure.mood-check-and-bridge", "08-measurement.depression-measures", "08-measurement.instrument-licensing", "08-measurement.instrument-selection", "08-measurement.measurement-based-care", "08-measurement.pitfall-overreading-score-changes", "08-measurement.pitfall-screening-score-as-diagnosis", "08-measurement.pitfall-unreviewed-risk-item", "08-measurement.reliable-and-clinically-significant-change", "09-ending.discharge-summary", "10-diagnosis.diagnosis-vs-formulation", "10-diagnosis.differential-diagnosis-process", "10-diagnosis.pitfall-questionnaire-score-as-diagnosis", "chronic-pain-and-physical-health.assessment", "depression.assessment", "depression.pitfall-risk-not-rechecked", "depression.pitfall-stopping-at-response", "depression.treatment", "gad.assessment", "gad.pitfall-worry-misread-as-gad"],
+      "sources": [
+        "Kroenke-etal-2001 § Results",
+        "PHQ-Screeners § Instructions"
+      ],
+      "page": "08-measurement.depression-measures",
+      "construct": "Depression symptom severity",
+      "items": 9,
+      "format": "self-report",
+      "licensing": "public-domain",
+      "licensing_note": "PHQ Screeners: no permission required to reproduce, translate, display or distribute.",
+      "population": "Adults; adolescent version (PHQ-A) available"
+    },
+    {
+      "id": "ms.phq-2",
+      "label": "Patient Health Questionnaire-2 (PHQ-2)",
+      "alt_labels": [
+        "PHQ2"
+      ],
+      "definition": "First two PHQ-9 items (depressed mood, loss of interest), scored 0 to 6; a score of 3 or more prompts fuller assessment.",
+      "client_wording": "Two quick questions about low mood and loss of interest over the last two weeks.",
+      "example": "PHQ-2 score 4 at a primary care visit, so the full PHQ-9 is given.",
+      "group": "depression",
+      "broader": "ms.phq-9",
+      "related": [],
+      "see": ["08-measurement.depression-measures", "depression.assessment"],
+      "sources": [
+        "Kroenke-etal-2003 § Results",
+        "PHQ-Screeners § Instructions"
+      ],
+      "page": "08-measurement.depression-measures",
+      "construct": "Depression screening (core symptoms)",
+      "items": 2,
+      "format": "self-report",
+      "licensing": "public-domain",
+      "licensing_note": "PHQ Screeners: no permission required.",
+      "population": "Adults; screening in primary care and general settings"
+    },
+    {
+      "id": "ms.bdi-ii",
+      "label": "Beck Depression Inventory-II (BDI-II)",
+      "alt_labels": [
+        "BDI-2",
+        "BDI 2"
+      ],
+      "definition": "Twenty-one-item self-report of depressive symptom severity over the past two weeks, each item 0 to 3, total 0 to 63.",
+      "client_wording": "A questionnaire about depression symptoms over the last two weeks.",
+      "example": "Intake score in the moderate range falls to the minimal range by session 14.",
+      "group": "depression",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.depression-measures", "08-measurement.instrument-licensing", "08-measurement.pitfall-screening-score-as-diagnosis", "depression.assessment"],
+      "sources": [
+        "Beck-etal-1996 § Manual",
+        "Pearson-BDI-II § Product details"
+      ],
+      "page": "08-measurement.depression-measures",
+      "construct": "Depression symptom severity",
+      "items": 21,
+      "format": "self-report",
+      "licensing": "proprietary",
+      "licensing_note": "Pearson; purchase required (qualification level B). Do not reproduce item wording.",
+      "population": "Ages 13 to 80"
+    },
+    {
+      "id": "ms.qids-sr16",
+      "label": "Quick Inventory of Depressive Symptomatology, Self-Report (QIDS-SR16)",
+      "alt_labels": [
+        "QIDS-SR",
+        "QIDS"
+      ],
+      "definition": "Sixteen-item self-report covering the nine DSM depression domains over the past seven days; highest item per domain is summed, total 0 to 27.",
+      "client_wording": "A questionnaire about depression symptoms over the past week.",
+      "example": "Total 16 (severe) at baseline; 5 (none) after treatment indicates remission.",
+      "group": "depression",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.depression-measures", "08-measurement.instrument-licensing"],
+      "sources": [
+        "Rush-etal-2003 § Method",
+        "IDS-QIDS-Site § QIDS-SR"
+      ],
+      "page": "08-measurement.depression-measures",
+      "construct": "Depression symptom severity",
+      "items": 16,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright held by developers; distributed free via ids-qids.org; check terms for commercial use.",
+      "population": "Adults; clinician-rated version (QIDS-C16) available"
+    },
+    {
+      "id": "ms.epds",
+      "label": "Edinburgh Postnatal Depression Scale (EPDS)",
+      "alt_labels": [
+        "EPDS"
+      ],
+      "definition": "Ten-item self-report screening for perinatal depression over the past seven days, total 0 to 30; includes one self-harm item.",
+      "client_wording": "A short questionnaire about how you have felt over the past week, during or after pregnancy.",
+      "example": "Score 14 at six weeks postpartum, and the self-harm item is reviewed immediately.",
+      "group": "depression",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.depression-measures", "08-measurement.instrument-selection", "13-context-culture-development.perinatal-mental-health"],
+      "sources": [
+        "Cox-etal-1987 § Method"
+      ],
+      "page": "08-measurement.depression-measures",
+      "construct": "Perinatal depression symptoms",
+      "items": 10,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright Royal College of Psychiatrists; may be reproduced if authors, title and source are cited.",
+      "population": "Pregnant and postpartum people; validated for partners in some studies"
+    },
+    {
+      "id": "ms.gad-7",
+      "label": "Generalized Anxiety Disorder-7 (GAD-7)",
+      "alt_labels": [
+        "GAD7"
+      ],
+      "definition": "Seven-item self-report of generalized anxiety symptoms over the past two weeks, scored 0 to 21, with cutpoints at 5, 10 and 15.",
+      "client_wording": "A short questionnaire about how often anxiety and worry bothered you over the last two weeks.",
+      "example": "Score 12 (moderate) at intake; 10 or more prompts assessment for an anxiety disorder.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [
+        "ms.gad-2"
+      ],
+      "see": ["04-treatment-planning.managing-non-response", "04-treatment-planning.pitfall-continuing-without-review", "04-treatment-planning.stepped-care", "08-measurement.anxiety-measures", "08-measurement.instrument-licensing", "08-measurement.instrument-selection", "08-measurement.measurement-based-care", "08-measurement.pitfall-overreading-score-changes", "08-measurement.pitfall-screening-score-as-diagnosis", "08-measurement.reliable-and-clinically-significant-change", "10-diagnosis.pitfall-questionnaire-score-as-diagnosis", "chronic-pain-and-physical-health.assessment", "gad.assessment", "gad.pitfall-eclectic-anxiety-management", "gad.pitfall-worry-misread-as-gad", "gad.treatment", "panic-and-phobias.assessment"],
+      "sources": [
+        "Spitzer-etal-2006 § Results",
+        "PHQ-Screeners § Instructions"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Generalized anxiety severity; screens for common anxiety disorders",
+      "items": 7,
+      "format": "self-report",
+      "licensing": "public-domain",
+      "licensing_note": "PHQ Screeners: no permission required to reproduce, translate, display or distribute.",
+      "population": "Adults; also used with adolescents"
+    },
+    {
+      "id": "ms.gad-2",
+      "label": "Generalized Anxiety Disorder-2 (GAD-2)",
+      "alt_labels": [
+        "GAD2"
+      ],
+      "definition": "First two GAD-7 items (nervousness, uncontrollable worry), scored 0 to 6; a score of 3 or more prompts fuller assessment.",
+      "client_wording": "Two quick questions about feeling nervous and being unable to stop worrying.",
+      "example": "GAD-2 score 3, so the full GAD-7 is completed.",
+      "group": "anxiety",
+      "broader": "ms.gad-7",
+      "related": [],
+      "see": ["08-measurement.anxiety-measures", "13-context-culture-development.perinatal-mental-health", "gad.assessment"],
+      "sources": [
+        "Kroenke-etal-2007 § Results",
+        "PHQ-Screeners § Instructions"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Anxiety screening (core symptoms)",
+      "items": 2,
+      "format": "self-report",
+      "licensing": "public-domain",
+      "licensing_note": "PHQ Screeners: no permission required.",
+      "population": "Adults; screening in primary care and general settings"
+    },
+    {
+      "id": "ms.bai",
+      "label": "Beck Anxiety Inventory (BAI)",
+      "alt_labels": [
+        "BAI"
+      ],
+      "definition": "Twenty-one-item self-report of anxiety symptom severity, weighted toward physical symptoms, each item 0 to 3, total 0 to 63.",
+      "client_wording": "A questionnaire about anxiety symptoms, especially body symptoms, over the recent past.",
+      "example": "High somatic item scores support a panic-focused formulation.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.anxiety-measures", "08-measurement.instrument-licensing"],
+      "sources": [
+        "Beck-etal-1988 § Method",
+        "Pearson-BAI § Product details"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Anxiety symptom severity (mainly somatic)",
+      "items": 21,
+      "format": "self-report",
+      "licensing": "proprietary",
+      "licensing_note": "Pearson; purchase required. Do not reproduce item wording.",
+      "population": "Ages 17 to 80"
+    },
+    {
+      "id": "ms.oasis",
+      "label": "Overall Anxiety Severity and Impairment Scale (OASIS)",
+      "alt_labels": [
+        "OASIS"
+      ],
+      "definition": "Five-item self-report of anxiety frequency, intensity, avoidance and work and social impairment across anxiety disorders over the past week, total 0 to 20.",
+      "client_wording": "Five questions about how often anxiety affects you and how much it gets in the way.",
+      "example": "Used weekly across a mixed anxiety caseload to track overall change.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.anxiety-measures"],
+      "sources": [
+        "Norman-etal-2006 § Method"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Transdiagnostic anxiety severity and impairment",
+      "items": 5,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Published in the validation article; confirm terms with authors for commercial use.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.pdss",
+      "label": "Panic Disorder Severity Scale (PDSS)",
+      "alt_labels": [
+        "PDSS",
+        "PDSS-SR"
+      ],
+      "definition": "Seven-item measure of panic disorder severity: attack frequency, distress, anticipatory anxiety, avoidance and impairment, each 0 to 4, total 0 to 28.",
+      "client_wording": "Seven questions about panic attacks, worry about them, avoidance and how they affect your life.",
+      "example": "Weekly self-report scores fall from 16 to 5 over interoceptive exposure work.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [
+        "ms.asi-3"
+      ],
+      "see": ["08-measurement.anxiety-measures", "08-measurement.instrument-selection", "panic-and-phobias.assessment"],
+      "sources": [
+        "Shear-etal-1997 § Method"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Panic disorder severity",
+      "items": 7,
+      "format": "clinician-rated or self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright M. K. Shear; free for clinicians in practice and non-industry research; other uses need permission.",
+      "population": "Adults with panic disorder; clinician and self-report versions"
+    },
+    {
+      "id": "ms.asi-3",
+      "label": "Anxiety Sensitivity Index-3 (ASI-3)",
+      "alt_labels": [
+        "ASI-3"
+      ],
+      "definition": "Eighteen-item self-report of fear of anxiety-related sensations, with physical, cognitive and social concern subscales, each item 0 to 4.",
+      "client_wording": "Questions about how frightening you find the feelings and signs of anxiety.",
+      "example": "High physical concerns subscale supports a panic formulation and interoceptive exposure.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [
+        "ib.anxiety-sensations-dangerous"
+      ],
+      "see": ["08-measurement.anxiety-measures", "panic-and-phobias.assessment"],
+      "sources": [
+        "Taylor-etal-2007 § Method"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Anxiety sensitivity (fear of arousal sensations)",
+      "items": 18,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Published in the validation article; free for clinical and research use with citation.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.spin",
+      "label": "Social Phobia Inventory (SPIN)",
+      "alt_labels": [
+        "SPIN"
+      ],
+      "definition": "Seventeen-item self-report of social anxiety over the past week covering fear, avoidance and physiological symptoms, each item 0 to 4, total 0 to 68.",
+      "client_wording": "Questions about fear and avoidance of social situations and body symptoms over the past week.",
+      "example": "Score 42 at intake supports a social anxiety disorder assessment.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.anxiety-measures", "08-measurement.instrument-selection", "social-anxiety.assessment"],
+      "sources": [
+        "Connor-etal-2000 § Method"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Social anxiety severity",
+      "items": 17,
+      "format": "self-report",
+      "licensing": "proprietary",
+      "licensing_note": "Copyright J. R. T. Davidson; permission and a user fee may be required from the copyright holder.",
+      "population": "Adolescents and adults"
+    },
+    {
+      "id": "ms.lsas",
+      "label": "Liebowitz Social Anxiety Scale (LSAS)",
+      "alt_labels": [
+        "LSAS",
+        "LSAS-SR"
+      ],
+      "definition": "Rates 24 social and performance situations separately for fear or anxiety and avoidance, each 0 to 3, giving subscale and total scores.",
+      "client_wording": "A list of social and performance situations rated for how anxious you feel and how much you avoid them.",
+      "example": "Avoidance subscale highlights eating in public and speaking to authority figures as exposure targets.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.anxiety-measures", "social-anxiety.assessment"],
+      "sources": [
+        "Liebowitz-1987 § Scale description"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Social anxiety fear and avoidance",
+      "items": 24,
+      "format": "clinician-rated or self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright M. R. Liebowitz; distributed via Mapi Research Trust; confirm terms before use.",
+      "population": "Adults; child and adolescent version (LSAS-CA) exists"
+    },
+    {
+      "id": "ms.shai",
+      "label": "Short Health Anxiety Inventory (SHAI)",
+      "alt_labels": [
+        "SHAI",
+        "HAI-18",
+        "short HAI"
+      ],
+      "definition": "Eighteen-item self-report of health anxiety: 14 items on illness worry and likelihood plus 4 on feared negative consequences, total 0 to 54.",
+      "client_wording": "Questions about worry about your health and what being ill would mean for you.",
+      "example": "Score well above the clinical range with frequent body checking supports a health anxiety formulation.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [
+        "tt.serious-illness"
+      ],
+      "see": ["08-measurement.anxiety-measures", "08-measurement.instrument-selection", "health-anxiety.assessment"],
+      "sources": [
+        "Salkovskis-etal-2002 § Results"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Health anxiety severity",
+      "items": 18,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright held by the authors; published in the validation article.",
+      "population": "Adults; clinical, community and medical samples"
+    },
+    {
+      "id": "ms.pswq",
+      "label": "Penn State Worry Questionnaire (PSWQ)",
+      "alt_labels": [
+        "PSWQ"
+      ],
+      "definition": "Sixteen-item self-report of trait worry, its excessiveness, pervasiveness and uncontrollability, each item 1 to 5, total 16 to 80.",
+      "client_wording": "Questions about how much you tend to worry and how hard it is to stop.",
+      "example": "Score 68 supports pathological worry as a primary treatment target.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [
+        "mp.worry"
+      ],
+      "see": ["08-measurement.anxiety-measures", "15-transdiagnostic-processes.assessing-transdiagnostic-processes", "15-transdiagnostic-processes.worry", "gad.assessment", "gad.pitfall-eclectic-anxiety-management", "gad.treatment"],
+      "sources": [
+        "Meyer-etal-1990 § Method"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Trait pathological worry",
+      "items": 16,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Published in the original article; widely reproduced for clinical use.",
+      "population": "Adults; child version (PSWQ-C) exists"
+    },
+    {
+      "id": "ms.ius-12",
+      "label": "Intolerance of Uncertainty Scale-12 (IUS-12)",
+      "alt_labels": [
+        "IUS-12"
+      ],
+      "definition": "Twelve-item short form measuring reactions to uncertainty, with prospective and inhibitory anxiety factors, each item 1 to 5, total 12 to 60.",
+      "client_wording": "Questions about how you react when things are uncertain or unpredictable.",
+      "example": "High inhibitory subscale suggests uncertainty leads to freezing and avoidance.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [
+        "ms.pswq",
+        "mp.intolerance-of-uncertainty"
+      ],
+      "see": ["08-measurement.anxiety-measures", "15-transdiagnostic-processes.assessing-transdiagnostic-processes", "15-transdiagnostic-processes.intolerance-of-uncertainty", "gad.assessment"],
+      "sources": [
+        "Carleton-etal-2007 § Results"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Intolerance of uncertainty",
+      "items": 12,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Published in the validation article; free for clinical and research use with citation.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.hads",
+      "label": "Hospital Anxiety and Depression Scale (HADS)",
+      "alt_labels": [
+        "HADS"
+      ],
+      "definition": "Fourteen-item self-report with seven anxiety and seven depression items, designed to limit overlap with physical illness symptoms.",
+      "client_wording": "Short questions about anxiety and low mood, designed for people with physical health problems.",
+      "example": "Used in a cardiac rehabilitation service to screen for anxiety and depression.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.anxiety-measures", "08-measurement.instrument-licensing"],
+      "sources": [
+        "Zigmond-Snaith-1983 § Method"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Anxiety and depression in medical settings",
+      "items": 14,
+      "format": "self-report",
+      "licensing": "proprietary",
+      "licensing_note": "Copyright held by the authors; licensed commercially; check the current distributor before use.",
+      "population": "Adults with physical illness; general adult use"
+    },
+    {
+      "id": "ms.dass-21",
+      "label": "Depression Anxiety Stress Scales-21 (DASS-21)",
+      "alt_labels": [
+        "DASS-21",
+        "DASS"
+      ],
+      "definition": "Twenty-one-item short form of the DASS with seven-item depression, anxiety and stress scales over the past week; scores doubled to match DASS-42 norms.",
+      "client_wording": "Questions about low mood, anxiety and stress over the past week.",
+      "example": "Stress subscale is elevated while depression is normal, guiding focus on tension and irritability.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.anxiety-measures", "08-measurement.instrument-licensing"],
+      "sources": [
+        "Lovibond-Lovibond-1995 § Manual",
+        "DASS-Site § Overview"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Depression, anxiety and stress (tension) severity",
+      "items": 21,
+      "format": "self-report",
+      "licensing": "public-domain",
+      "licensing_note": "Questionnaire is in the public domain; the manual is sold separately.",
+      "population": "Adults; also used with older adolescents"
+    },
+    {
+      "id": "ms.scared",
+      "label": "Screen for Child Anxiety Related Disorders (SCARED)",
+      "alt_labels": [
+        "SCARED"
+      ],
+      "definition": "Forty-one-item child and parent report of anxiety symptoms with five factors paralleling DSM anxiety disorders, each item 0 to 2.",
+      "client_wording": "Questions for you or your parent about worries and fears.",
+      "example": "Separation anxiety subscale is elevated on both child and parent forms.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.anxiety-measures", "13-context-culture-development.child-anxiety"],
+      "sources": [
+        "Birmaher-etal-1999 § Method"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Child and adolescent anxiety disorder symptoms",
+      "items": 41,
+      "format": "self-report or parent-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright held by the developers; free at no cost from the University of Pittsburgh.",
+      "population": "Ages 8 to 18; child and parent forms"
+    },
+    {
+      "id": "ms.rcads",
+      "label": "Revised Child Anxiety and Depression Scale (RCADS)",
+      "alt_labels": [
+        "RCADS",
+        "RCADS-P"
+      ],
+      "definition": "Forty-seven-item youth or parent report with subscales for separation, social, generalized, panic and obsessive-compulsive anxiety and major depression.",
+      "client_wording": "Questions for you or your parent about worries, fears and low mood.",
+      "example": "Major depression and social anxiety subscales are both elevated in a 14-year-old.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.anxiety-measures", "08-measurement.instrument-licensing", "08-measurement.instrument-selection", "13-context-culture-development.child-anxiety"],
+      "sources": [
+        "Chorpita-etal-2000 § Method",
+        "RCADS-Site § User guide"
+      ],
+      "page": "08-measurement.anxiety-measures",
+      "construct": "Child and adolescent anxiety and depression symptoms",
+      "items": 47,
+      "format": "self-report or parent-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright Chorpita and Spence; free under a limited license; commercial use or resale prohibited.",
+      "population": "School-age children and adolescents; youth and parent forms"
+    },
+    {
+      "id": "ms.scas",
+      "label": "Spence Children's Anxiety Scale (SCAS)",
+      "alt_labels": [
+        "SCAS",
+        "SCAS-P",
+        "Preschool Anxiety Scale"
+      ],
+      "definition": "Forty-four-item child report (38 scored, 6 filler, each 0 to 3) with six anxiety subscales; parent and preschool versions exist.",
+      "client_wording": "Questions for you or your parent about worries and fears.",
+      "example": "Separation anxiety subscale T-score above 60 on both child and parent forms.",
+      "group": "anxiety",
+      "broader": null,
+      "related": [],
+      "see": ["13-context-culture-development.child-anxiety"],
+      "sources": [
+        "SCAS-Site § SCAS child overview; Scoring and interpretation; Home page, permissions"
+      ],
+      "page": "13-context-culture-development.child-anxiety",
+      "construct": "Child and adolescent anxiety symptoms",
+      "items": 44,
+      "format": "self-report or parent-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright Spence; free for researchers and individual practitioners; services, agencies and commercial users need permission or a license; do not modify.",
+      "population": "Children and adolescents; child, parent and preschool versions"
+    },
+    {
+      "id": "ms.pcl-5",
+      "label": "PTSD Checklist for DSM-5 (PCL-5)",
+      "alt_labels": [
+        "PCL5"
+      ],
+      "definition": "Twenty-item self-report of DSM-5 PTSD symptoms over the past month, each 0 to 4, total 0 to 80; a provisional cutpoint of 31 to 33.",
+      "client_wording": "Questions about how much trauma-related problems bothered you over the past month.",
+      "example": "Score falls from 52 to 24, a drop of more than 10 points, indicating response.",
+      "group": "trauma and ocd-related",
+      "broader": null,
+      "related": [
+        "ms.caps-5",
+        "ms.itq"
+      ],
+      "see": ["08-measurement.instrument-licensing", "08-measurement.instrument-selection", "08-measurement.pitfall-screening-score-as-diagnosis", "08-measurement.reliable-and-clinically-significant-change", "08-measurement.trauma-and-ocd-measures", "ptsd.assessment", "ptsd.pitfall-indefinite-stabilization"],
+      "sources": [
+        "NCPTSD-PCL-5 § Scoring and interpretation"
+      ],
+      "page": "08-measurement.trauma-and-ocd-measures",
+      "construct": "PTSD symptom severity (DSM-5 clusters B to E)",
+      "items": 20,
+      "format": "self-report",
+      "licensing": "public-domain",
+      "licensing_note": "National Center for PTSD: public domain, not copyrighted; intended for qualified professionals.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.caps-5",
+      "label": "Clinician-Administered PTSD Scale for DSM-5 (CAPS-5)",
+      "alt_labels": [
+        "CAPS-5"
+      ],
+      "definition": "Thirty-item structured clinical interview assessing the 20 DSM-5 PTSD symptoms, onset, duration, distress, impairment and dissociative subtype; 45 to 60 minutes.",
+      "client_wording": "A structured interview about trauma-related symptoms and how they affect you.",
+      "example": "Used to confirm a PTSD diagnosis before starting trauma-focused therapy.",
+      "group": "trauma and ocd-related",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.trauma-and-ocd-measures", "ptsd.assessment"],
+      "sources": [
+        "CAPS-5-Site § Overview",
+        "Weathers-etal-2018 § Method"
+      ],
+      "page": "08-measurement.trauma-and-ocd-measures",
+      "construct": "PTSD diagnosis and symptom severity",
+      "items": 30,
+      "format": "clinician-rated interview",
+      "licensing": "free-with-permission",
+      "licensing_note": "Free on request from the National Center for PTSD for qualified clinicians and researchers.",
+      "population": "Adults; child and adolescent version (CAPS-CA-5) for ages 7 and up"
+    },
+    {
+      "id": "ms.itq",
+      "label": "International Trauma Questionnaire (ITQ)",
+      "alt_labels": [
+        "ITQ"
+      ],
+      "definition": "Eighteen-item self-report of ICD-11 PTSD and complex PTSD: six PTSD items, six disturbances in self-organization items, and six functional impairment items.",
+      "client_wording": "Questions about trauma-related symptoms and difficulties with emotions, self-worth and relationships.",
+      "example": "Criteria met for complex PTSD, so the plan adds emotion regulation and relationship work.",
+      "group": "trauma and ocd-related",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.instrument-licensing", "08-measurement.trauma-and-ocd-measures", "ptsd.assessment", "ptsd.children-and-adolescents", "ptsd.complex-ptsd"],
+      "sources": [
+        "Cloitre-etal-2018 § Method",
+        "ITQ-Site § Overview"
+      ],
+      "page": "08-measurement.trauma-and-ocd-measures",
+      "construct": "ICD-11 PTSD and complex PTSD",
+      "items": 18,
+      "format": "self-report",
+      "licensing": "public-domain",
+      "licensing_note": "Freely available in the public domain.",
+      "population": "Adults; child and caregiver versions (ITQ-CA, ITQ-CC) exist"
+    },
+    {
+      "id": "ms.y-bocs",
+      "label": "Yale-Brown Obsessive Compulsive Scale (Y-BOCS)",
+      "alt_labels": [
+        "YBOCS"
+      ],
+      "definition": "Clinician-rated interview with a symptom checklist and 10 severity items (five obsessions, five compulsions), each 0 to 4, total 0 to 40.",
+      "client_wording": "An interview about obsessions and compulsions and how much they affect your life.",
+      "example": "Score falls from 26 to 12 over a course of ERP.",
+      "group": "trauma and ocd-related",
+      "broader": null,
+      "related": [
+        "ms.oci-r",
+        "ms.docs",
+        "iv.exposure-and-response-prevention"
+      ],
+      "see": ["08-measurement.instrument-selection", "08-measurement.trauma-and-ocd-measures", "ocd.adaptations", "ocd.assessment", "ocd.treatment"],
+      "sources": [
+        "Goodman-etal-1989 § Method"
+      ],
+      "page": "08-measurement.trauma-and-ocd-measures",
+      "construct": "Obsessive-compulsive symptom severity",
+      "items": 10,
+      "format": "clinician-rated interview",
+      "licensing": "proprietary",
+      "licensing_note": "Copyrighted; licensed through the distributor. Do not reproduce item wording.",
+      "population": "Adults; child version (CY-BOCS) exists"
+    },
+    {
+      "id": "ms.oci-r",
+      "label": "Obsessive-Compulsive Inventory-Revised (OCI-R)",
+      "alt_labels": [
+        "OCI-R"
+      ],
+      "definition": "Eighteen-item self-report of OCD symptom distress with six subscales: washing, checking, ordering, obsessing, hoarding and neutralizing; total 0 to 72.",
+      "client_wording": "Questions about how much different obsessions and compulsions have distressed you in the past month.",
+      "example": "High checking and obsessing subscales guide the exposure hierarchy.",
+      "group": "trauma and ocd-related",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.instrument-selection", "08-measurement.trauma-and-ocd-measures", "ocd.assessment"],
+      "sources": [
+        "Foa-etal-2002 § Method"
+      ],
+      "page": "08-measurement.trauma-and-ocd-measures",
+      "construct": "OCD symptom distress by subtype",
+      "items": 18,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Published in the validation article; free for clinical and research use with citation.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.docs",
+      "label": "Dimensional Obsessive-Compulsive Scale (DOCS)",
+      "alt_labels": [
+        "DOCS"
+      ],
+      "definition": "Twenty-item self-report rating severity across four OCD dimensions: contamination, responsibility for harm, unacceptable thoughts, and symmetry; total 0 to 80.",
+      "client_wording": "Questions about four common types of obsessions and compulsions and how much they affect you.",
+      "example": "Highest score is the unacceptable thoughts dimension, pointing to mental rituals.",
+      "group": "trauma and ocd-related",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.trauma-and-ocd-measures", "ocd.assessment"],
+      "sources": [
+        "Abramowitz-etal-2010 § Method"
+      ],
+      "page": "08-measurement.trauma-and-ocd-measures",
+      "construct": "OCD severity by symptom dimension",
+      "items": 20,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Published in the validation article; free for clinical and research use with citation.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.si-r",
+      "label": "Saving Inventory-Revised (SI-R)",
+      "alt_labels": [
+        "SI-R"
+      ],
+      "definition": "Twenty-three-item self-report of hoarding with clutter, difficulty discarding and excessive acquisition subscales.",
+      "client_wording": "Questions about clutter, difficulty letting go of things, and acquiring things.",
+      "example": "Clutter subscale is high; difficulty discarding is the main treatment focus.",
+      "group": "trauma and ocd-related",
+      "broader": null,
+      "related": [
+        "bh.saving-items"
+      ],
+      "see": ["08-measurement.trauma-and-ocd-measures", "ocd.related-disorders"],
+      "sources": [
+        "Frost-etal-2004 § Method"
+      ],
+      "page": "08-measurement.trauma-and-ocd-measures",
+      "construct": "Hoarding symptom severity",
+      "items": 23,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Published in the validation article; free for clinical and research use with citation.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.ede-q",
+      "label": "Eating Disorder Examination Questionnaire (EDE-Q 6.0)",
+      "alt_labels": [
+        "EDE-Q"
+      ],
+      "definition": "Twenty-eight-item self-report over the past 28 days: 22 items forming restraint, eating, shape and weight concern subscales, plus six behavior frequencies.",
+      "client_wording": "Questions about eating, body shape and weight concerns, and eating behaviors over the past four weeks.",
+      "example": "Global score 4.1 with weekly objective binges; shape concern is the highest subscale.",
+      "group": "eating",
+      "broader": null,
+      "related": [
+        "ib.worth-judged-by-shape-weight"
+      ],
+      "see": ["08-measurement.instrument-licensing", "08-measurement.other-measures", "eating-disorders.assessment", "eating-disorders.pitfall-therapist-drift"],
+      "sources": [
+        "Fairburn-Beglin-2008 § Appendix B EDE-Q 6.0",
+        "CREDO-Site § EDE-Q"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "Eating disorder psychopathology",
+      "items": 28,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright held by the authors; free for non-commercial use without seeking permission; commercial use by agreement.",
+      "population": "Adults and older adolescents"
+    },
+    {
+      "id": "ms.asrs",
+      "label": "Adult ADHD Self-Report Scale v1.1 (ASRS)",
+      "alt_labels": [
+        "ASRS",
+        "ASRS v1.1"
+      ],
+      "definition": "WHO 18-item self-report of DSM ADHD symptom frequency over six months; the first six items (Part A) form the screener.",
+      "client_wording": "Questions about how often attention, organization and restlessness difficulties happen for you.",
+      "example": "Part A screener is positive, so a full ADHD assessment with collateral history is arranged.",
+      "group": "adhd",
+      "broader": null,
+      "related": [
+        "ms.caars-2"
+      ],
+      "see": ["08-measurement.instrument-selection", "08-measurement.other-measures", "08-measurement.pitfall-screening-score-as-diagnosis", "adhd.assessment", "adhd.pitfall-diagnosis-from-self-report-alone"],
+      "sources": [
+        "Kessler-etal-2005a § Method",
+        "ASRS-Site § Permissions"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "Adult ADHD symptoms (screening)",
+      "items": 18,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright WHO; six-item screener free unaltered with copyright notice; 18-item checklist requires permission.",
+      "population": "Adults 18 and over"
+    },
+    {
+      "id": "ms.caars-2",
+      "label": "Conners Adult ADHD Rating Scales, 2nd Edition (CAARS 2)",
+      "alt_labels": [
+        "CAARS 2",
+        "CAARS"
+      ],
+      "definition": "Normed adult ADHD rating scales with self and observer forms (97 items each), short forms and a 12-item ADHD Index, including impairment items.",
+      "client_wording": "Questions for you and someone who knows you well about attention, activity and impulsivity.",
+      "example": "Self and partner ratings both elevated on inattention, supporting the diagnostic assessment.",
+      "group": "adhd",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.other-measures"],
+      "sources": [
+        "CAARS-2-Site § Product details"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "Adult ADHD symptoms and impairment",
+      "items": 97,
+      "format": "self-report and observer-report",
+      "licensing": "proprietary",
+      "licensing_note": "MHS; purchase required. Do not reproduce item wording.",
+      "population": "Adults 18 and over"
+    },
+    {
+      "id": "ms.conners-4",
+      "label": "Conners 4th Edition (Conners 4)",
+      "alt_labels": [
+        "Conners 4",
+        "Conners"
+      ],
+      "definition": "Normed ADHD rating scales for youth with parent (117 items), teacher (109) and self-report (118) forms, short forms and a 12-item ADHD Index.",
+      "client_wording": "Questions for you, your parent and teacher about attention, activity and behavior.",
+      "example": "Parent and teacher forms both elevated on inattention across home and school.",
+      "group": "adhd",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.other-measures"],
+      "sources": [
+        "Conners-4-Site § Product details"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "Child and adolescent ADHD symptoms and impairment",
+      "items": 117,
+      "format": "parent, teacher and self-report",
+      "licensing": "proprietary",
+      "licensing_note": "MHS; purchase required. Item count shown is the full parent form.",
+      "population": "Ages 6 to 18 (self-report 8 to 18)"
+    },
+    {
+      "id": "ms.vanderbilt",
+      "label": "NICHQ Vanderbilt Assessment Scales",
+      "alt_labels": [
+        "Vanderbilt ADHD Diagnostic Rating Scale",
+        "VADRS"
+      ],
+      "definition": "Parent (55 items) and teacher (43 items) ratings of DSM ADHD symptoms, common comorbid symptoms and school and home performance.",
+      "client_wording": "Questions for parents and teachers about a child's attention, behavior and how they are doing.",
+      "example": "Teacher form meets inattentive criteria with impaired classwork; parent form is borderline.",
+      "group": "adhd",
+      "broader": null,
+      "related": [],
+      "see": ["adhd.assessment"],
+      "sources": [
+        "Wolraich-etal-2003 § Method"
+      ],
+      "page": "adhd.assessment",
+      "construct": "Child ADHD symptoms, comorbidity screen and performance",
+      "items": 55,
+      "format": "parent-report and teacher-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright AAP and NICHQ; freely used in clinical practice. Item count shown is the parent form.",
+      "population": "Ages 6 to 12; parent and teacher forms"
+    },
+    {
+      "id": "ms.isi",
+      "label": "Insomnia Severity Index (ISI)",
+      "alt_labels": [
+        "ISI"
+      ],
+      "definition": "Seven-item self-report of insomnia severity, satisfaction, daytime interference, noticeability and distress, each 0 to 4, total 0 to 28.",
+      "client_wording": "Seven questions about your sleep problems and how much they affect you.",
+      "example": "Score 19 (moderate clinical insomnia) at intake; 7 after CBT-I.",
+      "group": "sleep",
+      "broader": null,
+      "related": [
+        "ms.consensus-sleep-diary",
+        "ms.psqi",
+        "iv.cbt-for-insomnia"
+      ],
+      "see": ["08-measurement.instrument-selection", "08-measurement.other-measures", "08-measurement.reliable-and-clinically-significant-change", "insomnia.assessment", "insomnia.brief-and-digital-cbt-i", "insomnia.pitfall-judging-progress-by-hours", "insomnia.sleep-diary", "insomnia.treatment"],
+      "sources": [
+        "Morin-etal-2011 § Method",
+        "Mapi-ISI § Terms of use"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "Insomnia severity",
+      "items": 7,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright C. M. Morin; distributed by Mapi Research Trust; license needed, fees may apply for some uses.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.psqi",
+      "label": "Pittsburgh Sleep Quality Index (PSQI)",
+      "alt_labels": [
+        "PSQI"
+      ],
+      "definition": "Self-report of sleep quality over the past month: 19 self-rated items forming seven component scores and a global score of 0 to 21.",
+      "client_wording": "Questions about your sleep habits and sleep quality over the past month.",
+      "example": "Global score 12 indicates poor sleep quality, mainly from long sleep latency.",
+      "group": "sleep",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.other-measures", "insomnia.assessment"],
+      "sources": [
+        "Buysse-etal-1989 § Method"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "Sleep quality and disturbance",
+      "items": 19,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright University of Pittsburgh; free for non-commercial use with permission.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.consensus-sleep-diary",
+      "label": "Consensus Sleep Diary (CSD)",
+      "alt_labels": [
+        "sleep diary",
+        "CSD"
+      ],
+      "definition": "Standardized daily sleep diary with nine core items (for example bedtime, sleep latency, awakenings, final wake time, quality) used to calculate sleep parameters.",
+      "client_wording": "A daily record you fill in each morning about when and how you slept.",
+      "example": "Two weeks of diaries show sleep efficiency of 68%, used to set the sleep window.",
+      "group": "sleep",
+      "broader": null,
+      "related": [
+        "iv.cbt-for-insomnia"
+      ],
+      "see": ["insomnia.assessment", "insomnia.brief-and-digital-cbt-i", "insomnia.pitfall-judging-progress-by-hours", "insomnia.sleep-diary", "insomnia.treatment"],
+      "sources": [
+        "Carney-etal-2012 § Results"
+      ],
+      "page": "insomnia.sleep-diary",
+      "construct": "Prospective sleep pattern (sleep latency, wake time, efficiency)",
+      "items": 9,
+      "format": "diary",
+      "licensing": "public-domain",
+      "licensing_note": "Published openly for standardized use; no license fee identified.",
+      "population": "Adults with insomnia and other sleep complaints"
+    },
+    {
+      "id": "ms.audit",
+      "label": "Alcohol Use Disorders Identification Test (AUDIT)",
+      "alt_labels": [
+        "AUDIT"
+      ],
+      "definition": "WHO 10-item screen for hazardous and harmful drinking and dependence, total 0 to 40, with risk zones at 8, 16 and 20.",
+      "client_wording": "Ten questions about how much and how often you drink, and its effects.",
+      "example": "Score 17 (zone III), so brief intervention plus monitoring and further assessment are offered.",
+      "group": "substance use",
+      "broader": null,
+      "related": [
+        "ms.audit-c",
+        "bh.substance-use-to-cope"
+      ],
+      "see": ["08-measurement.other-measures", "substance-use.assessment"],
+      "sources": [
+        "Babor-etal-2001 § Scoring and interpretation"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "Hazardous and harmful alcohol use",
+      "items": 10,
+      "format": "self-report or interview",
+      "licensing": "public-domain",
+      "licensing_note": "WHO: may be freely reproduced and translated; not for sale or commercial use.",
+      "population": "Adults; primary care and general settings"
+    },
+    {
+      "id": "ms.audit-c",
+      "label": "AUDIT-Consumption (AUDIT-C)",
+      "alt_labels": [
+        "AUDIT-C"
+      ],
+      "definition": "First three AUDIT items on drinking frequency, typical quantity and heavy episodes, total 0 to 12, used as a brief alcohol screen.",
+      "client_wording": "Three questions about how often and how much you drink.",
+      "example": "Positive AUDIT-C prompts the full AUDIT.",
+      "group": "substance use",
+      "broader": "ms.audit",
+      "related": [],
+      "see": ["08-measurement.other-measures", "substance-use.assessment"],
+      "sources": [
+        "Bush-etal-1998 § Method"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "Alcohol consumption screening",
+      "items": 3,
+      "format": "self-report",
+      "licensing": "public-domain",
+      "licensing_note": "Derived from the WHO AUDIT; freely usable.",
+      "population": "Adults; primary care screening"
+    },
+    {
+      "id": "ms.dast-10",
+      "label": "Drug Abuse Screening Test-10 (DAST-10)",
+      "alt_labels": [
+        "DAST-10",
+        "DAST"
+      ],
+      "definition": "Ten yes or no items on consequences of drug use (excluding alcohol and tobacco) over the past 12 months, total 0 to 10.",
+      "client_wording": "Ten yes or no questions about drug use and its effects over the past year.",
+      "example": "Score 6 (substantial level) leads to fuller substance use assessment.",
+      "group": "substance use",
+      "broader": null,
+      "related": [
+        "bh.substance-use-to-cope"
+      ],
+      "see": ["08-measurement.other-measures"],
+      "sources": [
+        "Skinner-1982 § Method"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "Drug use problems",
+      "items": 10,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright H. A. Skinner and CAMH; may be reproduced for non-commercial clinical, research and training use with credit.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.wsas",
+      "label": "Work and Social Adjustment Scale (WSAS)",
+      "alt_labels": [
+        "WSAS"
+      ],
+      "definition": "Five-item self-report of impairment attributed to the main problem in work, home management, social leisure, private leisure and relationships, each 0 to 8.",
+      "client_wording": "Five questions about how much your problem affects work, home life, leisure and relationships.",
+      "example": "Score 24 at intake shows marked impairment; 9 at discharge.",
+      "group": "functioning and general distress",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.instrument-selection", "08-measurement.other-measures"],
+      "sources": [
+        "Mundt-etal-2002 § Method"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "Functional impairment",
+      "items": 5,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright held by the authors; widely used in routine services; confirm permission for reproduction.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.core-10",
+      "label": "CORE-10",
+      "alt_labels": [
+        "Clinical Outcomes in Routine Evaluation-10"
+      ],
+      "definition": "Ten-item self-report of general psychological distress over the past week, covering anxiety, depression, functioning and risk; total 0 to 40.",
+      "client_wording": "Ten questions about how you have been feeling and coping over the last week.",
+      "example": "Score drops from 24 to 9, crossing the clinical cutpoint.",
+      "group": "functioning and general distress",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.instrument-licensing", "08-measurement.other-measures", "08-measurement.pitfall-unreviewed-risk-item"],
+      "sources": [
+        "Barkham-etal-2013 § Method",
+        "CORE-Site § Measures"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "General psychological distress",
+      "items": 10,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Copyright CORE System Trust; free to copy for use if unaltered; not for sale.",
+      "population": "Adults"
+    },
+    {
+      "id": "ms.ders",
+      "label": "Difficulties in Emotion Regulation Scale (DERS)",
+      "alt_labels": [
+        "DERS",
+        "DERS-16"
+      ],
+      "definition": "Thirty-six-item self-report of emotion regulation difficulties: nonacceptance, goals, impulse control, awareness, strategies and clarity.",
+      "client_wording": "Questions about how you notice, understand and manage strong emotions.",
+      "example": "High impulse and strategies subscales support adding DBT-informed skills.",
+      "group": "transdiagnostic process",
+      "broader": null,
+      "related": [
+        "mp.emotion-dysregulation"
+      ],
+      "see": ["08-measurement.other-measures", "15-transdiagnostic-processes.assessing-transdiagnostic-processes", "15-transdiagnostic-processes.emotion-regulation", "personality-disorders.assessment"],
+      "sources": [
+        "Gratz-Roemer-2004 § Method"
+      ],
+      "page": "08-measurement.other-measures",
+      "construct": "Emotion regulation difficulties",
+      "items": 36,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Published in the validation article; free for clinical and research use with citation.",
+      "population": "Adults and adolescents"
+    },
+    {
+      "id": "ms.rrs",
+      "label": "Ruminative Responses Scale (RRS)",
+      "alt_labels": [
+        "RRS",
+        "RRS brooding subscale"
+      ],
+      "definition": "Twenty-two-item self-report of the tendency to ruminate in response to low mood, with brooding and reflection subscales.",
+      "client_wording": "Questions about what you tend to do and think when you feel down.",
+      "example": "High brooding score supports rumination-focused work.",
+      "group": "transdiagnostic process",
+      "broader": null,
+      "related": [
+        "iv.rumination-focused-techniques",
+        "mp.rumination"
+      ],
+      "see": ["15-transdiagnostic-processes.assessing-transdiagnostic-processes", "15-transdiagnostic-processes.rumination"],
+      "sources": [
+        "Nolen-Hoeksema-Morrow-1991 § Method"
+      ],
+      "page": "15-transdiagnostic-processes.assessing-transdiagnostic-processes",
+      "construct": "Depressive rumination",
+      "items": 22,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Published in the research literature; free for clinical and research use with citation.",
+      "population": "Adults and adolescents"
+    },
+    {
+      "id": "ms.ors",
+      "label": "Outcome Rating Scale (ORS)",
+      "alt_labels": [
+        "ORS"
+      ],
+      "definition": "Four visual analog scales rating individual, interpersonal, social and overall wellbeing, total 0 to 40, given at the start of each session.",
+      "client_wording": "Four quick lines to mark how you have been doing in different areas of life.",
+      "example": "ORS score is below the clinical cutoff and has not improved by session 4, prompting a review.",
+      "group": "process and alliance",
+      "broader": null,
+      "related": [
+        "ms.srs",
+        "iv.routine-outcome-monitoring"
+      ],
+      "see": ["08-measurement.instrument-licensing", "08-measurement.process-measures", "alliance-and-stance.outcome-and-alliance-feedback"],
+      "sources": [
+        "Miller-etal-2003 § Method",
+        "ORS-SRS-Site § Licenses"
+      ],
+      "page": "08-measurement.process-measures",
+      "construct": "Session-by-session global wellbeing",
+      "items": 4,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Free individual license for paper use; digital use requires a licensed vendor.",
+      "population": "Adults; child and young child versions exist"
+    },
+    {
+      "id": "ms.srs",
+      "label": "Session Rating Scale (SRS)",
+      "alt_labels": [
+        "SRS"
+      ],
+      "definition": "Four visual analog scales rating the session's relationship, goals and topics, approach or method, and overall fit, total 0 to 40.",
+      "client_wording": "Four quick lines to tell me how today's session worked for you.",
+      "example": "A lower approach rating leads the therapist to ask what would work better next time.",
+      "group": "process and alliance",
+      "broader": null,
+      "related": [
+        "ms.ors",
+        "ms.wai-sr",
+        "ts.eliciting-feedback"
+      ],
+      "see": ["08-measurement.instrument-licensing", "08-measurement.process-measures", "alliance-and-stance.outcome-and-alliance-feedback"],
+      "sources": [
+        "Duncan-etal-2003 § Method",
+        "ORS-SRS-Site § Licenses"
+      ],
+      "page": "08-measurement.process-measures",
+      "construct": "Session alliance",
+      "items": 4,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Free individual license for paper use; digital use requires a licensed vendor.",
+      "population": "Adults; child versions exist"
+    },
+    {
+      "id": "ms.wai-sr",
+      "label": "Working Alliance Inventory-Short Revised (WAI-SR)",
+      "alt_labels": [
+        "WAI-SR"
+      ],
+      "definition": "Twelve-item client-rated measure of the therapeutic alliance with goal, task and bond subscales, based on Bordin's model.",
+      "client_wording": "Questions about how well you and your therapist are working together.",
+      "example": "Low task subscale prompts a discussion about how homework is set.",
+      "group": "process and alliance",
+      "broader": null,
+      "related": [],
+      "see": ["08-measurement.process-measures"],
+      "sources": [
+        "Hatcher-Gillaspy-2006 § Method"
+      ],
+      "page": "08-measurement.process-measures",
+      "construct": "Therapeutic alliance (goals, tasks, bond)",
+      "items": 12,
+      "format": "self-report",
+      "licensing": "free-with-permission",
+      "licensing_note": "Published in the research literature; confirm terms with the authors.",
+      "population": "Adult clients; therapist and observer versions exist"
+    },
+    {
+      "id": "ms.cts-r",
+      "label": "Cognitive Therapy Scale-Revised (CTS-R)",
+      "alt_labels": [
+        "CTS-R",
+        "CTRS"
+      ],
+      "definition": "Twelve-item observer-rated scale of CBT therapist competence, each item 0 to 6, covering structure, relationship and change techniques.",
+      "client_wording": "A rating of how the therapist delivered CBT in a recorded session, used in training.",
+      "example": "A supervisor rates a recorded session and identifies guided discovery as the skill to develop.",
+      "group": "process and alliance",
+      "broader": null,
+      "related": [
+        "ts.agenda-setting"
+      ],
+      "see": ["03-formulation.formulation-evidence", "05-session-structure.therapist-competence"],
+      "sources": [
+        "Blackburn-etal-2001 § Method"
+      ],
+      "page": "05-session-structure.therapist-competence",
+      "construct": "CBT therapist competence",
+      "items": 12,
+      "format": "observer-rated",
+      "licensing": "free-with-permission",
+      "licensing_note": "Developed at Newcastle; freely available for training and research use with citation.",
+      "population": "CBT therapists in training and supervision"
+    },
+    {
+      "id": "ms.c-ssrs",
+      "label": "Columbia-Suicide Severity Rating Scale (C-SSRS)",
+      "alt_labels": [
+        "CSSRS",
+        "Columbia scale"
+      ],
+      "definition": "Structured questions on suicidal ideation, its intensity, preparatory behavior and attempts; the screener asks 2 to 6 questions depending on answers.",
+      "client_wording": "Direct questions about thoughts of suicide and any steps taken, so we can keep you safe.",
+      "example": "Screener positive for recent ideation with intent, so same-day safety planning and escalation follow.",
+      "group": "risk",
+      "broader": null,
+      "related": [
+        "ms.phq-9",
+        "rk.prior-suicide-attempt",
+        "rk.passive-suicidal-ideation",
+        "rk.active-suicidal-ideation",
+        "rk.suicidal-intent",
+        "rk.suicide-plan",
+        "rk.preparatory-behavior"
+      ],
+      "see": ["01-intake.risk-screen-at-intake", "02-risk.asking-about-suicide", "02-risk.c-ssrs", "02-risk.ongoing-risk-monitoring", "02-risk.pitfall-avoiding-the-question", "02-risk.pitfall-unaddressed-positive-screen", "02-risk.risk-documentation", "02-risk.suicide-risk-assessment"],
+      "sources": [
+        "Posner-etal-2011 § Method",
+        "C-SSRS-Site § About the scale"
+      ],
+      "page": "02-risk.c-ssrs",
+      "construct": "Suicidal ideation and behavior",
+      "items": 6,
+      "format": "clinician-rated or self-report screener",
+      "licensing": "public-domain",
+      "licensing_note": "Free for community, healthcare and nonprofit research use; commercial use needs a license.",
+      "population": "All ages; versions for different settings"
+    },
+    {
+      "id": "ms.suds",
+      "label": "Subjective Units of Distress Scale (SUDS)",
+      "alt_labels": [
+        "SUDS",
+        "subjective units of distress"
+      ],
+      "definition": "Single client rating of current distress or fear from 0 to 100, used to build hierarchies and track within-task change.",
+      "client_wording": "A 0 to 100 rating of how upset or anxious you feel right now.",
+      "example": "SUDS 75 at the start of exposure and 40 at the end.",
+      "group": "idiographic",
+      "broader": null,
+      "related": [
+        "iv.exposure-hierarchy"
+      ],
+      "see": ["08-measurement.idiographic-measures", "behavioral.exposure-and-response-prevention", "behavioral.exposure-hierarchy", "behavioral.pitfall-chasing-habituation", "ocd.erp-protocol", "ptsd.prolonged-exposure"],
+      "sources": [
+        "Wolpe-1969 § Subjective anxiety scale"
+      ],
+      "page": "08-measurement.idiographic-measures",
+      "construct": "Momentary subjective distress",
+      "items": 1,
+      "format": "self-rating",
+      "licensing": "public-domain",
+      "licensing_note": "Technique, not a copyrighted form.",
+      "population": "All ages (simplified scales for children)"
+    },
+    {
+      "id": "ms.goal-based-outcomes",
+      "label": "Goal-based outcomes (GBO)",
+      "alt_labels": [
+        "GBO",
+        "goal attainment ratings"
+      ],
+      "definition": "Client rates progress toward up to three personally chosen goals on a 0 to 10 scale at intake and review.",
+      "client_wording": "Rating how close you are to each of your own goals, from 0 to 10.",
+      "example": "\"Go to school every day\" moves from 2 to 7 by session 10.",
+      "group": "idiographic",
+      "broader": null,
+      "related": [
+        "ts.collaborative-goal-setting"
+      ],
+      "see": ["01-intake.goals-and-expectations", "03-formulation.formulation-to-treatment", "04-treatment-planning.pitfall-vague-or-imposed-goals", "04-treatment-planning.problem-list-and-goals", "08-measurement.idiographic-measures", "08-measurement.instrument-licensing", "09-ending.ending-criteria", "chronic-pain-and-physical-health.pitfall-pain-relief-as-the-goal"],
+      "sources": [
+        "Law-Jacob-2015 § Goal-based outcomes"
+      ],
+      "page": "08-measurement.idiographic-measures",
+      "construct": "Progress toward personal goals",
+      "items": 3,
+      "format": "self-rating",
+      "licensing": "free-with-permission",
+      "licensing_note": "Freely available guidance from CORC; free to use with attribution.",
+      "population": "Children, young people and adults"
+    }
+  ]
+}

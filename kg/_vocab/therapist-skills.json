@@ -1,0 +1,1684 @@
+{
+  "scheme": "therapist-skills",
+  "prefix": "ts",
+  "title": "Therapist skills (in-session response codes)",
+  "description": "A coding vocabulary for therapist responses in session, so a transcript turn, a supervision note or a tool response can be labeled. Codes map to MITI 4 and MISC 2.5 behavior codes where those exist (field codes). Not used by formulation slots; used by responding-in-session, alliance and session-structure pages. Group avoid holds unhelpful responses.",
+  "version": "1.1.0",
+  "sources": [
+    "Moyers-etal-2016 § Table 1 MITI 4 behavior counts",
+    "Houck-etal-2010 § Counselor behavior codes",
+    "Miller-Rollnick-2023 § Ch. 8 Deeper Listening",
+    "Miller-Rollnick-2013 § Ch. 6 Core Interviewing Skills: OARS",
+    "Padesky-Kennerley-2023 § The 4-Stage Model of Socratic Dialogue",
+    "Linehan-1997 § Levels of validation",
+    "Beck-2021 § Ch. 10 Structuring Sessions",
+    "Eubanks-etal-2019 § Table 1 Resolution strategies",
+    "Ivey-etal-2022 § Ch. 5 to 7, 11, 12"
+  ],
+  "concepts": [
+    {
+      "id": "ts.open-question",
+      "label": "Open question",
+      "alt_labels": [
+        "open-ended question"
+      ],
+      "definition": "A question that invites an elaborated answer in the client's own words, rather than yes, no, or a single fact.",
+      "client_wording": "A question I can answer in my own words, at whatever length I want.",
+      "example": "\"What has the past week been like for you?\"",
+      "group": "questions",
+      "broader": null,
+      "related": [
+        "ts.closed-question",
+        "ts.socratic-informational-question"
+      ],
+      "see": ["01-intake.first-session-structure", "01-intake.goals-and-expectations", "01-intake.pitfall-interrogation-intake", "01-intake.presenting-problem", "10-diagnosis.cultural-formulation-interview", "10-diagnosis.pitfall-culture-misread-as-pathology", "12-medical-pharmacology.medication-history", "13-context-culture-development.cultural-humility", "13-context-culture-development.intellectual-disability-and-low-literacy", "13-context-culture-development.pitfall-assuming-from-group-identity", "cognitive.identifying-automatic-thoughts", "responding-in-session.core-response-skills", "responding-in-session.pitfall-interrogation-and-question-stacking", "substance-use.motivational-interviewing"],
+      "sources": [
+        "Houck-etal-2010 § Open Question (OQ)",
+        "Moyers-etal-2016 § Table 1 Questions (Q)",
+        "Ivey-etal-2022 § Ch. 5 Questions: Opening Communication"
+      ],
+      "codes": {
+        "MITI-4": "Q",
+        "MISC-2.5": "OQ"
+      },
+      "coding_note": "MITI 4 codes open and closed questions together as Q.",
+      "page": "responding-in-session.core-response-skills"
+    },
+    {
+      "id": "ts.closed-question",
+      "label": "Closed question",
+      "alt_labels": [
+        "closed-ended question"
+      ],
+      "definition": "A question that limits the answer to yes or no, a choice between options, or a specific fact such as a number or rating.",
+      "client_wording": "A quick question with a short answer, like yes, no, or a number.",
+      "example": "\"Did you try the breathing exercise this week?\"",
+      "group": "questions",
+      "broader": null,
+      "related": [
+        "ts.open-question"
+      ],
+      "see": ["01-intake.pitfall-interrogation-intake", "02-risk.asking-about-suicide", "cognitive.pitfall-debating-the-client", "responding-in-session.core-response-skills", "responding-in-session.pitfall-interrogation-and-question-stacking"],
+      "sources": [
+        "Houck-etal-2010 § Closed Question (CQ)",
+        "Moyers-etal-2016 § Table 1 Questions (Q)",
+        "Ivey-etal-2022 § Ch. 5 Questions: Opening Communication"
+      ],
+      "codes": {
+        "MITI-4": "Q",
+        "MISC-2.5": "CQ"
+      },
+      "coding_note": "Rating requests (0 to 100) and risk screening questions are closed questions.",
+      "page": "responding-in-session.core-response-skills"
+    },
+    {
+      "id": "ts.guided-discovery",
+      "label": "Guided discovery",
+      "alt_labels": [],
+      "definition": "The overall CBT process in which questions, summaries and experiments help the client reach new perspectives through their own observation and reasoning.",
+      "client_wording": "We work things out together, so I discover answers myself instead of being told.",
+      "example": "\"How could we find out whether that prediction is true?\"",
+      "group": "guided-discovery",
+      "broader": null,
+      "related": [
+        "ts.socratic-questioning",
+        "ts.collaborative-goal-setting"
+      ],
+      "see": ["01-intake.presenting-problem", "01-intake.socializing-to-cbt", "03-formulation.five-part-model", "03-formulation.pitfall-imposed-formulation", "03-formulation.sharing-the-formulation", "03-formulation.strengths-in-formulation", "03-formulation.what-is-case-formulation", "alliance-and-stance.collaborative-empiricism", "cognitive.cognitive-restructuring", "cognitive.pitfall-debating-the-client", "health-anxiety.pitfall-debating-the-diagnosis", "responding-in-session.socratic-dialogue"],
+      "sources": [
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts",
+        "Padesky-Kennerley-2023 § The 4-Stage Model of Socratic Dialogue",
+        "Blackburn-etal-2001 § Item Guided discovery"
+      ],
+      "page": "responding-in-session.socratic-dialogue"
+    },
+    {
+      "id": "ts.socratic-questioning",
+      "label": "Socratic questioning",
+      "alt_labels": [
+        "Socratic method",
+        "Socratic dialogue",
+        "four-stage Socratic dialogue"
+      ],
+      "definition": "Padesky's four-stage dialogue of informational questions, empathic listening, summary and synthesizing questions, aimed at guiding discovery rather than changing the client's mind.",
+      "client_wording": "Thoughtful questions that help me look at my situation from new angles.",
+      "example": "\"What did you notice when you spoke up? ... Putting that together, what does it say about the idea that people will laugh?\"",
+      "group": "guided-discovery",
+      "broader": "ts.guided-discovery",
+      "related": [
+        "ts.socratic-informational-question",
+        "ts.socratic-synthesizing-question",
+        "iv.cognitive-restructuring"
+      ],
+      "see": ["cognitive.cognitive-restructuring", "depression.treatment", "insomnia.cbt-i-components", "ptsd.cognitive-processing-therapy", "ptsd.pitfall-therapist-avoidance-of-trauma-work", "responding-in-session.pitfall-interrogation-and-question-stacking", "responding-in-session.socratic-dialogue"],
+      "sources": [
+        "Padesky-1993 § Socratic questioning: changing minds or guiding discovery",
+        "Padesky-Kennerley-2023 § The 4-Stage Model of Socratic Dialogue",
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts"
+      ],
+      "coding_note": "Use the four stage codes when a transcript allows finer coding.",
+      "page": "responding-in-session.socratic-dialogue"
+    },
+    {
+      "id": "ts.socratic-informational-question",
+      "label": "Socratic informational question",
+      "alt_labels": [
+        "information-gathering question"
+      ],
+      "definition": "Stage 1 of Socratic dialogue: concrete questions, within the client's knowledge, that bring overlooked or unnoticed information into awareness.",
+      "client_wording": "Questions that help me notice facts I knew but hadn't been paying attention to.",
+      "example": "\"Have there been times you expected to be rejected and it turned out differently?\"",
+      "group": "guided-discovery",
+      "broader": "ts.socratic-questioning",
+      "related": [
+        "ts.open-question"
+      ],
+      "see": ["responding-in-session.socratic-dialogue"],
+      "sources": [
+        "Padesky-1993 § Socratic questioning: changing minds or guiding discovery",
+        "Padesky-Kennerley-2023 § The 4-Stage Model of Socratic Dialogue"
+      ],
+      "codes": {
+        "MITI-4": "Q",
+        "MISC-2.5": "OQ or CQ"
+      },
+      "page": "responding-in-session.socratic-dialogue"
+    },
+    {
+      "id": "ts.socratic-empathic-listening",
+      "label": "Empathic listening (Socratic stage)",
+      "alt_labels": [
+        "Socratic listening"
+      ],
+      "definition": "Stage 2 of Socratic dialogue: listening closely for the client's meanings, emotional reactions and missing information, and using them to choose the next question.",
+      "client_wording": "The therapist really listens to what my answers mean to me before asking more.",
+      "example": "The therapist hears the client stress the word \"again\" and asks, \"What does it mean to you that it happened again?\"",
+      "group": "guided-discovery",
+      "broader": "ts.socratic-questioning",
+      "related": [
+        "ts.complex-reflection",
+        "ts.reflection-of-meaning"
+      ],
+      "see": ["responding-in-session.socratic-dialogue"],
+      "sources": [
+        "Padesky-1993 § Socratic questioning: changing minds or guiding discovery",
+        "Padesky-Kennerley-2023 § The 4-Stage Model of Socratic Dialogue"
+      ],
+      "coding_note": "A stage code. Code the spoken turn itself as a reflection or question; use this code to mark the dialogue stage.",
+      "page": "responding-in-session.socratic-dialogue"
+    },
+    {
+      "id": "ts.socratic-summary",
+      "label": "Socratic summary",
+      "alt_labels": [
+        "summary of information gathered"
+      ],
+      "definition": "Stage 3 of Socratic dialogue: summarizing, often in writing and in the client's words, the information just gathered, to prepare for synthesis.",
+      "client_wording": "The therapist pulls together what I just discovered so I can see it all at once.",
+      "example": "\"Let me write down what you noticed: two people invited you out this month, and a colleague asked for your advice.\"",
+      "group": "guided-discovery",
+      "broader": "ts.socratic-questioning",
+      "related": [
+        "ts.collecting-summary",
+        "ts.capsule-summary"
+      ],
+      "see": ["cognitive.cognitive-restructuring", "cognitive.pitfall-debating-the-client", "responding-in-session.pacing-silence-and-turn-taking", "responding-in-session.pitfall-interrogation-and-question-stacking", "responding-in-session.socratic-dialogue"],
+      "sources": [
+        "Padesky-1993 § Socratic questioning: changing minds or guiding discovery",
+        "Padesky-Kennerley-2023 § The 4-Stage Model of Socratic Dialogue"
+      ],
+      "page": "responding-in-session.socratic-dialogue"
+    },
+    {
+      "id": "ts.socratic-synthesizing-question",
+      "label": "Synthesizing or analytical question",
+      "alt_labels": [
+        "analytical question",
+        "synthesizing question"
+      ],
+      "definition": "Stage 4 of Socratic dialogue: a question asking the client to apply the summarized information to their original belief or concern.",
+      "client_wording": "A question that asks what all this new information means for my original worry.",
+      "example": "\"Looking at this list, how does it fit with the thought that nobody wants you around?\"",
+      "group": "guided-discovery",
+      "broader": "ts.socratic-questioning",
+      "related": [
+        "ts.socratic-summary"
+      ],
+      "see": ["cognitive.cognitive-restructuring", "cognitive.pitfall-debating-the-client", "responding-in-session.phrasing-library", "responding-in-session.socratic-dialogue"],
+      "sources": [
+        "Padesky-1993 § Socratic questioning: changing minds or guiding discovery",
+        "Padesky-Kennerley-2023 § The 4-Stage Model of Socratic Dialogue"
+      ],
+      "codes": {
+        "MITI-4": "Q",
+        "MISC-2.5": "OQ"
+      },
+      "page": "responding-in-session.socratic-dialogue"
+    },
+    {
+      "id": "ts.minimal-encourager",
+      "label": "Minimal encourager",
+      "alt_labels": [
+        "facilitate",
+        "encourager",
+        "keep-going acknowledgment"
+      ],
+      "definition": "A brief sound, word or gesture that signals listening and invites the client to keep going, without adding content.",
+      "client_wording": "Small sounds or words, like \"mm-hm\", that show the therapist is with me.",
+      "example": "\"Mm-hm.\" \"Go on.\" \"I see.\"",
+      "group": "reflections",
+      "broader": null,
+      "related": [
+        "ts.simple-reflection",
+        "ts.purposeful-silence"
+      ],
+      "see": [],
+      "sources": [
+        "Houck-etal-2010 § Facilitate (FA)",
+        "Ivey-etal-2022 § Ch. 6 Encouraging, Paraphrasing, and Summarizing"
+      ],
+      "codes": {
+        "MISC-2.5": "FA"
+      },
+      "coding_note": "MITI 4 does not count these utterances.",
+      "page": "responding-in-session.reflective-listening"
+    },
+    {
+      "id": "ts.simple-reflection",
+      "label": "Simple reflection",
+      "alt_labels": [
+        "paraphrase",
+        "restatement"
+      ],
+      "definition": "A statement that gives back what the client said with little or no added meaning or emphasis.",
+      "client_wording": "The therapist says back what I said, so I know they heard it.",
+      "example": "Client: \"I'm tired all the time.\" Therapist: \"You're exhausted.\"",
+      "group": "reflections",
+      "broader": null,
+      "related": [
+        "ts.complex-reflection",
+        "ts.validation-level-2"
+      ],
+      "see": ["01-intake.pitfall-interrogation-intake", "responding-in-session.core-response-skills", "responding-in-session.pitfall-interrogation-and-question-stacking", "responding-in-session.reflective-listening", "responding-in-session.responding-to-ambivalence"],
+      "sources": [
+        "Moyers-etal-2016 § Table 1 Simple Reflection (SR)",
+        "Houck-etal-2010 § Simple Reflection (SR)",
+        "Miller-Rollnick-2023 § Ch. 8 Deeper Listening"
+      ],
+      "codes": {
+        "MITI-4": "SR",
+        "MISC-2.5": "SR"
+      },
+      "page": "responding-in-session.reflective-listening"
+    },
+    {
+      "id": "ts.complex-reflection",
+      "label": "Complex reflection",
+      "alt_labels": [
+        "deeper reflection"
+      ],
+      "definition": "A statement that reflects the client's words with added meaning or emphasis, such as an inferred feeling, meaning or the next unspoken step.",
+      "client_wording": "The therapist puts into words what I meant, sometimes a bit more than I said.",
+      "example": "Client: \"I'm tired all the time.\" Therapist: \"And it's starting to feel like this will never lift.\"",
+      "group": "reflections",
+      "broader": null,
+      "related": [
+        "ts.simple-reflection",
+        "ts.validation-level-3"
+      ],
+      "see": ["responding-in-session.core-response-skills", "responding-in-session.phrasing-library", "responding-in-session.reflective-listening"],
+      "sources": [
+        "Moyers-etal-2016 § Table 1 Complex Reflection (CR)",
+        "Houck-etal-2010 § Complex Reflection (CR)",
+        "Miller-Rollnick-2023 § Ch. 8 Deeper Listening"
+      ],
+      "codes": {
+        "MITI-4": "CR",
+        "MISC-2.5": "CR"
+      },
+      "page": "responding-in-session.reflective-listening"
+    },
+    {
+      "id": "ts.double-sided-reflection",
+      "label": "Double-sided reflection",
+      "alt_labels": [],
+      "definition": "A complex reflection capturing both sides of the client's ambivalence, usually joining them with \"and\" rather than \"but\".",
+      "client_wording": "The therapist shows both sides of how I feel: the part that wants change and the part that doesn't.",
+      "example": "\"Part of you wants to stop checking, and part of you worries something bad will happen if you do.\"",
+      "group": "reflections",
+      "broader": "ts.complex-reflection",
+      "related": [
+        "ts.amplified-reflection",
+        "ts.linking-summary"
+      ],
+      "see": ["responding-in-session.phrasing-library", "responding-in-session.reflective-listening", "responding-in-session.responding-to-ambivalence", "substance-use.motivational-interviewing", "substance-use.pitfall-confrontation-and-labels"],
+      "sources": [
+        "Miller-Rollnick-2023 § Ch. 14 Responding to Sustain Talk and Discord",
+        "Moyers-etal-2016 § Table 1 Complex Reflection (CR)"
+      ],
+      "codes": {
+        "MITI-4": "CR",
+        "MISC-2.5": "CR"
+      },
+      "page": "responding-in-session.responding-to-ambivalence"
+    },
+    {
+      "id": "ts.amplified-reflection",
+      "label": "Amplified reflection",
+      "alt_labels": [],
+      "definition": "A complex reflection that slightly overstates the client's sustain talk, without sarcasm, so the client can back away from the extreme position.",
+      "client_wording": "The therapist says my view a bit more strongly than I did, which makes me rethink it.",
+      "example": "Client: \"My drinking isn't a problem.\" Therapist: \"There's nothing about it that concerns you at all.\"",
+      "group": "reflections",
+      "broader": "ts.complex-reflection",
+      "related": [
+        "ts.double-sided-reflection",
+        "ts.arguing"
+      ],
+      "see": ["responding-in-session.reflective-listening"],
+      "sources": [
+        "Miller-Rollnick-2023 § Ch. 14 Responding to Sustain Talk and Discord",
+        "Moyers-etal-2016 § Table 1 Complex Reflection (CR)"
+      ],
+      "codes": {
+        "MITI-4": "CR",
+        "MISC-2.5": "CR"
+      },
+      "coding_note": "Delivered with sarcasm or disbelief, it becomes Confront (code ts.arguing).",
+      "page": "responding-in-session.responding-to-ambivalence"
+    },
+    {
+      "id": "ts.reflection-of-feeling",
+      "label": "Reflection of feeling",
+      "alt_labels": [
+        "feeling reflection"
+      ],
+      "definition": "A reflection that names the client's emotion, stated or implied, often with its context, to show empathic understanding.",
+      "client_wording": "The therapist names the feeling I'm having, sometimes before I've found the word.",
+      "example": "\"You sound really hurt that she didn't call.\"",
+      "group": "reflections",
+      "broader": null,
+      "related": [
+        "ts.simple-reflection",
+        "ts.complex-reflection",
+        "ts.empathic-statement"
+      ],
+      "see": ["03-formulation.sharing-the-formulation", "alliance-and-stance.empathy", "responding-in-session.reflective-listening"],
+      "sources": [
+        "Ivey-etal-2022 § Ch. 7 Observing and Reflecting Feelings: The Heart of Empathic Understanding",
+        "Hill-etal-2024 § Skills for Exploring and Experiencing Feelings"
+      ],
+      "codes": {
+        "MITI-4": "SR or CR",
+        "MISC-2.5": "SR or CR"
+      },
+      "coding_note": "MITI and MISC code it SR when the client already named the feeling and CR when the feeling is inferred.",
+      "page": "responding-in-session.reflective-listening"
+    },
+    {
+      "id": "ts.reflection-of-meaning",
+      "label": "Reflection of meaning",
+      "alt_labels": [],
+      "definition": "A complex reflection naming the values, beliefs or personal significance beneath the client's account, beyond its facts and feelings.",
+      "client_wording": "The therapist helps me see why this matters so much to me.",
+      "example": "\"Being a reliable father sounds central to who you want to be.\"",
+      "group": "reflections",
+      "broader": "ts.complex-reflection",
+      "related": [
+        "ts.reframing",
+        "ts.socratic-empathic-listening"
+      ],
+      "see": ["alliance-and-stance.empathy", "responding-in-session.reflective-listening"],
+      "sources": [
+        "Ivey-etal-2022 § Ch. 11 Reflection of Meaning and Interpretation/Reframing",
+        "Moyers-etal-2016 § Table 1 Complex Reflection (CR)"
+      ],
+      "codes": {
+        "MITI-4": "CR",
+        "MISC-2.5": "CR"
+      },
+      "page": "responding-in-session.reflective-listening"
+    },
+    {
+      "id": "ts.collecting-summary",
+      "label": "Collecting summary",
+      "alt_labels": [],
+      "definition": "A summary that gathers several related client statements, often change talk, and offers them back before inviting the client to continue.",
+      "client_wording": "The therapist gathers up the things I've said so far and hands them back to me.",
+      "example": "\"So far you've said you miss your friends, you're sleeping badly, and work feels pointless. What else?\"",
+      "group": "summaries",
+      "broader": null,
+      "related": [
+        "ts.linking-summary",
+        "ts.transitional-summary",
+        "ts.socratic-summary"
+      ],
+      "see": ["responding-in-session.core-response-skills", "substance-use.motivational-interviewing"],
+      "sources": [
+        "Miller-Rollnick-2013 § Ch. 6 Core Interviewing Skills: OARS",
+        "Ivey-etal-2022 § Ch. 6 Encouraging, Paraphrasing, and Summarizing"
+      ],
+      "codes": {
+        "MITI-4": "CR",
+        "MISC-2.5": "CR"
+      },
+      "coding_note": "MITI 4 and MISC 2.5 code a summary as a reflection, usually complex.",
+      "page": "responding-in-session.reflective-listening"
+    },
+    {
+      "id": "ts.linking-summary",
+      "label": "Linking summary",
+      "alt_labels": [],
+      "definition": "A summary connecting what the client just said with something said earlier or in a past session, to show a pattern or ambivalence.",
+      "client_wording": "The therapist connects what I'm saying now with something I said before.",
+      "example": "\"That sounds like what happened with your sister last month: you stayed quiet, then felt resentful.\"",
+      "group": "summaries",
+      "broader": null,
+      "related": [
+        "ts.collecting-summary",
+        "ts.double-sided-reflection"
+      ],
+      "see": [],
+      "sources": [
+        "Miller-Rollnick-2013 § Ch. 6 Core Interviewing Skills: OARS"
+      ],
+      "codes": {
+        "MITI-4": "CR",
+        "MISC-2.5": "CR"
+      },
+      "page": "responding-in-session.reflective-listening"
+    },
+    {
+      "id": "ts.transitional-summary",
+      "label": "Transitional summary",
+      "alt_labels": [],
+      "definition": "A summary that draws together a topic or session segment and signals a shift to a new task or topic.",
+      "client_wording": "The therapist wraps up one topic before we move on to the next.",
+      "example": "\"Let me sum up what we've covered about sleep before we turn to your action plan.\"",
+      "group": "summaries",
+      "broader": null,
+      "related": [
+        "ts.capsule-summary",
+        "ts.agenda-setting"
+      ],
+      "see": ["responding-in-session.core-response-skills"],
+      "sources": [
+        "Miller-Rollnick-2013 § Ch. 6 Core Interviewing Skills: OARS",
+        "Houck-etal-2010 § Structure (ST)"
+      ],
+      "codes": {
+        "MITI-4": "CR",
+        "MISC-2.5": "CR or ST"
+      },
+      "page": "responding-in-session.reflective-listening"
+    },
+    {
+      "id": "ts.capsule-summary",
+      "label": "Capsule summary",
+      "alt_labels": [
+        "periodic summary",
+        "session summary"
+      ],
+      "definition": "A brief CBT summary made at intervals in a session, condensing the main points or conclusion of an agenda item, ideally in the client's words.",
+      "client_wording": "A quick recap partway through the session, so we're both clear on what we've worked out.",
+      "example": "\"So the main thing we found is that the thought 'I'll fail' made you put off starting, and starting small helped.\"",
+      "group": "summaries",
+      "broader": null,
+      "related": [
+        "ts.transitional-summary",
+        "ts.checking-understanding",
+        "ts.socratic-summary"
+      ],
+      "see": ["05-session-structure.pitfall-unstructured-drift", "05-session-structure.session-structure", "05-session-structure.session-summaries-and-feedback", "adhd.adaptations", "responding-in-session.core-response-skills", "responding-in-session.pacing-silence-and-turn-taking"],
+      "sources": [
+        "Beck-2021 § Ch. 10 Structuring Sessions",
+        "Blackburn-etal-2001 § Item Pacing and efficient use of time"
+      ],
+      "coding_note": "Distinct from MI summaries: it consolidates CBT learning, often written down for the client.",
+      "page": "05-session-structure.session-summaries-and-feedback"
+    },
+    {
+      "id": "ts.affirmation",
+      "label": "Affirmation",
+      "alt_labels": [
+        "affirm"
+      ],
+      "definition": "A genuine statement recognizing the client's strengths, efforts, intentions or worth, focused on the client rather than on the therapist's approval.",
+      "client_wording": "The therapist points out something I did well or a strength I have.",
+      "example": "\"You came today even though getting out of the house was hard. That took real determination.\"",
+      "group": "empathy-and-support",
+      "broader": null,
+      "related": [
+        "ts.empathic-statement",
+        "ts.validation"
+      ],
+      "see": ["03-formulation.strengths-in-formulation", "alliance-and-stance.positive-regard-and-genuineness", "responding-in-session.core-response-skills", "responding-in-session.pitfall-premature-reassurance-and-invalidation", "responding-in-session.responding-to-ambivalence", "substance-use.motivational-interviewing"],
+      "sources": [
+        "Moyers-etal-2016 § Table 1 Affirm (AF)",
+        "Houck-etal-2010 § Affirm (AF)"
+      ],
+      "codes": {
+        "MITI-4": "AF",
+        "MISC-2.5": "AF"
+      },
+      "coding_note": "Generic praise without a specific client strength or effort (\"Great!\") is not an affirmation in MITI 4.",
+      "page": "responding-in-session.core-response-skills"
+    },
+    {
+      "id": "ts.empathic-statement",
+      "label": "Empathic statement",
+      "alt_labels": [
+        "support",
+        "sympathetic statement",
+        "compassionate comment"
+      ],
+      "definition": "A compassionate or understanding comment conveying that the therapist grasps and cares how hard something is for the client.",
+      "client_wording": "The therapist shows they get how hard this is for me.",
+      "example": "\"That sounds really painful to go through.\"",
+      "group": "empathy-and-support",
+      "broader": null,
+      "related": [
+        "ts.reflection-of-feeling",
+        "ts.validation",
+        "ts.affirmation"
+      ],
+      "see": ["02-risk.asking-about-suicide", "05-session-structure.telehealth-adaptations", "alliance-and-stance.empathy", "alliance-and-stance.facilitative-interpersonal-skills", "alliance-and-stance.positive-regard-and-genuineness", "chronic-pain-and-physical-health.pitfall-implying-it-is-psychological", "health-anxiety.reassurance-seeking"],
+      "sources": [
+        "Houck-etal-2010 § Support (SU)",
+        "Elliott-etal-2018 § Definitions",
+        "Ivey-etal-2022 § Ch. 3 Listening, Attending and Empathy"
+      ],
+      "codes": {
+        "MISC-2.5": "SU"
+      },
+      "coding_note": "If the turn restates client content, code a reflection instead. MITI 4 has no separate code.",
+      "page": "alliance-and-stance.empathy"
+    },
+    {
+      "id": "ts.normalizing",
+      "label": "Normalizing",
+      "alt_labels": [
+        "normalization"
+      ],
+      "definition": "Conveying, with accurate information, that an experience or symptom is common and understandable rather than a sign of being abnormal or broken.",
+      "client_wording": "The therapist helps me see that what I'm going through is common, not a sign I'm broken.",
+      "example": "\"Most people get unwanted, upsetting thoughts popping into their heads. Having them doesn't mean you want them.\"",
+      "group": "empathy-and-support",
+      "broader": null,
+      "related": [
+        "ts.validation-level-5",
+        "ts.psychoeducation",
+        "iv.normalizing-rationale"
+      ],
+      "see": ["02-risk.asking-about-suicide", "09-ending.lapse-relapse-and-recurrence", "10-diagnosis.communicating-a-diagnosis", "12-medical-pharmacology.medication-history", "13-context-culture-development.perinatal-mental-health", "adhd.children-and-parents", "bipolar-and-psychosis.at-risk-mental-state", "bipolar-and-psychosis.cbtp", "cognitive.identifying-automatic-thoughts", "cognitive.pitfall-working-on-cold-thoughts", "grief-and-loss.pitfall-treating-normal-grief", "ocd.assessment", "ocd.pitfall-misreading-intrusions-as-risk", "ptsd.early-intervention", "responding-in-session.responding-to-strong-emotion", "responding-in-session.validation"],
+      "sources": [
+        "Kingdon-Turkington-1991 § Whole article (normalizing rationale)",
+        "Linehan-1997 § Level 5 validation"
+      ],
+      "codes": {
+        "MITI-4": "GI",
+        "MISC-2.5": "GI"
+      },
+      "coding_note": "Differs from validation level 5: normalizing informs how common an experience is; level 5 validates a specific reaction as reasonable now.",
+      "page": "responding-in-session.validation"
+    },
+    {
+      "id": "ts.validation",
+      "label": "Validation",
+      "alt_labels": [],
+      "definition": "Communicating that the client's emotions, thoughts or actions are understandable and make sense, given their history, situation or nature.",
+      "client_wording": "The therapist lets me know my reactions make sense.",
+      "example": "\"Given everything that happened, it makes sense you'd be wary of trusting people.\"",
+      "group": "validation",
+      "broader": null,
+      "related": [
+        "ts.empathic-statement",
+        "ts.affirmation",
+        "ts.normalizing"
+      ],
+      "see": ["03-formulation.pitfall-imposed-formulation", "03-formulation.sharing-the-formulation", "13-context-culture-development.identity-and-minority-stress", "13-context-culture-development.pitfall-disputing-realistic-adversity", "15-transdiagnostic-processes.emotion-regulation", "alliance-and-stance.empathy", "alliance-and-stance.rupture-and-repair", "bipolar-and-psychosis.pitfall-arguing-with-delusions", "chronic-pain-and-physical-health.pitfall-implying-it-is-psychological", "cognitive.pitfall-challenging-accurate-thoughts", "health-anxiety.persistent-physical-symptoms", "health-anxiety.pitfall-debating-the-diagnosis", "health-anxiety.reassurance-seeking", "ocd.family-accommodation", "ocd.pitfall-therapist-reassurance", "personality-disorders.chronic-risk-and-crises", "personality-disorders.dbt-informed-skills", "personality-disorders.pitfall-change-before-validation", "responding-in-session.phrasing-library", "responding-in-session.pitfall-premature-reassurance-and-invalidation", "responding-in-session.responding-to-strong-emotion", "responding-in-session.validation"],
+      "sources": [
+        "Linehan-1997 § Levels of validation",
+        "Beck-2021 § Ch. 4 The Therapeutic Relationship"
+      ],
+      "coding_note": "Validating a response does not mean agreeing it is effective or true. Use a level code when the level is clear.",
+      "page": "responding-in-session.validation"
+    },
+    {
+      "id": "ts.validation-level-1",
+      "label": "Validation level 1: attending",
+      "alt_labels": [
+        "listening and observing",
+        "staying awake",
+        "being present"
+      ],
+      "definition": "Listening and observing with full, nonjudgmental attention and interest, so the client sees they are taken seriously.",
+      "client_wording": "The therapist pays full attention to me without judging.",
+      "example": "The therapist sets notes aside, keeps eye contact, and follows up on the detail the client just gave.",
+      "group": "validation",
+      "broader": "ts.validation",
+      "related": [
+        "ts.minimal-encourager",
+        "ts.purposeful-silence"
+      ],
+      "see": ["responding-in-session.validation"],
+      "sources": [
+        "Linehan-1997 § Level 1: Listening and observing"
+      ],
+      "page": "responding-in-session.validation"
+    },
+    {
+      "id": "ts.validation-level-2",
+      "label": "Validation level 2: accurate reflection",
+      "alt_labels": [],
+      "definition": "Accurately reflecting back the client's own stated feelings, thoughts and assumptions, without judgment, to communicate understanding.",
+      "client_wording": "The therapist says back what I feel and think, so I know they understood.",
+      "example": "\"You felt dismissed when your manager talked over you.\"",
+      "group": "validation",
+      "broader": "ts.validation",
+      "related": [
+        "ts.simple-reflection",
+        "ts.reflection-of-feeling"
+      ],
+      "see": ["responding-in-session.validation"],
+      "sources": [
+        "Linehan-1997 § Level 2: Accurate reflection"
+      ],
+      "coding_note": "Overlaps with reflection codes. Use when the reflection serves a validating function.",
+      "page": "responding-in-session.validation"
+    },
+    {
+      "id": "ts.validation-level-3",
+      "label": "Validation level 3: articulating the unverbalized",
+      "alt_labels": [
+        "mind reading (validation)"
+      ],
+      "definition": "Putting into words feelings, thoughts or meanings the client has not stated, inferred from context or behavior, offered tentatively for correction.",
+      "client_wording": "The therapist guesses what I'm feeling but haven't said, and checks if they're right.",
+      "example": "\"I wonder if part of you also felt embarrassed. Is that close?\"",
+      "group": "validation",
+      "broader": "ts.validation",
+      "related": [
+        "ts.complex-reflection"
+      ],
+      "see": ["responding-in-session.validation"],
+      "sources": [
+        "Linehan-1997 § Level 3: Articulating the unverbalized"
+      ],
+      "page": "responding-in-session.validation"
+    },
+    {
+      "id": "ts.validation-level-4",
+      "label": "Validation level 4: past learning or biology",
+      "alt_labels": [
+        "validating in terms of sufficient causes",
+        "historical validation"
+      ],
+      "definition": "Conveying that a response makes sense given the client's history, past learning or biology, even if it is not effective now.",
+      "client_wording": "The therapist explains why I react this way, given what I've been through.",
+      "example": "\"After years of being criticized at home, of course you brace yourself for criticism.\"",
+      "group": "validation",
+      "broader": "ts.validation",
+      "related": [
+        "ts.validation-level-5"
+      ],
+      "see": ["responding-in-session.validation"],
+      "sources": [
+        "Linehan-1997 § Level 4: Validating in terms of past learning or biological dysfunction"
+      ],
+      "page": "responding-in-session.validation"
+    },
+    {
+      "id": "ts.validation-level-5",
+      "label": "Validation level 5: reasonable in the present context",
+      "alt_labels": [
+        "normative validation",
+        "validating as reasonable now"
+      ],
+      "definition": "Conveying that the response is reasonable, normal or effective given the current situation, one most people would share.",
+      "client_wording": "The therapist tells me most people would react the same way in my situation.",
+      "example": "\"Anyone waiting for biopsy results would feel on edge.\"",
+      "group": "validation",
+      "broader": "ts.validation",
+      "related": [
+        "ts.normalizing",
+        "ts.validation-level-4"
+      ],
+      "see": ["10-diagnosis.pitfall-culture-misread-as-pathology", "13-context-culture-development.pitfall-disputing-realistic-adversity", "cognitive.pitfall-challenging-accurate-thoughts", "responding-in-session.pitfall-premature-reassurance-and-invalidation", "responding-in-session.validation"],
+      "sources": [
+        "Linehan-1997 § Level 5: Validating in terms of present context or normative functioning"
+      ],
+      "page": "responding-in-session.validation"
+    },
+    {
+      "id": "ts.validation-level-6",
+      "label": "Validation level 6: radical genuineness",
+      "alt_labels": [],
+      "definition": "Treating the client as a capable equal, not as fragile or merely a patient, and responding genuinely as one person to another.",
+      "client_wording": "The therapist treats me as a capable equal and is real with me.",
+      "example": "The therapist responds to the client's good news with spontaneous, genuine delight rather than a scripted reflection.",
+      "group": "validation",
+      "broader": "ts.validation",
+      "related": [
+        "ts.self-disclosure",
+        "ts.humor"
+      ],
+      "see": ["responding-in-session.validation"],
+      "sources": [
+        "Linehan-1997 § Level 6: Radical genuineness"
+      ],
+      "page": "responding-in-session.validation"
+    },
+    {
+      "id": "ts.psychoeducation",
+      "label": "Psychoeducation",
+      "alt_labels": [
+        "giving information",
+        "information giving"
+      ],
+      "definition": "Providing information about a condition, the CBT model or how a problem works, tailored to the client and checked for understanding.",
+      "client_wording": "The therapist explains how my problem works in a way I can follow.",
+      "example": "\"When you leave the supermarket, the anxiety drops fast, which teaches your brain that escaping is what kept you safe.\"",
+      "group": "information-and-advice",
+      "broader": null,
+      "related": [
+        "ts.elicit-provide-elicit",
+        "ts.giving-rationale",
+        "ts.lecturing",
+        "iv.socialization-to-cbt"
+      ],
+      "see": ["01-intake.socializing-to-cbt", "03-formulation.five-part-model", "09-ending.lapse-relapse-and-recurrence", "10-diagnosis.communicating-a-diagnosis", "10-diagnosis.diagnosis-vs-formulation", "10-diagnosis.dsm-5-tr-overview", "12-medical-pharmacology.discontinuation-and-withdrawal", "adhd.adult-cbt-modules", "adhd.assessment", "adhd.children-and-parents", "adhd.medication-and-cbt", "adhd.pitfall-child-cognitive-therapy-first", "adhd.treatment", "bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.family-work", "bipolar-and-psychosis.treatment", "chronic-pain-and-physical-health.treatment", "eating-disorders.cbt-e-stages", "insomnia.pitfall-judging-progress-by-hours", "ocd.family-accommodation", "panic-and-phobias.treatment", "personality-disorders.assessment", "personality-disorders.pitfall-withholding-the-diagnosis", "ptsd.early-intervention", "ptsd.pitfall-routine-debriefing", "responding-in-session.psychoeducation-without-lecturing", "substance-use.addiction-medications", "substance-use.pitfall-missed-withdrawal-and-overdose-risk"],
+      "sources": [
+        "Moyers-etal-2016 § Table 1 Giving Information (GI)",
+        "Houck-etal-2010 § Giving Information (GI)",
+        "Beck-2021 § Ch. 6 The First Therapy Session"
+      ],
+      "codes": {
+        "MITI-4": "GI",
+        "MISC-2.5": "GI"
+      },
+      "page": "responding-in-session.psychoeducation-without-lecturing"
+    },
+    {
+      "id": "ts.giving-rationale",
+      "label": "Giving a rationale",
+      "alt_labels": [
+        "providing a rationale",
+        "illustrating the task"
+      ],
+      "definition": "Explaining why a proposed task, technique or homework should help, linked to the client's formulation and goals, before asking them to try it.",
+      "client_wording": "The therapist explains why we're doing something and how it connects to my goals.",
+      "example": "\"An activity log shows us how what you do links to your mood, so we can pick changes that help.\"",
+      "group": "information-and-advice",
+      "broader": null,
+      "related": [
+        "ts.psychoeducation",
+        "ts.repair-change-task"
+      ],
+      "see": ["01-intake.first-session-structure", "01-intake.socializing-to-cbt", "05-session-structure.homework-design", "05-session-structure.pitfall-homework-assigned-not-reviewed", "05-session-structure.pitfall-rigid-structure", "13-context-culture-development.culturally-adapted-cbt", "14-ethics-law.informed-consent", "alliance-and-stance.hope-and-expectancy", "alliance-and-stance.rupture-and-repair", "alliance-and-stance.therapeutic-alliance", "health-anxiety.reassurance-seeking", "ocd.erp-protocol", "responding-in-session.psychoeducation-without-lecturing"],
+      "sources": [
+        "Beck-2021 § Ch. 8 Action Plans",
+        "Eubanks-etal-2019 § Table 1 Resolution strategies (illustrating tasks or providing a rationale)"
+      ],
+      "codes": {
+        "MITI-4": "GI",
+        "MISC-2.5": "GI"
+      },
+      "page": "responding-in-session.psychoeducation-without-lecturing"
+    },
+    {
+      "id": "ts.asking-permission",
+      "label": "Asking permission",
+      "alt_labels": [
+        "permission seeking"
+      ],
+      "definition": "Asking the client's consent before offering information, advice, feedback or a sensitive topic, leaving the client free to decline.",
+      "client_wording": "The therapist asks if it's okay before sharing advice or raising something sensitive.",
+      "example": "\"Would it be all right if I shared what other people have found helpful?\"",
+      "group": "information-and-advice",
+      "broader": null,
+      "related": [
+        "ts.elicit-provide-elicit",
+        "ts.advice-with-permission",
+        "ts.emphasizing-autonomy"
+      ],
+      "see": ["03-formulation.pitfall-too-deep-too-soon", "03-formulation.sharing-the-formulation", "12-medical-pharmacology.working-with-prescribers", "14-ethics-law.ai-documentation-and-recording", "14-ethics-law.informed-consent", "chronic-pain-and-physical-health.pitfall-working-apart-from-the-medical-team", "personality-disorders.pitfall-change-before-validation", "responding-in-session.core-response-skills", "responding-in-session.psychoeducation-without-lecturing", "responding-in-session.responding-to-ambivalence", "substance-use.assessment", "substance-use.motivational-interviewing", "substance-use.pitfall-confrontation-and-labels"],
+      "sources": [
+        "Moyers-etal-2016 § Table 1 Seek Collaboration (Seek)",
+        "Houck-etal-2010 § Emphasize Control (EC)",
+        "Miller-Rollnick-2023 § Ch. 11 Offering Information and Advice"
+      ],
+      "codes": {
+        "MITI-4": "Seek",
+        "MISC-2.5": "EC"
+      },
+      "page": "responding-in-session.psychoeducation-without-lecturing"
+    },
+    {
+      "id": "ts.elicit-provide-elicit",
+      "label": "Elicit-provide-elicit",
+      "alt_labels": [
+        "ask-offer-ask",
+        "E-P-E"
+      ],
+      "definition": "An information exchange sequence: ask what the client knows or wants to know, offer information briefly, then ask what they make of it.",
+      "client_wording": "The therapist asks what I know, shares a bit, then asks what I think of it.",
+      "example": "\"What do you already know about how sleep affects mood? ... Studies show ... What do you make of that?\"",
+      "group": "information-and-advice",
+      "broader": null,
+      "related": [
+        "ts.asking-permission",
+        "ts.psychoeducation",
+        "ts.lecturing",
+        "iv.motivational-interviewing"
+      ],
+      "see": ["10-diagnosis.communicating-a-diagnosis", "adhd.medication-and-cbt", "responding-in-session.psychoeducation-without-lecturing"],
+      "sources": [
+        "Miller-Rollnick-2023 § Ch. 11 Offering Information and Advice"
+      ],
+      "codes": {
+        "MITI-4": "Q, GI, Q",
+        "MISC-2.5": "OQ, GI, OQ"
+      },
+      "coding_note": "A sequence code spanning several turns; code each turn separately when counting MITI behaviors.",
+      "page": "responding-in-session.psychoeducation-without-lecturing"
+    },
+    {
+      "id": "ts.advice-with-permission",
+      "label": "Advice with permission",
+      "alt_labels": [
+        "persuade with permission",
+        "suggestion with permission"
+      ],
+      "definition": "Offering a suggestion or recommendation after the client asks or agrees, framed so the client remains free to decide.",
+      "client_wording": "The therapist offers a suggestion once I've said I want one, and I'm free to choose.",
+      "example": "\"Since you asked, one option is a fixed wake-up time. You know your life best, so see if it fits.\"",
+      "group": "information-and-advice",
+      "broader": null,
+      "related": [
+        "ts.asking-permission",
+        "ts.premature-advice",
+        "ts.emphasizing-autonomy"
+      ],
+      "see": ["responding-in-session.phrasing-library", "responding-in-session.pitfall-righting-reflex", "responding-in-session.psychoeducation-without-lecturing"],
+      "sources": [
+        "Moyers-etal-2016 § Table 1 Persuade with Permission (PwP)",
+        "Houck-etal-2010 § Advise with permission (ADP)"
+      ],
+      "codes": {
+        "MITI-4": "PwP",
+        "MISC-2.5": "ADP"
+      },
+      "page": "responding-in-session.psychoeducation-without-lecturing"
+    },
+    {
+      "id": "ts.emphasizing-autonomy",
+      "label": "Emphasizing autonomy",
+      "alt_labels": [
+        "emphasize control",
+        "autonomy support"
+      ],
+      "definition": "A statement highlighting the client's choice, control and right to decide about change, without blame.",
+      "client_wording": "The therapist reminds me that the choices are mine to make.",
+      "example": "\"It's your call whether to try this. You know what you're ready for.\"",
+      "group": "information-and-advice",
+      "broader": null,
+      "related": [
+        "ts.asking-permission",
+        "ts.advice-with-permission"
+      ],
+      "see": ["01-intake.goals-and-expectations", "09-ending.dropout-and-unplanned-endings", "09-ending.pitfall-silent-dropout", "09-ending.referral-and-handover", "10-diagnosis.communicating-a-diagnosis", "10-diagnosis.pitfall-diagnosis-shaped-by-billing", "12-medical-pharmacology.pitfall-advising-on-medication-changes", "14-ethics-law.ai-documentation-and-recording", "14-ethics-law.informed-consent", "adhd.medication-and-cbt", "alliance-and-stance.collaborative-empiricism", "responding-in-session.responding-to-ambivalence"],
+      "sources": [
+        "Moyers-etal-2016 § Table 1 Emphasize Autonomy (EA)",
+        "Houck-etal-2010 § Emphasize Control (EC)"
+      ],
+      "codes": {
+        "MITI-4": "EA",
+        "MISC-2.5": "EC"
+      },
+      "page": "responding-in-session.responding-to-ambivalence"
+    },
+    {
+      "id": "ts.agenda-setting",
+      "label": "Agenda setting",
+      "alt_labels": [
+        "negotiating the agenda"
+      ],
+      "definition": "Collaboratively deciding near the start of a session which topics or problems to cover, in what order, and for roughly how long.",
+      "client_wording": "At the start, we agree together on what to talk about today.",
+      "example": "\"What would you like on today's agenda? I'd also like to review the action plan. Which should we start with?\"",
+      "group": "structure-and-collaboration",
+      "broader": null,
+      "related": [
+        "ts.eliciting-feedback",
+        "ts.transitional-summary",
+        "ms.cts-r"
+      ],
+      "see": ["01-intake.socializing-to-cbt", "05-session-structure.agenda-setting", "05-session-structure.mood-check-and-bridge", "05-session-structure.pitfall-rigid-structure", "05-session-structure.pitfall-unstructured-drift", "05-session-structure.session-structure", "05-session-structure.therapist-competence", "13-context-culture-development.autism-adaptations", "adhd.adaptations", "adhd.treatment", "alliance-and-stance.what-harms-the-relationship", "depression.treatment", "ptsd.pitfall-therapist-avoidance-of-trauma-work", "responding-in-session.pacing-silence-and-turn-taking"],
+      "sources": [
+        "Beck-2021 § Ch. 10 Structuring Sessions",
+        "Blackburn-etal-2001 § Item Agenda setting and adherence",
+        "Moyers-etal-2016 § Table 1 Seek Collaboration (Seek)"
+      ],
+      "codes": {
+        "MITI-4": "Seek",
+        "MISC-2.5": "ST"
+      },
+      "page": "05-session-structure.agenda-setting"
+    },
+    {
+      "id": "ts.eliciting-feedback",
+      "label": "Eliciting feedback",
+      "alt_labels": [
+        "asking for feedback"
+      ],
+      "definition": "Asking the client for reactions to the session, the therapist or a task, including what was unhelpful, and acting on the answer.",
+      "client_wording": "The therapist asks what I thought of the session, including what didn't work for me.",
+      "example": "\"Was there anything I said today that bothered you, or anything we should do differently next time?\"",
+      "group": "structure-and-collaboration",
+      "broader": null,
+      "related": [
+        "ts.checking-understanding",
+        "ts.repair-explore-rupture",
+        "ms.srs"
+      ],
+      "see": ["01-intake.first-session-structure", "01-intake.pitfall-interrogation-intake", "01-intake.socializing-to-cbt", "03-formulation.pitfall-imposed-formulation", "03-formulation.pitfall-static-formulation", "03-formulation.sharing-the-formulation", "04-treatment-planning.managing-non-response", "05-session-structure.homework-design", "05-session-structure.session-structure", "05-session-structure.session-summaries-and-feedback", "08-measurement.measurement-based-care", "08-measurement.pitfall-measuring-without-acting", "08-measurement.process-measures", "09-ending.dropout-and-unplanned-endings", "13-context-culture-development.cultural-humility", "alliance-and-stance.collaborative-empiricism", "alliance-and-stance.outcome-and-alliance-feedback", "alliance-and-stance.pitfall-assuming-the-alliance-is-fine", "alliance-and-stance.pitfall-collecting-feedback-without-using-it", "alliance-and-stance.therapeutic-alliance", "personality-disorders.pitfall-withholding-the-diagnosis"],
+      "sources": [
+        "Beck-2021 § Ch. 10 Structuring Sessions",
+        "Blackburn-etal-2001 § Item Feedback"
+      ],
+      "codes": {
+        "MITI-4": "Q or Seek",
+        "MISC-2.5": "OQ"
+      },
+      "page": "05-session-structure.session-summaries-and-feedback"
+    },
+    {
+      "id": "ts.checking-understanding",
+      "label": "Checking understanding",
+      "alt_labels": [
+        "check-out",
+        "teach-back",
+        "perception check"
+      ],
+      "definition": "Confirming shared understanding: asking the client to restate a key point or plan, or asking whether the therapist's understanding is accurate.",
+      "client_wording": "The therapist checks we understand each other, like asking me to put the plan in my own words.",
+      "example": "\"Just so I know I explained it clearly, how would you describe the plan for this week?\"",
+      "group": "structure-and-collaboration",
+      "broader": null,
+      "related": [
+        "ts.capsule-summary",
+        "ts.eliciting-feedback"
+      ],
+      "see": ["01-intake.presenting-problem", "01-intake.socializing-to-cbt", "03-formulation.five-part-model", "03-formulation.pitfall-imposed-formulation", "03-formulation.sharing-the-formulation", "05-session-structure.session-summaries-and-feedback", "13-context-culture-development.autism-adaptations", "13-context-culture-development.intellectual-disability-and-low-literacy", "13-context-culture-development.working-with-interpreters", "14-ethics-law.informed-consent", "alliance-and-stance.empathy", "responding-in-session.language-and-tone", "responding-in-session.psychoeducation-without-lecturing", "responding-in-session.reflective-listening"],
+      "sources": [
+        "Beck-2021 § Ch. 10 Structuring Sessions",
+        "Ivey-etal-2022 § Ch. 6 Encouraging, Paraphrasing, and Summarizing"
+      ],
+      "codes": {
+        "MITI-4": "Q",
+        "MISC-2.5": "OQ or CQ"
+      },
+      "page": "05-session-structure.session-summaries-and-feedback"
+    },
+    {
+      "id": "ts.collaborative-goal-setting",
+      "label": "Collaborative goal setting",
+      "alt_labels": [
+        "goal consensus"
+      ],
+      "definition": "Working with the client to turn problems into specific, client-owned, measurable goals and agreeing on the tasks to reach them.",
+      "client_wording": "We agree together on clear goals for therapy that matter to me.",
+      "example": "\"If therapy went well, what would you be doing in three months that you aren't doing now?\"",
+      "group": "structure-and-collaboration",
+      "broader": null,
+      "related": [
+        "ts.agenda-setting",
+        "ts.guided-discovery",
+        "iv.action-plan",
+        "ms.goal-based-outcomes"
+      ],
+      "see": ["01-intake.first-session-structure", "01-intake.goals-and-expectations", "03-formulation.formulation-to-treatment", "03-formulation.strengths-in-formulation", "04-treatment-planning.pitfall-vague-or-imposed-goals", "04-treatment-planning.problem-list-and-goals", "04-treatment-planning.treatment-plan-document", "08-measurement.idiographic-measures", "08-measurement.measurement-based-care", "10-diagnosis.comorbidity", "13-context-culture-development.children-and-adolescents", "13-context-culture-development.culturally-adapted-cbt", "14-ethics-law.administrative-and-billing-records", "alliance-and-stance.collaborative-empiricism", "alliance-and-stance.therapeutic-alliance", "chronic-pain-and-physical-health.pitfall-pain-relief-as-the-goal", "grief-and-loss.treatment", "substance-use.assessment", "substance-use.motivational-interviewing"],
+      "sources": [
+        "Beck-2021 § Ch. 9 Treatment Planning",
+        "Tryon-etal-2018 § Definitions and measures",
+        "Blackburn-etal-2001 § Item Collaboration"
+      ],
+      "codes": {
+        "MITI-4": "Seek"
+      },
+      "page": "04-treatment-planning.problem-list-and-goals"
+    },
+    {
+      "id": "ts.reframing",
+      "label": "Reframing",
+      "alt_labels": [
+        "reframe",
+        "positive reframe"
+      ],
+      "definition": "Offering a different, plausible meaning for something the client described, which changes its emotional valence, for example from weakness to care.",
+      "client_wording": "The therapist offers a new way of looking at something that changes how it feels.",
+      "example": "\"You call it nagging. It also sounds like how much you care about his health.\"",
+      "group": "reframing",
+      "broader": null,
+      "related": [
+        "ts.reflection-of-meaning",
+        "ts.complex-reflection",
+        "iv.cognitive-restructuring"
+      ],
+      "see": ["09-ending.referral-and-handover", "chronic-pain-and-physical-health.pitfall-implying-it-is-psychological"],
+      "sources": [
+        "Houck-etal-2010 § Reframe (RF)",
+        "Ivey-etal-2022 § Ch. 11 Reflection of Meaning and Interpretation/Reframing"
+      ],
+      "codes": {
+        "MITI-4": "CR",
+        "MISC-2.5": "RF"
+      },
+      "coding_note": "Unlike Socratic questioning, the therapist supplies the new meaning. Offer it tentatively.",
+      "page": "responding-in-session.core-response-skills"
+    },
+    {
+      "id": "ts.repair-acknowledge-rupture",
+      "label": "Acknowledging the rupture",
+      "alt_labels": [
+        "naming the rupture"
+      ],
+      "definition": "Noticing and openly naming a strain in the relationship, such as withdrawal, appeasing or a complaint, instead of ignoring it.",
+      "client_wording": "The therapist notices when something feels off between us and says so.",
+      "example": "\"I notice you've gone quiet since I suggested the exposure task.\"",
+      "group": "rupture-repair",
+      "broader": null,
+      "related": [
+        "ts.repair-explore-rupture",
+        "ts.repair-metacommunication"
+      ],
+      "see": ["05-session-structure.homework-review-and-adherence", "05-session-structure.pitfall-rigid-structure", "09-ending.dropout-and-unplanned-endings", "13-context-culture-development.cultural-humility", "13-context-culture-development.pitfall-assuming-from-group-identity", "alliance-and-stance.pitfall-assuming-the-alliance-is-fine", "alliance-and-stance.pitfall-pushing-technique-through-a-rupture", "alliance-and-stance.rupture-and-repair", "health-anxiety.pitfall-debating-the-diagnosis", "responding-in-session.pitfall-premature-reassurance-and-invalidation"],
+      "sources": [
+        "Eubanks-etal-2019 § Table 1 Withdrawal and confrontation markers",
+        "Eubanks-etal-2018 § Definitions of rupture and repair"
+      ],
+      "page": "alliance-and-stance.rupture-and-repair"
+    },
+    {
+      "id": "ts.repair-take-responsibility",
+      "label": "Taking responsibility for the rupture",
+      "alt_labels": [
+        "acknowledging own contribution"
+      ],
+      "definition": "Acknowledging, without defensiveness, the therapist's own part in a rupture, such as a misunderstanding or pushing too fast.",
+      "client_wording": "The therapist owns their part when something they did upset me.",
+      "example": "\"I think I pushed too quickly there, and that's on me.\"",
+      "group": "rupture-repair",
+      "broader": null,
+      "related": [
+        "ts.repair-acknowledge-rupture",
+        "ts.repair-metacommunication"
+      ],
+      "see": ["05-session-structure.pitfall-rigid-structure", "05-session-structure.session-summaries-and-feedback", "13-context-culture-development.cultural-humility", "13-context-culture-development.pitfall-assuming-from-group-identity", "13-context-culture-development.pitfall-disputing-realistic-adversity", "alliance-and-stance.pitfall-pushing-technique-through-a-rupture", "alliance-and-stance.rupture-and-repair", "cognitive.pitfall-challenging-accurate-thoughts", "cognitive.pitfall-debating-the-client", "health-anxiety.pitfall-debating-the-diagnosis", "responding-in-session.phrasing-library", "responding-in-session.responding-to-ambivalence", "substance-use.pitfall-confrontation-and-labels"],
+      "sources": [
+        "Eubanks-etal-2019 § Table 1 Resolution strategies (therapist acknowledges contribution to rupture)",
+        "Eubanks-etal-2018 § Clinical examples"
+      ],
+      "page": "alliance-and-stance.rupture-and-repair"
+    },
+    {
+      "id": "ts.repair-metacommunication",
+      "label": "Metacommunication",
+      "alt_labels": [
+        "immediacy",
+        "talking about the relationship"
+      ],
+      "definition": "Talking about what is happening between client and therapist in the moment, including disclosing the therapist's own experience of the interaction.",
+      "client_wording": "The therapist talks openly about what's going on between us right now.",
+      "example": "\"I'm feeling a bit stuck, as if we're both trying hard but missing each other. Does it feel that way to you?\"",
+      "group": "rupture-repair",
+      "broader": null,
+      "related": [
+        "ts.repair-explore-rupture",
+        "ts.self-disclosure"
+      ],
+      "see": ["05-session-structure.pitfall-rigid-structure", "alliance-and-stance.positive-regard-and-genuineness", "alliance-and-stance.rupture-and-repair", "alliance-and-stance.self-disclosure-and-boundaries", "bipolar-and-psychosis.pitfall-arguing-with-delusions"],
+      "sources": [
+        "Eubanks-etal-2018 § Clinical examples",
+        "Eubanks-etal-2019 § Table 1 Resolution strategies (disclosing internal experience)",
+        "Hill-etal-2018 § Definitions"
+      ],
+      "page": "alliance-and-stance.rupture-and-repair"
+    },
+    {
+      "id": "ts.repair-explore-rupture",
+      "label": "Exploring the rupture",
+      "alt_labels": [
+        "inviting discussion of the rupture"
+      ],
+      "definition": "Inviting the client to express negative thoughts and feelings about the therapist or therapy, and staying with them nondefensively.",
+      "client_wording": "The therapist invites me to say what I'm unhappy about in therapy, and really listens.",
+      "example": "\"What was it like when I suggested that? I'd really like to hear, even if it's critical.\"",
+      "group": "rupture-repair",
+      "broader": null,
+      "related": [
+        "ts.repair-acknowledge-rupture",
+        "ts.eliciting-feedback"
+      ],
+      "see": ["13-context-culture-development.cultural-humility", "alliance-and-stance.facilitative-interpersonal-skills", "alliance-and-stance.rupture-and-repair"],
+      "sources": [
+        "Eubanks-etal-2019 § Table 1 Resolution strategies (inviting thoughts or feelings about the therapist or therapy)",
+        "Eubanks-etal-2018 § Clinical examples"
+      ],
+      "page": "alliance-and-stance.rupture-and-repair"
+    },
+    {
+      "id": "ts.repair-change-task",
+      "label": "Changing the task or goal",
+      "alt_labels": [
+        "shifting the task"
+      ],
+      "definition": "Responding to a rupture by changing, pausing or adjusting the current task or goal so that it better fits the client.",
+      "client_wording": "The therapist changes what we're doing when the current approach isn't working for me.",
+      "example": "\"Let's set the thought record aside today and talk about what's been weighing on you.\"",
+      "group": "rupture-repair",
+      "broader": null,
+      "related": [
+        "ts.giving-rationale",
+        "ts.agenda-setting"
+      ],
+      "see": ["05-session-structure.pitfall-rigid-structure", "alliance-and-stance.pitfall-pushing-technique-through-a-rupture", "alliance-and-stance.rupture-and-repair"],
+      "sources": [
+        "Eubanks-etal-2019 § Table 1 Resolution strategies (changing tasks or goals)",
+        "Eubanks-etal-2018 § Clinical examples"
+      ],
+      "page": "alliance-and-stance.rupture-and-repair"
+    },
+    {
+      "id": "ts.purposeful-silence",
+      "label": "Purposeful silence",
+      "alt_labels": [
+        "therapeutic silence",
+        "pause"
+      ],
+      "definition": "Deliberately pausing without speaking to give the client time to think, feel or continue, while remaining visibly attentive.",
+      "client_wording": "The therapist gives me quiet time to think or feel before saying more.",
+      "example": "After the client says \"I've never told anyone that,\" the therapist stays quietly attentive for several seconds.",
+      "group": "pacing-and-relational",
+      "broader": null,
+      "related": [
+        "ts.minimal-encourager",
+        "ts.validation-level-1"
+      ],
+      "see": ["alliance-and-stance.what-harms-the-relationship", "responding-in-session.pacing-silence-and-turn-taking", "responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "Ladany-etal-2004 § Results",
+        "Hill-etal-2024 § Skills for Offering Support"
+      ],
+      "page": "responding-in-session.pacing-silence-and-turn-taking"
+    },
+    {
+      "id": "ts.self-disclosure",
+      "label": "Self-disclosure",
+      "alt_labels": [
+        "therapist self-disclosure"
+      ],
+      "definition": "Revealing something personal, such as a similar experience or feeling, briefly and for the client's benefit, then returning the focus to the client.",
+      "client_wording": "The therapist briefly shares something about themselves that helps me, then turns back to me.",
+      "example": "\"I've had to work on putting things off too. Starting with five minutes helped me. Could that fit for you?\"",
+      "group": "pacing-and-relational",
+      "broader": null,
+      "related": [
+        "ts.repair-metacommunication",
+        "ts.validation-level-6"
+      ],
+      "see": ["alliance-and-stance.self-disclosure-and-boundaries", "depression.persistent-depression"],
+      "sources": [
+        "Hill-etal-2018 § Definitions",
+        "Ivey-etal-2022 § Ch. 12 Action Skills for Building Resilience and Managing Stress",
+        "Beck-2021 § Ch. 4 The Therapeutic Relationship"
+      ],
+      "codes": {
+        "MISC-2.5": "GI"
+      },
+      "coding_note": "Disclosure about the here-and-now relationship is coded ts.repair-metacommunication.",
+      "page": "alliance-and-stance.self-disclosure-and-boundaries"
+    },
+    {
+      "id": "ts.humor",
+      "label": "Humor",
+      "alt_labels": [
+        "therapeutic humor"
+      ],
+      "definition": "Light, well-timed humor attuned to the client and the alliance, used to ease tension or offer perspective, never at the client's expense.",
+      "client_wording": "The therapist and I can share a light moment without it making fun of me.",
+      "example": "\"So your anxiety has been working overtime as your unpaid personal assistant.\"",
+      "group": "pacing-and-relational",
+      "broader": null,
+      "related": [
+        "ts.validation-level-6"
+      ],
+      "see": [],
+      "sources": [
+        "Franzini-2001 § Whole article (uses and risks of humor)"
+      ],
+      "page": "responding-in-session.language-and-tone"
+    },
+    {
+      "id": "ts.righting-reflex",
+      "label": "Righting reflex",
+      "alt_labels": [
+        "fixing reflex"
+      ],
+      "definition": "The urge to fix the client's problem by persuading, advising or arguing for change, which tends to provoke the client's counterarguments.",
+      "client_wording": "The therapist jumps in to fix things or tell me what to do before understanding me.",
+      "example": "Avoid: \"You really need to stop drinking. Have you tried just not buying it?\"",
+      "group": "avoid",
+      "broader": null,
+      "related": [
+        "ts.premature-advice",
+        "ts.arguing",
+        "ts.lecturing"
+      ],
+      "see": ["12-medical-pharmacology.pitfall-advising-on-medication-changes", "alliance-and-stance.pitfall-pushing-technique-through-a-rupture", "alliance-and-stance.what-harms-the-relationship", "bipolar-and-psychosis.pitfall-arguing-with-delusions", "cognitive.pitfall-debating-the-client", "health-anxiety.pitfall-debating-the-diagnosis", "personality-disorders.pitfall-change-before-validation", "responding-in-session.pitfall-righting-reflex", "responding-in-session.responding-to-ambivalence", "substance-use.motivational-interviewing", "substance-use.pitfall-confrontation-and-labels"],
+      "sources": [
+        "Miller-Rollnick-2023 § Ch. 1 The Mind and Heart When Helping",
+        "Moyers-etal-2016 § Table 1 Persuade (Per)"
+      ],
+      "codes": {
+        "MITI-4": "Per",
+        "MISC-2.5": "ADW"
+      },
+      "page": "responding-in-session.responding-to-ambivalence"
+    },
+    {
+      "id": "ts.lecturing",
+      "label": "Lecturing",
+      "alt_labels": [
+        "monologue",
+        "information dumping"
+      ],
+      "definition": "Extended one-way explanation or information giving without checking the client's knowledge, interest or reaction.",
+      "client_wording": "The therapist talks at me for a long time instead of with me.",
+      "example": "Avoid: several minutes on sleep hygiene rules with no question to the client.",
+      "group": "avoid",
+      "broader": null,
+      "related": [
+        "ts.psychoeducation",
+        "ts.elicit-provide-elicit",
+        "ts.righting-reflex"
+      ],
+      "see": ["03-formulation.pitfall-imposed-formulation", "03-formulation.sharing-the-formulation", "adhd.pitfall-skills-without-implementation", "alliance-and-stance.what-harms-the-relationship", "responding-in-session.pacing-silence-and-turn-taking", "responding-in-session.pitfall-righting-reflex", "responding-in-session.psychoeducation-without-lecturing"],
+      "sources": [
+        "Miller-Rollnick-2023 § Ch. 11 Offering Information and Advice",
+        "Moyers-etal-2016 § Table 1 Persuade (Per)"
+      ],
+      "codes": {
+        "MITI-4": "GI or Per",
+        "MISC-2.5": "GI"
+      },
+      "page": "responding-in-session.psychoeducation-without-lecturing"
+    },
+    {
+      "id": "ts.premature-reassurance",
+      "label": "Premature reassurance",
+      "alt_labels": [
+        "false reassurance",
+        "giving in to reassurance seeking"
+      ],
+      "definition": "Reassuring before understanding the client's concern, or in reply to anxious reassurance seeking, which dismisses feelings and can maintain anxiety.",
+      "client_wording": "The therapist says everything will be fine before really hearing my worry.",
+      "example": "Avoid: \"Don't worry, I'm sure it's nothing serious.\"",
+      "group": "avoid",
+      "broader": null,
+      "related": [
+        "ts.validation",
+        "ts.empathic-statement",
+        "bh.reassurance-seeking",
+        "mp.reassurance-cycle"
+      ],
+      "see": ["10-diagnosis.communicating-a-diagnosis", "14-ethics-law.pitfall-unqualified-confidentiality-promise", "15-transdiagnostic-processes.pitfall-disputing-repetitive-thought-content", "alliance-and-stance.hope-and-expectancy", "cognitive.pitfall-restructuring-as-reassurance", "gad.pitfall-chasing-worry-content", "gad.treatment", "health-anxiety.assessment", "health-anxiety.pitfall-reassurance-loop", "health-anxiety.reassurance-seeking", "ocd.pitfall-therapist-reassurance", "panic-and-phobias.pitfall-reassurance-instead-of-testing", "ptsd.cognitive-processing-therapy", "ptsd.pitfall-therapist-avoidance-of-trauma-work", "responding-in-session.phrasing-library", "responding-in-session.pitfall-premature-reassurance-and-invalidation"],
+      "sources": [
+        "Salkovskis-Warwick-1986 § Whole article (reassurance in hypochondriasis)"
+      ],
+      "page": "responding-in-session.responding-to-strong-emotion"
+    },
+    {
+      "id": "ts.arguing",
+      "label": "Arguing",
+      "alt_labels": [
+        "confront",
+        "confrontation",
+        "disputing"
+      ],
+      "definition": "Directly disagreeing, correcting, criticizing or debating with the client in a way that sets the therapist against the client's view.",
+      "client_wording": "The therapist argues with me or tells me I'm wrong.",
+      "example": "Avoid: \"No, that's just not true, and you know it.\"",
+      "group": "avoid",
+      "broader": null,
+      "related": [
+        "ts.righting-reflex",
+        "ts.labeling-client",
+        "ts.socratic-questioning"
+      ],
+      "see": ["adhd.pitfall-disputing-optimistic-thoughts", "alliance-and-stance.collaborative-empiricism", "alliance-and-stance.pitfall-pushing-technique-through-a-rupture", "alliance-and-stance.what-harms-the-relationship", "bipolar-and-psychosis.pitfall-arguing-with-delusions", "cognitive.pitfall-debating-the-client", "health-anxiety.pitfall-debating-the-diagnosis", "ocd.pitfall-therapist-reassurance", "responding-in-session.pitfall-righting-reflex", "responding-in-session.responding-to-ambivalence", "substance-use.motivational-interviewing", "substance-use.pitfall-confrontation-and-labels"],
+      "sources": [
+        "Moyers-etal-2016 § Table 1 Confront",
+        "Houck-etal-2010 § Confront (CO)"
+      ],
+      "codes": {
+        "MITI-4": "Confront",
+        "MISC-2.5": "CO"
+      },
+      "coding_note": "Socratic questioning tests beliefs with the client; arguing contests them against the client.",
+      "page": "alliance-and-stance.what-harms-the-relationship"
+    },
+    {
+      "id": "ts.interrupting",
+      "label": "Interrupting",
+      "alt_labels": [
+        "cutting off",
+        "topic jumping"
+      ],
+      "definition": "Cutting into the client's speech or changing topic before they finish, outside brief purposeful redirection, signaling that the therapist's agenda matters more.",
+      "client_wording": "The therapist cuts me off before I've finished.",
+      "example": "Avoid: \"Right, right, but let's get back to the homework\" while the client is mid-sentence about a loss.",
+      "group": "avoid",
+      "broader": null,
+      "related": [
+        "ts.purposeful-silence",
+        "ts.agenda-setting"
+      ],
+      "see": ["05-session-structure.pitfall-rigid-structure", "responding-in-session.pacing-silence-and-turn-taking"],
+      "sources": [
+        "Ivey-etal-2022 § Ch. 3 Listening, Attending and Empathy",
+        "Blackburn-etal-2001 § Item Pacing and efficient use of time"
+      ],
+      "page": "responding-in-session.pacing-silence-and-turn-taking"
+    },
+    {
+      "id": "ts.labeling-client",
+      "label": "Labeling the client",
+      "alt_labels": [
+        "pejorative labeling"
+      ],
+      "definition": "Applying a fixed, judgmental label or diagnosis to the client as a person, such as \"resistant\" or \"in denial\", instead of describing behavior.",
+      "client_wording": "The therapist puts a label on me instead of seeing me as a person.",
+      "example": "Avoid: \"The problem is that you're in denial.\"",
+      "group": "avoid",
+      "broader": null,
+      "related": [
+        "ts.arguing"
+      ],
+      "see": ["01-intake.pitfall-general-not-specific", "03-formulation.pitfall-imposed-formulation", "03-formulation.pitfall-too-deep-too-soon", "03-formulation.sharing-the-formulation", "09-ending.discharge-summary", "10-diagnosis.communicating-a-diagnosis", "10-diagnosis.diagnosis-vs-formulation", "10-diagnosis.pitfall-culture-misread-as-pathology", "alliance-and-stance.pitfall-pushing-technique-through-a-rupture", "alliance-and-stance.what-harms-the-relationship", "personality-disorders.pitfall-withholding-the-diagnosis", "responding-in-session.language-and-tone", "substance-use.adaptations", "substance-use.assessment", "substance-use.motivational-interviewing", "substance-use.pitfall-confrontation-and-labels"],
+      "sources": [
+        "Houck-etal-2010 § Acceptance global rating (low acceptance)",
+        "Houck-etal-2010 § Confront (CO)"
+      ],
+      "codes": {
+        "MITI-4": "Confront",
+        "MISC-2.5": "CO"
+      },
+      "page": "alliance-and-stance.what-harms-the-relationship"
+    },
+    {
+      "id": "ts.premature-advice",
+      "label": "Premature advice",
+      "alt_labels": [
+        "advice without permission",
+        "unsolicited advice"
+      ],
+      "definition": "Telling the client what to do before understanding the problem or getting permission, often solving the wrong problem.",
+      "client_wording": "The therapist tells me what to do before understanding my situation or asking if I want advice.",
+      "example": "Avoid: \"You should just talk to your boss about it,\" a minute after hearing the problem.",
+      "group": "avoid",
+      "broader": null,
+      "related": [
+        "ts.advice-with-permission",
+        "ts.righting-reflex"
+      ],
+      "see": ["12-medical-pharmacology.pitfall-advising-on-medication-changes", "chronic-pain-and-physical-health.pitfall-working-apart-from-the-medical-team", "responding-in-session.pitfall-righting-reflex", "substance-use.pitfall-confrontation-and-labels"],
+      "sources": [
+        "Houck-etal-2010 § Advise without permission (ADW)",
+        "Moyers-etal-2016 § Table 1 Persuade (Per)"
+      ],
+      "codes": {
+        "MITI-4": "Per",
+        "MISC-2.5": "ADW"
+      },
+      "page": "alliance-and-stance.what-harms-the-relationship"
+    },
+    {
+      "id": "ts.tentative-hypothesis",
+      "label": "Tentative hypothesis",
+      "alt_labels": [
+        "tentative interpretation",
+        "offering a hunch",
+        "hypothesis offered for correction"
+      ],
+      "definition": "Offering an inference about a thought, belief or pattern as a possibility the client can confirm or correct, never stated as fact.",
+      "client_wording": "The therapist shares a guess about what might be going on and asks if it fits.",
+      "example": "\"I might be off here, so tell me if this doesn't fit. I wonder if 'useless' is the word that keeps coming back.\"",
+      "group": "reframing",
+      "broader": null,
+      "related": [
+        "ts.reframing",
+        "ts.complex-reflection",
+        "ts.checking-understanding",
+        "ts.labeling-client"
+      ],
+      "see": ["10-diagnosis.communicating-a-diagnosis", "responding-in-session.language-and-tone", "responding-in-session.phrasing-library"],
+      "sources": [
+        "Young-Beck-1980 § Item 8 Clairvoyance and underlying assumptions",
+        "Elliott-etal-2018 § Therapeutic Practices"
+      ],
+      "codes": {
+        "MITI-4": "CR or Q",
+        "MISC-2.5": "CR or OQ"
+      },
+      "coding_note": "Code a complex reflection when stated, a question when asked. Stating the hypothesis as fact is clairvoyance (avoid).",
+      "page": "responding-in-session.language-and-tone"
+    },
+    {
+      "id": "ts.instilling-hope",
+      "label": "Instilling hope",
+      "alt_labels": [
+        "building expectancy",
+        "fostering hope and optimism",
+        "remoralization"
+      ],
+      "definition": "Building realistic expectation of benefit through a credible, personalized rationale, honest answers about likely progress, and visible evidence of change, without promising outcomes.",
+      "client_wording": "The therapist helps me see realistic reasons to expect things can improve, without empty promises.",
+      "example": "\"I can't promise, but this approach helps many people with this problem, and we'll check every few weeks whether it's helping you.\"",
+      "group": "empathy-and-support",
+      "broader": null,
+      "related": [
+        "ts.giving-rationale",
+        "ts.highlighting-progress",
+        "ts.premature-reassurance",
+        "ts.direct-suicide-question",
+        "em.hopeful",
+        "tt.hopelessness"
+      ],
+      "see": ["01-intake.first-session-structure", "01-intake.goals-and-expectations", "10-diagnosis.communicating-a-diagnosis", "alliance-and-stance.hope-and-expectancy", "personality-disorders.pitfall-withholding-the-diagnosis"],
+      "sources": [
+        "Wampold-2015 § The contextual model; Expectations",
+        "Constantino-etal-2018a § Abstract",
+        "NICE-CG136 § Recommendation 1.1.1"
+      ],
+      "coding_note": "Differs from premature reassurance: hope rests on a rationale the client accepts and on evidence. Assess hopelessness for risk first.",
+      "page": "alliance-and-stance.hope-and-expectancy"
+    },
+    {
+      "id": "ts.highlighting-progress",
+      "label": "Highlighting progress",
+      "alt_labels": [
+        "pointing out gains",
+        "noticing change",
+        "crediting change"
+      ],
+      "definition": "Drawing the client's attention to specific, measured improvement and crediting their own actions for it, so early gains build hope and engagement.",
+      "client_wording": "The therapist points out what has improved, with numbers, and what I did to make it happen.",
+      "example": "\"Two weeks ago you rated the dread at 80. Today it's 55. What did you do differently?\"",
+      "group": "empathy-and-support",
+      "broader": null,
+      "related": [
+        "ts.instilling-hope",
+        "ts.affirmation",
+        "iv.routine-outcome-monitoring"
+      ],
+      "see": ["05-session-structure.homework-review-and-adherence", "05-session-structure.mood-check-and-bridge", "09-ending.planning-the-ending", "12-medical-pharmacology.medication-and-cbt-interactions", "alliance-and-stance.hope-and-expectancy"],
+      "sources": [
+        "Fluckiger-etal-2020 § Abstract",
+        "Tang-DeRubeis-1999 § Abstract"
+      ],
+      "codes": {
+        "MITI-4": "AF or GI",
+        "MISC-2.5": "AF or GI"
+      },
+      "coding_note": "Crediting the client's effort codes as affirmation; reporting scores alone codes as giving information.",
+      "page": "alliance-and-stance.hope-and-expectancy"
+    },
+    {
+      "id": "ts.nonverbal-attunement",
+      "label": "Nonverbal attunement",
+      "alt_labels": [
+        "attending behavior",
+        "congruent body language",
+        "tone of voice"
+      ],
+      "definition": "Using posture, facial expression, eye contact, pace and tone of voice that fit the client's state and match the therapist's words.",
+      "client_wording": "The therapist's face, voice and pace show they are with me and match what they say.",
+      "example": "With a tearful client, the therapist slows down, softens their voice and keeps a calm, open posture.",
+      "group": "pacing-and-relational",
+      "broader": null,
+      "related": [
+        "ts.validation-level-1",
+        "ts.purposeful-silence",
+        "ts.empathic-statement",
+        "ts.de-escalation"
+      ],
+      "see": ["responding-in-session.language-and-tone"],
+      "sources": [
+        "Young-Beck-1980 § Item 4 Interpersonal Effectiveness",
+        "Richmond-etal-2012 § Domain II Do Not Be Provocative",
+        "Moyers-etal-2015 § E.4.g.2 Confront",
+        "Elliott-etal-2018 § Definitions and Measures"
+      ],
+      "coding_note": "Not a verbal code; note it from observation. A reflection said with a disapproving tone codes as confronting.",
+      "page": "responding-in-session.language-and-tone"
+    },
+    {
+      "id": "ts.using-client-words",
+      "label": "Using the client's words",
+      "alt_labels": [
+        "client language",
+        "keeping the client's metaphors",
+        "idiosyncratic language"
+      ],
+      "definition": "Repeating the client's own key words, images and metaphors in reflections and summaries instead of translating them into technical terms.",
+      "client_wording": "The therapist uses my words and images, not jargon.",
+      "example": "\"You called it 'the fog'. When the fog comes down, what happens next?\"",
+      "group": "reflections",
+      "broader": null,
+      "related": [
+        "ts.simple-reflection",
+        "ts.plain-language",
+        "ts.socratic-empathic-listening"
+      ],
+      "see": ["09-ending.relapse-prevention-blueprint", "10-diagnosis.cultural-formulation-interview", "13-context-culture-development.cultural-humility", "13-context-culture-development.culturally-adapted-cbt", "responding-in-session.language-and-tone", "responding-in-session.phrasing-library", "responding-in-session.reflective-listening"],
+      "sources": [
+        "Padesky-1993 § Stage Two Listening"
+      ],
+      "page": "responding-in-session.language-and-tone"
+    },
+    {
+      "id": "ts.plain-language",
+      "label": "Plain language",
+      "alt_labels": [
+        "jargon-free explanation",
+        "everyday words"
+      ],
+      "definition": "Explaining ideas in everyday words and short sentences, adding a technical term only after the plain version and only if it helps.",
+      "client_wording": "The therapist explains things in everyday words I can follow.",
+      "example": "\"Thoughts that pop into your head\" before \"automatic thoughts\".",
+      "group": "information-and-advice",
+      "broader": null,
+      "related": [
+        "ts.psychoeducation",
+        "ts.using-client-words",
+        "ts.checking-understanding",
+        "ts.lecturing"
+      ],
+      "see": ["10-diagnosis.communicating-a-diagnosis", "13-context-culture-development.intellectual-disability-and-low-literacy", "13-context-culture-development.working-with-interpreters", "14-ethics-law.informed-consent", "responding-in-session.language-and-tone", "responding-in-session.psychoeducation-without-lecturing"],
+      "sources": [
+        "Young-Beck-1980 § Item 3 Understanding; Item 10 Application",
+        "Richmond-etal-2012 § Domain IV Be Concise"
+      ],
+      "page": "responding-in-session.language-and-tone"
+    },
+    {
+      "id": "ts.redirecting-to-agenda",
+      "label": "Redirecting to the agenda",
+      "alt_labels": [
+        "polite interruption",
+        "refocusing"
+      ],
+      "definition": "Politely interrupting a peripheral or circular discussion with a brief summary and a link back to the agreed agenda item.",
+      "client_wording": "The therapist kindly steers us back to what I said matters most today.",
+      "example": "\"Can I stop you there for a moment? I want to make sure we get to the panic at work, which you said mattered most today.\"",
+      "group": "structure-and-collaboration",
+      "broader": null,
+      "related": [
+        "ts.agenda-setting",
+        "ts.capsule-summary",
+        "ts.asking-permission",
+        "ts.interrupting"
+      ],
+      "see": ["05-session-structure.agenda-setting", "05-session-structure.pitfall-unstructured-drift", "05-session-structure.session-structure", "responding-in-session.pacing-silence-and-turn-taking", "responding-in-session.phrasing-library"],
+      "sources": [
+        "Young-Beck-1980 § Item 6 Pacing and Efficient Use of Time"
+      ],
+      "coding_note": "Differs from ts.interrupting (avoid): it is polite, agreed in advance and returns to the client's own priority.",
+      "page": "responding-in-session.pacing-silence-and-turn-taking"
+    },
+    {
+      "id": "ts.grounding",
+      "label": "Grounding in session",
+      "alt_labels": [
+        "orienting to the present",
+        "sensory grounding"
+      ],
+      "definition": "Bringing a dissociating or overwhelmed client back to the present by orienting to time and place and directing attention to concrete sensations.",
+      "client_wording": "The therapist helps me come back to the here and now by noticing what I can sense.",
+      "example": "\"Can you feel your feet on the floor? Tell me three things you can see in this room.\"",
+      "group": "strong-emotion",
+      "broader": null,
+      "related": [
+        "bs.derealization",
+        "bs.depersonalization",
+        "bs.blanking-out",
+        "cs.mindful-awareness",
+        "ts.de-escalation"
+      ],
+      "see": ["ptsd.adaptations", "ptsd.assessment", "responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "Hammond-Brown-2025 § Abstract",
+        "Kennerley-1996 § Abstract"
+      ],
+      "page": "responding-in-session.responding-to-strong-emotion"
+    },
+    {
+      "id": "ts.de-escalation",
+      "label": "Verbal de-escalation",
+      "alt_labels": [
+        "calming an angry client",
+        "defusing"
+      ],
+      "definition": "Responding to anger or agitation with calm, concise speech, respectful distance, honest agreement where possible, clear limits and choices.",
+      "client_wording": "When I'm very angry, the therapist stays calm, listens and helps me settle.",
+      "example": "\"You're really angry, and you have good reason to be upset about the wait. I want to understand. Can we sit down and go through it?\"",
+      "group": "strong-emotion",
+      "broader": null,
+      "related": [
+        "ts.validation",
+        "ts.nonverbal-attunement",
+        "ts.repair-acknowledge-rupture",
+        "bh.aggression",
+        "rk.violent-ideation-or-intent"
+      ],
+      "see": ["responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "Richmond-etal-2012 § Ten domains of de-escalation"
+      ],
+      "page": "responding-in-session.responding-to-strong-emotion"
+    },
+    {
+      "id": "ts.direct-suicide-question",
+      "label": "Asking directly about suicide",
+      "alt_labels": [
+        "direct suicide inquiry",
+        "asking about suicidal thoughts"
+      ],
+      "definition": "Asking plainly and calmly whether the client is thinking about suicide when hopelessness or distress appears, then assessing risk if indicated.",
+      "client_wording": "The therapist asks me straight out about thoughts of suicide, so we can keep me safe.",
+      "example": "\"Sometimes when people feel this hopeless they think about ending their life. Has that been on your mind?\"",
+      "group": "risk-response",
+      "broader": null,
+      "related": [
+        "tt.hopelessness",
+        "rk.passive-suicidal-ideation",
+        "rk.active-suicidal-ideation",
+        "ms.c-ssrs",
+        "ts.premature-reassurance"
+      ],
+      "see": ["chronic-pain-and-physical-health.assessment", "grief-and-loss.assessment", "grief-and-loss.pitfall-missing-suicide-risk-in-grief"],
+      "sources": [
+        "Dazzi-etal-2014 § Main text",
+        "Beck-etal-1985 § Abstract, Results"
+      ],
+      "codes": {
+        "MITI-4": "Q",
+        "MISC-2.5": "CQ"
+      },
+      "coding_note": "Record the answer and the next step taken.",
+      "page": "02-risk.asking-about-suicide"
+    }
+  ]
+}

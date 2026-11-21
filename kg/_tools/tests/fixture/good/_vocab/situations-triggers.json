@@ -1,0 +1,59 @@
+{
+  "scheme": "situations-triggers",
+  "prefix": "sit",
+  "title": "Situations and triggers",
+  "description": "Fixture scheme.",
+  "version": "1.0.0",
+  "sources": [
+    "Beck-2021 § Ch. 3"
+  ],
+  "concepts": [
+    {
+      "id": "sit.interpersonal-conflict",
+      "label": "Interpersonal conflict",
+      "alt_labels": [],
+      "definition": "A disagreement or argument with another person.",
+      "client_wording": "A disagreement or argument with another person.",
+      "example": "",
+      "group": "",
+      "broader": null,
+      "related": [],
+      "see": [],
+      "sources": [
+        "Beck-2021 § Ch. 3"
+      ]
+    },
+    {
+      "id": "sit.loss",
+      "label": "Loss",
+      "alt_labels": [],
+      "definition": "Losing a person, role, relationship or valued thing.",
+      "client_wording": "Losing a person, role, relationship or valued thing.",
+      "example": "",
+      "group": "",
+      "broader": null,
+      "related": [
+        "em.sad"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-2021 § Ch. 3"
+      ]
+    },
+    {
+      "id": "sit.work-demand",
+      "label": "Work demand",
+      "alt_labels": [],
+      "definition": "A deadline, workload or evaluation at work.",
+      "client_wording": "A deadline, workload or evaluation at work.",
+      "example": "",
+      "group": "",
+      "broader": null,
+      "related": [],
+      "see": [],
+      "sources": [
+        "Beck-2021 § Ch. 3"
+      ]
+    }
+  ]
+}

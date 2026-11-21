@@ -1,0 +1,6 @@
+{
+  "name": "cbt-self-help",
+  "version": "0.1.0",
+  "description": "Guided CBT self-help sessions backed by a researched CBT knowledge graph. Not therapy.",
+  "types": "./types/index.d.ts"
+}

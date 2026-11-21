@@ -1,0 +1,912 @@
+{
+  "scheme": "core-beliefs",
+  "prefix": "cb",
+  "title": "Core beliefs",
+  "description": "Global, rigid beliefs about the self (helpless, unlovable and worthless clusters, plus adaptive counterparts), others, the world and the future. Fills the core belief slot of the cognitive conceptualization diagram and longitudinal formulations. Each concept carries about: self, others, world or future.",
+  "version": "1.0.0",
+  "sources": [
+    "Beck-2021 § Ch. 17 Introduction to Beliefs",
+    "Beck-2021 § Ch. 18 Modifying Beliefs",
+    "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+    "Beck-etal-2024 § Ch. 7 Schemas: Core Beliefs and Underlying Assumptions",
+    "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)",
+    "Beck-etal-2015 § Ch. 2 Theory of Personality Disorders"
+  ],
+  "concepts": [
+    {
+      "id": "cb.helpless",
+      "label": "Helpless",
+      "alt_labels": [
+        "I can't cope",
+        "ineffective",
+        "helpless core beliefs"
+      ],
+      "definition": "Umbrella self-belief of being ineffective: unable to get things done, protect oneself, or measure up to others.",
+      "client_wording": "Deep down I feel I can't cope or handle things.",
+      "example": "\"I can't cope with any of this.\"",
+      "group": "Self: helpless",
+      "about": "self",
+      "broader": null,
+      "related": [
+        "cb.effective",
+        "cb.unlovable",
+        "cb.worthless",
+        "iv.core-belief-work"
+      ],
+      "see": ["03-formulation.cognitive-conceptualization-diagram", "03-formulation.cognitive-model-levels"],
+      "sources": [
+        "Beck-2021 § Ch. 17 Introduction to Beliefs",
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self"
+      ]
+    },
+    {
+      "id": "cb.incompetent",
+      "label": "Incompetent",
+      "alt_labels": [
+        "useless",
+        "can't do anything right",
+        "inadequate at tasks"
+      ],
+      "definition": "Belief that one lacks the basic ability to get things done or handle responsibilities, regardless of effort.",
+      "client_wording": "I'm useless; I can't do things properly.",
+      "example": "\"I'll mess this up like I mess everything up.\"",
+      "group": "Self: helpless",
+      "about": "self",
+      "broader": "cb.helpless",
+      "related": [
+        "cb.failure",
+        "ib.must-cope-alone",
+        "ib.trying-leads-to-failure",
+        "tt.inadequacy-and-failure"
+      ],
+      "see": ["03-formulation.cognitive-model-levels", "adhd.cbt-model"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "BeckInstitute-Worksheet-Packet-2020 § Cognitive Conceptualization Diagram Example and Case Write-Up"
+      ]
+    },
+    {
+      "id": "cb.needy",
+      "label": "Needy and dependent",
+      "alt_labels": [
+        "I can't manage on my own",
+        "dependent",
+        "weak and needy"
+      ],
+      "definition": "Belief that one is weak and cannot function, decide or manage daily life without substantial help from others.",
+      "client_wording": "I can't manage on my own; I need someone to look after me.",
+      "example": "\"I couldn't survive if my partner left.\"",
+      "group": "Self: helpless",
+      "about": "self",
+      "broader": "cb.helpless",
+      "related": [
+        "cb.incompetent",
+        "cb.bound-to-be-rejected",
+        "cs.dependence-on-others"
+      ],
+      "see": ["personality-disorders.cbt-model"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Beck-etal-2015 § Ch. 8 Dependent Personality Disorder",
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "cb.vulnerable",
+      "label": "Vulnerable",
+      "alt_labels": [
+        "weak",
+        "likely to get hurt",
+        "can't protect myself"
+      ],
+      "definition": "Belief that one is weak and unable to protect oneself, so harm, illness or catastrophe is likely.",
+      "client_wording": "I can't protect myself; something bad is bound to happen to me.",
+      "example": "\"If something goes wrong, I won't be able to handle it and I'll get hurt.\"",
+      "group": "Self: helpless",
+      "about": "self",
+      "broader": "cb.helpless",
+      "related": [
+        "cb.world-dangerous",
+        "cb.future-threatening",
+        "tt.vulnerability"
+      ],
+      "see": ["bipolar-and-psychosis.cbt-model"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "cb.powerless",
+      "label": "Powerless or trapped",
+      "alt_labels": [
+        "out of control",
+        "a victim",
+        "stuck"
+      ],
+      "definition": "Belief that one has no control over one's life or oneself, and is stuck or trapped with no way out.",
+      "client_wording": "I have no control; I'm trapped and nothing I do changes anything.",
+      "example": "\"I'm stuck in this situation and there's nothing I can do.\"",
+      "group": "Self: helpless",
+      "about": "self",
+      "broader": "cb.helpless",
+      "related": [
+        "cb.future-hopeless",
+        "ib.must-stay-in-control",
+        "tt.entrapment"
+      ],
+      "see": ["ptsd.cognitive-processing-therapy"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Beck-2021 § Ch. 17 Introduction to Beliefs"
+      ]
+    },
+    {
+      "id": "cb.failure",
+      "label": "A failure",
+      "alt_labels": [
+        "a loser",
+        "I've failed at life"
+      ],
+      "definition": "Global judgment that one has failed in life or in important roles, drawn from falling short in achievement.",
+      "client_wording": "I'm a failure; I've messed up my life.",
+      "example": "\"I'm unemployed and divorced. I'm a total failure.\"",
+      "group": "Self: helpless",
+      "about": "self",
+      "broader": "cb.helpless",
+      "related": [
+        "cb.not-good-enough",
+        "cb.inferior",
+        "ib.worth-depends-on-achievement",
+        "tt.inadequacy-and-failure"
+      ],
+      "see": ["03-formulation.cognitive-model-levels", "depression.cbt-model"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "BeckInstitute-Worksheet-Packet-2020 § Cognitive Conceptualization Diagram Example and Case Write-Up",
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "cb.inferior",
+      "label": "Inferior to others",
+      "alt_labels": [
+        "less than others",
+        "don't measure up to others",
+        "everyone is better than me"
+      ],
+      "definition": "Belief that one is less capable or less adequate than other people, reached by comparing oneself with them.",
+      "client_wording": "Everyone else is better than me.",
+      "example": "\"Everyone at work is smarter and more capable than me.\"",
+      "group": "Self: helpless",
+      "about": "self",
+      "broader": "cb.helpless",
+      "related": [
+        "cb.not-good-enough",
+        "cb.failure"
+      ],
+      "see": ["personality-disorders.other-personality-disorders"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self"
+      ]
+    },
+    {
+      "id": "cb.not-good-enough",
+      "label": "Not good enough",
+      "alt_labels": [
+        "inadequate",
+        "I don't measure up",
+        "never enough"
+      ],
+      "definition": "Belief that one never meets the required standard in achievement or performance, however much one does.",
+      "client_wording": "Whatever I do, it's never good enough.",
+      "example": "\"I got a B. I'm just not good enough.\"",
+      "group": "Self: helpless",
+      "about": "self",
+      "broader": "cb.helpless",
+      "related": [
+        "cb.inferior",
+        "ib.must-be-perfect",
+        "bf.childhood-criticism"
+      ],
+      "see": ["adhd.underdiagnosis-in-women-and-adults"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Beck-2021 § Ch. 17 Introduction to Beliefs"
+      ]
+    },
+    {
+      "id": "cb.unlovable",
+      "label": "Unlovable",
+      "alt_labels": [
+        "nobody could love me",
+        "unlovable core beliefs"
+      ],
+      "definition": "Umbrella self-belief that one lacks the qualities that would make others love, want or care about one.",
+      "client_wording": "Deep down I feel nobody could really love me.",
+      "example": "\"No one could ever love someone like me.\"",
+      "group": "Self: unlovable",
+      "about": "self",
+      "broader": null,
+      "related": [
+        "cb.lovable",
+        "cb.helpless",
+        "cb.worthless",
+        "iv.core-belief-work"
+      ],
+      "see": ["03-formulation.cognitive-conceptualization-diagram", "03-formulation.cognitive-model-levels", "cognitive.core-belief-work", "depression.cbt-model"],
+      "sources": [
+        "Beck-2021 § Ch. 17 Introduction to Beliefs",
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self"
+      ]
+    },
+    {
+      "id": "cb.unlikeable",
+      "label": "Unlikeable or boring",
+      "alt_labels": [
+        "boring",
+        "nothing to offer",
+        "uninteresting"
+      ],
+      "definition": "Belief that one is socially dull or disagreeable, with nothing to offer, so others will not like or choose one.",
+      "client_wording": "People find me boring; I've got nothing to offer.",
+      "example": "\"Nobody wants to talk to me at parties.\"",
+      "group": "Self: unlovable",
+      "about": "self",
+      "broader": "cb.unlovable",
+      "related": [
+        "cb.others-critical",
+        "ib.high-social-standards",
+        "ib.visible-anxiety-brings-rejection"
+      ],
+      "see": ["social-anxiety.adaptations", "social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.cbt-model"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Leigh-Clark-2018 § The Clark and Wells (1995) model"
+      ]
+    },
+    {
+      "id": "cb.unwanted",
+      "label": "Unwanted or unimportant",
+      "alt_labels": [
+        "I don't matter",
+        "uncared for",
+        "unimportant"
+      ],
+      "definition": "Belief that one does not matter to others and is not wanted, valued or cared for.",
+      "client_wording": "I don't matter to anyone.",
+      "example": "\"If I disappeared, no one would even notice.\"",
+      "group": "Self: unlovable",
+      "about": "self",
+      "broader": "cb.unlovable",
+      "related": [
+        "cb.others-uncaring"
+      ],
+      "see": [],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self"
+      ]
+    },
+    {
+      "id": "cb.unattractive",
+      "label": "Unattractive or undesirable",
+      "alt_labels": [
+        "ugly",
+        "undesirable"
+      ],
+      "definition": "Belief that one is physically or sexually undesirable, so others will find one unappealing.",
+      "client_wording": "I'm ugly; no one would find me attractive.",
+      "example": "\"No one would ever want to date me looking like this.\"",
+      "group": "Self: unlovable",
+      "about": "self",
+      "broader": "cb.unlovable",
+      "related": [
+        "ib.worth-judged-by-shape-weight",
+        "tt.appearance-defect"
+      ],
+      "see": [],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self"
+      ]
+    },
+    {
+      "id": "cb.different",
+      "label": "Different, does not belong",
+      "alt_labels": [
+        "a misfit",
+        "an outsider",
+        "weird",
+        "don't fit in"
+      ],
+      "definition": "Belief that one is fundamentally different from other people and does not fit in or belong to any group.",
+      "client_wording": "I'm different from everyone; I don't fit in anywhere.",
+      "example": "\"I'm weird. I've never belonged anywhere.\"",
+      "group": "Self: unlovable",
+      "about": "self",
+      "broader": "cb.unlovable",
+      "related": [
+        "cb.defective"
+      ],
+      "see": ["adhd.underdiagnosis-in-women-and-adults", "cognitive.imagery-and-imagery-rescripting"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)",
+        "Leigh-Clark-2018 § The Clark and Wells (1995) model"
+      ]
+    },
+    {
+      "id": "cb.defective",
+      "label": "Defective or flawed",
+      "alt_labels": [
+        "something is wrong with me",
+        "flawed",
+        "damaged"
+      ],
+      "definition": "Belief that something is basically wrong with one, a hidden flaw that would cause rejection if others saw it.",
+      "client_wording": "There's something wrong with me, and if people saw it they'd reject me.",
+      "example": "\"There's something wrong with me that other people don't have.\"",
+      "group": "Self: unlovable",
+      "about": "self",
+      "broader": "cb.unlovable",
+      "related": [
+        "ib.closeness-leads-to-rejection",
+        "cb.different",
+        "tt.defect-and-exposure"
+      ],
+      "see": ["13-context-culture-development.identity-and-minority-stress", "15-transdiagnostic-processes.self-criticism-and-shame", "personality-disorders.cbt-model", "personality-disorders.schema-therapy-link"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "cb.bound-to-be-rejected",
+      "label": "Bound to be rejected or abandoned",
+      "alt_labels": [
+        "I'll end up alone",
+        "everyone leaves me",
+        "abandonment"
+      ],
+      "definition": "Belief that, because of who one is, others will inevitably reject or abandon one, leaving one alone.",
+      "client_wording": "Sooner or later everyone will leave me, and I'll end up alone.",
+      "example": "\"He'll get bored of me and leave, like everyone does.\"",
+      "group": "Self: unlovable",
+      "about": "self",
+      "broader": "cb.unlovable",
+      "related": [
+        "cb.others-unreliable",
+        "ib.closeness-leads-to-rejection",
+        "tt.abandonment-and-rejection"
+      ],
+      "see": ["personality-disorders.cbt-model", "personality-disorders.schema-therapy-link"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "cb.worthless",
+      "label": "Worthless",
+      "alt_labels": [
+        "unacceptable",
+        "a waste of space",
+        "nothing",
+        "worthless core beliefs"
+      ],
+      "definition": "Umbrella self-belief that one has no value as a person, or is morally bad, unacceptable or undeserving.",
+      "client_wording": "Deep down I feel I'm worthless as a person.",
+      "example": "\"I'm worthless. I'm a waste of space.\"",
+      "group": "Self: worthless",
+      "about": "self",
+      "broader": null,
+      "related": [
+        "cb.worthwhile",
+        "cb.helpless",
+        "cb.unlovable",
+        "iv.core-belief-work"
+      ],
+      "see": ["03-formulation.cognitive-conceptualization-diagram", "03-formulation.cognitive-model-levels", "cognitive.core-belief-work", "depression.cbt-model", "grief-and-loss.cbt-model", "ptsd.complex-ptsd"],
+      "sources": [
+        "Beck-2021 § Ch. 17 Introduction to Beliefs",
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self"
+      ]
+    },
+    {
+      "id": "cb.bad",
+      "label": "Bad or immoral",
+      "alt_labels": [
+        "a bad person",
+        "a sinner",
+        "immoral",
+        "wicked"
+      ],
+      "definition": "Belief that one is morally bad, wicked or sinful at the core, not just someone who has done wrong things.",
+      "client_wording": "I'm a bad person deep down.",
+      "example": "\"Good people don't do what I did. I'm rotten inside.\"",
+      "group": "Self: worthless",
+      "about": "self",
+      "broader": "cb.worthless",
+      "related": [
+        "ib.thought-action-fusion-moral"
+      ],
+      "see": ["15-transdiagnostic-processes.self-criticism-and-shame"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self"
+      ]
+    },
+    {
+      "id": "cb.dangerous",
+      "label": "Dangerous or toxic",
+      "alt_labels": [
+        "toxic",
+        "evil",
+        "a danger to others"
+      ],
+      "definition": "Belief that one is harmful, toxic or evil and a threat to others; often found behind harm-related obsessions.",
+      "client_wording": "There's something evil or toxic in me that could hurt people.",
+      "example": "\"Maybe I'm the kind of person who could hurt a child.\"",
+      "group": "Self: worthless",
+      "about": "self",
+      "broader": "cb.worthless",
+      "related": [
+        "ib.thoughts-reveal-true-self",
+        "ib.inflated-responsibility"
+      ],
+      "see": ["ocd.pitfall-misreading-intrusions-as-risk"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Rachman-1997 § Misinterpretation of the significance of intrusive thoughts"
+      ]
+    },
+    {
+      "id": "cb.crazy",
+      "label": "Crazy or abnormal",
+      "alt_labels": [
+        "losing my mind",
+        "mad",
+        "abnormal"
+      ],
+      "definition": "Belief that one is mentally unbalanced, abnormal or going mad, often taken as confirmed by one's symptoms.",
+      "client_wording": "I'm crazy; my mind isn't normal.",
+      "example": "\"Normal people don't have thoughts like mine. I must be crazy.\"",
+      "group": "Self: worthless",
+      "about": "self",
+      "broader": "cb.worthless",
+      "related": [
+        "ib.worry-is-dangerous",
+        "tt.loss-of-control"
+      ],
+      "see": [],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self"
+      ]
+    },
+    {
+      "id": "cb.undeserving",
+      "label": "Undeserving",
+      "alt_labels": [
+        "I don't deserve good things",
+        "I don't deserve to live"
+      ],
+      "definition": "Belief that one does not deserve care, happiness or good things, at the extreme not deserving to live; prompts risk assessment.",
+      "client_wording": "I don't deserve anything good.",
+      "example": "\"Why would I treat myself? I don't deserve it.\"",
+      "group": "Self: worthless",
+      "about": "self",
+      "broader": "cb.worthless",
+      "related": [
+        "cb.future-hopeless",
+        "tt.burdensomeness"
+      ],
+      "see": ["15-transdiagnostic-processes.self-criticism-and-shame"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self"
+      ]
+    },
+    {
+      "id": "cb.effective",
+      "label": "Reasonably competent",
+      "alt_labels": [
+        "effective",
+        "I can cope",
+        "capable"
+      ],
+      "definition": "Adaptive self-belief that one is reasonably competent, in control and able to cope, with ordinary strengths and weaknesses.",
+      "client_wording": "I can handle most things reasonably well.",
+      "example": "\"I'm not perfect, but I can usually cope.\"",
+      "group": "Self: adaptive",
+      "about": "self",
+      "broader": null,
+      "related": [
+        "cb.helpless"
+      ],
+      "see": [],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Beck-2021 § Ch. 18 Modifying Beliefs",
+        "Padesky-1994 § Constructing new schemas"
+      ]
+    },
+    {
+      "id": "cb.lovable",
+      "label": "Reasonably lovable",
+      "alt_labels": [
+        "likeable",
+        "wanted",
+        "good enough to be loved"
+      ],
+      "definition": "Adaptive self-belief that one is reasonably likeable, wanted and good enough to be loved, and unlikely to end up alone.",
+      "client_wording": "People can like and love me as I am.",
+      "example": "\"My friends enjoy my company, even when I'm quiet.\"",
+      "group": "Self: adaptive",
+      "about": "self",
+      "broader": null,
+      "related": [
+        "cb.unlovable"
+      ],
+      "see": ["cognitive.core-belief-work"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Beck-2021 § Ch. 18 Modifying Beliefs",
+        "Padesky-1994 § Constructing new schemas"
+      ]
+    },
+    {
+      "id": "cb.worthwhile",
+      "label": "Worthwhile",
+      "alt_labels": [
+        "acceptable",
+        "a good person",
+        "worthy"
+      ],
+      "definition": "Adaptive self-belief that one is reasonably worthwhile, acceptable and good as a person, despite mistakes.",
+      "client_wording": "I'm an okay person who has value, even when I get things wrong.",
+      "example": "\"I made a mistake, but I'm still a decent person.\"",
+      "group": "Self: adaptive",
+      "about": "self",
+      "broader": null,
+      "related": [
+        "cb.worthless"
+      ],
+      "see": ["cognitive.core-belief-work"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Core Beliefs About the Self",
+        "Beck-2021 § Ch. 18 Modifying Beliefs",
+        "Padesky-1994 § Constructing new schemas"
+      ]
+    },
+    {
+      "id": "cb.others-untrustworthy",
+      "label": "Others are untrustworthy or dangerous",
+      "alt_labels": [
+        "people can't be trusted",
+        "people will hurt me",
+        "people take advantage"
+      ],
+      "definition": "Belief that other people will hurt, deceive, humiliate or exploit one if given the chance.",
+      "client_wording": "People can't be trusted; they'll hurt or use me if I let them.",
+      "example": "\"If I let my guard down, people will take advantage.\"",
+      "group": "Others",
+      "about": "others",
+      "broader": null,
+      "related": [
+        "cb.world-dangerous",
+        "cb.vulnerable",
+        "tt.persecution",
+        "cs.hypervigilance-to-others"
+      ],
+      "see": ["bipolar-and-psychosis.cbt-model", "personality-disorders.cbt-model", "personality-disorders.other-personality-disorders", "ptsd.cognitive-processing-therapy"],
+      "sources": [
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)",
+        "Foa-etal-1999 § Negative Cognitions About the World factor",
+        "Beck-etal-2015 § Ch. 12 Paranoid, Schizotypal, and Schizoid Personality Disorders"
+      ]
+    },
+    {
+      "id": "cb.others-critical",
+      "label": "Others are critical and judgmental",
+      "alt_labels": [
+        "people judge me",
+        "people look down on me",
+        "others are rejecting"
+      ],
+      "definition": "Belief that other people are quick to criticize, judge or reject, and are watching for one's faults.",
+      "client_wording": "People are judgmental and always looking for my faults.",
+      "example": "\"Everyone in the meeting will notice I'm nervous and judge me.\"",
+      "group": "Others",
+      "about": "others",
+      "broader": null,
+      "related": [
+        "cb.unlikeable",
+        "ib.visible-anxiety-brings-rejection",
+        "tt.negative-evaluation"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-etal-2015 § Ch. 9 Avoidant Personality Disorder",
+        "Leigh-Clark-2018 § The Clark and Wells (1995) model",
+        "BeckInstitute-Worksheet-Packet-2020 § Cognitive Conceptualization Diagram Example and Case Write-Up"
+      ]
+    },
+    {
+      "id": "cb.others-uncaring",
+      "label": "Others are uncaring",
+      "alt_labels": [
+        "nobody cares",
+        "people won't meet my needs",
+        "no one will be there for me"
+      ],
+      "definition": "Belief that other people will not give care, understanding or support when one needs it.",
+      "client_wording": "Nobody really cares; I can't expect support from anyone.",
+      "example": "\"There's no point telling anyone. They won't care.\"",
+      "group": "Others",
+      "about": "others",
+      "broader": null,
+      "related": [
+        "cb.unwanted",
+        "ib.must-cope-alone"
+      ],
+      "see": [],
+      "sources": [
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "cb.others-unreliable",
+      "label": "Others are unreliable",
+      "alt_labels": [
+        "people always leave",
+        "people let you down",
+        "relationships don't last"
+      ],
+      "definition": "Belief that other people are inconsistent and will let one down or leave, so relationships cannot be counted on.",
+      "client_wording": "People always let you down or leave in the end.",
+      "example": "\"Everyone leaves eventually, so why get close?\"",
+      "group": "Others",
+      "about": "others",
+      "broader": null,
+      "related": [
+        "cb.bound-to-be-rejected"
+      ],
+      "see": ["personality-disorders.cbt-model"],
+      "sources": [
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "cb.others-controlling",
+      "label": "Others are controlling or intrusive",
+      "alt_labels": [
+        "people try to control me",
+        "people intrude",
+        "others will take over"
+      ],
+      "definition": "Belief that other people will dominate, control or intrude on one, so independence must be guarded.",
+      "client_wording": "If I let people close, they'll try to control me.",
+      "example": "\"If I tell my boss my plans, she'll take over.\"",
+      "group": "Others",
+      "about": "others",
+      "broader": null,
+      "related": [
+        "ib.assertion-leads-to-rejection"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-etal-2015 § Ch. 12 Paranoid, Schizotypal, and Schizoid Personality Disorders",
+        "Beck-etal-2015 § Ch. 13 Passive-Aggressive Personality Disorder (Negativistic Personality Disorder)"
+      ]
+    },
+    {
+      "id": "cb.others-incompetent",
+      "label": "Others are incompetent or irresponsible",
+      "alt_labels": [
+        "people are careless",
+        "no one does it right"
+      ],
+      "definition": "Belief that other people are careless, irresponsible or incompetent, so one must check or do things oneself.",
+      "client_wording": "Other people are careless; if I want it done right, I do it myself.",
+      "example": "\"I can't delegate this. They'll only get it wrong.\"",
+      "group": "Others",
+      "about": "others",
+      "broader": null,
+      "related": [
+        "ib.must-stay-in-control",
+        "ib.must-be-perfect"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-etal-2015 § Ch. 10 Obsessive-Compulsive Personality Disorder"
+      ]
+    },
+    {
+      "id": "cb.others-inferior",
+      "label": "Others are inferior",
+      "alt_labels": [
+        "people are beneath me",
+        "people are there to be used",
+        "entitlement"
+      ],
+      "definition": "Belief that other people are weaker, lesser or there to be used, linked to entitlement in some personality presentations.",
+      "client_wording": "Most people just aren't on my level.",
+      "example": "\"Rules are for ordinary people, not for me.\"",
+      "group": "Others",
+      "about": "others",
+      "broader": null,
+      "related": [
+        "ib.others-must-be-fair",
+        "cs.asserting-superiority"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-etal-2015 § Ch. 14 Narcissistic Personality Disorder",
+        "Beck-etal-2015 § Ch. 16 Antisocial Personality Disorder",
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "cb.world-dangerous",
+      "label": "The world is dangerous",
+      "alt_labels": [
+        "nowhere is safe",
+        "danger is everywhere"
+      ],
+      "definition": "Belief that the world is full of threat, so harm can strike at any time and constant vigilance is needed.",
+      "client_wording": "The world is a dangerous place; nowhere is really safe.",
+      "example": "\"Since the attack, I know anything can happen to anyone, anywhere.\"",
+      "group": "World",
+      "about": "world",
+      "broader": null,
+      "related": [
+        "cb.vulnerable",
+        "cb.others-untrustworthy",
+        "cb.future-threatening",
+        "tt.threat-and-danger"
+      ],
+      "see": ["ptsd.cognitive-processing-therapy"],
+      "sources": [
+        "Ehlers-Clark-2000 § Excessively negative appraisals and sense of current threat",
+        "Foa-etal-1999 § Negative Cognitions About the World factor"
+      ]
+    },
+    {
+      "id": "cb.world-unpredictable",
+      "label": "The world is unpredictable",
+      "alt_labels": [
+        "the world is uncontrollable",
+        "anything can happen",
+        "nothing is stable"
+      ],
+      "definition": "Belief that events are chaotic and uncontrollable, so nothing can be relied on or planned for.",
+      "client_wording": "Anything can happen; you can never count on things staying stable.",
+      "example": "\"You can lose everything overnight, so why plan?\"",
+      "group": "World",
+      "about": "world",
+      "broader": null,
+      "related": [
+        "ib.need-for-certainty",
+        "cb.powerless"
+      ],
+      "see": [],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Cognitive Conceptualization Diagram Example and Case Write-Up",
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization"
+      ]
+    },
+    {
+      "id": "cb.world-unfair",
+      "label": "The world is unfair",
+      "alt_labels": [
+        "life is rigged",
+        "the world is unjust"
+      ],
+      "definition": "Belief that the world is unjust, that effort goes unrewarded, and that one is treated worse than one deserves.",
+      "client_wording": "Life is unfair; whatever I do, I get a raw deal.",
+      "example": "\"Other people get the breaks. I never do.\"",
+      "group": "World",
+      "about": "world",
+      "broader": null,
+      "related": [
+        "ib.others-must-be-fair",
+        "tt.violation-and-unfairness"
+      ],
+      "see": [],
+      "sources": [
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Your Anger, Guilt, and Shame"
+      ]
+    },
+    {
+      "id": "cb.world-demanding",
+      "label": "The world is too demanding",
+      "alt_labels": [
+        "life is too hard",
+        "obstacles are insurmountable"
+      ],
+      "definition": "Belief that life makes excessive demands and sets obstacles one cannot overcome; the world element of Beck's depressive cognitive triad.",
+      "client_wording": "Life is just too hard; everything is an uphill battle.",
+      "example": "\"Every single thing is a struggle. It's too much.\"",
+      "group": "World",
+      "about": "world",
+      "broader": null,
+      "related": [
+        "cb.helpless",
+        "cb.future-hopeless"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-etal-2024 § Ch. 1 Overview"
+      ]
+    },
+    {
+      "id": "cb.future-hopeless",
+      "label": "The future is hopeless",
+      "alt_labels": [
+        "nothing will ever change",
+        "there's no point"
+      ],
+      "definition": "Belief that things will never improve and one's problems are permanent; the future element of Beck's cognitive triad. Prompts risk assessment.",
+      "client_wording": "Things will never get better for me.",
+      "example": "\"It's always going to be like this. There's no point.\"",
+      "group": "Future",
+      "about": "future",
+      "broader": null,
+      "related": [
+        "cb.powerless",
+        "cb.world-demanding",
+        "cb.undeserving",
+        "tt.hopelessness"
+      ],
+      "see": ["grief-and-loss.cbt-model", "responding-in-session.responding-to-hopelessness-and-self-criticism"],
+      "sources": [
+        "Beck-etal-2024 § Ch. 1 Overview",
+        "Beck-etal-1974 § Hopelessness Scale"
+      ]
+    },
+    {
+      "id": "cb.future-threatening",
+      "label": "The future is threatening",
+      "alt_labels": [
+        "something bad will happen",
+        "disaster is coming"
+      ],
+      "definition": "Belief that the future holds likely danger or catastrophe, so one must anticipate and prepare for the worst.",
+      "client_wording": "Something bad is coming, and I need to be ready for it.",
+      "example": "\"What if I lose my job and we lose the house?\"",
+      "group": "Future",
+      "about": "future",
+      "broader": null,
+      "related": [
+        "cb.world-dangerous",
+        "ib.worry-is-helpful"
+      ],
+      "see": [],
+      "sources": [
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)",
+        "BeckInstitute-Worksheet-Packet-2020 § Cognitive Conceptualization Diagram Example and Case Write-Up"
+      ]
+    },
+    {
+      "id": "cb.future-ruined",
+      "label": "Future ruined or foreshortened",
+      "alt_labels": [
+        "foreshortened future",
+        "my life is ruined",
+        "no normal future"
+      ],
+      "definition": "Belief that one's life has been permanently damaged and a normal future is lost; common after trauma.",
+      "client_wording": "My life is ruined; I'll never have a normal future.",
+      "example": "\"After what happened, I'll never have a normal life again.\"",
+      "group": "Future",
+      "about": "future",
+      "broader": null,
+      "related": [
+        "cb.future-hopeless",
+        "tt.permanent-change-after-trauma"
+      ],
+      "see": ["ptsd.cbt-model", "ptsd.cognitive-therapy-for-ptsd"],
+      "sources": [
+        "Ehlers-Clark-2000 § Excessively negative appraisals and sense of current threat",
+        "Foa-etal-1999 § Negative Cognitions About Self factor"
+      ]
+    }
+  ]
+}

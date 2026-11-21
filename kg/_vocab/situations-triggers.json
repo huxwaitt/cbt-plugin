@@ -1,0 +1,1027 @@
+{
+  "scheme": "situations-triggers",
+  "prefix": "sit",
+  "title": "Situations and triggers",
+  "description": "Categories of external situations and internal events that set off automatic thoughts, emotions, body sensations, urges or behavior in the here and now. Used by the Situation or Trigger slot of the five-part model, the cognitive conceptualization diagram and maintenance cycles, and for listing current triggers. Code the reaction itself in em, bs, tt or bh; code life events and history in bf.",
+  "version": "1.0.0",
+  "sources": [
+    "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+    "Greenberger-Padesky-2016 § Ch. 6 Situations, Moods, and Thoughts",
+    "Persons-Tompkins-2022 § Precipitants of the current problems"
+  ],
+  "concepts": [
+    {
+      "id": "sit.criticism",
+      "label": "Criticism or disapproval",
+      "alt_labels": [
+        "negative feedback",
+        "being corrected",
+        "disapproval"
+      ],
+      "definition": "Receiving, or believing one has received, negative comments, correction or disapproval about one's actions, appearance or character.",
+      "client_wording": "Someone criticizes you, corrects you, or seems to disapprove of you.",
+      "example": "A manager points out errors in a report in front of colleagues.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.rejection-or-exclusion",
+        "sit.mistake-or-setback",
+        "sit.performance-evaluation"
+      ],
+      "see": ["03-formulation.functional-analysis", "adhd.emotional-dysregulation-and-associated-features"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Greenberger-Padesky-2016 § Ch. 6 Situations, Moods, and Thoughts"
+      ]
+    },
+    {
+      "id": "sit.rejection-or-exclusion",
+      "label": "Rejection or exclusion",
+      "alt_labels": [
+        "being left out",
+        "being ignored",
+        "unanswered message"
+      ],
+      "definition": "Being turned down, left out, ignored or not responded to by others, or noticing signs that one may be unwanted.",
+      "client_wording": "Someone turns you down, leaves you out, ignores you, or does not reply.",
+      "example": "Friends post photos from a gathering the client was not invited to.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.criticism",
+        "sit.separation-or-abandonment-cue",
+        "sit.being-alone"
+      ],
+      "see": ["adhd.emotional-dysregulation-and-associated-features"],
+      "sources": [
+        "Persons-Tompkins-2022 § Precipitants of the current problems",
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization"
+      ]
+    },
+    {
+      "id": "sit.interpersonal-conflict",
+      "label": "Interpersonal conflict",
+      "alt_labels": [
+        "argument",
+        "disagreement",
+        "confrontation"
+      ],
+      "definition": "An argument, disagreement or tense exchange with another person, in person or in writing, including a confrontation the person expects.",
+      "client_wording": "An argument, disagreement or tense moment with someone, or one you expect is coming.",
+      "example": "A partner raises their voice during a disagreement about money.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.asserting-needs",
+        "sit.criticism",
+        "bf.relationship-difficulties"
+      ],
+      "see": ["substance-use.relapse-prevention-model"],
+      "sources": [
+        "Larimer-etal-1999 § High-risk situations",
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Your Anger, Guilt, and Shame"
+      ]
+    },
+    {
+      "id": "sit.being-observed",
+      "label": "Being observed",
+      "alt_labels": [
+        "being watched",
+        "scrutiny"
+      ],
+      "definition": "Doing an ordinary activity, such as eating, drinking, writing, walking or working, while others can watch.",
+      "client_wording": "Doing everyday things while other people can see you, like eating, writing or walking past.",
+      "example": "Signing a form while a bank clerk waits and watches.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.public-performance",
+        "sit.social-interaction"
+      ],
+      "see": ["social-anxiety.assessment", "social-anxiety.overview"],
+      "sources": [
+        "Clark-Wells-1995 § Cognitive model of social phobia",
+        "APA-DSM5TR-2022 § Social Anxiety Disorder"
+      ]
+    },
+    {
+      "id": "sit.social-interaction",
+      "label": "Social interaction",
+      "alt_labels": [
+        "conversation",
+        "small talk",
+        "meeting new people",
+        "parties",
+        "dates"
+      ],
+      "definition": "Conversations and social gatherings, including meeting unfamiliar people, small talk, parties, dates and talking with people in authority.",
+      "client_wording": "Talking with people, meeting someone new, parties, dates, or speaking with someone in charge.",
+      "example": "Making small talk with coworkers in the lunch line.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.being-observed",
+        "sit.public-performance",
+        "mp.anticipatory-processing",
+        "mp.post-event-processing"
+      ],
+      "see": ["social-anxiety.assessment", "social-anxiety.overview"],
+      "sources": [
+        "Clark-Wells-1995 § Cognitive model of social phobia",
+        "Rapee-Heimberg-1997 § Model of anxiety in social/evaluative situations",
+        "APA-DSM5TR-2022 § Social Anxiety Disorder"
+      ]
+    },
+    {
+      "id": "sit.public-performance",
+      "label": "Performing in front of others",
+      "alt_labels": [
+        "public speaking",
+        "presentation",
+        "performance situation"
+      ],
+      "definition": "Speaking, presenting, performing or playing sport in front of an audience whose attention is on the person.",
+      "client_wording": "Speaking, presenting or performing while people watch and listen to you.",
+      "example": "Giving a toast at a friend's wedding.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.being-observed",
+        "sit.performance-evaluation",
+        "sit.praise-or-attention"
+      ],
+      "see": ["social-anxiety.assessment", "social-anxiety.overview"],
+      "sources": [
+        "Clark-Wells-1995 § Cognitive model of social phobia",
+        "APA-DSM5TR-2022 § Social Anxiety Disorder"
+      ]
+    },
+    {
+      "id": "sit.praise-or-attention",
+      "label": "Praise or being the center of attention",
+      "alt_labels": [
+        "compliments",
+        "positive feedback",
+        "public recognition"
+      ],
+      "definition": "Receiving compliments, positive feedback or public recognition, or otherwise becoming the focus of others' attention.",
+      "client_wording": "Someone praises or compliments you, or everyone's attention turns to you.",
+      "example": "Being singled out for thanks at a team meeting.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.public-performance",
+        "sit.positive-event"
+      ],
+      "see": [],
+      "sources": [
+        "Weeks-etal-2008 § Fear of positive evaluation and social anxiety"
+      ]
+    },
+    {
+      "id": "sit.asserting-needs",
+      "label": "Needing to assert oneself",
+      "alt_labels": [
+        "saying no",
+        "making a request",
+        "complaining",
+        "setting a boundary"
+      ],
+      "definition": "Situations calling for the person to refuse, request, complain, disagree or set a limit with someone else.",
+      "client_wording": "Times you need to say no, ask for something, complain, or stand up for yourself.",
+      "example": "Needing to return a faulty purchase to a store.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.interpersonal-conflict"
+      ],
+      "see": ["behavioral.skills-training"],
+      "sources": [
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Your Anger, Guilt, and Shame",
+        "Greenberger-Padesky-2016 § Ch. 6 Situations, Moods, and Thoughts"
+      ]
+    },
+    {
+      "id": "sit.social-comparison",
+      "label": "Comparison with others",
+      "alt_labels": [
+        "social media comparison",
+        "seeing others succeed"
+      ],
+      "definition": "Encountering information about other people's achievements, appearance, lifestyles or relationships, in person or online, that invites comparison with oneself.",
+      "client_wording": "Seeing how others look, live or succeed, in person or online, and comparing yourself.",
+      "example": "Scrolling past a former classmate's promotion announcement.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.body-image-cue",
+        "sit.rejection-or-exclusion"
+      ],
+      "see": [],
+      "sources": [
+        "McCarthy-Morina-2020 § Abstract"
+      ]
+    },
+    {
+      "id": "sit.separation-or-abandonment-cue",
+      "label": "Separation or signs of abandonment",
+      "alt_labels": [
+        "someone leaving",
+        "goodbyes",
+        "partner away"
+      ],
+      "definition": "A close person leaving, being away or unreachable, or showing cues the person reads as signs they may leave.",
+      "client_wording": "Someone close leaves, goes away, is hard to reach, or seems like they might leave.",
+      "example": "A partner is out late and not answering texts.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.rejection-or-exclusion",
+        "sit.being-alone",
+        "sit.uncertainty-or-waiting"
+      ],
+      "see": ["13-context-culture-development.child-anxiety", "personality-disorders.cbt-model"],
+      "sources": [
+        "APA-DSM5TR-2022 § Borderline Personality Disorder",
+        "APA-DSM5TR-2022 § Separation Anxiety Disorder"
+      ]
+    },
+    {
+      "id": "sit.social-pressure-to-use",
+      "label": "Social pressure to use substances",
+      "alt_labels": [
+        "being offered a drink",
+        "peer pressure"
+      ],
+      "definition": "Being directly offered alcohol or drugs, or being around others who are drinking or using.",
+      "client_wording": "Being offered a drink or drug, or being with people who are drinking or using.",
+      "example": "A friend hands over a beer at a barbecue.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.substance-cue",
+        "sit.urge-or-craving"
+      ],
+      "see": ["substance-use.relapse-prevention-model"],
+      "sources": [
+        "Larimer-etal-1999 § High-risk situations"
+      ]
+    },
+    {
+      "id": "sit.being-alone",
+      "label": "Being alone",
+      "alt_labels": [
+        "evenings alone",
+        "empty house"
+      ],
+      "definition": "Time without company, such as evenings, weekends or living alone, especially when the person wants contact with others.",
+      "client_wording": "Times you are on your own, like evenings or weekends, especially when you want company.",
+      "example": "Sunday evening alone in the apartment after a partner moved out.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.unstructured-time",
+        "sit.rejection-or-exclusion",
+        "bf.social-isolation"
+      ],
+      "see": [],
+      "sources": [
+        "Hawkley-Cacioppo-2010 § Abstract"
+      ]
+    },
+    {
+      "id": "sit.positive-event",
+      "label": "Positive events and successes",
+      "alt_labels": [
+        "celebrations",
+        "good news",
+        "goal attainment"
+      ],
+      "definition": "Celebrations, good news or reaching a valued goal, which can trigger substance use, manic symptoms or discomfort with success.",
+      "client_wording": "Good things happening, like celebrations, good news, or reaching a goal.",
+      "example": "Landing a new job and going out to celebrate.",
+      "group": "external-social",
+      "broader": null,
+      "related": [
+        "sit.praise-or-attention",
+        "bf.goal-attainment-event"
+      ],
+      "see": ["15-transdiagnostic-processes.perfectionism"],
+      "sources": [
+        "Larimer-etal-1999 § High-risk situations",
+        "Johnson-etal-2000 § Abstract"
+      ]
+    },
+    {
+      "id": "sit.performance-evaluation",
+      "label": "Tests and evaluations",
+      "alt_labels": [
+        "exams",
+        "job interview",
+        "appraisal",
+        "audition"
+      ],
+      "definition": "Situations where performance is formally judged or graded, such as exams, interviews, appraisals, auditions or inspections.",
+      "client_wording": "Times your work or ability is judged, like exams, interviews, or reviews at work.",
+      "example": "A driving test booked for Friday morning.",
+      "group": "external-task",
+      "broader": null,
+      "related": [
+        "sit.public-performance",
+        "sit.mistake-or-setback",
+        "sit.criticism"
+      ],
+      "see": [],
+      "sources": [
+        "Rapee-Heimberg-1997 § Model of anxiety in social/evaluative situations",
+        "Clark-Beck-2010 § Ch. 2 The Cognitive Model of Anxiety"
+      ]
+    },
+    {
+      "id": "sit.task-start",
+      "label": "Starting a task",
+      "alt_labels": [
+        "getting started",
+        "initiating a task"
+      ],
+      "definition": "The point of beginning a task, especially one experienced as boring, difficult, ambiguous or unpleasant.",
+      "client_wording": "The moment you need to start something, especially a boring, hard or unclear job.",
+      "example": "Opening the laptop to begin a tax return.",
+      "group": "external-task",
+      "broader": null,
+      "related": [
+        "sit.deadline-or-time-pressure",
+        "sit.decision-making",
+        "bh.procrastination"
+      ],
+      "see": ["adhd.cbt-model", "adhd.pitfall-disputing-optimistic-thoughts"],
+      "sources": [
+        "Steel-2007 § Meta-analytic results (task aversiveness)"
+      ]
+    },
+    {
+      "id": "sit.deadline-or-time-pressure",
+      "label": "Deadlines and time pressure",
+      "alt_labels": [
+        "running late",
+        "workload",
+        "competing demands"
+      ],
+      "definition": "An approaching due date, or more tasks and responsibilities than the time or energy available.",
+      "client_wording": "A due date is coming up, or there is too much to do in the time you have.",
+      "example": "An assignment due tomorrow morning with half still to write.",
+      "group": "external-task",
+      "broader": null,
+      "related": [
+        "sit.task-start",
+        "sit.performance-evaluation"
+      ],
+      "see": ["adhd.cbt-model"],
+      "sources": [
+        "Steel-2007 § Temporal motivation theory (task delay)",
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization"
+      ]
+    },
+    {
+      "id": "sit.mistake-or-setback",
+      "label": "Mistakes and setbacks",
+      "alt_labels": [
+        "failure",
+        "falling short",
+        "error"
+      ],
+      "definition": "Making an error, failing at something, or falling short of a personal standard or goal.",
+      "client_wording": "You make a mistake, something goes wrong, or you fall short of what you hoped.",
+      "example": "Forgetting a close friend's birthday.",
+      "group": "external-task",
+      "broader": null,
+      "related": [
+        "sit.criticism",
+        "sit.performance-evaluation"
+      ],
+      "see": ["09-ending.lapse-relapse-and-recurrence", "15-transdiagnostic-processes.perfectionism", "15-transdiagnostic-processes.self-criticism-and-shame", "cognitive.self-compassion-techniques"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Fairburn-etal-2003 § Transdiagnostic maintenance theory"
+      ]
+    },
+    {
+      "id": "sit.decision-making",
+      "label": "Having to make a decision",
+      "alt_labels": [
+        "choices",
+        "choosing between options"
+      ],
+      "definition": "Needing to choose between options, especially when outcomes are uncertain or a wrong choice feels costly.",
+      "client_wording": "Needing to make a choice when you cannot be sure which option is right.",
+      "example": "Choosing which apartment to rent before the offer expires.",
+      "group": "external-task",
+      "broader": null,
+      "related": [
+        "sit.uncertainty-or-waiting",
+        "sit.task-start"
+      ],
+      "see": ["15-transdiagnostic-processes.intolerance-of-uncertainty", "behavioral.problem-solving-therapy"],
+      "sources": [
+        "Dugas-etal-1998 § Model components (intolerance of uncertainty, problem orientation)"
+      ]
+    },
+    {
+      "id": "sit.unstructured-time",
+      "label": "Unstructured time",
+      "alt_labels": [
+        "nothing planned",
+        "empty weekends"
+      ],
+      "definition": "Periods with no planned activity or external structure, such as weekends, holidays, days off work or retirement.",
+      "client_wording": "Stretches of time with nothing planned, like empty weekends or days off.",
+      "example": "A long holiday weekend with no plans.",
+      "group": "external-task",
+      "broader": null,
+      "related": [
+        "sit.being-alone"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-2021 § Ch. 7 Activity Scheduling",
+        "Larimer-etal-1999 § High-risk situations"
+      ]
+    },
+    {
+      "id": "sit.responsibility-for-harm",
+      "label": "Situations carrying responsibility for harm",
+      "alt_labels": [
+        "leaving the house",
+        "locking up",
+        "driving",
+        "handling sharp objects"
+      ],
+      "definition": "Situations where the person could cause, or fail to prevent, harm to self or others, such as locking up, driving or cooking.",
+      "client_wording": "Times when you feel something bad could happen if you do not take enough care.",
+      "example": "Being the last to leave the office and setting the alarm.",
+      "group": "external-task",
+      "broader": null,
+      "related": [
+        "sit.intrusive-thought-or-impulse",
+        "sit.contamination-cue"
+      ],
+      "see": [],
+      "sources": [
+        "Salkovskis-1985 § Responsibility appraisal of intrusions",
+        "Rachman-1997 § Abstract"
+      ]
+    },
+    {
+      "id": "sit.agoraphobic-situations",
+      "label": "Crowded or hard-to-leave places",
+      "alt_labels": [
+        "public transport",
+        "crowds",
+        "lines",
+        "stores",
+        "being far from home"
+      ],
+      "definition": "Places where escape or help may feel hard to get: public transport, open or enclosed spaces, lines, crowds, or outside home alone.",
+      "client_wording": "Places that feel hard to leave or get help in, like buses, crowds, lines or stores.",
+      "example": "Standing in a long checkout line at a busy supermarket.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.arousal-sensations",
+        "sit.phobic-stimulus"
+      ],
+      "see": ["panic-and-phobias.agoraphobia", "panic-and-phobias.assessment", "panic-and-phobias.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Agoraphobia",
+        "Clark-1986 § Cognitive model of panic"
+      ]
+    },
+    {
+      "id": "sit.phobic-stimulus",
+      "label": "Specific feared object or situation",
+      "alt_labels": [
+        "animals",
+        "heights",
+        "blood or needles",
+        "flying",
+        "storms"
+      ],
+      "definition": "A circumscribed feared object or situation, such as animals, heights, storms, water, blood, injections, flying or enclosed spaces.",
+      "client_wording": "A particular thing you fear, like spiders, heights, needles, flying, or small spaces.",
+      "example": "Seeing a dog off its leash in the park.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.agoraphobic-situations",
+        "sit.medical-appointment-or-test"
+      ],
+      "see": ["behavioral.exposure-types", "panic-and-phobias.one-session-treatment", "panic-and-phobias.overview", "panic-and-phobias.specific-phobia"],
+      "sources": [
+        "APA-DSM5TR-2022 § Specific Phobia"
+      ]
+    },
+    {
+      "id": "sit.trauma-reminder",
+      "label": "Trauma reminders",
+      "alt_labels": [
+        "trauma cues",
+        "triggers",
+        "trauma anniversary"
+      ],
+      "definition": "Sights, sounds, smells, bodily states, places, people, dates or situations that resemble or are linked to a traumatic event.",
+      "client_wording": "Things that remind you of what happened, like a place, smell, sound, person or date.",
+      "example": "Hearing screeching brakes years after a car crash.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.intrusive-memory",
+        "bf.recent-traumatic-event",
+        "bf.prior-trauma-exposure",
+        "bh.trauma-reminder-avoidance",
+        "mp.disjointed-trauma-memory"
+      ],
+      "see": ["behavioral.exposure-types", "ptsd.cbt-model", "ptsd.cognitive-therapy-for-ptsd", "ptsd.overview"],
+      "sources": [
+        "Ehlers-Clark-2000 § Nature of the trauma memory",
+        "APA-DSM5TR-2022 § Posttraumatic Stress Disorder"
+      ]
+    },
+    {
+      "id": "sit.loss-reminder",
+      "label": "Reminders of a loss",
+      "alt_labels": [
+        "anniversaries",
+        "holidays after a death",
+        "belongings of the deceased"
+      ],
+      "definition": "Dates, places, objects or events that bring to mind a person, relationship or role that has been lost.",
+      "client_wording": "Things that remind you of someone or something you have lost, like anniversaries or belongings.",
+      "example": "The first holiday season after a parent's death.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.intrusive-memory",
+        "bf.bereavement",
+        "bf.relationship-breakup"
+      ],
+      "see": ["grief-and-loss.cbt-model", "grief-and-loss.treatment"],
+      "sources": [
+        "APA-DSM5TR-2022 § Prolonged Grief Disorder",
+        "Stroebe-etal-2007 § Abstract"
+      ]
+    },
+    {
+      "id": "sit.health-information",
+      "label": "Health information and illness cues",
+      "alt_labels": [
+        "medical news",
+        "searching symptoms online",
+        "someone else's illness"
+      ],
+      "definition": "Encountering information about illness, such as media stories, online symptom content, or a friend or relative becoming ill.",
+      "client_wording": "Hearing or reading about illness, online, in the news, or when someone you know gets sick.",
+      "example": "Reading an article about a celebrity's cancer diagnosis.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.bodily-change-or-symptom",
+        "sit.medical-appointment-or-test",
+        "bh.symptom-searching",
+        "tt.serious-illness"
+      ],
+      "see": ["health-anxiety.assessment", "health-anxiety.cbt-model", "health-anxiety.overview"],
+      "sources": [
+        "Warwick-Salkovskis-1990 § Cognitive-behavioral model of hypochondriasis"
+      ]
+    },
+    {
+      "id": "sit.medical-appointment-or-test",
+      "label": "Medical appointments and tests",
+      "alt_labels": [
+        "waiting for results",
+        "injections",
+        "dental visits",
+        "screening"
+      ],
+      "definition": "Medical or dental appointments, examinations, procedures, screenings, and waiting for test results.",
+      "client_wording": "Doctor or dentist visits, medical tests, injections, or waiting for results.",
+      "example": "Waiting a week for biopsy results.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.health-information",
+        "sit.phobic-stimulus",
+        "sit.uncertainty-or-waiting"
+      ],
+      "see": ["panic-and-phobias.specific-phobia"],
+      "sources": [
+        "Warwick-Salkovskis-1990 § Cognitive-behavioral model of hypochondriasis",
+        "APA-DSM5TR-2022 § Specific Phobia"
+      ]
+    },
+    {
+      "id": "sit.eating-situation",
+      "label": "Eating situations",
+      "alt_labels": [
+        "meals",
+        "eating with others",
+        "unplanned food",
+        "buffets"
+      ],
+      "definition": "Meals and food-related situations, including eating with others, feared or unplanned foods, buffets and food shopping.",
+      "client_wording": "Meals and food situations, like eating with others, feared foods, or food you did not plan.",
+      "example": "Being offered cake at an office party.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.body-image-cue",
+        "sit.hunger-or-dietary-restriction"
+      ],
+      "see": [],
+      "sources": [
+        "Fairburn-etal-2003 § Transdiagnostic maintenance theory"
+      ]
+    },
+    {
+      "id": "sit.body-image-cue",
+      "label": "Body image cues",
+      "alt_labels": [
+        "weighing",
+        "mirrors",
+        "clothes fitting",
+        "photos"
+      ],
+      "definition": "Situations that draw attention to body shape or weight, such as weighing, mirrors, photographs, tight clothes or seeing others' bodies.",
+      "client_wording": "Things that make you notice your shape or weight, like scales, mirrors, photos, or tight clothes.",
+      "example": "Jeans feeling tight when getting dressed.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.eating-situation",
+        "sit.social-comparison",
+        "bh.body-checking"
+      ],
+      "see": ["ocd.related-disorders"],
+      "sources": [
+        "Fairburn-etal-2003 § Transdiagnostic maintenance theory"
+      ]
+    },
+    {
+      "id": "sit.bedtime",
+      "label": "Bedtime and night waking",
+      "alt_labels": [
+        "going to bed",
+        "lying awake",
+        "waking at night"
+      ],
+      "definition": "Preparing for sleep, lying in bed trying to sleep, or waking during the night or too early.",
+      "client_wording": "Getting ready for bed, lying awake, or waking up in the night.",
+      "example": "Lying in bed at 1 a.m., still awake, with an early meeting.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.fatigue-or-sleep-loss",
+        "mp.sleep-effort",
+        "bs.bedtime-arousal"
+      ],
+      "see": ["insomnia.cbt-i-components", "insomnia.cbt-model"],
+      "sources": [
+        "Harvey-2002 § Cognitive model of insomnia"
+      ]
+    },
+    {
+      "id": "sit.substance-cue",
+      "label": "Substance cues",
+      "alt_labels": [
+        "bars",
+        "paraphernalia",
+        "payday",
+        "drinking ads"
+      ],
+      "definition": "Places, objects, times or people associated with past alcohol or drug use that can trigger cravings.",
+      "client_wording": "Places, things, times or people linked to past drinking or drug use.",
+      "example": "Walking past the bar where the client used to drink after work.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.social-pressure-to-use",
+        "sit.urge-or-craving",
+        "mp.substance-relief-cycle"
+      ],
+      "see": ["substance-use.cbt-model", "substance-use.relapse-prevention-model"],
+      "sources": [
+        "Larimer-etal-1999 § High-risk situations",
+        "Carter-Tiffany-1999 § Abstract"
+      ]
+    },
+    {
+      "id": "sit.contamination-cue",
+      "label": "Contamination cues",
+      "alt_labels": [
+        "dirt",
+        "germs",
+        "public toilets",
+        "door handles",
+        "chemicals"
+      ],
+      "definition": "Contact, or possible contact, with things perceived as dirty, germ-laden, toxic or morally contaminating.",
+      "client_wording": "Touching, or maybe touching, things that feel dirty, germy, toxic or tainted.",
+      "example": "Touching a shopping cart handle.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.responsibility-for-harm",
+        "sit.intrusive-thought-or-impulse",
+        "bh.washing-cleaning",
+        "tt.contamination"
+      ],
+      "see": [],
+      "sources": [
+        "APA-DSM5TR-2022 § Obsessive-Compulsive Disorder",
+        "Salkovskis-1985 § Responsibility appraisal of intrusions"
+      ]
+    },
+    {
+      "id": "sit.uncertainty-or-waiting",
+      "label": "Uncertainty and waiting",
+      "alt_labels": [
+        "ambiguous situations",
+        "unpredictability",
+        "waiting for news"
+      ],
+      "definition": "Situations whose outcome is unknown, ambiguous or unpredictable, including waiting for news or plans not yet confirmed.",
+      "client_wording": "Not knowing how something will turn out, or waiting to hear news.",
+      "example": "A partner traveling who has not yet confirmed a safe arrival.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.decision-making",
+        "sit.change-in-routine",
+        "sit.medical-appointment-or-test",
+        "mp.intolerance-of-uncertainty"
+      ],
+      "see": ["15-transdiagnostic-processes.intolerance-of-uncertainty", "gad.cbt-model"],
+      "sources": [
+        "Dugas-etal-1998 § Model components (intolerance of uncertainty, problem orientation)"
+      ]
+    },
+    {
+      "id": "sit.change-in-routine",
+      "label": "Changes in routine or plans",
+      "alt_labels": [
+        "unexpected change",
+        "new environment",
+        "transitions"
+      ],
+      "definition": "Unexpected changes to plans, routines or surroundings, including new places, schedules or people.",
+      "client_wording": "Plans or routines changing, especially without warning, or being somewhere new.",
+      "example": "A class moved to a different room at short notice.",
+      "group": "external-environment",
+      "broader": null,
+      "related": [
+        "sit.uncertainty-or-waiting"
+      ],
+      "see": ["bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.cbt-model"],
+      "sources": [
+        "APA-DSM5TR-2022 § Autism Spectrum Disorder"
+      ]
+    },
+    {
+      "id": "sit.arousal-sensations",
+      "label": "Noticing arousal sensations",
+      "alt_labels": [
+        "racing heart",
+        "breathlessness",
+        "dizziness",
+        "trembling"
+      ],
+      "definition": "Noticing bodily sensations of arousal, such as racing heart, breathlessness, dizziness or trembling, which then act as a trigger.",
+      "client_wording": "Noticing your heart racing, feeling dizzy, short of breath, or shaky.",
+      "example": "Heart pounding after climbing stairs.",
+      "group": "internal-body",
+      "broader": null,
+      "related": [
+        "sit.agoraphobic-situations",
+        "sit.bodily-change-or-symptom",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations"
+      ],
+      "see": ["behavioral.exposure-types", "panic-and-phobias.assessment", "panic-and-phobias.cbt-model", "panic-and-phobias.interoceptive-exposure"],
+      "sources": [
+        "Clark-1986 § Cognitive model of panic",
+        "Persons-Tompkins-2022 § Precipitants of the current problems"
+      ]
+    },
+    {
+      "id": "sit.bodily-change-or-symptom",
+      "label": "Noticing a bodily change or symptom",
+      "alt_labels": [
+        "lump",
+        "ache",
+        "rash",
+        "unexplained symptom"
+      ],
+      "definition": "Noticing a new or unexplained bodily change, such as a lump, ache, mark, or altered bodily function.",
+      "client_wording": "Noticing something new or odd in your body, like a lump, pain, mark, or change.",
+      "example": "Finding a mole that looks darker than before.",
+      "group": "internal-body",
+      "broader": null,
+      "related": [
+        "sit.health-information",
+        "sit.arousal-sensations"
+      ],
+      "see": ["health-anxiety.assessment", "health-anxiety.cbt-model", "health-anxiety.overview", "health-anxiety.pitfall-missed-medical-illness"],
+      "sources": [
+        "Warwick-Salkovskis-1990 § Cognitive-behavioral model of hypochondriasis"
+      ]
+    },
+    {
+      "id": "sit.fatigue-or-sleep-loss",
+      "label": "Tiredness or lack of sleep",
+      "alt_labels": [
+        "exhaustion",
+        "poor night's sleep",
+        "jet lag"
+      ],
+      "definition": "Feeling tired or having slept poorly, which lowers coping and can trigger low mood, irritability, worry or mood episodes.",
+      "client_wording": "Feeling worn out, or having slept badly.",
+      "example": "Waking after four hours of broken sleep before a busy day.",
+      "group": "internal-body",
+      "broader": null,
+      "related": [
+        "sit.bedtime",
+        "bf.sleep-schedule-disruption"
+      ],
+      "see": ["bipolar-and-psychosis.pitfall-sleep-loss-and-activation"],
+      "sources": [
+        "Harvey-2002 § Cognitive model of insomnia",
+        "Ehlers-etal-1988 § Abstract"
+      ]
+    },
+    {
+      "id": "sit.hunger-or-dietary-restriction",
+      "label": "Hunger or dietary restriction",
+      "alt_labels": [
+        "skipped meals",
+        "dieting"
+      ],
+      "definition": "Physical hunger or a period of undereating or strict dieting, which raises the risk of binge eating and food preoccupation.",
+      "client_wording": "Being very hungry, or having skipped meals or eaten much less than usual.",
+      "example": "Arriving home at 7 p.m. having eaten nothing since breakfast.",
+      "group": "internal-body",
+      "broader": null,
+      "related": [
+        "sit.eating-situation",
+        "mp.dietary-restraint-cycle"
+      ],
+      "see": ["eating-disorders.cbt-model"],
+      "sources": [
+        "Fairburn-etal-2003 § Transdiagnostic maintenance theory"
+      ]
+    },
+    {
+      "id": "sit.pain-or-illness-flare",
+      "label": "Pain or illness flare",
+      "alt_labels": [
+        "chronic pain flare",
+        "feeling unwell",
+        "physical discomfort"
+      ],
+      "definition": "An increase in pain, a bout of physical illness, or other physical discomfort that acts as a trigger.",
+      "client_wording": "Pain getting worse, feeling physically ill, or your body feeling off.",
+      "example": "A back pain flare that cancels weekend plans.",
+      "group": "internal-body",
+      "broader": null,
+      "related": [
+        "sit.bodily-change-or-symptom",
+        "bf.chronic-physical-condition"
+      ],
+      "see": ["chronic-pain-and-physical-health.adaptations", "chronic-pain-and-physical-health.assessment", "chronic-pain-and-physical-health.cbt-model", "chronic-pain-and-physical-health.pitfall-working-apart-from-the-medical-team", "health-anxiety.persistent-physical-symptoms"],
+      "sources": [
+        "Persons-Tompkins-2022 § Precipitants of the current problems",
+        "Macneil-etal-2012 § Precipitating factors"
+      ]
+    },
+    {
+      "id": "sit.intrusive-thought-or-impulse",
+      "label": "Intrusive thought or impulse",
+      "alt_labels": [
+        "unwanted thought",
+        "obsession",
+        "intrusion",
+        "doubt"
+      ],
+      "definition": "An unwanted thought, doubt or impulse that pops into mind, often about harm, contamination, sex, religion or mistakes.",
+      "client_wording": "An unwanted thought, doubt or urge that pops into your head out of nowhere.",
+      "example": "\"What if I left the stove on and the house burns down?\"",
+      "group": "internal-mental",
+      "broader": null,
+      "related": [
+        "sit.intrusive-memory",
+        "sit.distressing-mental-image",
+        "sit.responsibility-for-harm",
+        "mp.misinterpretation-of-intrusions"
+      ],
+      "see": ["13-context-culture-development.perinatal-mental-health", "15-transdiagnostic-processes.pitfall-telling-clients-to-stop-thinking", "15-transdiagnostic-processes.thought-suppression", "behavioral.exposure-and-response-prevention", "gad.pitfall-worry-misread-as-gad", "ocd.assessment", "ocd.cbt-model", "ocd.overview", "ocd.pitfall-misreading-intrusions-as-risk"],
+      "sources": [
+        "Salkovskis-1985 § Responsibility appraisal of intrusions",
+        "Rachman-1997 § Abstract"
+      ]
+    },
+    {
+      "id": "sit.intrusive-memory",
+      "label": "Unwanted memory",
+      "alt_labels": [
+        "flashback",
+        "intrusive memory",
+        "painful memory"
+      ],
+      "definition": "An unwanted memory of a past traumatic or painful event coming to mind, spontaneously or when cued.",
+      "client_wording": "A memory of something painful from the past that comes back when you do not want it.",
+      "example": "Suddenly recalling an embarrassing moment from a meeting last year.",
+      "group": "internal-mental",
+      "broader": null,
+      "related": [
+        "sit.trauma-reminder",
+        "sit.loss-reminder",
+        "sit.intrusive-thought-or-impulse",
+        "mp.disjointed-trauma-memory"
+      ],
+      "see": ["15-transdiagnostic-processes.pitfall-telling-clients-to-stop-thinking", "15-transdiagnostic-processes.thought-suppression", "cognitive.imagery-and-imagery-rescripting", "ptsd.cbt-model", "ptsd.overview"],
+      "sources": [
+        "Ehlers-Clark-2000 § Nature of the trauma memory"
+      ]
+    },
+    {
+      "id": "sit.distressing-mental-image",
+      "label": "Distressing mental image",
+      "alt_labels": [
+        "imagery",
+        "picture in the mind"
+      ],
+      "definition": "A vivid image of a feared or upsetting scene, real or imagined, such as seeing oneself humiliated, ill or harmed.",
+      "client_wording": "A vivid picture in your mind of something upsetting or frightening happening.",
+      "example": "Picturing oneself blushing and shaking while everyone stares.",
+      "group": "internal-mental",
+      "broader": null,
+      "related": [
+        "sit.intrusive-thought-or-impulse",
+        "sit.intrusive-memory",
+        "iv.imagery-rescripting"
+      ],
+      "see": ["cognitive.imagery-and-imagery-rescripting", "cognitive.pitfall-working-on-cold-thoughts"],
+      "sources": [
+        "Beck-2021 § Ch. 20 Imagery",
+        "Clark-Wells-1995 § Cognitive model of social phobia"
+      ]
+    },
+    {
+      "id": "sit.mood-shift",
+      "label": "Noticing a change in mood",
+      "alt_labels": [
+        "feeling low",
+        "anxiety rising",
+        "emotional surge"
+      ],
+      "definition": "Noticing an emotion begin or intensify, such as low mood, anxiety, anger, boredom or excitement, which then acts as a trigger.",
+      "client_wording": "Noticing a feeling start or get stronger, like sadness, worry, anger, or boredom.",
+      "example": "Feeling a wave of sadness while washing up after dinner.",
+      "group": "internal-mental",
+      "broader": null,
+      "related": [
+        "sit.urge-or-craving",
+        "mp.mood-intolerance"
+      ],
+      "see": ["cognitive.identifying-automatic-thoughts", "depression.relapse-prevention-mbct"],
+      "sources": [
+        "Fairburn-etal-2003 § Transdiagnostic maintenance theory",
+        "Larimer-etal-1999 § High-risk situations"
+      ]
+    },
+    {
+      "id": "sit.urge-or-craving",
+      "label": "Urge or craving",
+      "alt_labels": [
+        "craving",
+        "urge to use",
+        "urge to binge",
+        "urge to check"
+      ],
+      "definition": "Noticing an urge to act, such as to drink, use, binge, check or seek reassurance, which itself prompts further reactions.",
+      "client_wording": "Noticing a strong pull to do something, like drink, binge, check, or ask for reassurance.",
+      "example": "A sudden strong craving for a cigarette after morning coffee.",
+      "group": "internal-mental",
+      "broader": null,
+      "related": [
+        "sit.substance-cue",
+        "sit.mood-shift",
+        "bh.substance-use-to-cope",
+        "cs.urge-surfing"
+      ],
+      "see": ["personality-disorders.dbt-informed-skills", "substance-use.cbt-model", "substance-use.overview", "substance-use.relapse-prevention-model", "substance-use.treatment"],
+      "sources": [
+        "Larimer-etal-1999 § High-risk situations",
+        "Carter-Tiffany-1999 § Abstract"
+      ]
+    }
+  ]
+}

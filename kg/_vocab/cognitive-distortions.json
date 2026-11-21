@@ -1,0 +1,499 @@
+{
+  "scheme": "cognitive-distortions",
+  "prefix": "cd",
+  "title": "Cognitive distortions (thinking traps)",
+  "description": "Systematic errors in how automatic thoughts process information (how a thought is biased, not what it is about). Tags automatic thoughts and hot thoughts in five-part, cognitive model and thought record formulation slots. Overlaps resolved: tunnel vision is an alias of mental filter, probability overestimation of fortune telling, awfulizing of catastrophizing.",
+  "version": "1.0.0",
+  "sources": [
+    "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)",
+    "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+    "Beck-1963 § Cognitive distortions",
+    "Beck-etal-2024 § Ch. 1 Overview",
+    "Clark-Beck-2010 § Ch. 2 The Cognitive Model of Anxiety",
+    "Clark-2009 § Introduction (overestimates of danger)",
+    "Knouse-Mitchell-2015 § Overly positive automatic thoughts"
+  ],
+  "concepts": [
+    {
+      "id": "cd.all-or-nothing-thinking",
+      "label": "All-or-nothing thinking",
+      "alt_labels": [
+        "black-and-white thinking",
+        "dichotomous thinking",
+        "polarized thinking",
+        "absolutistic thinking"
+      ],
+      "definition": "Viewing a situation, person or self in only two extreme categories instead of on a continuum, so anything short of perfect counts as failure.",
+      "client_wording": "Seeing things as all good or all bad, with nothing in between.",
+      "example": "\"If I don't get an A, I'm a total failure.\"",
+      "group": "Extreme and global judgments",
+      "broader": null,
+      "related": [
+        "cd.overgeneralization",
+        "cd.labeling",
+        "cd.should-statements",
+        "iv.continuum-technique"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions", "15-transdiagnostic-processes.perfectionism", "cognitive.identifying-cognitive-distortions", "substance-use.pitfall-lapse-treated-as-failure"],
+      "sources": [
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)",
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-1963 § Cognitive distortions"
+      ]
+    },
+    {
+      "id": "cd.overgeneralization",
+      "label": "Overgeneralization",
+      "alt_labels": [
+        "overgeneralizing"
+      ],
+      "definition": "Drawing a sweeping negative conclusion from a single event or a few events, often signaled by words such as always, never or everyone.",
+      "client_wording": "Treating one bad experience as proof that it will always happen.",
+      "example": "\"I got turned down again. Nobody will ever want to go out with me.\"",
+      "group": "Extreme and global judgments",
+      "broader": null,
+      "related": [
+        "cd.labeling",
+        "cd.all-or-nothing-thinking",
+        "cd.mental-filter"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions"],
+      "sources": [
+        "Beck-1963 § Cognitive distortions",
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)"
+      ]
+    },
+    {
+      "id": "cd.labeling",
+      "label": "Labeling",
+      "alt_labels": [
+        "mislabeling",
+        "global labeling",
+        "global rating"
+      ],
+      "definition": "Attaching a fixed, global, usually harsh label to oneself or others on the basis of particular behaviors, instead of describing the behavior.",
+      "client_wording": "Calling yourself or someone else a name, like loser or idiot, because of one thing.",
+      "example": "\"I forgot her birthday. I'm a terrible friend.\"",
+      "group": "Extreme and global judgments",
+      "broader": null,
+      "related": [
+        "cd.overgeneralization",
+        "cd.all-or-nothing-thinking",
+        "tt.defect-and-exposure"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions", "adhd.cbt-model"],
+      "sources": [
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)"
+      ]
+    },
+    {
+      "id": "cd.mental-filter",
+      "label": "Mental filter",
+      "alt_labels": [
+        "selective abstraction",
+        "negative filter",
+        "tunnel vision"
+      ],
+      "definition": "Attending to one negative detail, or only to the negative aspects of a situation, and judging the whole by them while overlooking the rest.",
+      "client_wording": "Focusing on the one thing that went wrong and missing everything that went right.",
+      "example": "Ten people praise a talk and one criticizes it; the client thinks only \"It went badly.\"",
+      "group": "Filtering the evidence",
+      "broader": null,
+      "related": [
+        "cd.disqualifying-the-positive",
+        "cd.magnification-and-minimization",
+        "cd.overgeneralization",
+        "mp.belief-confirming-processing"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions"],
+      "sources": [
+        "Beck-1963 § Cognitive distortions",
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)"
+      ]
+    },
+    {
+      "id": "cd.disqualifying-the-positive",
+      "label": "Disqualifying the positive",
+      "alt_labels": [
+        "discounting the positive"
+      ],
+      "definition": "Rejecting positive experiences, qualities or feedback as not counting, for example by crediting luck or kindness, so negative beliefs stay intact.",
+      "client_wording": "Brushing off good things or compliments as flukes that don't really count.",
+      "example": "\"She only said it went well because she was being nice.\"",
+      "group": "Filtering the evidence",
+      "broader": null,
+      "related": [
+        "cd.mental-filter",
+        "cd.magnification-and-minimization",
+        "mp.belief-confirming-processing"
+      ],
+      "see": ["cognitive.identifying-cognitive-distortions"],
+      "sources": [
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)"
+      ]
+    },
+    {
+      "id": "cd.magnification-and-minimization",
+      "label": "Magnification and minimization",
+      "alt_labels": [
+        "binocular trick",
+        "maximizing and minimizing"
+      ],
+      "definition": "Exaggerating the importance of negatives, such as one's mistakes or others' strengths, while shrinking the importance of positives, such as one's own strengths.",
+      "client_wording": "Blowing your mistakes out of proportion while shrinking your strengths and successes.",
+      "example": "\"One typo ruined the whole report. Finishing it early means nothing.\"",
+      "group": "Filtering the evidence",
+      "broader": null,
+      "related": [
+        "cd.disqualifying-the-positive",
+        "cd.catastrophizing",
+        "cd.mental-filter"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions"],
+      "sources": [
+        "Beck-1963 § Cognitive distortions",
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)"
+      ]
+    },
+    {
+      "id": "cd.jumping-to-conclusions",
+      "label": "Jumping to conclusions",
+      "alt_labels": [
+        "arbitrary inference"
+      ],
+      "definition": "Reaching a negative conclusion without adequate evidence, or despite contrary evidence. Umbrella term for mind reading and fortune telling.",
+      "client_wording": "Deciding something bad is true before you have the facts.",
+      "example": "\"He hasn't replied to my text. I must have upset him.\"",
+      "group": "Jumping to conclusions",
+      "broader": null,
+      "related": [
+        "cd.mind-reading",
+        "cd.fortune-telling",
+        "cd.emotional-reasoning",
+        "mp.interpretation-bias",
+        "mp.hasty-data-gathering"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions", "cognitive.identifying-cognitive-distortions"],
+      "sources": [
+        "Beck-1963 § Cognitive distortions",
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-etal-2024 § Ch. 1 Overview"
+      ]
+    },
+    {
+      "id": "cd.mind-reading",
+      "label": "Mind reading",
+      "alt_labels": [
+        "assuming what others think"
+      ],
+      "definition": "Assuming you know what others are thinking, usually that they judge you negatively, without checking or considering other possibilities.",
+      "client_wording": "Being sure you know what others think of you, without asking.",
+      "example": "\"Everyone in the meeting thinks I'm boring.\"",
+      "group": "Jumping to conclusions",
+      "broader": "cd.jumping-to-conclusions",
+      "related": [
+        "cd.fortune-telling",
+        "tt.negative-evaluation"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions", "cognitive.identifying-cognitive-distortions"],
+      "sources": [
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)"
+      ]
+    },
+    {
+      "id": "cd.fortune-telling",
+      "label": "Fortune telling",
+      "alt_labels": [
+        "negative prediction",
+        "fortune teller error",
+        "probability overestimation"
+      ],
+      "definition": "Predicting a negative outcome as if it were certain, or judging a feared outcome far more likely than the evidence suggests.",
+      "client_wording": "Predicting things will go badly and treating the prediction as a fact.",
+      "example": "\"I'll freeze in the interview and won't get the job.\"",
+      "group": "Jumping to conclusions",
+      "broader": "cd.jumping-to-conclusions",
+      "related": [
+        "cd.catastrophizing",
+        "cd.underestimating-coping",
+        "cd.mind-reading"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions", "cognitive.identifying-cognitive-distortions"],
+      "sources": [
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)",
+        "Clark-2009 § Introduction (overestimates of danger)"
+      ]
+    },
+    {
+      "id": "cd.emotional-reasoning",
+      "label": "Emotional reasoning",
+      "alt_labels": [
+        "feelings as facts"
+      ],
+      "definition": "Taking one's feelings as evidence of how things really are, reasoning that because something feels true, it must be true.",
+      "client_wording": "Believing something is true just because it feels true.",
+      "example": "\"I feel so anxious, something terrible must be about to happen.\"",
+      "group": "Jumping to conclusions",
+      "broader": null,
+      "related": [
+        "cd.jumping-to-conclusions",
+        "cd.catastrophizing"
+      ],
+      "see": ["cognitive.identifying-cognitive-distortions", "social-anxiety.pitfall-unprepared-video-feedback", "social-anxiety.video-feedback-and-attention-training"],
+      "sources": [
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)",
+        "Clark-Beck-2010 § Ch. 2 The Cognitive Model of Anxiety"
+      ]
+    },
+    {
+      "id": "cd.catastrophizing",
+      "label": "Catastrophizing",
+      "alt_labels": [
+        "awfulizing",
+        "catastrophic thinking"
+      ],
+      "definition": "Imagining or expecting the worst possible outcome and judging it unbearable, overestimating how severe the consequences of an event would be.",
+      "client_wording": "Jumping to the worst-case scenario and believing it would be a disaster you couldn't survive.",
+      "example": "\"If I lose this job, I'll lose the house and end up on the street.\"",
+      "group": "Threat appraisal",
+      "broader": null,
+      "related": [
+        "cd.fortune-telling",
+        "cd.magnification-and-minimization",
+        "cd.underestimating-coping",
+        "cd.low-frustration-tolerance",
+        "iv.decatastrophizing"
+      ],
+      "see": ["09-ending.lapse-relapse-and-recurrence", "15-transdiagnostic-processes.cognitive-distortions", "chronic-pain-and-physical-health.cbt-model", "cognitive.cognitive-restructuring", "cognitive.identifying-cognitive-distortions"],
+      "sources": [
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)",
+        "Clark-Beck-2010 § Ch. 2 The Cognitive Model of Anxiety",
+        "Clark-2009 § Introduction (overestimates of danger)"
+      ]
+    },
+    {
+      "id": "cd.underestimating-coping",
+      "label": "Underestimating coping",
+      "alt_labels": [
+        "underestimating coping resources",
+        "discounting rescue factors"
+      ],
+      "definition": "Underrating one's ability to cope with a feared event and overlooking available help or rescue factors, which magnifies perceived threat.",
+      "client_wording": "Believing you couldn't handle it if something bad happened, and that no one would help.",
+      "example": "\"If I get anxious at the party, I won't be able to handle it.\"",
+      "group": "Threat appraisal",
+      "broader": null,
+      "related": [
+        "cd.catastrophizing",
+        "cd.fortune-telling",
+        "tt.vulnerability"
+      ],
+      "see": ["cognitive.cognitive-restructuring"],
+      "sources": [
+        "Clark-2009 § Introduction (overestimates of danger)",
+        "Clark-Beck-2010 § Ch. 2 The Cognitive Model of Anxiety"
+      ]
+    },
+    {
+      "id": "cd.should-statements",
+      "label": "Should statements",
+      "alt_labels": [
+        "imperatives",
+        "must statements",
+        "demandingness",
+        "musturbation"
+      ],
+      "definition": "Holding rigid, absolute demands about how oneself, others or the world should or must be. Unmet demands bring guilt, frustration or anger.",
+      "client_wording": "Having strict rules about how you or others must act, and feeling bad when they're broken.",
+      "example": "\"I should never make mistakes.\" \"He ought to know how I feel.\"",
+      "group": "Rules and demands",
+      "broader": null,
+      "related": [
+        "cd.all-or-nothing-thinking",
+        "cd.low-frustration-tolerance",
+        "cd.blaming",
+        "ib.must-be-perfect",
+        "ib.others-must-be-fair"
+      ],
+      "see": ["cognitive.identifying-cognitive-distortions"],
+      "sources": [
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)"
+      ]
+    },
+    {
+      "id": "cd.low-frustration-tolerance",
+      "label": "Low frustration tolerance",
+      "alt_labels": [
+        "discomfort intolerance",
+        "frustration intolerance",
+        "can't-stand-it thinking"
+      ],
+      "definition": "Believing that frustration, discomfort or unpleasant emotion is unbearable and must be avoided or ended at once, rather than unpleasant but tolerable.",
+      "client_wording": "Telling yourself you can't stand feeling uncomfortable or frustrated, even for a short while.",
+      "example": "\"I can't stand waiting. This is unbearable.\"",
+      "group": "Rules and demands",
+      "broader": null,
+      "related": [
+        "cd.catastrophizing",
+        "cd.should-statements",
+        "cd.permission-giving-thoughts",
+        "ib.emotions-overwhelming"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions"],
+      "sources": [
+        "Harrington-2005 § Frustration intolerance beliefs (Frustration Discomfort Scale)"
+      ]
+    },
+    {
+      "id": "cd.personalization",
+      "label": "Personalization",
+      "alt_labels": [
+        "taking things personally",
+        "unwarranted self-blame"
+      ],
+      "definition": "Believing you caused, or are the target of, negative events or others' behavior without considering other, more likely explanations.",
+      "client_wording": "Assuming bad things are your fault or about you, when other reasons are more likely.",
+      "example": "\"My son failed his test because I'm a bad mother.\"",
+      "group": "Responsibility and comparison",
+      "broader": null,
+      "related": [
+        "cd.blaming",
+        "cd.hindsight-bias",
+        "tt.inflated-responsibility",
+        "iv.responsibility-pie-chart",
+        "ib.inflated-responsibility"
+      ],
+      "see": ["ptsd.cognitive-processing-therapy"],
+      "sources": [
+        "Beck-1963 § Cognitive distortions",
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)",
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts (thinking errors)"
+      ]
+    },
+    {
+      "id": "cd.blaming",
+      "label": "Blaming",
+      "alt_labels": [
+        "other-blame",
+        "externalizing blame"
+      ],
+      "definition": "Holding other people or circumstances entirely responsible for one's problems or feelings, overlooking one's own part and what one can change.",
+      "client_wording": "Putting all the blame for a problem on someone else, and missing what you can change.",
+      "example": "\"My partner is the reason I'm miserable.\"",
+      "group": "Responsibility and comparison",
+      "broader": null,
+      "related": [
+        "cd.personalization",
+        "cd.should-statements",
+        "tt.violation-and-unfairness"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions"],
+      "sources": [
+        "Burns-1980 § Ch. 3 You Feel the Way You Think (cognitive distortions)"
+      ]
+    },
+    {
+      "id": "cd.hindsight-bias",
+      "label": "Hindsight bias",
+      "alt_labels": [
+        "I-should-have-known thinking",
+        "regret orientation"
+      ],
+      "definition": "Judging past decisions with knowledge gained only afterward, believing the outcome was foreseeable and preventable at the time. Common in trauma-related guilt.",
+      "client_wording": "Blaming yourself for not knowing back then what you only found out later.",
+      "example": "\"I should have known he was dangerous and left sooner.\"",
+      "group": "Responsibility and comparison",
+      "broader": null,
+      "related": [
+        "cd.personalization",
+        "tt.transgression"
+      ],
+      "see": ["ptsd.cognitive-processing-therapy"],
+      "sources": [
+        "Kubany-Manke-1995 § Hindsight bias",
+        "Resick-etal-2024 § Assimilation and hindsight bias (stuck points)",
+        "PsychologyTools-CognitiveDistortions § Hindsight bias"
+      ]
+    },
+    {
+      "id": "cd.unfair-comparisons",
+      "label": "Unfair comparisons",
+      "alt_labels": [
+        "negative social comparison",
+        "upward comparison"
+      ],
+      "definition": "Comparing oneself selectively with people who seem better off, or with unrealistic standards, and concluding one is inferior or lacking.",
+      "client_wording": "Measuring yourself against people who seem to be doing better and feeling you come up short.",
+      "example": "\"Everyone my age has a house and kids. I've achieved nothing.\"",
+      "group": "Responsibility and comparison",
+      "broader": null,
+      "related": [
+        "cd.disqualifying-the-positive",
+        "cd.mental-filter",
+        "tt.inadequacy-and-failure"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions", "eating-disorders.cbt-model"],
+      "sources": [
+        "Gilbert-1998 § Social comparison",
+        "PsychologyTools-CognitiveDistortions § Social comparison"
+      ]
+    },
+    {
+      "id": "cd.overly-optimistic-thinking",
+      "label": "Overly optimistic thinking",
+      "alt_labels": [
+        "incautious optimism",
+        "positively valenced cognitive avoidance",
+        "optimistic time estimates"
+      ],
+      "definition": "Unrealistically positive predictions about time, effort, ability or future motivation that feel good now but lead to delay and less skill use.",
+      "client_wording": "Telling yourself a task will be quick or easy later, so you don't start now.",
+      "example": "\"It'll only take twenty minutes. I can easily start tonight.\"",
+      "group": "Procrastination thinking (ADHD)",
+      "broader": null,
+      "related": [
+        "cd.permission-giving-thoughts",
+        "mp.procrastination-cycle"
+      ],
+      "see": ["adhd.cbt-model", "adhd.pitfall-disputing-optimistic-thoughts"],
+      "sources": [
+        "Knouse-Mitchell-2015 § Positively-valenced cognitive avoidance: a functional analysis",
+        "Knouse-etal-2019 § Introduction"
+      ]
+    },
+    {
+      "id": "cd.permission-giving-thoughts",
+      "label": "Permission-giving thoughts",
+      "alt_labels": [
+        "permissive thoughts",
+        "procrastination rationalizations"
+      ],
+      "definition": "Thoughts that justify putting off a task or giving in to an urge, bringing short-term relief and so reinforcing avoidance.",
+      "client_wording": "Thoughts that give you a reason to put something off, like 'I'll just do this first.'",
+      "example": "\"I'll feel more like doing it after I check my email.\"",
+      "group": "Procrastination thinking (ADHD)",
+      "broader": null,
+      "related": [
+        "cd.overly-optimistic-thinking",
+        "cd.low-frustration-tolerance",
+        "mp.procrastination-cycle",
+        "ib.substance-permissive"
+      ],
+      "see": ["adhd.cbt-model", "adhd.pitfall-disputing-optimistic-thoughts", "substance-use.cbt-model"],
+      "sources": [
+        "Knouse-etal-2019 § Introduction (permission-giving thoughts)",
+        "Knouse-Mitchell-2015 § Avoidance function of overly positive thoughts",
+        "Beck-etal-1993 § Permission-giving beliefs"
+      ]
+    }
+  ]
+}

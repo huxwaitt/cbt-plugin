@@ -1,0 +1,952 @@
+{
+  "scheme": "body-sensations",
+  "prefix": "bs",
+  "title": "Body sensations (physical reactions)",
+  "description": "Physical sensations a client notices, used in the physical reactions slot of the five-part model and in panic, health anxiety, insomnia, eating and anger formulations; rated for intensity (0 to 100). Code the sensation here; a catastrophic reading of it is a thought, and what the client does about it is a behavior.",
+  "version": "1.0.0",
+  "sources": [
+    "Greenberger-Padesky-2016 § Ch. 2 Understanding Your Problems",
+    "APA-DSM5TR-2022 § Panic Attack Specifier",
+    "Clark-Beck-2010 § Ch. 1 Anxiety: A Common but Multifaceted Condition",
+    "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+    "Clark-1986 § The cognitive model of panic"
+  ],
+  "concepts": [
+    {
+      "id": "bs.racing-heart",
+      "label": "Racing or pounding heart",
+      "alt_labels": [
+        "palpitations",
+        "heart thumping",
+        "heart skipping",
+        "fast heartbeat"
+      ],
+      "definition": "Awareness of a fast, forceful or irregular heartbeat; a panic attack symptom often misread as a heart attack.",
+      "client_wording": "My heart racing, pounding or skipping a beat.",
+      "example": "Heart pounding while waiting to give a toast: \"Something's wrong with my heart.\"",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "bs.chest-tightness",
+        "bs.breathlessness",
+        "em.panicky",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations",
+        "ib.anxiety-sensations-dangerous",
+        "sit.arousal-sensations"
+      ],
+      "see": ["12-medical-pharmacology.medical-mimics", "gad.adaptations", "panic-and-phobias.cbt-model", "panic-and-phobias.interoceptive-exposure"],
+      "sources": [
+        "APA-DSM5TR-2022 § Panic Attack Specifier",
+        "Clark-1986 § The cognitive model of panic",
+        "Clark-Beck-2010 § Ch. 1 Anxiety: A Common but Multifaceted Condition"
+      ]
+    },
+    {
+      "id": "bs.breathlessness",
+      "label": "Shortness of breath",
+      "alt_labels": [
+        "smothering",
+        "can't get enough air",
+        "breathless",
+        "air hunger"
+      ],
+      "definition": "Sensation of not getting enough air or of smothering, often with fast, shallow breathing.",
+      "client_wording": "Like I can't get enough air in.",
+      "example": "On a crowded train: \"I'm going to suffocate.\"",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "bs.choking",
+        "bs.tingling",
+        "em.panicky"
+      ],
+      "see": ["panic-and-phobias.cbt-model", "panic-and-phobias.interoceptive-exposure"],
+      "sources": [
+        "APA-DSM5TR-2022 § Panic Attack Specifier",
+        "Clark-1986 § The cognitive model of panic",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.choking",
+      "label": "Choking sensation or lump in throat",
+      "alt_labels": [
+        "lump in throat",
+        "throat tightening",
+        "hard to swallow"
+      ],
+      "definition": "Feeling of throat constriction or a lump that makes swallowing or speaking feel hard; occurs in fear and in sadness.",
+      "client_wording": "A tight throat or lump that makes it hard to swallow.",
+      "example": "Lump in my throat when I tried to speak at the funeral.",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "bs.breathlessness",
+        "bs.tearful"
+      ],
+      "see": [],
+      "sources": [
+        "APA-DSM5TR-2022 § Panic Attack Specifier",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.chest-tightness",
+      "label": "Chest tightness or pain",
+      "alt_labels": [
+        "chest pressure",
+        "heavy chest",
+        "chest discomfort"
+      ],
+      "definition": "Tightness, pressure or pain in the chest during arousal; new or unexplained chest pain needs medical assessment first.",
+      "client_wording": "My chest feels tight, heavy or painful.",
+      "example": "Band of pressure across my chest during an argument.",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "bs.racing-heart",
+        "bs.breathlessness"
+      ],
+      "see": ["panic-and-phobias.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Panic Attack Specifier",
+        "Clark-Beck-2010 § Ch. 1 Anxiety: A Common but Multifaceted Condition"
+      ]
+    },
+    {
+      "id": "bs.dizziness",
+      "label": "Dizziness or lightheadedness",
+      "alt_labels": [
+        "lightheaded",
+        "faint",
+        "unsteady",
+        "woozy",
+        "head spinning"
+      ],
+      "definition": "Feeling unsteady, lightheaded or about to faint; in panic often misread as a sign of imminent collapse.",
+      "client_wording": "Lightheaded or wobbly, like I might pass out.",
+      "example": "Dizzy in the shopping mall: \"I'm going to collapse.\"",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "bs.jelly-legs",
+        "bs.derealization",
+        "em.panicky"
+      ],
+      "see": ["12-medical-pharmacology.discontinuation-and-withdrawal", "12-medical-pharmacology.pitfall-withdrawal-mistaken-for-relapse", "behavioral.exposure-types", "eating-disorders.medical-risk", "gad.adaptations", "panic-and-phobias.cbt-model", "panic-and-phobias.interoceptive-exposure"],
+      "sources": [
+        "APA-DSM5TR-2022 § Panic Attack Specifier",
+        "Clark-1986 § The cognitive model of panic"
+      ]
+    },
+    {
+      "id": "bs.jelly-legs",
+      "label": "Weak or jelly legs",
+      "alt_labels": [
+        "weak legs",
+        "legs giving way",
+        "wobbly legs",
+        "weakness"
+      ],
+      "definition": "Sensation of weakness or wobbliness in the legs, often feared as a sign of fainting or collapse.",
+      "client_wording": "My legs feel weak, like they might give way.",
+      "example": "Legs like jelly walking up to the podium.",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "bs.dizziness",
+        "bs.trembling"
+      ],
+      "see": [],
+      "sources": [
+        "Clark-Beck-2010 § Ch. 1 Anxiety: A Common but Multifaceted Condition",
+        "Clark-1986 § The cognitive model of panic"
+      ]
+    },
+    {
+      "id": "bs.trembling",
+      "label": "Trembling or shaking",
+      "alt_labels": [
+        "shaky",
+        "jittery",
+        "quivering",
+        "shaky voice"
+      ],
+      "definition": "Visible or felt shaking of hands, legs, body or voice during anxiety or strong emotion.",
+      "client_wording": "Shaky hands, legs or voice.",
+      "example": "Hands shaking while signing my name in front of the clerk.",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "bs.jelly-legs",
+        "bs.blushing"
+      ],
+      "see": ["12-medical-pharmacology.mood-stabilizers-and-antipsychotics"],
+      "sources": [
+        "APA-DSM5TR-2022 § Panic Attack Specifier",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.sweating",
+      "label": "Sweating",
+      "alt_labels": [
+        "sweaty palms",
+        "clammy hands",
+        "perspiring"
+      ],
+      "definition": "Increased sweating, especially palms, face or underarms, during anxiety; often monitored and hidden in social anxiety.",
+      "client_wording": "Sweaty hands or face when I'm stressed.",
+      "example": "Sweaty palms before shaking hands at the interview.",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "bs.blushing",
+        "bs.hot-cold-flushes"
+      ],
+      "see": ["social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.cbt-model", "social-anxiety.pitfall-unprepared-video-feedback", "social-anxiety.video-feedback-and-attention-training"],
+      "sources": [
+        "APA-DSM5TR-2022 § Panic Attack Specifier",
+        "Clark-Beck-2010 § Ch. 1 Anxiety: A Common but Multifaceted Condition"
+      ]
+    },
+    {
+      "id": "bs.hot-cold-flushes",
+      "label": "Hot flushes or chills",
+      "alt_labels": [
+        "waves of heat",
+        "cold shivers",
+        "goosebumps",
+        "hot and cold"
+      ],
+      "definition": "Sudden waves of heat or cold through the body during anxiety or panic.",
+      "client_wording": "Suddenly going hot or cold all over.",
+      "example": "A wave of heat then chills in the doctor's waiting room.",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "bs.sweating",
+        "bs.heat-rising"
+      ],
+      "see": [],
+      "sources": [
+        "APA-DSM5TR-2022 § Panic Attack Specifier",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.tingling",
+      "label": "Tingling or numbness",
+      "alt_labels": [
+        "pins and needles",
+        "paresthesias",
+        "numb fingers",
+        "tingling lips"
+      ],
+      "definition": "Pins and needles or numbness, often in hands, feet or around the mouth, especially with fast breathing.",
+      "client_wording": "Pins and needles or numb patches, often in hands or face.",
+      "example": "Tingling fingers during a panic attack: \"I'm having a stroke.\"",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "bs.breathlessness"
+      ],
+      "see": [],
+      "sources": [
+        "APA-DSM5TR-2022 § Panic Attack Specifier",
+        "Clark-1986 § The cognitive model of panic"
+      ]
+    },
+    {
+      "id": "bs.dry-mouth",
+      "label": "Dry mouth",
+      "alt_labels": [
+        "cotton mouth",
+        "parched mouth"
+      ],
+      "definition": "Dry, sticky mouth from reduced saliva during anxious arousal; can make speaking feel harder.",
+      "client_wording": "My mouth goes dry when I'm nervous.",
+      "example": "Mouth so dry I kept sipping water during my presentation.",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "bs.choking"
+      ],
+      "see": [],
+      "sources": [
+        "Clark-Beck-2010 § Ch. 1 Anxiety: A Common but Multifaceted Condition"
+      ]
+    },
+    {
+      "id": "bs.blushing",
+      "label": "Blushing",
+      "alt_labels": [
+        "going red",
+        "face burning",
+        "flushing up"
+      ],
+      "definition": "Visible reddening of face or neck in social situations; a feared, closely monitored symptom in social anxiety.",
+      "client_wording": "My face going red in front of people.",
+      "example": "Blushing when asked a question in class: \"Everyone can see I'm anxious.\"",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "em.embarrassed",
+        "bs.sweating",
+        "bs.trembling",
+        "ib.visible-anxiety-brings-rejection",
+        "bh.concealing-anxiety-signs"
+      ],
+      "see": ["social-anxiety.pitfall-unprepared-video-feedback", "social-anxiety.video-feedback-and-attention-training"],
+      "sources": [
+        "Clark-Wells-1995 § The cognitive model of social phobia"
+      ]
+    },
+    {
+      "id": "bs.startle",
+      "label": "Jumpy or easily startled",
+      "alt_labels": [
+        "jumpy",
+        "exaggerated startle",
+        "on high alert",
+        "hair-trigger"
+      ],
+      "definition": "Exaggerated startle to sudden noises or movement; a hyperarousal sign after trauma and in anxiety.",
+      "client_wording": "Jumping out of my skin at sudden noises.",
+      "example": "Leaping up when a door slammed down the hall.",
+      "group": "Autonomic arousal and panic",
+      "broader": null,
+      "related": [
+        "em.suspicious",
+        "bs.racing-heart"
+      ],
+      "see": ["ptsd.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Posttraumatic Stress Disorder (arousal and reactivity)",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.muscle-tension",
+      "label": "Muscle tension",
+      "alt_labels": [
+        "tense shoulders",
+        "tight neck",
+        "stiffness",
+        "rigid body"
+      ],
+      "definition": "Sustained tightening of muscles, often in the neck, shoulders, jaw or back; a core feature of generalized anxiety.",
+      "client_wording": "Tight, tense muscles, often in my neck or shoulders.",
+      "example": "Shoulders up by my ears by the end of the workday.",
+      "group": "Muscular tension",
+      "broader": null,
+      "related": [
+        "bs.aches-and-pains",
+        "bs.clenching",
+        "em.anxious"
+      ],
+      "see": ["behavioral.relaxation-and-arousal-reduction", "gad.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Generalized Anxiety Disorder",
+        "Clark-Beck-2010 § Ch. 1 Anxiety: A Common but Multifaceted Condition"
+      ]
+    },
+    {
+      "id": "bs.aches-and-pains",
+      "label": "Aches and pains",
+      "alt_labels": [
+        "headache",
+        "tension headache",
+        "sore muscles",
+        "backache"
+      ],
+      "definition": "Headaches, muscle aches or soreness accompanying chronic tension, low mood or poor sleep; medical causes should be ruled out.",
+      "client_wording": "Headaches or aching, sore muscles.",
+      "example": "Tension headache every afternoon during exam week.",
+      "group": "Muscular tension",
+      "broader": null,
+      "related": [
+        "bs.muscle-tension",
+        "bs.fatigue"
+      ],
+      "see": ["chronic-pain-and-physical-health.overview", "chronic-pain-and-physical-health.pitfall-implying-it-is-psychological", "chronic-pain-and-physical-health.pitfall-pain-relief-as-the-goal", "depression.adaptations", "health-anxiety.persistent-physical-symptoms"],
+      "sources": [
+        "APA-DSM5TR-2022 § Generalized Anxiety Disorder (associated features)"
+      ]
+    },
+    {
+      "id": "bs.restlessness",
+      "label": "Restlessness",
+      "alt_labels": [
+        "keyed up",
+        "fidgety",
+        "can't sit still",
+        "agitated"
+      ],
+      "definition": "Physical restlessness or feeling keyed up and unable to settle; a criterion symptom of generalized anxiety disorder.",
+      "client_wording": "Fidgety and keyed up, unable to sit still.",
+      "example": "Pacing the kitchen waiting for test results.",
+      "group": "Muscular tension",
+      "broader": null,
+      "related": [
+        "bs.muscle-tension",
+        "bs.bedtime-arousal",
+        "em.bored",
+        "rk.agitation-or-anger"
+      ],
+      "see": ["12-medical-pharmacology.antidepressants", "12-medical-pharmacology.mood-stabilizers-and-antipsychotics", "12-medical-pharmacology.pitfall-side-effects-read-as-psychological", "12-medical-pharmacology.when-to-refer-medically", "gad.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Generalized Anxiety Disorder",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.butterflies",
+      "label": "Butterflies or churning stomach",
+      "alt_labels": [
+        "knot in stomach",
+        "nervous stomach",
+        "stomach churning"
+      ],
+      "definition": "Fluttering, churning or knotted feeling in the stomach during nervous anticipation.",
+      "client_wording": "Butterflies or a knot in my stomach.",
+      "example": "Stomach churning on the drive to my first day at a new job.",
+      "group": "Gastrointestinal",
+      "broader": null,
+      "related": [
+        "bs.nausea",
+        "bs.stomach-pain",
+        "em.anxious"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.nausea",
+      "label": "Nausea",
+      "alt_labels": [
+        "feeling sick",
+        "queasy",
+        "urge to vomit",
+        "gagging"
+      ],
+      "definition": "Queasy, sick feeling, sometimes with gagging or retching; occurs in anxiety, panic and disgust.",
+      "client_wording": "Feeling sick to my stomach, like I might throw up.",
+      "example": "Queasy before every flight: \"I'll be sick in front of everyone.\"",
+      "group": "Gastrointestinal",
+      "broader": null,
+      "related": [
+        "bs.butterflies",
+        "em.disgusted"
+      ],
+      "see": [],
+      "sources": [
+        "APA-DSM5TR-2022 § Panic Attack Specifier",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.toilet-urgency",
+      "label": "Sudden need for the toilet",
+      "alt_labels": [
+        "diarrhea",
+        "loose stools",
+        "urgent bowels",
+        "need to urinate"
+      ],
+      "definition": "Sudden urge to empty bowel or bladder under stress, which can lead to avoiding places far from toilets.",
+      "client_wording": "Suddenly needing the bathroom urgently when I'm stressed.",
+      "example": "Needing the toilet three times before leaving for the bus.",
+      "group": "Gastrointestinal",
+      "broader": null,
+      "related": [
+        "bs.butterflies"
+      ],
+      "see": ["panic-and-phobias.agoraphobia"],
+      "sources": [
+        "Clark-Beck-2010 § Ch. 1 Anxiety: A Common but Multifaceted Condition",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.stomach-pain",
+      "label": "Stomach pain or sinking feeling",
+      "alt_labels": [
+        "pit of the stomach",
+        "gut ache",
+        "stomach cramps",
+        "sinking stomach"
+      ],
+      "definition": "Ache, cramp or sinking sensation in the gut during stress, dread, shame or envy.",
+      "client_wording": "An ache or sinking feeling in my stomach.",
+      "example": "Sinking feeling in my gut when the boss's email arrived.",
+      "group": "Gastrointestinal",
+      "broader": null,
+      "related": [
+        "bs.butterflies",
+        "em.dread"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.fatigue",
+      "label": "Fatigue",
+      "alt_labels": [
+        "exhausted",
+        "tired",
+        "drained",
+        "worn out",
+        "no energy"
+      ],
+      "definition": "Persistent physical or mental tiredness and lack of energy not relieved by rest; distinct from sleepiness.",
+      "client_wording": "Drained and out of energy, even after resting.",
+      "example": "Too tired to shower after a full night in bed.",
+      "group": "Fatigue and low energy",
+      "broader": null,
+      "related": [
+        "bs.daytime-sleepiness",
+        "bs.heaviness",
+        "em.depressed"
+      ],
+      "see": ["12-medical-pharmacology.medical-mimics", "depression.adaptations", "depression.overview", "gad.overview", "health-anxiety.persistent-physical-symptoms"],
+      "sources": [
+        "Chalder-etal-1993 § Introduction",
+        "Shen-etal-2006 § Definitions of sleepiness and fatigue",
+        "APA-DSM5TR-2022 § Major Depressive Disorder"
+      ]
+    },
+    {
+      "id": "bs.heaviness",
+      "label": "Heavy limbs",
+      "alt_labels": [
+        "leaden",
+        "heavy body",
+        "weighed down",
+        "moving through mud"
+      ],
+      "definition": "Heavy, leaden feeling in the arms or legs; termed leaden paralysis in depression with atypical features.",
+      "client_wording": "My arms and legs feel as heavy as lead.",
+      "example": "Legs too heavy to get off the sofa all afternoon.",
+      "group": "Fatigue and low energy",
+      "broader": null,
+      "related": [
+        "bs.fatigue",
+        "bs.slowed-down",
+        "em.depressed"
+      ],
+      "see": [],
+      "sources": [
+        "APA-DSM5TR-2022 § Depressive Disorders, with atypical features specifier"
+      ]
+    },
+    {
+      "id": "bs.slowed-down",
+      "label": "Slowed down",
+      "alt_labels": [
+        "sluggish",
+        "slow motion",
+        "lethargic",
+        "listless"
+      ],
+      "definition": "Felt slowing of movement, speech or thinking; termed psychomotor retardation when observable by others.",
+      "client_wording": "Everything feels slow, like I'm moving in slow motion.",
+      "example": "Took an hour to get dressed this morning.",
+      "group": "Fatigue and low energy",
+      "broader": null,
+      "related": [
+        "bs.heaviness",
+        "bs.fatigue"
+      ],
+      "see": ["12-medical-pharmacology.pitfall-side-effects-read-as-psychological", "depression.pitfall-thought-challenging-too-early"],
+      "sources": [
+        "APA-DSM5TR-2022 § Major Depressive Disorder",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.bedtime-arousal",
+      "label": "Wired at bedtime",
+      "alt_labels": [
+        "tired but wired",
+        "can't switch off",
+        "racing mind in bed",
+        "buzzing in bed"
+      ],
+      "definition": "Physical and mental arousal at bedtime that blocks sleep onset despite tiredness; central to cognitive models of insomnia.",
+      "client_wording": "Tired but wired in bed, my body and mind won't switch off.",
+      "example": "Lying awake at 1 a.m., heart thumping: \"I'll be useless tomorrow.\"",
+      "group": "Sleep-related",
+      "broader": null,
+      "related": [
+        "bs.restlessness",
+        "bs.unrefreshing-sleep",
+        "mp.conditioned-arousal",
+        "mp.sleep-effort",
+        "sit.bedtime"
+      ],
+      "see": ["insomnia.cbt-model"],
+      "sources": [
+        "Harvey-2002 § A cognitive model of insomnia"
+      ]
+    },
+    {
+      "id": "bs.daytime-sleepiness",
+      "label": "Daytime sleepiness",
+      "alt_labels": [
+        "drowsy",
+        "nodding off",
+        "heavy eyelids",
+        "struggling to stay awake"
+      ],
+      "definition": "Tendency to doze or fall asleep during the day; differs from fatigue and can signal sleep loss or a sleep disorder.",
+      "client_wording": "Struggling to keep my eyes open in the day.",
+      "example": "Nodding off in afternoon meetings.",
+      "group": "Sleep-related",
+      "broader": null,
+      "related": [
+        "bs.fatigue",
+        "bs.unrefreshing-sleep",
+        "sit.fatigue-or-sleep-loss"
+      ],
+      "see": ["12-medical-pharmacology.antidepressants", "12-medical-pharmacology.medical-mimics", "12-medical-pharmacology.pitfall-side-effects-read-as-psychological", "insomnia.adaptations", "insomnia.assessment", "insomnia.cbt-i-components", "insomnia.overview", "insomnia.pitfall-unscreened-sleep-restriction"],
+      "sources": [
+        "Shen-etal-2006 § Definitions of sleepiness and fatigue"
+      ]
+    },
+    {
+      "id": "bs.unrefreshing-sleep",
+      "label": "Waking unrefreshed",
+      "alt_labels": [
+        "non-restorative sleep",
+        "waking exhausted",
+        "sleep doesn't help"
+      ],
+      "definition": "Waking feeling unrested or unrecovered despite adequate time asleep.",
+      "client_wording": "Waking up feeling like I haven't slept.",
+      "example": "Eight hours in bed and I still woke up exhausted.",
+      "group": "Sleep-related",
+      "broader": null,
+      "related": [
+        "bs.fatigue",
+        "bs.daytime-sleepiness"
+      ],
+      "see": ["insomnia.pitfall-judging-progress-by-hours"],
+      "sources": [
+        "Wilkinson-Shapiro-2012 § Definition of nonrestorative sleep"
+      ]
+    },
+    {
+      "id": "bs.night-panic",
+      "label": "Waking in panic",
+      "alt_labels": [
+        "nocturnal panic",
+        "waking with a racing heart",
+        "jolting awake in fear"
+      ],
+      "definition": "Waking abruptly from sleep in a surge of panic sensations, not caused by a nightmare; common in panic disorder.",
+      "client_wording": "Jolting awake at night with my heart racing and full of fear.",
+      "example": "Woke at 3 a.m. gasping with my heart pounding, no dream I could remember.",
+      "group": "Sleep-related",
+      "broader": null,
+      "related": [
+        "bs.racing-heart",
+        "em.panicky"
+      ],
+      "see": [],
+      "sources": [
+        "Craske-Tsao-2005 § Characterization of nocturnal panic"
+      ]
+    },
+    {
+      "id": "bs.derealization",
+      "label": "Derealization",
+      "alt_labels": [
+        "things seem unreal",
+        "dreamlike",
+        "like watching a film",
+        "world far away"
+      ],
+      "definition": "Surroundings feel unreal, distant, dreamlike or visually distorted, while the person knows this is not literally so.",
+      "client_wording": "The world looks unreal or far away, like a dream or a film.",
+      "example": "In the busy store everything looked flat and fake: \"I'm going crazy.\"",
+      "group": "Dissociative",
+      "broader": null,
+      "related": [
+        "bs.depersonalization",
+        "bs.dizziness"
+      ],
+      "see": ["panic-and-phobias.interoceptive-exposure", "ptsd.adaptations", "ptsd.overview", "responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "APA-DSM5TR-2022 § Depersonalization/Derealization Disorder",
+        "Hunter-etal-2003 § Phenomenology",
+        "Holmes-etal-2005 § Detachment"
+      ]
+    },
+    {
+      "id": "bs.depersonalization",
+      "label": "Depersonalization",
+      "alt_labels": [
+        "detached from myself",
+        "out of body",
+        "watching myself",
+        "robot-like"
+      ],
+      "definition": "Feeling detached from one's own body, thoughts, feelings or actions, as if an outside observer, while knowing this is not literally so.",
+      "client_wording": "Disconnected from myself, like I'm watching from outside my body.",
+      "example": "Talking at work but feeling like a robot watching myself speak.",
+      "group": "Dissociative",
+      "broader": null,
+      "related": [
+        "bs.derealization",
+        "em.numb"
+      ],
+      "see": ["ptsd.adaptations", "ptsd.overview", "responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "APA-DSM5TR-2022 § Depersonalization/Derealization Disorder",
+        "Hunter-etal-2003 § Phenomenology",
+        "Holmes-etal-2005 § Detachment"
+      ]
+    },
+    {
+      "id": "bs.blanking-out",
+      "label": "Blanking out",
+      "alt_labels": [
+        "spacing out",
+        "mind going blank",
+        "glazed over",
+        "losing the thread"
+      ],
+      "definition": "Blank, absent state in which attention drifts away from the present and time passes unnoticed; may be dissociative under stress.",
+      "client_wording": "Spacing out or going blank, and missing what's happening.",
+      "example": "During the argument I went blank and missed the last ten minutes.",
+      "group": "Dissociative",
+      "broader": null,
+      "related": [
+        "bs.depersonalization",
+        "bs.freeze"
+      ],
+      "see": ["responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "APA-DSM5TR-2022 § Dissociative Disorders introduction",
+        "Holmes-etal-2005 § Detachment"
+      ]
+    },
+    {
+      "id": "bs.freeze",
+      "label": "Frozen (freeze response)",
+      "alt_labels": [
+        "paralyzed with fear",
+        "can't move",
+        "can't speak",
+        "locked up"
+      ],
+      "definition": "Sudden inability to move or speak under extreme threat or trauma reminders; an automatic defensive response, not a choice.",
+      "client_wording": "Frozen, unable to move or speak, even though I wanted to.",
+      "example": "When he shouted I froze and couldn't say a word.",
+      "group": "Dissociative",
+      "broader": null,
+      "related": [
+        "em.afraid",
+        "bs.blanking-out"
+      ],
+      "see": [],
+      "sources": [
+        "Schauer-Elbert-2010 § Defense cascade",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.heat-rising",
+      "label": "Heat rising (anger)",
+      "alt_labels": [
+        "blood boiling",
+        "hot-headed",
+        "flushed with anger",
+        "face burning with anger"
+      ],
+      "definition": "Heat surging into the face, neck or chest as anger builds; an early warning cue in anger management.",
+      "client_wording": "Heat building in my face and chest when I'm getting angry.",
+      "example": "Face burning as the driver cut in front of me.",
+      "group": "Anger arousal",
+      "broader": null,
+      "related": [
+        "bs.clenching",
+        "bs.hot-cold-flushes",
+        "em.angry"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Deffenbacher-2011 § Conceptualization of anger"
+      ]
+    },
+    {
+      "id": "bs.clenching",
+      "label": "Clenched jaw or fists",
+      "alt_labels": [
+        "gritted teeth",
+        "balled fists",
+        "teeth clamped"
+      ],
+      "definition": "Tightening of the jaw, hands or arms as the body readies to confront; a useful early anger cue.",
+      "client_wording": "Gritting my teeth or balling my fists.",
+      "example": "Fists clenched under the table while my father criticized me.",
+      "group": "Anger arousal",
+      "broader": null,
+      "related": [
+        "bs.muscle-tension",
+        "bs.heat-rising",
+        "em.angry"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.about-to-explode",
+      "label": "Pressure to explode",
+      "alt_labels": [
+        "ready to burst",
+        "adrenaline surge",
+        "boiling over",
+        "pumped up"
+      ],
+      "definition": "Mounting internal pressure and energy with urges to hit, shout or lash out; signals rising risk of aggression.",
+      "client_wording": "Like I'm about to explode or lose it.",
+      "example": "Felt like I'd burst if he said one more word, so I walked out.",
+      "group": "Anger arousal",
+      "broader": null,
+      "related": [
+        "bs.heat-rising",
+        "em.angry"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Deffenbacher-2011 § Conceptualization of anger"
+      ]
+    },
+    {
+      "id": "bs.hunger",
+      "label": "Intense hunger",
+      "alt_labels": [
+        "ravenous",
+        "starving",
+        "preoccupied with food"
+      ],
+      "definition": "Strong physical hunger, often after long gaps or dietary restriction, which raises vulnerability to binge eating.",
+      "client_wording": "So hungry I can't think about anything else.",
+      "example": "Skipped breakfast and lunch, ravenous by 4 p.m., then binged.",
+      "group": "Eating and fullness",
+      "broader": null,
+      "related": [
+        "bs.fullness",
+        "mp.dietary-restraint-cycle",
+        "bh.dietary-restriction",
+        "sit.hunger-or-dietary-restriction"
+      ],
+      "see": [],
+      "sources": [
+        "Fairburn-2008 § Ch. 9 Dietary Restraint, Dietary Rules and Controlling Eating"
+      ]
+    },
+    {
+      "id": "bs.fullness",
+      "label": "Fullness or bloating",
+      "alt_labels": [
+        "stuffed",
+        "bloated",
+        "swollen stomach",
+        "too full"
+      ],
+      "definition": "Uncomfortable stomach fullness or bloating after eating; common when undereating is reversed and often misread as weight gain.",
+      "client_wording": "Uncomfortably full or bloated after eating.",
+      "example": "Bloated after a normal lunch: \"I've gained weight already.\"",
+      "group": "Eating and fullness",
+      "broader": null,
+      "related": [
+        "bs.feeling-fat",
+        "bs.hunger"
+      ],
+      "see": ["eating-disorders.cbt-model"],
+      "sources": [
+        "Fairburn-2008 § Ch. 11 Underweight and Undereating",
+        "Fairburn-2008 § Ch. 8 Shape Concern, Shape Checking, Feeling Fat and Mindsets"
+      ]
+    },
+    {
+      "id": "bs.feeling-fat",
+      "label": "Feeling fat",
+      "alt_labels": [
+        "feeling huge",
+        "feeling gross in my body"
+      ],
+      "definition": "Experience of feeling fat that often relabels other emotions or body states such as fullness, bloating, sweating or tight clothes.",
+      "client_wording": "Suddenly feeling fat or huge in my body.",
+      "example": "Felt fat all evening after an argument, though nothing about my body had changed.",
+      "group": "Eating and fullness",
+      "broader": null,
+      "related": [
+        "bs.fullness",
+        "em.self-disgust"
+      ],
+      "see": ["eating-disorders.cbt-e-stages", "eating-disorders.cbt-model"],
+      "sources": [
+        "Fairburn-2008 § Ch. 8 Shape Concern, Shape Checking, Feeling Fat and Mindsets"
+      ]
+    },
+    {
+      "id": "bs.poor-appetite",
+      "label": "Loss of appetite",
+      "alt_labels": [
+        "no appetite",
+        "can't face food",
+        "food tastes of nothing"
+      ],
+      "definition": "Reduced desire to eat during low mood, anxiety or grief; marked weight change warrants assessment.",
+      "client_wording": "Not hungry at all, I can't face food.",
+      "example": "Barely ate for a week after the breakup.",
+      "group": "Eating and fullness",
+      "broader": null,
+      "related": [
+        "em.depressed",
+        "em.grief"
+      ],
+      "see": ["12-medical-pharmacology.adhd-medications"],
+      "sources": [
+        "APA-DSM5TR-2022 § Major Depressive Disorder",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "bs.tearful",
+      "label": "Tearful",
+      "alt_labels": [
+        "close to tears",
+        "welling up",
+        "crying spells",
+        "can't stop crying"
+      ],
+      "definition": "Welling up or crying, often with a tight throat; frequent crying spells can accompany depression, grief or overwhelm.",
+      "client_wording": "Close to tears or crying more than usual.",
+      "example": "Welled up in the car after dropping my son at college.",
+      "group": "Sadness and grief",
+      "broader": null,
+      "related": [
+        "bs.choking",
+        "em.sad",
+        "em.grief"
+      ],
+      "see": ["responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    }
+  ]
+}

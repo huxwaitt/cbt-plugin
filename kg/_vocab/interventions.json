@@ -1,0 +1,1724 @@
+{
+  "scheme": "interventions",
+  "prefix": "iv",
+  "title": "CBT interventions and techniques",
+  "description": "Catalog of CBT interventions and techniques a therapist delivers, grouped cognitive, behavioral, exposure, emotion and compassion, relational and session process, and condition-specific. Used to code the intervention or treatment-target slots of a formulation and treatment plan. Client coping actions belong in cs; therapist competencies in ts; instruments in ms.",
+  "version": "1.1.0",
+  "sources": [
+    "Beck-2021 § Ch. 7 to 21",
+    "Greenberger-Padesky-2016 § Ch. 4 to 16",
+    "Craske-etal-2014 § Strategies for optimizing inhibitory learning",
+    "Linehan-2025 § Skills modules"
+  ],
+  "concepts": [
+    {
+      "id": "iv.identifying-automatic-thoughts",
+      "label": "Identifying automatic thoughts",
+      "alt_labels": [
+        "eliciting automatic thoughts",
+        "catching hot thoughts"
+      ],
+      "definition": "Helping the client notice and record the thoughts and images present when their emotion shifts, then select the hot thought to work on.",
+      "client_wording": "Noticing what goes through your mind when your mood suddenly changes.",
+      "example": "\"What was going through your mind just then, when you went quiet?\"",
+      "group": "cognitive",
+      "broader": null,
+      "related": [
+        "iv.thought-record"
+      ],
+      "see": ["01-intake.pitfall-general-not-specific", "01-intake.presenting-problem", "03-formulation.cognitive-model-levels", "03-formulation.five-part-model", "cognitive.identifying-automatic-thoughts", "cognitive.pitfall-working-on-cold-thoughts", "cognitive.thought-records", "depression.treatment", "responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "Beck-2021 § Ch. 12 Identifying Automatic Thoughts",
+        "Greenberger-Padesky-2016 § Ch. 7 Automatic Thoughts"
+      ],
+      "page": "cognitive.identifying-automatic-thoughts"
+    },
+    {
+      "id": "iv.cognitive-restructuring",
+      "label": "Cognitive restructuring",
+      "alt_labels": [
+        "evaluating automatic thoughts",
+        "cognitive reappraisal (clinical)"
+      ],
+      "definition": "Collaboratively examining an automatic thought's accuracy and usefulness through guided questions, then building a more balanced, believable alternative response.",
+      "client_wording": "Checking whether a thought fits the facts and finding a fairer way to see things.",
+      "example": "\"What is the evidence for this thought? Is there another way of looking at it?\"",
+      "group": "cognitive",
+      "broader": null,
+      "related": [
+        "ts.socratic-questioning",
+        "ts.guided-discovery",
+        "cs.balanced-thinking",
+        "ts.reframing"
+      ],
+      "see": ["02-risk.suicide-focused-cbt", "03-formulation.formulation-to-treatment", "13-context-culture-development.identity-and-minority-stress", "13-context-culture-development.pitfall-disputing-realistic-adversity", "13-context-culture-development.religion-and-spirituality", "15-transdiagnostic-processes.cognitive-distortions", "15-transdiagnostic-processes.pitfall-disputing-repetitive-thought-content", "adhd.adult-cbt-modules", "adhd.cbt-model", "adhd.pitfall-disputing-optimistic-thoughts", "adhd.treatment", "adhd.underdiagnosis-in-women-and-adults", "alliance-and-stance.pitfall-pushing-technique-through-a-rupture", "bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.treatment", "chronic-pain-and-physical-health.treatment", "cognitive.cognitive-restructuring", "cognitive.imagery-and-imagery-rescripting", "cognitive.pitfall-debating-the-client", "cognitive.pitfall-working-on-cold-thoughts", "cognitive.thought-records", "depression.treatment", "grief-and-loss.treatment", "health-anxiety.treatment", "insomnia.cbt-i-components", "insomnia.treatment", "ocd.treatment", "panic-and-phobias.treatment", "personality-disorders.pitfall-change-before-validation", "responding-in-session.pitfall-missing-risk-behind-hopelessness", "responding-in-session.socratic-dialogue", "substance-use.cbt-model", "substance-use.pitfall-lapse-treated-as-failure", "substance-use.treatment"],
+      "sources": [
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts",
+        "Beck-2021 § Ch. 15 Responding to Automatic Thoughts"
+      ],
+      "page": "cognitive.cognitive-restructuring"
+    },
+    {
+      "id": "iv.thought-record",
+      "label": "Thought record",
+      "alt_labels": [
+        "thought diary",
+        "dysfunctional thought record",
+        "seven-column thought record"
+      ],
+      "definition": "Structured worksheet linking situation, moods, automatic thoughts, evidence for and against the hot thought, and a balanced alternative, with ratings before and after.",
+      "client_wording": "A worksheet for catching an upsetting thought, weighing it up and finding a more balanced view.",
+      "example": "After a friend cancels plans, the client completes a seven-column record and sadness falls from 80 to 40.",
+      "group": "cognitive",
+      "broader": "iv.cognitive-restructuring",
+      "related": [],
+      "see": ["08-measurement.idiographic-measures", "adhd.adult-cbt-modules", "adhd.treatment", "alliance-and-stance.pitfall-pushing-technique-through-a-rupture", "bipolar-and-psychosis.bipolar-cbt", "cognitive.pitfall-working-on-cold-thoughts", "cognitive.thought-records", "depression.pitfall-thought-challenging-too-early", "depression.treatment"],
+      "sources": [
+        "Greenberger-Padesky-2016 § Ch. 6 to 9",
+        "Beck-2021 § Ch. 15 Responding to Automatic Thoughts"
+      ],
+      "page": "cognitive.thought-records"
+    },
+    {
+      "id": "iv.decatastrophizing",
+      "label": "Decatastrophizing",
+      "alt_labels": [
+        "worst, best and most likely outcome",
+        "what-if technique"
+      ],
+      "definition": "Examining a feared outcome by estimating its realistic likelihood, the worst, best and most likely outcomes, and how the client would cope.",
+      "client_wording": "Thinking through what would really happen if the worst came true, and how you would cope.",
+      "example": "\"If you did fail the exam, what would you do next, and how would you get through it?\"",
+      "group": "cognitive",
+      "broader": "iv.cognitive-restructuring",
+      "related": [
+        "cd.catastrophizing"
+      ],
+      "see": ["chronic-pain-and-physical-health.treatment", "cognitive.cognitive-restructuring", "social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.treatment"],
+      "sources": [
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts",
+        "Leahy-2017 § Ch. 9 Putting Things in Perspective"
+      ],
+      "page": "cognitive.cognitive-restructuring"
+    },
+    {
+      "id": "iv.double-standard-technique",
+      "label": "Double-standard technique",
+      "alt_labels": [
+        "what would you tell a friend",
+        "friend perspective"
+      ],
+      "definition": "Asking how the client would view or advise a friend with the same thought or situation, then applying that kinder standard to themselves.",
+      "client_wording": "Treating yourself the way you would treat a good friend in the same spot.",
+      "example": "\"If your best friend made this mistake, would you tell her she is useless?\"",
+      "group": "cognitive",
+      "broader": "iv.cognitive-restructuring",
+      "related": [],
+      "see": ["cognitive.cognitive-restructuring", "ocd.erp-protocol", "responding-in-session.responding-to-hopelessness-and-self-criticism", "responding-in-session.socratic-dialogue"],
+      "sources": [
+        "Beck-2021 § Ch. 14 Evaluating Automatic Thoughts",
+        "Leahy-2017 § Ch. 14 Challenging Self-Criticism"
+      ],
+      "page": "cognitive.cognitive-restructuring"
+    },
+    {
+      "id": "iv.responsibility-pie-chart",
+      "label": "Responsibility pie chart",
+      "alt_labels": [
+        "pie chart technique",
+        "reattribution"
+      ],
+      "definition": "Dividing a pie chart among all contributing factors to an event, rating own share last, to correct inflated personal responsibility or blame.",
+      "client_wording": "Drawing a pie to see how much of what happened was really down to you.",
+      "example": "The client allots slices to weather, the other driver and roadworks; their own share drops from 100% to 20%.",
+      "group": "cognitive",
+      "broader": "iv.cognitive-restructuring",
+      "related": [
+        "ib.inflated-responsibility",
+        "cd.personalization"
+      ],
+      "see": ["ocd.erp-protocol", "ptsd.cognitive-therapy-for-ptsd"],
+      "sources": [
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Your Anger, Guilt, and Shame",
+        "Beck-2021 § Ch. 19 Additional Techniques"
+      ],
+      "page": "cognitive.cognitive-restructuring"
+    },
+    {
+      "id": "iv.advantages-disadvantages-analysis",
+      "label": "Advantages-disadvantages analysis",
+      "alt_labels": [
+        "cost-benefit analysis",
+        "pros and cons",
+        "decisional balance"
+      ],
+      "definition": "Listing and weighing the short- and long-term advantages and disadvantages of holding a belief, keeping a rule, or making a change.",
+      "client_wording": "Weighing up the pros and cons of a belief, a rule you live by, or a habit.",
+      "example": "Pros and cons of the rule \"I must never say no to anyone\".",
+      "group": "cognitive",
+      "broader": null,
+      "related": [
+        "iv.modifying-rules-and-assumptions",
+        "iv.motivational-interviewing"
+      ],
+      "see": ["09-ending.planning-the-ending", "bipolar-and-psychosis.bipolar-cbt", "cognitive.core-belief-work", "cognitive.modifying-intermediate-beliefs", "social-anxiety.behavioral-experiments-and-surveys", "substance-use.cbt-model", "substance-use.relapse-prevention-model", "substance-use.treatment"],
+      "sources": [
+        "Leahy-2017 § Ch. 6 Modifying Decision Making",
+        "Beck-2021 § Ch. 19 Additional Techniques"
+      ],
+      "page": "cognitive.modifying-intermediate-beliefs"
+    },
+    {
+      "id": "iv.identifying-cognitive-distortions",
+      "label": "Identifying cognitive distortions",
+      "alt_labels": [
+        "labeling thinking errors",
+        "naming thinking traps"
+      ],
+      "definition": "Teaching the client to recognize recurring biased thinking patterns, such as catastrophizing or mind reading, and label them in their own thoughts.",
+      "client_wording": "Learning to spot common thinking traps so you can step back from them.",
+      "example": "\"That sounds like mind reading again: you are guessing what he thinks.\"",
+      "group": "cognitive",
+      "broader": null,
+      "related": [
+        "iv.cognitive-restructuring"
+      ],
+      "see": ["15-transdiagnostic-processes.cognitive-distortions", "cognitive.identifying-cognitive-distortions"],
+      "sources": [
+        "Burns-1980 § Ch. 3 You Feel the Way You Think",
+        "Leahy-2017 § Ch. 12 Examining and Challenging Cognitive Distortions"
+      ],
+      "page": "cognitive.identifying-cognitive-distortions"
+    },
+    {
+      "id": "iv.downward-arrow",
+      "label": "Downward arrow",
+      "alt_labels": [
+        "vertical arrow technique"
+      ],
+      "definition": "Repeatedly asking what a thought would mean if it were true, to move from an automatic thought to underlying assumptions and core beliefs.",
+      "client_wording": "Asking \"and if that were true, what would it mean?\" to find the deeper worry.",
+      "example": "\"I'll make a mistake\" leads to \"They'll see I'm incompetent\" leads to \"I'm a failure.\"",
+      "group": "cognitive",
+      "broader": null,
+      "related": [
+        "iv.modifying-rules-and-assumptions",
+        "iv.core-belief-work"
+      ],
+      "see": ["03-formulation.cognitive-conceptualization-diagram", "03-formulation.cognitive-model-levels", "03-formulation.pitfall-too-deep-too-soon", "cognitive.downward-arrow", "gad.treatment"],
+      "sources": [
+        "Beck-2021 § Ch. 17 Introduction to Beliefs"
+      ],
+      "page": "cognitive.downward-arrow"
+    },
+    {
+      "id": "iv.modifying-rules-and-assumptions",
+      "label": "Modifying rules and assumptions",
+      "alt_labels": [
+        "modifying intermediate beliefs",
+        "working with conditional assumptions"
+      ],
+      "definition": "Identifying conditional assumptions and rigid rules, examining their costs and origins, testing them with behavioral experiments, and building more flexible versions.",
+      "client_wording": "Finding the unwritten rules you live by and making them more flexible and helpful.",
+      "example": "\"If I'm not perfect, I'll be rejected\" is tested and revised to \"Good enough is usually accepted.\"",
+      "group": "cognitive",
+      "broader": null,
+      "related": [
+        "iv.behavioral-experiment"
+      ],
+      "see": ["03-formulation.cognitive-model-levels", "03-formulation.formulation-to-treatment", "cognitive.modifying-intermediate-beliefs", "health-anxiety.treatment"],
+      "sources": [
+        "Greenberger-Padesky-2016 § Ch. 11 Underlying Assumptions and Behavioral Experiments",
+        "Beck-2021 § Ch. 18 Modifying Beliefs"
+      ],
+      "page": "cognitive.modifying-intermediate-beliefs"
+    },
+    {
+      "id": "iv.core-belief-work",
+      "label": "Core belief work",
+      "alt_labels": [
+        "schema change",
+        "modifying core beliefs"
+      ],
+      "definition": "Identifying an unhelpful core belief, then constructing and strengthening an alternative belief over time with evidence logs, historical review, continua and experiential methods.",
+      "client_wording": "Gradually building a kinder, more accurate view of yourself, other people or the world.",
+      "example": "Over several months the client strengthens \"I am acceptable as I am\" alongside the old belief \"I am defective.\"",
+      "group": "cognitive",
+      "broader": null,
+      "related": [
+        "cb.helpless",
+        "cb.unlovable",
+        "cb.worthless"
+      ],
+      "see": ["03-formulation.cognitive-conceptualization-diagram", "03-formulation.cognitive-model-levels", "03-formulation.pitfall-too-deep-too-soon", "cognitive.core-belief-work", "depression.treatment", "personality-disorders.schema-therapy-link", "personality-disorders.treatment"],
+      "sources": [
+        "Padesky-1994 § Schema change processes",
+        "Beck-2021 § Ch. 18 Modifying Beliefs"
+      ],
+      "page": "cognitive.core-belief-work"
+    },
+    {
+      "id": "iv.positive-data-log",
+      "label": "Positive data log",
+      "alt_labels": [
+        "core belief log",
+        "new belief evidence log"
+      ],
+      "definition": "Daily written record of everyday experiences consistent with a new, more adaptive core belief, countering biased attention to belief-confirming information.",
+      "client_wording": "Writing down, each day, small things that fit a new, more helpful view of yourself.",
+      "example": "New belief \"I am likeable\": \"Neighbor stopped to chat; colleague thanked me for my help.\"",
+      "group": "cognitive",
+      "broader": "iv.core-belief-work",
+      "related": [
+        "mp.belief-confirming-processing"
+      ],
+      "see": ["cognitive.core-belief-work", "social-anxiety.adaptations"],
+      "sources": [
+        "Padesky-1994 § Schema change processes",
+        "Greenberger-Padesky-2016 § Ch. 12 New Core Beliefs, Gratitude, and Acts of Kindness"
+      ],
+      "page": "cognitive.core-belief-work"
+    },
+    {
+      "id": "iv.continuum-technique",
+      "label": "Continuum technique",
+      "alt_labels": [
+        "belief continuum",
+        "scaling"
+      ],
+      "definition": "Rating self or others on a 0 to 100 scale with explicitly defined anchors, to replace all-or-nothing judgments with graded ones.",
+      "client_wording": "Placing yourself on a scale instead of seeing yourself as all good or all bad.",
+      "example": "The client first rates self 0 on \"lovable\"; after defining the anchors, places self at 65.",
+      "group": "cognitive",
+      "broader": "iv.core-belief-work",
+      "related": [
+        "cd.all-or-nothing-thinking"
+      ],
+      "see": ["cognitive.core-belief-work"],
+      "sources": [
+        "Padesky-1994 § Schema change processes",
+        "Beck-2021 § Ch. 18 Modifying Beliefs"
+      ],
+      "page": "cognitive.core-belief-work"
+    },
+    {
+      "id": "iv.imagery-rescripting",
+      "label": "Imagery rescripting",
+      "alt_labels": [
+        "ImRs",
+        "rescripting early memories"
+      ],
+      "definition": "Recalling a distressing memory or intrusive image in imagination, then changing its course to meet unmet needs and update its meaning.",
+      "client_wording": "Revisiting a painful memory in your mind's eye and changing how it plays out.",
+      "example": "The client imagines their adult self stepping into a childhood scene to protect and comfort the younger self.",
+      "group": "cognitive",
+      "broader": null,
+      "related": [
+        "iv.core-belief-work",
+        "sit.distressing-mental-image"
+      ],
+      "see": ["cognitive.core-belief-work", "cognitive.imagery-and-imagery-rescripting", "personality-disorders.schema-therapy-link", "social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.treatment"],
+      "sources": [
+        "Holmes-etal-2007 § Imagery rescripting techniques",
+        "Beck-2021 § Ch. 20 Imagery"
+      ],
+      "page": "cognitive.imagery-and-imagery-rescripting"
+    },
+    {
+      "id": "iv.worry-postponement",
+      "label": "Worry postponement",
+      "alt_labels": [
+        "worry time",
+        "stimulus control of worry"
+      ],
+      "definition": "Noticing worry, deferring it to a set daily worry period, then using that period briefly, to weaken worry and test beliefs about uncontrollability.",
+      "client_wording": "Putting worries aside until a set worry time later in the day.",
+      "example": "The client notes worries on a card and saves them for 15 minutes at 6 pm; many no longer seem urgent.",
+      "group": "cognitive",
+      "broader": null,
+      "related": [
+        "iv.detached-mindfulness",
+        "mp.worry"
+      ],
+      "see": ["15-transdiagnostic-processes.pitfall-disputing-repetitive-thought-content", "15-transdiagnostic-processes.worry", "bipolar-and-psychosis.cbtp", "cognitive.pitfall-restructuring-as-reassurance", "cognitive.worry-and-rumination-techniques", "gad.cbt-model", "gad.pitfall-chasing-worry-content", "gad.treatment", "gad.worry-models-compared"],
+      "sources": [
+        "Borkovec-etal-1983a § Method",
+        "Wells-2009 § Generalized anxiety disorder"
+      ],
+      "page": "cognitive.worry-and-rumination-techniques"
+    },
+    {
+      "id": "iv.rumination-focused-techniques",
+      "label": "Rumination-focused techniques",
+      "alt_labels": [
+        "RFCBT techniques",
+        "concreteness training",
+        "functional analysis of rumination"
+      ],
+      "definition": "Functional analysis of rumination, then shifting from abstract, evaluative thinking to concrete, specific processing, absorption in experience, and self-compassion.",
+      "client_wording": "Noticing when you are going round in circles and switching to more specific, useful thinking.",
+      "example": "\"How did this happen, and what is one step I can take?\" replaces \"Why does this always happen to me?\"",
+      "group": "cognitive",
+      "broader": null,
+      "related": [
+        "iv.worry-postponement",
+        "iv.behavioral-activation",
+        "mp.rumination",
+        "ms.rrs"
+      ],
+      "see": ["03-formulation.formulation-to-treatment", "15-transdiagnostic-processes.rumination", "15-transdiagnostic-processes.transdiagnostic-treatments", "cognitive.worry-and-rumination-techniques", "depression.cbt-model", "depression.persistent-depression"],
+      "sources": [
+        "Watkins-2016 § Functional Analysis of Rumination",
+        "Watkins-2016 § Shifting Processing Style: Becoming Concrete and Specific"
+      ],
+      "page": "cognitive.worry-and-rumination-techniques"
+    },
+    {
+      "id": "iv.detached-mindfulness",
+      "label": "Detached mindfulness",
+      "alt_labels": [
+        "metacognitive detachment"
+      ],
+      "definition": "Metacognitive therapy stance of noticing thoughts as passing mental events without engaging, analyzing, suppressing or acting on them.",
+      "client_wording": "Noticing a thought and letting it be, without arguing with it or following it.",
+      "example": "The client notices \"What if I get ill?\" and watches it like a cloud passing, without starting to worry.",
+      "group": "cognitive",
+      "broader": null,
+      "related": [
+        "iv.worry-postponement",
+        "iv.mindfulness-based-cognitive-therapy",
+        "mp.worry-about-worry",
+        "ib.worry-is-uncontrollable"
+      ],
+      "see": ["cognitive.pitfall-restructuring-as-reassurance", "cognitive.worry-and-rumination-techniques", "gad.treatment", "gad.worry-models-compared"],
+      "sources": [
+        "Wells-2009 § Detached mindfulness"
+      ],
+      "page": "cognitive.worry-and-rumination-techniques"
+    },
+    {
+      "id": "iv.behavioral-activation",
+      "label": "Behavioral activation",
+      "alt_labels": [
+        "BA",
+        "activity-based treatment of depression"
+      ],
+      "definition": "Structured approach that increases contact with rewarding, valued activity and targets avoidance, using activity monitoring, scheduling and functional analysis of behavior.",
+      "client_wording": "Gradually doing more of what matters to you, even before you feel like it.",
+      "example": "A withdrawn client schedules a short walk and a call to a friend on three days and rates mood afterward.",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "mp.withdrawal-inactivity-loop",
+        "bh.inactivity"
+      ],
+      "see": ["03-formulation.formulation-to-treatment", "03-formulation.pitfall-formulation-drift", "04-treatment-planning.guideline-map", "13-context-culture-development.intellectual-disability-and-low-literacy", "13-context-culture-development.older-adults", "15-transdiagnostic-processes.avoidance", "15-transdiagnostic-processes.rumination", "behavioral.activity-monitoring-and-scheduling", "behavioral.behavioral-activation", "behavioral.pitfall-activity-without-function", "bipolar-and-psychosis.pitfall-missed-bipolarity", "bipolar-and-psychosis.pitfall-sleep-loss-and-activation", "chronic-pain-and-physical-health.treatment", "depression.adaptations", "depression.cbt-model", "depression.pitfall-thought-challenging-too-early", "depression.treatment", "grief-and-loss.treatment"],
+      "sources": [
+        "Martell-etal-2022 § Overview",
+        "Beck-2021 § Ch. 7 Activity Scheduling"
+      ],
+      "page": "behavioral.behavioral-activation"
+    },
+    {
+      "id": "iv.activity-monitoring",
+      "label": "Activity monitoring",
+      "alt_labels": [
+        "activity diary",
+        "activity log"
+      ],
+      "definition": "Hour-by-hour record of what the client does, with ratings of mood, mastery and pleasure, to reveal links between activity and mood.",
+      "client_wording": "Keeping a simple diary of what you do each hour and how you feel.",
+      "example": "The diary shows mood is lowest on afternoons spent in bed and higher after seeing people.",
+      "group": "behavioral",
+      "broader": "iv.behavioral-activation",
+      "related": [
+        "iv.self-monitoring"
+      ],
+      "see": ["behavioral.activity-monitoring-and-scheduling", "behavioral.behavioral-activation", "depression.pitfall-thought-challenging-too-early", "depression.treatment", "health-anxiety.persistent-physical-symptoms"],
+      "sources": [
+        "Beck-2021 § Ch. 7 Activity Scheduling",
+        "Martell-etal-2022 § Activity monitoring"
+      ],
+      "page": "behavioral.activity-monitoring-and-scheduling"
+    },
+    {
+      "id": "iv.activity-scheduling",
+      "label": "Activity scheduling",
+      "alt_labels": [
+        "activity planning"
+      ],
+      "definition": "Planning specific valued, pleasurable or mastery activities at set times in advance, then reviewing what happened and how mood changed.",
+      "client_wording": "Planning specific activities into your week, then checking how they went.",
+      "example": "\"Tuesday 10 am: 20-minute walk to the park; Thursday 7 pm: call my sister.\"",
+      "group": "behavioral",
+      "broader": "iv.behavioral-activation",
+      "related": [],
+      "see": ["03-formulation.formulation-to-treatment", "13-context-culture-development.intellectual-disability-and-low-literacy", "13-context-culture-development.religion-and-spirituality", "15-transdiagnostic-processes.rumination", "behavioral.activity-monitoring-and-scheduling", "behavioral.behavioral-activation", "behavioral.pitfall-activity-without-function", "bipolar-and-psychosis.pitfall-sleep-loss-and-activation", "depression.pitfall-thought-challenging-too-early", "depression.treatment", "health-anxiety.persistent-physical-symptoms", "insomnia.adaptations", "substance-use.cbt-model", "substance-use.treatment"],
+      "sources": [
+        "Beck-2021 § Ch. 7 Activity Scheduling",
+        "Martell-etal-2022 § Activity scheduling"
+      ],
+      "page": "behavioral.activity-monitoring-and-scheduling"
+    },
+    {
+      "id": "iv.graded-task-assignment",
+      "label": "Graded task assignment",
+      "alt_labels": [
+        "breaking tasks into steps",
+        "chunking"
+      ],
+      "definition": "Breaking an overwhelming task or goal into small, sequential steps that are attempted in order, starting with one the client is likely to complete.",
+      "client_wording": "Breaking a big task into small steps and taking them one at a time.",
+      "example": "\"Sort the mail\" becomes: open envelopes for 10 minutes, then pay the one urgent bill.",
+      "group": "behavioral",
+      "broader": "iv.behavioral-activation",
+      "related": [],
+      "see": ["adhd.adult-cbt-modules", "adhd.treatment", "behavioral.activity-monitoring-and-scheduling", "behavioral.behavioral-activation", "cognitive.core-belief-work", "depression.pitfall-thought-challenging-too-early", "depression.treatment", "health-anxiety.persistent-physical-symptoms"],
+      "sources": [
+        "Beck-2021 § Ch. 19 Additional Techniques",
+        "Martell-etal-2022 § Activity scheduling"
+      ],
+      "page": "behavioral.behavioral-activation"
+    },
+    {
+      "id": "iv.behavioral-experiment",
+      "label": "Behavioral experiment",
+      "alt_labels": [
+        "testing predictions"
+      ],
+      "definition": "Planned activity that tests a specific prediction or belief through direct experience, with a written prediction, belief rating, outcome and conclusion.",
+      "client_wording": "A planned real-life test of a worrying prediction, to see what actually happens.",
+      "example": "Prediction \"If I speak up in the meeting, people will laugh\" (belief 80%); outcome: one person agreed.",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "iv.modifying-rules-and-assumptions",
+        "iv.safety-behavior-reduction"
+      ],
+      "see": ["03-formulation.cognitive-model-levels", "03-formulation.formulation-to-treatment", "03-formulation.pitfall-formulation-drift", "03-formulation.strengths-in-formulation", "08-measurement.idiographic-measures", "12-medical-pharmacology.medication-and-cbt-interactions", "13-context-culture-development.autism-adaptations", "13-context-culture-development.identity-and-minority-stress", "13-context-culture-development.pitfall-disputing-realistic-adversity", "15-transdiagnostic-processes.attention-processes", "15-transdiagnostic-processes.intolerance-of-uncertainty", "15-transdiagnostic-processes.perfectionism", "15-transdiagnostic-processes.safety-behaviors", "15-transdiagnostic-processes.thought-suppression", "alliance-and-stance.collaborative-empiricism", "behavioral.behavioral-experiments", "behavioral.safety-behavior-reduction", "bipolar-and-psychosis.at-risk-mental-state", "bipolar-and-psychosis.cbtp", "bipolar-and-psychosis.pitfall-arguing-with-delusions", "bipolar-and-psychosis.treatment", "chronic-pain-and-physical-health.pitfall-pain-relief-as-the-goal", "chronic-pain-and-physical-health.treatment", "cognitive.downward-arrow", "cognitive.modifying-intermediate-beliefs", "cognitive.thought-records", "depression.pitfall-thought-challenging-too-early", "depression.treatment", "eating-disorders.cbt-e-stages", "eating-disorders.pitfall-weight-loss-goals-in-binge-eating", "gad.treatment", "grief-and-loss.treatment", "health-anxiety.cbt-model", "health-anxiety.persistent-physical-symptoms", "health-anxiety.treatment", "insomnia.cbt-i-components", "insomnia.pitfall-judging-progress-by-hours", "insomnia.treatment", "ocd.erp-protocol", "ocd.treatment", "panic-and-phobias.adaptations", "panic-and-phobias.interoceptive-exposure", "panic-and-phobias.one-session-treatment", "panic-and-phobias.pitfall-exposure-stopped-before-the-test", "panic-and-phobias.pitfall-hidden-safety-behaviors", "panic-and-phobias.pitfall-reassurance-instead-of-testing", "panic-and-phobias.treatment", "ptsd.cognitive-therapy-for-ptsd", "responding-in-session.socratic-dialogue", "social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.pitfall-brief-or-group-default", "social-anxiety.pitfall-safety-behaviors-during-exposure", "social-anxiety.treatment", "social-anxiety.video-feedback-and-attention-training"],
+      "sources": [
+        "Bennett-Levy-etal-2004 § Ch. 1 Behavioural experiments: historical and conceptual underpinnings",
+        "Greenberger-Padesky-2016 § Ch. 11 Underlying Assumptions and Behavioral Experiments"
+      ],
+      "page": "behavioral.behavioral-experiments"
+    },
+    {
+      "id": "iv.problem-solving-therapy",
+      "label": "Problem-solving therapy",
+      "alt_labels": [
+        "PST",
+        "structured problem solving"
+      ],
+      "definition": "Structured steps: define the problem, generate options, weigh pros and cons, choose, plan, act and review, alongside work on negative problem orientation.",
+      "client_wording": "A step-by-step way to tackle a real problem: list options, pick one, try it, review.",
+      "example": "The client lists five ways to handle rent arrears, chooses to call the landlord, and plans what to say.",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "cs.problem-solving"
+      ],
+      "see": ["02-risk.suicide-focused-cbt", "03-formulation.formulation-to-treatment", "04-treatment-planning.guideline-map-other-conditions", "13-context-culture-development.older-adults", "13-context-culture-development.pitfall-disputing-realistic-adversity", "13-context-culture-development.socioeconomic-context", "15-transdiagnostic-processes.worry", "adhd.adult-cbt-modules", "adhd.treatment", "behavioral.problem-solving-therapy", "bipolar-and-psychosis.family-work", "cognitive.pitfall-challenging-accurate-thoughts", "cognitive.worry-and-rumination-techniques", "eating-disorders.cbt-e-stages", "gad.adaptations", "gad.pitfall-chasing-worry-content", "gad.treatment", "substance-use.treatment"],
+      "sources": [
+        "Nezu-etal-2013 § Problem-solving therapy overview",
+        "Beck-2021 § Ch. 19 Additional Techniques"
+      ],
+      "page": "behavioral.problem-solving-therapy"
+    },
+    {
+      "id": "iv.relaxation-training",
+      "label": "Relaxation training",
+      "alt_labels": [
+        "progressive muscle relaxation",
+        "PMR",
+        "applied relaxation",
+        "breathing retraining"
+      ],
+      "definition": "Teaching skills such as progressive muscle relaxation, slow breathing or applied (cue-controlled) relaxation to lower physiological arousal and use as a coping skill.",
+      "client_wording": "Learning ways to relax your muscles and breathing so your body can settle.",
+      "example": "After practicing daily, the client uses cue-controlled relaxation at the first sign of tension at work.",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "cs.calming-the-body"
+      ],
+      "see": ["04-treatment-planning.guideline-map", "13-context-culture-development.intellectual-disability-and-low-literacy", "15-transdiagnostic-processes.pitfall-coping-that-becomes-avoidance", "behavioral.relaxation-and-arousal-reduction", "gad.adaptations", "gad.pitfall-eclectic-anxiety-management", "gad.treatment", "gad.worry-models-compared", "insomnia.cbt-i-components", "insomnia.treatment", "panic-and-phobias.treatment", "ptsd.children-and-adolescents"],
+      "sources": [
+        "Ost-1987 § Description of applied relaxation",
+        "Edinger-etal-2021a § Recommendations"
+      ],
+      "page": "behavioral.relaxation-and-arousal-reduction"
+    },
+    {
+      "id": "iv.safety-behavior-reduction",
+      "label": "Safety behavior reduction",
+      "alt_labels": [
+        "dropping safety behaviors",
+        "reducing reassurance seeking"
+      ],
+      "definition": "Identifying safety behaviors and reassurance seeking, then dropping or fading them, often within experiments, so feared outcomes can be disconfirmed.",
+      "client_wording": "Gradually letting go of the things you do to feel safe, to learn you are OK without them.",
+      "example": "The client gives a short talk without gripping notes or avoiding eye contact and finds it goes better.",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "iv.behavioral-experiment",
+        "iv.exposure-therapy",
+        "bh.in-situation-safety-behavior",
+        "bh.reassurance-seeking",
+        "mp.safety-behavior-cycle"
+      ],
+      "see": ["03-formulation.formulation-to-treatment", "12-medical-pharmacology.pitfall-medication-as-safety-behavior", "15-transdiagnostic-processes.pitfall-coping-that-becomes-avoidance", "15-transdiagnostic-processes.safety-behaviors", "behavioral.behavioral-experiments", "behavioral.pitfall-unnoticed-safety-behaviors", "behavioral.safety-behavior-reduction", "bipolar-and-psychosis.cbtp", "bipolar-and-psychosis.pitfall-arguing-with-delusions", "chronic-pain-and-physical-health.adaptations", "cognitive.modifying-intermediate-beliefs", "cognitive.pitfall-restructuring-as-reassurance", "health-anxiety.adaptations", "health-anxiety.pitfall-reassurance-loop", "health-anxiety.reassurance-seeking", "health-anxiety.treatment", "panic-and-phobias.adaptations", "panic-and-phobias.agoraphobia", "panic-and-phobias.interoceptive-exposure", "panic-and-phobias.pitfall-hidden-safety-behaviors", "panic-and-phobias.treatment", "ptsd.cognitive-therapy-for-ptsd", "ptsd.prolonged-exposure", "social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.pitfall-safety-behaviors-during-exposure", "social-anxiety.treatment"],
+      "sources": [
+        "Salkovskis-1991 § Safety-seeking behaviours",
+        "Clark-etal-2006 § Treatment"
+      ],
+      "page": "behavioral.safety-behavior-reduction"
+    },
+    {
+      "id": "iv.self-monitoring",
+      "label": "Self-monitoring",
+      "alt_labels": [
+        "diary keeping",
+        "real-time recording"
+      ],
+      "definition": "Client records a target behavior, symptom, thought or urge as it happens, with context, to establish a baseline, reveal patterns and track change.",
+      "client_wording": "Keeping track of something as it happens, so we can spot patterns together.",
+      "example": "The client logs each binge urge with time, place, mood and what happened next.",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "iv.activity-monitoring"
+      ],
+      "see": ["03-formulation.formulation-to-treatment", "03-formulation.functional-analysis", "03-formulation.pitfall-static-formulation", "08-measurement.idiographic-measures", "09-ending.relapse-prevention-blueprint", "15-transdiagnostic-processes.assessing-transdiagnostic-processes", "behavioral.activity-monitoring-and-scheduling", "bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.treatment", "eating-disorders.cbt-e-stages", "eating-disorders.pitfall-therapist-drift", "eating-disorders.treatment", "gad.assessment", "health-anxiety.assessment", "health-anxiety.treatment", "insomnia.sleep-diary", "personality-disorders.dbt-informed-skills", "personality-disorders.treatment", "substance-use.relapse-prevention-model", "substance-use.treatment"],
+      "sources": [
+        "Fairburn-2008 § Ch. 5 Starting Well",
+        "Beck-2021 § Ch. 7 Activity Scheduling"
+      ],
+      "page": "05-session-structure.homework-design"
+    },
+    {
+      "id": "iv.interpersonal-effectiveness-training",
+      "label": "Interpersonal effectiveness and assertiveness training",
+      "alt_labels": [
+        "assertiveness training",
+        "DEAR MAN",
+        "communication skills training"
+      ],
+      "definition": "Teaching and rehearsing clear, respectful requests, refusals and opinions through instruction, modeling, role play and feedback, balancing goals, relationship and self-respect.",
+      "client_wording": "Practicing asking for what you need or saying no, clearly and respectfully.",
+      "example": "The client role-plays asking a manager for a deadline extension, then tries it at work.",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "cs.assertive-communication"
+      ],
+      "see": ["13-context-culture-development.identity-and-minority-stress", "behavioral.skills-training", "bipolar-and-psychosis.family-work", "depression.persistent-depression", "personality-disorders.dbt-informed-skills", "ptsd.complex-ptsd", "social-anxiety.pitfall-skills-deficit-assumption", "substance-use.treatment"],
+      "sources": [
+        "Linehan-2025 § Interpersonal effectiveness skills"
+      ],
+      "page": "behavioral.skills-training"
+    },
+    {
+      "id": "iv.chain-analysis",
+      "label": "Behavior chain analysis",
+      "alt_labels": [
+        "chain analysis",
+        "functional analysis of a problem behavior"
+      ],
+      "definition": "Detailed step-by-step review of vulnerabilities, prompting event, links and consequences of a specific problem behavior, to identify points where change is possible.",
+      "client_wording": "Going through, step by step, what led up to a problem behavior and what followed.",
+      "example": "Poor sleep, then an argument, then the thought \"I can't stand this\", then self-harm urge, then relief.",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "bh.self-harm"
+      ],
+      "see": ["02-risk.self-harm", "02-risk.suicide-focused-cbt", "03-formulation.functional-analysis", "adhd.emotional-dysregulation-and-associated-features", "personality-disorders.dbt-informed-skills", "personality-disorders.pitfall-crisis-driven-drift", "personality-disorders.treatment", "substance-use.pitfall-lapse-treated-as-failure"],
+      "sources": [
+        "Linehan-2025 § Chain analysis of problem behavior"
+      ],
+      "page": "personality-disorders.dbt-informed-skills"
+    },
+    {
+      "id": "iv.exposure-therapy",
+      "label": "Exposure",
+      "alt_labels": [
+        "exposure therapy",
+        "graded exposure"
+      ],
+      "definition": "Repeated, planned contact with feared but objectively safe stimuli, without avoidance or safety behaviors, so new non-threat learning can occur.",
+      "client_wording": "Facing what you fear, step by step and on purpose, so you learn it is safer than it feels.",
+      "example": "A client afraid of dogs moves from watching videos to standing near a calm dog on a leash.",
+      "group": "exposure",
+      "broader": null,
+      "related": [
+        "mp.avoidance-cycle",
+        "bh.overt-avoidance"
+      ],
+      "see": ["03-formulation.formulation-to-treatment", "03-formulation.pitfall-formulation-drift", "12-medical-pharmacology.anxiolytics-and-hypnotics", "12-medical-pharmacology.medication-and-cbt-interactions", "12-medical-pharmacology.pitfall-medication-as-safety-behavior", "13-context-culture-development.autism-adaptations", "13-context-culture-development.child-anxiety", "13-context-culture-development.children-and-adolescents", "14-ethics-law.informed-consent", "15-transdiagnostic-processes.avoidance", "behavioral.exposure-hierarchy", "behavioral.exposure-principles", "behavioral.exposure-types", "behavioral.pitfall-chasing-habituation", "behavioral.pitfall-overly-cautious-exposure", "health-anxiety.treatment", "panic-and-phobias.one-session-treatment", "panic-and-phobias.pitfall-exposure-stopped-before-the-test", "panic-and-phobias.specific-phobia", "personality-disorders.adaptations", "social-anxiety.pitfall-safety-behaviors-during-exposure"],
+      "sources": [
+        "Craske-etal-2014 § Inhibitory learning",
+        "Beck-2021 § Ch. 19 Additional Techniques"
+      ],
+      "page": "behavioral.exposure-principles"
+    },
+    {
+      "id": "iv.exposure-hierarchy",
+      "label": "Exposure hierarchy",
+      "alt_labels": [
+        "fear ladder",
+        "fear and avoidance hierarchy"
+      ],
+      "definition": "Collaboratively listed feared situations with predicted distress ratings, used to plan the order, variety and progression of exposure tasks.",
+      "client_wording": "A ladder of feared situations, from easier to harder, that we use to plan practice.",
+      "example": "Rungs run from riding one bus stop with a friend (SUDS 30) to a rush-hour train alone (SUDS 90).",
+      "group": "exposure",
+      "broader": "iv.exposure-therapy",
+      "related": [
+        "ms.suds"
+      ],
+      "see": ["08-measurement.idiographic-measures", "13-context-culture-development.child-anxiety", "13-context-culture-development.children-and-adolescents", "13-context-culture-development.intellectual-disability-and-low-literacy", "14-ethics-law.informed-consent", "behavioral.exposure-and-response-prevention", "behavioral.exposure-hierarchy", "behavioral.pitfall-overly-cautious-exposure", "chronic-pain-and-physical-health.treatment", "ocd.erp-protocol", "ocd.treatment", "panic-and-phobias.agoraphobia", "panic-and-phobias.one-session-treatment", "panic-and-phobias.pitfall-exposure-stopped-before-the-test", "panic-and-phobias.specific-phobia", "ptsd.prolonged-exposure"],
+      "sources": [
+        "Craske-etal-2014 § Variability",
+        "Foa-etal-2019 § In vivo exposure hierarchy"
+      ],
+      "page": "behavioral.exposure-hierarchy"
+    },
+    {
+      "id": "iv.in-vivo-exposure",
+      "label": "In vivo exposure",
+      "alt_labels": [
+        "real-life exposure",
+        "situational exposure"
+      ],
+      "definition": "Exposure to real feared or avoided situations, objects or activities, in session or in daily life.",
+      "client_wording": "Practicing facing feared situations in real life.",
+      "example": "The client with agoraphobia walks alone to the supermarket and stays until the planned task is done.",
+      "group": "exposure",
+      "broader": "iv.exposure-therapy",
+      "related": [],
+      "see": ["behavioral.exposure-and-response-prevention", "behavioral.exposure-types", "grief-and-loss.treatment", "ocd.erp-protocol", "panic-and-phobias.adaptations", "panic-and-phobias.agoraphobia", "panic-and-phobias.one-session-treatment", "panic-and-phobias.specific-phobia", "panic-and-phobias.treatment", "ptsd.children-and-adolescents", "ptsd.prolonged-exposure", "ptsd.treatment"],
+      "sources": [
+        "Foa-etal-2019 § In vivo exposure",
+        "Craske-etal-2014 § Clinical applications"
+      ],
+      "page": "behavioral.exposure-types"
+    },
+    {
+      "id": "iv.imaginal-exposure",
+      "label": "Imaginal exposure",
+      "alt_labels": [
+        "imaginal revisiting",
+        "worry exposure",
+        "script exposure"
+      ],
+      "definition": "Repeatedly and vividly imagining or narrating a feared scenario or traumatic memory, usually in the present tense, without avoidance, to process it.",
+      "client_wording": "Picturing or describing a feared scene or memory in detail until it becomes less overwhelming.",
+      "example": "A client with obsessions writes and rereads a script of the feared outcome until its impact falls.",
+      "group": "exposure",
+      "broader": "iv.exposure-therapy",
+      "related": [],
+      "see": ["15-transdiagnostic-processes.worry", "behavioral.exposure-and-response-prevention", "behavioral.exposure-types", "gad.cbt-model", "gad.pitfall-chasing-worry-content", "gad.treatment", "gad.worry-models-compared", "grief-and-loss.treatment", "ocd.erp-protocol", "ocd.pitfall-missed-mental-compulsions", "ocd.treatment", "panic-and-phobias.specific-phobia", "ptsd.children-and-adolescents", "ptsd.pitfall-therapist-avoidance-of-trauma-work", "ptsd.prolonged-exposure", "ptsd.treatment"],
+      "sources": [
+        "Foa-etal-2019 § Imaginal exposure",
+        "Craske-etal-2014 § Clinical applications"
+      ],
+      "page": "behavioral.exposure-types"
+    },
+    {
+      "id": "iv.interoceptive-exposure",
+      "label": "Interoceptive exposure",
+      "alt_labels": [
+        "symptom induction"
+      ],
+      "definition": "Deliberately inducing feared bodily sensations, such as dizziness, breathlessness or a racing heart, through exercises, so the client learns they are safe.",
+      "client_wording": "Bringing on scary body feelings on purpose, to learn they are uncomfortable but not dangerous.",
+      "example": "The client spins in a chair for 60 seconds to bring on dizziness and rates fear before and after.",
+      "group": "exposure",
+      "broader": "iv.exposure-therapy",
+      "related": [
+        "bh.interoceptive-avoidance",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations"
+      ],
+      "see": ["behavioral.exposure-hierarchy", "behavioral.exposure-types", "behavioral.relaxation-and-arousal-reduction", "panic-and-phobias.interoceptive-exposure", "panic-and-phobias.pitfall-reassurance-instead-of-testing", "panic-and-phobias.treatment"],
+      "sources": [
+        "Craske-Barlow-2007 § Interoceptive exposure",
+        "Craske-etal-2014 § Clinical applications"
+      ],
+      "page": "behavioral.exposure-types"
+    },
+    {
+      "id": "iv.inhibitory-learning-strategies",
+      "label": "Inhibitory learning strategies",
+      "alt_labels": [
+        "expectancy violation",
+        "deepened extinction",
+        "variability in exposure"
+      ],
+      "definition": "Designing exposure to maximize violation of specific feared predictions, vary stimuli and contexts, combine cues, remove safety signals and label affect.",
+      "client_wording": "Setting up practice to test exactly what you fear will happen, in many different situations.",
+      "example": "\"What do you predict will happen, and what would tell us the prediction was wrong?\"",
+      "group": "exposure",
+      "broader": "iv.exposure-therapy",
+      "related": [
+        "iv.behavioral-experiment"
+      ],
+      "see": ["08-measurement.idiographic-measures", "15-transdiagnostic-processes.avoidance", "15-transdiagnostic-processes.pitfall-coping-that-becomes-avoidance", "15-transdiagnostic-processes.safety-behaviors", "behavioral.exposure-hierarchy", "behavioral.exposure-principles", "behavioral.pitfall-chasing-habituation", "ocd.erp-protocol", "ocd.pitfall-missed-mental-compulsions", "panic-and-phobias.interoceptive-exposure", "panic-and-phobias.one-session-treatment", "panic-and-phobias.pitfall-exposure-stopped-before-the-test", "panic-and-phobias.pitfall-hidden-safety-behaviors", "panic-and-phobias.specific-phobia", "panic-and-phobias.treatment", "ptsd.prolonged-exposure"],
+      "sources": [
+        "Craske-etal-2014 § Strategies for optimizing inhibitory learning"
+      ],
+      "page": "behavioral.exposure-principles"
+    },
+    {
+      "id": "iv.emotion-awareness-training",
+      "label": "Emotion awareness training",
+      "alt_labels": [
+        "emotion labeling",
+        "identifying and rating emotions"
+      ],
+      "definition": "Teaching the client to identify, label and rate emotions and their components (thoughts, sensations, urges) with present-focused, nonjudgmental awareness.",
+      "client_wording": "Learning to notice, name and rate what you are feeling.",
+      "example": "The client distinguishes \"anxious 70\" from \"ashamed 50\" in the same situation.",
+      "group": "emotion and compassion",
+      "broader": null,
+      "related": [],
+      "see": ["13-context-culture-development.autism-adaptations", "15-transdiagnostic-processes.emotion-regulation", "15-transdiagnostic-processes.transdiagnostic-treatments", "cognitive.identifying-automatic-thoughts", "ptsd.children-and-adolescents"],
+      "sources": [
+        "Beck-2021 § Ch. 13 Emotions",
+        "Barlow-etal-2018 § Mindful emotion awareness",
+        "Greenberger-Padesky-2016 § Ch. 4 Identifying and Rating Moods"
+      ],
+      "page": "15-transdiagnostic-processes.emotion-regulation"
+    },
+    {
+      "id": "iv.mindfulness-based-cognitive-therapy",
+      "label": "Mindfulness-based cognitive therapy (MBCT)",
+      "alt_labels": [
+        "MBCT",
+        "mindfulness practice",
+        "three-minute breathing space"
+      ],
+      "definition": "Eight-week group program of guided mindfulness practices with cognitive elements, helping people disengage from ruminative patterns to prevent depressive relapse.",
+      "client_wording": "A course of mindfulness practice that helps you step out of patterns that bring depression back.",
+      "example": "A client in remission uses the three-minute breathing space when low mood begins to pull into rumination.",
+      "group": "emotion and compassion",
+      "broader": null,
+      "related": [
+        "iv.detached-mindfulness",
+        "cs.mindful-awareness",
+        "mp.rumination"
+      ],
+      "see": ["04-treatment-planning.guideline-map", "12-medical-pharmacology.discontinuation-and-withdrawal", "12-medical-pharmacology.medication-and-cbt-interactions", "depression.pitfall-stopping-at-response", "depression.relapse-prevention-mbct", "health-anxiety.treatment"],
+      "sources": [
+        "Segal-etal-2013 § Program overview",
+        "NICE-NG222 § Preventing relapse"
+      ],
+      "page": "depression.relapse-prevention-mbct"
+    },
+    {
+      "id": "iv.compassionate-mind-training",
+      "label": "Compassionate mind training",
+      "alt_labels": [
+        "compassion-focused techniques",
+        "compassionate self imagery",
+        "compassionate letter writing"
+      ],
+      "definition": "Compassion-focused exercises, such as soothing rhythm breathing, compassionate self imagery and compassionate letters, building capacity to meet distress and self-criticism with warmth.",
+      "client_wording": "Practicing a warm, supportive inner voice to use when you are struggling or self-critical.",
+      "example": "The client writes a letter to themselves about a setback from the viewpoint of a wise, kind friend.",
+      "group": "emotion and compassion",
+      "broader": null,
+      "related": [
+        "cs.self-compassion",
+        "mp.self-criticism"
+      ],
+      "see": ["03-formulation.formulation-to-treatment", "15-transdiagnostic-processes.self-criticism-and-shame", "cognitive.self-compassion-techniques", "responding-in-session.responding-to-hopelessness-and-self-criticism"],
+      "sources": [
+        "Gilbert-2009 § Compassionate mind training",
+        "Leahy-2017 § Ch. 14 Challenging Self-Criticism"
+      ],
+      "page": "cognitive.self-compassion-techniques"
+    },
+    {
+      "id": "iv.distress-tolerance-skills",
+      "label": "Distress tolerance skills",
+      "alt_labels": [
+        "crisis survival skills",
+        "TIPP"
+      ],
+      "definition": "Dialectical behavior therapy (DBT) crisis survival skills, such as TIPP, distraction, self-soothing and pros and cons, for getting through intense urges without worsening things.",
+      "client_wording": "Skills to get through a crisis moment without making it worse.",
+      "example": "With a strong urge to self-harm, the client uses cold water on the face and paced breathing, then calls a friend.",
+      "group": "emotion and compassion",
+      "broader": null,
+      "related": [
+        "iv.safety-planning",
+        "cs.self-soothing",
+        "cs.healthy-distraction"
+      ],
+      "see": ["02-risk.self-harm", "02-risk.suicide-focused-cbt", "personality-disorders.dbt-informed-skills", "personality-disorders.pitfall-change-before-validation", "personality-disorders.treatment", "ptsd.pitfall-indefinite-stabilization"],
+      "sources": [
+        "Linehan-2025 § Distress tolerance skills"
+      ],
+      "page": "personality-disorders.dbt-informed-skills"
+    },
+    {
+      "id": "iv.emotion-regulation-skills",
+      "label": "Emotion regulation skills training",
+      "alt_labels": [
+        "DBT emotion regulation module",
+        "checking the facts"
+      ],
+      "definition": "DBT skills for understanding emotions, checking the facts, opposite action, problem solving, and reducing vulnerability through sleep, eating, exercise and positive events.",
+      "client_wording": "Learning skills to understand your emotions and change the ones that are not helping you.",
+      "example": "Shame urges hiding; the client checks the facts, then acts opposite by joining the conversation.",
+      "group": "emotion and compassion",
+      "broader": null,
+      "related": [
+        "cs.opposite-action",
+        "mp.emotion-dysregulation"
+      ],
+      "see": ["02-risk.self-harm", "02-risk.suicide-focused-cbt", "adhd.emotional-dysregulation-and-associated-features", "personality-disorders.dbt-informed-skills", "personality-disorders.treatment", "ptsd.complex-ptsd", "ptsd.pitfall-indefinite-stabilization"],
+      "sources": [
+        "Linehan-2025 § Emotion regulation skills"
+      ],
+      "page": "personality-disorders.dbt-informed-skills"
+    },
+    {
+      "id": "iv.socialization-to-cbt",
+      "label": "Socialization to CBT",
+      "alt_labels": [
+        "orienting to the cognitive model",
+        "socializing the client"
+      ],
+      "definition": "Orienting the client to the cognitive model, the structured collaborative format, homework and their active role, using examples from their own life.",
+      "client_wording": "Explaining how CBT works and what we will do together, using your own examples.",
+      "example": "\"When she didn't reply, you thought 'she's angry with me' and felt anxious. Can you see the link?\"",
+      "group": "relational and session process",
+      "broader": null,
+      "related": [
+        "ts.psychoeducation",
+        "ts.giving-rationale"
+      ],
+      "see": ["01-intake.first-session-structure", "01-intake.socializing-to-cbt", "03-formulation.five-part-model", "03-formulation.sharing-the-formulation", "05-session-structure.agenda-setting", "05-session-structure.pitfall-unstructured-drift", "05-session-structure.session-structure", "09-ending.pitfall-abrupt-ending", "09-ending.planning-the-ending", "13-context-culture-development.culturally-adapted-cbt", "14-ethics-law.informed-consent", "alliance-and-stance.hope-and-expectancy", "responding-in-session.psychoeducation-without-lecturing"],
+      "sources": [
+        "Beck-2021 § Ch. 6 The First Therapy Session"
+      ],
+      "page": "01-intake.socializing-to-cbt"
+    },
+    {
+      "id": "iv.sharing-the-formulation",
+      "label": "Sharing the formulation",
+      "alt_labels": [
+        "collaborative case conceptualization",
+        "presenting the formulation"
+      ],
+      "definition": "Co-constructing and presenting the case formulation with the client, inviting correction, to explain the problem and guide choice of interventions.",
+      "client_wording": "Building a picture together of what keeps the problem going, so we can choose what to change.",
+      "example": "Therapist and client draw the vicious cycle on paper and the client adds a missing safety behavior.",
+      "group": "relational and session process",
+      "broader": null,
+      "related": [
+        "ts.collaborative-goal-setting"
+      ],
+      "see": ["03-formulation.cognitive-conceptualization-diagram", "03-formulation.five-part-model", "03-formulation.formulation-evidence", "03-formulation.pitfall-imposed-formulation", "03-formulation.pitfall-static-formulation", "03-formulation.pitfall-too-deep-too-soon", "03-formulation.sharing-the-formulation", "03-formulation.what-is-case-formulation", "09-ending.relapse-prevention-blueprint", "10-diagnosis.communicating-a-diagnosis", "10-diagnosis.diagnosis-vs-formulation", "13-context-culture-development.culturally-adapted-cbt", "alliance-and-stance.hope-and-expectancy", "bipolar-and-psychosis.cbt-model", "bipolar-and-psychosis.cbtp", "chronic-pain-and-physical-health.pitfall-implying-it-is-psychological", "eating-disorders.cbt-model", "gad.cbt-model", "health-anxiety.cbt-model", "health-anxiety.pitfall-debating-the-diagnosis", "health-anxiety.treatment", "insomnia.cbt-model", "ocd.cbt-model", "panic-and-phobias.cbt-model", "personality-disorders.cbt-model", "personality-disorders.pitfall-brief-or-unstructured-therapy", "ptsd.cbt-model", "social-anxiety.cbt-model"],
+      "sources": [
+        "Kuyken-etal-2009 § Collaborative case conceptualization principles",
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization"
+      ],
+      "page": "03-formulation.sharing-the-formulation"
+    },
+    {
+      "id": "iv.action-plan",
+      "label": "Action plan (homework)",
+      "alt_labels": [
+        "homework",
+        "between-session practice"
+      ],
+      "definition": "Collaboratively designed between-session task that applies session learning, with a clear rationale, specific plan, anticipated obstacles and a review next session.",
+      "client_wording": "A small task to try between sessions, so the changes carry into your week.",
+      "example": "\"Complete one thought record when you feel a strong mood shift; we'll review it next week.\"",
+      "group": "relational and session process",
+      "broader": null,
+      "related": [
+        "ts.collaborative-goal-setting"
+      ],
+      "see": ["01-intake.socializing-to-cbt", "03-formulation.pitfall-formulation-drift", "05-session-structure.homework-design", "05-session-structure.homework-review-and-adherence", "05-session-structure.mood-check-and-bridge", "05-session-structure.pitfall-homework-assigned-not-reviewed", "05-session-structure.pitfall-uninformative-session-notes", "05-session-structure.pitfall-unstructured-drift", "05-session-structure.session-notes", "05-session-structure.session-structure", "08-measurement.process-measures", "13-context-culture-development.socioeconomic-context", "adhd.adaptations", "adhd.adult-cbt-modules", "adhd.cbt-model", "adhd.pitfall-disputing-optimistic-thoughts", "adhd.pitfall-skills-without-implementation", "adhd.treatment", "alliance-and-stance.collaborative-empiricism", "cognitive.thought-records", "depression.pitfall-thought-challenging-too-early", "depression.treatment", "insomnia.sleep-diary", "ocd.treatment", "ptsd.cognitive-processing-therapy", "substance-use.treatment"],
+      "sources": [
+        "Beck-2021 § Ch. 8 Action Plans"
+      ],
+      "page": "05-session-structure.homework-design"
+    },
+    {
+      "id": "iv.routine-outcome-monitoring",
+      "label": "Routine outcome monitoring with feedback",
+      "alt_labels": [
+        "measurement-based care",
+        "progress feedback"
+      ],
+      "definition": "Regularly administering standardized measures and reviewing scores and trends with the client to detect non-response and guide treatment decisions.",
+      "client_wording": "Filling in short questionnaires regularly and looking at the results together to check progress.",
+      "example": "PHQ-9 scores are graphed weekly; a plateau at session 6 prompts a review of the plan.",
+      "group": "relational and session process",
+      "broader": null,
+      "related": [
+        "ms.phq-9",
+        "ms.gad-7",
+        "ms.ors"
+      ],
+      "see": ["02-risk.ongoing-risk-monitoring", "02-risk.pitfall-unaddressed-positive-screen", "03-formulation.formulation-evidence", "03-formulation.formulation-to-treatment", "03-formulation.pitfall-formulation-drift", "03-formulation.pitfall-static-formulation", "03-formulation.what-is-case-formulation", "04-treatment-planning.combining-with-medication", "04-treatment-planning.managing-non-response", "04-treatment-planning.pitfall-continuing-without-review", "04-treatment-planning.pitfall-mismatched-intensity", "04-treatment-planning.problem-list-and-goals", "04-treatment-planning.session-planning", "04-treatment-planning.stepped-care", "04-treatment-planning.treatment-plan-document", "05-session-structure.mood-check-and-bridge", "05-session-structure.pitfall-uninformative-session-notes", "05-session-structure.session-notes", "05-session-structure.session-structure", "05-session-structure.session-summaries-and-feedback", "08-measurement.depression-measures", "08-measurement.instrument-selection", "08-measurement.measurement-based-care", "08-measurement.pitfall-measuring-without-acting", "08-measurement.pitfall-overreading-score-changes", "08-measurement.process-measures", "08-measurement.reliable-and-clinically-significant-change", "08-measurement.trauma-and-ocd-measures", "09-ending.booster-sessions", "09-ending.discharge-summary", "09-ending.dropout-and-unplanned-endings", "09-ending.ending-criteria", "09-ending.pitfall-ending-with-residual-symptoms", "09-ending.planning-the-ending", "10-diagnosis.comorbidity", "10-diagnosis.pitfall-questionnaire-score-as-diagnosis", "12-medical-pharmacology.pitfall-withdrawal-mistaken-for-relapse", "12-medical-pharmacology.working-with-prescribers", "13-context-culture-development.culturally-adapted-cbt", "alliance-and-stance.outcome-and-alliance-feedback", "alliance-and-stance.pitfall-assuming-the-alliance-is-fine", "alliance-and-stance.pitfall-collecting-feedback-without-using-it", "depression.assessment", "depression.pitfall-stopping-at-response", "depression.treatment", "eating-disorders.pitfall-therapist-drift", "gad.pitfall-eclectic-anxiety-management", "gad.treatment", "personality-disorders.pitfall-brief-or-unstructured-therapy", "personality-disorders.treatment", "ptsd.assessment", "social-anxiety.assessment", "social-anxiety.treatment"],
+      "sources": [
+        "Lambert-etal-2018 § Results",
+        "Beck-2021 § Ch. 10 Structuring Sessions"
+      ],
+      "page": "08-measurement.measurement-based-care"
+    },
+    {
+      "id": "iv.motivational-interviewing",
+      "label": "Motivational interviewing",
+      "alt_labels": [
+        "MI",
+        "evoking change talk"
+      ],
+      "definition": "Collaborative, person-centered method for strengthening a person's own motivation and commitment to change by evoking and exploring their reasons.",
+      "client_wording": "Talking through your own reasons for and against change, at your own pace.",
+      "example": "\"On a scale of 0 to 10, how important is cutting down? Why a 6 and not a 3?\"",
+      "group": "relational and session process",
+      "broader": null,
+      "related": [
+        "iv.advantages-disadvantages-analysis",
+        "ts.elicit-provide-elicit",
+        "ts.complex-reflection"
+      ],
+      "see": ["01-intake.goals-and-expectations", "alliance-and-stance.what-harms-the-relationship", "bipolar-and-psychosis.at-risk-mental-state", "ocd.related-disorders", "personality-disorders.adaptations", "responding-in-session.core-response-skills", "responding-in-session.pitfall-righting-reflex", "responding-in-session.responding-to-ambivalence", "substance-use.adaptations", "substance-use.motivational-interviewing", "substance-use.overview", "substance-use.pitfall-confrontation-and-labels", "substance-use.pitfall-waiting-for-sobriety", "substance-use.treatment"],
+      "sources": [
+        "Miller-Rollnick-2023 § Engaging, focusing, evoking and planning"
+      ],
+      "page": "responding-in-session.responding-to-ambivalence"
+    },
+    {
+      "id": "iv.relapse-prevention-blueprint",
+      "label": "Relapse prevention blueprint",
+      "alt_labels": [
+        "therapy blueprint",
+        "staying well plan"
+      ],
+      "definition": "End-of-treatment written plan summarizing what was learned, helpful skills, early warning signs, likely high-risk situations, and steps to take after setbacks.",
+      "client_wording": "A written plan to keep your progress going and handle setbacks after therapy ends.",
+      "example": "The blueprint lists warning signs (skipping meals, withdrawing) and first steps (schedule activities, call sister).",
+      "group": "relational and session process",
+      "broader": null,
+      "related": [],
+      "see": ["03-formulation.strengths-in-formulation", "04-treatment-planning.session-planning", "09-ending.booster-sessions", "09-ending.discharge-summary", "09-ending.pitfall-abrupt-ending", "09-ending.planning-the-ending", "09-ending.relapse-prevention-blueprint", "12-medical-pharmacology.discontinuation-and-withdrawal", "12-medical-pharmacology.medication-and-cbt-interactions", "adhd.adult-cbt-modules", "adhd.treatment", "bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.cbtp", "bipolar-and-psychosis.treatment", "depression.pitfall-stopping-at-response", "depression.relapse-prevention-mbct", "depression.treatment", "eating-disorders.cbt-e-stages", "gad.treatment", "health-anxiety.treatment", "insomnia.pitfall-insomnia-treated-as-a-symptom", "insomnia.treatment", "ocd.treatment", "ptsd.cognitive-therapy-for-ptsd", "ptsd.treatment", "social-anxiety.treatment"],
+      "sources": [
+        "Beck-2021 § Ch. 21 Termination and Relapse Prevention"
+      ],
+      "page": "09-ending.relapse-prevention-blueprint"
+    },
+    {
+      "id": "iv.booster-sessions",
+      "label": "Booster sessions",
+      "alt_labels": [
+        "follow-up sessions",
+        "top-up sessions"
+      ],
+      "definition": "Scheduled sessions after the main course of therapy to review progress, consolidate skills and address early signs of relapse.",
+      "client_wording": "Check-in sessions after therapy ends, to keep your progress on track.",
+      "example": "Sessions at one, three and six months review the blueprint and a recent setback.",
+      "group": "relational and session process",
+      "broader": null,
+      "related": [
+        "iv.relapse-prevention-blueprint"
+      ],
+      "see": ["04-treatment-planning.session-planning", "09-ending.booster-sessions", "09-ending.pitfall-abrupt-ending", "09-ending.pitfall-ending-with-residual-symptoms", "09-ending.planning-the-ending", "13-context-culture-development.older-adults", "bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.treatment", "depression.pitfall-stopping-at-response", "depression.relapse-prevention-mbct", "gad.adaptations", "ocd.treatment", "ptsd.children-and-adolescents", "ptsd.treatment", "social-anxiety.treatment"],
+      "sources": [
+        "Beck-2021 § Ch. 21 Termination and Relapse Prevention"
+      ],
+      "page": "09-ending.booster-sessions"
+    },
+    {
+      "id": "iv.exposure-and-response-prevention",
+      "label": "Exposure and response prevention (ERP)",
+      "alt_labels": [
+        "ERP",
+        "exposure and ritual prevention"
+      ],
+      "definition": "Graded exposure to obsessional triggers while refraining from compulsions, neutralizing and reassurance seeking, so fear and urges reduce without rituals.",
+      "client_wording": "Facing the things that set off obsessions, step by step, without doing the rituals.",
+      "example": "The client touches a door handle and eats a snack without washing, sitting with the urge.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "iv.exposure-therapy",
+        "iv.safety-behavior-reduction",
+        "ms.y-bocs",
+        "mp.misinterpretation-of-intrusions",
+        "bh.neutralizing",
+        "bh.checking",
+        "bh.washing-cleaning"
+      ],
+      "see": ["03-formulation.formulation-to-treatment", "04-treatment-planning.guideline-map", "12-medical-pharmacology.medication-and-cbt-interactions", "13-context-culture-development.perinatal-mental-health", "13-context-culture-development.religion-and-spirituality", "behavioral.exposure-and-response-prevention", "cognitive.pitfall-restructuring-as-reassurance", "health-anxiety.treatment", "ocd.adaptations", "ocd.erp-protocol", "ocd.overview", "ocd.pitfall-missed-mental-compulsions", "ocd.related-disorders", "ocd.treatment"],
+      "sources": [
+        "Foa-etal-2012 § Treatment program overview",
+        "Craske-etal-2014 § Clinical applications"
+      ],
+      "page": "behavioral.exposure-and-response-prevention"
+    },
+    {
+      "id": "iv.video-feedback",
+      "label": "Video feedback (social anxiety)",
+      "alt_labels": [
+        "video feedback experiment",
+        "self-focused attention and safety behaviors experiment"
+      ],
+      "definition": "Client predicts how they came across, then watches video of their social performance as an observer would, to correct a distorted self-image.",
+      "client_wording": "Watching a video of yourself to compare how you felt you looked with how you actually came across.",
+      "example": "Predicted \"I'll look shaking and red\" (80%); on video the client rates visible anxiety at 20%.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "iv.safety-behavior-reduction",
+        "ms.spin",
+        "mp.self-focused-attention"
+      ],
+      "see": ["social-anxiety.pitfall-unprepared-video-feedback", "social-anxiety.treatment", "social-anxiety.video-feedback-and-attention-training"],
+      "sources": [
+        "Clark-etal-2006 § Treatment"
+      ],
+      "page": "social-anxiety.video-feedback-and-attention-training"
+    },
+    {
+      "id": "iv.cognitive-processing-therapy",
+      "label": "Cognitive processing therapy (CPT)",
+      "alt_labels": [
+        "CPT"
+      ],
+      "definition": "Twelve-session trauma-focused therapy that identifies and challenges stuck points about the trauma and its implications using Socratic dialogue and structured worksheets.",
+      "client_wording": "A structured therapy that helps you rethink unhelpful beliefs about the trauma and what it means.",
+      "example": "The client's impact statement reveals \"It was my fault for going out,\" the first stuck point targeted.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "ms.pcl-5"
+      ],
+      "see": ["04-treatment-planning.guideline-map", "ptsd.cognitive-processing-therapy", "ptsd.pitfall-therapist-avoidance-of-trauma-work", "ptsd.treatment"],
+      "sources": [
+        "Resick-etal-2024 § Part II CPT Manual"
+      ],
+      "page": "ptsd.cognitive-processing-therapy"
+    },
+    {
+      "id": "iv.stuck-point-challenging",
+      "label": "Stuck point challenging",
+      "alt_labels": [
+        "stuck point log",
+        "challenging beliefs worksheet"
+      ],
+      "definition": "In CPT, identifying stuck points (beliefs that keep recovery stuck) and examining them with exploring questions, thinking patterns and alternative thoughts worksheets.",
+      "client_wording": "Spotting beliefs about the trauma that keep you stuck, and examining them step by step.",
+      "example": "\"I should have stopped it\" is examined against what the client knew and could do at the time.",
+      "group": "condition-specific",
+      "broader": "iv.cognitive-processing-therapy",
+      "related": [],
+      "see": ["ptsd.cognitive-processing-therapy"],
+      "sources": [
+        "Resick-etal-2024 § Ch. 10 Session 5: Exploring Questions",
+        "Resick-etal-2024 § Ch. 12 Session 7: Alternative Thoughts Worksheets"
+      ],
+      "page": "ptsd.cognitive-processing-therapy"
+    },
+    {
+      "id": "iv.prolonged-exposure",
+      "label": "Prolonged exposure (PE)",
+      "alt_labels": [
+        "PE",
+        "prolonged exposure therapy"
+      ],
+      "definition": "Trauma-focused protocol combining psychoeducation, breathing retraining, in vivo exposure to avoided safe cues, and repeated imaginal revisiting of the memory with processing.",
+      "client_wording": "Gradually facing trauma memories and avoided safe situations so they lose their power.",
+      "example": "The client recounts the assault in session each week and practices visiting avoided shops between sessions.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "iv.imaginal-exposure",
+        "iv.in-vivo-exposure",
+        "ms.pcl-5"
+      ],
+      "see": ["04-treatment-planning.guideline-map", "behavioral.exposure-types", "bipolar-and-psychosis.adaptations", "ptsd.adaptations", "ptsd.complex-ptsd", "ptsd.pitfall-indefinite-stabilization", "ptsd.pitfall-therapist-avoidance-of-trauma-work", "ptsd.prolonged-exposure", "ptsd.treatment", "substance-use.adaptations", "substance-use.pitfall-waiting-for-sobriety"],
+      "sources": [
+        "Foa-etal-2019 § Treatment overview"
+      ],
+      "page": "ptsd.prolonged-exposure"
+    },
+    {
+      "id": "iv.cognitive-therapy-for-ptsd",
+      "label": "Cognitive therapy for PTSD (CT-PTSD)",
+      "alt_labels": [
+        "CT-PTSD",
+        "Ehlers and Clark cognitive therapy"
+      ],
+      "definition": "Modifies excessively negative appraisals, updates trauma memory hot spots, discriminates triggers (then versus now), and drops maintaining behaviors and cognitive strategies.",
+      "client_wording": "A therapy that updates the trauma memory and helps you see that the danger is in the past.",
+      "example": "The hot spot \"I'm going to die\" is updated with \"I survived and the doctors said I recovered fully.\"",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "ms.pcl-5",
+        "mp.negative-appraisal-of-trauma",
+        "mp.disjointed-trauma-memory"
+      ],
+      "see": ["04-treatment-planning.guideline-map", "ptsd.children-and-adolescents", "ptsd.cognitive-therapy-for-ptsd", "ptsd.treatment"],
+      "sources": [
+        "Ehlers-Clark-2000 § Implications for treatment",
+        "Ehlers-etal-2005 § Treatment"
+      ],
+      "page": "ptsd.cognitive-therapy-for-ptsd"
+    },
+    {
+      "id": "iv.cbt-for-insomnia",
+      "label": "CBT for insomnia (CBT-I)",
+      "alt_labels": [
+        "CBT-I",
+        "multicomponent CBT-I"
+      ],
+      "definition": "Multicomponent insomnia treatment combining sleep restriction, stimulus control, cognitive therapy for sleep-related beliefs, sleep hygiene education and often relaxation.",
+      "client_wording": "A structured program that resets your sleep habits and the worries that keep you awake.",
+      "example": "Over six sessions the client keeps a sleep diary, restricts time in bed, and reworks fears about tiredness.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "ms.isi",
+        "ms.consensus-sleep-diary"
+      ],
+      "see": ["04-treatment-planning.guideline-map-other-conditions", "10-diagnosis.comorbidity", "12-medical-pharmacology.anxiolytics-and-hypnotics", "bipolar-and-psychosis.adaptations", "bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.pitfall-sleep-loss-and-activation", "insomnia.adaptations", "insomnia.brief-and-digital-cbt-i", "insomnia.cbt-i-components", "insomnia.overview", "insomnia.pitfall-insomnia-treated-as-a-symptom", "insomnia.pitfall-sleep-hygiene-only", "insomnia.pitfall-unscreened-sleep-restriction", "insomnia.treatment"],
+      "sources": [
+        "Edinger-etal-2021a § Recommendations",
+        "Harvey-2002 § Treatment implications"
+      ],
+      "page": "insomnia.treatment"
+    },
+    {
+      "id": "iv.sleep-restriction",
+      "label": "Sleep restriction",
+      "alt_labels": [
+        "sleep restriction therapy",
+        "time in bed restriction"
+      ],
+      "definition": "Limiting time in bed to average actual sleep time from diaries, then adjusting it weekly by sleep efficiency, to strengthen sleep drive.",
+      "client_wording": "Spending less time in bed for a while, so the sleep you get becomes deeper and steadier.",
+      "example": "Diary shows 5.5 hours sleep in 9 hours in bed; the sleep window is set at 5.5 hours, then widened.",
+      "group": "condition-specific",
+      "broader": "iv.cbt-for-insomnia",
+      "related": [
+        "bh.excess-time-in-bed",
+        "bh.daytime-napping"
+      ],
+      "see": ["bipolar-and-psychosis.pitfall-sleep-loss-and-activation", "insomnia.adaptations", "insomnia.brief-and-digital-cbt-i", "insomnia.cbt-i-components", "insomnia.overview", "insomnia.pitfall-judging-progress-by-hours", "insomnia.pitfall-sleep-hygiene-only", "insomnia.pitfall-unscreened-sleep-restriction", "insomnia.sleep-diary", "insomnia.treatment"],
+      "sources": [
+        "Spielman-etal-1987 § Method",
+        "Edinger-etal-2021a § Recommendations"
+      ],
+      "page": "insomnia.cbt-i-components"
+    },
+    {
+      "id": "iv.stimulus-control",
+      "label": "Stimulus control (insomnia)",
+      "alt_labels": [
+        "stimulus control therapy"
+      ],
+      "definition": "Re-associating bed with sleep: bed only for sleep and sex, leave bed when unable to sleep, fixed rise time, and no daytime napping.",
+      "client_wording": "Retraining your body to link bed with sleep, not with lying awake.",
+      "example": "After about 20 minutes awake, the client gets up, reads in another room, and returns when sleepy.",
+      "group": "condition-specific",
+      "broader": "iv.cbt-for-insomnia",
+      "related": [
+        "mp.conditioned-arousal",
+        "bh.non-sleep-activities-in-bed"
+      ],
+      "see": ["bipolar-and-psychosis.pitfall-sleep-loss-and-activation", "insomnia.adaptations", "insomnia.brief-and-digital-cbt-i", "insomnia.cbt-i-components", "insomnia.pitfall-sleep-hygiene-only", "insomnia.treatment"],
+      "sources": [
+        "Edinger-etal-2021a § Recommendations"
+      ],
+      "page": "insomnia.cbt-i-components"
+    },
+    {
+      "id": "iv.sleep-hygiene-education",
+      "label": "Sleep hygiene education",
+      "alt_labels": [
+        "sleep hygiene"
+      ],
+      "definition": "Education about lifestyle and environmental factors affecting sleep, such as caffeine, alcohol, light and exercise; not recommended as a stand-alone insomnia treatment.",
+      "client_wording": "Tips on habits and surroundings that help or harm sleep.",
+      "example": "The client moves the last coffee to before noon and removes the phone from the bedroom.",
+      "group": "condition-specific",
+      "broader": "iv.cbt-for-insomnia",
+      "related": [],
+      "see": ["04-treatment-planning.guideline-map-other-conditions", "adhd.emotional-dysregulation-and-associated-features", "insomnia.brief-and-digital-cbt-i", "insomnia.cbt-i-components", "insomnia.pitfall-sleep-hygiene-only", "insomnia.treatment"],
+      "sources": [
+        "Edinger-etal-2021a § Recommendations"
+      ],
+      "page": "insomnia.cbt-i-components"
+    },
+    {
+      "id": "iv.cbt-e",
+      "label": "Enhanced CBT for eating disorders (CBT-E)",
+      "alt_labels": [
+        "CBT-E"
+      ],
+      "definition": "Fairburn's transdiagnostic, personalized eating disorder treatment in four stages targeting maintaining processes; usually 20 sessions, about 40 if underweight.",
+      "client_wording": "A structured therapy that targets the habits and concerns keeping the eating problem going.",
+      "example": "Stage one establishes self-monitoring, weekly weighing and regular eating before shape concern is addressed.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "ms.ede-q"
+      ],
+      "see": ["04-treatment-planning.guideline-map-other-conditions", "15-transdiagnostic-processes.transdiagnostic-treatments", "eating-disorders.adaptations", "eating-disorders.cbt-e-stages", "eating-disorders.pitfall-therapist-drift", "eating-disorders.treatment"],
+      "sources": [
+        "Fairburn-2008 § Ch. 3 Enhanced Cognitive Behavior Therapy for Eating Disorders (CBT-E): An Overview",
+        "CREDO-Site § Enhanced cognitive behaviour therapy"
+      ],
+      "page": "eating-disorders.cbt-e-stages"
+    },
+    {
+      "id": "iv.collaborative-weighing",
+      "label": "Collaborative weighing",
+      "alt_labels": [
+        "in-session weighing",
+        "weekly weighing"
+      ],
+      "definition": "Therapist and client weigh the client once weekly in session, plotting and interpreting the trend, replacing frequent self-weighing or weight avoidance.",
+      "client_wording": "Checking your weight together once a week and looking at the overall trend, not single numbers.",
+      "example": "The client stops weighing daily; the weekly chart shows weight stable despite regular eating.",
+      "group": "condition-specific",
+      "broader": "iv.cbt-e",
+      "related": [],
+      "see": ["eating-disorders.assessment", "eating-disorders.cbt-e-stages", "eating-disorders.pitfall-avoiding-in-session-weighing", "eating-disorders.pitfall-therapist-drift", "eating-disorders.treatment"],
+      "sources": [
+        "Fairburn-2008 § Ch. 5 Starting Well"
+      ],
+      "page": "eating-disorders.cbt-e-stages"
+    },
+    {
+      "id": "iv.regular-eating",
+      "label": "Regular eating",
+      "alt_labels": [
+        "establishing a regular pattern of eating"
+      ],
+      "definition": "Establishing three planned meals and two or three planned snacks daily, without long gaps, to displace binge eating and dietary restriction.",
+      "client_wording": "Eating at planned, regular times through the day, to break the diet and binge cycle.",
+      "example": "Meals at 8, 1 and 6, snacks at 11, 4 and 9; binges fall from five to one a week.",
+      "group": "condition-specific",
+      "broader": "iv.cbt-e",
+      "related": [
+        "mp.dietary-restraint-cycle",
+        "bh.binge-eating"
+      ],
+      "see": ["eating-disorders.cbt-e-stages", "eating-disorders.pitfall-therapist-drift", "eating-disorders.pitfall-weight-loss-goals-in-binge-eating", "eating-disorders.treatment"],
+      "sources": [
+        "Fairburn-2008 § Ch. 6 Achieving Early Change"
+      ],
+      "page": "eating-disorders.cbt-e-stages"
+    },
+    {
+      "id": "iv.addressing-shape-concern",
+      "label": "Addressing shape concern and body checking",
+      "alt_labels": [
+        "reducing body checking",
+        "self-evaluation pie chart",
+        "addressing feeling fat"
+      ],
+      "definition": "Mapping overevaluation of shape and weight, developing other life domains, and reducing body checking, comparison and avoidance that maintain shape concern.",
+      "client_wording": "Reducing how much your body shape and weight decide how you feel about yourself.",
+      "example": "The client's self-evaluation pie is 70% shape and weight; they cut mirror checking and restart choir.",
+      "group": "condition-specific",
+      "broader": "iv.cbt-e",
+      "related": [
+        "bh.body-checking",
+        "bh.body-avoidance",
+        "ib.worth-judged-by-shape-weight"
+      ],
+      "see": ["eating-disorders.cbt-e-stages", "eating-disorders.treatment"],
+      "sources": [
+        "Fairburn-2008 § Ch. 8 Shape Concern, Shape Checking, Feeling Fat and Mindsets"
+      ],
+      "page": "eating-disorders.cbt-e-stages"
+    },
+    {
+      "id": "iv.behavioral-parent-training",
+      "label": "Behavioral parent training",
+      "alt_labels": [
+        "parent management training",
+        "PMT",
+        "parent training"
+      ],
+      "definition": "Teaching caregivers to use specific praise, positive attention, clear instructions, consistent consequences and reward systems to improve child behavior.",
+      "client_wording": "Learning practical parenting skills that make good behavior more likely and conflict less likely.",
+      "example": "Parents use a sticker chart for getting ready on time and praise each step within seconds.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [],
+      "see": ["adhd.children-and-parents", "adhd.overview", "adhd.pitfall-child-cognitive-therapy-first", "ptsd.children-and-adolescents"],
+      "sources": [
+        "Kazdin-2005 § Key components of parent management training",
+        "NICE-NG87 § Managing ADHD"
+      ],
+      "page": "adhd.children-and-parents"
+    },
+    {
+      "id": "iv.organization-and-planning-skills",
+      "label": "Organization, planning and distractibility skills (adult ADHD)",
+      "alt_labels": [
+        "calendar and task list system",
+        "distractibility delay"
+      ],
+      "definition": "Adult ADHD modules: one calendar and task list, prioritizing, breaking tasks into steps, matching work chunks to attention span, and distractibility delay.",
+      "client_wording": "Practical systems for planning, organizing and staying on task that suit how your attention works.",
+      "example": "The client writes ideas on a distractibility pad and returns to them only after a 20-minute work block.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "ms.asrs",
+        "bh.procrastination"
+      ],
+      "see": ["12-medical-pharmacology.adhd-medications", "adhd.adaptations", "adhd.adult-cbt-modules", "adhd.cbt-model", "adhd.children-and-parents", "adhd.medication-and-cbt", "adhd.pitfall-child-cognitive-therapy-first", "adhd.pitfall-skills-without-implementation", "adhd.treatment", "behavioral.skills-training"],
+      "sources": [
+        "Safren-etal-2017 § Module 1 Organization and Planning",
+        "Safren-etal-2017 § Reducing distractibility"
+      ],
+      "page": "adhd.adult-cbt-modules"
+    },
+    {
+      "id": "iv.safety-planning",
+      "label": "Safety planning",
+      "alt_labels": [
+        "Stanley-Brown safety plan",
+        "safety planning intervention"
+      ],
+      "definition": "Collaboratively writing a prioritized plan: warning signs, internal coping, social distraction, people to ask for help, professional and crisis contacts, and making the environment safer.",
+      "client_wording": "A written step-by-step plan for keeping yourself safe if suicidal thoughts get strong.",
+      "example": "The plan ends with calling or texting 988 and agreeing who will store medications safely for now.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "ms.c-ssrs",
+        "iv.distress-tolerance-skills",
+        "rk.access-to-lethal-means",
+        "rk.reasons-for-living"
+      ],
+      "see": ["01-intake.pitfall-risk-screen-skipped", "01-intake.risk-screen-at-intake", "02-risk.harm-to-others", "02-risk.ongoing-risk-monitoring", "02-risk.pitfall-no-suicide-contracts", "02-risk.risk-documentation", "02-risk.safety-planning", "02-risk.suicide-focused-cbt", "04-treatment-planning.problem-list-and-goals", "04-treatment-planning.treatment-plan-document", "05-session-structure.telehealth-adaptations", "08-measurement.pitfall-unreviewed-risk-item", "09-ending.pitfall-silent-dropout", "09-ending.referral-and-handover", "09-ending.relapse-prevention-blueprint", "13-context-culture-development.autism-adaptations", "14-ethics-law.administrative-and-billing-records", "bipolar-and-psychosis.bipolar-cbt", "depression.pitfall-risk-not-rechecked", "grief-and-loss.adaptations", "grief-and-loss.pitfall-missing-suicide-risk-in-grief", "personality-disorders.chronic-risk-and-crises", "personality-disorders.pitfall-crisis-driven-drift", "personality-disorders.treatment", "ptsd.adaptations", "responding-in-session.pitfall-missing-risk-behind-hopelessness", "social-anxiety.adaptations"],
+      "sources": [
+        "Stanley-Brown-2012 § Safety Planning Intervention components"
+      ],
+      "page": "02-risk.safety-planning"
+    },
+    {
+      "id": "iv.habit-reversal-training",
+      "label": "Habit reversal training",
+      "alt_labels": [
+        "HRT",
+        "competing response training"
+      ],
+      "definition": "Awareness training, a competing response physically incompatible with the habit, and social support, used for tics and body-focused repetitive behaviors.",
+      "client_wording": "Learning to notice a habit early and do something else with your hands instead.",
+      "example": "When the urge to pull hair arises, the client clenches fists for one minute and records it.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "bh.body-focused-repetitive-behavior"
+      ],
+      "see": ["ocd.related-disorders"],
+      "sources": [
+        "Azrin-Nunn-1973 § Procedure"
+      ],
+      "page": "ocd.related-disorders"
+    },
+    {
+      "id": "iv.contingency-management",
+      "label": "Contingency management",
+      "alt_labels": [
+        "CM",
+        "voucher incentives",
+        "prize-based incentives"
+      ],
+      "definition": "Providing tangible incentives, such as vouchers or prize draws, contingent on objectively verified target behaviors such as negative drug tests or attendance.",
+      "client_wording": "Earning rewards for reaching specific goals, such as clean test results.",
+      "example": "Each drug-negative urine test earns a voucher whose value rises with consecutive negative tests.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "ms.dast-10",
+        "bh.substance-use-to-cope"
+      ],
+      "see": ["03-formulation.functional-analysis", "personality-disorders.other-personality-disorders", "substance-use.overview", "substance-use.treatment"],
+      "sources": [
+        "Petry-2000 § Contingency management procedures"
+      ],
+      "page": "substance-use.treatment"
+    },
+    {
+      "id": "iv.high-risk-situation-coping",
+      "label": "High-risk situation coping (relapse prevention)",
+      "alt_labels": [
+        "relapse prevention skills",
+        "coping with lapses"
+      ],
+      "definition": "Identifying personal high-risk situations for substance use and rehearsing coping responses, including handling lapses to limit the abstinence violation effect.",
+      "client_wording": "Planning how to handle the situations most likely to lead you back to using.",
+      "example": "The client rehearses refusing a drink at a work party and plans what to do if a lapse happens.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "cs.urge-surfing",
+        "ms.audit",
+        "mp.abstinence-violation-effect"
+      ],
+      "see": ["substance-use.pitfall-lapse-treated-as-failure", "substance-use.relapse-prevention-model", "substance-use.treatment"],
+      "sources": [
+        "Witkiewitz-Marlatt-2004 § Cognitive-behavioral model of relapse"
+      ],
+      "page": "substance-use.relapse-prevention-model"
+    },
+    {
+      "id": "iv.normalizing-rationale",
+      "label": "Normalizing rationale (CBT for psychosis)",
+      "alt_labels": [
+        "stress-vulnerability explanation"
+      ],
+      "definition": "Presenting unusual experiences as understandable and on a continuum with common experience, for example under stress or sleep loss, to reduce distress and stigma.",
+      "client_wording": "Understanding that unusual experiences can happen to many people, especially under stress or without sleep.",
+      "example": "\"Many people hear voices after long sleep deprivation. Could stress and poor sleep be part of this?\"",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "ts.normalizing"
+      ],
+      "see": ["bipolar-and-psychosis.at-risk-mental-state", "bipolar-and-psychosis.cbtp"],
+      "sources": [
+        "Kingdon-Turkington-2005 § Normalizing",
+        "NICE-CG178 § Psychological interventions"
+      ],
+      "page": "bipolar-and-psychosis.cbtp"
+    },
+    {
+      "id": "iv.early-warning-signs-plan",
+      "label": "Early warning signs plan (bipolar relapse)",
+      "alt_labels": [
+        "relapse signature",
+        "prodrome detection"
+      ],
+      "definition": "Identifying the client's personal early signs of mania or depression and agreeing specific early action steps, often with family and prescriber.",
+      "client_wording": "Spotting your own early signs that a mood episode may be starting, and agreeing what to do.",
+      "example": "Signs: sleeping under five hours, starting many projects; actions: protect sleep and call the prescriber.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "iv.relapse-prevention-blueprint",
+        "bh.ascent-behaviors"
+      ],
+      "see": ["09-ending.relapse-prevention-blueprint", "bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.family-work", "bipolar-and-psychosis.treatment"],
+      "sources": [
+        "Perry-etal-1999 § Intervention"
+      ],
+      "page": "bipolar-and-psychosis.bipolar-cbt"
+    },
+    {
+      "id": "iv.trap-analysis",
+      "label": "TRAP analysis (Trigger, Response, Avoidance Pattern)",
+      "alt_labels": [
+        "TRAP",
+        "avoidance pattern analysis"
+      ],
+      "definition": "Mapping one recent episode as trigger, emotional response and avoidance pattern, including avoidant thoughts, to show how short-term relief maintains avoidance.",
+      "client_wording": "Breaking down a time I avoided something: what set it off, how I felt, what I did.",
+      "example": "Trigger: big project. Response: overwhelmed. Avoidance pattern: \"I work best at the last minute,\" then sorts email instead.",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "iv.trac-plan",
+        "iv.behavioral-activation",
+        "iv.chain-analysis",
+        "mp.procrastination-cycle",
+        "cd.overly-optimistic-thinking"
+      ],
+      "see": ["adhd.cbt-model", "adhd.pitfall-disputing-optimistic-thoughts", "behavioral.behavioral-activation"],
+      "sources": [
+        "Martell-etal-2001 § Avoidance patterns in depression",
+        "Knouse-Mitchell-2015 § Positively-valenced cognitive avoidance: a functional analysis; Figure 1 TRAP/TRAC model"
+      ],
+      "page": "adhd.cbt-model"
+    },
+    {
+      "id": "iv.trac-plan",
+      "label": "TRAC plan (Trigger, Response, Alternative Coping)",
+      "alt_labels": [
+        "TRAC",
+        "alternative coping plan"
+      ],
+      "definition": "Planning an active coping step for the same trigger and response that usually lead to avoidance, then trying it and reviewing the result.",
+      "client_wording": "Planning what I'll do instead next time the same trigger and feeling show up.",
+      "example": "Same trigger and overwhelm; alternative coping: break the project into a 15-minute first step and start it.",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "iv.trap-analysis",
+        "iv.implementation-intentions",
+        "iv.graded-task-assignment",
+        "cs.problem-solving"
+      ],
+      "see": ["adhd.cbt-model", "adhd.pitfall-disputing-optimistic-thoughts", "behavioral.behavioral-activation"],
+      "sources": [
+        "Martell-etal-2001 § Avoidance patterns in depression",
+        "Knouse-Mitchell-2015 § Figure 1 TRAP/TRAC model"
+      ],
+      "page": "adhd.cbt-model"
+    },
+    {
+      "id": "iv.implementation-intentions",
+      "label": "Implementation intentions (if-then plans)",
+      "alt_labels": [
+        "if-then plan",
+        "when-then plan"
+      ],
+      "definition": "Linking a specific cue to a planned action in an if-then statement, so the action starts when the cue occurs instead of relying on willpower.",
+      "client_wording": "Deciding ahead: if this happens, then I will do that.",
+      "example": "\"When I notice the thought 'I'll just do it later,' I will work on the task for ten minutes.\"",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "iv.action-plan",
+        "iv.trac-plan",
+        "iv.organization-and-planning-skills",
+        "cd.permission-giving-thoughts"
+      ],
+      "see": ["05-session-structure.homework-design", "adhd.adult-cbt-modules", "adhd.cbt-model", "adhd.pitfall-disputing-optimistic-thoughts", "adhd.pitfall-skills-without-implementation", "cognitive.worry-and-rumination-techniques"],
+      "sources": [
+        "Toli-etal-2016 § Abstract",
+        "Knouse-Mitchell-2015 § Implementation intentions"
+      ],
+      "page": "05-session-structure.homework-design"
+    },
+    {
+      "id": "iv.solution-analysis",
+      "label": "Solution analysis (DBT)",
+      "alt_labels": [
+        "DBT solution analysis",
+        "missing links analysis"
+      ],
+      "definition": "After a chain analysis, choosing a skill or change for each link, vulnerability and prompting event, plus ways to repair consequences.",
+      "client_wording": "Working out what I could do differently at each step, and how to put things right.",
+      "example": "Vulnerability: no sleep, so plan bedtime; link \"I can't stand this\": use a distress tolerance skill.",
+      "group": "behavioral",
+      "broader": null,
+      "related": [
+        "iv.chain-analysis",
+        "iv.distress-tolerance-skills",
+        "iv.emotion-regulation-skills",
+        "iv.problem-solving-therapy"
+      ],
+      "see": ["personality-disorders.dbt-informed-skills"],
+      "sources": [
+        "Linehan-2025 § Chain analysis of problem behavior",
+        "Rizvi-Ritschel-2014 § Solution analysis"
+      ],
+      "page": "personality-disorders.dbt-informed-skills"
+    },
+    {
+      "id": "iv.crisis-response-plan",
+      "label": "Crisis response plan",
+      "alt_labels": [
+        "CRP",
+        "crisis card"
+      ],
+      "definition": "A brief, collaboratively written card listing personal warning signs, self-management steps, reasons for living, social supports and crisis contacts for suicidal crises.",
+      "client_wording": "A pocket card we write together listing what I'll do and who I'll contact in a crisis.",
+      "example": "Card: warning signs, take a walk, look at photos of my kids, text my brother, call or text 988.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "iv.safety-planning",
+        "rk.reasons-for-living",
+        "rk.access-to-lethal-means"
+      ],
+      "see": ["02-risk.pitfall-no-suicide-contracts", "personality-disorders.chronic-risk-and-crises", "personality-disorders.treatment"],
+      "sources": [
+        "Bryan-etal-2017 § Abstract"
+      ],
+      "page": "02-risk.safety-planning"
+    },
+    {
+      "id": "iv.activity-pacing",
+      "label": "Activity pacing (chronic pain)",
+      "alt_labels": [
+        "pacing",
+        "time-based pacing",
+        "quota-based activity"
+      ],
+      "definition": "Breaking activities into planned, time- or quota-limited portions with breaks, regardless of pain level, to avoid overactivity and underactivity cycles.",
+      "client_wording": "Doing activities in planned chunks with breaks, on good days and bad, instead of overdoing or stopping.",
+      "example": "Gardens for 20 minutes, rests for 10, then 20 more, even though pain is low today.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "mp.activity-cycling",
+        "bh.pain-overactivity",
+        "bh.movement-avoidance",
+        "iv.graded-task-assignment"
+      ],
+      "see": ["chronic-pain-and-physical-health.treatment"],
+      "sources": [
+        "Nielson-etal-2013 § Abstract; provisional definition of activity pacing"
+      ]
+    },
+    {
+      "id": "iv.graded-exposure-to-movement",
+      "label": "Graded exposure to feared movements (chronic pain)",
+      "alt_labels": [
+        "exposure in vivo for pain-related fear",
+        "graded exposure (pain)"
+      ],
+      "definition": "Exposure to a hierarchy of activities the client fears will cause pain or harm, to test those predictions and reduce pain-related fear.",
+      "client_wording": "Gradually doing movements I've feared would hurt or damage me, to find out what really happens.",
+      "example": "Bending to lift a light box after predicting \"my back will give way.\"",
+      "group": "exposure",
+      "broader": "iv.in-vivo-exposure",
+      "related": [
+        "mp.fear-avoidance-cycle",
+        "ib.pain-means-harm",
+        "bh.movement-avoidance",
+        "iv.behavioral-experiment"
+      ],
+      "see": ["chronic-pain-and-physical-health.treatment"],
+      "sources": [
+        "Vlaeyen-Linton-2000 § Implications for prevention and treatment",
+        "Leeuw-etal-2007 § Clinical applications"
+      ]
+    },
+    {
+      "id": "iv.grief-exposure",
+      "label": "Grief exposure (revisiting the loss)",
+      "alt_labels": [
+        "imaginal revisiting",
+        "situational revisiting",
+        "exposure to the reality of the loss"
+      ],
+      "definition": "Guided, repeated confrontation with memories of the death and avoided loss reminders, to integrate the loss and reduce avoidance in prolonged grief.",
+      "client_wording": "Gently facing memories and reminders of the death I've been avoiding, so the loss can settle.",
+      "example": "Retelling the day of the death in session, then visiting the grave for the first time.",
+      "group": "condition-specific",
+      "broader": null,
+      "related": [
+        "mp.anxious-avoidance-of-loss",
+        "mp.poor-loss-integration",
+        "bh.loss-reminder-avoidance",
+        "iv.imaginal-exposure",
+        "em.yearning"
+      ],
+      "see": ["grief-and-loss.adaptations", "grief-and-loss.pitfall-colluding-with-avoidance", "grief-and-loss.treatment"],
+      "sources": [
+        "Boelen-etal-2006 § Treatment implications",
+        "Shear-2015 § Treatment"
+      ]
+    }
+  ]
+}

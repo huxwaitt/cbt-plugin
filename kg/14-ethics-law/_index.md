@@ -1,0 +1,44 @@
+# 14-ethics-law: Ethics and Law
+
+## This stage
+This domain covers the ethical and legal frame around every stage of cognitive behavioral therapy (CBT): informed consent, confidentiality and its limits, privacy law (the Health Insurance Portability and Accountability Act (HIPAA) in the United States, and the General Data Protection Regulation (GDPR) in the United Kingdom and European Union), records, duties to warn and to report abuse, boundaries, competence and supervision, telehealth law, professional codes, billing and administrative records, and digital and artificial intelligence (AI) tools. Read it at intake, whenever a disclosure or new technology is in play, and before designing any clinical tool. It is reference material, not legal advice: check current local law.
+
+## Decisions in order
+1. What must the client understand and agree to before assessment, treatment or exposure? → `14-ethics-law.informed-consent`
+2. What do I tell the client about confidentiality, and when may I share information? → `14-ethics-law.confidentiality-and-limits`
+3. Is this disclosure, records request, vendor or breach lawful, and what deadline applies? → `14-ethics-law.hipaa-and-gdpr`
+4. What goes in the record, how long do I keep it, and who may see it? → `14-ethics-law.record-keeping`
+5. Which code do I bill, what must a self-pay client receive, and what goes in the fee, cancellation and release paperwork? → `14-ethics-law.administrative-and-billing-records`
+6. Has the client threatened someone, and does a duty to warn or protect apply? → `14-ethics-law.duty-to-warn-and-protect`
+7. Has abuse of a child or adult at risk come up, and must I report it? → `14-ethics-law.mandatory-reporting`
+8. Is this gift, invitation, contact or second role a harmful boundary crossing? → `14-ethics-law.boundaries-and-dual-relationships`
+9. Is this case or technique within my competence, and what supervision do I need? → `14-ethics-law.competence-and-supervision`
+10. Am I allowed to see this client by video where they are right now? → `14-ethics-law.telehealth-law`
+11. Should this client use an app or AI chatbot, and what does the law allow? → `14-ethics-law.digital-and-ai-tools`
+12. Can I use an AI scribe or record sessions, and what consent do I need? → `14-ethics-law.ai-documentation-and-recording`
+13. Which ethics code binds me, and how do I reason through a dilemma? → `14-ethics-law.professional-codes`
+
+## Pages
+| Page | Summary | Applies when | Depth |
+|---|---|---|---|
+| `14-ethics-law.informed-consent` | How to obtain and maintain informed consent for CBT assessment and treatment, including exposure, trainees, recording, minors and capacity, with what to say and record. | A clinician is starting assessment or therapy, proposing a new technique such as exposure, recording sessions, or treating a minor or an adult whose capacity is in doubt. | L2 |
+| `14-ethics-law.confidentiality-and-limits` | What therapy confidentiality covers, the standard exceptions (harm, abuse, court, supervision, billing, minors), how to explain them at the start, and how to disclose the minimum when required. | A clinician is explaining confidentiality at intake, a client asks who will find out what they say, or a possible disclosure without consent is being considered. | L1-L2 |
+| `14-ethics-law.hipaa-and-gdpr` | The privacy rules a CBT clinician must know, covering who HIPAA covers, permitted disclosures, psychotherapy notes, access rights, breaches and business associates, plus UK and EU GDPR equivalents. | A clinician needs to know whether a disclosure, records request, vendor or data breach is lawful and what deadline applies, in the US under HIPAA or in the UK or EU under GDPR. | L2 |
+| `14-ethics-law.record-keeping` | How to keep a lawful CBT record, covering what belongs in the clinical record versus psychotherapy notes, retention, access requests, corrections and secure storage. | A clinician is setting up a record system, deciding where a note belongs, receiving a request for records, correcting an entry, or deciding how long to keep or when to destroy files. | L2 |
+| `14-ethics-law.administrative-and-billing-records` | Psychotherapy Current Procedural Terminology (CPT) codes and time rules, prior authorization, Good Faith Estimates for self-pay clients, fee and cancellation agreements, release forms, and UK equivalents. | A clinician is choosing a billing code, documenting session time, seeking insurer authorization, quoting fees to an uninsured or self-pay client, setting a cancellation policy, or preparing a release form. | L2 |
+| `14-ethics-law.duty-to-warn-and-protect` | The Tarasoff duty and how US states differ (mandatory, permissive, none), what triggers it, the lawful ways to discharge it, HIPAA's serious-threat rule, and the UK public interest position. | A client threatens serious violence against an identifiable person, or a clinician must decide whether law requires or permits warning a victim or police. | L2-L3 |
+| `14-ethics-law.mandatory-reporting` | Who must report child or adult abuse, to whom, how fast and on what standard, in the US and England and Wales, including FGM and child sexual abuse duties. | A client discloses, or the clinician suspects, abuse or neglect of a child or an adult at risk, or a clinician must check what their jurisdiction legally requires them to report. | L2 |
+| `14-ethics-law.boundaries-and-dual-relationships` | How to tell harmless boundary crossings from harmful violations, the absolute rules on sexual contact, and how to handle gifts, social media, small communities and out-of-office contact. | A client offers a gift, invitation, friend request or business deal, a clinician meets a client socially or in a small community, or a clinician feels pulled toward a personal relationship. | L1-L2 |
+| `14-ethics-law.competence-and-supervision` | How to judge whether a case or technique is within your competence, what to do if not, what supervision must provide, and rules for trainees, delegation and impairment. | A clinician is offered a client or technique outside their training, is supervising or being supervised, is a trainee, or notices personal problems affecting their work. | L2 |
+| `14-ethics-law.telehealth-law` | The legal checklist for remote CBT, covering licensure where the client is, interstate compacts, HIPAA-compliant platforms, telehealth consent, emergency planning, prescribing rules and international clients. | A clinician offers video or phone sessions, a client moves or travels to another state or country, or a service is choosing a telehealth platform or setting telehealth policy. | L2 |
+| `14-ethics-law.digital-and-ai-tools` | Evidence for internet CBT and AI chatbots, their ethical risks, the 2025 to 2026 US state laws restricting AI therapy, and how to discuss a client's AI use. | A client uses or asks about a mental health app or AI chatbot, a clinician considers recommending one, or someone is designing or deploying an AI tool that talks with clients. | L2-L3 |
+| `14-ethics-law.ai-documentation-and-recording` | How to use AI note-taking, transcription and session recording lawfully, covering vendor checks, state consent rules, a client consent script, note review and data deletion. | A clinician or service is considering, or already using, an AI scribe, transcription tool, note generator or audio or video recording of therapy sessions. | L2 |
+| `14-ethics-law.professional-codes` | Which ethics codes bind US and UK CBT clinicians (APA, ACA, NASW, BABCP, BACP, HCPC), their current editions, where they differ, and a short process for ethical decisions. | A clinician needs to know which code applies to them, check what a code says on a dilemma, or compare rules across professions and countries. | L1-L2 |
+
+## Pitfalls
+| Pitfall | Symptom | Page |
+|---|---|---|
+| Promising Absolute Confidentiality | The clinician tells a client that everything said stays in the room, or skips the limits at intake, then must break that promise when risk or abuse emerges. | `14-ethics-law.pitfall-unqualified-confidentiality-promise` |
+| Investigating Before Reporting Suspected Abuse | The clinician delays a required abuse report to gather proof, question the family, wait a session, or let a manager decide, so the report is late or never made. | `14-ethics-law.pitfall-investigating-before-reporting` |
+| Treating Clients Where You Are Not Licensed | A clinician keeps holding telehealth sessions after a client moves, travels or starts college in another state or country, without checking licensure there. | `14-ethics-law.pitfall-practicing-where-not-licensed` |
+| Putting Client Data Into Unvetted AI or Apps | The clinician pastes session content into a consumer AI assistant, uses an app or scribe without a business associate agreement or consent, or recommends a chatbot as therapy. | `14-ethics-law.pitfall-unvetted-ai-and-apps` |

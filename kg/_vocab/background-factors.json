@@ -1,0 +1,1364 @@
+{
+  "scheme": "background-factors",
+  "prefix": "bf",
+  "title": "Background factors (five Ps)",
+  "description": "Longitudinal factors in a five Ps formulation, grouped predisposing (early experiences, temperament, family history, developmental and health conditions), precipitating (life events before onset or worsening) and protective (supports, skills, strengths). Used by the predisposing, precipitating and protective slots of the five Ps formulation and the relevant childhood data box of the cognitive conceptualization diagram. Perpetuating factors are coded in mp and bh; in-the-moment triggers in sit.",
+  "version": "1.0.0",
+  "sources": [
+    "Macneil-etal-2012 § Five Ps: predisposing factors",
+    "Persons-Tompkins-2022 § Origins of the mechanisms",
+    "Kuyken-etal-2009 § Ch. 8 Longitudinal Explanatory Conceptualizations"
+  ],
+  "concepts": [
+    {
+      "id": "bf.childhood-criticism",
+      "label": "Critical or demanding upbringing",
+      "alt_labels": [
+        "harsh criticism",
+        "high parental expectations",
+        "conditional approval"
+      ],
+      "definition": "Growing up with frequent criticism, harsh standards, or approval that depended on performance or behavior.",
+      "client_wording": "Growing up being criticized a lot, or feeling loved only when you did well.",
+      "example": "A parent who pointed out what was wrong with every school report.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.childhood-emotional-abuse",
+        "bf.invalidating-environment",
+        "mp.self-criticism",
+        "cb.not-good-enough"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Persons-Tompkins-2022 § Origins of the mechanisms"
+      ]
+    },
+    {
+      "id": "bf.childhood-emotional-neglect",
+      "label": "Childhood emotional neglect",
+      "alt_labels": [
+        "emotional unavailability",
+        "lack of warmth"
+      ],
+      "definition": "Caregivers persistently failed to notice, comfort or respond to the child's emotional needs, even if physical needs were met.",
+      "client_wording": "Growing up without enough comfort, attention or warmth, even if you were fed and clothed.",
+      "example": "No one at home asked how the child felt after being bullied.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.childhood-physical-neglect",
+        "bf.invalidating-environment",
+        "rk.childhood-adversity"
+      ],
+      "see": ["personality-disorders.schema-therapy-link"],
+      "sources": [
+        "Kessler-etal-2010 § Results",
+        "CDC-ACE-Site § About adverse childhood experiences"
+      ]
+    },
+    {
+      "id": "bf.childhood-physical-neglect",
+      "label": "Childhood physical neglect",
+      "alt_labels": [
+        "unmet basic needs",
+        "lack of supervision"
+      ],
+      "definition": "Caregivers failed to provide adequate food, clothing, shelter, hygiene, medical care, safety or supervision.",
+      "client_wording": "Growing up without enough food, care, safety, or someone looking out for you.",
+      "example": "Regularly going to school hungry and in unwashed clothes.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.childhood-emotional-neglect",
+        "bf.socioeconomic-disadvantage",
+        "rk.childhood-adversity"
+      ],
+      "see": [],
+      "sources": [
+        "Kessler-etal-2010 § Results",
+        "CDC-ACE-Site § About adverse childhood experiences"
+      ]
+    },
+    {
+      "id": "bf.childhood-emotional-abuse",
+      "label": "Childhood emotional abuse",
+      "alt_labels": [
+        "psychological abuse",
+        "verbal abuse",
+        "humiliation by a caregiver"
+      ],
+      "definition": "Repeated insults, threats, humiliation, rejection or terrorizing by a caregiver or other adult during childhood.",
+      "client_wording": "Being insulted, threatened, humiliated, or made to feel worthless by an adult as a child.",
+      "example": "A parent who regularly said they wished the child had never been born.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.childhood-criticism",
+        "bf.childhood-physical-abuse",
+        "rk.childhood-adversity"
+      ],
+      "see": [],
+      "sources": [
+        "Felitti-etal-1998 § Methods (seven ACE categories)",
+        "Kessler-etal-2010 § Results"
+      ]
+    },
+    {
+      "id": "bf.childhood-physical-abuse",
+      "label": "Childhood physical abuse",
+      "alt_labels": [
+        "being hit",
+        "physical punishment causing injury"
+      ],
+      "definition": "Being deliberately hit, kicked or otherwise physically hurt by a caregiver or other adult during childhood.",
+      "client_wording": "Being hit or physically hurt by an adult when you were a child.",
+      "example": "Being beaten with a belt for minor misbehavior.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.childhood-emotional-abuse",
+        "bf.childhood-domestic-violence-exposure",
+        "rk.childhood-adversity"
+      ],
+      "see": ["ptsd.complex-ptsd"],
+      "sources": [
+        "Felitti-etal-1998 § Methods (seven ACE categories)",
+        "Kessler-etal-2010 § Results"
+      ]
+    },
+    {
+      "id": "bf.childhood-sexual-abuse",
+      "label": "Childhood sexual abuse",
+      "alt_labels": [
+        "child sexual abuse",
+        "sexual exploitation in childhood"
+      ],
+      "definition": "Any sexual contact with, or sexual exploitation of, a child by an adult or by a significantly older or more powerful young person.",
+      "client_wording": "Being touched or used sexually as a child by someone older or more powerful.",
+      "example": "Recorded briefly, without detail: sexual abuse by a relative between ages 8 and 11.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.childhood-physical-abuse",
+        "bf.prior-trauma-exposure",
+        "rk.childhood-adversity"
+      ],
+      "see": ["ptsd.complex-ptsd"],
+      "sources": [
+        "Felitti-etal-1998 § Methods (seven ACE categories)",
+        "Kessler-etal-2010 § Results"
+      ]
+    },
+    {
+      "id": "bf.childhood-domestic-violence-exposure",
+      "label": "Witnessing violence at home",
+      "alt_labels": [
+        "domestic violence",
+        "intimate partner violence in the home"
+      ],
+      "definition": "Seeing or hearing violence or threats between caregivers or other household members during childhood.",
+      "client_wording": "Seeing or hearing adults at home hurt or threaten each other when you were growing up.",
+      "example": "Hiding upstairs while a father hit the child's mother.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.childhood-physical-abuse",
+        "bf.unstable-home",
+        "rk.childhood-adversity"
+      ],
+      "see": [],
+      "sources": [
+        "Felitti-etal-1998 § Methods (seven ACE categories)",
+        "CDC-ACE-Site § About adverse childhood experiences"
+      ]
+    },
+    {
+      "id": "bf.bullying",
+      "label": "Bullying or peer victimization",
+      "alt_labels": [
+        "being bullied",
+        "cyberbullying",
+        "peer rejection"
+      ],
+      "definition": "Repeated harassment, exclusion, ridicule or aggression by peers in childhood or adolescence, in person or online.",
+      "client_wording": "Being picked on, teased, left out, or hurt by other kids, in person or online.",
+      "example": "Mocked daily about weight throughout middle school.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.humiliating-event",
+        "bf.discrimination-and-minority-stress"
+      ],
+      "see": ["social-anxiety.adaptations", "social-anxiety.behavioral-experiments-and-surveys"],
+      "sources": [
+        "Copeland-etal-2013 § Results"
+      ]
+    },
+    {
+      "id": "bf.early-loss-or-separation",
+      "label": "Early loss or separation",
+      "alt_labels": [
+        "death of a parent",
+        "parental divorce",
+        "separation from caregiver",
+        "foster care"
+      ],
+      "definition": "Death of, or prolonged separation from, a parent or main caregiver in childhood, including parental divorce or placement in care.",
+      "client_wording": "Losing a parent or main caregiver as a child, through death, divorce, or being placed elsewhere.",
+      "example": "Mother died when the client was nine.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.bereavement",
+        "bf.unstable-home"
+      ],
+      "see": [],
+      "sources": [
+        "Brown-Harris-1978 § Vulnerability factors",
+        "CDC-ACE-Site § About adverse childhood experiences"
+      ]
+    },
+    {
+      "id": "bf.overprotective-parenting",
+      "label": "Overprotective or controlling parenting",
+      "alt_labels": [
+        "parental overcontrol",
+        "low autonomy granting"
+      ],
+      "definition": "Caregivers limited independence, solved problems for the child, and discouraged age-appropriate risk-taking and independent coping.",
+      "client_wording": "Growing up with parents who did things for you and stopped you trying things yourself.",
+      "example": "Not allowed to take the bus alone until age 16.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.behavioral-inhibition",
+        "bf.learned-fear",
+        "mp.family-accommodation"
+      ],
+      "see": ["13-context-culture-development.children-and-adolescents", "social-anxiety.adaptations"],
+      "sources": [
+        "McLeod-etal-2007 § Results (parental control and autonomy granting)"
+      ]
+    },
+    {
+      "id": "bf.unstable-home",
+      "label": "Unstable or chaotic home",
+      "alt_labels": [
+        "frequent moves",
+        "unpredictable caregiving",
+        "household member in prison"
+      ],
+      "definition": "Childhood marked by unpredictability, such as frequent moves, changing caregivers, household chaos, or a household member imprisoned.",
+      "client_wording": "A childhood where home life kept changing or felt unpredictable and unsafe.",
+      "example": "Changed schools six times before age twelve.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.early-loss-or-separation",
+        "bf.caregiver-mental-illness-or-substance-use"
+      ],
+      "see": [],
+      "sources": [
+        "CDC-ACE-Site § About adverse childhood experiences",
+        "Felitti-etal-1998 § Methods (seven ACE categories)"
+      ]
+    },
+    {
+      "id": "bf.caregiver-mental-illness-or-substance-use",
+      "label": "Caregiver mental illness or substance use",
+      "alt_labels": [
+        "parental depression",
+        "parental alcoholism"
+      ],
+      "definition": "Growing up with a caregiver who had serious mental health problems, suicidal behavior, or alcohol or drug problems.",
+      "client_wording": "Growing up with a parent who struggled with their mental health, drinking, or drugs.",
+      "example": "A father who drank heavily every evening.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.family-history-of-mental-illness",
+        "bf.unstable-home"
+      ],
+      "see": [],
+      "sources": [
+        "Felitti-etal-1998 § Methods (seven ACE categories)",
+        "Kessler-etal-2010 § Results"
+      ]
+    },
+    {
+      "id": "bf.invalidating-environment",
+      "label": "Invalidating environment",
+      "alt_labels": [
+        "emotions dismissed",
+        "emotions punished"
+      ],
+      "definition": "Caregivers often dismissed, punished or trivialized the child's emotional experiences, teaching that feelings are wrong or must be hidden.",
+      "client_wording": "Growing up being told your feelings were wrong, silly, or not allowed.",
+      "example": "\"Stop crying or I'll give you something to cry about.\"",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.childhood-emotional-neglect",
+        "bf.childhood-criticism",
+        "bf.high-negative-emotionality",
+        "mp.emotion-dysregulation",
+        "ib.emotions-unacceptable"
+      ],
+      "see": ["personality-disorders.cbt-model", "personality-disorders.dbt-informed-skills", "personality-disorders.pitfall-change-before-validation"],
+      "sources": [
+        "Linehan-1993 § Ch. 2 Dialectical and Biosocial Underpinnings of Treatment"
+      ]
+    },
+    {
+      "id": "bf.learned-fear",
+      "label": "Learned fear through others",
+      "alt_labels": [
+        "vicarious learning",
+        "fearful role models",
+        "threat information"
+      ],
+      "definition": "Fear acquired by watching others react fearfully, or through repeated warnings and threat information, rather than through direct harm.",
+      "client_wording": "Learning to fear something by seeing others afraid of it, or being warned about it often.",
+      "example": "A mother who screamed and left the room at every spider.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.overprotective-parenting",
+        "bf.prior-trauma-exposure"
+      ],
+      "see": [],
+      "sources": [
+        "Rachman-1977 § Three pathways to fear"
+      ]
+    },
+    {
+      "id": "bf.early-illness-experience",
+      "label": "Early experience of illness",
+      "alt_labels": [
+        "childhood hospitalization",
+        "illness in the family"
+      ],
+      "definition": "Serious illness, hospital stays or medical crises in childhood, or witnessing a family member's serious illness or death from illness.",
+      "client_wording": "Being seriously ill as a child, or seeing someone close become very ill.",
+      "example": "A grandparent's sudden heart attack at a family dinner.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.chronic-physical-condition",
+        "bf.new-illness-or-injury"
+      ],
+      "see": ["health-anxiety.cbt-model"],
+      "sources": [
+        "Warwick-Salkovskis-1990 § Development of health anxiety"
+      ]
+    },
+    {
+      "id": "bf.prior-trauma-exposure",
+      "label": "Earlier trauma exposure",
+      "alt_labels": [
+        "past trauma",
+        "adult trauma history"
+      ],
+      "definition": "Earlier exposure to actual or threatened death, serious injury or sexual violence, not captured by the childhood abuse categories.",
+      "client_wording": "Something terrifying that happened to you, or that you saw, earlier in your life.",
+      "example": "Survived a house fire at age 20.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.recent-traumatic-event",
+        "sit.trauma-reminder"
+      ],
+      "see": ["01-intake.history-taking", "03-formulation.five-ps-formulation", "bipolar-and-psychosis.adaptations", "ptsd.assessment", "ptsd.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Posttraumatic Stress Disorder",
+        "Ehlers-Clark-2000 § Abstract"
+      ]
+    },
+    {
+      "id": "bf.discrimination-and-minority-stress",
+      "label": "Discrimination and minority stress",
+      "alt_labels": [
+        "racism",
+        "homophobia",
+        "stigma",
+        "prejudice"
+      ],
+      "definition": "Ongoing stress from stigma, prejudice and discrimination tied to a minority identity, including expected rejection and concealment.",
+      "client_wording": "Stress from being treated unfairly or judged because of who you are.",
+      "example": "Years of racist comments at school and at work.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.community-belonging",
+        "bf.bullying"
+      ],
+      "see": ["10-diagnosis.cultural-formulation-interview", "10-diagnosis.pitfall-culture-misread-as-pathology", "13-context-culture-development.cultural-humility", "13-context-culture-development.identity-and-minority-stress", "13-context-culture-development.pitfall-disputing-realistic-adversity", "cognitive.identifying-cognitive-distortions", "cognitive.pitfall-challenging-accurate-thoughts", "substance-use.adaptations"],
+      "sources": [
+        "Meyer-2003 § Minority stress processes"
+      ]
+    },
+    {
+      "id": "bf.socioeconomic-disadvantage",
+      "label": "Socioeconomic disadvantage",
+      "alt_labels": [
+        "poverty",
+        "food insecurity",
+        "housing insecurity",
+        "low income"
+      ],
+      "definition": "Growing up or living with poverty, food or housing insecurity, limited education, or chronic financial strain.",
+      "client_wording": "Not having enough money, food, safe housing, or chances in life, growing up or now.",
+      "example": "Family relied on food banks throughout childhood.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.financial-crisis",
+        "bf.material-stability"
+      ],
+      "see": ["03-formulation.five-ps-formulation", "10-diagnosis.icd-10-cm-and-icd-11", "13-context-culture-development.pitfall-disputing-realistic-adversity", "13-context-culture-development.socioeconomic-context", "14-ethics-law.administrative-and-billing-records", "gad.adaptations"],
+      "sources": [
+        "Lund-etal-2010 § Results",
+        "Macneil-etal-2012 § Five Ps: predisposing factors"
+      ]
+    },
+    {
+      "id": "bf.behavioral-inhibition",
+      "label": "Shy or inhibited temperament",
+      "alt_labels": [
+        "behavioral inhibition",
+        "shyness"
+      ],
+      "definition": "A lasting tendency since early childhood toward reticence, fearfulness and withdrawal in new situations or with unfamiliar people.",
+      "client_wording": "Being naturally shy or cautious since you were little, especially with new people or places.",
+      "example": "Clung to a parent and would not speak at preschool for months.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.high-negative-emotionality",
+        "bf.overprotective-parenting"
+      ],
+      "see": [],
+      "sources": [
+        "Hirshfeld-Becker-etal-2008 § Abstract"
+      ]
+    },
+    {
+      "id": "bf.high-negative-emotionality",
+      "label": "High negative emotionality",
+      "alt_labels": [
+        "neuroticism",
+        "negative affectivity",
+        "stress reactivity",
+        "emotional vulnerability"
+      ],
+      "definition": "A temperament of strong, frequent negative emotion and stress reactivity, with a sense that threats are hard to manage.",
+      "client_wording": "Having always felt emotions strongly and gotten stressed or upset easily.",
+      "example": "Described since childhood as a worrier who was easily upset.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.behavioral-inhibition",
+        "bf.invalidating-environment"
+      ],
+      "see": ["personality-disorders.cbt-model"],
+      "sources": [
+        "Barlow-etal-2014 § Abstract",
+        "Clark-Beck-2010 § Ch. 4 Vulnerability to Anxiety"
+      ]
+    },
+    {
+      "id": "bf.impulsive-temperament",
+      "label": "Impulsive or sensation-seeking temperament",
+      "alt_labels": [
+        "impulsivity",
+        "sensation seeking",
+        "novelty seeking"
+      ],
+      "definition": "A lasting tendency to act quickly without planning and to seek novelty or excitement despite possible risks.",
+      "client_wording": "Tending to act on the spur of the moment or chase excitement, even when it is risky.",
+      "example": "Started drinking heavily and driving fast in early adolescence.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.adhd",
+        "bf.substance-use-change",
+        "rk.impulsive-or-aggressive-traits"
+      ],
+      "see": ["personality-disorders.cbt-model"],
+      "sources": [
+        "Steel-2007 § Meta-analytic results (impulsiveness)",
+        "Macneil-etal-2012 § Five Ps: predisposing factors"
+      ]
+    },
+    {
+      "id": "bf.family-history-of-mental-illness",
+      "label": "Family history of mental health problems",
+      "alt_labels": [
+        "genetic vulnerability",
+        "heritability"
+      ],
+      "definition": "Biological relatives with depression, anxiety, bipolar disorder, psychosis, substance use or other mental disorders, indicating inherited vulnerability.",
+      "client_wording": "Blood relatives who have had mental health or addiction problems.",
+      "example": "Mother and maternal aunt both treated for recurrent depression.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.caregiver-mental-illness-or-substance-use"
+      ],
+      "see": ["01-intake.history-taking", "03-formulation.five-ps-formulation", "10-diagnosis.differential-diagnosis-process", "10-diagnosis.pitfall-premature-diagnostic-closure", "bipolar-and-psychosis.assessment", "bipolar-and-psychosis.at-risk-mental-state", "bipolar-and-psychosis.pitfall-missed-bipolarity"],
+      "sources": [
+        "Sullivan-etal-2000 § Results",
+        "Macneil-etal-2012 § Five Ps: predisposing factors"
+      ]
+    },
+    {
+      "id": "bf.adhd",
+      "label": "ADHD or lifelong attention difficulties",
+      "alt_labels": [
+        "attention-deficit/hyperactivity disorder",
+        "ADHD traits"
+      ],
+      "definition": "Attention-deficit/hyperactivity disorder (ADHD), or lifelong attention, impulse and organization difficulties that shape learning, self-esteem and coping.",
+      "client_wording": "Lifelong trouble with focus, restlessness, or organization, with or without an ADHD diagnosis.",
+      "example": "Repeatedly told at school to try harder and stop daydreaming.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.impulsive-temperament",
+        "bf.learning-or-intellectual-disability"
+      ],
+      "see": ["01-intake.collateral-information", "01-intake.structured-interviews", "12-medical-pharmacology.adhd-medications", "adhd.adaptations", "adhd.adult-cbt-modules", "adhd.assessment", "adhd.cbt-model", "adhd.children-and-parents", "adhd.emotional-dysregulation-and-associated-features", "adhd.medication-and-cbt", "adhd.overview", "adhd.pitfall-child-cognitive-therapy-first", "adhd.pitfall-diagnosis-from-self-report-alone", "adhd.pitfall-disputing-optimistic-thoughts", "adhd.pitfall-skills-without-implementation", "adhd.treatment", "adhd.underdiagnosis-in-women-and-adults"],
+      "sources": [
+        "APA-DSM5TR-2022 § Attention-Deficit/Hyperactivity Disorder"
+      ]
+    },
+    {
+      "id": "bf.autism",
+      "label": "Autism or autistic traits",
+      "alt_labels": [
+        "autism spectrum disorder",
+        "autistic traits"
+      ],
+      "definition": "Autism or autistic traits: differences in social communication, sensory processing and need for sameness that shape experience and stress.",
+      "client_wording": "Being autistic, or having autistic traits, like finding social rules confusing or senses overwhelming.",
+      "example": "Diagnosed autistic at 30 after years of feeling different.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.adhd",
+        "sit.change-in-routine"
+      ],
+      "see": ["13-context-culture-development.autism-adaptations", "13-context-culture-development.pitfall-diagnostic-overshadowing", "adhd.adaptations", "adhd.assessment", "adhd.overview", "ocd.adaptations", "social-anxiety.adaptations", "social-anxiety.pitfall-skills-deficit-assumption"],
+      "sources": [
+        "APA-DSM5TR-2022 § Autism Spectrum Disorder"
+      ]
+    },
+    {
+      "id": "bf.learning-or-intellectual-disability",
+      "label": "Learning or intellectual disability",
+      "alt_labels": [
+        "dyslexia",
+        "specific learning disorder",
+        "intellectual disability"
+      ],
+      "definition": "Intellectual disability or a specific learning disorder, such as dyslexia, affecting learning, school experience and self-image.",
+      "client_wording": "Having a learning difficulty like dyslexia, or finding learning much harder than others did.",
+      "example": "Dyslexia not recognized until college, after years of failing tests.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.adhd"
+      ],
+      "see": ["13-context-culture-development.intellectual-disability-and-low-literacy", "13-context-culture-development.pitfall-diagnostic-overshadowing", "adhd.assessment", "adhd.overview", "adhd.pitfall-diagnosis-from-self-report-alone", "personality-disorders.adaptations", "substance-use.adaptations"],
+      "sources": [
+        "APA-DSM5TR-2022 § Neurodevelopmental Disorders"
+      ]
+    },
+    {
+      "id": "bf.brain-injury-or-birth-complications",
+      "label": "Brain injury or birth complications",
+      "alt_labels": [
+        "head injury",
+        "concussion",
+        "birth difficulties"
+      ],
+      "definition": "Early neurological insult, such as birth complications or head injury, or later acquired brain injury, that increases vulnerability.",
+      "client_wording": "A head injury, or problems around your birth, that may have affected how your brain works.",
+      "example": "Concussion with loss of consciousness at age 15.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.chronic-physical-condition"
+      ],
+      "see": ["01-intake.history-taking", "03-formulation.five-ps-formulation"],
+      "sources": [
+        "Macneil-etal-2012 § Five Ps: predisposing factors"
+      ]
+    },
+    {
+      "id": "bf.chronic-physical-condition",
+      "label": "Long-term physical condition or disability",
+      "alt_labels": [
+        "chronic illness",
+        "chronic pain",
+        "physical disability",
+        "serious illness or chronic pain",
+        "disabling physical illness"
+      ],
+      "definition": "An ongoing medical condition, chronic pain or physical disability that adds stress, limits activity, or affects brain and body functioning.",
+      "client_wording": "A long-term health problem, ongoing pain, or disability that affects your daily life.",
+      "example": "Type 1 diabetes since childhood.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.new-illness-or-injury",
+        "sit.pain-or-illness-flare"
+      ],
+      "see": ["01-intake.history-taking", "01-intake.pitfall-missed-medical-and-substance-factors", "10-diagnosis.differential-diagnosis-process", "12-medical-pharmacology.medical-mimics", "13-context-culture-development.older-adults", "chronic-pain-and-physical-health.adaptations", "chronic-pain-and-physical-health.assessment", "chronic-pain-and-physical-health.overview", "chronic-pain-and-physical-health.pitfall-working-apart-from-the-medical-team", "depression.adaptations", "eating-disorders.adaptations", "health-anxiety.adaptations", "health-anxiety.pitfall-missed-medical-illness"],
+      "sources": [
+        "Moussavi-etal-2007 § Abstract",
+        "CDC-Suicide-Risk-2026 § Risk factors: individual"
+      ]
+    },
+    {
+      "id": "bf.previous-episodes",
+      "label": "Previous episodes",
+      "alt_labels": [
+        "past history of the problem",
+        "recurrence"
+      ],
+      "definition": "Earlier episodes of the same or a related mental health problem, which raise the risk of further episodes.",
+      "client_wording": "Having had this problem, or something like it, before.",
+      "example": "Third episode of depression since age 18.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.past-successful-coping",
+        "rk.history-of-mental-disorder"
+      ],
+      "see": ["01-intake.history-taking", "09-ending.booster-sessions", "09-ending.ending-criteria", "09-ending.lapse-relapse-and-recurrence", "09-ending.pitfall-ending-with-residual-symptoms", "bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.treatment", "depression.overview", "depression.pitfall-stopping-at-response", "depression.relapse-prevention-mbct"],
+      "sources": [
+        "Persons-Tompkins-2022 § Precipitants of the current problems",
+        "Hammen-2005 § Abstract"
+      ]
+    },
+    {
+      "id": "bf.social-isolation",
+      "label": "Social isolation or no confidant",
+      "alt_labels": [
+        "no confiding relationship",
+        "social isolation",
+        "living alone with little contact",
+        "lack of social contact"
+      ],
+      "definition": "Few close relationships, or no confiding relationship, leaving the person without someone to turn to under stress.",
+      "client_wording": "Not having people close to you, or anyone you can really talk to.",
+      "example": "Moved for work and has no friends in the new city.",
+      "group": "predisposing",
+      "broader": null,
+      "related": [
+        "bf.social-support",
+        "sit.being-alone",
+        "bh.social-withdrawal",
+        "rk.thwarted-belongingness"
+      ],
+      "see": ["01-intake.history-taking"],
+      "sources": [
+        "Brown-Harris-1978 § Vulnerability factors",
+        "Hawkley-Cacioppo-2010 § Abstract",
+        "CDC-Suicide-Risk-2026 § Risk factors: relationship"
+      ]
+    },
+    {
+      "id": "bf.bereavement",
+      "label": "Bereavement",
+      "alt_labels": [
+        "death of a loved one",
+        "loss"
+      ],
+      "definition": "The death of a family member, partner, friend or other important person.",
+      "client_wording": "Someone important to you has died.",
+      "example": "Husband died suddenly six months ago.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.early-loss-or-separation",
+        "sit.loss-reminder",
+        "rk.acute-life-stressor"
+      ],
+      "see": ["10-diagnosis.differential-diagnosis-process", "10-diagnosis.dsm-5-tr-overview", "10-diagnosis.icd-10-cm-and-icd-11", "13-context-culture-development.older-adults", "cognitive.pitfall-challenging-accurate-thoughts", "depression.assessment", "depression.overview", "grief-and-loss.adaptations", "grief-and-loss.assessment", "grief-and-loss.overview", "grief-and-loss.pitfall-treating-normal-grief"],
+      "sources": [
+        "Stroebe-etal-2007 § Abstract",
+        "Kendler-etal-2003 § Results"
+      ]
+    },
+    {
+      "id": "bf.relationship-breakup",
+      "label": "Relationship breakup or divorce",
+      "alt_labels": [
+        "separation",
+        "divorce",
+        "being left"
+      ],
+      "definition": "The end of a romantic relationship or marriage, whether the person or the partner ended it.",
+      "client_wording": "A breakup, separation, or divorce.",
+      "example": "Partner of eight years left for someone else.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.humiliating-event",
+        "bf.relationship-difficulties",
+        "sit.loss-reminder",
+        "rk.acute-life-stressor"
+      ],
+      "see": [],
+      "sources": [
+        "Kendler-etal-2003 § Results"
+      ]
+    },
+    {
+      "id": "bf.job-loss",
+      "label": "Job loss or unemployment",
+      "alt_labels": [
+        "layoff",
+        "being fired",
+        "unemployment"
+      ],
+      "definition": "Losing a job through dismissal, layoff or business failure, or prolonged unemployment, with loss of income, role and structure.",
+      "client_wording": "Losing your job, or being out of work for a while.",
+      "example": "Laid off after 15 years when the factory closed.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.financial-crisis",
+        "bf.meaningful-occupation",
+        "rk.acute-life-stressor"
+      ],
+      "see": ["03-formulation.five-ps-formulation", "13-context-culture-development.socioeconomic-context", "cognitive.pitfall-challenging-accurate-thoughts"],
+      "sources": [
+        "Paul-Moser-2009 § Meta-analyses"
+      ]
+    },
+    {
+      "id": "bf.work-or-study-stress",
+      "label": "Work or study stress",
+      "alt_labels": [
+        "workplace conflict",
+        "exam period",
+        "new job",
+        "heavy workload"
+      ],
+      "definition": "Sustained pressure, conflict or change at work or in education, such as overload, a difficult manager, a new role or exams.",
+      "client_wording": "Ongoing pressure or problems at work or school, like too much work or a difficult boss.",
+      "example": "A new manager doubled targets and criticized the team publicly.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "sit.deadline-or-time-pressure",
+        "bf.job-loss"
+      ],
+      "see": ["03-formulation.five-ps-formulation"],
+      "sources": [
+        "Macneil-etal-2012 § Five Ps: precipitating factors",
+        "Hammen-2005 § Abstract"
+      ]
+    },
+    {
+      "id": "bf.financial-crisis",
+      "label": "Financial crisis",
+      "alt_labels": [
+        "debt",
+        "eviction",
+        "bankruptcy"
+      ],
+      "definition": "A sudden or worsening money problem, such as major debt, eviction threat, bankruptcy or loss of benefits.",
+      "client_wording": "Serious money trouble, like big debts, possible eviction, or losing your income.",
+      "example": "Received a final eviction notice after falling behind on rent.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.socioeconomic-disadvantage",
+        "bf.job-loss",
+        "rk.acute-life-stressor"
+      ],
+      "see": ["03-formulation.five-ps-formulation", "13-context-culture-development.socioeconomic-context"],
+      "sources": [
+        "Macneil-etal-2012 § Five Ps: precipitating factors",
+        "Lund-etal-2010 § Results"
+      ]
+    },
+    {
+      "id": "bf.new-illness-or-injury",
+      "label": "New illness, injury or diagnosis",
+      "alt_labels": [
+        "medical diagnosis",
+        "surgery",
+        "accident injury"
+      ],
+      "definition": "Onset or diagnosis of a significant physical illness, injury or surgery, or a sudden worsening of an existing condition.",
+      "client_wording": "Getting a serious illness, injury, or diagnosis, or an existing one getting worse.",
+      "example": "Diagnosed with breast cancer in the spring.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.chronic-physical-condition",
+        "bf.early-illness-experience"
+      ],
+      "see": ["01-intake.pitfall-missed-medical-and-substance-factors", "10-diagnosis.differential-diagnosis-process", "10-diagnosis.pitfall-premature-diagnostic-closure", "12-medical-pharmacology.medical-mimics", "12-medical-pharmacology.when-to-refer-medically", "health-anxiety.adaptations", "health-anxiety.pitfall-missed-medical-illness"],
+      "sources": [
+        "Macneil-etal-2012 § Five Ps: precipitating factors",
+        "Moussavi-etal-2007 § Abstract"
+      ]
+    },
+    {
+      "id": "bf.perinatal-period",
+      "label": "Pregnancy, childbirth or pregnancy loss",
+      "alt_labels": [
+        "postpartum",
+        "traumatic birth",
+        "miscarriage",
+        "new baby"
+      ],
+      "definition": "Pregnancy, childbirth and the months after birth, including difficult or traumatic births and pregnancy loss.",
+      "client_wording": "Pregnancy, having a baby, a difficult birth, or losing a pregnancy.",
+      "example": "Emergency cesarean followed by weeks of broken sleep.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.sleep-schedule-disruption",
+        "bf.role-transition"
+      ],
+      "see": ["13-context-culture-development.perinatal-mental-health", "adhd.underdiagnosis-in-women-and-adults", "bipolar-and-psychosis.adaptations", "depression.adaptations", "eating-disorders.adaptations", "insomnia.adaptations"],
+      "sources": [
+        "OHara-McCabe-2013 § Abstract",
+        "Persons-Tompkins-2022 § Precipitants of the current problems"
+      ]
+    },
+    {
+      "id": "bf.relocation-or-migration",
+      "label": "Relocation or migration",
+      "alt_labels": [
+        "moving home",
+        "immigration",
+        "displacement",
+        "refugee"
+      ],
+      "definition": "Moving home, city or country, including migration and forced displacement, with loss of familiar networks, roles and routines.",
+      "client_wording": "Moving to a new home, city, or country, especially leaving people and routines behind.",
+      "example": "Arrived as a refugee two years ago, separated from extended family.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.role-transition",
+        "bf.social-isolation"
+      ],
+      "see": ["10-diagnosis.cultural-formulation-interview", "10-diagnosis.icd-10-cm-and-icd-11", "10-diagnosis.pitfall-culture-misread-as-pathology", "13-context-culture-development.working-with-interpreters"],
+      "sources": [
+        "Bhugra-2004 § Abstract",
+        "Holmes-Rahe-1967 § Social Readjustment Rating Scale"
+      ]
+    },
+    {
+      "id": "bf.recent-traumatic-event",
+      "label": "Recent traumatic event",
+      "alt_labels": [
+        "assault",
+        "accident",
+        "disaster",
+        "combat"
+      ],
+      "definition": "A recent event involving actual or threatened death, serious injury or sexual violence, experienced, witnessed, or happening to someone close.",
+      "client_wording": "Something frightening happened recently where you, or someone close, could have died or been badly hurt.",
+      "example": "Held at knifepoint during a robbery last month.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.prior-trauma-exposure",
+        "sit.trauma-reminder"
+      ],
+      "see": ["ptsd.early-intervention", "ptsd.overview", "ptsd.pitfall-routine-debriefing"],
+      "sources": [
+        "APA-DSM5TR-2022 § Posttraumatic Stress Disorder",
+        "Ehlers-Clark-2000 § Abstract"
+      ]
+    },
+    {
+      "id": "bf.relationship-difficulties",
+      "label": "Ongoing relationship difficulties",
+      "alt_labels": [
+        "marital conflict",
+        "family conflict"
+      ],
+      "definition": "Persistent conflict, distance or dissatisfaction in a key relationship with a partner, family member or close friend.",
+      "client_wording": "Ongoing trouble, arguments, or distance in an important relationship.",
+      "example": "Months of daily arguments with a teenage son.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "sit.interpersonal-conflict",
+        "bf.relationship-breakup"
+      ],
+      "see": ["03-formulation.five-ps-formulation"],
+      "sources": [
+        "Macneil-etal-2012 § Five Ps: precipitating factors",
+        "Persons-Tompkins-2022 § Precipitants of the current problems"
+      ]
+    },
+    {
+      "id": "bf.caregiving-burden",
+      "label": "Caregiving burden",
+      "alt_labels": [
+        "caring for a relative",
+        "caregiver strain"
+      ],
+      "definition": "Providing substantial ongoing care for an ill, disabled or older family member, straining time, sleep, finances and well-being.",
+      "client_wording": "Looking after a family member who is ill, disabled, or elderly, and the strain it brings.",
+      "example": "Caring full time for a parent with dementia.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.sleep-schedule-disruption",
+        "bf.role-transition"
+      ],
+      "see": ["bipolar-and-psychosis.adaptations", "bipolar-and-psychosis.family-work"],
+      "sources": [
+        "Pinquart-Sorensen-2003 § Abstract"
+      ]
+    },
+    {
+      "id": "bf.role-transition",
+      "label": "Life transition",
+      "alt_labels": [
+        "retirement",
+        "leaving home",
+        "starting college",
+        "marriage",
+        "children leaving home"
+      ],
+      "definition": "A major change in social role, such as leaving home, starting college, marriage, children leaving home, or retirement.",
+      "client_wording": "A big change in your role in life, like leaving home, marrying, or retiring.",
+      "example": "Retired after 40 years and lost daily structure.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.relocation-or-migration",
+        "bf.meaningful-occupation"
+      ],
+      "see": ["13-context-culture-development.older-adults"],
+      "sources": [
+        "Holmes-Rahe-1967 § Social Readjustment Rating Scale",
+        "Ehlers-etal-1988 § Abstract"
+      ]
+    },
+    {
+      "id": "bf.legal-problems",
+      "label": "Legal problems",
+      "alt_labels": [
+        "arrest",
+        "court case",
+        "custody dispute",
+        "immigration hearing"
+      ],
+      "definition": "Involvement in legal proceedings, such as arrest, criminal charges, lawsuits, custody disputes or immigration hearings.",
+      "client_wording": "Trouble with the law or court cases, like an arrest, custody fight, or immigration case.",
+      "example": "Facing a custody hearing next month.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.financial-crisis",
+        "rk.acute-life-stressor"
+      ],
+      "see": ["03-formulation.five-ps-formulation"],
+      "sources": [
+        "Macneil-etal-2012 § Five Ps: precipitating factors"
+      ]
+    },
+    {
+      "id": "bf.medication-change",
+      "label": "Change in medication",
+      "alt_labels": [
+        "stopping antidepressants",
+        "new medication",
+        "dose change"
+      ],
+      "definition": "Starting, stopping or changing the dose of a psychiatric or other medication, including stopping without medical advice.",
+      "client_wording": "Starting, stopping, or changing a medicine, especially stopping without your prescriber's advice.",
+      "example": "Stopped an antidepressant abruptly when planning a pregnancy.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.previous-episodes"
+      ],
+      "see": ["01-intake.pitfall-missed-medical-and-substance-factors", "10-diagnosis.differential-diagnosis-process", "10-diagnosis.pitfall-premature-diagnostic-closure", "12-medical-pharmacology.adhd-medications", "12-medical-pharmacology.antidepressants", "12-medical-pharmacology.discontinuation-and-withdrawal", "12-medical-pharmacology.medical-mimics", "12-medical-pharmacology.medication-history", "12-medical-pharmacology.mood-stabilizers-and-antipsychotics", "12-medical-pharmacology.pitfall-advising-on-medication-changes", "12-medical-pharmacology.pitfall-side-effects-read-as-psychological", "12-medical-pharmacology.pitfall-withdrawal-mistaken-for-relapse", "12-medical-pharmacology.when-to-refer-medically", "12-medical-pharmacology.working-with-prescribers", "13-context-culture-development.pitfall-diagnostic-overshadowing", "adhd.adaptations", "adhd.medication-and-cbt", "bipolar-and-psychosis.assessment", "bipolar-and-psychosis.pitfall-missed-bipolarity", "chronic-pain-and-physical-health.adaptations", "chronic-pain-and-physical-health.assessment", "chronic-pain-and-physical-health.pitfall-working-apart-from-the-medical-team", "depression.pitfall-risk-not-rechecked", "substance-use.addiction-medications", "substance-use.pitfall-missed-withdrawal-and-overdose-risk"],
+      "sources": [
+        "Persons-Tompkins-2022 § Precipitants of the current problems"
+      ]
+    },
+    {
+      "id": "bf.substance-use-change",
+      "label": "Onset or increase of substance use",
+      "alt_labels": [
+        "starting cannabis",
+        "heavier drinking",
+        "new drug use",
+        "increased substance use",
+        "drinking more",
+        "escalating drug use"
+      ],
+      "definition": "Starting or increasing alcohol, cannabis, stimulant or other drug use, which can precipitate or worsen mental health problems.",
+      "client_wording": "Starting to use, or using more, alcohol or drugs.",
+      "example": "Daily high-potency cannabis use in the months before first psychotic symptoms.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.impulsive-temperament",
+        "bh.substance-use-to-cope",
+        "rk.substance-use-problem"
+      ],
+      "see": ["01-intake.pitfall-missed-medical-and-substance-factors", "03-formulation.five-ps-formulation", "10-diagnosis.differential-diagnosis-process", "10-diagnosis.pitfall-premature-diagnostic-closure", "12-medical-pharmacology.medical-mimics", "12-medical-pharmacology.medication-history", "12-medical-pharmacology.when-to-refer-medically", "bipolar-and-psychosis.assessment", "bipolar-and-psychosis.at-risk-mental-state", "depression.adaptations"],
+      "sources": [
+        "Macneil-etal-2012 § Five Ps: precipitating factors",
+        "AAS-Warning-Signs § Changes in Behavior",
+        "Rudd-etal-2006b § Warning signs versus risk factors"
+      ]
+    },
+    {
+      "id": "bf.goal-attainment-event",
+      "label": "Major success or goal attainment",
+      "alt_labels": [
+        "promotion",
+        "winning",
+        "major achievement"
+      ],
+      "definition": "Achieving a significant goal or a major positive life change, which can precipitate manic symptoms in bipolar disorder.",
+      "client_wording": "A big success or exciting positive change in your life.",
+      "example": "Promotion to partner, followed by weeks of little sleep.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "sit.positive-event",
+        "bf.sleep-schedule-disruption"
+      ],
+      "see": [],
+      "sources": [
+        "Johnson-etal-2000 § Abstract",
+        "Persons-Tompkins-2022 § Precipitants of the current problems"
+      ]
+    },
+    {
+      "id": "bf.sleep-schedule-disruption",
+      "label": "Disrupted sleep schedule or routine",
+      "alt_labels": [
+        "shift work",
+        "jet lag",
+        "newborn care",
+        "loss of daily routine"
+      ],
+      "definition": "A life change that disrupts sleep timing or daily rhythms, such as shift work, long-haul travel, newborn care or lost routine.",
+      "client_wording": "Changes that throw off your sleep or daily rhythm, like night shifts, travel, or a new baby.",
+      "example": "Moved to rotating night shifts in March.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "sit.fatigue-or-sleep-loss",
+        "bf.perinatal-period",
+        "bh.irregular-sleep-schedule"
+      ],
+      "see": ["bipolar-and-psychosis.cbt-model", "insomnia.adaptations"],
+      "sources": [
+        "Ehlers-etal-1988 § Abstract",
+        "Spielman-etal-1987 § Predisposing, precipitating and perpetuating factors"
+      ]
+    },
+    {
+      "id": "bf.humiliating-event",
+      "label": "Humiliating or shaming event",
+      "alt_labels": [
+        "public embarrassment",
+        "being shamed",
+        "demotion"
+      ],
+      "definition": "An event in which the person was publicly embarrassed, shamed, or devalued in a core role, such as being exposed or demoted.",
+      "client_wording": "Something happened where you felt deeply embarrassed, shamed, or put down in front of others.",
+      "example": "Froze during a presentation while colleagues laughed.",
+      "group": "precipitating",
+      "broader": null,
+      "related": [
+        "bf.bullying",
+        "bf.relationship-breakup",
+        "rk.defeat-or-humiliation"
+      ],
+      "see": ["social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.cbt-model"],
+      "sources": [
+        "Kendler-etal-2003 § Results"
+      ]
+    },
+    {
+      "id": "bf.social-support",
+      "label": "Social support",
+      "alt_labels": [
+        "confiding relationship",
+        "supportive family",
+        "friends",
+        "social connectedness",
+        "family support",
+        "feeling connected"
+      ],
+      "definition": "Relationships that give emotional, practical or informational support, including at least one person the client can confide in.",
+      "client_wording": "People you can turn to for comfort, help, or advice, including someone you can really talk to.",
+      "example": "A sister the client calls most evenings.",
+      "group": "protective",
+      "broader": null,
+      "related": [
+        "bf.social-isolation",
+        "bf.community-belonging",
+        "cs.seeking-emotional-support",
+        "rk.reasons-for-living",
+        "rk.responsibility-to-others"
+      ],
+      "see": ["01-intake.history-taking", "03-formulation.five-ps-formulation", "03-formulation.strengths-in-formulation", "10-diagnosis.cultural-formulation-interview", "ptsd.early-intervention", "substance-use.adaptations"],
+      "sources": [
+        "Ozbay-etal-2007 § Abstract",
+        "Brown-Harris-1978 § Vulnerability factors",
+        "Macneil-etal-2012 § Five Ps: protective factors",
+        "CDC-Suicide-Risk-2026 § Protective factors"
+      ]
+    },
+    {
+      "id": "bf.secure-early-relationship",
+      "label": "Secure early relationship",
+      "alt_labels": [
+        "warm caregiver",
+        "supportive adult",
+        "mentor"
+      ],
+      "definition": "At least one warm, reliable caregiver or other adult in childhood who offered safety, comfort and encouragement.",
+      "client_wording": "Having had at least one adult growing up who made you feel safe and cared for.",
+      "example": "A grandmother who always made time to listen.",
+      "group": "protective",
+      "broader": null,
+      "related": [
+        "bf.social-support"
+      ],
+      "see": [],
+      "sources": [
+        "Masten-2001 § Resilience processes",
+        "Macneil-etal-2012 § Five Ps: predisposing factors"
+      ]
+    },
+    {
+      "id": "bf.coping-skills",
+      "label": "Coping and problem-solving skills",
+      "alt_labels": [
+        "emotion regulation skills",
+        "help seeking"
+      ],
+      "definition": "Existing abilities to solve problems, regulate emotions, plan and seek help that the person already uses in some areas of life.",
+      "client_wording": "Ways of coping you already use well, like solving problems, calming down, or asking for help.",
+      "example": "Manages emergencies calmly at work as a nurse.",
+      "group": "protective",
+      "broader": null,
+      "related": [
+        "bf.personal-strengths",
+        "bf.past-successful-coping",
+        "cs.problem-solving",
+        "rk.engagement-with-care"
+      ],
+      "see": ["03-formulation.five-ps-formulation", "03-formulation.strengths-in-formulation", "10-diagnosis.cultural-formulation-interview"],
+      "sources": [
+        "Macneil-etal-2012 § Five Ps: protective factors",
+        "Masten-2001 § Resilience processes",
+        "Kuyken-etal-2009 § Ch. 5 Incorporating Client Strengths and Building Resilience",
+        "CDC-Suicide-Risk-2026 § Protective factors"
+      ]
+    },
+    {
+      "id": "bf.personal-strengths",
+      "label": "Personal strengths and qualities",
+      "alt_labels": [
+        "character strengths",
+        "resilience",
+        "humor",
+        "persistence"
+      ],
+      "definition": "Enduring positive qualities, such as persistence, kindness, humor, curiosity or courage, that can be harnessed in therapy.",
+      "client_wording": "Good qualities you have, like being determined, kind, funny, or brave.",
+      "example": "Kept a household running through years of a partner's illness.",
+      "group": "protective",
+      "broader": null,
+      "related": [
+        "bf.coping-skills",
+        "bf.values-and-purpose"
+      ],
+      "see": ["01-intake.history-taking", "01-intake.intake-record-checklist", "03-formulation.cognitive-conceptualization-diagram", "03-formulation.five-ps-formulation", "03-formulation.sharing-the-formulation", "03-formulation.strengths-in-formulation", "03-formulation.what-is-case-formulation"],
+      "sources": [
+        "Padesky-Mooney-2012 § Abstract",
+        "Kuyken-etal-2009 § Ch. 5 Incorporating Client Strengths and Building Resilience"
+      ]
+    },
+    {
+      "id": "bf.values-and-purpose",
+      "label": "Values and sense of purpose",
+      "alt_labels": [
+        "meaning",
+        "life goals",
+        "what matters most"
+      ],
+      "definition": "Clear personal values, goals or commitments that give life meaning and motivate change.",
+      "client_wording": "Things that matter deeply to you and give your life meaning or direction.",
+      "example": "Wants to be a patient, present father to two young children.",
+      "group": "protective",
+      "broader": null,
+      "related": [
+        "bf.personal-strengths",
+        "bf.faith-or-spiritual-community",
+        "cs.values-based-action",
+        "rk.reasons-for-living"
+      ],
+      "see": ["03-formulation.strengths-in-formulation", "13-context-culture-development.religion-and-spirituality"],
+      "sources": [
+        "Kuyken-etal-2009 § Ch. 5 Incorporating Client Strengths and Building Resilience"
+      ]
+    },
+    {
+      "id": "bf.faith-or-spiritual-community",
+      "label": "Faith or spiritual practice",
+      "alt_labels": [
+        "religion",
+        "spirituality",
+        "faith community"
+      ],
+      "definition": "Religious or spiritual beliefs, practices or community that provide comfort, meaning, belonging or support.",
+      "client_wording": "Faith, spiritual practice, or a religious community that gives you comfort, meaning, or support.",
+      "example": "Attends weekly services and is supported by the congregation.",
+      "group": "protective",
+      "broader": null,
+      "related": [
+        "bf.values-and-purpose",
+        "bf.community-belonging",
+        "cs.spiritual-coping",
+        "rk.moral-or-religious-objection"
+      ],
+      "see": ["10-diagnosis.cultural-formulation-interview", "10-diagnosis.pitfall-culture-misread-as-pathology", "13-context-culture-development.religion-and-spirituality", "bipolar-and-psychosis.adaptations", "grief-and-loss.adaptations", "ocd.adaptations"],
+      "sources": [
+        "Koenig-2012 § Abstract"
+      ]
+    },
+    {
+      "id": "bf.community-belonging",
+      "label": "Cultural and community belonging",
+      "alt_labels": [
+        "community ties",
+        "cultural identity",
+        "peer community",
+        "strong cultural identity",
+        "cultural connectedness",
+        "cultural belonging"
+      ],
+      "definition": "A sense of belonging to a cultural, identity-based or local community that provides pride, support and shared coping.",
+      "client_wording": "Feeling part of a community, culture, or group where you belong and feel supported.",
+      "example": "Active member of a local LGBTQ+ sports club.",
+      "group": "protective",
+      "broader": null,
+      "related": [
+        "bf.social-support",
+        "bf.discrimination-and-minority-stress",
+        "rk.moral-or-religious-objection"
+      ],
+      "see": ["10-diagnosis.cultural-formulation-interview", "10-diagnosis.pitfall-culture-misread-as-pathology", "13-context-culture-development.identity-and-minority-stress"],
+      "sources": [
+        "Meyer-2003 § Minority stress processes (ameliorative coping)",
+        "Bhugra-2004 § Abstract",
+        "CDC-Suicide-Risk-2026 § Protective factors"
+      ]
+    },
+    {
+      "id": "bf.meaningful-occupation",
+      "label": "Meaningful work, study or role",
+      "alt_labels": [
+        "employment",
+        "volunteering",
+        "study"
+      ],
+      "definition": "Paid work, study, volunteering or another valued role that provides structure, income or social contact, and self-worth.",
+      "client_wording": "Work, study, volunteering, or another role that gives your days structure and purpose.",
+      "example": "Volunteers at an animal shelter three mornings a week.",
+      "group": "protective",
+      "broader": null,
+      "related": [
+        "bf.job-loss",
+        "bf.role-transition"
+      ],
+      "see": [],
+      "sources": [
+        "Paul-Moser-2009 § Meta-analyses"
+      ]
+    },
+    {
+      "id": "bf.material-stability",
+      "label": "Financial and housing stability",
+      "alt_labels": [
+        "secure income",
+        "stable housing"
+      ],
+      "definition": "Secure income, stable housing and access to basic resources, reducing daily stress and making engagement in care easier.",
+      "client_wording": "Having enough money and a safe, stable place to live.",
+      "example": "Has a steady income and a long-term lease.",
+      "group": "protective",
+      "broader": null,
+      "related": [
+        "bf.socioeconomic-disadvantage",
+        "bf.financial-crisis"
+      ],
+      "see": ["13-context-culture-development.socioeconomic-context"],
+      "sources": [
+        "Lund-etal-2010 § Results"
+      ]
+    },
+    {
+      "id": "bf.interests-and-hobbies",
+      "label": "Interests and enjoyable activities",
+      "alt_labels": [
+        "hobbies",
+        "pastimes"
+      ],
+      "definition": "Hobbies, interests and activities the person enjoys or used to enjoy, which can be rebuilt as sources of pleasure and mastery.",
+      "client_wording": "Hobbies and activities you enjoy, or used to enjoy.",
+      "example": "Used to play guitar in a band in college.",
+      "group": "protective",
+      "broader": null,
+      "related": [
+        "bf.values-and-purpose"
+      ],
+      "see": ["03-formulation.five-ps-formulation", "03-formulation.strengths-in-formulation", "13-context-culture-development.autism-adaptations"],
+      "sources": [
+        "Macneil-etal-2012 § Five Ps: protective factors",
+        "Beck-2021 § Ch. 7 Activity Scheduling"
+      ]
+    },
+    {
+      "id": "bf.past-successful-coping",
+      "label": "Past experiences of coping",
+      "alt_labels": [
+        "previous recovery",
+        "overcoming adversity"
+      ],
+      "definition": "Times the person managed difficulty, recovered from an earlier episode or overcame adversity, showing strategies and resilience to draw on.",
+      "client_wording": "Times you got through something hard, or recovered before.",
+      "example": "Recovered from a depressive episode at 25 with exercise and support.",
+      "group": "protective",
+      "broader": null,
+      "related": [
+        "bf.coping-skills",
+        "bf.previous-episodes"
+      ],
+      "see": ["01-intake.history-taking", "03-formulation.cognitive-conceptualization-diagram", "03-formulation.strengths-in-formulation"],
+      "sources": [
+        "Padesky-Mooney-2012 § Abstract",
+        "Kuyken-etal-2009 § Ch. 5 Incorporating Client Strengths and Building Resilience"
+      ]
+    }
+  ]
+}

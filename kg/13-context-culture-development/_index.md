@@ -1,0 +1,42 @@
+# 13-context-culture-development: Context, Culture and Development
+
+## This stage
+How culture, identity, language, faith, socioeconomic circumstances, life stage and neurodivergence change the way cognitive behavioral therapy (CBT) is assessed, formulated and delivered. These pages apply at every stage of the episode of care, from the first contact to the ending, and sit alongside the condition pages in `11-conditions` and the relationship pages in `06-therapeutic-relationship`.
+
+## Decisions in order
+1. What stance do I take with every client so culture and identity can be discussed safely? → `13-context-culture-development.cultural-humility`
+2. Does the client need the therapy in another language, and how do I work with an interpreter? → `13-context-culture-development.working-with-interpreters`
+3. Do the client's language, explanatory model or values call for adapting the protocol, and how? → `13-context-culture-development.culturally-adapted-cbt`
+4. Are stigma, discrimination, concealment or internalized stigma part of the formulation? → `13-context-culture-development.identity-and-minority-stress`
+5. Does faith or spirituality shape the problem, the resources or the client's wishes for therapy? → `13-context-culture-development.religion-and-spirituality`
+6. Do money, housing, work or access barriers limit attendance or drive the problem? → `13-context-culture-development.socioeconomic-context`
+7. Is the client a child or adolescent, and how should parents be involved? → `13-context-culture-development.children-and-adolescents`
+8. Is a child anxious, avoiding separation or school, or not speaking outside home, and should CBT run through the child or the parents? → `13-context-culture-development.child-anxiety`
+9. Is the client pregnant or within a year of giving birth? → `13-context-culture-development.perinatal-mental-health`
+10. Is the client an older adult, or do sensory, cognitive or health changes affect delivery? → `13-context-culture-development.older-adults`
+11. Is the client autistic? → `13-context-culture-development.autism-adaptations`
+12. Does the client have an intellectual disability or low literacy? → `13-context-culture-development.intellectual-disability-and-low-literacy`
+
+## Pages
+| Page | Summary | Applies when | Depth |
+|---|---|---|---|
+| `13-context-culture-development.cultural-humility` | How to hold a culturally humble stance in CBT by asking rather than assuming, broaching identity and power, repairing cultural missteps, and recording what matters to the client. | Any client, and especially when the client's culture, identity, language, faith or social position differs from yours or seems relevant to the problem. | L1-L2 |
+| `13-context-culture-development.culturally-adapted-cbt` | Frameworks and evidence for culturally adapting CBT, from the eight-dimension ecological validity model to meta-analyses, with steps for adapting content and delivery for an individual client. | A client's language, explanatory model, values or community context make the standard protocol a poor fit, or a service is designing CBT for a specific cultural group. | L2-L3 |
+| `13-context-culture-development.working-with-interpreters` | Step-by-step procedure for interpreter-mediated CBT, covering booking a qualified interpreter, pre-session briefing, seating and turn-taking, adapting materials, debriefing, legal duties and what to record. | The client prefers or needs to receive therapy in a language you do not speak fluently, including a signed language. | L2 |
+| `13-context-culture-development.identity-and-minority-stress` | The minority stress model (distal stressors, proximal processes, coping) and how to use it in CBT formulation and affirmative treatment for LGBTQ+, racially minoritized and other stigmatized clients. | The client belongs to a stigmatized group and discrimination, concealment, expected rejection or internalized stigma may be part of the problem. | L2 |
+| `13-context-culture-development.religion-and-spirituality` | How to assess religious and spiritual life in CBT, integrate faith resources when clients want it, respect beliefs while testing unhelpful appraisals, and handle value conflicts. | Faith, spirituality or religious community matters to the client, shapes how they understand the problem, or could be a resource or a source of distress in therapy. | L2 |
+| `13-context-culture-development.socioeconomic-context` | How poverty, debt, housing, work and access barriers affect CBT engagement and outcomes, and how to assess them, adapt delivery, problem-solve practical needs and avoid blaming clients. | The client faces low income, debt, unstable housing, unemployment, insecure work or practical barriers to attending and using therapy. | L2 |
+| `13-context-culture-development.children-and-adolescents` | Developmental adaptations of CBT for children and adolescents, when and how to involve parents, consent and confidentiality basics, and what the guidelines and trials say works. | The client is under 18, or a young adult whose developmental stage or family involvement shapes how CBT should be delivered. | L2 |
+| `13-context-culture-development.child-anxiety` | Child anxiety presentations including separation anxiety and selective mutism, the SCAS, RCADS and SCARED, family accommodation, and CBT from Coping Cat style programs to parent-led CBT and SPACE. | A child has fears, worries, separation distress, school refusal or does not speak outside the home, and you must assess it and choose between child-focused and parent-led CBT. | L2 |
+| `13-context-culture-development.perinatal-mental-health` | How to screen and treat perinatal depression, anxiety and OCD with CBT, respond calmly to intrusive infant-harm thoughts, handle postpartum psychosis as an emergency, and route medication and safeguarding questions. | The client is pregnant or within a year of giving birth, or a new parent reports low mood, anxiety, or frightening thoughts about harm coming to the baby. | L2 |
+| `13-context-culture-development.older-adults` | Evidence that CBT helps older adults with depression and anxiety, plus practical adaptations for sensory, cognitive, health, ageism and cohort factors, including mild dementia. | The client is an older adult, or age-related health, sensory, cognitive or life-stage changes affect how CBT can be delivered. | L2 |
+| `13-context-culture-development.autism-adaptations` | How to adapt CBT for autistic children and adults with anxiety or depression, covering structure, concrete language, visual materials, emotion literacy, sensory needs, family support and suicide risk. | The client is autistic (diagnosed or self-identified) and has co-occurring anxiety, depression or another problem that CBT treats. | L2 |
+| `13-context-culture-development.intellectual-disability-and-low-literacy` | How to simplify CBT materials and methods for clients with intellectual disability or low literacy, including accessible measures, supporter involvement, teach-back checks and behaviorally weighted treatment. | The client has an intellectual disability, limited reading or numeracy, or struggles with written worksheets, abstract questions or standard questionnaires. | L2 |
+
+## Pitfalls
+| Pitfall | Symptom | Page |
+|---|---|---|
+| Treating Group Identity as a Script | The therapist infers a client's values, problems or preferences from their ethnicity, faith, age, sexuality or disability, and the client feels stereotyped, misread or quietly disengages. | `13-context-culture-development.pitfall-assuming-from-group-identity` |
+| Disputing Real Hardship as Distorted Thinking | The therapist treats thoughts about discrimination, poverty or danger as cognitive distortions to dispute, and the client feels invalidated, blamed or unsafe, and disengages. | `13-context-culture-development.pitfall-disputing-realistic-adversity` |
+| Using Family, Friends or Children as Interpreters | A relative, friend, child or untrained staff member interprets therapy, so content is filtered, risk and abuse go unspoken, and errors with clinical consequences slip through. | `13-context-culture-development.pitfall-family-or-child-as-interpreter` |
+| Diagnostic Overshadowing | New distress or symptoms are put down to a client's autism, intellectual disability, age, gender identity or culture, so treatable depression, anxiety, trauma or medical illness goes unassessed. | `13-context-culture-development.pitfall-diagnostic-overshadowing` |

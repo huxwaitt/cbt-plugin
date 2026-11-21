@@ -1,0 +1,5584 @@
+{
+  "scheme": "formulation-models",
+  "prefix": "fm",
+  "title": "Formulation models",
+  "description": "Formulation diagrams as slot grids. Each slot names the therapist's question, the vocabulary schemes that fill it and its rating; links mark direct effects (solid) and maintaining loops (dashed).",
+  "version": "1.1.0",
+  "rating_types": {
+    "intensity": "0 to 100, how strong the emotion, sensation or urge is",
+    "belief": "0 to 100, how much the client believes it right now",
+    "frequency": "times per week",
+    "duration": "minutes per day spent on it",
+    "confidence": "0 to 100, how confident the client is that they can use it when needed"
+  },
+  "models": [
+    {
+      "id": "fm.five-part",
+      "label": "Five-part model (hot cross bun)",
+      "group": "generic cross-sectional",
+      "summary": "Maps one recent episode as a situation plus four interacting parts: thoughts, emotions, physical reactions and behaviors.",
+      "use_when": "Early sessions with any presenting problem, to socialize the client to CBT and map a specific recent episode together.",
+      "topics": [
+        "formulation",
+        "psychoeducation",
+        "depression",
+        "gad",
+        "panic"
+      ],
+      "page": "03-formulation.five-part-model",
+      "sources": [
+        "Padesky-Mooney-1990 § Presenting the cognitive model to clients",
+        "Greenberger-Padesky-2016 § Ch. 2 Understanding Your Problems"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 3
+      },
+      "slots": [
+        {
+          "id": "situation",
+          "label": "Situation (environment)",
+          "prompt": "When was the last time this happened? Where were you, who was there, what was going on?",
+          "help": "The specific trigger and the wider life context, including relationships, culture, work and recent changes.",
+          "vocab": [
+            "sit",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "thoughts",
+          "label": "Thoughts",
+          "prompt": "What was going through your mind just then? What images or memories came up?",
+          "help": "Automatic thoughts and images in the moment, rated for how much the client believed them.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "emotions",
+          "label": "Emotions (moods)",
+          "prompt": "What did you feel? Can you name it in one word?",
+          "help": "One-word emotions, each rated for intensity.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "physical",
+          "label": "Physical reactions",
+          "prompt": "What did you notice in your body?",
+          "help": "Bodily sensations and changes in arousal, energy, sleep or appetite.",
+          "vocab": [
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "behaviors",
+          "label": "Behaviors",
+          "prompt": "What did you do, or stop yourself from doing?",
+          "help": "Observable actions, avoidance, safety behaviors and things the client held back from.",
+          "vocab": [
+            "bh",
+            "cs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        }
+      ],
+      "links": [
+        {
+          "from": "situation",
+          "to": "thoughts",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "situation",
+          "to": "emotions",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "situation",
+          "to": "physical",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "situation",
+          "to": "behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "thoughts",
+          "to": "emotions",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "emotions",
+          "to": "thoughts",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "thoughts",
+          "to": "physical",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "physical",
+          "to": "thoughts",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "thoughts",
+          "to": "behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "behaviors",
+          "to": "thoughts",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "emotions",
+          "to": "physical",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "physical",
+          "to": "emotions",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "emotions",
+          "to": "behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "behaviors",
+          "to": "emotions",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "physical",
+          "to": "behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "behaviors",
+          "to": "physical",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "behaviors",
+          "to": "situation",
+          "label": "changes the situation",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.cognitive-conceptualization-diagram",
+      "label": "Cognitive conceptualization diagram (Beck)",
+      "group": "generic longitudinal",
+      "summary": "Links life history to core beliefs, conditional assumptions and coping strategies, then shows how they play out in three typical situations.",
+      "use_when": "Once several situations have been mapped and the client is ready to understand why the same patterns recur.",
+      "topics": [
+        "formulation",
+        "core-beliefs",
+        "depression"
+      ],
+      "page": "03-formulation.cognitive-conceptualization-diagram",
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "BeckInstitute-Worksheet-Packet-2020 § Traditional Cognitive Conceptualization Diagram"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 9
+      },
+      "slots": [
+        {
+          "id": "life-history",
+          "label": "Relevant life history and precipitants",
+          "prompt": "What experiences growing up, or before this episode began, shaped how you see yourself, others and the world?",
+          "help": "Relevant childhood data and later life events, plus what triggered the current episode.",
+          "vocab": [
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "core-beliefs",
+          "label": "Core beliefs",
+          "prompt": "If that thought were true, what would it say about you? About other people?",
+          "help": "The most central beliefs active during the current episode, about self, others or the world.",
+          "vocab": [
+            "cb"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "intermediate-beliefs",
+          "label": "Conditional assumptions, attitudes and rules",
+          "prompt": "What rules do you live by to cope with that belief? If you did or did not do that, what would happen?",
+          "help": "Intermediate beliefs: if-then assumptions, attitudes and rules that link core beliefs to behavior.",
+          "vocab": [
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "coping-strategies",
+          "label": "Coping (compensatory) strategies",
+          "prompt": "What do you do to protect yourself so that belief does not come true or show?",
+          "help": "Habitual strategies used to cope with the core belief, such as avoidance, overworking or seeking approval.",
+          "vocab": [
+            "cs",
+            "bh"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        },
+        {
+          "id": "situation-1",
+          "label": "Situation 1",
+          "prompt": "What was the situation? Where were you and what was happening?",
+          "help": "A specific, typical problem situation, which can be an event, a thought or a memory.",
+          "vocab": [
+            "sit"
+          ],
+          "multi": false,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 5
+        },
+        {
+          "id": "automatic-thought-1",
+          "label": "Automatic thought 1",
+          "prompt": "What was going through your mind?",
+          "help": "The automatic thought or image in that situation, rated for belief.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 6
+        },
+        {
+          "id": "meaning-1",
+          "label": "Meaning of the automatic thought 1",
+          "prompt": "If that thought were true, what would it mean to you?",
+          "help": "The personal meaning of the thought, which often expresses a core belief.",
+          "vocab": [
+            "cb",
+            "tt"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 7
+        },
+        {
+          "id": "emotion-1",
+          "label": "Emotion 1",
+          "prompt": "What did you feel?",
+          "help": "The main emotion, rated for intensity.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 8
+        },
+        {
+          "id": "behavior-1",
+          "label": "Behavior 1",
+          "prompt": "What did you do then?",
+          "help": "What the client did, often an instance of a coping strategy.",
+          "vocab": [
+            "bh",
+            "cs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 9
+        },
+        {
+          "id": "situation-2",
+          "label": "Situation 2",
+          "prompt": "What was the situation? Where were you and what was happening?",
+          "help": "A specific, typical problem situation, which can be an event, a thought or a memory.",
+          "vocab": [
+            "sit"
+          ],
+          "multi": false,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 5
+        },
+        {
+          "id": "automatic-thought-2",
+          "label": "Automatic thought 2",
+          "prompt": "What was going through your mind?",
+          "help": "The automatic thought or image in that situation, rated for belief.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 6
+        },
+        {
+          "id": "meaning-2",
+          "label": "Meaning of the automatic thought 2",
+          "prompt": "If that thought were true, what would it mean to you?",
+          "help": "The personal meaning of the thought, which often expresses a core belief.",
+          "vocab": [
+            "cb",
+            "tt"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 7
+        },
+        {
+          "id": "emotion-2",
+          "label": "Emotion 2",
+          "prompt": "What did you feel?",
+          "help": "The main emotion, rated for intensity.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 8
+        },
+        {
+          "id": "behavior-2",
+          "label": "Behavior 2",
+          "prompt": "What did you do then?",
+          "help": "What the client did, often an instance of a coping strategy.",
+          "vocab": [
+            "bh",
+            "cs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 9
+        },
+        {
+          "id": "situation-3",
+          "label": "Situation 3",
+          "prompt": "What was the situation? Where were you and what was happening?",
+          "help": "A specific, typical problem situation, which can be an event, a thought or a memory.",
+          "vocab": [
+            "sit"
+          ],
+          "multi": false,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 5
+        },
+        {
+          "id": "automatic-thought-3",
+          "label": "Automatic thought 3",
+          "prompt": "What was going through your mind?",
+          "help": "The automatic thought or image in that situation, rated for belief.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 3,
+          "row": 6
+        },
+        {
+          "id": "meaning-3",
+          "label": "Meaning of the automatic thought 3",
+          "prompt": "If that thought were true, what would it mean to you?",
+          "help": "The personal meaning of the thought, which often expresses a core belief.",
+          "vocab": [
+            "cb",
+            "tt"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 3,
+          "row": 7
+        },
+        {
+          "id": "emotion-3",
+          "label": "Emotion 3",
+          "prompt": "What did you feel?",
+          "help": "The main emotion, rated for intensity.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 3,
+          "row": 8
+        },
+        {
+          "id": "behavior-3",
+          "label": "Behavior 3",
+          "prompt": "What did you do then?",
+          "help": "What the client did, often an instance of a coping strategy.",
+          "vocab": [
+            "bh",
+            "cs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 9
+        }
+      ],
+      "links": [
+        {
+          "from": "life-history",
+          "to": "core-beliefs",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "core-beliefs",
+          "to": "intermediate-beliefs",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "intermediate-beliefs",
+          "to": "coping-strategies",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "coping-strategies",
+          "to": "situation-1",
+          "label": "shapes responses in",
+          "style": "solid"
+        },
+        {
+          "from": "situation-1",
+          "to": "automatic-thought-1",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "automatic-thought-1",
+          "to": "meaning-1",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "meaning-1",
+          "to": "emotion-1",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "emotion-1",
+          "to": "behavior-1",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "meaning-1",
+          "to": "core-beliefs",
+          "label": "confirms",
+          "style": "dashed"
+        },
+        {
+          "from": "coping-strategies",
+          "to": "situation-2",
+          "label": "shapes responses in",
+          "style": "solid"
+        },
+        {
+          "from": "situation-2",
+          "to": "automatic-thought-2",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "automatic-thought-2",
+          "to": "meaning-2",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "meaning-2",
+          "to": "emotion-2",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "emotion-2",
+          "to": "behavior-2",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "meaning-2",
+          "to": "core-beliefs",
+          "label": "confirms",
+          "style": "dashed"
+        },
+        {
+          "from": "coping-strategies",
+          "to": "situation-3",
+          "label": "shapes responses in",
+          "style": "solid"
+        },
+        {
+          "from": "situation-3",
+          "to": "automatic-thought-3",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "automatic-thought-3",
+          "to": "meaning-3",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "meaning-3",
+          "to": "emotion-3",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "emotion-3",
+          "to": "behavior-3",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "meaning-3",
+          "to": "core-beliefs",
+          "label": "confirms",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.five-ps",
+      "label": "Five Ps longitudinal formulation",
+      "group": "generic longitudinal",
+      "summary": "Organizes the presenting problem with predisposing, precipitating, perpetuating and protective factors.",
+      "use_when": "At the end of assessment, to summarize history and current maintenance in one page and point to treatment targets and strengths.",
+      "topics": [
+        "formulation",
+        "intake",
+        "planning"
+      ],
+      "page": "03-formulation.five-ps-formulation",
+      "sources": [
+        "Macneil-etal-2012 § Formulation: the Five Ps",
+        "Kuyken-etal-2009 § Longitudinal explanatory conceptualizations"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 3
+      },
+      "slots": [
+        {
+          "id": "precipitating",
+          "label": "Precipitating factors",
+          "prompt": "What was happening in your life when this started or got worse?",
+          "help": "Recent events or stressors that triggered the current episode.",
+          "vocab": [
+            "sit",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "predisposing",
+          "label": "Predisposing factors",
+          "prompt": "What in your history might have made you more vulnerable to this?",
+          "help": "Longer-term vulnerabilities: early experiences, family history, temperament, beliefs formed early.",
+          "vocab": [
+            "bf",
+            "cb",
+            "ib"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "presenting",
+          "label": "Presenting problem",
+          "prompt": "What are the main difficulties you want help with, in your own words?",
+          "help": "The problems as client and clinician see them, beyond the diagnosis, including any risk.",
+          "vocab": [
+            "em",
+            "bs",
+            "bh",
+            "tt",
+            "rk"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "perpetuating",
+          "label": "Perpetuating factors",
+          "prompt": "What keeps this going now, even when you try to change it?",
+          "help": "Current maintaining processes, behaviors and thinking patterns that treatment can change.",
+          "vocab": [
+            "mp",
+            "bh",
+            "cs",
+            "cd"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "protective",
+          "label": "Protective factors",
+          "prompt": "What helps, even a little? What strengths and support do you have?",
+          "help": "Strengths, supports, values and coping skills to build on in treatment.",
+          "vocab": [
+            "bf",
+            "cs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        }
+      ],
+      "links": [
+        {
+          "from": "predisposing",
+          "to": "presenting",
+          "label": "makes vulnerable to",
+          "style": "solid"
+        },
+        {
+          "from": "precipitating",
+          "to": "presenting",
+          "label": "triggers",
+          "style": "solid"
+        },
+        {
+          "from": "perpetuating",
+          "to": "presenting",
+          "label": "maintains",
+          "style": "dashed"
+        },
+        {
+          "from": "presenting",
+          "to": "perpetuating",
+          "label": "prompts",
+          "style": "dashed"
+        },
+        {
+          "from": "protective",
+          "to": "presenting",
+          "label": "buffers",
+          "style": "solid"
+        }
+      ]
+    },
+    {
+      "id": "fm.functional-analysis-abc",
+      "label": "Functional analysis (ABC)",
+      "group": "generic cross-sectional",
+      "summary": "Links one specific target behavior to its antecedents and to its short- and long-term consequences, to find the function that keeps it going.",
+      "use_when": "A specific problem behavior (avoidance, bingeing, drinking, self-injury, outbursts, checking) whose triggers and reinforcers must be found before choosing interventions.",
+      "topics": [
+        "functional-analysis",
+        "formulation",
+        "avoidance",
+        "substance-use",
+        "self-harm"
+      ],
+      "page": "03-formulation.functional-analysis",
+      "sources": [
+        "Virues-Ortega-Haynes-2005 § Abstract, Functional analytic clinical case models",
+        "Persons-Hong-2016 § Summary, functional analysis"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 3
+      },
+      "slots": [
+        {
+          "id": "antecedent-situation",
+          "label": "Antecedent: situation",
+          "prompt": "Where were you, who was there, and what had just happened?",
+          "help": "External triggers: place, people, time and events.",
+          "vocab": [
+            "sit",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "function",
+          "label": "Function",
+          "prompt": "What did the behavior do for you right away?",
+          "help": "Negative reinforcement (removes something unpleasant) or positive reinforcement (adds something wanted).",
+          "vocab": [
+            "mp"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "consequence-short",
+          "label": "Short-term consequences",
+          "prompt": "What happened in the first minutes after?",
+          "help": "Immediate effects such as relief, pleasure, escape or attention.",
+          "vocab": [
+            "em",
+            "bs",
+            "sit"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "antecedent-internal",
+          "label": "Antecedent: internal state",
+          "prompt": "What were you feeling, thinking or sensing just before?",
+          "help": "Emotions, body sensations, urges and thoughts present just before the behavior.",
+          "vocab": [
+            "em",
+            "bs",
+            "tt",
+            "sit"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "behavior",
+          "label": "Target behavior",
+          "prompt": "What exactly did you do, how often and for how long?",
+          "help": "One specific, observable behavior, defined by frequency, duration or intensity.",
+          "vocab": [
+            "bh"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "consequence-long",
+          "label": "Long-term consequences",
+          "prompt": "What did it cost you later that day, that week or longer?",
+          "help": "Delayed costs such as guilt, health effects, damaged relationships and the problem kept going.",
+          "vocab": [
+            "em",
+            "tt",
+            "bf",
+            "mp"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "alternative",
+          "label": "Alternative behavior and targets",
+          "prompt": "What could meet the same need at less cost, and what will we change first?",
+          "help": "A replacement that serves the same function, plus the antecedents or consequences chosen for change.",
+          "vocab": [
+            "iv",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "confidence",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        }
+      ],
+      "links": [
+        {
+          "from": "antecedent-situation",
+          "to": "behavior",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "antecedent-internal",
+          "to": "behavior",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "behavior",
+          "to": "consequence-short",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "behavior",
+          "to": "consequence-long",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "consequence-short",
+          "to": "function",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "function",
+          "to": "behavior",
+          "label": "reinforces",
+          "style": "dashed"
+        },
+        {
+          "from": "alternative",
+          "to": "behavior",
+          "label": "replaces",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.behavior-chain",
+      "label": "Behavior chain analysis (DBT)",
+      "group": "self-harm and emotion dysregulation",
+      "summary": "Traces one episode of a problem behavior link by link, from vulnerability factors and the prompting event to consequences, with a planned solution under each link.",
+      "use_when": "Self-harm, suicidal behavior, bingeing, substance use or another emotion-driven behavior that recurs, to find where a skillful response could break the chain.",
+      "topics": [
+        "dbt",
+        "self-harm",
+        "emotion-regulation",
+        "functional-analysis",
+        "formulation"
+      ],
+      "page": "personality-disorders.dbt-informed-skills",
+      "sources": [
+        "Linehan-2025 § Chain analysis of problem behavior",
+        "Rizvi-Ritschel-2014 § Components of a chain analysis; Solution analysis"
+      ],
+      "grid": {
+        "cols": 2,
+        "rows": 5
+      },
+      "slots": [
+        {
+          "id": "vulnerabilities",
+          "label": "Vulnerability factors",
+          "prompt": "What made you more vulnerable that day: sleep, illness, hunger, substances, stress?",
+          "help": "Conditions that lowered resilience before the prompting event.",
+          "vocab": [
+            "bf",
+            "bs",
+            "sit"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "prompting-event",
+          "label": "Prompting event",
+          "prompt": "What happened right before the chain started?",
+          "help": "The specific external or internal event that started the chain.",
+          "vocab": [
+            "sit"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "links",
+          "label": "Links in the chain",
+          "prompt": "Moment by moment, what did you think, feel, sense and do next?",
+          "help": "Each thought, emotion, sensation, urge and action between the prompting event and the behavior.",
+          "vocab": [
+            "tt",
+            "cd",
+            "em",
+            "bs",
+            "bh"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "problem-behavior",
+          "label": "Problem behavior",
+          "prompt": "What exactly did you do?",
+          "help": "The specific target behavior, described in detail. Do not record method details for self-harm.",
+          "vocab": [
+            "bh"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 4
+        },
+        {
+          "id": "consequences",
+          "label": "Consequences",
+          "prompt": "What happened right after, and later, for you and for others?",
+          "help": "Short-term effects that reinforce the behavior and longer-term costs.",
+          "vocab": [
+            "em",
+            "mp",
+            "tt"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 5
+        },
+        {
+          "id": "reduce-vulnerability",
+          "label": "Reduce vulnerability",
+          "prompt": "What could lower your vulnerability next time?",
+          "help": "Prevention steps such as sleep, regular eating, treating illness and avoiding substances.",
+          "vocab": [
+            "iv",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "confidence",
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "prevent-prompt",
+          "label": "Prevent or handle the prompting event",
+          "prompt": "How could you avoid that event, or meet it differently?",
+          "help": "Ways to stop the chain starting, or to respond to the event with a skill.",
+          "vocab": [
+            "iv",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "confidence",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "skillful-links",
+          "label": "Skillful responses at each link",
+          "prompt": "At which link could you have used a skill, and which one?",
+          "help": "Replacement skills for key links: mindfulness, distress tolerance, emotion regulation or interpersonal effectiveness.",
+          "vocab": [
+            "cs",
+            "iv"
+          ],
+          "multi": true,
+          "rating": "confidence",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "repair",
+          "label": "Repair",
+          "prompt": "What can you do to repair the harm the behavior caused?",
+          "help": "Making amends or correcting the consequences for yourself and others.",
+          "vocab": [
+            "cs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 5
+        }
+      ],
+      "links": [
+        {
+          "from": "vulnerabilities",
+          "to": "prompting-event",
+          "label": "amplifies",
+          "style": "solid"
+        },
+        {
+          "from": "prompting-event",
+          "to": "links",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "links",
+          "to": "problem-behavior",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "problem-behavior",
+          "to": "consequences",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "consequences",
+          "to": "problem-behavior",
+          "label": "reinforces",
+          "style": "dashed"
+        },
+        {
+          "from": "reduce-vulnerability",
+          "to": "vulnerabilities",
+          "label": "reduces",
+          "style": "dashed"
+        },
+        {
+          "from": "prevent-prompt",
+          "to": "prompting-event",
+          "label": "interrupts",
+          "style": "dashed"
+        },
+        {
+          "from": "skillful-links",
+          "to": "links",
+          "label": "replaces",
+          "style": "dashed"
+        },
+        {
+          "from": "repair",
+          "to": "consequences",
+          "label": "repairs",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.vicious-flower",
+      "label": "Vicious flower: six cycles maintenance model (Moorey)",
+      "group": "depression",
+      "summary": "Shows depression at the center with six petals, each a loop that feeds and is fed by the depression.",
+      "use_when": "Depression where the client needs a simple map of what keeps low mood going and where to start breaking cycles.",
+      "topics": [
+        "depression",
+        "formulation",
+        "rumination",
+        "avoidance",
+        "behavioral-activation"
+      ],
+      "page": "03-formulation.maintenance-cycles",
+      "sources": [
+        "Moorey-2010 § The six cycles maintenance model"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 3
+      },
+      "slots": [
+        {
+          "id": "center",
+          "label": "Center: depression",
+          "prompt": "What is the depression like for you at its core? What does it tell you about yourself?",
+          "help": "The central depressed state with its key beliefs, which every petal feeds and is fed by.",
+          "vocab": [
+            "cb",
+            "em"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "negative-thinking",
+          "label": "Automatic negative thinking",
+          "prompt": "When you feel low, what thoughts go through your mind?",
+          "help": "Negative automatic thoughts about self, world and future.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "rumination",
+          "label": "Rumination and self-attacking",
+          "prompt": "Do you go over and over things, or criticize yourself? For how long?",
+          "help": "Repetitive brooding on causes and meanings of low mood and harsh self-criticism.",
+          "vocab": [
+            "mp",
+            "tt"
+          ],
+          "multi": true,
+          "rating": "duration",
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "withdrawal",
+          "label": "Withdrawal and avoidance",
+          "prompt": "What have you stopped doing or started avoiding since feeling this way?",
+          "help": "Withdrawal from people, activities and tasks, which cuts off reward and lets problems build.",
+          "vocab": [
+            "bh",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        },
+        {
+          "id": "unhelpful-behavior",
+          "label": "Unhelpful behavior",
+          "prompt": "What do you do to cope that helps now but costs you later?",
+          "help": "Behaviors such as drinking, oversleeping or comfort eating that worsen mood over time.",
+          "vocab": [
+            "bh",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "motivation-physical",
+          "label": "Motivation and physical symptoms",
+          "prompt": "How are your energy, sleep, appetite and motivation?",
+          "help": "Fatigue, poor sleep and low motivation that make activity harder and are read as more proof of failure.",
+          "vocab": [
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "mood",
+          "label": "Mood and emotion",
+          "prompt": "What other feelings come with the low mood, such as guilt, shame or anger?",
+          "help": "Low mood and linked emotions that bias thinking and drain energy.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        }
+      ],
+      "links": [
+        {
+          "from": "center",
+          "to": "negative-thinking",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "negative-thinking",
+          "to": "center",
+          "label": "",
+          "style": "dashed"
+        },
+        {
+          "from": "center",
+          "to": "rumination",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "rumination",
+          "to": "center",
+          "label": "",
+          "style": "dashed"
+        },
+        {
+          "from": "center",
+          "to": "withdrawal",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "withdrawal",
+          "to": "center",
+          "label": "",
+          "style": "dashed"
+        },
+        {
+          "from": "center",
+          "to": "unhelpful-behavior",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "unhelpful-behavior",
+          "to": "center",
+          "label": "",
+          "style": "dashed"
+        },
+        {
+          "from": "center",
+          "to": "motivation-physical",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "motivation-physical",
+          "to": "center",
+          "label": "",
+          "style": "dashed"
+        },
+        {
+          "from": "center",
+          "to": "mood",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "mood",
+          "to": "center",
+          "label": "",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.depression-maintenance-cycle",
+      "label": "Depression maintenance cycle (cognitive triad, withdrawal and rumination)",
+      "group": "depression",
+      "summary": "Shows how negative views of self, world and future lower mood, which drives withdrawal, inactivity and rumination that confirm those views.",
+      "use_when": "Depression, to explain why low mood persists and to justify behavioral activation and work on negative thinking and rumination.",
+      "topics": [
+        "depression",
+        "behavioral-activation",
+        "rumination",
+        "avoidance",
+        "formulation"
+      ],
+      "page": "depression.cbt-model",
+      "sources": [
+        "Beck-etal-1979 § Ch. 1 Overview: the cognitive triad",
+        "Martell-etal-2022 § Behavioral activation model of depression",
+        "Nolen-Hoeksema-etal-2008 § Consequences of rumination"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 4
+      },
+      "slots": [
+        {
+          "id": "trigger",
+          "label": "Trigger or life event",
+          "prompt": "What happened around the time your mood dropped?",
+          "help": "Losses, stresses or changes that started or worsened the low mood.",
+          "vocab": [
+            "sit",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "view-of-self",
+          "label": "Negative view of self",
+          "prompt": "What do you think about yourself when you feel low?",
+          "help": "Thoughts that the self is defective, inadequate or unlovable.",
+          "vocab": [
+            "tt",
+            "cb",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "view-of-world",
+          "label": "Negative view of world and others",
+          "prompt": "How do other people and your life look to you right now?",
+          "help": "Thoughts that the world is too demanding, unfair or unrewarding.",
+          "vocab": [
+            "tt",
+            "cb",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "view-of-future",
+          "label": "Negative view of future",
+          "prompt": "How do you see the future?",
+          "help": "Hopeless predictions that things will not get better; check risk when present.",
+          "vocab": [
+            "tt",
+            "cb",
+            "cd",
+            "rk"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "low-mood",
+          "label": "Low mood",
+          "prompt": "How low does your mood get, and what other feelings come with it?",
+          "help": "Sadness and linked emotions such as guilt, shame or irritability.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "physical",
+          "label": "Fatigue and physical symptoms",
+          "prompt": "How are your energy, sleep and appetite?",
+          "help": "Low energy, poor sleep and appetite change that make activity feel harder.",
+          "vocab": [
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "rumination",
+          "label": "Rumination",
+          "prompt": "Do you go over why you feel this way or what is wrong with you? For how long?",
+          "help": "Repetitive, passive dwelling on symptoms, causes and consequences of low mood.",
+          "vocab": [
+            "mp",
+            "tt"
+          ],
+          "multi": true,
+          "rating": "duration",
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        },
+        {
+          "id": "withdrawal",
+          "label": "Withdrawal and inactivity",
+          "prompt": "What have you stopped doing, or started putting off?",
+          "help": "Reduced activity, social withdrawal and avoidance of tasks, often meant to save energy or avoid pain.",
+          "vocab": [
+            "bh",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 4
+        },
+        {
+          "id": "consequences",
+          "label": "Loss of reward and mounting problems",
+          "prompt": "What has happened since you stopped doing those things?",
+          "help": "Fewer pleasant and mastery experiences, and problems that pile up, which seem to confirm the negative views.",
+          "vocab": [
+            "sit",
+            "mp"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        }
+      ],
+      "links": [
+        {
+          "from": "trigger",
+          "to": "view-of-self",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "trigger",
+          "to": "view-of-world",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "trigger",
+          "to": "view-of-future",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "view-of-self",
+          "to": "low-mood",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "view-of-world",
+          "to": "low-mood",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "view-of-future",
+          "to": "low-mood",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "low-mood",
+          "to": "physical",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "low-mood",
+          "to": "withdrawal",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "physical",
+          "to": "withdrawal",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "withdrawal",
+          "to": "consequences",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "consequences",
+          "to": "view-of-self",
+          "label": "confirms",
+          "style": "dashed"
+        },
+        {
+          "from": "consequences",
+          "to": "low-mood",
+          "label": "deepens",
+          "style": "dashed"
+        },
+        {
+          "from": "low-mood",
+          "to": "rumination",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "rumination",
+          "to": "low-mood",
+          "label": "deepens",
+          "style": "dashed"
+        },
+        {
+          "from": "rumination",
+          "to": "view-of-future",
+          "label": "confirms",
+          "style": "dashed"
+        },
+        {
+          "from": "withdrawal",
+          "to": "rumination",
+          "label": "leaves time for",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.panic-cycle",
+      "label": "Panic cycle (Clark)",
+      "group": "anxiety",
+      "summary": "Panic as a vicious circle in which body sensations are misinterpreted as an imminent catastrophe, kept going by safety behaviors and body monitoring.",
+      "use_when": "Recurrent panic attacks, with or without agoraphobic avoidance, to map one attack and test the catastrophic interpretation.",
+      "topics": [
+        "panic",
+        "agoraphobia",
+        "safety-behaviors",
+        "attention",
+        "formulation"
+      ],
+      "page": "panic-and-phobias.cbt-model",
+      "sources": [
+        "Clark-1986 § The cognitive model of panic",
+        "Clark-1999 § Maintaining processes: safety-seeking behaviors and attention",
+        "Salkovskis-etal-1999 § Introduction: safety-seeking behaviors in panic"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 4
+      },
+      "slots": [
+        {
+          "id": "trigger",
+          "label": "Trigger (internal or external)",
+          "prompt": "Where were you and what was happening just before the panic started?",
+          "help": "An external situation or an internal cue such as a sensation, thought or image.",
+          "vocab": [
+            "sit",
+            "bs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "perceived-threat",
+          "label": "Perceived threat",
+          "prompt": "What did you sense was about to go wrong?",
+          "help": "The first sense of danger that sets the circle going.",
+          "vocab": [
+            "tt"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "apprehension",
+          "label": "Apprehension (anxiety)",
+          "prompt": "How anxious did you feel as that happened?",
+          "help": "Rising fear and anxiety in response to the perceived threat.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        },
+        {
+          "id": "body-sensations",
+          "label": "Body sensations",
+          "prompt": "What did you notice in your body?",
+          "help": "Sensations of anxiety such as racing heart, breathlessness, dizziness or unreality.",
+          "vocab": [
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        },
+        {
+          "id": "catastrophic-interpretation",
+          "label": "Catastrophic interpretation of sensations",
+          "prompt": "What did you think those sensations meant? What was the worst that could happen?",
+          "help": "The misreading of sensations as signs of an immediate disaster, such as a heart attack, fainting or losing control.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "attention",
+          "label": "Body-focused attention",
+          "prompt": "After an attack, how much do you watch or check your body?",
+          "help": "Hypervigilance to internal sensations that makes normal fluctuations noticeable and alarming.",
+          "vocab": [
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "safety-behaviors",
+          "label": "Safety behaviors and avoidance",
+          "prompt": "What did you do to stop the worst from happening?",
+          "help": "Escape, avoidance and in-situation safety behaviors that prevent disconfirming the catastrophe.",
+          "vocab": [
+            "bh",
+            "cs",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 4
+        }
+      ],
+      "links": [
+        {
+          "from": "trigger",
+          "to": "perceived-threat",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "perceived-threat",
+          "to": "apprehension",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "apprehension",
+          "to": "body-sensations",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "body-sensations",
+          "to": "catastrophic-interpretation",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "catastrophic-interpretation",
+          "to": "perceived-threat",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "catastrophic-interpretation",
+          "to": "safety-behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "safety-behaviors",
+          "to": "catastrophic-interpretation",
+          "label": "prevents disconfirmation",
+          "style": "dashed"
+        },
+        {
+          "from": "safety-behaviors",
+          "to": "body-sensations",
+          "label": "can intensify",
+          "style": "dashed"
+        },
+        {
+          "from": "catastrophic-interpretation",
+          "to": "attention",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "attention",
+          "to": "body-sensations",
+          "label": "makes more noticeable",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.social-anxiety",
+      "label": "Social anxiety model (Clark and Wells)",
+      "group": "anxiety",
+      "summary": "Social situations activate assumptions that predict negative evaluation, shifting attention onto a distorted self-image kept in place by safety behaviors.",
+      "use_when": "Social anxiety disorder, to map a recent feared social situation before self-focused attention and safety behavior experiments.",
+      "topics": [
+        "social-anxiety",
+        "safety-behaviors",
+        "attention",
+        "rumination",
+        "formulation"
+      ],
+      "page": "social-anxiety.cbt-model",
+      "sources": [
+        "Clark-Wells-1995 § The cognitive model of social phobia",
+        "Clark-1999 § Social phobia"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 5
+      },
+      "slots": [
+        {
+          "id": "anticipatory-processing",
+          "label": "Anticipatory processing",
+          "prompt": "Before the event, what did you go over in your mind, and for how long?",
+          "help": "Worry before the situation that recalls past failures and predicts poor performance.",
+          "vocab": [
+            "mp",
+            "tt"
+          ],
+          "multi": true,
+          "rating": "duration",
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "situation",
+          "label": "Social situation",
+          "prompt": "What was the social situation?",
+          "help": "The feared social or performance situation.",
+          "vocab": [
+            "sit"
+          ],
+          "multi": false,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "post-event-processing",
+          "label": "Post-event processing",
+          "prompt": "Afterward, did you go over what happened? What did you conclude?",
+          "help": "A detailed negative review of the event afterward that strengthens beliefs of failure.",
+          "vocab": [
+            "mp",
+            "tt"
+          ],
+          "multi": true,
+          "rating": "duration",
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "assumptions",
+          "label": "Activated assumptions",
+          "prompt": "What rules or beliefs about yourself in social situations came up?",
+          "help": "High standards, conditional beliefs about social evaluation and negative beliefs about the self.",
+          "vocab": [
+            "ib",
+            "cb"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "social-danger",
+          "label": "Perceived social danger (automatic thoughts)",
+          "prompt": "What did you think would happen? What did you fear others would think of you?",
+          "help": "Negative automatic thoughts predicting embarrassment, rejection or humiliation.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "self-processing",
+          "label": "Processing of self as a social object",
+          "prompt": "Where was your attention? Did you have an image of how you looked?",
+          "help": "Self-focused attention and an observer-perspective impression of how one appears, used as evidence of how others see one.",
+          "vocab": [
+            "mp"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        },
+        {
+          "id": "safety-behaviors",
+          "label": "Safety behaviors",
+          "prompt": "What did you do to stop your fears from happening or to hide your anxiety?",
+          "help": "Actions such as rehearsing, avoiding eye contact or gripping objects that prevent disconfirmation and can make one look odd.",
+          "vocab": [
+            "bh",
+            "cs",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 5
+        },
+        {
+          "id": "symptoms",
+          "label": "Somatic and cognitive symptoms",
+          "prompt": "What did you notice in your body and mind?",
+          "help": "Anxiety symptoms such as blushing, trembling or mind going blank, which become feared signs.",
+          "vocab": [
+            "bs",
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 3,
+          "row": 5
+        }
+      ],
+      "links": [
+        {
+          "from": "anticipatory-processing",
+          "to": "social-danger",
+          "label": "primes",
+          "style": "solid"
+        },
+        {
+          "from": "situation",
+          "to": "assumptions",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "assumptions",
+          "to": "social-danger",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "social-danger",
+          "to": "self-processing",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "social-danger",
+          "to": "safety-behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "social-danger",
+          "to": "symptoms",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "self-processing",
+          "to": "safety-behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "self-processing",
+          "to": "symptoms",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "safety-behaviors",
+          "to": "self-processing",
+          "label": "feeds",
+          "style": "dashed"
+        },
+        {
+          "from": "symptoms",
+          "to": "self-processing",
+          "label": "feeds",
+          "style": "dashed"
+        },
+        {
+          "from": "safety-behaviors",
+          "to": "symptoms",
+          "label": "can worsen",
+          "style": "dashed"
+        },
+        {
+          "from": "self-processing",
+          "to": "post-event-processing",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "post-event-processing",
+          "to": "assumptions",
+          "label": "strengthens",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.ocd",
+      "label": "OCD model (Salkovskis)",
+      "group": "anxiety",
+      "summary": "Normal intrusions become obsessions when appraised as meaning personal responsibility for harm, which drives neutralizing, monitoring and distress.",
+      "use_when": "Obsessive-compulsive disorder, to shift the client from a danger account to a responsibility-appraisal account before ERP and experiments.",
+      "topics": [
+        "ocd",
+        "erp",
+        "safety-behaviors",
+        "attention",
+        "formulation"
+      ],
+      "page": "ocd.cbt-model",
+      "sources": [
+        "Salkovskis-1985 § Cognitive-behavioral analysis of obsessional problems",
+        "Salkovskis-1999 § Responsibility appraisals and their consequences"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 5
+      },
+      "slots": [
+        {
+          "id": "early-experience",
+          "label": "Early experience",
+          "prompt": "What experiences taught you to feel so responsible for preventing harm?",
+          "help": "Experiences that formed responsibility beliefs, such as heavy early responsibility or being blamed.",
+          "vocab": [
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "responsibility-beliefs",
+          "label": "Beliefs about responsibility and thoughts",
+          "prompt": "What do you believe about thoughts like this, and about your duty to prevent harm?",
+          "help": "General assumptions such as thinking something makes it more likely, or failing to prevent harm is as bad as causing it.",
+          "vocab": [
+            "ib",
+            "cb"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "trigger",
+          "label": "Trigger",
+          "prompt": "Where were you and what set off the thought?",
+          "help": "Situations or cues that bring on intrusions.",
+          "vocab": [
+            "sit"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "intrusion",
+          "label": "Intrusive thought, image or urge",
+          "prompt": "What thought, image, urge or doubt popped into your mind?",
+          "help": "The unwanted intrusion, whose content is similar to intrusions most people have.",
+          "vocab": [
+            "tt"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "appraisal",
+          "label": "Appraisal of the intrusion",
+          "prompt": "What did it mean to you that you had that thought?",
+          "help": "The interpretation of the intrusion as meaning responsibility for harm or its prevention.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        },
+        {
+          "id": "neutralizing",
+          "label": "Neutralizing and safety behaviors",
+          "prompt": "What did you do to put it right, check or get rid of the thought?",
+          "help": "Compulsions, mental neutralizing, reassurance seeking, avoidance and thought suppression.",
+          "vocab": [
+            "bh",
+            "cs",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 5
+        },
+        {
+          "id": "distress",
+          "label": "Distress and mood",
+          "prompt": "How did you feel?",
+          "help": "Anxiety, discomfort, guilt or low mood.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 5
+        },
+        {
+          "id": "attention",
+          "label": "Selective attention and monitoring",
+          "prompt": "How much do you watch for the thought or for danger now?",
+          "help": "Monitoring for intrusions and threat cues, which makes intrusions more frequent and noticeable.",
+          "vocab": [
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 5
+        }
+      ],
+      "links": [
+        {
+          "from": "early-experience",
+          "to": "responsibility-beliefs",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "trigger",
+          "to": "intrusion",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "intrusion",
+          "to": "appraisal",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "responsibility-beliefs",
+          "to": "appraisal",
+          "label": "activated",
+          "style": "solid"
+        },
+        {
+          "from": "appraisal",
+          "to": "neutralizing",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "appraisal",
+          "to": "distress",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "appraisal",
+          "to": "attention",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "neutralizing",
+          "to": "appraisal",
+          "label": "prevents disconfirmation",
+          "style": "dashed"
+        },
+        {
+          "from": "neutralizing",
+          "to": "intrusion",
+          "label": "increases",
+          "style": "dashed"
+        },
+        {
+          "from": "distress",
+          "to": "appraisal",
+          "label": "biases",
+          "style": "dashed"
+        },
+        {
+          "from": "attention",
+          "to": "intrusion",
+          "label": "increases",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.ptsd",
+      "label": "PTSD model (Ehlers and Clark)",
+      "group": "trauma",
+      "summary": "PTSD persists when negative appraisals and a poorly elaborated trauma memory create a sense of current threat, maintained by unhelpful control strategies.",
+      "use_when": "PTSD after single or multiple traumas, to plan cognitive therapy for PTSD targeting appraisals, memory and strategies.",
+      "topics": [
+        "ptsd",
+        "avoidance",
+        "rumination",
+        "safety-behaviors",
+        "formulation"
+      ],
+      "page": "ptsd.cbt-model",
+      "sources": [
+        "Ehlers-Clark-2000 § A cognitive model of persistent PTSD"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 4
+      },
+      "slots": [
+        {
+          "id": "influences",
+          "label": "Trauma characteristics, prior experience and processing",
+          "prompt": "What happened, what was going on in your mind during it, and what had happened in your life before?",
+          "help": "Trauma features, prior beliefs and experiences, and cognitive processing and state during the trauma.",
+          "vocab": [
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "triggers",
+          "label": "Matching triggers",
+          "prompt": "What reminds you of it, even things you did not expect?",
+          "help": "Sights, sounds, smells or body sensations resembling those during the trauma, which trigger intrusions.",
+          "vocab": [
+            "sit",
+            "bs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "appraisals",
+          "label": "Negative appraisals of the trauma and its sequelae",
+          "prompt": "What does it mean to you that this happened, and that you react the way you do now?",
+          "help": "Excessively negative meanings about the trauma, one's behavior in it, and its after-effects.",
+          "vocab": [
+            "cb",
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "trauma-memory",
+          "label": "Nature of the trauma memory",
+          "prompt": "When the memory comes back, how does it come: in pieces, as if happening now?",
+          "help": "A poorly elaborated memory that is easily triggered and relived as here and now, without context.",
+          "vocab": [
+            "mp"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "current-threat",
+          "label": "Sense of current threat",
+          "prompt": "What do you notice when you feel in danger now: intrusions, arousal, strong emotions?",
+          "help": "Intrusions, hyperarousal and strong emotions such as fear, anger, shame or guilt.",
+          "vocab": [
+            "em",
+            "bs",
+            "rk"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "strategies",
+          "label": "Strategies intended to control threat and symptoms",
+          "prompt": "What do you do to cope with the memories and keep yourself safe?",
+          "help": "Thought suppression, avoidance, rumination, safety behaviors, substance use and dissociation that block change.",
+          "vocab": [
+            "bh",
+            "cs",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        }
+      ],
+      "links": [
+        {
+          "from": "influences",
+          "to": "appraisals",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "influences",
+          "to": "trauma-memory",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "appraisals",
+          "to": "trauma-memory",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "trauma-memory",
+          "to": "appraisals",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "triggers",
+          "to": "trauma-memory",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "appraisals",
+          "to": "current-threat",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "trauma-memory",
+          "to": "current-threat",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "current-threat",
+          "to": "strategies",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "strategies",
+          "to": "appraisals",
+          "label": "prevents change",
+          "style": "dashed"
+        },
+        {
+          "from": "strategies",
+          "to": "trauma-memory",
+          "label": "prevents elaboration",
+          "style": "dashed"
+        },
+        {
+          "from": "strategies",
+          "to": "current-threat",
+          "label": "increases symptoms",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.gad-intolerance-of-uncertainty",
+      "label": "Intolerance of uncertainty model of GAD (Dugas)",
+      "group": "anxiety",
+      "summary": "Intolerance of uncertainty drives what-if worry, kept going by positive beliefs about worry, negative problem orientation, cognitive avoidance and safety behaviors.",
+      "use_when": "Generalized anxiety disorder, when worry centers on uncertain everyday outcomes and the client avoids or seeks certainty.",
+      "topics": [
+        "gad",
+        "worry",
+        "intolerance-of-uncertainty",
+        "problem-solving",
+        "formulation"
+      ],
+      "page": "gad.cbt-model",
+      "sources": [
+        "Dugas-etal-1998 § Model components",
+        "Robichaud-etal-2019 § Cognitive-behavioral model of GAD"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 6
+      },
+      "slots": [
+        {
+          "id": "intolerance-of-uncertainty",
+          "label": "Intolerance of uncertainty",
+          "prompt": "How hard is it for you not to know for sure how things will turn out?",
+          "help": "A dispositional tendency to find uncertainty unacceptable and threatening.",
+          "vocab": [
+            "mp",
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "situation",
+          "label": "Situation",
+          "prompt": "What was happening when the worry started?",
+          "help": "An everyday situation with an uncertain outcome.",
+          "vocab": [
+            "sit"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "what-if",
+          "label": "What if...? thoughts",
+          "prompt": "What was the first what if that came to mind?",
+          "help": "Questions about possible negative outcomes that start a worry chain.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "positive-beliefs",
+          "label": "Positive beliefs about worry",
+          "prompt": "How do you think worrying helps you?",
+          "help": "Beliefs that worry helps solve problems, motivates, prevents bad outcomes or shows caring.",
+          "vocab": [
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 4
+        },
+        {
+          "id": "worry-anxiety",
+          "label": "Worry and anxiety",
+          "prompt": "How much of the day do you spend worrying, and how anxious do you feel?",
+          "help": "Chains of worry and the anxiety and tension that go with them.",
+          "vocab": [
+            "mp",
+            "em",
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        },
+        {
+          "id": "problem-orientation",
+          "label": "Negative problem orientation",
+          "prompt": "When a problem comes up, how do you see it and your ability to solve it?",
+          "help": "Seeing problems as threats, doubting one's problem-solving ability and expecting poor outcomes.",
+          "vocab": [
+            "ib",
+            "tt"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 3,
+          "row": 4
+        },
+        {
+          "id": "safety-behaviors",
+          "label": "Uncertainty-driven safety behaviors",
+          "prompt": "What do you do to feel more certain, or to avoid not knowing?",
+          "help": "Reassurance seeking, checking, over-preparing, procrastinating or avoiding situations with uncertain outcomes.",
+          "vocab": [
+            "bh",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 5
+        },
+        {
+          "id": "cognitive-avoidance",
+          "label": "Cognitive avoidance",
+          "prompt": "Do you push the worries away, distract yourself or keep them vague?",
+          "help": "Thought suppression, distraction and abstract verbal worry that avoid threatening images.",
+          "vocab": [
+            "mp",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 5
+        },
+        {
+          "id": "demoralization",
+          "label": "Demoralization and exhaustion",
+          "prompt": "What effect does all the worry have on your energy and confidence?",
+          "help": "Fatigue, tension, poor sleep and loss of confidence that follow chronic worry.",
+          "vocab": [
+            "em",
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 6
+        }
+      ],
+      "links": [
+        {
+          "from": "intolerance-of-uncertainty",
+          "to": "what-if",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "situation",
+          "to": "what-if",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "what-if",
+          "to": "worry-anxiety",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "positive-beliefs",
+          "to": "worry-anxiety",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "problem-orientation",
+          "to": "worry-anxiety",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "worry-anxiety",
+          "to": "cognitive-avoidance",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "worry-anxiety",
+          "to": "safety-behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "cognitive-avoidance",
+          "to": "worry-anxiety",
+          "label": "maintains",
+          "style": "dashed"
+        },
+        {
+          "from": "safety-behaviors",
+          "to": "intolerance-of-uncertainty",
+          "label": "prevents learning uncertainty is tolerable",
+          "style": "dashed"
+        },
+        {
+          "from": "worry-anxiety",
+          "to": "demoralization",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "demoralization",
+          "to": "problem-orientation",
+          "label": "strengthens",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.gad-metacognitive",
+      "label": "Metacognitive model of GAD (Wells)",
+      "group": "anxiety",
+      "summary": "Positive beliefs start Type 1 worry; negative beliefs about uncontrollability and danger produce worry about worry, kept going by control attempts.",
+      "use_when": "Generalized anxiety disorder where the client fears worry itself or believes worry is uncontrollable or harmful.",
+      "topics": [
+        "gad",
+        "worry",
+        "formulation"
+      ],
+      "page": "gad.worry-models-compared",
+      "sources": [
+        "Wells-1995 § A cognitive model of GAD",
+        "Wells-1999 § The metacognitive model"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 6
+      },
+      "slots": [
+        {
+          "id": "trigger",
+          "label": "Trigger",
+          "prompt": "What started the worry: a situation, a thought or a feeling?",
+          "help": "An external event or an intrusive thought that starts the worry.",
+          "vocab": [
+            "sit",
+            "tt"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "positive-beliefs",
+          "label": "Positive metacognitive beliefs",
+          "prompt": "What do you believe worrying does for you?",
+          "help": "Beliefs that worry helps one cope, prepare or stay safe.",
+          "vocab": [
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "type-1-worry",
+          "label": "Type 1 worry",
+          "prompt": "What did you worry about, and for how long?",
+          "help": "Worry about external events and non-cognitive internal events such as health.",
+          "vocab": [
+            "tt",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "duration",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "negative-beliefs",
+          "label": "Negative metacognitive beliefs",
+          "prompt": "What do you believe about your worry: can you control it, and can it harm you?",
+          "help": "Beliefs that worry is uncontrollable and dangerous to mind or body.",
+          "vocab": [
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        },
+        {
+          "id": "type-2-worry",
+          "label": "Type 2 worry (worry about worry)",
+          "prompt": "When you notice you are worrying, what do you think about that?",
+          "help": "Negative appraisals of worrying itself, such as fearing losing control or going mad.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 5
+        },
+        {
+          "id": "behaviors",
+          "label": "Behaviors",
+          "prompt": "What do you do to stop the worry or feel safe?",
+          "help": "Reassurance seeking, checking, avoidance of triggers and use of alcohol or distraction.",
+          "vocab": [
+            "bh",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 6
+        },
+        {
+          "id": "emotion",
+          "label": "Emotion",
+          "prompt": "How does the worry about worry make you feel?",
+          "help": "Anxiety and its physical symptoms, which are read as further signs of losing control.",
+          "vocab": [
+            "em",
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 6
+        },
+        {
+          "id": "thought-control",
+          "label": "Thought control",
+          "prompt": "Do you try to push the worry out of your mind or stop it?",
+          "help": "Attempts to suppress or avoid worry thoughts, whose failure strengthens beliefs of uncontrollability.",
+          "vocab": [
+            "cs",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 6
+        }
+      ],
+      "links": [
+        {
+          "from": "trigger",
+          "to": "positive-beliefs",
+          "label": "activates",
+          "style": "solid"
+        },
+        {
+          "from": "positive-beliefs",
+          "to": "type-1-worry",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "type-1-worry",
+          "to": "negative-beliefs",
+          "label": "activates",
+          "style": "solid"
+        },
+        {
+          "from": "negative-beliefs",
+          "to": "type-2-worry",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "type-2-worry",
+          "to": "behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "type-2-worry",
+          "to": "emotion",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "type-2-worry",
+          "to": "thought-control",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "behaviors",
+          "to": "type-2-worry",
+          "label": "prevents disconfirmation",
+          "style": "dashed"
+        },
+        {
+          "from": "emotion",
+          "to": "type-2-worry",
+          "label": "taken as evidence",
+          "style": "dashed"
+        },
+        {
+          "from": "thought-control",
+          "to": "type-2-worry",
+          "label": "failure confirms uncontrollability",
+          "style": "dashed"
+        },
+        {
+          "from": "emotion",
+          "to": "type-1-worry",
+          "label": "",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.health-anxiety",
+      "label": "Health anxiety model (Salkovskis and Warwick)",
+      "group": "anxiety",
+      "summary": "Assumptions about illness, activated by a trigger, lead to misinterpretation of bodily signs as serious illness, maintained by arousal, safety behaviors and attention.",
+      "use_when": "Health anxiety (illness anxiety disorder or somatic symptom disorder with health worry), to replace a medical account with a psychological one.",
+      "topics": [
+        "health-anxiety",
+        "safety-behaviors",
+        "attention",
+        "formulation"
+      ],
+      "page": "health-anxiety.cbt-model",
+      "sources": [
+        "Salkovskis-Warwick-1986 § Cognitive-behavioral approach to hypochondriasis",
+        "Warwick-Salkovskis-1990 § Cognitive model of hypochondriasis",
+        "Salkovskis-etal-2003 § Cognitive-behavioral conceptualization"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 6
+      },
+      "slots": [
+        {
+          "id": "previous-experience",
+          "label": "Previous experience of illness",
+          "prompt": "What experiences of illness, in you or people close to you, stand out?",
+          "help": "Past illness, deaths, medical mishaps or messages about health that shaped beliefs.",
+          "vocab": [
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "assumptions",
+          "label": "Assumptions about health and illness",
+          "prompt": "What do you believe about bodily symptoms and about doctors and tests?",
+          "help": "Dysfunctional assumptions such as bodily changes usually mean serious illness or doctors miss things.",
+          "vocab": [
+            "ib",
+            "cb"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "trigger",
+          "label": "Trigger",
+          "prompt": "What did you notice or hear that set off the worry?",
+          "help": "A bodily sensation or sign, or illness information in the media or among others.",
+          "vocab": [
+            "sit",
+            "bs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "misinterpretation",
+          "label": "Misinterpretation of bodily signs",
+          "prompt": "What did you think it meant? What is the worst it could be?",
+          "help": "Negative automatic thoughts and images that a sign means serious illness.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        },
+        {
+          "id": "health-anxiety",
+          "label": "Health anxiety",
+          "prompt": "How anxious were you, and what other feelings came up?",
+          "help": "Anxiety about health, often with low mood.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 5
+        },
+        {
+          "id": "physiological",
+          "label": "Physiological arousal",
+          "prompt": "What happened in your body as you got more anxious?",
+          "help": "Arousal symptoms that are then taken as more evidence of illness.",
+          "vocab": [
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 6
+        },
+        {
+          "id": "safety-behaviors",
+          "label": "Checking, reassurance seeking and avoidance",
+          "prompt": "What do you do to check or reassure yourself, or to avoid illness reminders?",
+          "help": "Body checking, reassurance seeking, internet searching and avoidance that maintain preoccupation.",
+          "vocab": [
+            "bh",
+            "cs",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 6
+        },
+        {
+          "id": "attention",
+          "label": "Selective attention and rumination",
+          "prompt": "How much do you focus on your body and think about illness?",
+          "help": "Body focus and preoccupation that make normal sensations noticeable and threatening.",
+          "vocab": [
+            "mp"
+          ],
+          "multi": true,
+          "rating": "duration",
+          "free_text": true,
+          "col": 3,
+          "row": 6
+        }
+      ],
+      "links": [
+        {
+          "from": "previous-experience",
+          "to": "assumptions",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "assumptions",
+          "to": "misinterpretation",
+          "label": "activated",
+          "style": "solid"
+        },
+        {
+          "from": "trigger",
+          "to": "misinterpretation",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "misinterpretation",
+          "to": "health-anxiety",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "health-anxiety",
+          "to": "physiological",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "health-anxiety",
+          "to": "safety-behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "health-anxiety",
+          "to": "attention",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "physiological",
+          "to": "misinterpretation",
+          "label": "more symptoms to misread",
+          "style": "dashed"
+        },
+        {
+          "from": "safety-behaviors",
+          "to": "misinterpretation",
+          "label": "prevents disconfirmation",
+          "style": "dashed"
+        },
+        {
+          "from": "safety-behaviors",
+          "to": "trigger",
+          "label": "checking changes the body",
+          "style": "dashed"
+        },
+        {
+          "from": "attention",
+          "to": "misinterpretation",
+          "label": "confirms",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.eating-disorders-transdiagnostic",
+      "label": "Transdiagnostic eating disorder model (Fairburn, CBT-E)",
+      "group": "eating",
+      "summary": "Over-evaluation of eating, shape and weight drives dieting, body checking and low weight, with binge eating and compensation, plus four additional maintaining mechanisms.",
+      "use_when": "Any eating disorder in CBT-E, to draw the individual maintenance formulation in the first session.",
+      "topics": [
+        "eating-disorders",
+        "perfectionism",
+        "emotion-regulation",
+        "formulation"
+      ],
+      "page": "eating-disorders.cbt-model",
+      "sources": [
+        "Fairburn-etal-2003 § Transdiagnostic theory",
+        "Fairburn-2008 § The transdiagnostic formulation"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 5
+      },
+      "slots": [
+        {
+          "id": "perfectionism",
+          "label": "Clinical perfectionism",
+          "prompt": "Do you judge yourself by meeting very demanding standards, in eating or elsewhere?",
+          "help": "Self-worth based on pursuing demanding standards despite adverse consequences.",
+          "vocab": [
+            "mp",
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "over-evaluation",
+          "label": "Over-evaluation of eating, shape and weight and their control",
+          "prompt": "How much do your eating, shape and weight affect how you judge yourself as a person?",
+          "help": "The core psychopathology: self-worth judged largely by shape, weight, eating and their control.",
+          "vocab": [
+            "cb",
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "low-self-esteem",
+          "label": "Core low self-esteem",
+          "prompt": "Apart from shape and weight, how do you see yourself as a person?",
+          "help": "Unconditional, pervasive negative view of self that makes change seem hopeless.",
+          "vocab": [
+            "cb"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "dieting",
+          "label": "Strict dieting and non-compensatory weight control",
+          "prompt": "What rules do you follow about eating? What else do you do to control weight?",
+          "help": "Dietary rules and restraint, plus driven exercise and other non-compensatory weight-control behaviors.",
+          "vocab": [
+            "bh"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "body-checking",
+          "label": "Body checking, avoidance and feeling fat",
+          "prompt": "How often do you check your body or weigh yourself, or avoid seeing your body?",
+          "help": "Shape and weight checking, body avoidance and feeling fat that maintain over-evaluation.",
+          "vocab": [
+            "bh",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "events-mood",
+          "label": "Events and associated mood change",
+          "prompt": "What was happening, and how were you feeling, before the binge?",
+          "help": "Difficult events and mood shifts that trigger binge eating or breaking dietary rules.",
+          "vocab": [
+            "sit",
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "low-weight",
+          "label": "Significantly low weight",
+          "prompt": "What is your current weight, and what effects of being underweight do you notice?",
+          "help": "Low weight and starvation effects such as preoccupation with food, fullness and social withdrawal.",
+          "vocab": [
+            "bs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        },
+        {
+          "id": "mood-intolerance",
+          "label": "Mood intolerance",
+          "prompt": "What do you do when feelings become very intense?",
+          "help": "Difficulty tolerating intense mood, managed by binge eating, vomiting, self-harm or substance use.",
+          "vocab": [
+            "mp",
+            "em"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 4
+        },
+        {
+          "id": "binge-eating",
+          "label": "Binge eating",
+          "prompt": "How often do you eat a large amount with a sense of loss of control?",
+          "help": "Objective or subjective binge episodes with loss of control.",
+          "vocab": [
+            "bh"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        },
+        {
+          "id": "interpersonal",
+          "label": "Interpersonal difficulties",
+          "prompt": "How are your close relationships affecting your eating, and the other way round?",
+          "help": "Interpersonal problems that trigger episodes and maintain the eating disorder.",
+          "vocab": [
+            "sit",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "compensation",
+          "label": "Compensatory vomiting or laxative misuse",
+          "prompt": "What do you do after eating to get rid of food?",
+          "help": "Self-induced vomiting and laxative or diuretic misuse after eating.",
+          "vocab": [
+            "bh"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 5
+        }
+      ],
+      "links": [
+        {
+          "from": "perfectionism",
+          "to": "over-evaluation",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "low-self-esteem",
+          "to": "over-evaluation",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "over-evaluation",
+          "to": "dieting",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "over-evaluation",
+          "to": "body-checking",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "body-checking",
+          "to": "over-evaluation",
+          "label": "maintains",
+          "style": "dashed"
+        },
+        {
+          "from": "dieting",
+          "to": "low-weight",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "low-weight",
+          "to": "over-evaluation",
+          "label": "starvation effects maintain",
+          "style": "dashed"
+        },
+        {
+          "from": "low-weight",
+          "to": "dieting",
+          "label": "",
+          "style": "dashed"
+        },
+        {
+          "from": "dieting",
+          "to": "binge-eating",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "events-mood",
+          "to": "binge-eating",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "mood-intolerance",
+          "to": "binge-eating",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "interpersonal",
+          "to": "events-mood",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "binge-eating",
+          "to": "compensation",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "compensation",
+          "to": "binge-eating",
+          "label": "permits",
+          "style": "dashed"
+        },
+        {
+          "from": "binge-eating",
+          "to": "over-evaluation",
+          "label": "intensifies concern",
+          "style": "dashed"
+        },
+        {
+          "from": "binge-eating",
+          "to": "dieting",
+          "label": "prompts more dieting",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.insomnia-cognitive",
+      "label": "Cognitive model of insomnia (Harvey)",
+      "group": "sleep",
+      "summary": "Worry about sleep triggers arousal and distress, attention to sleep-related threat and an overestimated sleep deficit, made worse by safety behaviors and beliefs.",
+      "use_when": "Chronic insomnia, especially when worry about sleep and daytime functioning is prominent, to target cognitive processes in CBT-I.",
+      "topics": [
+        "insomnia",
+        "sleep",
+        "worry",
+        "safety-behaviors",
+        "attention",
+        "formulation"
+      ],
+      "page": "insomnia.cbt-model",
+      "sources": [
+        "Harvey-2002 § A cognitive model of insomnia"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 3
+      },
+      "slots": [
+        {
+          "id": "beliefs",
+          "label": "Unhelpful beliefs about sleep and worry",
+          "prompt": "What do you believe about how much sleep you need, and about whether worrying helps?",
+          "help": "Erroneous beliefs about sleep needs and consequences, and about the benefits of worry.",
+          "vocab": [
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "negative-cognitive-activity",
+          "label": "Excessively negative cognitive activity",
+          "prompt": "What goes through your mind in bed or during the day about your sleep?",
+          "help": "Worry and rumination about sleep, its daytime effects and other concerns.",
+          "vocab": [
+            "tt",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "duration",
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "perceived-deficit",
+          "label": "Distorted perception of sleep deficit",
+          "prompt": "How much do you think you slept, and how do you think it is affecting you?",
+          "help": "Overestimation of time awake and of daytime impairment.",
+          "vocab": [
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "arousal-distress",
+          "label": "Arousal and distress",
+          "prompt": "How tense, alert or upset do you feel in bed?",
+          "help": "Autonomic arousal and emotional distress that interfere with sleep.",
+          "vocab": [
+            "em",
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "attention-monitoring",
+          "label": "Selective attention and monitoring",
+          "prompt": "What do you notice yourself checking for, such as the clock, sounds or body sensations?",
+          "help": "Monitoring of internal and external sleep-related threat cues, such as the clock or signs of fatigue.",
+          "vocab": [
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "safety-behaviors",
+          "label": "Safety behaviors",
+          "prompt": "What do you do to try to get more sleep or to cope the next day?",
+          "help": "Trying to control thoughts, spending longer in bed, napping or canceling activities, which prevent disconfirmation.",
+          "vocab": [
+            "bh",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "real-deficit",
+          "label": "Real deficit in sleep and daytime functioning",
+          "prompt": "What does your sleep diary show, and what difficulties do you notice during the day?",
+          "help": "The actual sleep loss and daytime impairment the escalating cycle can produce.",
+          "vocab": [
+            "bs"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        }
+      ],
+      "links": [
+        {
+          "from": "beliefs",
+          "to": "negative-cognitive-activity",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "negative-cognitive-activity",
+          "to": "arousal-distress",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "arousal-distress",
+          "to": "attention-monitoring",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "attention-monitoring",
+          "to": "perceived-deficit",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "perceived-deficit",
+          "to": "negative-cognitive-activity",
+          "label": "fuels more worry",
+          "style": "dashed"
+        },
+        {
+          "from": "negative-cognitive-activity",
+          "to": "safety-behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "safety-behaviors",
+          "to": "negative-cognitive-activity",
+          "label": "prevents disconfirmation",
+          "style": "dashed"
+        },
+        {
+          "from": "arousal-distress",
+          "to": "real-deficit",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "safety-behaviors",
+          "to": "real-deficit",
+          "label": "can worsen",
+          "style": "dashed"
+        },
+        {
+          "from": "real-deficit",
+          "to": "negative-cognitive-activity",
+          "label": "",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.insomnia-3p",
+      "label": "3P model of insomnia (Spielman)",
+      "group": "sleep",
+      "summary": "Insomnia arises when precipitating events act on predisposing traits and becomes chronic through perpetuating behaviors and beliefs.",
+      "use_when": "Assessment and psychoeducation for chronic insomnia, to explain why sleep stays poor after the original trigger has passed.",
+      "topics": [
+        "insomnia",
+        "sleep",
+        "psychoeducation",
+        "formulation"
+      ],
+      "page": "insomnia.cbt-model",
+      "sources": [
+        "Spielman-etal-1987 § A behavioral perspective on insomnia"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 2
+      },
+      "slots": [
+        {
+          "id": "predisposing",
+          "label": "Predisposing factors",
+          "prompt": "Were you a light or easily disturbed sleeper before this? Do you tend to worry or feel keyed up?",
+          "help": "Traits such as hyperarousal, a worrying style or family history that lower the threshold for insomnia.",
+          "vocab": [
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "precipitating",
+          "label": "Precipitating factors",
+          "prompt": "What was happening in your life when the sleep problem started?",
+          "help": "Stressors such as illness, loss, work change or a new baby that triggered acute insomnia.",
+          "vocab": [
+            "sit",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "perpetuating",
+          "label": "Perpetuating factors",
+          "prompt": "What have you started doing to get more sleep or to cope with poor sleep?",
+          "help": "Spending extra time in bed, napping, irregular schedule, clock watching and sleep worry that keep insomnia going.",
+          "vocab": [
+            "bh",
+            "ib",
+            "mp",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "acute-insomnia",
+          "label": "Acute insomnia",
+          "prompt": "What was your sleep like in the first weeks?",
+          "help": "Short-term sleep disturbance in response to the precipitating event.",
+          "vocab": [
+            "bs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "chronic-insomnia",
+          "label": "Chronic insomnia",
+          "prompt": "How many nights a week is your sleep poor now, and for how long has it been like this?",
+          "help": "Insomnia that persists after the trigger has passed, rated in nights per week.",
+          "vocab": [
+            "bs"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        }
+      ],
+      "links": [
+        {
+          "from": "predisposing",
+          "to": "acute-insomnia",
+          "label": "lowers threshold",
+          "style": "solid"
+        },
+        {
+          "from": "precipitating",
+          "to": "acute-insomnia",
+          "label": "triggers",
+          "style": "solid"
+        },
+        {
+          "from": "acute-insomnia",
+          "to": "perpetuating",
+          "label": "coping responses adopted",
+          "style": "solid"
+        },
+        {
+          "from": "perpetuating",
+          "to": "chronic-insomnia",
+          "label": "maintains",
+          "style": "solid"
+        },
+        {
+          "from": "chronic-insomnia",
+          "to": "perpetuating",
+          "label": "",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.fear-avoidance",
+      "label": "Fear-avoidance model of chronic pain (Vlaeyen and Linton)",
+      "group": "physical health",
+      "summary": "Pain read catastrophically brings pain-related fear, avoidance and hypervigilance, then disuse, disability and low mood that feed the next pain experience; pain read as not dangerous leads to confrontation and recovery.",
+      "use_when": "Chronic pain or a long-term physical condition where avoidance, disability or distress persist; map one recent flare-up or avoided activity with the client.",
+      "topics": [
+        "chronic-pain",
+        "medical",
+        "avoidance",
+        "cognitive-distortions",
+        "attention",
+        "formulation"
+      ],
+      "page": "chronic-pain-and-physical-health.cbt-model",
+      "sources": [
+        "Vlaeyen-Linton-2000 § Abstract",
+        "Leeuw-etal-2007 § Abstract",
+        "Quartana-etal-2009 § Conceptualization",
+        "Crombez-etal-2012 § Results; Discussion"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 4
+      },
+      "slots": [
+        {
+          "id": "vulnerabilities",
+          "label": "Vulnerabilities",
+          "prompt": "What made you more likely to see pain as a threat: your temperament, past experiences, things you were told about your condition?",
+          "help": "Negative affectivity, anxiety sensitivity and threatening illness information.",
+          "vocab": [
+            "bf",
+            "ib"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "pain-experience",
+          "label": "Pain experience",
+          "prompt": "When did the pain or flare-up start, and what was happening?",
+          "help": "An injury, flare-up or sensation, with its setting.",
+          "vocab": [
+            "sit",
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "catastrophizing",
+          "label": "Pain catastrophizing",
+          "prompt": "When the pain went up, what went through your mind about what it meant?",
+          "help": "Magnifying the threat, ruminating on the pain and feeling helpless, often with the belief that pain means harm.",
+          "vocab": [
+            "mp",
+            "cd",
+            "tt",
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "confrontation",
+          "label": "Low fear: confrontation",
+          "prompt": "When have you kept going with pain, reading it as unpleasant but not dangerous?",
+          "help": "The non-threatening route: the person keeps moving and fear fades.",
+          "vocab": [
+            "cs",
+            "bh"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "pain-fear",
+          "label": "Pain-related fear",
+          "prompt": "What were you afraid would happen if you moved or carried on?",
+          "help": "Fear of pain, movement or re-injury.",
+          "vocab": [
+            "em",
+            "ib"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "disuse",
+          "label": "Disuse, disability and low mood",
+          "prompt": "What has changed in your fitness, roles and mood since you started avoiding?",
+          "help": "Deconditioning, lost roles and depression, which lower pain tolerance.",
+          "vocab": [
+            "mp",
+            "bh",
+            "em",
+            "tt"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "recovery",
+          "label": "Recovery",
+          "prompt": "What happens to the pain and your activity when you keep going?",
+          "help": "Return to activity and roles; the pain is no longer read as harm.",
+          "vocab": [
+            "cs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        },
+        {
+          "id": "avoidance",
+          "label": "Avoidance and hypervigilance",
+          "prompt": "What did you stop doing, do differently, or keep checking in your body?",
+          "help": "Escape and avoidance of movement and activity, guarded movement and attention locked on bodily signals; some people push on until a flare-up instead.",
+          "vocab": [
+            "bh",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 4
+        },
+        {
+          "id": "goals",
+          "label": "Goals at stake",
+          "prompt": "What were you trying to protect or get back by avoiding?",
+          "help": "Valued life goals that the pain interrupts; avoidance is a costly attempt to protect them.",
+          "vocab": [],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        }
+      ],
+      "links": [
+        {
+          "from": "vulnerabilities",
+          "to": "catastrophizing",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "pain-experience",
+          "to": "catastrophizing",
+          "label": "threat",
+          "style": "solid"
+        },
+        {
+          "from": "catastrophizing",
+          "to": "pain-fear",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "pain-fear",
+          "to": "avoidance",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "avoidance",
+          "to": "pain-fear",
+          "label": "untested",
+          "style": "dashed"
+        },
+        {
+          "from": "avoidance",
+          "to": "disuse",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "disuse",
+          "to": "pain-experience",
+          "label": "lowers tolerance",
+          "style": "dashed"
+        },
+        {
+          "from": "goals",
+          "to": "avoidance",
+          "label": "protects",
+          "style": "solid"
+        },
+        {
+          "from": "pain-experience",
+          "to": "confrontation",
+          "label": "no threat",
+          "style": "solid"
+        },
+        {
+          "from": "confrontation",
+          "to": "recovery",
+          "label": "",
+          "style": "solid"
+        }
+      ]
+    },
+    {
+      "id": "fm.prolonged-grief",
+      "label": "Cognitive behavioral model of prolonged grief (Boelen and colleagues)",
+      "group": "grief",
+      "summary": "Grief stays prolonged when the loss is not integrated into memory, negative global beliefs and catastrophic readings of grief take hold, and anxious and depressive avoidance block facing the loss and rebuilding life.",
+      "use_when": "Prolonged or persistent grief, once normal grief is ruled out, to map one recent hard moment and choose which process to target first.",
+      "topics": [
+        "grief",
+        "formulation",
+        "avoidance",
+        "rumination",
+        "core-beliefs"
+      ],
+      "page": "grief-and-loss.cbt-model",
+      "sources": [
+        "Boelen-etal-2006 § Abstract (three core processes; mediation of background variables)",
+        "Keser-Boelen-2025 § Introduction (model components)",
+        "Boelen-vandenBout-2010 § Abstract"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 4
+      },
+      "slots": [
+        {
+          "id": "background",
+          "label": "Background factors",
+          "prompt": "What about the death, the relationship or your past might make this loss harder?",
+          "help": "Type of death, attachment style, prior losses and mental health history; thought to act through the three processes.",
+          "vocab": [
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "trigger",
+          "label": "Loss reminder",
+          "prompt": "What reminded you of the loss in a recent hard moment?",
+          "help": "A date, place, object, person or thought that confronts the reality of the death.",
+          "vocab": [
+            "sit"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "beliefs",
+          "label": "Negative beliefs and misinterpretations",
+          "prompt": "What does losing them say about you, your life and your future? What do you fear would happen if you let the grief in fully?",
+          "help": "Global negative beliefs about self, life and future, and catastrophic readings of grief reactions, such as 'if I let myself feel this, I will lose control.'",
+          "vocab": [
+            "cb",
+            "ib",
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "integration",
+          "label": "Poor integration of the loss",
+          "prompt": "Are there moments it still does not feel real that they have died?",
+          "help": "The permanent loss is not joined to memory of self and the relationship; a sense of unrealness marks it.",
+          "vocab": [
+            "mp"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "anxious-avoidance",
+          "label": "Anxious avoidance",
+          "prompt": "What do you stay away from because facing it would hurt too much?",
+          "help": "Avoiding places, people, objects and thoughts that confront the reality of the death; rumination can serve the same function.",
+          "vocab": [
+            "mp",
+            "bh"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "depressive-avoidance",
+          "label": "Depressive avoidance",
+          "prompt": "What have you stopped doing since the death?",
+          "help": "Inactivity and withdrawal from social and other activities that no longer seem meaningful or pleasurable.",
+          "vocab": [
+            "mp",
+            "bh"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        },
+        {
+          "id": "grief-symptoms",
+          "label": "Prolonged grief symptoms",
+          "prompt": "How strong are the yearning, disbelief and pain now?",
+          "help": "Persistent yearning or preoccupation, emotional pain and disbelief that do not ease with time.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        }
+      ],
+      "links": [
+        {
+          "from": "background",
+          "to": "integration",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "background",
+          "to": "beliefs",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "trigger",
+          "to": "beliefs",
+          "label": "activates",
+          "style": "solid"
+        },
+        {
+          "from": "integration",
+          "to": "beliefs",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "beliefs",
+          "to": "integration",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "beliefs",
+          "to": "anxious-avoidance",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "beliefs",
+          "to": "depressive-avoidance",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "depressive-avoidance",
+          "to": "beliefs",
+          "label": "confirms",
+          "style": "dashed"
+        },
+        {
+          "from": "anxious-avoidance",
+          "to": "integration",
+          "label": "blocks processing",
+          "style": "dashed"
+        },
+        {
+          "from": "integration",
+          "to": "grief-symptoms",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "anxious-avoidance",
+          "to": "grief-symptoms",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "depressive-avoidance",
+          "to": "grief-symptoms",
+          "label": "",
+          "style": "solid"
+        }
+      ]
+    },
+    {
+      "id": "fm.psychosis-cbtp",
+      "label": "Cognitive model of psychosis (Garety and Morrison)",
+      "group": "psychosis and bipolar",
+      "summary": "Stress and vulnerability bring emotional changes and anomalous experiences; appraising them as external and threatening creates distress, kept going by safety behaviors.",
+      "use_when": "Distressing voices, paranoia or other unusual experiences, to build a shared, normalizing account of why distress persists and what to test together.",
+      "topics": [
+        "psychosis",
+        "formulation",
+        "safety-behaviors",
+        "worry"
+      ],
+      "page": "bipolar-and-psychosis.cbt-model",
+      "sources": [
+        "Garety-etal-2001 § Abstract; model overview",
+        "Strachan-etal-2022 § Positive symptom models, Garety et al. 2001 and Morrison 2001",
+        "Freeman-2016 § Abstract; maintaining factors"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 3
+      },
+      "slots": [
+        {
+          "id": "vulnerability",
+          "label": "Vulnerability",
+          "prompt": "What in your history might make you more sensitive to stress?",
+          "help": "Biological, psychological and social vulnerability: family history, adversity, trauma.",
+          "vocab": [
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "triggers",
+          "label": "Triggering events and stress",
+          "prompt": "What was happening in your life when these experiences started or got worse?",
+          "help": "Life stress, sleep loss, drug use, isolation or major change.",
+          "vocab": [
+            "sit",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "emotional-changes",
+          "label": "Emotional changes",
+          "prompt": "How have you been feeling: anxious, low, on edge?",
+          "help": "Anxiety, low mood and arousal, which shape and fuel the content of experiences.",
+          "vocab": [
+            "em",
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "reasoning-biases",
+          "label": "Reasoning and attention biases",
+          "prompt": "When something odd happens, how quickly do you decide what it means?",
+          "help": "Jumping to conclusions, belief inflexibility, confirmation bias and external attribution.",
+          "vocab": [
+            "mp",
+            "cd"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "anomalous-experiences",
+          "label": "Anomalous experiences",
+          "prompt": "What unusual experiences have you noticed: voices, odd sensations, things seeming significant?",
+          "help": "Voices, intrusions, perceptual changes and heightened significance; not pathological in themselves.",
+          "vocab": [
+            "sit",
+            "bs"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "beliefs",
+          "label": "Beliefs about self, others and the world",
+          "prompt": "What do these experiences say about you, other people and the world?",
+          "help": "Negative schemas, such as self as weak and others as hostile, and beliefs about voices.",
+          "vocab": [
+            "cb",
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "appraisal",
+          "label": "Appraisal: meaning given to the experiences",
+          "prompt": "What do you think is causing these experiences, and what will happen?",
+          "help": "Judging experiences as externally caused, threatening and personally significant: the distressing belief.",
+          "vocab": [
+            "tt",
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "safety-behaviors",
+          "label": "Safety behaviors and threat monitoring",
+          "prompt": "What do you do to protect yourself or cope when it happens?",
+          "help": "Avoidance, staying in, hypervigilance, and complying with or arguing back at voices.",
+          "vocab": [
+            "bh",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        }
+      ],
+      "links": [
+        {
+          "from": "vulnerability",
+          "to": "emotional-changes",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "triggers",
+          "to": "emotional-changes",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "triggers",
+          "to": "anomalous-experiences",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "emotional-changes",
+          "to": "appraisal",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "reasoning-biases",
+          "to": "appraisal",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "anomalous-experiences",
+          "to": "appraisal",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "beliefs",
+          "to": "appraisal",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "appraisal",
+          "to": "emotional-changes",
+          "label": "increases distress",
+          "style": "dashed"
+        },
+        {
+          "from": "appraisal",
+          "to": "safety-behaviors",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "safety-behaviors",
+          "to": "appraisal",
+          "label": "prevents disconfirmation",
+          "style": "dashed"
+        },
+        {
+          "from": "safety-behaviors",
+          "to": "anomalous-experiences",
+          "label": "maintains",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.bipolar",
+      "label": "Integrative cognitive model of bipolar disorder (Mansell)",
+      "group": "psychosis and bipolar",
+      "summary": "Changes in internal state are given extreme, often conflicting personal meanings, which drive ascent or descent behaviors that push mood further up or down.",
+      "use_when": "Bipolar disorder or marked mood swings, to map how reactions to changes in energy and mood escalate episodes and to plan steadying responses.",
+      "topics": [
+        "bipolar",
+        "formulation",
+        "sleep",
+        "relapse-prevention"
+      ],
+      "page": "bipolar-and-psychosis.cbt-model",
+      "sources": [
+        "Mansell-etal-2007 § Integrative cognitive model of internal states",
+        "Kelly-etal-2017a § The integrative cognitive model; ascent and descent behaviors",
+        "Jones-2001 § Abstract"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 3
+      },
+      "slots": [
+        {
+          "id": "triggers",
+          "label": "Triggers and life events",
+          "prompt": "What was going on before your mood or energy shifted?",
+          "help": "Goal-related events, achievements, stress or conflict.",
+          "vocab": [
+            "sit",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "internal-state",
+          "label": "Changes in internal state",
+          "prompt": "What changes did you notice in your energy, mood, thinking speed or need for sleep?",
+          "help": "Shifts in mood, arousal, energy and thought speed; often small at first.",
+          "vocab": [
+            "em",
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "rhythm-disruption",
+          "label": "Sleep and routine disruption",
+          "prompt": "How have your sleep and daily routine been?",
+          "help": "Irregular sleep, shift work, travel or disrupted routines that destabilize mood.",
+          "vocab": [
+            "bh",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "ascent",
+          "label": "Ascent behaviors",
+          "prompt": "What do you do to keep the high going or boost your energy?",
+          "help": "Efforts to raise or keep activation: chasing goals, staying up, stimulants, taking on more.",
+          "vocab": [
+            "bh"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "appraisals",
+          "label": "Extreme appraisals of internal states",
+          "prompt": "When you notice that change, what do you tell yourself it means?",
+          "help": "Extreme, often conflicting positive and negative meanings, such as 'I'm brilliant' or 'I'm losing control'.",
+          "vocab": [
+            "ib",
+            "tt",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "descent",
+          "label": "Descent behaviors",
+          "prompt": "What do you do to bring yourself down, or when you feel low?",
+          "help": "Efforts to lower activation or respond to low mood: withdrawal, rumination, shutting down.",
+          "vocab": [
+            "bh",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "high-mood",
+          "label": "Activated mood (hypomania or mania)",
+          "prompt": "How high did your mood and energy go?",
+          "help": "Escalating activation toward hypomania or mania.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "beliefs",
+          "label": "Beliefs about self and mood states",
+          "prompt": "What did past episodes and other people's reactions teach you about your moods?",
+          "help": "Beliefs from early experiences and previous episodes that shape how changes are appraised.",
+          "vocab": [
+            "cb",
+            "ib",
+            "bf"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "low-mood",
+          "label": "Low mood (depression)",
+          "prompt": "How low did your mood and energy go?",
+          "help": "Deepening low mood, inactivity and hopelessness.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        }
+      ],
+      "links": [
+        {
+          "from": "triggers",
+          "to": "internal-state",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "rhythm-disruption",
+          "to": "internal-state",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "internal-state",
+          "to": "appraisals",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "beliefs",
+          "to": "appraisals",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "appraisals",
+          "to": "ascent",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "appraisals",
+          "to": "descent",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "ascent",
+          "to": "internal-state",
+          "label": "raises activation",
+          "style": "dashed"
+        },
+        {
+          "from": "descent",
+          "to": "internal-state",
+          "label": "deepens low mood",
+          "style": "dashed"
+        },
+        {
+          "from": "ascent",
+          "to": "high-mood",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "descent",
+          "to": "low-mood",
+          "label": "",
+          "style": "solid"
+        }
+      ]
+    },
+    {
+      "id": "fm.adult-adhd",
+      "label": "CBT model of adult ADHD (Safren)",
+      "group": "neurodevelopmental",
+      "summary": "Core neuropsychological impairments block use of compensatory strategies, leading to impairment, failure history, negative beliefs, mood problems and avoidance.",
+      "use_when": "Adults with ADHD whose symptoms persist despite medication, to link skills training with work on avoidance and negative beliefs.",
+      "topics": [
+        "adhd",
+        "avoidance",
+        "skills-training",
+        "formulation"
+      ],
+      "page": "adhd.cbt-model",
+      "sources": [
+        "Safren-etal-2004 § Cognitive-behavioral model of adult ADHD",
+        "Knouse-Safren-2010 § CBT model of adult ADHD",
+        "Ramsay-Rostain-2015 § Cognitive-behavioral model of adult ADHD"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 4
+      },
+      "slots": [
+        {
+          "id": "core-impairments",
+          "label": "Core neuropsychological impairments",
+          "prompt": "Which ADHD symptoms affect you most: attention, organization, impulsivity, restlessness?",
+          "help": "Inattention, distractibility, disorganization and impulsivity from underlying executive deficits.",
+          "vocab": [
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "compensatory-failure",
+          "label": "Failure to use compensatory strategies",
+          "prompt": "What systems, such as calendars or lists, do you use, and what gets in the way?",
+          "help": "Lack of, or inconsistent use of, organizing, planning and attention strategies.",
+          "vocab": [
+            "cs",
+            "bh"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "functional-impairment",
+          "label": "Functional impairment",
+          "prompt": "Where is ADHD causing the most problems: work, study, money, relationships, home?",
+          "help": "Current problems in work, study, finances, relationships and daily tasks.",
+          "vocab": [
+            "sit",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "avoidance",
+          "label": "Avoidance and procrastination",
+          "prompt": "What tasks do you put off or avoid, and what do you do instead?",
+          "help": "Putting off or escaping tasks, which brings short-term relief and longer-term problems.",
+          "vocab": [
+            "bh",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "failure-history",
+          "label": "History of failure and underachievement",
+          "prompt": "What experiences of falling short or being criticized stand out over the years?",
+          "help": "Repeated failures, underachievement and negative feedback from family, teachers, employers or partners.",
+          "vocab": [
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        },
+        {
+          "id": "mood",
+          "label": "Mood disturbance",
+          "prompt": "How do you feel when tasks pile up or go wrong?",
+          "help": "Anxiety, low mood, frustration, shame or demoralization.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 4
+        },
+        {
+          "id": "negative-beliefs",
+          "label": "Negative thoughts and beliefs",
+          "prompt": "When you face a task, what do you tell yourself about it and about you?",
+          "help": "Negative automatic thoughts and beliefs such as being lazy, stupid or a failure.",
+          "vocab": [
+            "tt",
+            "cb",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        }
+      ],
+      "links": [
+        {
+          "from": "core-impairments",
+          "to": "compensatory-failure",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "core-impairments",
+          "to": "functional-impairment",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "compensatory-failure",
+          "to": "functional-impairment",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "functional-impairment",
+          "to": "failure-history",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "failure-history",
+          "to": "negative-beliefs",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "negative-beliefs",
+          "to": "mood",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "negative-beliefs",
+          "to": "avoidance",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "mood",
+          "to": "avoidance",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "avoidance",
+          "to": "compensatory-failure",
+          "label": "maintains",
+          "style": "dashed"
+        },
+        {
+          "from": "mood",
+          "to": "compensatory-failure",
+          "label": "maintains",
+          "style": "dashed"
+        },
+        {
+          "from": "avoidance",
+          "to": "functional-impairment",
+          "label": "worsens",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.adhd-procrastination-trap",
+      "label": "Positively valenced avoidance loop in adult ADHD (Knouse and Mitchell)",
+      "group": "neurodevelopmental",
+      "summary": "An aversive task brings discomfort; an overly optimistic or permission-giving thought relieves it and licenses delay, so avoidance is reinforced and costs grow later.",
+      "use_when": "Adults with ADHD who say they will do it later or plan unrealistically despite knowing the skills; map one episode as TRAP, then plan TRAC.",
+      "topics": [
+        "adhd",
+        "procrastination",
+        "avoidance",
+        "cognitive-distortions",
+        "formulation"
+      ],
+      "page": "adhd.cbt-model",
+      "sources": [
+        "Knouse-Mitchell-2015 § Positively-valenced cognitive avoidance: a functional analysis; Figure 1 TRAP/TRAC model",
+        "Martell-etal-2001 § Avoidance patterns in depression",
+        "Knouse-etal-2019 § Introduction"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 3
+      },
+      "slots": [
+        {
+          "id": "trigger",
+          "label": "Trigger: aversive task",
+          "prompt": "What task were you facing when this started?",
+          "help": "A task that brings discomfort: boring, hard, open-ended or close to a deadline.",
+          "vocab": [
+            "sit"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "response",
+          "label": "Response: aversive feelings",
+          "prompt": "How did you feel when you thought about starting it?",
+          "help": "Overwhelm, anxiety, boredom, frustration or feeling trapped, with any body signs.",
+          "vocab": [
+            "em",
+            "bs"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "optimistic-thought",
+          "label": "Avoidance pattern: optimistic or permission-giving thought",
+          "prompt": "What did you tell yourself that made putting it off feel OK?",
+          "help": "Overly positive or permission-giving thoughts, such as 'I work best under pressure' or 'It will only take ten minutes.'",
+          "vocab": [
+            "cd",
+            "tt",
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "alternative-coping",
+          "label": "Alternative coping (TRAC)",
+          "prompt": "Next time the same trigger and feeling show up, what small active step could you take instead?",
+          "help": "A concrete active-coping step for the same trigger and response, often set as an if-then plan.",
+          "vocab": [
+            "iv",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "confidence",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "relief",
+          "label": "Short-term relief",
+          "prompt": "How did you feel right after you decided to put it off?",
+          "help": "Relief or calm that rewards the thought and the delay (negative reinforcement).",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "avoidance",
+          "label": "Avoidance pattern: what you did instead",
+          "prompt": "What did you do instead of starting?",
+          "help": "Procrastination, switching to an easier or more pleasant task, or escapist activities.",
+          "vocab": [
+            "bh",
+            "mp"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "coping-outcome",
+          "label": "Result of active coping",
+          "prompt": "When you tried the alternative, what happened and what did you learn?",
+          "help": "Progress made, how it felt once started, and evidence about the optimistic thought.",
+          "vocab": [
+            "em",
+            "cs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "long-term-cost",
+          "label": "Longer-term cost",
+          "prompt": "What happened later because of the delay?",
+          "help": "Deadline crises, rushed work, conflict, self-criticism and less use of coping skills next time.",
+          "vocab": [
+            "em",
+            "tt",
+            "cb",
+            "sit"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        }
+      ],
+      "links": [
+        {
+          "from": "trigger",
+          "to": "response",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "response",
+          "to": "optimistic-thought",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "optimistic-thought",
+          "to": "avoidance",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "avoidance",
+          "to": "relief",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "relief",
+          "to": "optimistic-thought",
+          "label": "reinforces",
+          "style": "dashed"
+        },
+        {
+          "from": "avoidance",
+          "to": "long-term-cost",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "response",
+          "to": "alternative-coping",
+          "label": "TRAC",
+          "style": "solid"
+        },
+        {
+          "from": "alternative-coping",
+          "to": "coping-outcome",
+          "label": "",
+          "style": "solid"
+        }
+      ]
+    },
+    {
+      "id": "fm.strengths-resilience",
+      "label": "Strengths-based resilience model (Padesky and Mooney)",
+      "group": "strengths",
+      "summary": "Builds a personal model of resilience from strengths the client already uses, then applies and practices it in a problem area.",
+      "use_when": "When the goal is building resilience or maintaining gains, or alongside a problem formulation to balance it with strengths.",
+      "topics": [
+        "formulation",
+        "imagery",
+        "relapse-prevention",
+        "behavioral-experiments"
+      ],
+      "page": "03-formulation.what-is-case-formulation",
+      "sources": [
+        "Padesky-Mooney-2012 § Four-step model to build resilience",
+        "Kuyken-etal-2009 § Incorporating client strengths and building resilience"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 3
+      },
+      "slots": [
+        {
+          "id": "persistence-area",
+          "label": "Area where the client already persists",
+          "prompt": "What do you do regularly, even when it is hard or you do not feel like it?",
+          "help": "An everyday interest or activity where the client keeps going despite obstacles.",
+          "vocab": [
+            "sit",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "strengths",
+          "label": "Strengths shown",
+          "prompt": "What does that say about you? What qualities help you keep going there?",
+          "help": "Personal qualities, supports and values visible in the persistence area.",
+          "vocab": [
+            "cs",
+            "bf"
+          ],
+          "multi": true,
+          "rating": "confidence",
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "strategies-beliefs",
+          "label": "Strategies and beliefs that help persistence",
+          "prompt": "What do you tell yourself, or do, when things go wrong there?",
+          "help": "The helpful thoughts, images and actions the client uses to bounce back.",
+          "vocab": [
+            "cs",
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "personal-model",
+          "label": "Personal model of resilience",
+          "prompt": "How would you sum up your way of being resilient, in your own words or an image?",
+          "help": "The client's own summary of resilience strategies, often using metaphors or images.",
+          "vocab": [
+            "cs",
+            "ib"
+          ],
+          "multi": false,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "problem-area",
+          "label": "Problem area to apply it to",
+          "prompt": "Where in your life do you most want to be more resilient right now?",
+          "help": "The current difficulty where resilience, rather than problem solving, is the aim.",
+          "vocab": [
+            "sit"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "resilience-plan",
+          "label": "Applied resilience strategies",
+          "prompt": "How could you use your model here? What would you expect to happen?",
+          "help": "Strategies from the personal model adapted to the problem area, with predictions to test.",
+          "vocab": [
+            "cs"
+          ],
+          "multi": true,
+          "rating": "confidence",
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        },
+        {
+          "id": "practice-results",
+          "label": "Practice and what was learned",
+          "prompt": "What happened when you tried it, and what did you learn about your resilience?",
+          "help": "Results of behavioral experiments in resilience, including setbacks handled.",
+          "vocab": [
+            "cs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        }
+      ],
+      "links": [
+        {
+          "from": "persistence-area",
+          "to": "strengths",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "strengths",
+          "to": "strategies-beliefs",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "strengths",
+          "to": "personal-model",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "strategies-beliefs",
+          "to": "personal-model",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "personal-model",
+          "to": "resilience-plan",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "problem-area",
+          "to": "resilience-plan",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "resilience-plan",
+          "to": "practice-results",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "practice-results",
+          "to": "personal-model",
+          "label": "refines",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.relapse-process",
+      "label": "Relapse process model (Marlatt)",
+      "group": "substance use",
+      "summary": "A high-risk situation leads to relapse when coping fails, self-efficacy drops and a lapse triggers the abstinence violation effect.",
+      "use_when": "Substance use or other habits the client is trying to change, to identify high-risk situations and plan coping and lapse management.",
+      "topics": [
+        "substance-use",
+        "relapse-prevention",
+        "formulation"
+      ],
+      "page": "substance-use.relapse-prevention-model",
+      "sources": [
+        "Larimer-etal-1999 § Cognitive-behavioral model of the relapse process",
+        "Witkiewitz-Marlatt-2004 § Relapse prevention model"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 5
+      },
+      "slots": [
+        {
+          "id": "covert-antecedents",
+          "label": "Covert antecedents",
+          "prompt": "How balanced is your life right now? What small choices led you closer to the situation?",
+          "help": "Lifestyle imbalance, rationalization and apparently irrelevant decisions that lead toward high-risk situations.",
+          "vocab": [
+            "bf",
+            "bh"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "high-risk-situation",
+          "label": "High-risk situation",
+          "prompt": "Where, when and with whom are you most likely to use?",
+          "help": "Situations, emotional states and interpersonal events that threaten the client's sense of control.",
+          "vocab": [
+            "sit",
+            "em"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "urges",
+          "label": "Urges and cravings",
+          "prompt": "How strong were the urges or cravings?",
+          "help": "Urges and cravings that erode commitment to the goal.",
+          "vocab": [
+            "bs",
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "effective-coping",
+          "label": "Effective coping response",
+          "prompt": "What helped you get through it without using?",
+          "help": "Coping skills used in the high-risk situation.",
+          "vocab": [
+            "cs"
+          ],
+          "multi": true,
+          "rating": "confidence",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "ineffective-coping",
+          "label": "No or ineffective coping response",
+          "prompt": "What made it hard to cope at that moment?",
+          "help": "Absent or ineffective coping in the high-risk situation.",
+          "vocab": [
+            "bh",
+            "cs"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "increased-self-efficacy",
+          "label": "Increased self-efficacy",
+          "prompt": "How confident are you now that you can handle that situation again?",
+          "help": "Growing confidence in handling similar situations.",
+          "vocab": [
+            "tt",
+            "ib"
+          ],
+          "multi": true,
+          "rating": "confidence",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "decreased-self-efficacy",
+          "label": "Decreased self-efficacy and positive outcome expectancies",
+          "prompt": "What did you expect using would do for you, and how confident did you feel?",
+          "help": "Low confidence plus expectations that the substance will help.",
+          "vocab": [
+            "tt",
+            "ib"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        },
+        {
+          "id": "lapse",
+          "label": "Initial lapse",
+          "prompt": "What happened when you first used again?",
+          "help": "The first use after a period of change.",
+          "vocab": [
+            "bh"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 3,
+          "row": 4
+        },
+        {
+          "id": "relapse",
+          "label": "Relapse",
+          "prompt": "What happened after that, and how far did it go?",
+          "help": "Return to the previous pattern of use.",
+          "vocab": [
+            "bh"
+          ],
+          "multi": true,
+          "rating": "frequency",
+          "free_text": true,
+          "col": 1,
+          "row": 5
+        },
+        {
+          "id": "abstinence-violation",
+          "label": "Abstinence violation effect",
+          "prompt": "After the slip, what did you tell yourself and how did you feel?",
+          "help": "Guilt, self-blame and loss of perceived control that make a full relapse more likely.",
+          "vocab": [
+            "em",
+            "tt",
+            "cd"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 3,
+          "row": 5
+        }
+      ],
+      "links": [
+        {
+          "from": "covert-antecedents",
+          "to": "high-risk-situation",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "covert-antecedents",
+          "to": "urges",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "high-risk-situation",
+          "to": "urges",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "high-risk-situation",
+          "to": "effective-coping",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "high-risk-situation",
+          "to": "ineffective-coping",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "urges",
+          "to": "ineffective-coping",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "effective-coping",
+          "to": "increased-self-efficacy",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "ineffective-coping",
+          "to": "decreased-self-efficacy",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "decreased-self-efficacy",
+          "to": "lapse",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "lapse",
+          "to": "abstinence-violation",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "abstinence-violation",
+          "to": "relapse",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "increased-self-efficacy",
+          "to": "high-risk-situation",
+          "label": "lowers future risk",
+          "style": "dashed"
+        },
+        {
+          "from": "abstinence-violation",
+          "to": "decreased-self-efficacy",
+          "label": "",
+          "style": "dashed"
+        },
+        {
+          "from": "relapse",
+          "to": "covert-antecedents",
+          "label": "",
+          "style": "dashed"
+        }
+      ]
+    },
+    {
+      "id": "fm.suicidal-mode",
+      "label": "Suicidal mode (Rudd)",
+      "group": "suicide risk",
+      "summary": "Predispositions and a trigger activate the suicidal mode, in which thoughts, emotions, physiology and behavior influence each other and escalate toward suicidal action.",
+      "use_when": "After a suicidal crisis or with recurrent suicidal ideation, once risk is assessed, to map one crisis with the client and find points for the crisis response plan.",
+      "topics": [
+        "suicide",
+        "risk",
+        "crisis",
+        "formulation"
+      ],
+      "page": "02-risk.suicide-focused-cbt",
+      "sources": [
+        "Rudd-2000 § Abstract; component parts of the suicidal mode",
+        "Bryan-etal-2020 § The suicidal mode; fluid vulnerability theory"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 4
+      },
+      "slots": [
+        {
+          "id": "predispositions",
+          "label": "Predispositions",
+          "prompt": "What in your past makes crises like this more likely: earlier attempts, trauma, long-term problems?",
+          "help": "Relatively stable baseline factors, such as prior attempts, childhood adversity and a history of mental disorder.",
+          "vocab": [
+            "rk",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 1,
+          "row": 1
+        },
+        {
+          "id": "trigger",
+          "label": "Trigger",
+          "prompt": "What happened just before the crisis started?",
+          "help": "External events or internal experiences that activated the mode. It activates all four systems at once.",
+          "vocab": [
+            "sit",
+            "bf"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 3,
+          "row": 1
+        },
+        {
+          "id": "thoughts",
+          "label": "Thoughts (suicidal belief system)",
+          "prompt": "What went through your mind about yourself, others and the future?",
+          "help": "Hopelessness, perceived burdensomeness, entrapment and beliefs that the pain is unbearable.",
+          "vocab": [
+            "tt",
+            "cb",
+            "rk"
+          ],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 2,
+          "row": 2
+        },
+        {
+          "id": "emotions",
+          "label": "Emotions",
+          "prompt": "What were you feeling, and how strong was it?",
+          "help": "Emotional pain such as despair, shame, guilt, anger or emptiness.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 1,
+          "row": 3
+        },
+        {
+          "id": "physiology",
+          "label": "Body and physiology",
+          "prompt": "What did you notice in your body: agitation, exhaustion, lack of sleep?",
+          "help": "Arousal, agitation, sleep disturbance and other physical states.",
+          "vocab": [
+            "bs",
+            "rk"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": true,
+          "col": 3,
+          "row": 3
+        },
+        {
+          "id": "protective",
+          "label": "Protective factors and reasons for living",
+          "prompt": "What helped you hold on, or could help next time?",
+          "help": "Reasons for living, connections, engagement with care and skills that dampen the mode.",
+          "vocab": [
+            "rk",
+            "bf",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "confidence",
+          "free_text": true,
+          "col": 1,
+          "row": 4
+        },
+        {
+          "id": "behavior",
+          "label": "Behavior",
+          "prompt": "What did you do, or start to do?",
+          "help": "Withdrawal, substance use, preparatory behavior or an attempt. Record the type of act, never method details.",
+          "vocab": [
+            "bh",
+            "rk"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 4
+        },
+        {
+          "id": "crisis-plan",
+          "label": "Crisis response steps",
+          "prompt": "Next time, what will you do at each warning sign, and who will you contact?",
+          "help": "Steps from the crisis response or safety plan, ending with crisis contacts: US 988 or 911; UK 999, NHS 111 or Samaritans 116 123.",
+          "vocab": [
+            "iv",
+            "cs"
+          ],
+          "multi": true,
+          "rating": "confidence",
+          "free_text": true,
+          "col": 3,
+          "row": 4
+        }
+      ],
+      "links": [
+        {
+          "from": "predispositions",
+          "to": "thoughts",
+          "label": "lowers threshold",
+          "style": "solid"
+        },
+        {
+          "from": "trigger",
+          "to": "thoughts",
+          "label": "activates",
+          "style": "solid"
+        },
+        {
+          "from": "thoughts",
+          "to": "emotions",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "emotions",
+          "to": "thoughts",
+          "label": "",
+          "style": "dashed"
+        },
+        {
+          "from": "thoughts",
+          "to": "physiology",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "physiology",
+          "to": "thoughts",
+          "label": "",
+          "style": "dashed"
+        },
+        {
+          "from": "emotions",
+          "to": "behavior",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "physiology",
+          "to": "behavior",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "protective",
+          "to": "behavior",
+          "label": "dampens",
+          "style": "dashed"
+        },
+        {
+          "from": "crisis-plan",
+          "to": "behavior",
+          "label": "interrupts",
+          "style": "dashed"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,882 @@
+{
+  "scheme": "thought-themes",
+  "prefix": "tt",
+  "title": "Thought themes (content of automatic thoughts)",
+  "description": "What automatic thoughts are about: the content themes that, under Beck's content-specificity hypothesis, characterize particular emotions and disorders. Tags the theme of automatic thoughts and hot thoughts in formulation slots. Each concept carries emotions (em ids of the emotions the theme typically drives) and conditions (topic values from _schema.md section 5). A theme is the content of in-the-moment thoughts; the matching enduring beliefs are in cb and ib. The suicide-relevant themes (hopelessness, burdensomeness, entrapment) are coded here, and rk links to them.",
+  "version": "1.0.0",
+  "sources": [
+    "Beck-1976 § Meaning and emotions",
+    "Beck-1976 § Cognitive content of emotional disorders",
+    "Beck-etal-1987 § Content-specificity hypothesis",
+    "Clark-Beck-2010 § Ch. 2 The Cognitive Model of Anxiety",
+    "Clark-2009 § Introduction (overestimates of danger)",
+    "Greenberger-Padesky-2016 § Ch. 13 to 15 mood chapters"
+  ],
+  "concepts": [
+    {
+      "id": "tt.loss-and-defeat",
+      "label": "Loss and defeat",
+      "alt_labels": [
+        "loss and deprivation",
+        "personal devaluation"
+      ],
+      "definition": "Thoughts that something valued has been lost or that one has been beaten or diminished: a person, role, status, health or goal.",
+      "client_wording": "Thoughts about losing something or someone important, or feeling beaten down.",
+      "example": "\"Since the divorce, I've lost everything that mattered.\"",
+      "group": "Loss and failure",
+      "broader": null,
+      "related": [
+        "tt.hopelessness",
+        "tt.entrapment",
+        "tt.inadequacy-and-failure",
+        "em.sad",
+        "em.grief"
+      ],
+      "see": ["chronic-pain-and-physical-health.cbt-model", "cognitive.pitfall-challenging-accurate-thoughts", "grief-and-loss.cbt-model"],
+      "sources": [
+        "Beck-1976 § Meaning and emotions",
+        "Beck-etal-1987 § Content-specificity hypothesis",
+        "Beck-etal-2024 § Ch. 1 Overview",
+        "Greenberger-Padesky-2016 § Ch. 13 Understanding Your Depression"
+      ],
+      "emotions": [
+        "em.sad",
+        "em.grief"
+      ],
+      "conditions": [
+        "depression"
+      ]
+    },
+    {
+      "id": "tt.inadequacy-and-failure",
+      "label": "Inadequacy and failure",
+      "alt_labels": [
+        "helplessness",
+        "incompetence"
+      ],
+      "definition": "Thoughts that one is incompetent, weak or not good enough to meet demands, and has failed or will fail.",
+      "client_wording": "Thoughts that you're not capable or good enough, or that you keep failing.",
+      "example": "\"I can't do anything right at work.\"",
+      "group": "Loss and failure",
+      "broader": null,
+      "related": [
+        "tt.loss-and-defeat",
+        "tt.defect-and-exposure",
+        "tt.negative-evaluation",
+        "cd.unfair-comparisons",
+        "em.sad",
+        "em.anxious",
+        "em.ashamed",
+        "cb.failure"
+      ],
+      "see": ["adhd.cbt-model", "depression.cbt-model"],
+      "sources": [
+        "Beck-2021 § Ch. 17 Introduction to Beliefs (helpless core beliefs)",
+        "Beck-etal-2024 § Ch. 1 Overview"
+      ],
+      "emotions": [
+        "em.sad",
+        "em.anxious",
+        "em.ashamed"
+      ],
+      "conditions": [
+        "depression",
+        "gad",
+        "social-anxiety"
+      ]
+    },
+    {
+      "id": "tt.abandonment-and-rejection",
+      "label": "Abandonment and rejection",
+      "alt_labels": [
+        "unlovability",
+        "abandonment"
+      ],
+      "definition": "Thoughts that one is unlovable or will be rejected, left or let down by the people one depends on.",
+      "client_wording": "Thoughts that people you care about will leave you or don't really want you.",
+      "example": "\"He'll get bored of me and leave, like everyone else.\"",
+      "group": "Loss and failure",
+      "broader": null,
+      "related": [
+        "tt.burdensomeness",
+        "tt.negative-evaluation",
+        "tt.loss-and-defeat",
+        "em.anxious",
+        "em.sad",
+        "em.jealous",
+        "em.rejected",
+        "cb.bound-to-be-rejected"
+      ],
+      "see": ["personality-disorders.cbt-model", "personality-disorders.overview"],
+      "sources": [
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (abandonment/instability)",
+        "Beck-2021 § Ch. 17 Introduction to Beliefs (unlovable core beliefs)"
+      ],
+      "emotions": [
+        "em.anxious",
+        "em.sad",
+        "em.jealous"
+      ],
+      "conditions": [
+        "depression",
+        "personality-disorders",
+        "social-anxiety"
+      ]
+    },
+    {
+      "id": "tt.hopelessness",
+      "label": "Hopelessness",
+      "alt_labels": [
+        "negative view of the future",
+        "pessimism",
+        "pessimism about the future",
+        "negative expectations"
+      ],
+      "definition": "Thoughts that the future is bleak, problems will not improve and nothing one does will make a difference. A key suicide risk signal.",
+      "client_wording": "Thoughts that things will never get better, no matter what you do.",
+      "example": "\"There's no point. It's always going to be like this.\"",
+      "group": "Despair and suicide risk",
+      "broader": null,
+      "related": [
+        "tt.entrapment",
+        "tt.loss-and-defeat",
+        "tt.burdensomeness",
+        "em.hopeless",
+        "em.sad",
+        "rk.no-reason-to-live",
+        "cb.future-hopeless"
+      ],
+      "see": ["01-intake.risk-screen-at-intake", "02-risk.asking-about-suicide", "02-risk.pitfall-avoiding-the-question", "02-risk.suicide-focused-cbt", "02-risk.suicide-risk-assessment", "alliance-and-stance.hope-and-expectancy", "cognitive.identifying-automatic-thoughts", "depression.assessment", "depression.cbt-model", "depression.overview", "depression.pitfall-risk-not-rechecked", "responding-in-session.phrasing-library", "responding-in-session.pitfall-missing-risk-behind-hopelessness", "responding-in-session.responding-to-hopelessness-and-self-criticism"],
+      "sources": [
+        "Beck-etal-1974 § Hopelessness Scale",
+        "Beck-etal-2024 § Ch. 9 Treating the Suicidal Patient",
+        "OConnor-Kirtley-2018 § Motivational phase",
+        "Beck-etal-1985 § Abstract: Hopelessness Scale and eventual suicide",
+        "CDC-Suicide-Risk-2026 § Risk factors: individual",
+        "AAS-Warning-Signs § What Someone Might Say"
+      ],
+      "emotions": [
+        "em.hopeless",
+        "em.sad"
+      ],
+      "conditions": [
+        "depression",
+        "suicide"
+      ]
+    },
+    {
+      "id": "tt.burdensomeness",
+      "label": "Perceived burdensomeness",
+      "alt_labels": [
+        "being a burden",
+        "feeling like a burden"
+      ],
+      "definition": "Thoughts that one is a liability to others and that they would be better off without one, often fused with self-hatred. Raises suicide risk.",
+      "client_wording": "Thoughts that you're a burden and others would be better off without you.",
+      "example": "\"My family would be better off if I wasn't here.\"",
+      "group": "Despair and suicide risk",
+      "broader": null,
+      "related": [
+        "tt.hopelessness",
+        "tt.entrapment",
+        "tt.abandonment-and-rejection",
+        "em.ashamed",
+        "em.guilty",
+        "em.sad",
+        "rk.thwarted-belongingness",
+        "cb.undeserving"
+      ],
+      "see": ["02-risk.pitfall-avoiding-the-question", "02-risk.suicide-focused-cbt", "02-risk.suicide-risk-assessment", "13-context-culture-development.older-adults", "chronic-pain-and-physical-health.adaptations", "chronic-pain-and-physical-health.overview", "cognitive.identifying-automatic-thoughts", "responding-in-session.pitfall-missing-risk-behind-hopelessness"],
+      "sources": [
+        "VanOrden-etal-2010 § Perceived burdensomeness",
+        "OConnor-Kirtley-2018 § Motivational moderators",
+        "AAS-Warning-Signs § What Someone Might Say"
+      ],
+      "emotions": [
+        "em.ashamed",
+        "em.guilty",
+        "em.sad"
+      ],
+      "conditions": [
+        "suicide",
+        "depression"
+      ]
+    },
+    {
+      "id": "tt.entrapment",
+      "label": "Entrapment",
+      "alt_labels": [
+        "no escape",
+        "defeat and entrapment"
+      ],
+      "definition": "Thoughts that one is trapped in an intolerable situation or inner pain with no way out, often following defeat or humiliation.",
+      "client_wording": "Feeling stuck in unbearable pain or circumstances with no way out.",
+      "example": "\"I can't escape this, and I can't keep living like this.\"",
+      "group": "Despair and suicide risk",
+      "broader": null,
+      "related": [
+        "tt.hopelessness",
+        "tt.loss-and-defeat",
+        "tt.burdensomeness",
+        "em.hopeless",
+        "em.ashamed",
+        "rk.unbearable-psychological-pain",
+        "rk.defeat-or-humiliation",
+        "cb.powerless"
+      ],
+      "see": ["02-risk.suicide-focused-cbt", "02-risk.suicide-risk-assessment"],
+      "sources": [
+        "OConnor-Kirtley-2018 § Motivational phase: defeat and entrapment",
+        "AAS-Warning-Signs § What Someone Might Say"
+      ],
+      "emotions": [
+        "em.hopeless",
+        "em.ashamed"
+      ],
+      "conditions": [
+        "suicide",
+        "depression",
+        "ptsd"
+      ]
+    },
+    {
+      "id": "tt.threat-and-danger",
+      "label": "Threat and danger",
+      "alt_labels": [
+        "danger",
+        "harm"
+      ],
+      "definition": "Thoughts that physical or psychological harm is likely or imminent in a situation; the core content of anxiety and fear.",
+      "client_wording": "Thoughts that something dangerous or harmful is about to happen.",
+      "example": "\"Something bad will happen if I leave the house.\"",
+      "group": "Threat and danger",
+      "broader": null,
+      "related": [
+        "tt.vulnerability",
+        "tt.physical-catastrophe",
+        "tt.serious-illness",
+        "tt.negative-evaluation",
+        "cd.fortune-telling",
+        "em.anxious",
+        "em.afraid",
+        "cb.world-dangerous",
+        "mp.threat-monitoring"
+      ],
+      "see": ["ptsd.cbt-model"],
+      "sources": [
+        "Beck-1976 § Meaning and emotions",
+        "Beck-etal-1987 § Content-specificity hypothesis",
+        "Clark-2009 § Introduction (overestimates of danger)",
+        "Clark-Beck-2010 § Ch. 2 The Cognitive Model of Anxiety",
+        "Greenberger-Padesky-2016 § Ch. 14 Understanding Your Anxiety"
+      ],
+      "emotions": [
+        "em.anxious",
+        "em.afraid"
+      ],
+      "conditions": [
+        "gad",
+        "specific-phobia",
+        "agoraphobia",
+        "panic",
+        "ptsd"
+      ]
+    },
+    {
+      "id": "tt.vulnerability",
+      "label": "Vulnerability",
+      "alt_labels": [
+        "inability to cope",
+        "helplessness under threat"
+      ],
+      "definition": "Thoughts that one is weak, exposed or unable to protect oneself or cope with threat, and that help is unavailable.",
+      "client_wording": "Thoughts that you couldn't protect yourself or cope if something went wrong.",
+      "example": "\"If something happens, I'll be on my own and helpless.\"",
+      "group": "Threat and danger",
+      "broader": null,
+      "related": [
+        "tt.threat-and-danger",
+        "cd.underestimating-coping",
+        "em.anxious",
+        "em.afraid",
+        "cb.vulnerable"
+      ],
+      "see": ["panic-and-phobias.agoraphobia"],
+      "sources": [
+        "Clark-Beck-2010 § Ch. 2 The Cognitive Model of Anxiety",
+        "Clark-2009 § Introduction (overestimates of danger)"
+      ],
+      "emotions": [
+        "em.anxious",
+        "em.afraid"
+      ],
+      "conditions": [
+        "gad",
+        "panic",
+        "agoraphobia",
+        "ptsd"
+      ]
+    },
+    {
+      "id": "tt.physical-catastrophe",
+      "label": "Physical catastrophe",
+      "alt_labels": [
+        "imminent physical disaster"
+      ],
+      "definition": "Thoughts that bodily sensations signal an immediate disaster such as a heart attack, suffocation, fainting or collapse.",
+      "client_wording": "Thoughts that a racing heart or dizziness means something terrible is happening right now.",
+      "example": "\"My heart is pounding. I'm having a heart attack.\"",
+      "group": "Threat and danger",
+      "broader": null,
+      "related": [
+        "tt.serious-illness",
+        "tt.loss-of-control",
+        "tt.threat-and-danger",
+        "cd.catastrophizing",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations",
+        "em.afraid",
+        "em.panicky",
+        "ib.anxiety-sensations-dangerous"
+      ],
+      "see": ["panic-and-phobias.adaptations", "panic-and-phobias.assessment", "panic-and-phobias.cbt-model", "panic-and-phobias.interoceptive-exposure", "panic-and-phobias.overview", "panic-and-phobias.pitfall-reassurance-instead-of-testing"],
+      "sources": [
+        "Clark-1986 § Catastrophic misinterpretation of bodily sensations",
+        "Clark-2009 § Panic disorder"
+      ],
+      "emotions": [
+        "em.afraid",
+        "em.panicky"
+      ],
+      "conditions": [
+        "panic",
+        "agoraphobia"
+      ]
+    },
+    {
+      "id": "tt.serious-illness",
+      "label": "Serious illness",
+      "alt_labels": [
+        "health threat",
+        "illness worry"
+      ],
+      "definition": "Thoughts that benign symptoms or medical uncertainty mean one has, or will develop, a serious disease that has been missed.",
+      "client_wording": "Thoughts that a symptom means you have a serious illness doctors have missed.",
+      "example": "\"This headache means I have a brain tumor.\"",
+      "group": "Threat and danger",
+      "broader": null,
+      "related": [
+        "tt.physical-catastrophe",
+        "tt.threat-and-danger",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations",
+        "em.anxious",
+        "em.afraid",
+        "ib.symptoms-mean-serious-illness",
+        "ms.shai",
+        "sit.health-information"
+      ],
+      "see": ["chronic-pain-and-physical-health.adaptations", "gad.pitfall-worry-misread-as-gad", "health-anxiety.assessment", "health-anxiety.cbt-model", "health-anxiety.overview", "health-anxiety.pitfall-debating-the-diagnosis"],
+      "sources": [
+        "Salkovskis-Warwick-1986 § Cognitive-behavioural approach to hypochondriasis",
+        "Clark-2009 § Hypochondriasis"
+      ],
+      "emotions": [
+        "em.anxious",
+        "em.afraid"
+      ],
+      "conditions": [
+        "health-anxiety"
+      ]
+    },
+    {
+      "id": "tt.loss-of-control",
+      "label": "Loss of control",
+      "alt_labels": [
+        "going crazy",
+        "losing control"
+      ],
+      "definition": "Thoughts that one will lose control of mind, body, emotions or behavior, for example going mad, acting on an impulse or being overwhelmed.",
+      "client_wording": "Thoughts that you'll lose control, go crazy, or do something you can't stop.",
+      "example": "\"If this feeling gets any stronger, I'll lose my mind.\"",
+      "group": "Threat and danger",
+      "broader": null,
+      "related": [
+        "tt.physical-catastrophe",
+        "tt.significance-of-thoughts",
+        "em.anxious",
+        "em.afraid"
+      ],
+      "see": ["panic-and-phobias.agoraphobia", "panic-and-phobias.cbt-model"],
+      "sources": [
+        "Clark-1986 § Catastrophic misinterpretation of bodily sensations",
+        "Clark-2009 § Panic disorder",
+        "Wells-1995 § Negative meta-beliefs about worry"
+      ],
+      "emotions": [
+        "em.anxious",
+        "em.afraid"
+      ],
+      "conditions": [
+        "panic",
+        "gad",
+        "ocd"
+      ]
+    },
+    {
+      "id": "tt.negative-evaluation",
+      "label": "Negative evaluation",
+      "alt_labels": [
+        "fear of judgment",
+        "social threat"
+      ],
+      "definition": "Thoughts that others are noticing and judging one negatively, that one will appear anxious, awkward or inadequate and lose status or acceptance.",
+      "client_wording": "Thoughts that people are judging you and will think badly of you.",
+      "example": "\"They can see I'm blushing. They'll think I'm weird.\"",
+      "group": "Threat and danger",
+      "broader": null,
+      "related": [
+        "tt.defect-and-exposure",
+        "tt.abandonment-and-rejection",
+        "cd.mind-reading",
+        "em.anxious",
+        "em.embarrassed",
+        "em.ashamed",
+        "cb.others-critical"
+      ],
+      "see": ["cognitive.downward-arrow", "gad.pitfall-worry-misread-as-gad", "social-anxiety.assessment", "social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.cbt-model", "social-anxiety.overview"],
+      "sources": [
+        "Clark-2009 § Social phobia",
+        "Greenberger-Padesky-2016 § Ch. 14 Understanding Your Anxiety"
+      ],
+      "emotions": [
+        "em.anxious",
+        "em.embarrassed",
+        "em.ashamed"
+      ],
+      "conditions": [
+        "social-anxiety"
+      ]
+    },
+    {
+      "id": "tt.sleep-loss-consequences",
+      "label": "Sleep loss and its consequences",
+      "alt_labels": [
+        "sleep worry"
+      ],
+      "definition": "Thoughts that one will not sleep and that poor sleep will seriously harm health, mood or next-day functioning.",
+      "client_wording": "Thoughts that you won't sleep and that tomorrow, or your health, will be ruined.",
+      "example": "\"If I don't fall asleep now, I'll fall apart at work tomorrow.\"",
+      "group": "Threat and danger",
+      "broader": null,
+      "related": [
+        "tt.threat-and-danger",
+        "tt.loss-of-control",
+        "em.anxious",
+        "em.frustrated",
+        "mp.sleep-effort",
+        "ib.poor-sleep-ruins-functioning"
+      ],
+      "see": ["insomnia.cbt-model"],
+      "sources": [
+        "Harvey-2002 § Excessive negatively toned cognitive activity"
+      ],
+      "emotions": [
+        "em.anxious",
+        "em.frustrated"
+      ],
+      "conditions": [
+        "insomnia"
+      ]
+    },
+    {
+      "id": "tt.contamination",
+      "label": "Contamination",
+      "alt_labels": [
+        "dirt and germs",
+        "mental contamination"
+      ],
+      "definition": "Thoughts that one is or will become dirty, infected or polluted through contact with substances, places or people, and may spread harm.",
+      "client_wording": "Thoughts that you're dirty or infected, or could spread germs or harm.",
+      "example": "\"I touched the door handle. Now I'll make my kids sick.\"",
+      "group": "Obsessional themes",
+      "broader": null,
+      "related": [
+        "tt.inflated-responsibility",
+        "tt.significance-of-thoughts",
+        "em.disgusted",
+        "em.anxious",
+        "em.contaminated",
+        "sit.contamination-cue"
+      ],
+      "see": ["gad.pitfall-worry-misread-as-gad"],
+      "sources": [
+        "Rachman-2004 § Fear of contamination"
+      ],
+      "emotions": [
+        "em.disgusted",
+        "em.anxious"
+      ],
+      "conditions": [
+        "ocd"
+      ]
+    },
+    {
+      "id": "tt.inflated-responsibility",
+      "label": "Inflated responsibility for harm",
+      "alt_labels": [
+        "responsibility for harm",
+        "excessive responsibility"
+      ],
+      "definition": "Thoughts whose content is being to blame for possible harm: that one could cause it, must prevent it, and failing to act equals causing it.",
+      "client_wording": "Thoughts that it's up to you to stop anything bad happening, and it's your fault if it does.",
+      "example": "\"If I don't check the stove again and there's a fire, it'll be my fault.\"",
+      "group": "Obsessional themes",
+      "broader": null,
+      "related": [
+        "tt.transgression",
+        "tt.contamination",
+        "tt.significance-of-thoughts",
+        "ib.inflated-responsibility",
+        "ib.thought-action-fusion-likelihood",
+        "ib.thought-action-fusion-moral",
+        "em.anxious",
+        "em.guilty"
+      ],
+      "see": ["ocd.cbt-model"],
+      "sources": [
+        "Salkovskis-1985 § Responsibility and intrusive thoughts",
+        "OCCWG-1997 § Inflated responsibility"
+      ],
+      "emotions": [
+        "em.anxious",
+        "em.guilty"
+      ],
+      "conditions": [
+        "ocd",
+        "gad"
+      ]
+    },
+    {
+      "id": "tt.significance-of-thoughts",
+      "label": "Significance of thoughts",
+      "alt_labels": [
+        "dangerous thoughts",
+        "overimportance of thoughts"
+      ],
+      "definition": "Thoughts whose content is that one's intrusive or uncontrolled thoughts are meaningful, dangerous or revealing of one's character, and must be controlled.",
+      "client_wording": "Thoughts that having an upsetting thought means something bad about you or is dangerous.",
+      "example": "\"Having this thought about hurting my baby means I'm a monster.\"",
+      "group": "Obsessional themes",
+      "broader": null,
+      "related": [
+        "tt.loss-of-control",
+        "tt.inflated-responsibility",
+        "mp.misinterpretation-of-intrusions",
+        "ib.thought-action-fusion-likelihood",
+        "ib.thought-action-fusion-moral",
+        "em.anxious",
+        "em.guilty",
+        "em.ashamed",
+        "ib.thoughts-reveal-true-self"
+      ],
+      "see": ["ocd.cbt-model", "ocd.pitfall-misreading-intrusions-as-risk"],
+      "sources": [
+        "Rachman-1997 § Misinterpretation of intrusive thoughts",
+        "OCCWG-1997 § Overimportance and control of thoughts",
+        "Wells-1995 § Negative meta-beliefs about worry"
+      ],
+      "emotions": [
+        "em.anxious",
+        "em.guilty",
+        "em.ashamed"
+      ],
+      "conditions": [
+        "ocd",
+        "gad"
+      ]
+    },
+    {
+      "id": "tt.violation-and-unfairness",
+      "label": "Violation and unfairness",
+      "alt_labels": [
+        "injustice",
+        "mistreatment"
+      ],
+      "definition": "Thoughts that one has been wronged, treated unfairly, disrespected or had important rules broken by others, often seen as intentional.",
+      "client_wording": "Thoughts that someone treated you unfairly or broke the rules on purpose.",
+      "example": "\"She deliberately humiliated me in front of everyone.\"",
+      "group": "Morality and the self",
+      "broader": null,
+      "related": [
+        "tt.persecution",
+        "cd.blaming",
+        "cd.should-statements",
+        "em.angry",
+        "em.resentful",
+        "cb.world-unfair"
+      ],
+      "see": ["13-context-culture-development.pitfall-disputing-realistic-adversity"],
+      "sources": [
+        "Beck-1976 § Meaning and emotions",
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Your Anger, Guilt, and Shame"
+      ],
+      "emotions": [
+        "em.angry",
+        "em.resentful"
+      ],
+      "conditions": [
+        "ptsd",
+        "personality-disorders"
+      ]
+    },
+    {
+      "id": "tt.transgression",
+      "label": "Transgression",
+      "alt_labels": [
+        "wrongdoing",
+        "moral violation"
+      ],
+      "definition": "Thoughts that one has done something wrong, broken one's own moral code or hurt someone, focused on the act rather than the whole self.",
+      "client_wording": "Thoughts that you did something wrong or hurt someone and should have acted differently.",
+      "example": "\"I snapped at my daughter. That was a terrible thing to do.\"",
+      "group": "Morality and the self",
+      "broader": null,
+      "related": [
+        "tt.defect-and-exposure",
+        "tt.inflated-responsibility",
+        "cd.hindsight-bias",
+        "em.guilty",
+        "em.regretful"
+      ],
+      "see": ["13-context-culture-development.religion-and-spirituality"],
+      "sources": [
+        "Tangney-etal-2007 § Shame versus guilt",
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Your Anger, Guilt, and Shame",
+        "Kubany-Manke-1995 § Components of trauma-related guilt"
+      ],
+      "emotions": [
+        "em.guilty",
+        "em.regretful"
+      ],
+      "conditions": [
+        "depression",
+        "ptsd",
+        "ocd"
+      ]
+    },
+    {
+      "id": "tt.defect-and-exposure",
+      "label": "Defect and exposure",
+      "alt_labels": [
+        "defectiveness",
+        "being found out"
+      ],
+      "definition": "Thoughts that the self is fundamentally flawed, bad or unacceptable, and that others will discover it and reject or humiliate one.",
+      "client_wording": "Thoughts that something is deeply wrong with you and people will find out.",
+      "example": "\"If they knew the real me, they'd be disgusted.\"",
+      "group": "Morality and the self",
+      "broader": null,
+      "related": [
+        "tt.negative-evaluation",
+        "tt.transgression",
+        "tt.appearance-defect",
+        "cd.labeling",
+        "em.ashamed",
+        "em.humiliated",
+        "cb.defective"
+      ],
+      "see": ["15-transdiagnostic-processes.self-criticism-and-shame"],
+      "sources": [
+        "Tangney-etal-2007 § Shame versus guilt",
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Your Anger, Guilt, and Shame",
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (defectiveness/shame)"
+      ],
+      "emotions": [
+        "em.ashamed",
+        "em.humiliated"
+      ],
+      "conditions": [
+        "depression",
+        "social-anxiety",
+        "bdd",
+        "ptsd",
+        "personality-disorders"
+      ]
+    },
+    {
+      "id": "tt.permanent-change-after-trauma",
+      "label": "Permanent damage after trauma",
+      "alt_labels": [
+        "changed self after trauma",
+        "ruined life"
+      ],
+      "definition": "Thoughts after trauma that one has been permanently damaged or changed, and that one's life, body or future is ruined beyond recovery.",
+      "client_wording": "Thoughts that what happened has changed or damaged you for good.",
+      "example": "\"I'll never be the person I was. He ruined my life.\"",
+      "group": "Trauma",
+      "broader": null,
+      "related": [
+        "tt.hopelessness",
+        "tt.defect-and-exposure",
+        "tt.threat-and-danger",
+        "mp.negative-appraisal-of-trauma",
+        "em.sad",
+        "em.ashamed",
+        "em.hopeless",
+        "cb.future-ruined"
+      ],
+      "see": ["ptsd.cbt-model", "ptsd.cognitive-therapy-for-ptsd"],
+      "sources": [
+        "Ehlers-Clark-2000 § Negative appraisals of the trauma and its sequelae",
+        "Beierl-etal-2020 § Negative appraisals and perceived permanent change"
+      ],
+      "emotions": [
+        "em.sad",
+        "em.ashamed",
+        "em.hopeless"
+      ],
+      "conditions": [
+        "ptsd"
+      ]
+    },
+    {
+      "id": "tt.shape-weight-and-eating-control",
+      "label": "Shape, weight and eating control",
+      "alt_labels": [
+        "fat thoughts",
+        "fear of weight gain",
+        "loss of control over eating"
+      ],
+      "definition": "Thoughts that one looks fat, has gained weight, has eaten too much or lost control over eating, and must restrict or compensate.",
+      "client_wording": "Thoughts that you look fat, ate too much or lost control, and need to make up for it.",
+      "example": "\"I've eaten far too much. I look huge. I have to skip dinner.\"",
+      "group": "Body and appearance",
+      "broader": null,
+      "related": [
+        "ib.worth-judged-by-shape-weight",
+        "tt.appearance-defect",
+        "mp.dietary-restraint-cycle",
+        "bh.body-checking",
+        "bs.feeling-fat",
+        "em.anxious",
+        "em.ashamed",
+        "em.disgusted",
+        "em.self-disgust"
+      ],
+      "see": ["eating-disorders.cbt-model"],
+      "sources": [
+        "Fairburn-2008 § Ch. 8 Shape Concern, Shape Checking, Feeling Fat and Mindsets",
+        "Fairburn-etal-2003 § Core psychopathology"
+      ],
+      "emotions": [
+        "em.anxious",
+        "em.ashamed",
+        "em.disgusted"
+      ],
+      "conditions": [
+        "eating-disorders"
+      ]
+    },
+    {
+      "id": "tt.appearance-defect",
+      "label": "Appearance defect",
+      "alt_labels": [
+        "perceived ugliness",
+        "body dysmorphic concern"
+      ],
+      "definition": "Thoughts that a specific feature of one's appearance is defective or ugly, is noticed by others and is central to one's worth.",
+      "client_wording": "Thoughts that part of how you look is ugly or wrong and others notice it.",
+      "example": "\"Everyone is staring at my nose. It's hideous.\"",
+      "group": "Body and appearance",
+      "broader": null,
+      "related": [
+        "tt.shape-weight-and-eating-control",
+        "tt.defect-and-exposure",
+        "tt.negative-evaluation",
+        "em.ashamed",
+        "em.anxious",
+        "em.disgusted",
+        "cb.unattractive"
+      ],
+      "see": ["ocd.related-disorders"],
+      "sources": [
+        "Veale-2004 § Cognitive behavioural model of body dysmorphic disorder"
+      ],
+      "emotions": [
+        "em.ashamed",
+        "em.anxious",
+        "em.disgusted"
+      ],
+      "conditions": [
+        "bdd"
+      ]
+    },
+    {
+      "id": "tt.persecution",
+      "label": "Persecution",
+      "alt_labels": [
+        "paranoid thoughts",
+        "persecutory ideation"
+      ],
+      "definition": "Thoughts that others intend to cause one harm, physical, psychological or social, now or in the future.",
+      "client_wording": "Thoughts that other people are deliberately out to harm you.",
+      "example": "\"My neighbors are plotting to get rid of me.\"",
+      "group": "Psychosis and mania",
+      "broader": null,
+      "related": [
+        "tt.threat-and-danger",
+        "tt.violation-and-unfairness",
+        "em.afraid",
+        "em.anxious",
+        "em.angry",
+        "rk.active-psychotic-symptoms",
+        "em.suspicious",
+        "cb.others-untrustworthy"
+      ],
+      "see": ["bipolar-and-psychosis.assessment", "bipolar-and-psychosis.cbt-model", "bipolar-and-psychosis.cbtp", "bipolar-and-psychosis.overview", "bipolar-and-psychosis.pitfall-arguing-with-delusions"],
+      "sources": [
+        "Freeman-Garety-2000 § Definition of persecutory delusions",
+        "Freeman-etal-2002 § Threat beliefs"
+      ],
+      "emotions": [
+        "em.afraid",
+        "em.anxious",
+        "em.angry"
+      ],
+      "conditions": [
+        "psychosis"
+      ]
+    },
+    {
+      "id": "tt.personal-gain-and-grandiosity",
+      "label": "Personal gain and grandiosity",
+      "alt_labels": [
+        "inflated self-view",
+        "expansiveness"
+      ],
+      "definition": "Inflated thoughts about one's abilities, importance and prospects, overestimating gains and underestimating risks; typical of hypomania and mania.",
+      "client_wording": "Thoughts that you're unstoppable, special or certain to succeed, so risks don't matter.",
+      "example": "\"I've had a brilliant idea. I'll make a fortune and nothing can go wrong.\"",
+      "group": "Psychosis and mania",
+      "broader": null,
+      "related": [
+        "cd.overly-optimistic-thinking",
+        "mp.extreme-appraisals-of-internal-states",
+        "em.elated",
+        "em.irritated",
+        "ib.high-mood-is-best"
+      ],
+      "see": ["bipolar-and-psychosis.overview"],
+      "sources": [
+        "Beck-1976 § Meaning and emotions",
+        "Mansell-etal-2007 § Extreme appraisals of internal states"
+      ],
+      "emotions": [
+        "em.elated",
+        "em.irritated"
+      ],
+      "conditions": [
+        "bipolar"
+      ]
+    }
+  ]
+}

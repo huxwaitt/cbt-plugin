@@ -1,0 +1,953 @@
+{
+  "scheme": "risk-indicators",
+  "prefix": "rk",
+  "title": "Risk indicators (suicide, self-harm, harm to others, safeguarding)",
+  "description": "Risk documentation codes in six groups: static risk factors (historical, unchangeable), dynamic risk factors (current, changeable), warning signs (near-term changes over hours to days), protective factors, harm-to-others indicators and safeguarding indicators. Used by the 02-risk pages, risk sections of intake records and session notes, and risk notes alongside a formulation. The codes organize clinical judgment; they are not a prediction score, since risk factors predict suicide only slightly better than chance and NICE advises against risk stratification for prediction. Deliberately contains no method or lethality detail. Emotions, beliefs, behaviors and life events in general live in the em, tt, cb, bh, sit and bf schemes, and rk concepts link to them with related: code hopelessness, perceived burdensomeness and entrapment with tt; social isolation, social support, coping skills, community belonging, chronic illness or pain and a rise in substance use with bf; social withdrawal and reckless behavior with bh.",
+  "version": "1.0.0",
+  "sources": [
+    "AAS-Warning-Signs § Recognizing the Warning Signs",
+    "Rudd-etal-2006b § Warning signs versus risk factors",
+    "CDC-Suicide-Risk-2026 § Risk and protective factors",
+    "Posner-etal-2011 § Introduction",
+    "NICE-NG225 § 1.6 Risk assessment tools and scales",
+    "Franklin-etal-2017 § Abstract",
+    "Douglas-etal-2014 § Overview of HCR-20V3 risk factors",
+    "SCIE-Safeguarding-Adults § Types and indicators of abuse",
+    "CWIG-Definitions-2025 § Types of maltreatment"
+  ],
+  "concepts": [
+    {
+      "id": "rk.prior-suicide-attempt",
+      "label": "Previous suicide attempt",
+      "alt_labels": [
+        "history of suicide attempt",
+        "past suicidal behavior",
+        "interrupted or aborted attempt"
+      ],
+      "definition": "Any past self-initiated, potentially injurious act with at least some intent to die, including interrupted and aborted attempts; a key historical risk factor.",
+      "client_wording": "I have tried to end my life before.",
+      "example": "Reports one attempt at age 19 and an interrupted attempt two years ago.",
+      "group": "Static risk factors",
+      "broader": null,
+      "related": [
+        "rk.history-of-self-harm",
+        "rk.suicidal-intent",
+        "ms.c-ssrs"
+      ],
+      "see": ["01-intake.intake-record-checklist", "01-intake.risk-screen-at-intake", "02-risk.c-ssrs", "02-risk.suicide-focused-cbt", "02-risk.suicide-risk-assessment", "09-ending.dropout-and-unplanned-endings", "09-ending.pitfall-silent-dropout", "10-diagnosis.dsm-5-tr-overview", "10-diagnosis.icd-10-cm-and-icd-11", "ocd.adaptations", "ocd.overview", "personality-disorders.assessment", "personality-disorders.chronic-risk-and-crises", "personality-disorders.overview"],
+      "sources": [
+        "CDC-Suicide-Risk-2026 § Risk factors: individual",
+        "C-SSRS-Site § About the scale: suicidal behavior",
+        "Posner-etal-2011 § Introduction: severity of ideation and behavior categories",
+        "Franklin-etal-2017 § Abstract: prediction accuracy of risk factors"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.history-of-self-harm",
+      "label": "History of self-harm",
+      "alt_labels": [
+        "non-suicidal self-injury",
+        "NSSI",
+        "deliberate self-harm"
+      ],
+      "definition": "Past deliberate self-injury without intent to die; it raises later risk of suicide and repeat self-harm and is recorded separately from attempts.",
+      "client_wording": "I have hurt myself on purpose before, without wanting to die.",
+      "example": "Self-harmed to cope with distress in high school; none in the past year.",
+      "group": "Static risk factors",
+      "broader": null,
+      "related": [
+        "rk.prior-suicide-attempt",
+        "bh.self-harm"
+      ],
+      "see": ["01-intake.risk-screen-at-intake", "02-risk.c-ssrs", "02-risk.self-harm", "02-risk.suicide-risk-assessment", "10-diagnosis.dsm-5-tr-overview", "10-diagnosis.icd-10-cm-and-icd-11", "personality-disorders.assessment", "personality-disorders.chronic-risk-and-crises", "personality-disorders.overview"],
+      "sources": [
+        "Posner-etal-2011 § Introduction: severity of ideation and behavior categories",
+        "NICE-NG225 § 1.6 Risk assessment tools and scales",
+        "Franklin-etal-2017 § Abstract: prediction accuracy of risk factors"
+      ],
+      "page": "02-risk.self-harm"
+    },
+    {
+      "id": "rk.family-history-or-exposure-to-suicide",
+      "label": "Family history of or exposure to suicide",
+      "alt_labels": [
+        "suicide bereavement",
+        "suicide in the family",
+        "suicide cluster exposure"
+      ],
+      "definition": "Suicide or suicide attempts by a family member, close friend or peer, or living in a community with a recent suicide cluster.",
+      "client_wording": "Someone in my family, or someone close to me, has died by suicide or tried to.",
+      "example": "Mother died by suicide when the client was 12.",
+      "group": "Static risk factors",
+      "broader": null,
+      "related": [
+        "rk.prior-suicide-attempt"
+      ],
+      "see": ["01-intake.history-taking", "grief-and-loss.adaptations", "grief-and-loss.pitfall-missing-suicide-risk-in-grief"],
+      "sources": [
+        "CDC-Suicide-Risk-2026 § Risk factors: relationship",
+        "CDC-Suicide-Risk-2026 § Risk factors: community",
+        "OConnor-Kirtley-2018 § Volitional phase: volitional moderators"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.childhood-adversity",
+      "label": "Childhood adversity",
+      "alt_labels": [
+        "adverse childhood experiences",
+        "ACEs",
+        "history of childhood abuse"
+      ],
+      "definition": "Abuse, neglect, household violence or other serious adversity in childhood, recorded as an enduring background risk factor for suicide.",
+      "client_wording": "Hard or harmful things happened to me when I was growing up.",
+      "example": "Physical abuse by a stepparent between ages 8 and 14.",
+      "group": "Static risk factors",
+      "broader": null,
+      "related": [
+        "rk.child-maltreatment-concern",
+        "bf.childhood-emotional-abuse",
+        "bf.childhood-physical-abuse",
+        "bf.childhood-sexual-abuse",
+        "bf.childhood-emotional-neglect",
+        "bf.childhood-physical-neglect",
+        "bf.childhood-domestic-violence-exposure"
+      ],
+      "see": ["ptsd.complex-ptsd"],
+      "sources": [
+        "CDC-Suicide-Risk-2026 § Risk factors: individual"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.history-of-mental-disorder",
+      "label": "History of mental disorder",
+      "alt_labels": [
+        "psychiatric history",
+        "previous mental illness"
+      ],
+      "definition": "Past or lifetime depression, bipolar disorder, psychosis, substance use, eating, personality or other mental disorder, or past mental health treatment.",
+      "client_wording": "I have had mental health problems or treatment in the past.",
+      "example": "Two previous depressive episodes and one psychiatric admission.",
+      "group": "Static risk factors",
+      "broader": null,
+      "related": [
+        "rk.active-psychotic-symptoms",
+        "rk.substance-use-problem",
+        "bf.previous-episodes"
+      ],
+      "see": ["adhd.overview"],
+      "sources": [
+        "CDC-Suicide-Risk-2026 § Risk factors: individual"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.impulsive-or-aggressive-traits",
+      "label": "Impulsive or aggressive traits",
+      "alt_labels": [
+        "trait aggression"
+      ],
+      "definition": "A longstanding pattern of acting quickly on urges or reacting aggressively, which can shorten the step from suicidal thought to action.",
+      "client_wording": "I tend to act on impulse or lash out before I can think it through.",
+      "example": "Long history of sudden outbursts and acting without thinking when upset.",
+      "group": "Static risk factors",
+      "broader": null,
+      "related": [
+        "bh.impulsive-risk-taking",
+        "rk.agitation-or-anger",
+        "bf.impulsive-temperament"
+      ],
+      "see": ["02-risk.harm-to-others"],
+      "sources": [
+        "CDC-Suicide-Risk-2026 § Risk factors: individual",
+        "OConnor-Kirtley-2018 § Volitional phase: volitional moderators"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.thwarted-belongingness",
+      "label": "Thwarted belongingness",
+      "alt_labels": [
+        "loneliness",
+        "not belonging"
+      ],
+      "definition": "An unmet need to belong: feeling lonely and lacking reciprocally caring relationships, even when other people are around.",
+      "client_wording": "I feel alone, like I don't really belong or matter to anyone.",
+      "example": "\"Nobody would even notice if I disappeared.\"",
+      "group": "Dynamic risk factors",
+      "broader": null,
+      "related": [
+        "tt.burdensomeness",
+        "bf.social-isolation",
+        "bh.social-withdrawal",
+        "em.lonely"
+      ],
+      "see": [],
+      "sources": [
+        "VanOrden-etal-2010 § Thwarted belongingness"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.defeat-or-humiliation",
+      "label": "Defeat or humiliation",
+      "alt_labels": [
+        "shame after loss",
+        "humiliating event"
+      ],
+      "definition": "A loss, rejection or failure experienced as a crushing defeat or humiliation, often with intense shame; a common trigger for entrapment.",
+      "client_wording": "I feel humiliated, beaten down, or ashamed after what happened.",
+      "example": "Feels publicly shamed after being fired in front of colleagues.",
+      "group": "Dynamic risk factors",
+      "broader": null,
+      "related": [
+        "tt.entrapment",
+        "rk.acute-life-stressor",
+        "em.defeated",
+        "em.humiliated",
+        "bf.humiliating-event"
+      ],
+      "see": ["02-risk.suicide-risk-assessment", "chronic-pain-and-physical-health.overview"],
+      "sources": [
+        "OConnor-Kirtley-2018 § Motivational phase: defeat and entrapment",
+        "AAS-Warning-Signs § Changes in Mood"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.substance-use-problem",
+      "label": "Substance use problem",
+      "alt_labels": [
+        "harmful alcohol use",
+        "drug misuse",
+        "substance use disorder"
+      ],
+      "definition": "Ongoing harmful or dependent use of alcohol or drugs, which raises risk through disinhibition, low mood and its life consequences.",
+      "client_wording": "My drinking or drug use has been a problem for a while.",
+      "example": "Daily heavy drinking for three years, with blackouts.",
+      "group": "Dynamic risk factors",
+      "broader": null,
+      "related": [
+        "bf.substance-use-change",
+        "rk.history-of-mental-disorder",
+        "mp.substance-relief-cycle",
+        "bh.substance-use-to-cope"
+      ],
+      "see": ["02-risk.harm-to-others", "04-treatment-planning.when-cbt-is-not-indicated", "adhd.adaptations", "adhd.medication-and-cbt", "adhd.overview", "adhd.pitfall-diagnosis-from-self-report-alone", "bipolar-and-psychosis.adaptations", "bipolar-and-psychosis.overview", "chronic-pain-and-physical-health.overview", "gad.overview", "ocd.overview", "personality-disorders.chronic-risk-and-crises", "ptsd.adaptations", "substance-use.addiction-medications", "substance-use.assessment", "substance-use.overview", "substance-use.pitfall-missed-withdrawal-and-overdose-risk"],
+      "sources": [
+        "CDC-Suicide-Risk-2026 § Risk factors: individual"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.acute-life-stressor",
+      "label": "Recent major loss or crisis",
+      "alt_labels": [
+        "precipitating event",
+        "relationship breakup",
+        "job or financial loss",
+        "legal trouble"
+      ],
+      "definition": "A recent loss or crisis, such as relationship breakdown, bereavement, job or financial loss, or legal trouble, that precipitates or worsens risk.",
+      "client_wording": "Something really hard has just happened, like a loss or a crisis.",
+      "example": "Partner left last week, and the client faces eviction.",
+      "group": "Dynamic risk factors",
+      "broader": null,
+      "related": [
+        "rk.defeat-or-humiliation",
+        "bf.bereavement",
+        "bf.relationship-breakup",
+        "bf.job-loss",
+        "bf.financial-crisis",
+        "bf.legal-problems"
+      ],
+      "see": ["02-risk.ongoing-risk-monitoring", "depression.pitfall-risk-not-rechecked", "personality-disorders.chronic-risk-and-crises"],
+      "sources": [
+        "CDC-Suicide-Risk-2026 § Risk factors: individual",
+        "CDC-Suicide-Risk-2026 § Risk factors: relationship"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.access-to-lethal-means",
+      "label": "Access to lethal means",
+      "alt_labels": [
+        "means access"
+      ],
+      "definition": "Ready access to means that could be used in a suicide attempt; a modifiable factor addressed by restricting access to lethal means.",
+      "client_wording": "There are things at home I could use to seriously hurt myself.",
+      "example": "Means are kept at home; partner agrees to remove them and keep them elsewhere.",
+      "group": "Dynamic risk factors",
+      "broader": null,
+      "related": [
+        "rk.preparatory-behavior",
+        "iv.safety-planning"
+      ],
+      "see": ["01-intake.intake-record-checklist", "01-intake.risk-screen-at-intake", "02-risk.crisis-response", "02-risk.ongoing-risk-monitoring", "02-risk.risk-documentation", "02-risk.safety-planning", "02-risk.suicide-risk-assessment", "chronic-pain-and-physical-health.assessment", "depression.assessment", "depression.overview", "depression.pitfall-risk-not-rechecked", "grief-and-loss.pitfall-missing-suicide-risk-in-grief", "personality-disorders.chronic-risk-and-crises"],
+      "sources": [
+        "CDC-Suicide-Risk-2026 § Risk factors: societal",
+        "OConnor-Kirtley-2018 § Volitional phase: volitional moderators"
+      ],
+      "page": "02-risk.safety-planning"
+    },
+    {
+      "id": "rk.active-psychotic-symptoms",
+      "label": "Active psychotic symptoms",
+      "alt_labels": [
+        "command hallucinations",
+        "persecutory delusions"
+      ],
+      "definition": "Current hallucinations or delusions, especially commands to harm or beliefs of being threatened, that may drive harm to self or others.",
+      "client_wording": "I hear voices, or have frightening beliefs, that push me to hurt myself or others.",
+      "example": "Hears a voice telling him he must punish himself; believes neighbors are plotting against him.",
+      "group": "Dynamic risk factors",
+      "broader": null,
+      "related": [
+        "rk.history-of-mental-disorder",
+        "rk.violent-ideation-or-intent",
+        "tt.persecution"
+      ],
+      "see": ["02-risk.crisis-response", "02-risk.harm-to-others", "13-context-culture-development.perinatal-mental-health", "bipolar-and-psychosis.adaptations", "bipolar-and-psychosis.assessment", "bipolar-and-psychosis.cbtp", "bipolar-and-psychosis.overview", "depression.adaptations", "ptsd.adaptations"],
+      "sources": [
+        "Douglas-etal-2014 § HCR-20V3 Clinical scale"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.suicidal-communication",
+      "label": "Suicidal communication",
+      "alt_labels": [
+        "talking about suicide",
+        "suicide threat",
+        "writing about death"
+      ],
+      "definition": "Talking, writing or posting about wanting to die or kill oneself; a direct warning sign that calls for prompt risk assessment.",
+      "client_wording": "I've been talking or writing about wanting to die.",
+      "example": "Posted online: \"I won't be a problem for anyone much longer.\"",
+      "group": "Warning signs",
+      "broader": null,
+      "related": [
+        "rk.active-suicidal-ideation",
+        "rk.passive-suicidal-ideation"
+      ],
+      "see": ["02-risk.asking-about-suicide", "02-risk.pitfall-avoiding-the-question", "02-risk.suicide-risk-assessment", "grief-and-loss.pitfall-missing-suicide-risk-in-grief", "responding-in-session.pitfall-missing-risk-behind-hopelessness", "responding-in-session.responding-to-hopelessness-and-self-criticism"],
+      "sources": [
+        "AAS-Warning-Signs § What Someone Might Say",
+        "Rudd-etal-2006b § Warning signs versus risk factors"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.passive-suicidal-ideation",
+      "label": "Passive suicidal ideation",
+      "alt_labels": [
+        "wish to be dead",
+        "passive death wish"
+      ],
+      "definition": "Thoughts of wanting to be dead or not wake up, without thoughts of acting to end one's own life.",
+      "client_wording": "Sometimes I wish I could go to sleep and not wake up.",
+      "example": "\"I wouldn't mind if I just didn't wake up tomorrow.\"",
+      "group": "Warning signs",
+      "broader": null,
+      "related": [
+        "rk.active-suicidal-ideation",
+        "ms.c-ssrs"
+      ],
+      "see": ["01-intake.pitfall-risk-screen-skipped", "01-intake.risk-screen-at-intake", "02-risk.asking-about-suicide", "02-risk.c-ssrs", "02-risk.ongoing-risk-monitoring", "02-risk.pitfall-avoiding-the-question", "02-risk.pitfall-unaddressed-positive-screen", "02-risk.suicide-risk-assessment", "08-measurement.depression-measures", "08-measurement.measurement-based-care", "08-measurement.pitfall-unreviewed-risk-item", "depression.pitfall-risk-not-rechecked", "grief-and-loss.assessment", "grief-and-loss.overview", "grief-and-loss.pitfall-missing-suicide-risk-in-grief", "responding-in-session.pitfall-missing-risk-behind-hopelessness"],
+      "sources": [
+        "Posner-etal-2011 § Introduction: severity of ideation and behavior categories",
+        "C-SSRS-Site § About the scale: suicidal ideation"
+      ],
+      "page": "02-risk.c-ssrs"
+    },
+    {
+      "id": "rk.active-suicidal-ideation",
+      "label": "Active suicidal ideation",
+      "alt_labels": [
+        "thoughts of killing oneself",
+        "nonspecific active suicidal thoughts"
+      ],
+      "definition": "Thoughts of killing oneself, from nonspecific thoughts to thinking about how, without stated intent to act on them.",
+      "client_wording": "I've been having thoughts about killing myself.",
+      "example": "\"I keep thinking about ending my life, but I don't plan to do it.\"",
+      "group": "Warning signs",
+      "broader": null,
+      "related": [
+        "rk.passive-suicidal-ideation",
+        "rk.suicidal-intent",
+        "ms.c-ssrs"
+      ],
+      "see": ["01-intake.intake-record-checklist", "01-intake.pitfall-risk-screen-skipped", "01-intake.risk-screen-at-intake", "02-risk.asking-about-suicide", "02-risk.c-ssrs", "02-risk.ongoing-risk-monitoring", "02-risk.suicide-risk-assessment", "08-measurement.depression-measures", "08-measurement.pitfall-unreviewed-risk-item", "12-medical-pharmacology.antidepressants", "depression.assessment", "depression.overview", "depression.pitfall-risk-not-rechecked", "grief-and-loss.pitfall-missing-suicide-risk-in-grief", "health-anxiety.adaptations", "health-anxiety.overview", "personality-disorders.chronic-risk-and-crises", "ptsd.adaptations"],
+      "sources": [
+        "Posner-etal-2011 § Introduction: severity of ideation and behavior categories",
+        "C-SSRS-Site § About the scale: suicidal ideation",
+        "AAS-Warning-Signs § What Someone Might Say"
+      ],
+      "page": "02-risk.c-ssrs"
+    },
+    {
+      "id": "rk.suicidal-intent",
+      "label": "Suicidal intent",
+      "alt_labels": [
+        "intent to act",
+        "intention to die"
+      ],
+      "definition": "Some intention to act on suicidal thoughts, as distinct from having the thoughts while clearly not intending to act.",
+      "client_wording": "Part of me means to act on these thoughts.",
+      "example": "Says they would act on the thoughts if things do not change soon.",
+      "group": "Warning signs",
+      "broader": null,
+      "related": [
+        "rk.active-suicidal-ideation",
+        "rk.suicide-plan",
+        "ms.c-ssrs"
+      ],
+      "see": ["01-intake.pitfall-risk-screen-skipped", "01-intake.risk-screen-at-intake", "02-risk.asking-about-suicide", "02-risk.c-ssrs", "02-risk.crisis-response", "02-risk.ongoing-risk-monitoring", "02-risk.risk-documentation", "02-risk.suicide-risk-assessment", "08-measurement.pitfall-unreviewed-risk-item", "14-ethics-law.confidentiality-and-limits", "depression.assessment", "depression.pitfall-risk-not-rechecked", "personality-disorders.chronic-risk-and-crises"],
+      "sources": [
+        "Posner-etal-2011 § Introduction: severity of ideation and behavior categories",
+        "C-SSRS-Site § About the scale: suicidal ideation"
+      ],
+      "page": "02-risk.c-ssrs"
+    },
+    {
+      "id": "rk.suicide-plan",
+      "label": "Suicide plan",
+      "alt_labels": [
+        "suicidal intent with plan",
+        "specific plan"
+      ],
+      "definition": "Suicidal intent with some details of a plan worked out; document that a plan exists and its timing, not method specifics.",
+      "client_wording": "I've started working out a plan to end my life.",
+      "example": "Reports a plan and a chosen date; plan reviewed in the confidential risk record.",
+      "group": "Warning signs",
+      "broader": null,
+      "related": [
+        "rk.suicidal-intent",
+        "rk.preparatory-behavior",
+        "ms.c-ssrs"
+      ],
+      "see": ["01-intake.intake-record-checklist", "01-intake.pitfall-risk-screen-skipped", "01-intake.risk-screen-at-intake", "02-risk.asking-about-suicide", "02-risk.c-ssrs", "02-risk.crisis-response", "02-risk.risk-documentation", "02-risk.suicide-risk-assessment", "08-measurement.pitfall-unreviewed-risk-item", "depression.assessment", "depression.pitfall-risk-not-rechecked", "personality-disorders.chronic-risk-and-crises"],
+      "sources": [
+        "Posner-etal-2011 § Introduction: severity of ideation and behavior categories",
+        "C-SSRS-Site § About the scale: suicidal ideation"
+      ],
+      "page": "02-risk.c-ssrs"
+    },
+    {
+      "id": "rk.preparatory-behavior",
+      "label": "Preparatory behavior",
+      "alt_labels": [
+        "preparatory acts",
+        "seeking means",
+        "researching ways to die"
+      ],
+      "definition": "Acts beyond thought or talk that prepare for a suicide attempt, such as obtaining means or searching for ways to end one's life.",
+      "client_wording": "I've started getting things ready, or looking up ways to end my life.",
+      "example": "Has been searching online for ways to die this week.",
+      "group": "Warning signs",
+      "broader": null,
+      "related": [
+        "rk.suicide-plan",
+        "rk.access-to-lethal-means",
+        "ms.c-ssrs"
+      ],
+      "see": ["01-intake.risk-screen-at-intake", "02-risk.asking-about-suicide", "02-risk.c-ssrs", "02-risk.crisis-response", "02-risk.ongoing-risk-monitoring", "02-risk.risk-documentation", "02-risk.suicide-risk-assessment"],
+      "sources": [
+        "C-SSRS-Site § About the scale: preparatory acts",
+        "Posner-etal-2011 § Introduction: severity of ideation and behavior categories",
+        "AAS-Warning-Signs § Changes in Behavior",
+        "Rudd-etal-2006b § Warning signs versus risk factors"
+      ],
+      "page": "02-risk.c-ssrs"
+    },
+    {
+      "id": "rk.final-arrangements",
+      "label": "Final arrangements",
+      "alt_labels": [
+        "giving away possessions",
+        "saying goodbye",
+        "suicide note"
+      ],
+      "definition": "Putting affairs in order in anticipation of death: giving away prized possessions, contacting people to say goodbye, or writing a note.",
+      "client_wording": "I've been giving my things away or saying goodbye to people.",
+      "example": "Gave her guitar to a friend and called her sister \"to say goodbye.\"",
+      "group": "Warning signs",
+      "broader": "rk.preparatory-behavior",
+      "related": [
+        "rk.suicide-plan"
+      ],
+      "see": [],
+      "sources": [
+        "AAS-Warning-Signs § Changes in Behavior",
+        "C-SSRS-Site § About the scale: preparatory acts"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.unbearable-psychological-pain",
+      "label": "Unbearable psychological pain",
+      "alt_labels": [
+        "psychache",
+        "mental pain"
+      ],
+      "definition": "Emotional pain experienced as unbearable or endless, often voiced as wanting the pain to stop rather than wanting to die.",
+      "client_wording": "The pain inside feels unbearable, and I just want it to stop.",
+      "example": "\"I can't take feeling like this anymore.\"",
+      "group": "Warning signs",
+      "broader": null,
+      "related": [
+        "tt.entrapment"
+      ],
+      "see": ["02-risk.self-harm"],
+      "sources": [
+        "AAS-Warning-Signs § What Someone Might Say"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.no-reason-to-live",
+      "label": "No reason to live",
+      "alt_labels": [
+        "purposelessness",
+        "loss of meaning"
+      ],
+      "definition": "Stating that life has no purpose or that there is nothing left to live for.",
+      "client_wording": "I can't see any reason to keep living.",
+      "example": "\"There's nothing left for me here.\"",
+      "group": "Warning signs",
+      "broader": null,
+      "related": [
+        "tt.hopelessness",
+        "rk.reasons-for-living"
+      ],
+      "see": ["grief-and-loss.pitfall-missing-suicide-risk-in-grief"],
+      "sources": [
+        "AAS-Warning-Signs § What Someone Might Say"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.sleep-change",
+      "label": "Marked change in sleep",
+      "alt_labels": [
+        "insomnia",
+        "sleeping too much"
+      ],
+      "definition": "Sleeping much more or much less than usual, including new or worsening insomnia, as a near-term warning sign.",
+      "client_wording": "My sleep has changed a lot: I hardly sleep, or I sleep all the time.",
+      "example": "Sleeping about three hours a night for the past two weeks.",
+      "group": "Warning signs",
+      "broader": null,
+      "related": [
+        "rk.agitation-or-anger"
+      ],
+      "see": ["chronic-pain-and-physical-health.overview", "insomnia.adaptations", "insomnia.assessment", "insomnia.overview", "insomnia.pitfall-insomnia-treated-as-a-symptom"],
+      "sources": [
+        "AAS-Warning-Signs § Changes in Behavior"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.agitation-or-anger",
+      "label": "Agitation or anger",
+      "alt_labels": [
+        "irritability",
+        "rage",
+        "uncharacteristic aggression"
+      ],
+      "definition": "New or increased agitation, restlessness, irritability, rage or uncharacteristic aggression, including talk of seeking revenge.",
+      "client_wording": "I've been really on edge, restless, or angry lately.",
+      "example": "Pacing during the session, snapping at staff, which is unlike him.",
+      "group": "Warning signs",
+      "broader": null,
+      "related": [
+        "rk.impulsive-or-aggressive-traits",
+        "rk.sleep-change",
+        "em.angry",
+        "bs.restlessness"
+      ],
+      "see": ["02-risk.crisis-response", "02-risk.harm-to-others", "depression.pitfall-risk-not-rechecked"],
+      "sources": [
+        "AAS-Warning-Signs § Changes in Mood",
+        "AAS-Warning-Signs § Changes in Behavior"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.sudden-calm",
+      "label": "Sudden calm after despair",
+      "alt_labels": [
+        "unexpected calm",
+        "sudden relief"
+      ],
+      "definition": "An abrupt sense of relief or calm after a period of despair, which may signal a decision to die rather than recovery.",
+      "client_wording": "I suddenly feel calm and settled after feeling so low.",
+      "example": "Appears unusually at peace a day after saying life is unbearable.",
+      "group": "Warning signs",
+      "broader": null,
+      "related": [
+        "rk.suicide-plan"
+      ],
+      "see": [],
+      "sources": [
+        "AAS-Warning-Signs § Changes in Mood"
+      ],
+      "page": "02-risk.suicide-risk-assessment"
+    },
+    {
+      "id": "rk.reasons-for-living",
+      "label": "Reasons for living",
+      "alt_labels": [
+        "reasons to stay alive"
+      ],
+      "definition": "People, plans, beliefs or roles the person names as reasons to stay alive; ask directly and record them in the person's own words.",
+      "client_wording": "I have people and things that keep me going.",
+      "example": "\"My kids, my dog, and seeing my sister graduate next year.\"",
+      "group": "Protective factors",
+      "broader": null,
+      "related": [
+        "rk.no-reason-to-live",
+        "rk.moral-or-religious-objection",
+        "bf.values-and-purpose",
+        "bf.social-support",
+        "iv.safety-planning"
+      ],
+      "see": ["02-risk.asking-about-suicide", "02-risk.risk-documentation", "02-risk.safety-planning", "02-risk.suicide-focused-cbt", "02-risk.suicide-risk-assessment"],
+      "sources": [
+        "CDC-Suicide-Risk-2026 § Protective factors",
+        "Linehan-etal-1983 § Reasons for Living Inventory subscales"
+      ],
+      "page": "02-risk.safety-planning"
+    },
+    {
+      "id": "rk.responsibility-to-others",
+      "label": "Responsibility to others",
+      "alt_labels": [
+        "responsibility to family",
+        "child-related concerns",
+        "caring for pets"
+      ],
+      "definition": "Felt responsibility for children, family or pets, and concern about how one's death would affect them.",
+      "client_wording": "I couldn't do that to my kids, my family, or my pets.",
+      "example": "\"Who would look after my mom if I wasn't here?\"",
+      "group": "Protective factors",
+      "broader": "rk.reasons-for-living",
+      "related": [
+        "bf.social-support"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-etal-1983 § Reasons for Living Inventory subscales",
+        "CDC-Suicide-Risk-2026 § Protective factors"
+      ],
+      "page": "02-risk.safety-planning"
+    },
+    {
+      "id": "rk.engagement-with-care",
+      "label": "Engagement with care",
+      "alt_labels": [
+        "treatment engagement",
+        "access to care"
+      ],
+      "definition": "Consistent access to, and active engagement with, physical and mental health care, including a working relationship with the clinician.",
+      "client_wording": "I'm connected with care and want to keep working with my treatment team.",
+      "example": "Attends every session and has a primary care doctor and psychiatrist she trusts.",
+      "group": "Protective factors",
+      "broader": null,
+      "related": [
+        "bf.coping-skills"
+      ],
+      "see": ["02-risk.pitfall-no-suicide-contracts", "09-ending.dropout-and-unplanned-endings", "09-ending.pitfall-silent-dropout", "09-ending.referral-and-handover"],
+      "sources": [
+        "CDC-Suicide-Risk-2026 § Protective factors"
+      ],
+      "page": "02-risk.safety-planning"
+    },
+    {
+      "id": "rk.moral-or-religious-objection",
+      "label": "Moral or religious objection to suicide",
+      "alt_labels": [
+        "faith-based objection",
+        "moral objections"
+      ],
+      "definition": "Cultural, religious or moral beliefs that suicide is wrong, which the person says would hold them back from acting.",
+      "client_wording": "My faith or values tell me suicide isn't an option for me.",
+      "example": "\"My faith says it isn't my life to take.\"",
+      "group": "Protective factors",
+      "broader": null,
+      "related": [
+        "rk.reasons-for-living",
+        "bf.community-belonging",
+        "bf.faith-or-spiritual-community"
+      ],
+      "see": ["13-context-culture-development.religion-and-spirituality"],
+      "sources": [
+        "CDC-Suicide-Risk-2026 § Protective factors",
+        "Linehan-etal-1983 § Reasons for Living Inventory subscales"
+      ],
+      "page": "02-risk.safety-planning"
+    },
+    {
+      "id": "rk.violent-ideation-or-intent",
+      "label": "Violent ideation or intent",
+      "alt_labels": [
+        "homicidal ideation",
+        "thoughts of harming others"
+      ],
+      "definition": "Thoughts, urges, fantasies or intentions of seriously harming another person, recorded with their frequency, target and level of intent.",
+      "client_wording": "I've been having thoughts or urges about hurting someone else.",
+      "example": "Reports daily thoughts of hurting his former manager but denies intent.",
+      "group": "Harm to others",
+      "broader": null,
+      "related": [
+        "rk.threat-to-identifiable-person",
+        "rk.violent-attitudes",
+        "bh.aggression"
+      ],
+      "see": ["01-intake.intake-record-checklist", "01-intake.risk-screen-at-intake", "02-risk.harm-to-others", "14-ethics-law.duty-to-warn-and-protect", "ocd.pitfall-misreading-intrusions-as-risk", "personality-disorders.chronic-risk-and-crises"],
+      "sources": [
+        "Douglas-etal-2014 § HCR-20V3 Clinical scale"
+      ],
+      "page": "02-risk.harm-to-others"
+    },
+    {
+      "id": "rk.threat-to-identifiable-person",
+      "label": "Threat to an identifiable person",
+      "alt_labels": [
+        "specific threat",
+        "Tarasoff situation"
+      ],
+      "definition": "A serious threat of physical violence against a reasonably identifiable victim, which may trigger duty-to-warn or duty-to-protect obligations under state law.",
+      "client_wording": "I've said I'm going to hurt a particular person.",
+      "example": "Says he will hurt his ex-partner's new boyfriend this weekend.",
+      "group": "Harm to others",
+      "broader": null,
+      "related": [
+        "rk.violent-ideation-or-intent"
+      ],
+      "see": ["01-intake.risk-screen-at-intake", "02-risk.crisis-response", "02-risk.harm-to-others", "14-ethics-law.confidentiality-and-limits", "14-ethics-law.duty-to-warn-and-protect", "14-ethics-law.pitfall-unqualified-confidentiality-promise"],
+      "sources": [
+        "Tarasoff-1976 § Holding: duty to protect",
+        "Douglas-etal-2014 § HCR-20V3 Clinical scale"
+      ],
+      "page": "02-risk.harm-to-others"
+    },
+    {
+      "id": "rk.history-of-violence",
+      "label": "History of violence",
+      "alt_labels": [
+        "past violence",
+        "violent offending"
+      ],
+      "definition": "Past acts, attempts or credible threats of physical or sexual violence against others; a core historical item in structured violence risk assessment.",
+      "client_wording": "I've hurt other people physically in the past.",
+      "example": "Two assault convictions; last incident five years ago.",
+      "group": "Harm to others",
+      "broader": null,
+      "related": [
+        "rk.violent-attitudes",
+        "rk.intimate-partner-violence-perpetration",
+        "bh.aggression"
+      ],
+      "see": ["02-risk.harm-to-others", "14-ethics-law.duty-to-warn-and-protect", "personality-disorders.other-personality-disorders"],
+      "sources": [
+        "Douglas-etal-2014 § HCR-20V3 Historical scale"
+      ],
+      "page": "02-risk.harm-to-others"
+    },
+    {
+      "id": "rk.violent-attitudes",
+      "label": "Violent attitudes",
+      "alt_labels": [
+        "attitudes supporting violence",
+        "hostile beliefs"
+      ],
+      "definition": "Attitudes that condone, justify or minimize violence, or hostile beliefs that particular people deserve to be harmed.",
+      "client_wording": "Sometimes I think violence is justified, or that some people deserve to get hurt.",
+      "example": "\"If someone disrespects you, they've earned a beating.\"",
+      "group": "Harm to others",
+      "broader": null,
+      "related": [
+        "rk.history-of-violence",
+        "rk.violent-ideation-or-intent"
+      ],
+      "see": [],
+      "sources": [
+        "Douglas-etal-2014 § HCR-20V3 Historical scale"
+      ],
+      "page": "02-risk.harm-to-others"
+    },
+    {
+      "id": "rk.intimate-partner-violence-perpetration",
+      "label": "Intimate partner violence perpetration",
+      "alt_labels": [
+        "IPV perpetration",
+        "domestic abuse perpetration",
+        "coercive control of a partner"
+      ],
+      "definition": "Using physical or sexual violence, stalking, or psychological aggression to harm or control a current or former partner.",
+      "client_wording": "I've hurt, threatened, or tried to control a partner or an ex.",
+      "example": "Checks partner's phone daily and has pushed her during arguments.",
+      "group": "Harm to others",
+      "broader": null,
+      "related": [
+        "rk.domestic-abuse-victimization",
+        "rk.history-of-violence"
+      ],
+      "see": [],
+      "sources": [
+        "CDC-IPV-2024 § Types of intimate partner violence"
+      ],
+      "page": "02-risk.harm-to-others"
+    },
+    {
+      "id": "rk.child-maltreatment-concern",
+      "label": "Child maltreatment concern",
+      "alt_labels": [
+        "child abuse",
+        "child neglect",
+        "child physical abuse",
+        "child sexual abuse",
+        "child emotional abuse"
+      ],
+      "definition": "Reasonable suspicion that a child is experiencing physical, sexual or emotional abuse, neglect, sexual exploitation or abandonment.",
+      "client_wording": "I'm worried that a child is being hurt or not properly looked after.",
+      "example": "Client says her partner hits her 6-year-old when he drinks.",
+      "group": "Safeguarding",
+      "broader": null,
+      "related": [
+        "rk.childhood-adversity",
+        "rk.domestic-abuse-victimization",
+        "rk.exploitation-or-trafficking"
+      ],
+      "see": ["01-intake.intake-record-checklist", "01-intake.risk-screen-at-intake", "02-risk.safeguarding", "13-context-culture-development.children-and-adolescents", "13-context-culture-development.perinatal-mental-health", "13-context-culture-development.pitfall-family-or-child-as-interpreter", "14-ethics-law.confidentiality-and-limits", "14-ethics-law.mandatory-reporting", "14-ethics-law.pitfall-investigating-before-reporting", "14-ethics-law.pitfall-unqualified-confidentiality-promise", "ocd.pitfall-misreading-intrusions-as-risk", "ptsd.children-and-adolescents"],
+      "sources": [
+        "CWIG-Definitions-2025 § Types of maltreatment"
+      ],
+      "page": "02-risk.safeguarding"
+    },
+    {
+      "id": "rk.domestic-abuse-victimization",
+      "label": "Domestic abuse victimization",
+      "alt_labels": [
+        "intimate partner violence",
+        "coercive control",
+        "stalking",
+        "family violence"
+      ],
+      "definition": "The client is experiencing violence, sexual coercion, stalking, threats or controlling behavior from a current or former partner or family member.",
+      "client_wording": "Someone at home, or an ex, is hurting, threatening, or controlling me.",
+      "example": "Partner controls her money and phone and has threatened to take the children.",
+      "group": "Safeguarding",
+      "broader": null,
+      "related": [
+        "rk.intimate-partner-violence-perpetration",
+        "rk.child-maltreatment-concern"
+      ],
+      "see": ["01-intake.risk-screen-at-intake", "02-risk.safeguarding", "04-treatment-planning.when-cbt-is-not-indicated", "13-context-culture-development.pitfall-family-or-child-as-interpreter", "14-ethics-law.mandatory-reporting", "bipolar-and-psychosis.family-work", "ptsd.adaptations", "ptsd.assessment"],
+      "sources": [
+        "CDC-IPV-2024 § Types of intimate partner violence",
+        "SCIE-Safeguarding-Adults § Types and indicators of abuse"
+      ],
+      "page": "02-risk.safeguarding"
+    },
+    {
+      "id": "rk.elder-abuse",
+      "label": "Elder abuse",
+      "alt_labels": [
+        "abuse of an older person",
+        "older adult neglect"
+      ],
+      "definition": "An intentional act or failure to act that causes or risks harm to an older adult: physical, sexual, emotional, neglect or financial.",
+      "client_wording": "An older person is being hurt, neglected, or taken advantage of by someone.",
+      "example": "Client's son takes her pension and leaves her without food.",
+      "group": "Safeguarding",
+      "broader": null,
+      "related": [
+        "rk.abuse-of-adult-at-risk",
+        "rk.self-neglect"
+      ],
+      "see": ["02-risk.safeguarding", "14-ethics-law.mandatory-reporting"],
+      "sources": [
+        "CDC-Elder-Abuse-2024 § Definition and types of abuse"
+      ],
+      "page": "02-risk.safeguarding"
+    },
+    {
+      "id": "rk.abuse-of-adult-at-risk",
+      "label": "Abuse of an adult at risk",
+      "alt_labels": [
+        "vulnerable adult abuse",
+        "adult safeguarding concern",
+        "financial abuse",
+        "organizational abuse",
+        "discriminatory abuse"
+      ],
+      "definition": "Abuse or neglect of an adult with care and support needs who cannot protect themselves: physical, sexual, psychological, financial, discriminatory or organizational.",
+      "client_wording": "An adult who relies on others for care is being harmed or taken advantage of.",
+      "example": "Client's brother with an intellectual disability is locked in his room by a paid caregiver.",
+      "group": "Safeguarding",
+      "broader": null,
+      "related": [
+        "rk.elder-abuse",
+        "rk.self-neglect",
+        "rk.exploitation-or-trafficking"
+      ],
+      "see": ["02-risk.safeguarding", "13-context-culture-development.pitfall-family-or-child-as-interpreter", "14-ethics-law.confidentiality-and-limits", "14-ethics-law.mandatory-reporting", "14-ethics-law.pitfall-investigating-before-reporting"],
+      "sources": [
+        "SCIE-Safeguarding-Adults § Types and indicators of abuse"
+      ],
+      "page": "02-risk.safeguarding"
+    },
+    {
+      "id": "rk.self-neglect",
+      "label": "Self-neglect",
+      "alt_labels": [
+        "not caring for oneself",
+        "squalor"
+      ],
+      "definition": "Inability or unwillingness to meet one's own basic needs for health, hygiene, nutrition, safety or surroundings, to a degree that risks harm.",
+      "client_wording": "I haven't been able to look after myself, like eating, washing, or my home.",
+      "example": "Not eating regular meals; home without heating; missed medical appointments.",
+      "group": "Safeguarding",
+      "broader": null,
+      "related": [
+        "rk.abuse-of-adult-at-risk",
+        "rk.elder-abuse",
+        "bh.neglecting-self-care"
+      ],
+      "see": ["bipolar-and-psychosis.assessment", "ocd.adaptations", "ocd.related-disorders"],
+      "sources": [
+        "SCIE-Safeguarding-Adults § Types and indicators of abuse"
+      ],
+      "page": "02-risk.safeguarding"
+    },
+    {
+      "id": "rk.exploitation-or-trafficking",
+      "label": "Exploitation or trafficking",
+      "alt_labels": [
+        "modern slavery",
+        "human trafficking",
+        "sexual exploitation",
+        "criminal exploitation"
+      ],
+      "definition": "Being coerced or deceived into sexual activity, labor, crime or servitude for another person's gain, including trafficking and debt bondage.",
+      "client_wording": "Someone is forcing or tricking me into doing things for their benefit.",
+      "example": "Teenager is given gifts by older men and pressured to carry drugs.",
+      "group": "Safeguarding",
+      "broader": null,
+      "related": [
+        "rk.child-maltreatment-concern",
+        "rk.abuse-of-adult-at-risk"
+      ],
+      "see": [],
+      "sources": [
+        "SCIE-Safeguarding-Adults § Types and indicators of abuse",
+        "CWIG-Definitions-2025 § Types of maltreatment"
+      ],
+      "page": "02-risk.safeguarding"
+    }
+  ]
+}

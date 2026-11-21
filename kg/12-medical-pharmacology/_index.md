@@ -1,0 +1,35 @@
+# 12-medical-pharmacology: Medical and Pharmacology Basics
+
+## This stage
+This domain covers the medical and medication knowledge a non-prescribing CBT therapist needs: physical conditions, substances and medicines that mimic or drive psychological symptoms, red flags and referral routes, the main psychiatric medicine classes and their monitoring, how medication and CBT affect each other, stopping medication safely, and coordination with prescribers. It applies from intake and assessment through treatment and ending, whenever a client takes, starts, changes or stops a medicine or reports new physical symptoms.
+
+## Decisions in order
+1. Could a physical condition, substance or medicine explain or worsen these symptoms? → `12-medical-pharmacology.medical-mimics`
+2. What exactly is the client taking, how, and what do they believe it does? → `12-medical-pharmacology.medication-history`
+3. Is there a red flag, and is the referral an emergency, same-day or routine? → `12-medical-pharmacology.when-to-refer-medically`
+4. What does this client's medicine do, and what should I watch for and report? → `12-medical-pharmacology.antidepressants` and `12-medical-pharmacology.anxiolytics-and-hypnotics` and `12-medical-pharmacology.adhd-medications` and `12-medical-pharmacology.mood-stabilizers-and-antipsychotics`
+5. How will the medicine and CBT affect each other, and how should I adapt techniques and timing? → `12-medical-pharmacology.medication-and-cbt-interactions`
+6. How do I set up consent, roles and structured communication with the prescriber? → `12-medical-pharmacology.working-with-prescribers`
+7. The client is reducing or stopping a medicine, or new symptoms might be withdrawal: what now? → `12-medical-pharmacology.discontinuation-and-withdrawal`
+
+## Pages
+| Page | Summary | Applies when | Depth |
+|---|---|---|---|
+| `12-medical-pharmacology.medical-mimics` | The physical conditions, substances and medicines most likely to cause or worsen low mood, anxiety or panic, with the clues that should prompt a medical check. | A client's symptoms are new, atypical or strongly physical, began after a new medicine or substance, or are not responding to well-delivered CBT. | L1-L2 |
+| `12-medical-pharmacology.medication-history` | A step-by-step medication, supplement and substance history for non-prescribing therapists, with adherence and side-effect questions, what to record, and how to keep it current. | You are completing an intake or review and need an accurate picture of the client's medicines, supplements, caffeine, alcohol and drug use, side effects and adherence. | L1-L2 |
+| `12-medical-pharmacology.when-to-refer-medically` | Red flags that call for medical assessment, sorted into emergency, same-day and routine referrals, with the route for each and what to say, send and record. | A client reports new physical symptoms, a reaction after a medication change, signs of withdrawal or confusion, or symptoms that do not fit the case formulation or do not respond to CBT. | L2 |
+| `12-medical-pharmacology.antidepressants` | What SSRIs, SNRIs, bupropion, mirtazapine and older antidepressants do, how long they take, their main side effects and warnings, and what a non-prescribing therapist watches for. | A client is taking, starting, changing or asking about an antidepressant and you need to know what to expect and what to report to the prescriber. | L1-L2 |
+| `12-medical-pharmacology.anxiolytics-and-hypnotics` | What benzodiazepines and z-drug sleeping pills do, their dependence, withdrawal and overdose risks, why as-needed use can undermine exposure work, and how CBT supports tapering. | A client takes or is offered a benzodiazepine, z-drug or other sedative for anxiety or sleep, especially before or during exposure work or CBT for insomnia. | L2 |
+| `12-medical-pharmacology.adhd-medications` | How stimulant and non-stimulant ADHD medicines differ, their first-choice status, side effects and warnings, and what a CBT therapist monitors, schedules around and reports. | A child, adolescent or adult with ADHD takes or is considering ADHD medication and you are planning or delivering CBT alongside it. | L1-L2 |
+| `12-medical-pharmacology.mood-stabilizers-and-antipsychotics` | What lithium, valproate, lamotrigine and antipsychotics are used for, the monitoring each needs, the toxicity and side-effect signs a therapist should recognize, and when to alert the prescriber. | A client with bipolar disorder, psychosis or treatment-resistant depression takes lithium, an anticonvulsant mood stabilizer or an antipsychotic while in CBT. | L2 |
+| `12-medical-pharmacology.medication-and-cbt-interactions` | How psychiatric medicines can help, blunt or complicate CBT techniques, how CBT changes medication outcomes and attributions, and how to time therapy around starting or stopping medicines. | A client in CBT is starting, taking, changing or stopping psychiatric medication, or attributes their progress to a pill, and you need to adjust techniques or timing. | L2-L3 |
+| `12-medical-pharmacology.discontinuation-and-withdrawal` | How common antidepressant and benzodiazepine withdrawal is, how tapering works, how to tell withdrawal from relapse, and how a CBT therapist supports a prescriber-led taper. | A client is reducing or stopping an antidepressant, benzodiazepine or other psychiatric medicine, has missed doses, or reports new symptoms that might be withdrawal or relapse. | L2-L3 |
+| `12-medical-pharmacology.working-with-prescribers` | How a non-prescribing CBT therapist sets up consent, agrees roles, shares measures and concerns with prescribers in a structured way, and stays within scope and privacy law. | A client in CBT has a prescriber, or needs one, and you need to communicate about medication, side effects, risk or progress. | L2 |
+
+## Pitfalls
+| Pitfall | Symptom | Page |
+|---|---|---|
+| Advising Clients to Start, Change or Stop Medication | The therapist suggests skipping, reducing, stopping or starting a medicine, or gives opinions on doses, and the client acts on it without the prescriber. | `12-medical-pharmacology.pitfall-advising-on-medication-changes` |
+| Medication Side Effects Read as Psychological Symptoms | New restlessness, agitation, sleepiness, low libido, confusion or low mood after a medication change is formulated as anxiety, depression or poor motivation, and nobody tells the prescriber. | `12-medical-pharmacology.pitfall-side-effects-read-as-psychological` |
+| Medication Left Out of the Formulation as a Safety Behavior | Exposure seems to succeed, but the client carries or takes an as-needed pill before each task, credits the pill for coping, and relapses when it is stopped. | `12-medical-pharmacology.pitfall-medication-as-safety-behavior` |
+| Withdrawal Symptoms Mistaken for Relapse | Days after a dose cut or missed doses, a client feels dizzy, anxious and low, and the therapist and client conclude the depression or anxiety has returned. | `12-medical-pharmacology.pitfall-withdrawal-mistaken-for-relapse` |

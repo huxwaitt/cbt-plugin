@@ -1,0 +1,1247 @@
+{
+  "scheme": "behaviors",
+  "prefix": "bh",
+  "title": "Behaviors",
+  "description": "Observable and covert behaviors at the situation level: what the client does, or stops doing, in response to a trigger. Fills the behavior slots of five-part, cognitive model and disorder-specific maintenance formulations. Enduring cross-situational patterns are in cs; processes such as rumination, worry, thought suppression and self-focused attention are in mp; risk levels are in rk.",
+  "version": "1.1.0",
+  "sources": [
+    "Salkovskis-1991 § Safety-seeking behavior and avoidance",
+    "Thwaites-Freeston-2005 § Direct avoidance, escape and subtle avoidance",
+    "Harvey-etal-2004 § Ch. 6 Behaviour",
+    "Greenberger-Padesky-2016 § Ch. 2 Understanding Your Problems",
+    "Martell-etal-2022 § Ch. 2 The Core Principles of Behavioral Activation"
+  ],
+  "concepts": [
+    {
+      "id": "bh.overt-avoidance",
+      "label": "Overt avoidance",
+      "alt_labels": [
+        "situational avoidance",
+        "direct avoidance"
+      ],
+      "definition": "Not entering, or arranging life to stay away from, feared or unpleasant situations, places, people, activities or tasks.",
+      "client_wording": "Staying away from places, people or tasks that make you anxious or upset.",
+      "example": "Turning down a work presentation because of fear of blushing.",
+      "group": "avoidance and escape",
+      "broader": null,
+      "related": [
+        "bh.subtle-avoidance",
+        "bh.escape",
+        "cs.avoiding-challenges",
+        "mp.avoidance-cycle"
+      ],
+      "see": ["03-formulation.functional-analysis", "13-context-culture-development.child-anxiety", "13-context-culture-development.perinatal-mental-health", "15-transdiagnostic-processes.avoidance", "behavioral.exposure-hierarchy", "ocd.assessment", "panic-and-phobias.agoraphobia", "panic-and-phobias.assessment", "panic-and-phobias.one-session-treatment", "panic-and-phobias.overview", "panic-and-phobias.specific-phobia", "social-anxiety.overview", "social-anxiety.pitfall-brief-or-group-default"],
+      "sources": [
+        "Salkovskis-1991 § Safety-seeking behavior and avoidance",
+        "Thwaites-Freeston-2005 § Direct avoidance, escape and subtle avoidance"
+      ]
+    },
+    {
+      "id": "bh.subtle-avoidance",
+      "label": "Subtle avoidance",
+      "alt_labels": [
+        "partial avoidance"
+      ],
+      "definition": "Entering a feared situation but limiting contact with it, such as avoiding eye contact, staying at the edges or engaging only partly.",
+      "client_wording": "Going along but holding back, so you never fully face what scares you.",
+      "example": "Attending a party but staying in the kitchen and avoiding conversation.",
+      "group": "avoidance and escape",
+      "broader": null,
+      "related": [
+        "bh.overt-avoidance",
+        "bh.in-situation-safety-behavior",
+        "mp.safety-behavior-cycle"
+      ],
+      "see": ["15-transdiagnostic-processes.avoidance", "behavioral.pitfall-unnoticed-safety-behaviors", "behavioral.safety-behavior-reduction", "ocd.pitfall-missed-mental-compulsions", "panic-and-phobias.pitfall-hidden-safety-behaviors"],
+      "sources": [
+        "Thwaites-Freeston-2005 § Direct avoidance, escape and subtle avoidance",
+        "Clark-1999 § Safety behaviors"
+      ]
+    },
+    {
+      "id": "bh.escape",
+      "label": "Escape",
+      "alt_labels": [
+        "leaving early"
+      ],
+      "definition": "Leaving a situation once anxiety or distress rises, which ends exposure before the feared outcome can be disconfirmed.",
+      "client_wording": "Getting out of a situation as soon as the feelings get too strong.",
+      "example": "Leaving the supermarket line when the heart starts racing.",
+      "group": "avoidance and escape",
+      "broader": null,
+      "related": [
+        "bh.overt-avoidance",
+        "mp.avoidance-cycle"
+      ],
+      "see": ["15-transdiagnostic-processes.avoidance", "panic-and-phobias.agoraphobia", "panic-and-phobias.one-session-treatment", "panic-and-phobias.pitfall-exposure-stopped-before-the-test"],
+      "sources": [
+        "Thwaites-Freeston-2005 § Direct avoidance, escape and subtle avoidance",
+        "Salkovskis-1991 § Safety-seeking behavior and avoidance"
+      ]
+    },
+    {
+      "id": "bh.interoceptive-avoidance",
+      "label": "Avoiding bodily sensations",
+      "alt_labels": [
+        "interoceptive avoidance",
+        "activity avoidance"
+      ],
+      "definition": "Avoiding activities, foods or drinks that produce feared bodily sensations, such as exercise, caffeine, heat, sex or excitement.",
+      "client_wording": "Steering clear of anything that makes your heart race or your body feel strange.",
+      "example": "Stopping exercise because a fast heartbeat feels like the start of a heart attack.",
+      "group": "avoidance and escape",
+      "broader": null,
+      "related": [
+        "bh.overt-avoidance",
+        "bh.symptom-checking",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations"
+      ],
+      "see": ["behavioral.exposure-types", "panic-and-phobias.assessment", "panic-and-phobias.cbt-model", "panic-and-phobias.interoceptive-exposure"],
+      "sources": [
+        "Salkovskis-1991 § Safety-seeking behavior and avoidance",
+        "Clark-1999 § Safety behaviors"
+      ]
+    },
+    {
+      "id": "bh.trauma-reminder-avoidance",
+      "label": "Avoiding trauma reminders",
+      "alt_labels": [
+        "avoidance of reminders"
+      ],
+      "definition": "Avoiding people, places, conversations, objects or activities that bring back memories of a traumatic event.",
+      "client_wording": "Keeping away from anything that reminds you of what happened.",
+      "example": "Taking a long detour to avoid driving past the site of the crash.",
+      "group": "avoidance and escape",
+      "broader": null,
+      "related": [
+        "bh.overt-avoidance",
+        "bh.distraction-to-avoid",
+        "mp.avoidance-cycle"
+      ],
+      "see": ["behavioral.exposure-types", "ptsd.overview", "ptsd.prolonged-exposure"],
+      "sources": [
+        "Ehlers-Clark-2000 § Maintaining behaviors and cognitive strategies",
+        "APA-DSM5TR-2022 § Posttraumatic Stress Disorder"
+      ]
+    },
+    {
+      "id": "bh.distraction-to-avoid",
+      "label": "Avoidant distraction",
+      "alt_labels": [
+        "cognitive avoidance",
+        "keeping busy to avoid"
+      ],
+      "definition": "Habitually busying the mind or hands to keep feared thoughts, images, memories or feelings out of awareness.",
+      "client_wording": "Keeping yourself busy or distracted so you never have to think about it or feel it.",
+      "example": "Keeping music on constantly so memories of the assault cannot surface.",
+      "group": "avoidance and escape",
+      "broader": null,
+      "related": [
+        "cs.healthy-distraction",
+        "cs.avoiding-negative-emotion",
+        "mp.experiential-avoidance"
+      ],
+      "see": ["15-transdiagnostic-processes.avoidance", "15-transdiagnostic-processes.pitfall-telling-clients-to-stop-thinking", "behavioral.exposure-principles", "behavioral.pitfall-overly-cautious-exposure", "ocd.pitfall-missed-mental-compulsions", "panic-and-phobias.pitfall-hidden-safety-behaviors"],
+      "sources": [
+        "Ehlers-Clark-2000 § Maintaining behaviors and cognitive strategies",
+        "Harvey-etal-2004 § Ch. 6 Behaviour"
+      ]
+    },
+    {
+      "id": "bh.procrastination",
+      "label": "Procrastination",
+      "alt_labels": [
+        "putting things off"
+      ],
+      "definition": "Voluntarily delaying an intended task despite expecting to be worse off, often to avoid discomfort, boredom or fear of failure.",
+      "client_wording": "Putting things off even though you know waiting will make things harder.",
+      "example": "Leaving the tax forms untouched until the night before the deadline.",
+      "group": "avoidance and escape",
+      "broader": null,
+      "related": [
+        "bh.overt-avoidance",
+        "cs.avoiding-challenges",
+        "mp.procrastination-cycle",
+        "iv.organization-and-planning-skills"
+      ],
+      "see": ["03-formulation.functional-analysis", "15-transdiagnostic-processes.intolerance-of-uncertainty", "15-transdiagnostic-processes.perfectionism", "adhd.adult-cbt-modules", "adhd.cbt-model", "adhd.pitfall-disputing-optimistic-thoughts", "adhd.pitfall-skills-without-implementation", "adhd.treatment", "behavioral.pitfall-activity-without-function", "behavioral.skills-training", "gad.assessment"],
+      "sources": [
+        "Steel-2007 § Definition of procrastination",
+        "Martell-etal-2022 § Ch. 6 Avoidance Modification, Solving Problems, and Value-Directed Behavior"
+      ]
+    },
+    {
+      "id": "bh.numbing-activities",
+      "label": "Escapist or numbing activities",
+      "alt_labels": [
+        "zoning out",
+        "screen use to escape"
+      ],
+      "definition": "Low-effort activities such as scrolling, gaming or television, used for long periods to escape low mood or problems.",
+      "client_wording": "Losing hours to your phone, games or TV to escape how you feel.",
+      "example": "Scrolling social media in bed for three hours instead of replying to emails.",
+      "group": "avoidance and escape",
+      "broader": null,
+      "related": [
+        "bh.inactivity",
+        "cs.avoiding-negative-emotion"
+      ],
+      "see": [],
+      "sources": [
+        "Martell-etal-2022 § Ch. 6 Avoidance Modification, Solving Problems, and Value-Directed Behavior"
+      ]
+    },
+    {
+      "id": "bh.in-situation-safety-behavior",
+      "label": "In-situation safety behavior",
+      "alt_labels": [
+        "safety-seeking behavior",
+        "safety behavior"
+      ],
+      "definition": "An action taken within a feared situation to prevent a feared catastrophe, which stops the person learning it would not have happened.",
+      "client_wording": "Something you do to feel safe that stops you finding out you would be okay anyway.",
+      "example": "Gripping a shopping cart tightly to avoid fainting.",
+      "group": "safety behaviors",
+      "broader": null,
+      "related": [
+        "bh.subtle-avoidance",
+        "cs.calming-the-body",
+        "mp.safety-behavior-cycle"
+      ],
+      "see": ["12-medical-pharmacology.pitfall-medication-as-safety-behavior", "15-transdiagnostic-processes.pitfall-coping-that-becomes-avoidance", "15-transdiagnostic-processes.safety-behaviors", "behavioral.behavioral-experiments", "behavioral.exposure-hierarchy", "behavioral.exposure-principles", "behavioral.pitfall-unnoticed-safety-behaviors", "behavioral.relaxation-and-arousal-reduction", "behavioral.safety-behavior-reduction", "bipolar-and-psychosis.cbt-model", "panic-and-phobias.agoraphobia", "panic-and-phobias.assessment", "panic-and-phobias.cbt-model", "panic-and-phobias.pitfall-hidden-safety-behaviors", "social-anxiety.adaptations", "social-anxiety.assessment", "social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.cbt-model", "social-anxiety.pitfall-safety-behaviors-during-exposure", "social-anxiety.pitfall-skills-deficit-assumption", "social-anxiety.video-feedback-and-attention-training"],
+      "sources": [
+        "Salkovskis-1991 § Safety-seeking behavior and avoidance",
+        "Clark-1999 § Safety behaviors",
+        "Freeman-etal-2007 § Safety behaviors in persecutory delusions"
+      ]
+    },
+    {
+      "id": "bh.safety-objects",
+      "label": "Carrying safety objects",
+      "alt_labels": [
+        "safety signals"
+      ],
+      "definition": "Keeping items believed to prevent or rescue from catastrophe, such as medication, water, a phone or a particular bag.",
+      "client_wording": "Always needing certain things with you, just in case something bad happens.",
+      "example": "Never leaving home without anxiety medication, even though it is rarely taken.",
+      "group": "safety behaviors",
+      "broader": "bh.in-situation-safety-behavior",
+      "related": [
+        "bh.relying-on-safe-person"
+      ],
+      "see": ["12-medical-pharmacology.anxiolytics-and-hypnotics", "12-medical-pharmacology.medication-and-cbt-interactions", "12-medical-pharmacology.pitfall-medication-as-safety-behavior", "15-transdiagnostic-processes.safety-behaviors", "behavioral.pitfall-unnoticed-safety-behaviors", "behavioral.safety-behavior-reduction", "panic-and-phobias.adaptations", "panic-and-phobias.agoraphobia", "panic-and-phobias.assessment", "panic-and-phobias.pitfall-hidden-safety-behaviors"],
+      "sources": [
+        "Salkovskis-1991 § Safety-seeking behavior and avoidance",
+        "Thwaites-Freeston-2005 § Direct avoidance, escape and subtle avoidance"
+      ]
+    },
+    {
+      "id": "bh.relying-on-safe-person",
+      "label": "Relying on a safe person",
+      "alt_labels": [
+        "needing a companion"
+      ],
+      "definition": "Entering feared situations only with a trusted companion, or keeping them reachable, to feel protected from catastrophe.",
+      "client_wording": "Only going places if someone you trust is with you or a phone call away.",
+      "example": "Shopping only when a partner comes along.",
+      "group": "safety behaviors",
+      "broader": "bh.in-situation-safety-behavior",
+      "related": [
+        "bh.safety-objects",
+        "cs.dependence-on-others"
+      ],
+      "see": ["15-transdiagnostic-processes.pitfall-coping-that-becomes-avoidance", "15-transdiagnostic-processes.safety-behaviors", "panic-and-phobias.adaptations", "panic-and-phobias.agoraphobia", "panic-and-phobias.assessment", "panic-and-phobias.pitfall-hidden-safety-behaviors", "panic-and-phobias.treatment"],
+      "sources": [
+        "Salkovskis-1991 § Safety-seeking behavior and avoidance",
+        "APA-DSM5TR-2022 § Agoraphobia"
+      ]
+    },
+    {
+      "id": "bh.concealing-anxiety-signs",
+      "label": "Concealing signs of anxiety",
+      "alt_labels": [
+        "impression management"
+      ],
+      "definition": "Efforts to hide visible anxiety, such as covering blushing, gripping objects to stop shaking or wearing dark clothes to hide sweat.",
+      "client_wording": "Trying hard to hide that you are nervous so others will not notice.",
+      "example": "Wearing a scarf to hide neck blushing during meetings.",
+      "group": "safety behaviors",
+      "broader": "bh.in-situation-safety-behavior",
+      "related": [
+        "bh.mental-rehearsal",
+        "cs.concealing-vulnerability",
+        "mp.self-focused-attention"
+      ],
+      "see": ["behavioral.safety-behavior-reduction", "social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.cbt-model", "social-anxiety.pitfall-safety-behaviors-during-exposure"],
+      "sources": [
+        "Clark-1999 § Safety behaviors"
+      ]
+    },
+    {
+      "id": "bh.mental-rehearsal",
+      "label": "Rehearsing and monitoring speech",
+      "alt_labels": [
+        "mental rehearsal"
+      ],
+      "definition": "Mentally preparing and checking sentences before and while speaking, to avoid saying something wrong or appearing foolish.",
+      "client_wording": "Practicing what to say in your head and checking every word as you talk.",
+      "example": "Silently rehearsing an introduction while others are speaking.",
+      "group": "safety behaviors",
+      "broader": "bh.in-situation-safety-behavior",
+      "related": [
+        "bh.concealing-anxiety-signs",
+        "cs.overpreparation",
+        "mp.anticipatory-processing"
+      ],
+      "see": ["15-transdiagnostic-processes.safety-behaviors", "behavioral.behavioral-experiments", "behavioral.safety-behavior-reduction", "social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.cbt-model", "social-anxiety.pitfall-safety-behaviors-during-exposure", "social-anxiety.pitfall-skills-deficit-assumption"],
+      "sources": [
+        "Clark-1999 § Safety behaviors"
+      ]
+    },
+    {
+      "id": "bh.reassurance-seeking",
+      "label": "Reassurance seeking",
+      "alt_labels": [
+        "asking for reassurance",
+        "confessing"
+      ],
+      "definition": "Repeatedly asking others, or oneself, for confirmation that a feared outcome will not happen or that one has done nothing wrong.",
+      "client_wording": "Asking again and again if things are okay, even after you have been told.",
+      "example": "Asking a partner five times a day whether the door was definitely locked.",
+      "group": "safety behaviors",
+      "broader": null,
+      "related": [
+        "bh.checking",
+        "bh.seeking-medical-tests",
+        "mp.reassurance-cycle",
+        "ts.premature-reassurance"
+      ],
+      "see": ["13-context-culture-development.child-anxiety", "13-context-culture-development.perinatal-mental-health", "15-transdiagnostic-processes.intolerance-of-uncertainty", "15-transdiagnostic-processes.pitfall-disputing-repetitive-thought-content", "15-transdiagnostic-processes.safety-behaviors", "behavioral.exposure-and-response-prevention", "behavioral.pitfall-overly-cautious-exposure", "behavioral.pitfall-unnoticed-safety-behaviors", "behavioral.safety-behavior-reduction", "chronic-pain-and-physical-health.adaptations", "gad.assessment", "gad.cbt-model", "gad.pitfall-chasing-worry-content", "health-anxiety.adaptations", "health-anxiety.assessment", "health-anxiety.overview", "health-anxiety.pitfall-reassurance-loop", "health-anxiety.reassurance-seeking", "health-anxiety.treatment", "ocd.assessment", "ocd.family-accommodation", "ocd.pitfall-therapist-reassurance", "panic-and-phobias.pitfall-reassurance-instead-of-testing"],
+      "sources": [
+        "Kobori-Salkovskis-2013 § Reassurance seeking in OCD and anxiety disorders",
+        "Salkovskis-1985 § Neutralizing"
+      ]
+    },
+    {
+      "id": "bh.checking",
+      "label": "Checking",
+      "alt_labels": [
+        "checking rituals"
+      ],
+      "definition": "Repeatedly verifying that something is safe, correct or done, beyond what is needed, to prevent harm or reduce doubt.",
+      "client_wording": "Going back to check things over and over to make sure nothing bad happens.",
+      "example": "Returning home three times to make sure the stove is off.",
+      "group": "compulsions and repetitive behaviors",
+      "broader": null,
+      "related": [
+        "bh.reassurance-seeking",
+        "bh.mental-ritual",
+        "mp.misinterpretation-of-intrusions",
+        "iv.exposure-and-response-prevention"
+      ],
+      "see": ["03-formulation.functional-analysis", "13-context-culture-development.perinatal-mental-health", "15-transdiagnostic-processes.intolerance-of-uncertainty", "behavioral.exposure-and-response-prevention", "ocd.assessment", "ocd.overview"],
+      "sources": [
+        "Salkovskis-1985 § Neutralizing",
+        "APA-DSM5TR-2022 § Obsessive-Compulsive Disorder"
+      ]
+    },
+    {
+      "id": "bh.washing-cleaning",
+      "label": "Washing or cleaning compulsions",
+      "alt_labels": [
+        "decontamination rituals"
+      ],
+      "definition": "Excessive or ritualized washing, showering or cleaning, performed to remove feared contamination or to feel clean enough.",
+      "client_wording": "Washing or cleaning far more than needed until it finally feels clean enough.",
+      "example": "Washing hands for ten minutes after touching a door handle.",
+      "group": "compulsions and repetitive behaviors",
+      "broader": null,
+      "related": [
+        "iv.exposure-and-response-prevention"
+      ],
+      "see": ["behavioral.exposure-and-response-prevention", "ocd.assessment", "ocd.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Obsessive-Compulsive Disorder",
+        "Salkovskis-1985 § Neutralizing"
+      ]
+    },
+    {
+      "id": "bh.ordering-arranging",
+      "label": "Ordering or arranging compulsions",
+      "alt_labels": [
+        "symmetry rituals"
+      ],
+      "definition": "Arranging objects or doing actions until they feel exactly right, symmetrical or complete, to relieve discomfort or prevent harm.",
+      "client_wording": "Needing things lined up or done just right, and feeling awful until they are.",
+      "example": "Straightening books on a shelf until they feel exactly even.",
+      "group": "compulsions and repetitive behaviors",
+      "broader": null,
+      "related": [
+        "bh.repeating-counting"
+      ],
+      "see": ["ocd.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Obsessive-Compulsive Disorder"
+      ]
+    },
+    {
+      "id": "bh.repeating-counting",
+      "label": "Repeating or counting rituals",
+      "alt_labels": [
+        "repeating",
+        "counting"
+      ],
+      "definition": "Repeating actions, words or counts a set number of times, or until it feels right, to prevent harm or discomfort.",
+      "client_wording": "Doing something again and again, or counting, until it feels safe or right.",
+      "example": "Switching the light on and off six times before leaving a room.",
+      "group": "compulsions and repetitive behaviors",
+      "broader": null,
+      "related": [
+        "bh.ordering-arranging",
+        "bh.mental-ritual"
+      ],
+      "see": [],
+      "sources": [
+        "APA-DSM5TR-2022 § Obsessive-Compulsive Disorder"
+      ]
+    },
+    {
+      "id": "bh.mental-ritual",
+      "label": "Mental rituals",
+      "alt_labels": [
+        "mental compulsion",
+        "mental reviewing",
+        "mental checking"
+      ],
+      "definition": "Covert compulsions such as praying, counting, repeating phrases or mentally reviewing events, done to prevent harm or reduce doubt.",
+      "client_wording": "Things you do in your head over and over to feel safe or sure.",
+      "example": "Mentally replaying a conversation to check nothing offensive was said.",
+      "group": "compulsions and repetitive behaviors",
+      "broader": null,
+      "related": [
+        "bh.neutralizing",
+        "bh.checking"
+      ],
+      "see": ["behavioral.exposure-and-response-prevention", "behavioral.pitfall-unnoticed-safety-behaviors", "ocd.assessment", "ocd.erp-protocol", "ocd.overview", "ocd.pitfall-missed-mental-compulsions"],
+      "sources": [
+        "APA-DSM5TR-2022 § Obsessive-Compulsive Disorder",
+        "Salkovskis-1985 § Neutralizing"
+      ]
+    },
+    {
+      "id": "bh.neutralizing",
+      "label": "Neutralizing",
+      "alt_labels": [
+        "undoing",
+        "putting it right"
+      ],
+      "definition": "Voluntary attempts to cancel, undo or put right an intrusive thought or its feared consequences, overtly or in the mind.",
+      "client_wording": "Trying to cancel out or undo an upsetting thought so it cannot cause harm.",
+      "example": "Thinking a \"safe\" word after an unwanted image of harming someone.",
+      "group": "compulsions and repetitive behaviors",
+      "broader": null,
+      "related": [
+        "bh.mental-ritual",
+        "bh.reassurance-seeking",
+        "mp.misinterpretation-of-intrusions"
+      ],
+      "see": ["behavioral.exposure-and-response-prevention", "behavioral.pitfall-unnoticed-safety-behaviors", "gad.pitfall-worry-misread-as-gad", "ocd.cbt-model", "ocd.erp-protocol", "ocd.pitfall-missed-mental-compulsions"],
+      "sources": [
+        "Salkovskis-1985 § Neutralizing"
+      ]
+    },
+    {
+      "id": "bh.excessive-acquiring",
+      "label": "Excessive acquiring",
+      "alt_labels": [
+        "compulsive buying",
+        "collecting"
+      ],
+      "definition": "Repeated buying, collecting or taking free items beyond need or space, with distress at passing them up.",
+      "client_wording": "Bringing home more things than you need or have room for, and finding it hard to stop.",
+      "example": "Buying extra kitchen tools on every shopping trip despite full cupboards.",
+      "group": "compulsions and repetitive behaviors",
+      "broader": null,
+      "related": [
+        "bh.saving-items"
+      ],
+      "see": ["ocd.related-disorders"],
+      "sources": [
+        "APA-DSM5TR-2022 § Hoarding Disorder"
+      ]
+    },
+    {
+      "id": "bh.saving-items",
+      "label": "Saving and not discarding",
+      "alt_labels": [
+        "hoarding",
+        "difficulty discarding"
+      ],
+      "definition": "Keeping possessions regardless of value and avoiding discarding them, leading to clutter that limits use of living spaces.",
+      "client_wording": "Keeping things because getting rid of them feels too hard or wrong.",
+      "example": "Keeping stacks of old newspapers that block a hallway.",
+      "group": "compulsions and repetitive behaviors",
+      "broader": null,
+      "related": [
+        "bh.excessive-acquiring",
+        "ms.si-r"
+      ],
+      "see": ["ocd.related-disorders"],
+      "sources": [
+        "APA-DSM5TR-2022 § Hoarding Disorder"
+      ]
+    },
+    {
+      "id": "bh.body-focused-repetitive-behavior",
+      "label": "Body-focused repetitive behavior",
+      "alt_labels": [
+        "hair pulling",
+        "skin picking",
+        "nail biting"
+      ],
+      "definition": "Repetitive hair pulling, skin picking, nail biting or similar acts causing damage, often triggered by tension, boredom or perceived imperfections.",
+      "client_wording": "Pulling, picking or biting at your hair, skin or nails, often without meaning to.",
+      "example": "Picking at facial skin for an hour while studying.",
+      "group": "compulsions and repetitive behaviors",
+      "broader": null,
+      "related": [
+        "bh.camouflaging"
+      ],
+      "see": ["ocd.related-disorders"],
+      "sources": [
+        "APA-DSM5TR-2022 § Trichotillomania (Hair-Pulling Disorder)",
+        "APA-DSM5TR-2022 § Excoriation (Skin-Picking) Disorder"
+      ]
+    },
+    {
+      "id": "bh.social-withdrawal",
+      "label": "Social withdrawal",
+      "alt_labels": [
+        "isolating",
+        "pulling away from people",
+        "pulling away from others"
+      ],
+      "definition": "Reducing contact with others, declining invitations or isolating, which removes social reward and support.",
+      "client_wording": "Pulling away from friends and family and spending more time alone.",
+      "example": "Ignoring friends' messages and missing a weekly game night.",
+      "group": "withdrawal and inactivity",
+      "broader": null,
+      "related": [
+        "bh.inactivity",
+        "cs.avoiding-intimacy",
+        "mp.withdrawal-inactivity-loop",
+        "rk.thwarted-belongingness"
+      ],
+      "see": ["03-formulation.maintenance-cycles", "13-context-culture-development.pitfall-diagnostic-overshadowing", "15-transdiagnostic-processes.avoidance", "behavioral.behavioral-activation", "depression.cbt-model", "personality-disorders.other-personality-disorders"],
+      "sources": [
+        "Martell-etal-2022 § Ch. 2 The Core Principles of Behavioral Activation",
+        "Mansell-etal-2007 § Ascent and descent behaviors",
+        "AAS-Warning-Signs § Changes in Behavior"
+      ]
+    },
+    {
+      "id": "bh.inactivity",
+      "label": "Inactivity",
+      "alt_labels": [
+        "staying in bed",
+        "reduced activity",
+        "descent behaviors"
+      ],
+      "definition": "Marked reduction in routine, pleasurable or goal-directed activity, often spending long periods in bed or on the couch.",
+      "client_wording": "Doing much less than before, and spending long stretches resting or lying down.",
+      "example": "Staying on the couch most of the day instead of going for usual walks.",
+      "group": "withdrawal and inactivity",
+      "broader": null,
+      "related": [
+        "bh.social-withdrawal",
+        "bh.neglecting-self-care",
+        "bh.numbing-activities",
+        "mp.withdrawal-inactivity-loop"
+      ],
+      "see": ["03-formulation.maintenance-cycles", "behavioral.activity-monitoring-and-scheduling", "behavioral.behavioral-activation", "chronic-pain-and-physical-health.cbt-model", "depression.cbt-model", "depression.pitfall-thought-challenging-too-early", "health-anxiety.persistent-physical-symptoms"],
+      "sources": [
+        "Martell-etal-2022 § Ch. 2 The Core Principles of Behavioral Activation",
+        "BeckInstitute-CCD-Example § Behavior boxes"
+      ]
+    },
+    {
+      "id": "bh.neglecting-self-care",
+      "label": "Neglecting self-care and routines",
+      "alt_labels": [
+        "letting things slide"
+      ],
+      "definition": "Letting basic routines lapse, such as hygiene, meals, chores, bills or medical care, which adds problems and lowers mood.",
+      "client_wording": "Letting everyday things like washing, eating well or chores slide.",
+      "example": "Not showering for several days and leaving dishes and mail piling up.",
+      "group": "withdrawal and inactivity",
+      "broader": null,
+      "related": [
+        "bh.inactivity",
+        "rk.self-neglect"
+      ],
+      "see": [],
+      "sources": [
+        "Martell-etal-2022 § Ch. 5 Activity Scheduling and Structuring"
+      ]
+    },
+    {
+      "id": "bh.binge-eating",
+      "label": "Binge eating",
+      "alt_labels": [
+        "bingeing"
+      ],
+      "definition": "Eating an objectively large amount of food in a discrete period, with a sense of loss of control over eating.",
+      "client_wording": "Eating a very large amount at once and feeling unable to stop.",
+      "example": "Eating several packs of cookies in half an hour after a stressful call.",
+      "group": "eating",
+      "broader": null,
+      "related": [
+        "bh.dietary-restriction",
+        "bh.compensatory-behaviors",
+        "bh.emotional-eating",
+        "mp.dietary-restraint-cycle",
+        "mp.mood-intolerance"
+      ],
+      "see": ["03-formulation.functional-analysis", "15-transdiagnostic-processes.emotion-regulation", "eating-disorders.assessment", "eating-disorders.cbt-model", "eating-disorders.overview", "eating-disorders.pitfall-weight-loss-goals-in-binge-eating", "eating-disorders.treatment"],
+      "sources": [
+        "APA-DSM5TR-2022 § Binge-Eating Disorder",
+        "Fairburn-2008 § Ch. 2 The Transdiagnostic View and the Cognitive Behavioral Theory"
+      ]
+    },
+    {
+      "id": "bh.dietary-restriction",
+      "label": "Dietary restriction",
+      "alt_labels": [
+        "dietary restraint",
+        "undereating",
+        "avoiding feared foods"
+      ],
+      "definition": "Deliberately limiting how much, when or what is eaten, guided by strict dietary rules, to control shape or weight.",
+      "client_wording": "Strictly limiting food because of rules about what, when or how much you can eat.",
+      "example": "Eating nothing before 6 p.m. and avoiding all bread.",
+      "group": "eating",
+      "broader": null,
+      "related": [
+        "bh.binge-eating",
+        "cs.overcontrol",
+        "mp.dietary-restraint-cycle",
+        "ib.strict-dietary-rules"
+      ],
+      "see": ["eating-disorders.adaptations", "eating-disorders.assessment", "eating-disorders.cbt-model", "eating-disorders.medical-risk", "eating-disorders.overview", "eating-disorders.pitfall-normal-weight-assumed-safe", "eating-disorders.pitfall-weight-loss-goals-in-binge-eating"],
+      "sources": [
+        "Fairburn-2008 § Ch. 9 Dietary Restraint, Dietary Rules and Controlling Eating",
+        "Fairburn-etal-2003 § Transdiagnostic maintenance mechanisms"
+      ]
+    },
+    {
+      "id": "bh.compensatory-behaviors",
+      "label": "Compensatory behaviors in eating disorders",
+      "alt_labels": [
+        "purging"
+      ],
+      "definition": "Acts used to undo the feared effects of eating, such as self-induced vomiting or misuse of laxatives or diuretics.",
+      "client_wording": "Trying to get rid of food or calories after eating.",
+      "example": "Purging after a binge to feel less \"full of food\".",
+      "group": "eating",
+      "broader": null,
+      "related": [
+        "bh.binge-eating",
+        "bh.driven-exercise",
+        "mp.dietary-restraint-cycle"
+      ],
+      "see": ["eating-disorders.assessment", "eating-disorders.cbt-model", "eating-disorders.medical-risk", "eating-disorders.overview", "eating-disorders.pitfall-normal-weight-assumed-safe"],
+      "sources": [
+        "APA-DSM5TR-2022 § Bulimia Nervosa",
+        "Fairburn-2008 § Ch. 2 The Transdiagnostic View and the Cognitive Behavioral Theory"
+      ]
+    },
+    {
+      "id": "bh.driven-exercise",
+      "label": "Driven exercise",
+      "alt_labels": [
+        "compulsive exercise",
+        "overexercising"
+      ],
+      "definition": "Exercise that feels compelled, rigid or excessive, done to control shape or weight or to compensate for eating.",
+      "client_wording": "Feeling you must exercise, even when ill or tired, to make up for eating.",
+      "example": "Running every day despite an injury after eating dinner.",
+      "group": "eating",
+      "broader": null,
+      "related": [
+        "bh.compensatory-behaviors"
+      ],
+      "see": ["eating-disorders.assessment", "eating-disorders.medical-risk", "eating-disorders.overview"],
+      "sources": [
+        "Fairburn-etal-2003 § Transdiagnostic maintenance mechanisms",
+        "APA-DSM5TR-2022 § Bulimia Nervosa"
+      ]
+    },
+    {
+      "id": "bh.emotional-eating",
+      "label": "Eating to cope with emotions",
+      "alt_labels": [
+        "comfort eating"
+      ],
+      "definition": "Eating, not necessarily a binge, in response to moods or events rather than hunger, to soothe or numb feelings.",
+      "client_wording": "Eating to feel better when upset, bored or stressed, not because you are hungry.",
+      "example": "Reaching for chocolate after every argument.",
+      "group": "eating",
+      "broader": null,
+      "related": [
+        "bh.binge-eating",
+        "cs.avoiding-negative-emotion"
+      ],
+      "see": ["eating-disorders.cbt-model"],
+      "sources": [
+        "Fairburn-2008 § Ch. 10 Events, Moods and Eating"
+      ]
+    },
+    {
+      "id": "bh.body-checking",
+      "label": "Body checking",
+      "alt_labels": [
+        "mirror checking",
+        "shape checking"
+      ],
+      "definition": "Repeatedly scrutinizing, measuring, weighing or pinching the body to assess shape, weight or appearance.",
+      "client_wording": "Checking your body over and over, in mirrors, by pinching or by weighing.",
+      "example": "Pinching stomach fat and checking thigh size many times a day.",
+      "group": "body image",
+      "broader": null,
+      "related": [
+        "bh.body-avoidance",
+        "bh.camouflaging",
+        "ib.worth-judged-by-shape-weight",
+        "sit.body-image-cue"
+      ],
+      "see": ["eating-disorders.cbt-e-stages", "eating-disorders.cbt-model", "eating-disorders.pitfall-avoiding-in-session-weighing", "ocd.related-disorders"],
+      "sources": [
+        "Shafran-etal-2004 § Body checking and its avoidance",
+        "Fairburn-2008 § Ch. 8 Shape Concern, Shape Checking, Feeling Fat and Mindsets"
+      ]
+    },
+    {
+      "id": "bh.body-avoidance",
+      "label": "Body avoidance",
+      "alt_labels": [
+        "avoiding mirrors",
+        "avoiding weighing"
+      ],
+      "definition": "Avoiding seeing, being seen or knowing about the body, such as avoiding mirrors, scales, tight clothes or photographs.",
+      "client_wording": "Avoiding mirrors, scales, photos or clothes that show your body shape.",
+      "example": "Refusing to be weighed and wearing only baggy clothes.",
+      "group": "body image",
+      "broader": null,
+      "related": [
+        "bh.body-checking"
+      ],
+      "see": ["eating-disorders.cbt-e-stages", "eating-disorders.cbt-model", "eating-disorders.pitfall-avoiding-in-session-weighing"],
+      "sources": [
+        "Shafran-etal-2004 § Body checking and its avoidance",
+        "Fairburn-2008 § Ch. 8 Shape Concern, Shape Checking, Feeling Fat and Mindsets"
+      ]
+    },
+    {
+      "id": "bh.camouflaging",
+      "label": "Camouflaging appearance",
+      "alt_labels": [
+        "concealing perceived flaws",
+        "excessive grooming"
+      ],
+      "definition": "Hiding or disguising a perceived appearance flaw with makeup, clothing, posture or hairstyle, or by excessive grooming.",
+      "client_wording": "Covering up or fixing a part of your looks you believe is flawed.",
+      "example": "Wearing a cap indoors to hide perceived thinning hair.",
+      "group": "body image",
+      "broader": null,
+      "related": [
+        "bh.body-checking",
+        "bh.concealing-anxiety-signs"
+      ],
+      "see": ["ocd.related-disorders"],
+      "sources": [
+        "APA-DSM5TR-2022 § Body Dysmorphic Disorder"
+      ]
+    },
+    {
+      "id": "bh.symptom-checking",
+      "label": "Checking the body for illness",
+      "alt_labels": [
+        "body scanning for illness",
+        "bodily checking"
+      ],
+      "definition": "Repeatedly examining the body or monitoring functions, such as pulse or lumps, for signs of serious illness.",
+      "client_wording": "Checking your body again and again for signs that something is seriously wrong.",
+      "example": "Pressing on a lymph node several times a day to see if it has grown.",
+      "group": "health anxiety behaviors",
+      "broader": null,
+      "related": [
+        "bh.checking",
+        "bh.seeking-medical-tests",
+        "mp.body-focused-monitoring"
+      ],
+      "see": ["15-transdiagnostic-processes.attention-processes", "chronic-pain-and-physical-health.adaptations", "health-anxiety.assessment", "health-anxiety.cbt-model", "health-anxiety.overview", "health-anxiety.persistent-physical-symptoms", "health-anxiety.pitfall-reassurance-loop", "health-anxiety.treatment", "panic-and-phobias.pitfall-reassurance-instead-of-testing"],
+      "sources": [
+        "Warwick-Salkovskis-1990 § Cognitive model of hypochondriasis"
+      ]
+    },
+    {
+      "id": "bh.seeking-medical-tests",
+      "label": "Seeking medical reassurance and tests",
+      "alt_labels": [
+        "doctor shopping",
+        "repeated consultations"
+      ],
+      "definition": "Repeatedly consulting doctors or requesting tests and scans to rule out illness, gaining only brief relief.",
+      "client_wording": "Going to doctors or asking for tests over and over to be sure you are not ill.",
+      "example": "Booking a third scan after two normal results.",
+      "group": "health anxiety behaviors",
+      "broader": null,
+      "related": [
+        "bh.reassurance-seeking",
+        "bh.symptom-searching"
+      ],
+      "see": ["chronic-pain-and-physical-health.adaptations", "chronic-pain-and-physical-health.pitfall-implying-it-is-psychological", "health-anxiety.adaptations", "health-anxiety.assessment", "health-anxiety.overview", "health-anxiety.persistent-physical-symptoms", "health-anxiety.pitfall-reassurance-loop", "health-anxiety.reassurance-seeking", "panic-and-phobias.pitfall-reassurance-instead-of-testing"],
+      "sources": [
+        "Warwick-Salkovskis-1990 § Cognitive model of hypochondriasis",
+        "APA-DSM5TR-2022 § Illness Anxiety Disorder"
+      ]
+    },
+    {
+      "id": "bh.symptom-searching",
+      "label": "Searching for health information",
+      "alt_labels": [
+        "cyberchondria",
+        "symptom googling"
+      ],
+      "definition": "Repeated online or other searching about symptoms and illnesses, which often raises anxiety rather than settling it.",
+      "client_wording": "Looking up symptoms online again and again, then feeling more worried.",
+      "example": "Spending the evening reading forums about a headache.",
+      "group": "health anxiety behaviors",
+      "broader": null,
+      "related": [
+        "bh.seeking-medical-tests",
+        "bh.reassurance-seeking"
+      ],
+      "see": ["health-anxiety.assessment", "health-anxiety.cbt-model", "health-anxiety.overview", "health-anxiety.reassurance-seeking", "health-anxiety.treatment"],
+      "sources": [
+        "Warwick-Salkovskis-1990 § Cognitive model of hypochondriasis"
+      ]
+    },
+    {
+      "id": "bh.avoiding-medical-care",
+      "label": "Avoiding medical care",
+      "alt_labels": [
+        "care avoidance"
+      ],
+      "definition": "Avoiding doctors, tests, health information or illness reminders out of fear of bad news.",
+      "client_wording": "Staying away from doctors or anything about illness because you fear what you might hear.",
+      "example": "Ignoring a cancer screening invitation for two years.",
+      "group": "health anxiety behaviors",
+      "broader": null,
+      "related": [
+        "bh.overt-avoidance"
+      ],
+      "see": ["health-anxiety.adaptations", "health-anxiety.assessment", "health-anxiety.overview", "health-anxiety.pitfall-missed-medical-illness", "panic-and-phobias.specific-phobia"],
+      "sources": [
+        "APA-DSM5TR-2022 § Illness Anxiety Disorder",
+        "Warwick-Salkovskis-1990 § Cognitive model of hypochondriasis"
+      ]
+    },
+    {
+      "id": "bh.substance-use-to-cope",
+      "label": "Substance use to cope",
+      "alt_labels": [
+        "self-medicating",
+        "drinking to cope"
+      ],
+      "definition": "Using alcohol, drugs or medication beyond prescription to reduce distress, face situations or get to sleep.",
+      "client_wording": "Drinking, using drugs or taking extra medication to feel calmer or forget.",
+      "example": "Drinking two glasses of wine before a party to calm nerves.",
+      "group": "risk and impulsive behaviors",
+      "broader": null,
+      "related": [
+        "bh.in-situation-safety-behavior",
+        "cs.avoiding-negative-emotion",
+        "cs.urge-surfing",
+        "mp.substance-relief-cycle",
+        "ib.substance-relief",
+        "rk.substance-use-problem",
+        "mp.abstinence-violation-effect",
+        "iv.contingency-management",
+        "ms.audit",
+        "ms.dast-10",
+        "sit.urge-or-craving"
+      ],
+      "see": ["03-formulation.functional-analysis", "03-formulation.maintenance-cycles", "10-diagnosis.comorbidity", "13-context-culture-development.identity-and-minority-stress", "15-transdiagnostic-processes.emotion-regulation", "gad.adaptations", "gad.pitfall-worry-misread-as-gad", "panic-and-phobias.adaptations", "social-anxiety.adaptations", "social-anxiety.assessment", "social-anxiety.overview", "substance-use.cbt-model", "substance-use.pitfall-waiting-for-sobriety"],
+      "sources": [
+        "Cooper-1994 § Coping motives",
+        "Carver-1997 § Brief COPE scales"
+      ]
+    },
+    {
+      "id": "bh.self-harm",
+      "label": "Self-harm",
+      "alt_labels": [
+        "self-injury",
+        "self-poisoning"
+      ],
+      "definition": "Intentional self-poisoning or self-injury, irrespective of apparent purpose. Code the act only, never the method, and assess risk.",
+      "client_wording": "Hurting yourself on purpose, often to cope with feelings that seem too much.",
+      "example": "Hurting oneself after an argument to make overwhelming feelings stop.",
+      "group": "risk and impulsive behaviors",
+      "broader": null,
+      "related": [
+        "cs.self-soothing",
+        "cs.urge-surfing",
+        "rk.history-of-self-harm"
+      ],
+      "see": ["02-risk.self-harm", "03-formulation.functional-analysis", "13-context-culture-development.pitfall-diagnostic-overshadowing", "15-transdiagnostic-processes.emotion-regulation", "personality-disorders.adaptations", "personality-disorders.assessment", "personality-disorders.cbt-model", "personality-disorders.chronic-risk-and-crises", "personality-disorders.dbt-informed-skills", "personality-disorders.overview", "personality-disorders.pitfall-brief-or-unstructured-therapy", "personality-disorders.pitfall-crisis-driven-drift", "personality-disorders.treatment"],
+      "sources": [
+        "NICE-NG225 § Terms used in this guideline: self-harm",
+        "Linehan-2025 § Distress tolerance skills"
+      ]
+    },
+    {
+      "id": "bh.aggression",
+      "label": "Aggression",
+      "alt_labels": [
+        "verbal aggression",
+        "physical aggression",
+        "outbursts"
+      ],
+      "definition": "Hostile acts toward people or property, such as shouting, threatening, hitting or breaking things, often driven by anger or perceived threat.",
+      "client_wording": "Shouting, threatening, hitting or breaking things when angry.",
+      "example": "Shouting at a partner and slamming doors after feeling criticized.",
+      "group": "risk and impulsive behaviors",
+      "broader": null,
+      "related": [
+        "cs.asserting-superiority",
+        "cs.assertive-communication",
+        "rk.history-of-violence",
+        "rk.violent-ideation-or-intent"
+      ],
+      "see": ["02-risk.harm-to-others", "03-formulation.functional-analysis", "personality-disorders.other-personality-disorders"],
+      "sources": [
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Anger, Guilt, and Shame",
+        "APA-DSM5TR-2022 § Intermittent Explosive Disorder"
+      ]
+    },
+    {
+      "id": "bh.impulsive-risk-taking",
+      "label": "Impulsive risk-taking",
+      "alt_labels": [
+        "impulsive spending",
+        "reckless behavior",
+        "gambling",
+        "risk-taking",
+        "disregard for safety"
+      ],
+      "definition": "Acting quickly without weighing consequences, such as impulsive spending, reckless driving, unsafe sex or gambling, often under strong emotion.",
+      "client_wording": "Doing risky things on the spur of the moment that you later regret.",
+      "example": "Spending a month's rent online during a sleepless night.",
+      "group": "risk and impulsive behaviors",
+      "broader": null,
+      "related": [
+        "bh.ascent-behaviors",
+        "cs.opposite-action",
+        "rk.impulsive-or-aggressive-traits"
+      ],
+      "see": ["12-medical-pharmacology.mood-stabilizers-and-antipsychotics", "12-medical-pharmacology.pitfall-side-effects-read-as-psychological", "adhd.overview", "bipolar-and-psychosis.assessment", "bipolar-and-psychosis.pitfall-missed-bipolarity", "personality-disorders.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Borderline Personality Disorder",
+        "Linehan-2025 § Distress tolerance skills",
+        "AAS-Warning-Signs § Changes in Behavior"
+      ]
+    },
+    {
+      "id": "bh.ascent-behaviors",
+      "label": "Revving-up behaviors",
+      "alt_labels": [
+        "ascent behaviors",
+        "overactivity"
+      ],
+      "definition": "Actions that increase activation, such as taking on many projects, cutting sleep or seeking stimulation, which can escalate toward hypomania.",
+      "client_wording": "Pushing yourself to go faster and do more, which can tip you into feeling too high.",
+      "example": "Staying up all night starting three new business plans.",
+      "group": "risk and impulsive behaviors",
+      "broader": null,
+      "related": [
+        "bh.impulsive-risk-taking",
+        "bh.irregular-sleep-schedule",
+        "bh.inactivity",
+        "iv.early-warning-signs-plan"
+      ],
+      "see": ["bipolar-and-psychosis.cbt-model", "bipolar-and-psychosis.pitfall-sleep-loss-and-activation"],
+      "sources": [
+        "Mansell-etal-2007 § Ascent and descent behaviors"
+      ]
+    },
+    {
+      "id": "bh.appeasing",
+      "label": "Appeasing or people-pleasing acts",
+      "alt_labels": [
+        "people-pleasing acts",
+        "over-apologizing",
+        "giving in"
+      ],
+      "definition": "Specific acts of giving in to others against one's own wishes, such as agreeing, over-apologizing or taking on requests, to avoid disapproval.",
+      "client_wording": "Saying yes, apologizing or going along with others when you really want to say no.",
+      "example": "Agreeing to cover a colleague's shift despite being exhausted.",
+      "group": "interpersonal",
+      "broader": null,
+      "related": [
+        "cs.pleasing-others",
+        "cs.self-sacrifice",
+        "bh.self-silencing"
+      ],
+      "see": ["alliance-and-stance.pitfall-assuming-the-alliance-is-fine", "alliance-and-stance.rupture-and-repair", "behavioral.skills-training"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Young-etal-2003 § Ch. 1 Coping styles"
+      ]
+    },
+    {
+      "id": "bh.self-silencing",
+      "label": "Self-silencing",
+      "alt_labels": [
+        "not speaking up",
+        "withholding needs"
+      ],
+      "definition": "Keeping opinions, needs, feelings or limits unspoken in a situation, to avoid conflict, rejection or burdening others.",
+      "client_wording": "Keeping quiet about what you think or need, so you do not upset anyone.",
+      "example": "Saying nothing when a friend repeatedly cancels plans at the last minute.",
+      "group": "interpersonal",
+      "broader": null,
+      "related": [
+        "bh.appeasing",
+        "cs.avoiding-confrontation",
+        "cs.assertive-communication"
+      ],
+      "see": ["social-anxiety.pitfall-skills-deficit-assumption"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Linehan-2025 § Interpersonal effectiveness skills"
+      ]
+    },
+    {
+      "id": "bh.overworking",
+      "label": "Overworking",
+      "alt_labels": [
+        "workaholism"
+      ],
+      "definition": "Working excessive hours or without breaks, often driven by fear of failure or to avoid feelings, at the cost of rest and relationships.",
+      "client_wording": "Working so much that rest, sleep and people you care about get squeezed out.",
+      "example": "Answering work emails until 1 a.m. every night.",
+      "group": "work and performance",
+      "broader": null,
+      "related": [
+        "cs.perfectionistic-striving",
+        "cs.seeking-recognition",
+        "bh.redoing-and-overcorrecting"
+      ],
+      "see": [],
+      "sources": [
+        "Shafran-etal-2002 § Maintenance of clinical perfectionism",
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization"
+      ]
+    },
+    {
+      "id": "bh.redoing-and-overcorrecting",
+      "label": "Redoing and overcorrecting work",
+      "alt_labels": [
+        "performance checking",
+        "rewriting"
+      ],
+      "definition": "Repeatedly checking, rewriting or redoing tasks to meet perfectionistic standards, often taking far longer than needed.",
+      "client_wording": "Going over your work again and again because it never feels good enough.",
+      "example": "Rewriting a two-line email ten times before sending.",
+      "group": "work and performance",
+      "broader": null,
+      "related": [
+        "cs.perfectionistic-striving",
+        "bh.checking",
+        "bh.procrastination"
+      ],
+      "see": ["15-transdiagnostic-processes.perfectionism"],
+      "sources": [
+        "Shafran-etal-2002 § Maintenance of clinical perfectionism"
+      ]
+    },
+    {
+      "id": "bh.excess-time-in-bed",
+      "label": "Extra time in bed",
+      "alt_labels": [
+        "catching up on sleep",
+        "lying in"
+      ],
+      "definition": "Going to bed early, staying in bed late or lying awake for long periods, trying to catch up on lost sleep.",
+      "client_wording": "Spending lots of extra time in bed hoping to get more sleep.",
+      "example": "Going to bed at 9 p.m. after a bad night, then lying awake for hours.",
+      "group": "sleep-interfering behaviors",
+      "broader": null,
+      "related": [
+        "bh.daytime-napping",
+        "bh.non-sleep-activities-in-bed",
+        "mp.sleep-compensation"
+      ],
+      "see": ["insomnia.assessment", "insomnia.cbt-model"],
+      "sources": [
+        "Edinger-etal-2021a § Recommendations: stimulus control and sleep restriction",
+        "Harvey-2002 § Safety behaviors"
+      ]
+    },
+    {
+      "id": "bh.daytime-napping",
+      "label": "Daytime napping",
+      "alt_labels": [
+        "dozing"
+      ],
+      "definition": "Napping or dozing during the day or evening, which reduces sleep drive at night.",
+      "client_wording": "Taking naps or dozing in the day, which can make night sleep harder.",
+      "example": "Dozing on the couch for two hours in the early evening.",
+      "group": "sleep-interfering behaviors",
+      "broader": null,
+      "related": [
+        "bh.excess-time-in-bed",
+        "mp.sleep-compensation"
+      ],
+      "see": ["insomnia.assessment", "insomnia.cbt-i-components", "insomnia.cbt-model"],
+      "sources": [
+        "Edinger-etal-2021a § Recommendations: stimulus control and sleep restriction",
+        "Harvey-2002 § Safety behaviors"
+      ]
+    },
+    {
+      "id": "bh.irregular-sleep-schedule",
+      "label": "Irregular sleep schedule",
+      "alt_labels": [
+        "sleeping in on weekends"
+      ],
+      "definition": "Large night-to-night variation in bedtime and rise time, including sleeping in on weekends, which disrupts the body clock.",
+      "client_wording": "Going to bed and getting up at very different times from day to day.",
+      "example": "Rising at 6 a.m. on weekdays and at noon on weekends.",
+      "group": "sleep-interfering behaviors",
+      "broader": null,
+      "related": [
+        "bh.excess-time-in-bed",
+        "bh.ascent-behaviors",
+        "mp.sleep-compensation"
+      ],
+      "see": ["bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.pitfall-sleep-loss-and-activation", "insomnia.assessment"],
+      "sources": [
+        "Edinger-etal-2021a § Recommendations: stimulus control and sleep restriction"
+      ]
+    },
+    {
+      "id": "bh.non-sleep-activities-in-bed",
+      "label": "Wakeful activities in bed",
+      "alt_labels": [
+        "screens in bed",
+        "working in bed"
+      ],
+      "definition": "Working, using screens or staying in bed while wide awake, which weakens the learned link between bed and sleep.",
+      "client_wording": "Using your bed for screens, work or lying awake, so bed stops meaning sleep.",
+      "example": "Answering emails on a laptop in bed until midnight.",
+      "group": "sleep-interfering behaviors",
+      "broader": null,
+      "related": [
+        "bh.excess-time-in-bed",
+        "bh.clock-monitoring",
+        "mp.conditioned-arousal"
+      ],
+      "see": ["insomnia.assessment"],
+      "sources": [
+        "Edinger-etal-2021a § Recommendations: stimulus control and sleep restriction"
+      ]
+    },
+    {
+      "id": "bh.clock-monitoring",
+      "label": "Clock watching",
+      "alt_labels": [
+        "sleep monitoring",
+        "checking the time at night"
+      ],
+      "definition": "Repeatedly checking the time or a sleep tracker during the night, which raises arousal and worry about lost sleep.",
+      "client_wording": "Checking the clock or sleep tracker during the night and counting the hours left.",
+      "example": "Checking the clock every 20 minutes from 2 a.m.",
+      "group": "sleep-interfering behaviors",
+      "broader": null,
+      "related": [
+        "bh.non-sleep-activities-in-bed",
+        "mp.sleep-effort"
+      ],
+      "see": ["insomnia.cbt-i-components", "insomnia.cbt-model", "insomnia.sleep-diary"],
+      "sources": [
+        "Harvey-2002 § Selective attention and monitoring"
+      ]
+    },
+    {
+      "id": "bh.movement-avoidance",
+      "label": "Avoiding movement for fear of pain",
+      "alt_labels": [
+        "kinesiophobic avoidance",
+        "guarded movement"
+      ],
+      "definition": "Avoiding or guarding physical activities and movements expected to cause pain or reinjury, which leads to disuse and disability.",
+      "client_wording": "Not doing movements or activities because I'm afraid they'll hurt or harm me.",
+      "example": "Stops picking up the grandchildren since the back pain started.",
+      "group": "avoidance and escape",
+      "broader": null,
+      "related": [
+        "mp.fear-avoidance-cycle",
+        "ib.pain-means-harm",
+        "bh.overt-avoidance",
+        "bh.inactivity"
+      ],
+      "see": ["chronic-pain-and-physical-health.assessment", "chronic-pain-and-physical-health.cbt-model"],
+      "sources": [
+        "Vlaeyen-Linton-2000 § Escape and avoidance behaviors",
+        "Leeuw-etal-2007 § Escape/avoidance behavior"
+      ]
+    },
+    {
+      "id": "bh.loss-reminder-avoidance",
+      "label": "Avoiding reminders of the loss",
+      "alt_labels": [
+        "grief avoidance behavior"
+      ],
+      "definition": "Staying away from places, objects, people, conversations and memories linked to the deceased or the death.",
+      "client_wording": "Staying away from anything that reminds me of the person who died.",
+      "example": "Takes a long detour so as not to pass the hospital; avoids the cemetery.",
+      "group": "avoidance and escape",
+      "broader": null,
+      "related": [
+        "mp.anxious-avoidance-of-loss",
+        "sit.loss-reminder",
+        "bh.overt-avoidance",
+        "bh.trauma-reminder-avoidance"
+      ],
+      "see": ["grief-and-loss.assessment", "grief-and-loss.cbt-model", "grief-and-loss.pitfall-colluding-with-avoidance"],
+      "sources": [
+        "Boelen-etal-2006 § Anxious and depressive avoidance strategies"
+      ]
+    },
+    {
+      "id": "bh.pain-overactivity",
+      "label": "Overdoing activity on good days",
+      "alt_labels": [
+        "boom",
+        "pushing through pain"
+      ],
+      "definition": "Doing far more than usual when pain is lower, or persisting despite rising pain, which often triggers a flare and enforced rest.",
+      "client_wording": "Overdoing it when I feel better, then paying for it.",
+      "example": "Mows the whole lawn and digs the beds on a low-pain morning, then cannot move the next day.",
+      "group": "pain-related activity",
+      "broader": null,
+      "related": [
+        "mp.activity-cycling",
+        "iv.activity-pacing",
+        "bh.inactivity"
+      ],
+      "see": ["chronic-pain-and-physical-health.assessment", "chronic-pain-and-physical-health.cbt-model"],
+      "sources": [
+        "Nielson-etal-2013 § Abstract; overactivity and underactivity pacing problems"
+      ]
+    }
+  ]
+}

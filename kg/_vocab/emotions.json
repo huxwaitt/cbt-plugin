@@ -1,0 +1,1335 @@
+{
+  "scheme": "emotions",
+  "prefix": "em",
+  "title": "Emotions (moods)",
+  "description": "Emotions a client names and rates for intensity (0 to 100) in thought records and in the emotions slot of formulation models, grouped into families, with valence (positive or negative hedonic tone). Code single feeling words here; words such as worthless, useless or a failure are thoughts or beliefs and belong in thought or belief schemes, not here. Positive emotions support activity monitoring and protective factors.",
+  "version": "1.1.0",
+  "sources": [
+    "Greenberger-Padesky-2016 § Ch. 4 Identifying and Rating Moods",
+    "Beck-2021 § Ch. 13 Emotions",
+    "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+    "Fredrickson-2001 § The Broaden-and-Build Theory of Positive Emotions"
+  ],
+  "concepts": [
+    {
+      "id": "em.anxious",
+      "label": "Anxious",
+      "alt_labels": [
+        "nervous",
+        "worried",
+        "uneasy",
+        "apprehensive",
+        "on edge"
+      ],
+      "definition": "Tense, uneasy apprehension about a possible future threat or uncertain outcome; anticipatory and often diffuse rather than tied to present danger.",
+      "client_wording": "Nervous or uneasy, expecting that something bad might happen.",
+      "example": "The night before a job interview: \"I'll freeze and they'll think I'm useless.\" Anxious 70.",
+      "group": "Fear and anxiety",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.afraid",
+        "em.dread",
+        "bs.muscle-tension",
+        "bs.restlessness",
+        "bs.butterflies",
+        "tt.threat-and-danger"
+      ],
+      "see": ["gad.overview", "health-anxiety.overview", "ocd.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Anxiety Disorders introduction (fear versus anxiety)",
+        "Clark-Beck-2010 § Ch. 1 Anxiety: A Common but Multifaceted Condition",
+        "Greenberger-Padesky-2016 § Ch. 14 Understanding Your Anxiety"
+      ]
+    },
+    {
+      "id": "em.afraid",
+      "label": "Afraid",
+      "alt_labels": [
+        "scared",
+        "frightened",
+        "fearful",
+        "terrified",
+        "horrified"
+      ],
+      "definition": "Alarm in response to a threat perceived as present or imminent, preparing the body to fight, flee or freeze.",
+      "client_wording": "Scared, as if the danger is right here, right now.",
+      "example": "A dog runs toward me barking. Afraid 90.",
+      "group": "Fear and anxiety",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.anxious",
+        "em.panicky",
+        "bs.freeze",
+        "tt.threat-and-danger"
+      ],
+      "see": ["10-diagnosis.communicating-a-diagnosis", "chronic-pain-and-physical-health.cbt-model", "panic-and-phobias.specific-phobia"],
+      "sources": [
+        "APA-DSM5TR-2022 § Anxiety Disorders introduction (fear versus anxiety)",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.panicky",
+      "label": "Panicky",
+      "alt_labels": [
+        "panic",
+        "sheer terror",
+        "panic-stricken"
+      ],
+      "definition": "Abrupt surge of intense fear peaking within minutes, usually with strong bodily sensations and fears of dying, collapsing or losing control.",
+      "client_wording": "A sudden rush of terror, often with a racing heart and a sense that something awful is happening.",
+      "example": "In the supermarket queue: \"I'm having a heart attack.\" Panicky 95.",
+      "group": "Fear and anxiety",
+      "valence": "negative",
+      "broader": "em.afraid",
+      "related": [
+        "em.anxious",
+        "bs.racing-heart",
+        "bs.breathlessness",
+        "bs.dizziness",
+        "bs.night-panic",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations",
+        "tt.physical-catastrophe"
+      ],
+      "see": ["panic-and-phobias.overview", "responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "APA-DSM5TR-2022 § Panic Attack Specifier",
+        "Clark-1986 § The cognitive model of panic"
+      ]
+    },
+    {
+      "id": "em.dread",
+      "label": "Dread",
+      "alt_labels": [
+        "foreboding",
+        "a sense of doom",
+        "dreading"
+      ],
+      "definition": "Heavy, anticipatory fear of a specific upcoming event that feels unavoidable and bad.",
+      "client_wording": "A heavy sense that something bad is coming and I can't stop it.",
+      "example": "All Sunday evening before Monday's meeting with my manager. Dread 80.",
+      "group": "Fear and anxiety",
+      "valence": "negative",
+      "broader": "em.anxious",
+      "related": [
+        "em.hopeless"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Clark-Beck-2010 § Ch. 1 Anxiety: A Common but Multifaceted Condition"
+      ]
+    },
+    {
+      "id": "em.overwhelmed",
+      "label": "Overwhelmed",
+      "alt_labels": [
+        "swamped",
+        "stressed out",
+        "flooded",
+        "can't cope"
+      ],
+      "definition": "Sense that demands or emotions exceed one's resources to cope, often with agitation, paralysis or shutting down.",
+      "client_wording": "Too much at once, more than I can handle.",
+      "example": "Opening 40 unread emails on my first day back after sick leave. Overwhelmed 85.",
+      "group": "Fear and anxiety",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.helpless",
+        "bs.tearful"
+      ],
+      "see": ["adhd.cbt-model", "responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "Lazarus-Folkman-1984 § Ch. 2 Cognitive Appraisal Processes",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.suspicious",
+      "label": "Suspicious",
+      "alt_labels": [
+        "wary",
+        "mistrustful",
+        "on guard",
+        "paranoid feeling"
+      ],
+      "definition": "Wary, fearful expectation that others intend harm, deceit or ridicule; common in paranoia, after trauma and in jealousy.",
+      "client_wording": "On guard, as if people might be against me or up to something.",
+      "example": "Two coworkers stop talking as I walk in: \"They're plotting against me.\" Suspicious 70.",
+      "group": "Fear and anxiety",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.jealous",
+        "bs.startle",
+        "tt.persecution"
+      ],
+      "see": ["10-diagnosis.pitfall-culture-misread-as-pathology", "bipolar-and-psychosis.cbt-model"],
+      "sources": [
+        "Freeman-2007 § The paranoia continuum",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.sad",
+      "label": "Sad",
+      "alt_labels": [
+        "down",
+        "low",
+        "unhappy",
+        "blue",
+        "sorrowful"
+      ],
+      "definition": "Painful feeling of loss, disappointment or unmet need, usually linked to a specific event and easing with time.",
+      "client_wording": "Down, low or unhappy about something.",
+      "example": "After my closest friend moved to another state. Sad 60.",
+      "group": "Sadness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.depressed",
+        "em.grief",
+        "bs.tearful",
+        "tt.loss-and-defeat"
+      ],
+      "see": ["responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Greenberger-Padesky-2016 § Ch. 4 Identifying and Rating Moods"
+      ]
+    },
+    {
+      "id": "em.depressed",
+      "label": "Depressed",
+      "alt_labels": [
+        "low mood",
+        "depressed mood",
+        "miserable",
+        "gloomy"
+      ],
+      "definition": "Persistent, pervasive low mood across most of the day and many situations, often with low energy and loss of interest.",
+      "client_wording": "Low and heavy most of the time, not just about one thing.",
+      "example": "Low most days for a month, even on my birthday. Depressed 80.",
+      "group": "Sadness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.sad",
+        "em.anhedonic",
+        "em.hopeless",
+        "bs.fatigue",
+        "bs.heaviness"
+      ],
+      "see": ["03-formulation.maintenance-cycles", "chronic-pain-and-physical-health.overview", "depression.overview", "health-anxiety.adaptations"],
+      "sources": [
+        "APA-DSM5TR-2022 § Major Depressive Disorder",
+        "Greenberger-Padesky-2016 § Ch. 13 Understanding Your Depression"
+      ]
+    },
+    {
+      "id": "em.grief",
+      "label": "Grief",
+      "alt_labels": [
+        "grieving",
+        "bereaved",
+        "mourning",
+        "heartbroken"
+      ],
+      "definition": "Sorrow and yearning after losing a loved person or something deeply valued; comes in waves. Prolonged, impairing grief warrants assessment.",
+      "client_wording": "Deep sorrow and missing someone or something I have lost.",
+      "example": "Finding Mom's handwriting on an old birthday card. Grief 90.",
+      "group": "Sadness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.sad",
+        "em.longing",
+        "bs.tearful",
+        "tt.loss-and-defeat",
+        "em.yearning"
+      ],
+      "see": ["grief-and-loss.overview", "grief-and-loss.pitfall-treating-normal-grief"],
+      "sources": [
+        "APA-DSM5TR-2022 § Prolonged Grief Disorder",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.disappointed",
+      "label": "Disappointed",
+      "alt_labels": [
+        "let down",
+        "deflated",
+        "dismayed"
+      ],
+      "definition": "Sadness when an outcome falls short of one's hopes or expectations of oneself, others or events.",
+      "client_wording": "Let down because things did not turn out how I hoped.",
+      "example": "My exam grade came back lower than I expected. Disappointed 50.",
+      "group": "Sadness",
+      "valence": "negative",
+      "broader": "em.sad",
+      "related": [
+        "em.discouraged"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.angry",
+      "label": "Angry",
+      "alt_labels": [
+        "mad",
+        "cross",
+        "furious",
+        "enraged",
+        "livid"
+      ],
+      "definition": "Activated feeling in response to a perceived wrong, unfairness, threat or blocked goal, preparing a person to confront or defend.",
+      "client_wording": "Mad or furious, like something is unfair or wrong.",
+      "example": "My partner made weekend plans without asking me: \"They don't respect me.\" Angry 75.",
+      "group": "Anger",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "bs.heat-rising",
+        "bs.clenching",
+        "bs.about-to-explode",
+        "rk.agitation-or-anger",
+        "tt.violation-and-unfairness"
+      ],
+      "see": ["adhd.emotional-dysregulation-and-associated-features", "personality-disorders.overview", "responding-in-session.responding-to-strong-emotion"],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Deffenbacher-2011 § Conceptualization of anger",
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Your Anger, Guilt, and Shame"
+      ]
+    },
+    {
+      "id": "em.irritated",
+      "label": "Irritated",
+      "alt_labels": [
+        "annoyed",
+        "irritable",
+        "grumpy",
+        "touchy",
+        "snappy"
+      ],
+      "definition": "Low-level, easily triggered anger or impatience; persistent irritability is common in depression, anxiety, mania and poor sleep.",
+      "client_wording": "Annoyed, snappy or short-tempered over small things.",
+      "example": "The sound of my partner chewing at dinner. Irritated 40.",
+      "group": "Anger",
+      "valence": "negative",
+      "broader": "em.angry",
+      "related": [
+        "em.frustrated"
+      ],
+      "see": ["bipolar-and-psychosis.overview", "gad.overview"],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "APA-DSM5TR-2022 § Generalized Anxiety Disorder (irritability criterion)"
+      ]
+    },
+    {
+      "id": "em.frustrated",
+      "label": "Frustrated",
+      "alt_labels": [
+        "exasperated",
+        "thwarted",
+        "fed up"
+      ],
+      "definition": "Anger-related feeling when effort is blocked or progress toward a goal is repeatedly thwarted.",
+      "client_wording": "Fed up because I keep trying and getting nowhere.",
+      "example": "The online form crashed for the third time. Frustrated 65.",
+      "group": "Anger",
+      "valence": "negative",
+      "broader": "em.angry",
+      "related": [
+        "em.irritated",
+        "em.discouraged"
+      ],
+      "see": ["adhd.emotional-dysregulation-and-associated-features"],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.resentful",
+      "label": "Resentful",
+      "alt_labels": [
+        "bitter",
+        "aggrieved",
+        "holding a grudge",
+        "hard done by"
+      ],
+      "definition": "Lingering, simmering anger about a past or ongoing perceived injustice, often unexpressed and kept alive by going over it.",
+      "client_wording": "Bitter about being treated unfairly, and I can't let it go.",
+      "example": "Every time my brother mentions the inheritance. Resentful 70.",
+      "group": "Anger",
+      "valence": "negative",
+      "broader": "em.angry",
+      "related": [
+        "em.envious",
+        "tt.violation-and-unfairness"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.ashamed",
+      "label": "Ashamed",
+      "alt_labels": [
+        "shame",
+        "mortified",
+        "wanting to hide",
+        "disgraced"
+      ],
+      "definition": "Painful sense that the whole self is bad, defective or inferior, with urges to hide, withdraw or disappear.",
+      "client_wording": "Feeling bad about who I am and wanting to hide.",
+      "example": "After crying in front of my team: \"I'm pathetic.\" Ashamed 85.",
+      "group": "Shame",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.guilty",
+        "em.embarrassed",
+        "em.self-disgust",
+        "em.soothed",
+        "tt.defect-and-exposure",
+        "mp.self-criticism"
+      ],
+      "see": ["03-formulation.functional-analysis", "03-formulation.maintenance-cycles", "10-diagnosis.communicating-a-diagnosis", "15-transdiagnostic-processes.self-criticism-and-shame", "cognitive.self-compassion-techniques", "ptsd.cbt-model", "ptsd.cognitive-therapy-for-ptsd", "ptsd.complex-ptsd", "responding-in-session.responding-to-hopelessness-and-self-criticism", "substance-use.pitfall-lapse-treated-as-failure"],
+      "sources": [
+        "Tangney-etal-1996 § General discussion",
+        "Gilbert-2009 § Shame and self-criticism",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Your Anger, Guilt, and Shame"
+      ]
+    },
+    {
+      "id": "em.embarrassed",
+      "label": "Embarrassed",
+      "alt_labels": [
+        "awkward",
+        "self-conscious",
+        "sheepish",
+        "red-faced"
+      ],
+      "definition": "Brief, lighter discomfort after a public social slip or unwanted attention; less about the core self than shame.",
+      "client_wording": "Awkward and self-conscious after something goes wrong in front of others.",
+      "example": "I called my teacher \"Mom\" in front of the class. Embarrassed 55.",
+      "group": "Shame",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.ashamed",
+        "bs.blushing",
+        "tt.negative-evaluation"
+      ],
+      "see": ["panic-and-phobias.agoraphobia", "social-anxiety.assessment", "social-anxiety.overview"],
+      "sources": [
+        "Tangney-etal-1996 § General discussion",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.humiliated",
+      "label": "Humiliated",
+      "alt_labels": [
+        "degraded",
+        "belittled",
+        "put down",
+        "made a fool of"
+      ],
+      "definition": "Intense shame from being degraded, mocked or exposed by others, often in public, frequently with anger at those responsible.",
+      "client_wording": "Put down or made to feel small by someone, often in front of others.",
+      "example": "My boss mocked my report in the team meeting. Humiliated 90.",
+      "group": "Shame",
+      "valence": "negative",
+      "broader": "em.ashamed",
+      "related": [
+        "em.angry",
+        "bf.humiliating-event",
+        "rk.defeat-or-humiliation",
+        "tt.defect-and-exposure"
+      ],
+      "see": ["social-anxiety.overview"],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.guilty",
+      "label": "Guilty",
+      "alt_labels": [
+        "remorseful",
+        "culpable",
+        "to blame",
+        "sorry"
+      ],
+      "definition": "Distress about a specific action or omission judged to have caused harm or broken one's own standards, with urges to repair.",
+      "client_wording": "Feeling I did something wrong and wanting to put it right.",
+      "example": "\"I snapped at my son and made him cry.\" Guilty 70.",
+      "group": "Guilt",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.ashamed",
+        "em.regretful",
+        "tt.transgression"
+      ],
+      "see": ["03-formulation.maintenance-cycles", "15-transdiagnostic-processes.self-criticism-and-shame", "ptsd.cbt-model", "ptsd.cognitive-processing-therapy", "substance-use.pitfall-lapse-treated-as-failure"],
+      "sources": [
+        "Tangney-etal-1996 § General discussion",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Your Anger, Guilt, and Shame"
+      ]
+    },
+    {
+      "id": "em.regretful",
+      "label": "Regretful",
+      "alt_labels": [
+        "regret",
+        "rueful",
+        "if only"
+      ],
+      "definition": "Sorrow over a past choice or missed chance, wishing it had gone differently, with or without any moral wrongdoing.",
+      "client_wording": "Wishing I had done things differently.",
+      "example": "\"If only I'd taken that job offer.\" Regretful 60.",
+      "group": "Guilt",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.guilty",
+        "em.disappointed",
+        "tt.transgression"
+      ],
+      "see": ["adhd.underdiagnosis-in-women-and-adults"],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.disgusted",
+      "label": "Disgusted",
+      "alt_labels": [
+        "revolted",
+        "repulsed",
+        "grossed out",
+        "sickened"
+      ],
+      "definition": "Revulsion toward something seen as contaminating, offensive or morally violating, with urges to expel, avoid or wash.",
+      "client_wording": "Revolted or grossed out, wanting to get away from it.",
+      "example": "Touching the door handle of a public restroom. Disgusted 80.",
+      "group": "Disgust",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "bs.nausea",
+        "tt.contamination"
+      ],
+      "see": ["ocd.overview", "panic-and-phobias.specific-phobia"],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Rachman-2004 § Fear and disgust"
+      ]
+    },
+    {
+      "id": "em.self-disgust",
+      "label": "Self-disgust",
+      "alt_labels": [
+        "revolted by myself",
+        "feeling repulsive",
+        "self-loathing"
+      ],
+      "definition": "Disgust directed at one's own body, actions or whole self; associated with later depressive symptoms.",
+      "client_wording": "Revolted by myself or my body.",
+      "example": "Catching my reflection after a binge: \"I'm repulsive.\" Self-disgust 75.",
+      "group": "Disgust",
+      "valence": "negative",
+      "broader": "em.disgusted",
+      "related": [
+        "em.ashamed",
+        "bs.feeling-fat",
+        "tt.shape-weight-and-eating-control"
+      ],
+      "see": ["15-transdiagnostic-processes.self-criticism-and-shame"],
+      "sources": [
+        "Powell-etal-2013 § Discussion",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.contaminated",
+      "label": "Feeling dirty (mental contamination)",
+      "alt_labels": [
+        "feeling contaminated",
+        "dirty inside",
+        "polluted",
+        "unclean"
+      ],
+      "definition": "Sense of internal dirtiness or pollution arising without physical contact, often after violation, betrayal or unwanted thoughts; drives washing.",
+      "client_wording": "Feeling dirty or unclean inside, even though I haven't touched anything.",
+      "example": "The memory of the assault came back and I needed to shower. Feeling dirty 85.",
+      "group": "Disgust",
+      "valence": "negative",
+      "broader": "em.disgusted",
+      "related": [
+        "em.self-disgust",
+        "tt.contamination"
+      ],
+      "see": [],
+      "sources": [
+        "Rachman-2004 § Mental pollution",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.hurt",
+      "label": "Hurt",
+      "alt_labels": [
+        "wounded",
+        "stung",
+        "hurt feelings"
+      ],
+      "definition": "Emotional pain from perceiving that someone important does not value the relationship as much as one wants.",
+      "client_wording": "Wounded by something someone close said or did.",
+      "example": "My sister forgot my birthday. Hurt 70.",
+      "group": "Hurt",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.sad",
+        "em.lonely"
+      ],
+      "see": ["adhd.emotional-dysregulation-and-associated-features"],
+      "sources": [
+        "Leary-etal-1998 § Causes of hurt feelings",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.rejected",
+      "label": "Rejected",
+      "alt_labels": [
+        "unwanted",
+        "excluded",
+        "left out",
+        "pushed away"
+      ],
+      "definition": "Hurt from being excluded, turned down or pushed away by others; may activate fears of being unlovable.",
+      "client_wording": "Unwanted or left out by people I care about.",
+      "example": "Seeing photos of a party I wasn't invited to. Rejected 80.",
+      "group": "Hurt",
+      "valence": "negative",
+      "broader": "em.hurt",
+      "related": [
+        "em.lonely",
+        "em.ashamed",
+        "tt.abandonment-and-rejection"
+      ],
+      "see": ["adhd.emotional-dysregulation-and-associated-features"],
+      "sources": [
+        "Leary-etal-1998 § Causes of hurt feelings",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.betrayed",
+      "label": "Betrayed",
+      "alt_labels": [
+        "deceived",
+        "double-crossed",
+        "let down by someone I trusted"
+      ],
+      "definition": "Hurt and anger when a trusted person breaks trust, a promise or loyalty.",
+      "client_wording": "Someone I trusted broke that trust.",
+      "example": "Finding out my friend shared my secret. Betrayed 90.",
+      "group": "Hurt",
+      "valence": "negative",
+      "broader": "em.hurt",
+      "related": [
+        "em.angry",
+        "em.suspicious"
+      ],
+      "see": [],
+      "sources": [
+        "Leary-etal-1998 § Causes of hurt feelings"
+      ]
+    },
+    {
+      "id": "em.lonely",
+      "label": "Lonely",
+      "alt_labels": [
+        "isolated",
+        "alone",
+        "alienated",
+        "like an outsider",
+        "disconnected"
+      ],
+      "definition": "Distress at a gap between wanted and actual social connection, in quantity or quality; can occur when surrounded by people.",
+      "client_wording": "Alone or cut off, even when people are around.",
+      "example": "Eating dinner alone again on a Friday night. Lonely 75.",
+      "group": "Loneliness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.connected",
+        "em.longing",
+        "em.rejected",
+        "bf.social-isolation",
+        "sit.being-alone",
+        "rk.thwarted-belongingness"
+      ],
+      "see": ["grief-and-loss.overview"],
+      "sources": [
+        "Hawkley-Cacioppo-2010 § Definition of loneliness",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.longing",
+      "label": "Longing",
+      "alt_labels": [
+        "yearning",
+        "missing someone",
+        "pining",
+        "homesick"
+      ],
+      "definition": "Aching wish for an absent person, place or time that is not lost for good, as in separation or homesickness.",
+      "client_wording": "Missing someone or somewhere so much it aches.",
+      "example": "Holidays far from my family back home. Longing 70.",
+      "group": "Loneliness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.lonely",
+        "em.grief",
+        "em.yearning"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.jealous",
+      "label": "Jealous",
+      "alt_labels": [
+        "possessive",
+        "insecure in the relationship",
+        "threatened by a rival"
+      ],
+      "definition": "Fear and anger about losing a valued relationship, or a person's attention, to a rival; involves three people.",
+      "client_wording": "Afraid someone will take away a person who matters to me.",
+      "example": "My partner laughs at a coworker's message: \"They'd rather be with them.\" Jealous 80.",
+      "group": "Jealousy and envy",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.envious",
+        "em.suspicious",
+        "tt.abandonment-and-rejection"
+      ],
+      "see": [],
+      "sources": [
+        "Parrott-Smith-1993 § Introduction",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.envious",
+      "label": "Envious",
+      "alt_labels": [
+        "envy",
+        "green with envy",
+        "covetous"
+      ],
+      "definition": "Painful wish for another person's advantage, success or possession, often with resentment or inferiority; involves two people.",
+      "client_wording": "Wanting what someone else has, and feeling worse because they have it.",
+      "example": "Scrolling past a friend's promotion announcement. Envious 60.",
+      "group": "Jealousy and envy",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.jealous",
+        "em.resentful"
+      ],
+      "see": [],
+      "sources": [
+        "Parrott-Smith-1993 § Introduction",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.hopeless",
+      "label": "Hopeless",
+      "alt_labels": [
+        "despairing",
+        "despair",
+        "pointless",
+        "no future"
+      ],
+      "definition": "Expectation that the future is bleak and nothing will improve; a key suicide risk marker that always prompts risk assessment.",
+      "client_wording": "Like nothing will ever get better.",
+      "example": "\"There's no point trying, it'll always be like this.\" Hopeless 90.",
+      "group": "Hopelessness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.helpless",
+        "em.trapped",
+        "em.hopeful",
+        "em.depressed",
+        "tt.hopelessness",
+        "cb.future-hopeless"
+      ],
+      "see": ["03-formulation.sharing-the-formulation", "05-session-structure.agenda-setting", "alliance-and-stance.hope-and-expectancy", "chronic-pain-and-physical-health.overview", "responding-in-session.pitfall-missing-risk-behind-hopelessness", "responding-in-session.responding-to-hopelessness-and-self-criticism"],
+      "sources": [
+        "Beck-etal-1974 § Introduction",
+        "APA-DSM5TR-2022 § Major Depressive Disorder (suicide risk)"
+      ]
+    },
+    {
+      "id": "em.helpless",
+      "label": "Helpless",
+      "alt_labels": [
+        "powerless",
+        "can't do anything",
+        "at the mercy of things"
+      ],
+      "definition": "Feeling that one's actions cannot influence important outcomes.",
+      "client_wording": "Powerless, like nothing I do makes a difference.",
+      "example": "Watching my father's illness get worse. Helpless 85.",
+      "group": "Hopelessness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.hopeless",
+        "em.overwhelmed",
+        "em.confident",
+        "cb.helpless"
+      ],
+      "see": ["depression.persistent-depression"],
+      "sources": [
+        "Abramson-etal-1978 § Introduction"
+      ]
+    },
+    {
+      "id": "em.defeated",
+      "label": "Defeated",
+      "alt_labels": [
+        "beaten",
+        "crushed",
+        "given up",
+        "worn down"
+      ],
+      "definition": "Sense of having lost a struggle for valued goals, status or self-worth, with a pull to give up.",
+      "client_wording": "Beaten down, like I've lost and there's no fight left.",
+      "example": "Rejected for the tenth job in a row. Defeated 80.",
+      "group": "Hopelessness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.trapped",
+        "em.discouraged",
+        "tt.loss-and-defeat",
+        "rk.defeat-or-humiliation"
+      ],
+      "see": ["02-risk.suicide-risk-assessment", "chronic-pain-and-physical-health.cbt-model"],
+      "sources": [
+        "Gilbert-Allan-1998 § Introduction",
+        "OConnor-Kirtley-2018 § Motivational phase"
+      ]
+    },
+    {
+      "id": "em.trapped",
+      "label": "Trapped",
+      "alt_labels": [
+        "stuck",
+        "cornered",
+        "entrapped",
+        "no way out"
+      ],
+      "definition": "Strong wish to escape a painful situation or inner state combined with sensing no way out; central to suicide risk models.",
+      "client_wording": "Stuck in how things are, with no way out.",
+      "example": "\"I can't leave this marriage and I can't stand staying.\" Trapped 90.",
+      "group": "Hopelessness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.defeated",
+        "em.hopeless",
+        "tt.entrapment",
+        "cb.powerless"
+      ],
+      "see": ["02-risk.suicide-focused-cbt", "02-risk.suicide-risk-assessment"],
+      "sources": [
+        "Gilbert-Allan-1998 § Introduction",
+        "OConnor-Kirtley-2018 § Motivational phase"
+      ]
+    },
+    {
+      "id": "em.discouraged",
+      "label": "Discouraged",
+      "alt_labels": [
+        "demoralized",
+        "disheartened",
+        "dejected"
+      ],
+      "definition": "Loss of confidence and motivation after setbacks; milder and more situation-bound than hopelessness.",
+      "client_wording": "Losing heart after things keep going wrong.",
+      "example": "Third week of therapy and still low: \"This isn't working.\" Discouraged 55.",
+      "group": "Hopelessness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.disappointed",
+        "em.defeated"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.numb",
+      "label": "Numb",
+      "alt_labels": [
+        "emotionally numb",
+        "shut down",
+        "flat",
+        "feeling nothing",
+        "in shock"
+      ],
+      "definition": "Reduced capacity to feel emotions, especially positive or loving ones; common after trauma and in depression.",
+      "client_wording": "Can't feel much of anything, as if my feelings are switched off.",
+      "example": "At my friend's wedding I felt nothing at all. Numb 80.",
+      "group": "Numbness and emptiness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.empty",
+        "em.anhedonic",
+        "bs.depersonalization",
+        "bh.numbing-activities"
+      ],
+      "see": ["grief-and-loss.overview", "ptsd.overview"],
+      "sources": [
+        "Litz-Gray-2002 § Model of posttraumatic emotional functioning",
+        "APA-DSM5TR-2022 § Posttraumatic Stress Disorder (inability to experience positive emotions)"
+      ]
+    },
+    {
+      "id": "em.empty",
+      "label": "Empty",
+      "alt_labels": [
+        "hollow",
+        "void inside",
+        "emptiness"
+      ],
+      "definition": "Chronic sense of inner hollowness or lack of substance, distinct from sadness; a feature of borderline personality disorder and depression.",
+      "client_wording": "Hollow inside, like something important is missing.",
+      "example": "Home alone after work, scrolling with no sense of who I am. Empty 75.",
+      "group": "Numbness and emptiness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.numb",
+        "em.bored"
+      ],
+      "see": ["personality-disorders.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Borderline Personality Disorder (chronic emptiness)",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.anhedonic",
+      "label": "Unable to enjoy (anhedonia)",
+      "alt_labels": [
+        "anhedonia",
+        "no pleasure",
+        "nothing is fun",
+        "lost interest"
+      ],
+      "definition": "Markedly reduced interest in, or pleasure from, activities once enjoyed; a core symptom of depression.",
+      "client_wording": "Nothing feels enjoyable or interesting anymore.",
+      "example": "I went fishing, which I used to love, and felt nothing. Enjoyment 0.",
+      "group": "Numbness and emptiness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.depressed",
+        "em.enjoyment",
+        "em.numb"
+      ],
+      "see": ["depression.overview"],
+      "sources": [
+        "APA-DSM5TR-2022 § Major Depressive Disorder",
+        "Beck-2021 § Ch. 7 Activity Scheduling"
+      ]
+    },
+    {
+      "id": "em.bored",
+      "label": "Bored",
+      "alt_labels": [
+        "boredom",
+        "unengaged",
+        "dull",
+        "apathetic"
+      ],
+      "definition": "Aversive state of wanting, but being unable, to engage attention in satisfying activity.",
+      "client_wording": "Restless and fed up because nothing holds my attention.",
+      "example": "A long empty Sunday with nothing planned: \"A drink would help.\" Bored 70.",
+      "group": "Numbness and emptiness",
+      "valence": "negative",
+      "broader": null,
+      "related": [
+        "em.empty",
+        "em.interested",
+        "bs.restlessness",
+        "sit.unstructured-time"
+      ],
+      "see": [],
+      "sources": [
+        "Eastwood-etal-2012 § Defining boredom",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.happy",
+      "label": "Happy",
+      "alt_labels": [
+        "joyful",
+        "glad",
+        "cheerful",
+        "delighted",
+        "content",
+        "satisfied"
+      ],
+      "definition": "Pleasant feeling of joy, gladness or satisfaction when things go well or valued needs are met.",
+      "client_wording": "Glad, cheerful or joyful.",
+      "example": "My daughter called with good news. Happy 70.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": null,
+      "related": [
+        "em.enjoyment",
+        "em.elated"
+      ],
+      "see": [],
+      "sources": [
+        "Fredrickson-2001 § The Broaden-and-Build Theory of Positive Emotions",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Greenberger-Padesky-2016 § Ch. 16 Maintaining Your Gains and Experiencing More Happiness"
+      ]
+    },
+    {
+      "id": "em.enjoyment",
+      "label": "Enjoyment (pleasure)",
+      "alt_labels": [
+        "pleasure",
+        "fun",
+        "liking it"
+      ],
+      "definition": "Pleasure taken in an activity itself; recorded as the pleasure rating in activity monitoring and scheduling.",
+      "client_wording": "How much I liked doing something.",
+      "example": "Walk in the park with the dog: pleasure rated high, even though I was tired.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": null,
+      "related": [
+        "em.accomplished",
+        "em.anhedonic",
+        "em.happy"
+      ],
+      "see": ["behavioral.activity-monitoring-and-scheduling"],
+      "sources": [
+        "Beck-2021 § Ch. 7 Activity Scheduling"
+      ]
+    },
+    {
+      "id": "em.accomplished",
+      "label": "Sense of achievement (mastery)",
+      "alt_labels": [
+        "mastery",
+        "accomplishment",
+        "competence",
+        "got it done"
+      ],
+      "definition": "Satisfaction from completing a task or meeting a challenge, judged against current ability; recorded as the achievement or mastery rating.",
+      "client_wording": "Feeling I got something done or handled something hard.",
+      "example": "On a low day I paid one overdue bill: achievement rated high.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": null,
+      "related": [
+        "em.enjoyment",
+        "em.proud",
+        "em.confident"
+      ],
+      "see": ["behavioral.activity-monitoring-and-scheduling"],
+      "sources": [
+        "Beck-2021 § Ch. 7 Activity Scheduling"
+      ]
+    },
+    {
+      "id": "em.proud",
+      "label": "Proud",
+      "alt_labels": [
+        "pride",
+        "self-respect",
+        "pleased with myself"
+      ],
+      "definition": "Pleasant self-evaluation after an achievement or after acting in line with one's values.",
+      "client_wording": "Pleased with myself for something I did.",
+      "example": "I spoke up in the meeting even though I was nervous. Proud 65.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": null,
+      "related": [
+        "em.accomplished",
+        "em.ashamed"
+      ],
+      "see": [],
+      "sources": [
+        "Fredrickson-2001 § The Broaden-and-Build Theory of Positive Emotions",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.calm",
+      "label": "Calm",
+      "alt_labels": [
+        "relaxed",
+        "at ease",
+        "settled",
+        "peaceful"
+      ],
+      "definition": "Low-arousal state of physical and mental ease; the target state of relaxation and arousal-reduction techniques.",
+      "client_wording": "Relaxed and settled in body and mind.",
+      "example": "After ten minutes of slow breathing on the porch. Calm 60.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": null,
+      "related": [
+        "em.soothed",
+        "em.anxious"
+      ],
+      "see": ["behavioral.pitfall-chasing-habituation", "behavioral.relaxation-and-arousal-reduction"],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Gilbert-2009 § Three types of affect regulation system"
+      ]
+    },
+    {
+      "id": "em.soothed",
+      "label": "Soothed (safe and comforted)",
+      "alt_labels": [
+        "safe",
+        "comforted",
+        "reassured",
+        "cared for",
+        "warmth"
+      ],
+      "definition": "Felt safeness and warmth from care or self-compassion, linked to the soothing affect system in compassion-focused therapy.",
+      "client_wording": "Comforted and safe, like someone, or I, am looking after me.",
+      "example": "Putting a hand on my chest and speaking kindly to myself after a mistake. Soothed 50.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": null,
+      "related": [
+        "em.calm",
+        "em.ashamed",
+        "em.connected"
+      ],
+      "see": ["15-transdiagnostic-processes.self-criticism-and-shame", "cognitive.self-compassion-techniques", "responding-in-session.responding-to-hopelessness-and-self-criticism"],
+      "sources": [
+        "Gilbert-2009 § Three types of affect regulation system"
+      ]
+    },
+    {
+      "id": "em.hopeful",
+      "label": "Hopeful",
+      "alt_labels": [
+        "optimistic",
+        "encouraged",
+        "looking forward"
+      ],
+      "definition": "Expectation that valued goals are reachable and things can improve, with a sense of pathways to get there; protective against despair.",
+      "client_wording": "Things could get better, and I can help make that happen.",
+      "example": "After making a plan with my therapist: \"This might actually help.\" Hopeful 55.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": null,
+      "related": [
+        "em.hopeless",
+        "em.confident"
+      ],
+      "see": ["alliance-and-stance.hope-and-expectancy"],
+      "sources": [
+        "Snyder-2002 § Hope theory",
+        "Beck-etal-1974 § Introduction"
+      ]
+    },
+    {
+      "id": "em.confident",
+      "label": "Confident",
+      "alt_labels": [
+        "self-assured",
+        "capable",
+        "sure of myself"
+      ],
+      "definition": "Expectation that one can carry out a task or handle a situation successfully (self-efficacy).",
+      "client_wording": "Sure that I can handle this.",
+      "example": "Before my third practice presentation. Confident 70.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": null,
+      "related": [
+        "em.helpless",
+        "em.accomplished",
+        "em.hopeful"
+      ],
+      "see": ["substance-use.pitfall-lapse-treated-as-failure", "substance-use.relapse-prevention-model"],
+      "sources": [
+        "Bandura-1977 § Efficacy expectations"
+      ]
+    },
+    {
+      "id": "em.interested",
+      "label": "Interested",
+      "alt_labels": [
+        "curious",
+        "engaged",
+        "absorbed",
+        "enthusiastic"
+      ],
+      "definition": "Engaged curiosity that draws a person toward exploring and learning; the opposite pull to boredom and withdrawal.",
+      "client_wording": "Curious and drawn in by something.",
+      "example": "Lost track of time reading about bird migration. Interested 70.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": null,
+      "related": [
+        "em.bored",
+        "em.enjoyment"
+      ],
+      "see": [],
+      "sources": [
+        "Fredrickson-2001 § The Broaden-and-Build Theory of Positive Emotions",
+        "Watson-etal-1988 § Method"
+      ]
+    },
+    {
+      "id": "em.connected",
+      "label": "Connected (loved and close)",
+      "alt_labels": [
+        "loved",
+        "loving",
+        "close",
+        "belonging",
+        "affection"
+      ],
+      "definition": "Warmth and closeness with others, including love and a sense of belonging; the counterpart of loneliness.",
+      "client_wording": "Close to people, cared about and belonging.",
+      "example": "Cooking dinner with my sister and laughing. Connected 80.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": null,
+      "related": [
+        "em.lonely",
+        "em.soothed"
+      ],
+      "see": [],
+      "sources": [
+        "Fredrickson-2001 § The Broaden-and-Build Theory of Positive Emotions",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Hawkley-Cacioppo-2010 § Definition of loneliness"
+      ]
+    },
+    {
+      "id": "em.relieved",
+      "label": "Relieved",
+      "alt_labels": [
+        "relief",
+        "a weight off",
+        "phew"
+      ],
+      "definition": "Drop in distress when a feared outcome passes or is escaped; relief after avoidance or a safety behavior can keep fear going.",
+      "client_wording": "The weight lifting when something I feared is over or avoided.",
+      "example": "I cancelled the party at the last minute. Relieved 80, and the next invite felt even harder.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": null,
+      "related": [
+        "em.anxious",
+        "mp.substance-relief-cycle"
+      ],
+      "see": ["10-diagnosis.communicating-a-diagnosis"],
+      "sources": [
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions",
+        "Clark-1986 § The cognitive model of panic"
+      ]
+    },
+    {
+      "id": "em.elated",
+      "label": "Elated",
+      "alt_labels": [
+        "euphoric",
+        "high",
+        "on top of the world",
+        "buzzing"
+      ],
+      "definition": "Intense, expansive happiness; when persistent, out of proportion or with reduced need for sleep, assess for hypomania or mania.",
+      "client_wording": "Extremely high or on top of the world, more than usual for me.",
+      "example": "Three nights of little sleep, full of plans: \"I can do anything.\" Elated 95.",
+      "group": "Positive emotions",
+      "valence": "positive",
+      "broader": "em.happy",
+      "related": [
+        "em.happy",
+        "em.irritated",
+        "ib.high-mood-is-best",
+        "tt.personal-gain-and-grandiosity"
+      ],
+      "see": ["bipolar-and-psychosis.overview", "bipolar-and-psychosis.pitfall-missed-bipolarity"],
+      "sources": [
+        "APA-DSM5TR-2022 § Bipolar I Disorder (manic episode)",
+        "Linehan-2015 § Emotion Regulation Handout 6 Ways to Describe Emotions"
+      ]
+    },
+    {
+      "id": "em.yearning",
+      "label": "Yearning (for someone who died)",
+      "alt_labels": [
+        "pining",
+        "longing for the deceased",
+        "aching for the person who died"
+      ],
+      "definition": "Intense, persistent longing for a person who has died; a core symptom of prolonged grief when it stays daily and impairing.",
+      "client_wording": "Aching to have the person who died back, again and again.",
+      "example": "Hearing his favorite song in a shop. Yearning 85.",
+      "group": "Sadness",
+      "valence": "negative",
+      "broader": "em.grief",
+      "related": [
+        "em.longing",
+        "mp.poor-loss-integration",
+        "sit.loss-reminder"
+      ],
+      "see": ["grief-and-loss.assessment", "grief-and-loss.overview", "grief-and-loss.pitfall-missing-suicide-risk-in-grief", "grief-and-loss.pitfall-treating-normal-grief"],
+      "sources": [
+        "Prigerson-etal-2021 § Prolonged grief disorder criteria",
+        "Shear-2015 § Clinical features"
+      ]
+    }
+  ]
+}

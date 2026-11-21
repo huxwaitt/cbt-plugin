@@ -1,0 +1,103 @@
+{
+  "scheme": "formulation-models",
+  "prefix": "fm",
+  "title": "Formulation models",
+  "version": "1.0.0",
+  "rating_types": {
+    "intensity": "0 to 100, how strong the emotion is",
+    "belief": "0 to 100, how much the client believes it"
+  },
+  "models": [
+    {
+      "id": "fm.five-part",
+      "label": "Five-part model",
+      "summary": "Situation, thoughts, emotions, body, behavior.",
+      "use_when": "Most first formulations.",
+      "topics": [
+        "depression"
+      ],
+      "page": "depression.cbt-model",
+      "sources": [
+        "Beck-2021 § Ch. 3"
+      ],
+      "grid": {
+        "cols": 3,
+        "rows": 3
+      },
+      "slots": [
+        {
+          "id": "situation",
+          "label": "Situation",
+          "prompt": "Where were you?",
+          "help": "One event.",
+          "vocab": [
+            "sit"
+          ],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 1
+        },
+        {
+          "id": "thoughts",
+          "label": "Thoughts",
+          "prompt": "What went through your mind?",
+          "help": "Words or images.",
+          "vocab": [],
+          "multi": true,
+          "rating": "belief",
+          "free_text": true,
+          "col": 1,
+          "row": 2
+        },
+        {
+          "id": "emotions",
+          "label": "Emotions",
+          "prompt": "What did you feel?",
+          "help": "One word each.",
+          "vocab": [
+            "em"
+          ],
+          "multi": true,
+          "rating": "intensity",
+          "free_text": false,
+          "col": 3,
+          "row": 2
+        },
+        {
+          "id": "behaviors",
+          "label": "Behaviors",
+          "prompt": "What did you do?",
+          "help": "Actions.",
+          "vocab": [],
+          "multi": true,
+          "rating": null,
+          "free_text": true,
+          "col": 2,
+          "row": 3
+        }
+      ],
+      "links": [
+        {
+          "from": "situation",
+          "to": "thoughts",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "thoughts",
+          "to": "emotions",
+          "label": "",
+          "style": "solid"
+        },
+        {
+          "from": "behaviors",
+          "to": "thoughts",
+          "label": "",
+          "style": "dashed"
+        }
+      ]
+    }
+  ]
+}

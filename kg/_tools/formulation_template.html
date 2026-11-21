@@ -1,0 +1,2363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CBT Case Formulation</title>
+<meta name="description" content="Draw a CBT case formulation from the fixed CBT vocabulary. Data stays in this browser.">
+<style>
+/* Layout: one working column (session, model, diagram beside the box editors on wide screens), vocabulary in its own tab. */
+:root {
+  --bg: #f3f6f6;
+  --surface: #ffffff;
+  --surface-2: #edf2f2;
+  --ink: #162225;
+  --ink-2: #3f5155;
+  --muted: #566a6f;
+  --line: #d3dcde;
+  --line-strong: #9aabb0;
+  --accent: #1b6570;
+  --accent-ink: #ffffff;
+  --accent-soft: #e2eff1;
+  --accent-line: #87bcc3;
+  --focus: #1b6570;
+  --arrow: #4c5f64;
+  --danger: #9f3227;
+  --danger-soft: #f9e8e5;
+  --warn: #7a5100;
+  --warn-soft: #fbf1db;
+  --shadow: 0 1px 2px rgba(16, 34, 38, 0.06), 0 3px 10px rgba(16, 34, 38, 0.05);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  --radius: 8px;
+  --appbar-h: 64px;
+  --col-gap: 72px;
+  --row-gap: 56px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1416;
+    --surface: #162024;
+    --surface-2: #1c282c;
+    --ink: #e3ebed;
+    --ink-2: #b9c8cc;
+    --muted: #98abb0;
+    --line: #2c3b40;
+    --line-strong: #4f646a;
+    --accent: #72c2cb;
+    --accent-ink: #0a1d20;
+    --accent-soft: #17343a;
+    --accent-line: #3d7b84;
+    --focus: #94dbe2;
+    --arrow: #9fb2b7;
+    --danger: #f09488;
+    --danger-soft: #3b1f1b;
+    --warn: #e9c46e;
+    --warn-soft: #332810;
+    --shadow: none;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1416;
+  --surface: #162024;
+  --surface-2: #1c282c;
+  --ink: #e3ebed;
+  --ink-2: #b9c8cc;
+  --muted: #98abb0;
+  --line: #2c3b40;
+  --line-strong: #4f646a;
+  --accent: #72c2cb;
+  --accent-ink: #0a1d20;
+  --accent-soft: #17343a;
+  --accent-line: #3d7b84;
+  --focus: #94dbe2;
+  --arrow: #9fb2b7;
+  --danger: #f09488;
+  --danger-soft: #3b1f1b;
+  --warn: #e9c46e;
+  --warn-soft: #332810;
+  --shadow: none;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.5 var(--font);
+  overflow-x: hidden;
+}
+[hidden] { display: none !important; }
+h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; }
+p { margin: 0; }
+code, .mono { font-family: var(--mono); font-size: 0.82em; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip {
+  position: absolute; left: -9999px; top: 8px; z-index: 60;
+  background: var(--surface); color: var(--ink); padding: 8px 12px; border: 2px solid var(--focus); border-radius: 6px;
+}
+.skip:focus { left: 16px; }
+.wrap {
+  max-width: 1360px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* App bar */
+.appbar { background: var(--surface); border-bottom: 1px solid var(--line); }
+@media (min-width: 720px) {
+  body::before {
+    content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+    z-index: 30; background: var(--surface);
+  }
+  .appbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; }
+}
+.appbar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding-block: 10px; }
+.brand { min-width: 0; }
+.brand h1 { margin: 0; font-size: 1.2rem; font-weight: 650; letter-spacing: -0.005em; }
+.brand p { font-size: 0.8rem; color: var(--muted); }
+.tabs { display: flex; gap: 2px; align-self: stretch; align-items: stretch; }
+.tab {
+  font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--muted); background: none; border: 0;
+  border-bottom: 2px solid transparent; padding: 6px 10px; cursor: pointer; border-radius: 6px 6px 0 0;
+}
+.tab:hover { color: var(--ink); background: var(--surface-2); }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.appbar-tools { margin-left: auto; display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* Buttons and inputs */
+.btn {
+  font: inherit; font-size: 0.875rem; font-weight: 550; line-height: 1.2;
+  min-height: 36px; padding: 7px 12px; border-radius: 6px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); cursor: pointer;
+}
+.btn:hover { background: var(--surface-2); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: var(--accent); filter: brightness(1.08); }
+.btn-danger { color: var(--danger); border-color: var(--danger); }
+.btn-danger:hover { background: var(--danger-soft); }
+.btn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
+.btn-quiet { border-color: transparent; background: none; color: var(--accent); padding-inline: 6px; }
+.btn-quiet:hover { background: var(--accent-soft); }
+input, textarea, select {
+  font: inherit; font-size: 0.95rem; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line-strong); border-radius: 6px; padding: 7px 9px; width: 100%; min-width: 0;
+}
+textarea { resize: vertical; min-height: 64px; line-height: 1.45; }
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
+input[type="radio"], input[type="checkbox"] { width: auto; accent-color: var(--accent); }
+
+main { padding-block: 20px 56px; }
+.view { display: grid; gap: 20px; }
+.panel {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px; min-width: 0; box-shadow: var(--shadow);
+}
+.panel-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 12px; }
+.panel h2 { margin: 0; font-size: 1.02rem; font-weight: 650; }
+.eyebrow { font-size: 0.72rem; font-weight: 650; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--ink-2); font-size: 0.9rem; max-width: 68ch; }
+.tag {
+  display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; color: var(--ink-2);
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; white-space: nowrap;
+}
+
+/* Session details */
+.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 12px; }
+.field { min-width: 0; }
+.field label { display: block; font-size: 0.8rem; font-weight: 650; color: var(--ink-2); margin-bottom: 4px; }
+.field .hint { font-size: 0.78rem; color: var(--muted); margin-top: 3px; }
+.privacy { margin-top: 10px; font-size: 0.85rem; color: var(--ink-2); }
+.warn-line {
+  margin-top: 6px; font-size: 0.82rem; color: var(--warn); background: var(--warn-soft);
+  border-radius: 4px; padding: 4px 8px;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.actions .spacer { flex: 1 1 auto; }
+.status { font-size: 0.82rem; color: var(--muted); flex: 1 1 220px; min-width: 0; }
+
+/* Model */
+.model-current { display: grid; gap: 6px; }
+.model-current h3 { margin: 0; font-size: 1.15rem; font-weight: 650; }
+.model-current .meta { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; font-size: 0.82rem; color: var(--muted); }
+.model-current dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 12px; margin: 6px 0 0; font-size: 0.9rem; }
+.model-current dt { font-weight: 650; color: var(--ink-2); }
+.model-current dd { margin: 0; min-width: 0; }
+.chooser { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+.chooser > summary {
+  cursor: pointer; font-weight: 650; color: var(--accent); font-size: 0.92rem; padding: 4px 0; width: fit-content;
+}
+.chooser fieldset { border: 0; margin: 12px 0 0; padding: 0; min-width: 0; }
+.chooser legend { padding: 0; margin-bottom: 8px; }
+.model-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 10px; }
+.model-opt {
+  display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1px solid var(--line);
+  border-radius: 6px; cursor: pointer; background: var(--surface); min-width: 0;
+}
+.model-opt:hover { border-color: var(--line-strong); background: var(--surface-2); }
+.model-opt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.model-opt:has(input:focus-visible) { outline: 2px solid var(--focus); outline-offset: 2px; }
+.model-opt input { margin-top: 3px; flex: none; }
+.model-opt input:focus-visible { outline: none; }
+.mo-body { display: grid; gap: 3px; min-width: 0; }
+.mo-title { font-weight: 650; font-size: 0.92rem; }
+.mo-sum { font-size: 0.84rem; color: var(--ink-2); }
+.mo-use { font-size: 0.8rem; color: var(--muted); }
+.mo-use b { font-weight: 650; color: var(--ink-2); }
+
+/* Workspace */
+.workspace { display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 1100px) {
+  .workspace { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+  .diagram-panel {
+    position: sticky; top: calc(var(--appbar-h) + 12px);
+    max-height: calc(100vh - var(--appbar-h) - 24px); overflow: auto;
+  }
+}
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.8rem; color: var(--ink-2); align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend svg { flex: none; }
+.mode-note { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+.diagram-scroll { overflow-x: auto; margin-top: 10px; }
+.diagram-canvas {
+  position: relative; display: grid; column-gap: var(--col-gap); row-gap: var(--row-gap);
+  min-width: 560px; padding: 6px;
+}
+.diagram-canvas.is-stacked { display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: 0; }
+.diagram-svg { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; z-index: 2; }
+.diagram-svg.under { z-index: 0; }
+.is-stacked .diagram-svg { display: none; }
+.box {
+  position: relative; z-index: 1; min-width: 0; background: var(--surface);
+  border: 1px solid var(--line-strong); border-radius: 6px; padding: 8px 10px 10px; font-size: 0.84rem;
+}
+.box.has-content { border-color: var(--accent-line); }
+.box h3 { margin: 0 0 4px; font-size: 0.86rem; }
+.box-edit {
+  font: inherit; font-weight: 650; color: var(--ink); background: none; border: 0; padding: 0; text-align: left;
+  cursor: pointer; width: 100%; border-radius: 3px;
+}
+.box-edit:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.box-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.box-items li { display: flex; justify-content: space-between; gap: 8px; min-width: 0; }
+.box-items .lab { min-width: 0; overflow-wrap: anywhere; }
+.box-items .val { flex: none; font-variant-numeric: tabular-nums; color: var(--accent); font-weight: 650; }
+.box-quote { margin-top: 5px; font-style: italic; color: var(--ink-2); overflow-wrap: anywhere; white-space: pre-line; }
+.box-empty { color: var(--muted); font-size: 0.8rem; }
+.box-links { margin-top: 6px; font-size: 0.8rem; color: var(--ink-2); border-top: 1px dashed var(--line); padding-top: 5px; }
+.box-links span { display: block; }
+.lnk-path { fill: none; stroke: var(--arrow); stroke-width: 1.6; }
+.lnk-path.dashed { stroke: var(--accent); stroke-dasharray: 6 5; }
+.ah-solid { fill: var(--arrow); }
+.ah-dashed { fill: var(--accent); }
+.lnk-label {
+  font: 600 11px var(--font); fill: var(--ink-2); paint-order: stroke; stroke: var(--surface);
+  stroke-width: 4px; stroke-linejoin: round;
+}
+.lnk-label.dashed { fill: var(--accent); }
+.lnk-label-bg { fill: var(--surface); }
+.lnk-label-bg.in-frame { fill: var(--surface-2); }
+.env-frame { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 1.4; }
+
+/* Slot editors */
+.slots-head { display: grid; gap: 4px; }
+.slot-list { display: grid; gap: 14px; }
+.slot-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px;
+  display: grid; gap: 10px; min-width: 0; box-shadow: var(--shadow); scroll-margin-top: calc(var(--appbar-h) + 12px);
+}
+.slot-card.flash { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.slot-card header { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.slot-card h3 { margin: 0; font-size: 1rem; font-weight: 650; }
+.slot-prompt { font-size: 0.92rem; }
+.slot-prompt b { font-weight: 650; color: var(--ink-2); }
+.slot-help { font-size: 0.84rem; color: var(--muted); }
+.sub-label { display: block; font-size: 0.8rem; font-weight: 650; color: var(--ink-2); margin-bottom: 4px; }
+.picker-row { display: flex; gap: 6px; }
+.picker-row input { flex: 1 1 auto; }
+.picker-hint { font-size: 0.76rem; color: var(--muted); margin-top: 3px; }
+.picker-pop {
+  margin-top: 6px; border: 1px solid var(--line-strong); border-radius: 6px; background: var(--surface);
+  overflow: hidden;
+}
+.listbox { max-height: 260px; overflow-y: auto; overscroll-behavior: contain; }
+.lb-group-h {
+  position: sticky; top: 0; z-index: 1; background: var(--surface-2); color: var(--muted);
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px;
+}
+.lb-opt {
+  display: flex; justify-content: space-between; gap: 10px; align-items: baseline;
+  padding: 6px 10px; cursor: pointer; font-size: 0.9rem; border-left: 3px solid transparent;
+}
+.lb-opt:hover { background: var(--surface-2); }
+.lb-opt.active { background: var(--accent-soft); border-left-color: var(--accent); }
+.lb-opt .added { font-size: 0.72rem; font-weight: 700; color: var(--accent); flex: none; }
+.lb-opt .alt { font-size: 0.78rem; color: var(--muted); }
+.lb-empty { padding: 10px; font-size: 0.86rem; color: var(--muted); }
+.picker-detail { border-top: 1px solid var(--line); padding: 10px 12px; font-size: 0.84rem; display: grid; gap: 4px; background: var(--surface); }
+.picker-detail .pd-title { font-weight: 650; font-size: 0.9rem; }
+.picker-detail .pd-k { font-weight: 650; color: var(--ink-2); }
+.picker-detail .pd-meta { color: var(--muted); font-size: 0.78rem; }
+.chips { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.chip {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-width: 0;
+  background: var(--accent-soft); border: 1px solid var(--accent-line); border-radius: 6px; padding: 4px 4px 4px 10px;
+}
+.chip-label { flex: 1 1 140px; min-width: 0; font-size: 0.9rem; overflow-wrap: anywhere; }
+.chip-label .missing { color: var(--danger); font-size: 0.78rem; }
+.chip-rate { display: inline-flex; align-items: center; gap: 4px; font-size: 0.8rem; color: var(--ink-2); }
+.chip-rate input { width: 4.6em; padding: 3px 6px; font-variant-numeric: tabular-nums; text-align: right; }
+.chip-x {
+  font: inherit; font-size: 1.05rem; line-height: 1; width: 30px; height: 30px; border-radius: 5px;
+  border: 1px solid transparent; background: none; color: var(--ink-2); cursor: pointer; flex: none;
+}
+.chip-x:hover { background: var(--surface); border-color: var(--line-strong); color: var(--danger); }
+.chips-empty { font-size: 0.84rem; color: var(--muted); }
+
+/* Vocabulary browser */
+.vb-controls { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 12px; }
+@media (max-width: 640px) { .vb-controls { grid-template-columns: minmax(0, 1fr); } }
+.vb-count { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
+.vb-results { display: grid; gap: 18px; }
+.vb-scheme { display: grid; gap: 8px; min-width: 0; }
+.vb-scheme > header { display: grid; gap: 4px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.vb-scheme h3 { margin: 0; font-size: 1.05rem; font-weight: 650; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.vb-scheme h4 { margin: 8px 0 2px; font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.vb-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.vc { border: 1px solid var(--line); border-radius: 6px; background: var(--surface); min-width: 0; }
+.vc[open] { border-color: var(--line-strong); }
+.vc > summary {
+  cursor: pointer; padding: 7px 10px; display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: baseline; list-style-position: inside;
+}
+.vc > summary .vc-label { font-weight: 650; }
+.vc > summary code { color: var(--muted); }
+.vc-body { padding: 4px 12px 12px; display: grid; gap: 6px; font-size: 0.88rem; }
+.vc-body dl { display: grid; grid-template-columns: minmax(0, 9.5em) minmax(0, 1fr); gap: 5px 12px; margin: 0; }
+@media (max-width: 560px) { .vc-body dl { grid-template-columns: minmax(0, 1fr); gap: 0; } .vc-body dd { margin-bottom: 6px !important; } }
+.vc-body dt { font-weight: 650; color: var(--ink-2); }
+.vc-body dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.inline-list { display: flex; flex-wrap: wrap; gap: 4px 6px; list-style: none; margin: 0; padding: 0; }
+.retired { color: var(--danger); font-size: 0.75rem; font-weight: 700; }
+
+/* Dialog */
+dialog {
+  border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface); color: var(--ink);
+  padding: 18px; width: min(560px, calc(100vw - 32px)); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+dialog::backdrop { background: rgba(10, 20, 22, 0.45); }
+dialog h2 { margin: 0 0 8px; font-size: 1.05rem; }
+.dlg-body { font-size: 0.92rem; display: grid; gap: 8px; max-height: 60vh; overflow: auto; }
+.dlg-body ul { margin: 0; padding-left: 1.2em; }
+.dlg-body textarea { min-height: 220px; font-family: var(--mono); font-size: 0.8rem; }
+.dlg-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.fatal { border-color: var(--danger); }
+
+.print-only { display: none; }
+body.printing .diagram-canvas { width: 680px; min-width: 0 !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
+}
+
+@media print {
+  :root:not([data-theme="none"]) {
+    --bg: #ffffff; --surface: #ffffff; --surface-2: #f1f4f4; --ink: #000000; --ink-2: #222222; --muted: #444444;
+    --line: #bbbbbb; --line-strong: #666666; --accent: #1b6570; --accent-soft: #ffffff; --accent-line: #1b6570;
+    --arrow: #333333; --shadow: none; color-scheme: light;
+  }
+  @page { margin: 14mm; }
+  body { font-size: 11pt; background: #ffffff; }
+  body::before { display: none; }
+  .appbar, .skip, .no-print, #view-vocab, .slot-list, .slots-head, .chooser, .actions, dialog, .privacy, .warn-line { display: none !important; }
+  #view-formulation { display: block !important; }
+  main { padding: 0; }
+  .wrap { max-width: none; padding: 0; }
+  .view { display: block; }
+  .panel { border: 0; padding: 0; box-shadow: none; margin-bottom: 12pt; }
+  #session-panel .fields, #session-panel .panel-head, #model-panel .panel-head { display: none; }
+  .print-only { display: block !important; }
+  .workspace { display: block; }
+  .diagram-panel { position: static; max-height: none; overflow: visible; }
+  .diagram-scroll { overflow: visible; }
+  .diagram-canvas { width: 680px; min-width: 0 !important; }
+  .box { break-inside: avoid; }
+  .print-table { width: 100%; border-collapse: collapse; font-size: 10pt; margin-top: 10pt; }
+  .print-table th, .print-table td { border: 1px solid #888888; padding: 4pt 6pt; text-align: left; vertical-align: top; }
+  .print-table th { background: #eeeeee; }
+  .print-table tr { break-inside: avoid; }
+  .print-head h1 { font-size: 15pt; margin: 0 0 6pt; }
+  .print-head dl { display: grid; grid-template-columns: repeat(5, auto); gap: 2pt 12pt; margin: 0 0 10pt; font-size: 10pt; }
+  .print-head dt { font-weight: 700; }
+  .print-head dd { margin: 0; }
+  .print-foot { font-size: 8.5pt; color: #444444; margin-top: 8pt; }
+  .print-section { break-before: auto; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the formulation</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <marker id="ah-solid" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="ah-solid"></path>
+    </marker>
+    <marker id="ah-dashed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="ah-dashed"></path>
+    </marker>
+  </defs>
+</svg>
+
+<header class="appbar" id="appbar">
+  <div class="wrap">
+    <div class="brand">
+      <h1>CBT Case Formulation</h1>
+      <p id="build-info">Built from the CBT vocabulary</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Views">
+      <button type="button" class="tab" role="tab" id="tab-formulation" data-view="formulation" aria-controls="view-formulation" aria-selected="true">Formulation</button>
+      <button type="button" class="tab" role="tab" id="tab-vocabulary" data-view="vocabulary" aria-controls="view-vocab" aria-selected="false" tabindex="-1">Vocabulary</button>
+    </div>
+    <div class="appbar-tools">
+      <button type="button" class="btn" id="btn-wording" aria-pressed="false" title="Show client wording instead of clinical labels">Client wording</button>
+      <button type="button" class="btn" id="btn-theme" aria-label="Color theme: System. Activate to change.">Theme: System</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <noscript><p class="panel fatal">This page needs JavaScript to draw the formulation.</p></noscript>
+  <div id="fatal" class="panel fatal" role="alert" hidden></div>
+
+  <section id="view-formulation" class="view" role="tabpanel" aria-labelledby="tab-formulation">
+
+    <section class="panel" id="session-panel" aria-labelledby="h-session">
+      <div class="print-only print-head" id="print-head"></div>
+      <div class="panel-head">
+        <h2 id="h-session">Session</h2>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <label for="f-client">Client code or initials</label>
+          <input id="f-client" type="text" maxlength="16" autocomplete="off" spellcheck="false" aria-describedby="privacy-note client-warn" placeholder="e.g. AB-07">
+        </div>
+        <div class="field">
+          <label for="f-date">Date</label>
+          <input id="f-date" type="date">
+        </div>
+        <div class="field">
+          <label for="f-therapist">Therapist</label>
+          <input id="f-therapist" type="text" maxlength="60" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="f-session">Session number</label>
+          <input id="f-session" type="number" min="1" max="999" step="1" inputmode="numeric">
+        </div>
+      </div>
+      <p class="warn-line" id="client-warn" role="status" hidden></p>
+      <p class="privacy" id="privacy-note">Use a code or initials, never a full name. Everything you enter stays in this browser: the page sends nothing anywhere.</p>
+      <div class="actions" role="group" aria-label="Save and share">
+        <button type="button" class="btn btn-primary" id="btn-export">Export JSON</button>
+        <button type="button" class="btn" id="btn-import">Import JSON</button>
+        <button type="button" class="btn" id="btn-print">Print</button>
+        <button type="button" class="btn" id="btn-example">Load example</button>
+        <button type="button" class="btn btn-danger" id="btn-clear">Clear</button>
+        <p class="status" id="save-status" role="status" aria-live="polite"></p>
+      </div>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+    </section>
+
+    <section class="panel" id="model-panel" aria-labelledby="h-model">
+      <div class="panel-head">
+        <h2 id="h-model">Model</h2>
+        <span class="eyebrow" id="model-count"></span>
+      </div>
+      <div class="model-current" id="model-current"></div>
+      <details class="chooser" id="chooser">
+        <summary>Choose a different model</summary>
+        <div id="model-options"></div>
+      </details>
+    </section>
+
+    <div class="workspace">
+      <section class="panel diagram-panel" id="diagram-panel" aria-labelledby="h-diagram">
+        <div class="panel-head">
+          <h2 id="h-diagram">Diagram</h2>
+          <div class="legend" aria-hidden="true">
+            <span><svg width="34" height="10"><line x1="1" y1="5" x2="31" y2="5" class="lnk-path" marker-end="url(#ah-solid)"></line></svg>Direct effect</span>
+            <span><svg width="34" height="10"><line x1="1" y1="5" x2="31" y2="5" class="lnk-path dashed" marker-end="url(#ah-dashed)"></line></svg>Feeds back or maintains</span>
+            <span><svg width="34" height="10"><line x1="3" y1="5" x2="31" y2="5" class="lnk-path" marker-start="url(#ah-solid)" marker-end="url(#ah-solid)"></line></svg>Each affects the other</span>
+          </div>
+        </div>
+        <p class="sr-only">Solid arrows show direct effects. Dashed arrows show feedback and maintaining loops. Two-headed arrows join parts that affect each other. Each box below lists where its arrows lead.</p>
+        <p class="mode-note" id="mode-note" hidden>Showing client wording</p>
+        <div class="diagram-scroll">
+          <div class="diagram-canvas" id="diagram-canvas">
+            <svg class="diagram-svg under" id="diagram-under" aria-hidden="true" focusable="false"></svg>
+            <svg class="diagram-svg" id="diagram-svg" aria-hidden="true" focusable="false"></svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="print-only print-section" id="print-table-wrap" aria-hidden="true"></section>
+
+      <section aria-labelledby="h-slots" class="slots">
+        <div class="slots-head">
+          <h2 id="h-slots" class="sr-only">Fill the boxes</h2>
+          <p class="lede">Fill each box with the client. Pick concepts from the fixed vocabulary, rate them where the box asks, and keep the client's own words beside them.</p>
+        </div>
+        <div class="slot-list" id="slot-list"></div>
+      </section>
+    </div>
+  </section>
+
+  <section id="view-vocab" class="view" role="tabpanel" aria-labelledby="tab-vocabulary" hidden>
+    <section class="panel" aria-labelledby="h-vocab">
+      <div class="panel-head">
+        <h2 id="h-vocab">Vocabulary</h2>
+        <span class="eyebrow" id="vb-total"></span>
+      </div>
+      <p class="lede">Every scheme in the fixed CBT vocabulary, with definitions, client wording and the knowledge graph pages that tag each concept.</p>
+      <div class="vb-controls" style="margin-top:12px">
+        <div class="field">
+          <label for="vb-search">Search concepts</label>
+          <input id="vb-search" type="search" autocomplete="off" placeholder="Label, alternative name, definition or id">
+        </div>
+        <div class="field">
+          <label for="vb-scheme">Scheme</label>
+          <select id="vb-scheme"></select>
+        </div>
+      </div>
+      <p class="vb-count" id="vb-count" role="status" aria-live="polite"></p>
+    </section>
+    <div class="vb-results" id="vb-results"></div>
+  </section>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlg-title">
+  <h2 id="dlg-title"></h2>
+  <div class="dlg-body" id="dlg-body"></div>
+  <div class="dlg-actions" id="dlg-actions"></div>
+</dialog>
+
+<p class="sr-only" id="live" aria-live="polite"></p>
+
+<script type="application/json" id="vocab-data">__FORMULATION_DATA__</script>
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- helpers ---------- */
+  var $ = function (sel, root) { return (root || document).querySelector(sel); };
+  function h(tag, attrs) {
+    var e = document.createElement(tag);
+    if (attrs) {
+      Object.keys(attrs).forEach(function (k) {
+        var v = attrs[k];
+        if (v === null || v === undefined || v === false) return;
+        if (k === 'class') e.className = v;
+        else if (k === 'text') e.textContent = v;
+        else if (k.slice(0, 2) === 'on' && typeof v === 'function') e.addEventListener(k.slice(2), v);
+        else e.setAttribute(k, v === true ? '' : String(v));
+      });
+    }
+    for (var i = 2; i < arguments.length; i++) append(e, arguments[i]);
+    return e;
+  }
+  function append(e, c) {
+    if (c === null || c === undefined || c === false) return;
+    if (Array.isArray(c)) { c.forEach(function (x) { append(e, x); }); return; }
+    e.append(c.nodeType ? c : String(c));
+  }
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  function sv(tag, attrs) {
+    var e = document.createElementNS(SVGNS, tag);
+    Object.keys(attrs || {}).forEach(function (k) { e.setAttribute(k, attrs[k]); });
+    return e;
+  }
+  function cap(s) { s = String(s || ''); return s.charAt(0).toUpperCase() + s.slice(1); }
+  function todayISO() {
+    var d = new Date();
+    var p = function (n) { return (n < 10 ? '0' : '') + n; };
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+  }
+  function domId(s) { return String(s).replace(/[^a-zA-Z0-9_-]/g, '_'); }
+  function tokens(q) { return String(q || '').toLowerCase().split(/\s+/).filter(Boolean); }
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var store = {
+    get: function (k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { window.localStorage.setItem(k, v); return true; } catch (e) { return false; } },
+    remove: function (k) { try { window.localStorage.removeItem(k); return true; } catch (e) { return false; } }
+  };
+  var DRAFT_KEY = 'cbt-formulation-draft-v1';
+  var THEME_KEY = 'cbt-formulation-theme';
+
+  /* ---------- data ---------- */
+  var DATA = null;
+  try {
+    var raw = document.getElementById('vocab-data').textContent;
+    if (raw.indexOf('__FORMULATION' + '_DATA__') !== -1) throw new Error('template');
+    DATA = JSON.parse(raw);
+    if (!DATA || !Array.isArray(DATA.schemes)) throw new Error('shape');
+  } catch (err) {
+    var f = document.getElementById('fatal');
+    f.hidden = false;
+    f.textContent = err && err.message === 'template'
+      ? 'This is the page template. Run "python _tools/build_formulation.py" and open formulation/index.html.'
+      : 'The vocabulary data in this page could not be read. Rebuild it with "python _tools/build_formulation.py".';
+    document.getElementById('view-formulation').hidden = true;
+    return;
+  }
+
+  var SCHEMES = DATA.schemes;
+  var byPrefix = {};
+  SCHEMES.forEach(function (s) { byPrefix[s.prefix] = s; });
+  var FM = byPrefix.fm || { models: [], rating_types: {} };
+  var MODELS = (FM.models || []).filter(function (m) { return m && m.id && Array.isArray(m.slots); });
+  var MODEL_BY_ID = {};
+  MODELS.forEach(function (m) { MODEL_BY_ID[m.id] = m; m.links = Array.isArray(m.links) ? m.links : []; });
+  var RATING_TYPES = FM.rating_types || {};
+  var CONCEPTS = new Map();
+  var CONCEPT_SCHEMES = SCHEMES.filter(function (s) { return s.prefix !== 'fm' && Array.isArray(s.concepts); });
+  var conceptTotal = 0;
+  CONCEPT_SCHEMES.forEach(function (s) {
+    s.concepts.forEach(function (c) {
+      if (!c || !c.id) return;
+      c._prefix = s.prefix;
+      c._hay = [c.id, c.label, (c.alt_labels || []).join(' '), c.definition, c.client_wording, c.group]
+        .join(' ').toLowerCase();
+      CONCEPTS.set(c.id, c);
+      conceptTotal++;
+    });
+  });
+  MODELS.forEach(function (m) {
+    m._hay = [m.id, m.label, m.group, m.summary, m.use_when, (m.topics || []).join(' '),
+      m.slots.map(function (s) { return s.label; }).join(' ')].join(' ').toLowerCase();
+  });
+  function isGeneric(m) {
+    var g = String(m.group || '').toLowerCase();
+    return g.indexOf('generic') === 0 || g === 'strengths';
+  }
+
+  var RATING_SPEC = {
+    intensity: { name: 'Intensity', min: 0, max: 100, suffix: '/100', range: '0 to 100' },
+    belief: { name: 'Belief', min: 0, max: 100, suffix: '%', range: '0 to 100' },
+    confidence: { name: 'Confidence', min: 0, max: 100, suffix: '%', range: '0 to 100' },
+    frequency: { name: 'Frequency', min: 0, max: 999, suffix: ' a week', unit: 'per week', range: 'times per week' },
+    duration: { name: 'Duration', min: 0, max: 1440, suffix: ' min a day', unit: 'min a day', range: 'minutes per day' }
+  };
+  function ratingSpec(key) {
+    if (!key) return null;
+    return RATING_SPEC[key] || { name: cap(key), min: 0, max: 100, suffix: '', range: RATING_TYPES[key] || '0 to 100' };
+  }
+  function fmtRating(spec, v) { return v === null || v === undefined || v === '' ? '' : v + spec.suffix; }
+
+  /* ---------- state ---------- */
+  function defaultModelId() {
+    return MODEL_BY_ID['fm.five-part'] ? 'fm.five-part' : (MODELS[0] && MODELS[0].id);
+  }
+  function freshState() {
+    return {
+      v: 1,
+      model: defaultModelId(),
+      header: { client: '', date: todayISO(), therapist: '', session: '' },
+      entries: {},
+      clientWording: false
+    };
+  }
+  function cleanItems(items) {
+    if (!Array.isArray(items)) return [];
+    var seen = {};
+    return items.filter(function (it) {
+      if (!it || typeof it.id !== 'string' || seen[it.id]) return false;
+      seen[it.id] = true;
+      return true;
+    }).map(function (it) {
+      var r = it.rating;
+      r = (r === null || r === undefined || r === '' || isNaN(Number(r))) ? null : Number(r);
+      return { id: it.id, rating: r };
+    });
+  }
+  function sanitize(s) {
+    var base = freshState();
+    if (!s || typeof s !== 'object') return base;
+    if (s.model && MODEL_BY_ID[s.model]) base.model = s.model;
+    var hd = s.header || {};
+    ['client', 'date', 'therapist', 'session'].forEach(function (k) {
+      if (typeof hd[k] === 'string' || typeof hd[k] === 'number') base.header[k] = String(hd[k]).slice(0, 80);
+    });
+    var en = s.entries && typeof s.entries === 'object' ? s.entries : {};
+    Object.keys(en).forEach(function (mid) {
+      if (!MODEL_BY_ID[mid] || !en[mid] || typeof en[mid] !== 'object') return;
+      base.entries[mid] = {};
+      Object.keys(en[mid]).forEach(function (sid) {
+        var d = en[mid][sid] || {};
+        base.entries[mid][sid] = { items: cleanItems(d.items), text: typeof d.text === 'string' ? d.text : '' };
+      });
+    });
+    base.clientWording = !!s.clientWording;
+    return base;
+  }
+  var state = freshState();
+  var storageOK = true;
+  (function loadDraft() {
+    var raw = store.get(DRAFT_KEY);
+    if (raw) { try { state = sanitize(JSON.parse(raw)); } catch (e) { state = freshState(); } }
+    storageOK = store.set(DRAFT_KEY + '-probe', '1');
+    store.remove(DRAFT_KEY + '-probe');
+  })();
+
+  function currentModel() { return MODEL_BY_ID[state.model] || MODELS[0]; }
+  function slotData(modelId, slotId) {
+    if (!state.entries[modelId]) state.entries[modelId] = {};
+    if (!state.entries[modelId][slotId]) state.entries[modelId][slotId] = { items: [], text: '' };
+    return state.entries[modelId][slotId];
+  }
+  function peekSlot(modelId, slotId) {
+    return (state.entries[modelId] && state.entries[modelId][slotId]) || { items: [], text: '' };
+  }
+  function modelHasContent(modelId) {
+    var e = state.entries[modelId] || {};
+    return Object.keys(e).some(function (k) { return e[k].items.length || (e[k].text || '').trim(); });
+  }
+  function dispLabel(c) {
+    if (!c) return '';
+    return state.clientWording && c.client_wording ? c.client_wording : c.label;
+  }
+  function itemLabel(id) {
+    var c = CONCEPTS.get(id);
+    return c ? dispLabel(c) : id;
+  }
+
+  /* ---------- saving ---------- */
+  var saveTimer = null;
+  function save() { clearTimeout(saveTimer); saveTimer = setTimeout(saveNow, 300); }
+  function saveNow() {
+    clearTimeout(saveTimer);
+    var ok = store.set(DRAFT_KEY, JSON.stringify(state));
+    storageOK = ok;
+    var t = new Date();
+    var hhmm = (t.getHours() < 10 ? '0' : '') + t.getHours() + ':' + (t.getMinutes() < 10 ? '0' : '') + t.getMinutes();
+    setStatus(ok ? 'Draft saved in this browser at ' + hhmm + '.'
+      : 'This browser is not keeping drafts. Use Export JSON to keep your work.');
+  }
+  function setStatus(msg) { $('#save-status').textContent = msg; }
+  window.addEventListener('pagehide', function () { if (saveTimer) saveNow(); });
+
+  var liveTimer = null;
+  function announce(msg) {
+    var el = $('#live');
+    el.textContent = '';
+    clearTimeout(liveTimer);
+    liveTimer = setTimeout(function () { el.textContent = msg; }, 30);
+  }
+
+  /* ---------- theme ---------- */
+  var THEMES = ['system', 'light', 'dark'];
+  var themePref = store.get(THEME_KEY);
+  if (THEMES.indexOf(themePref) === -1) themePref = 'system';
+  function applyTheme() {
+    if (themePref === 'system') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', themePref);
+    var b = $('#btn-theme');
+    b.textContent = 'Theme: ' + cap(themePref);
+    b.setAttribute('aria-label', 'Color theme: ' + cap(themePref) + '. Activate to change.');
+  }
+  $('#btn-theme').addEventListener('click', function () {
+    themePref = THEMES[(THEMES.indexOf(themePref) + 1) % THEMES.length];
+    store.set(THEME_KEY, themePref);
+    applyTheme();
+    announce('Theme set to ' + themePref);
+  });
+  applyTheme();
+
+  /* ---------- dialog ---------- */
+  var dlg = $('#dlg');
+  var hasDialog = typeof dlg.showModal === 'function';
+  function openDialog(opts) {
+    return new Promise(function (resolve) {
+      if (!hasDialog) {
+        var text = opts.title + '\n\n' + (opts.plain || '');
+        if (opts.cancelText) resolve(window.confirm(text)); else { window.alert(text); resolve(true); }
+        return;
+      }
+      $('#dlg-title').textContent = opts.title;
+      var body = $('#dlg-body');
+      body.textContent = '';
+      append(body, opts.body);
+      var acts = $('#dlg-actions');
+      acts.textContent = '';
+      var done = false;
+      // Resolve from the buttons and Escape directly, never from the queued close event,
+      // so a dialog opened right after another one cannot be answered by the first.
+      function finish(v) {
+        if (done) return;
+        done = true;
+        dlg.removeEventListener('cancel', onCancel);
+        if (dlg.open) dlg.close();
+        resolve(v);
+      }
+      function onCancel(e) { e.preventDefault(); finish(false); }
+      if (opts.cancelText) {
+        acts.append(h('button', { type: 'button', class: 'btn', onclick: function () { finish(false); } }, opts.cancelText));
+      }
+      var ok = h('button', { type: 'button', class: 'btn ' + (opts.danger ? 'btn-danger' : 'btn-primary'),
+        onclick: function () { finish(true); } }, opts.okText || 'OK');
+      acts.append(ok);
+      dlg.addEventListener('cancel', onCancel);
+      if (dlg.open) dlg.close();
+      dlg.showModal();
+      (opts.focus ? opts.focus() : (opts.cancelText ? acts.firstChild : ok)).focus();
+    });
+  }
+  function ask(title, text, okText, danger) {
+    return openDialog({ title: title, body: h('p', null, text), plain: text, okText: okText, cancelText: 'Cancel', danger: danger });
+  }
+  function tell(title, body, plain) { return openDialog({ title: title, body: body, plain: plain || '', okText: 'Close' }); }
+
+  /* ---------- header fields ---------- */
+  var FIELD_MAP = { client: '#f-client', date: '#f-date', therapist: '#f-therapist', session: '#f-session' };
+  function renderHeaderFields() {
+    Object.keys(FIELD_MAP).forEach(function (k) { $(FIELD_MAP[k]).value = state.header[k] || ''; });
+    checkClientCode();
+  }
+  function checkClientCode() {
+    var v = (state.header.client || '').trim();
+    var w = $('#client-warn');
+    var looksLikeName = /^[A-Za-z][a-z]+(?:[\s'-]+[A-Za-z][a-z]+)+$/.test(v) || /\s[A-Za-z][a-z]{2,}/.test(v);
+    if (looksLikeName) {
+      w.hidden = false;
+      w.textContent = 'This looks like a name. Use a code or initials instead.';
+    } else {
+      w.hidden = true;
+      w.textContent = '';
+    }
+  }
+  Object.keys(FIELD_MAP).forEach(function (k) {
+    $(FIELD_MAP[k]).addEventListener('input', function (e) {
+      state.header[k] = e.target.value;
+      if (k === 'client') checkClientCode();
+      save();
+      renderPrint();
+    });
+  });
+
+  /* ---------- model picker ---------- */
+  function buildModelOptions() {
+    var host = $('#model-options');
+    host.textContent = '';
+    var groups = [
+      { legend: 'Generic models', hint: 'Fit any presenting problem.', list: MODELS.filter(isGeneric) },
+      { legend: 'Disorder-specific models', hint: 'Fit one condition or problem area.', list: MODELS.filter(function (m) { return !isGeneric(m); }) }
+    ];
+    groups.forEach(function (g, gi) {
+      if (!g.list.length) return;
+      var fs = h('fieldset', null,
+        h('legend', null, h('span', { class: 'eyebrow' }, g.legend), ' ', h('span', { class: 'mo-use' }, g.hint)));
+      var grid = h('div', { class: 'model-grid' });
+      g.list.forEach(function (m) {
+        var id = 'mo-' + domId(m.id);
+        var input = h('input', { type: 'radio', name: 'model', id: id, value: m.id, 'aria-describedby': id + '-d' });
+        input.checked = m.id === state.model;
+        input.addEventListener('change', function () { if (input.checked) setModel(m.id); });
+        grid.append(h('label', { class: 'model-opt', for: id }, input,
+          h('span', { class: 'mo-body' },
+            h('span', { class: 'mo-title' }, m.label),
+            h('span', null, h('span', { class: 'tag' }, cap(m.group || 'other'))),
+            h('span', { class: 'mo-sum', id: id + '-d' }, m.summary || ''),
+            h('span', { class: 'mo-use' }, h('b', null, 'Use when: '), m.use_when || ''))));
+      });
+      fs.append(grid);
+      host.append(fs);
+    });
+    $('#model-count').textContent = MODELS.length + ' models';
+  }
+  function renderModelInfo() {
+    var m = currentModel();
+    var host = $('#model-current');
+    host.textContent = '';
+    var dl = h('dl', null,
+      h('dt', null, 'Summary'), h('dd', null, m.summary || ''),
+      h('dt', null, 'Use when'), h('dd', null, m.use_when || ''));
+    if (m.page) { dl.append(h('dt', null, 'Reference page'), h('dd', null, h('code', null, m.page))); }
+    if (m.sources && m.sources.length) { dl.append(h('dt', null, 'Sources'), h('dd', null, m.sources.join('; '))); }
+    host.append(
+      h('h3', null, m.label),
+      h('div', { class: 'meta' },
+        h('span', { class: 'tag' }, isGeneric(m) ? 'Generic' : 'Disorder-specific'),
+        h('span', null, cap(m.group || '')),
+        h('code', null, m.id),
+        h('span', null, m.slots.length + ' boxes')),
+      dl);
+  }
+  function setModel(id) {
+    if (!MODEL_BY_ID[id] || id === state.model) return;
+    state.model = id;
+    var r = document.getElementById('mo-' + domId(id));
+    if (r) r.checked = true;
+    renderModel();
+    save();
+    announce('Model changed to ' + MODEL_BY_ID[id].label + '. Each model keeps its own entries in this draft.');
+  }
+
+  /* ---------- diagram ---------- */
+  var mqNarrow = window.matchMedia('(max-width: 639.98px)');
+  var printing = false;
+  function isStacked() { return mqNarrow.matches && !printing; }
+  function slotLabel(m, sid) {
+    for (var i = 0; i < m.slots.length; i++) if (m.slots[i].id === sid) return m.slots[i].label;
+    return sid;
+  }
+  function renderDiagram() {
+    var m = currentModel();
+    var canvas = $('#diagram-canvas');
+    var svg = $('#diagram-svg');
+    var stacked = isStacked();
+    canvas.classList.toggle('is-stacked', stacked);
+    Array.prototype.slice.call(canvas.querySelectorAll('.box')).forEach(function (b) { b.remove(); });
+    var cols = (m.grid && m.grid.cols) || 3;
+    var rows = (m.grid && m.grid.rows) || 3;
+    canvas.style.gridTemplateColumns = 'repeat(' + cols + ', minmax(0, 1fr))';
+    canvas.style.gridTemplateRows = 'repeat(' + rows + ', auto)';
+    // Channels between and around the boxes carry the connectors; a context frame needs a wider margin.
+    var ctxSlot = contextSlot(m);
+    growPasses = 0;
+    var colGap = Math.max(cols >= 5 ? 48 : 72, labelGapNeed(m));
+    canvas.style.columnGap = stacked ? '' : colGap + 'px';
+    canvas.style.padding = stacked ? '' : (ctxSlot ? '10px 46px 46px' : '32px');
+    canvas.style.minWidth = stacked ? '' : (cols * 130 + (cols - 1) * colGap + (ctxSlot ? 92 : 64)) + 'px';
+    var ordered = m.slots.slice().sort(function (a, b) { return (a.row - b.row) || (a.col - b.col); });
+    ordered.forEach(function (s) {
+      var d = peekSlot(m.id, s.id);
+      var spec = ratingSpec(s.rating);
+      var titleId = 'bx-h-' + domId(s.id);
+      var box = h('section', { class: 'box', id: 'box-' + domId(s.id), 'data-slot': s.id, 'aria-labelledby': titleId });
+      box.style.gridColumn = String(s.col);
+      box.style.gridRow = String(s.row);
+      box.append(h('h3', { id: titleId },
+        h('button', { type: 'button', class: 'box-edit', onclick: function () { focusSlot(s.id); } },
+          s.label, h('span', { class: 'sr-only' }, ', edit'))));
+      if (d.items.length) {
+        var ul = h('ul', { class: 'box-items' });
+        d.items.forEach(function (it) {
+          var val = spec ? fmtRating(spec, it.rating) : '';
+          ul.append(h('li', null, h('span', { class: 'lab' }, itemLabel(it.id)),
+            val ? h('span', { class: 'val' }, h('span', { class: 'sr-only' }, spec.name + ' '), val) : null));
+        });
+        box.append(ul);
+      }
+      if ((d.text || '').trim()) {
+        box.append(h('p', { class: 'box-quote' }, '“' + d.text.trim() + '”'));
+      }
+      if (d.items.length || (d.text || '').trim()) box.classList.add('has-content');
+      else box.append(h('p', { class: 'box-empty' }, s.prompt || 'Not filled yet'));
+      var outs = m.links.filter(function (l) { return l.from === s.id; });
+      if (outs.length) {
+        var fmt = function (l) { return slotLabel(m, l.to) + (l.label ? ' (' + l.label + ')' : ''); };
+        var solid = outs.filter(function (l) { return l.style !== 'dashed'; });
+        var dashed = outs.filter(function (l) { return l.style === 'dashed'; });
+        box.append(h('p', { class: 'box-links' + (stacked ? '' : ' sr-only') },
+          solid.length ? h('span', null, 'Leads to: ' + solid.map(fmt).join('; ') + '.') : null,
+          dashed.length ? h('span', null, 'Feeds back to or maintains: ' + dashed.map(fmt).join('; ') + '.') : null));
+      }
+      canvas.insertBefore(box, svg);
+    });
+    $('#mode-note').hidden = !state.clientWording;
+    scheduleArrows();
+  }
+
+  var arrowFrame = 0, measureCtx = null, growPasses = 0;
+  function scheduleArrows() {
+    cancelAnimationFrame(arrowFrame);
+    arrowFrame = requestAnimationFrame(drawArrows);
+  }
+
+  /* A context slot (the five-part model's environment) links to every other box and sits alone in
+     the top row. It is drawn as a frame around the other boxes, with the slot as the frame's title,
+     the way Padesky and Mooney draw the environment around the four interacting parts. */
+  function contextSlot(m) {
+    if (!m || m.slots.length < 4) return null;
+    var top = Math.min.apply(null, m.slots.map(function (s) { return s.row; }));
+    var inTop = m.slots.filter(function (s) { return s.row === top; });
+    if (inTop.length !== 1) return null;
+    var hub = inTop[0], linked = {};
+    m.links.forEach(function (l) {
+      if (l.from === hub.id) linked[l.to] = true;
+      if (l.to === hub.id) linked[l.from] = true;
+    });
+    return m.slots.every(function (s) { return s === hub || linked[s.id]; }) ? hub : null;
+  }
+
+  /* A labelled link between side-by-side boxes needs a column gap wide enough to hold its label
+     (wrapped to its longest word) clear of both boxes. */
+  function labelWidth(s) {
+    if (!measureCtx) measureCtx = document.createElement('canvas').getContext('2d');
+    measureCtx.font = '600 11px ' + getComputedStyle(document.body).fontFamily;
+    return measureCtx.measureText(s).width;
+  }
+  function labelGapNeed(m) {
+    var at = {}, need = 0;
+    m.slots.forEach(function (s) { at[s.id] = s; });
+    m.links.forEach(function (l) {
+      var a = at[l.from], b = at[l.to];
+      if (!l.label || !a || !b || a.row !== b.row || Math.abs(a.col - b.col) !== 1) return;
+      var longest = Math.max.apply(null, String(l.label).split(/\s+/).map(labelWidth));
+      need = Math.max(need, Math.ceil(longest + 30));
+    });
+    return need;
+  }
+
+  /* ---------- connector drawing ----------
+     1. Links between the same two boxes become one connector: a two-headed arrow when both
+        directions share a style, otherwise a twin (two close parallel arrows, one each way).
+     2. Each connector is either a straight line (only when it clears every other box) or an
+        orthogonal route along the channels between and around the boxes, found by a shortest
+        path search that charges for length, bends, shared channels and crossings.
+     3. Connectors sharing a channel are spread apart so they never overlap; this also spreads
+        the points where several connectors leave one side of a box.
+     4. Labels go beside their own connector, clear of every line, box, arrowhead and label. */
+  var LANE_SP = 9, PORT_SP = 16, TWIN_HALF = 4.5, END_GAP = 3, CORNER_R = 9, FRAME_INSET = 36;
+  var COST_BEND = 28, COST_CROSS = 100, COST_STRAIGHT = 18, LINE_H = 13;
+
+  function segHitsRect(p, q, r) {
+    // Liang-Barsky: does segment p-q touch rectangle r?
+    var t0 = 0, t1 = 1, dx = q.x - p.x, dy = q.y - p.y;
+    var P = [-dx, dx, -dy, dy], Q = [p.x - r.x, r.x + r.w - p.x, p.y - r.y, r.y + r.h - p.y];
+    for (var i = 0; i < 4; i++) {
+      if (P[i] === 0) { if (Q[i] < 0) return false; continue; }
+      var t = Q[i] / P[i];
+      if (P[i] < 0) { if (t > t1) return false; if (t > t0) t0 = t; } else { if (t < t0) return false; if (t < t1) t1 = t; }
+    }
+    return true;
+  }
+  function segsCross(a, b, c, d) {
+    function o(p, q, r) { return (q.x - p.x) * (r.y - p.y) - (q.y - p.y) * (r.x - p.x); }
+    var d1 = o(c, d, a), d2 = o(c, d, b), d3 = o(a, b, c), d4 = o(a, b, d);
+    return ((d1 > 0.01 && d2 < -0.01) || (d1 < -0.01 && d2 > 0.01)) && ((d3 > 0.01 && d4 < -0.01) || (d3 < -0.01 && d4 > 0.01));
+  }
+  function inflate(r, k) { return { x: r.x - k, y: r.y - k, w: r.w + 2 * k, h: r.h + 2 * k }; }
+  function rectsOverlap(a, b) { return a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h; }
+  function dist(a, b) { return Math.hypot(b.x - a.x, b.y - a.y); }
+  function fx(n) { return n.toFixed(1); }
+  function rayExit(r, from, to) {
+    // Point where the ray from 'from' (inside r) toward 'to' leaves rectangle r.
+    var dx = to.x - from.x, dy = to.y - from.y, k = Infinity;
+    if (dx > 0) k = Math.min(k, (r.x + r.w - from.x) / dx);
+    if (dx < 0) k = Math.min(k, (r.x - from.x) / dx);
+    if (dy > 0) k = Math.min(k, (r.y + r.h - from.y) / dy);
+    if (dy < 0) k = Math.min(k, (r.y - from.y) / dy);
+    if (!isFinite(k)) return { x: from.x, y: from.y };
+    return { x: from.x + dx * k, y: from.y + dy * k };
+  }
+  function cleanPts(pts) {
+    var out = [];
+    pts.forEach(function (p) {
+      if (!out.length || dist(out[out.length - 1], p) > 0.5) out.push({ x: p.x, y: p.y });
+    });
+    // Drop middle points of collinear runs.
+    for (var i = out.length - 2; i >= 1; i--) {
+      var a = out[i - 1], b = out[i], c = out[i + 1];
+      if (Math.abs((b.x - a.x) * (c.y - b.y) - (b.y - a.y) * (c.x - b.x)) < 0.5) out.splice(i, 1);
+    }
+    return out;
+  }
+  function pathD(pts) {
+    var d = 'M' + fx(pts[0].x) + ' ' + fx(pts[0].y);
+    for (var i = 1; i < pts.length - 1; i++) {
+      var p0 = pts[i - 1], p1 = pts[i], p2 = pts[i + 1];
+      var l1 = dist(p0, p1), l2 = dist(p1, p2), r = Math.min(CORNER_R, l1 / 2, l2 / 2);
+      if (r < 0.6) { d += ' L' + fx(p1.x) + ' ' + fx(p1.y); continue; }
+      d += ' L' + fx(p1.x - (p1.x - p0.x) / l1 * r) + ' ' + fx(p1.y - (p1.y - p0.y) / l1 * r) +
+        ' Q' + fx(p1.x) + ' ' + fx(p1.y) + ' ' + fx(p1.x + (p2.x - p1.x) / l2 * r) + ' ' + fx(p1.y + (p2.y - p1.y) / l2 * r);
+    }
+    var e = pts[pts.length - 1];
+    return d + ' L' + fx(e.x) + ' ' + fx(e.y);
+  }
+  function offsetPolyline(pts, d) {
+    // Parallel copy of an orthogonal or single-segment polyline, d to the left of travel.
+    var n = [];
+    for (var i = 0; i < pts.length - 1; i++) {
+      var L = dist(pts[i], pts[i + 1]) || 1;
+      n.push({ x: -(pts[i + 1].y - pts[i].y) / L, y: (pts[i + 1].x - pts[i].x) / L });
+    }
+    return pts.map(function (p, i) {
+      // At a right-angle corner the sum of the two unit normals moves the point onto both offset lines.
+      var s = i === 0 ? n[0] : (i === pts.length - 1 ? n[n.length - 1] : { x: n[i - 1].x + n[i].x, y: n[i - 1].y + n[i].y });
+      return { x: p.x + s.x * d, y: p.y + s.y * d };
+    });
+  }
+  function trimEnd(pts, atStart, gap) {
+    // Pull one end of a polyline back along its last segment.
+    var i = atStart ? 0 : pts.length - 1, j = atStart ? 1 : pts.length - 2;
+    var L = dist(pts[i], pts[j]);
+    if (L <= gap + 2) return;
+    pts[i] = { x: pts[i].x + (pts[j].x - pts[i].x) / L * gap, y: pts[i].y + (pts[j].y - pts[i].y) / L * gap };
+  }
+  function wrapText(text, max) {
+    var words = String(text).split(/\s+/), lines = [], cur = '';
+    words.forEach(function (w) {
+      if (cur && (cur + ' ' + w).length > max) { lines.push(cur); cur = w; } else cur = cur ? cur + ' ' + w : w;
+    });
+    if (cur) lines.push(cur);
+    return lines;
+  }
+
+  function drawArrows() {
+    var canvas = $('#diagram-canvas');
+    var svg = $('#diagram-svg'), under = $('#diagram-under');
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    while (under.firstChild) under.removeChild(under.firstChild);
+    if (canvas.classList.contains('is-stacked') || !canvas.offsetWidth) return;
+    var m = currentModel();
+    var cr = canvas.getBoundingClientRect();
+    var W = canvas.clientWidth, H = canvas.clientHeight;
+    [svg, under].forEach(function (s) {
+      s.setAttribute('width', W);
+      s.setAttribute('height', H);
+      s.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    });
+    var rects = {}, slotOf = {};
+    m.slots.forEach(function (s) { slotOf[s.id] = s; });
+    Array.prototype.forEach.call(canvas.querySelectorAll('.box'), function (b) {
+      var r = b.getBoundingClientRect();
+      rects[b.getAttribute('data-slot')] = { x: r.left - cr.left, y: r.top - cr.top, w: r.width, h: r.height };
+    });
+
+    /* Grid geometry from the laid-out canvas. */
+    var cs = getComputedStyle(canvas);
+    var C = (m.grid && m.grid.cols) || 3, R = (m.grid && m.grid.rows) || 3;
+    var pl = parseFloat(cs.paddingLeft) || 0, pr = parseFloat(cs.paddingRight) || 0;
+    var pt = parseFloat(cs.paddingTop) || 0, pb = parseFloat(cs.paddingBottom) || 0;
+    var cg = parseFloat(cs.columnGap) || 0, rg = parseFloat(cs.rowGap) || 0;
+    function tracks(spec, n, total) {
+      var v = String(spec || '').split(/\s+/).map(parseFloat).filter(function (x) { return !isNaN(x); });
+      if (v.length === n) return v;
+      var each = Math.max(0, total) / n, out = [];
+      for (var i = 0; i < n; i++) out.push(each);
+      return out;
+    }
+    var colW = tracks(cs.gridTemplateColumns, C, W - pl - pr - (C - 1) * cg);
+    var rowH = tracks(cs.gridTemplateRows, R, H - pt - pb - (R - 1) * rg);
+    var colX = [], rowY = [], acc = pl;
+    colW.forEach(function (w) { colX.push(acc); acc += w + cg; });
+    acc = pt;
+    rowH.forEach(function (h) { rowY.push(acc); acc += h + rg; });
+
+    // Lanes: index 0 is the outer margin, odd indexes run through cell centers, even ones through gaps.
+    // The outer lanes keep a fixed distance from the boxes, so a margin widened for a label leaves them in place.
+    var OUT = 16;
+    var xs = [pl - OUT], xw = [2 * OUT], ys = [pt - OUT], yw = [2 * OUT];
+    for (var c = 0; c < C; c++) {
+      xs.push(colX[c] + colW[c] / 2); xw.push(colW[c] * 0.55);
+      if (c < C - 1) { xs.push(colX[c] + colW[c] + cg / 2); xw.push(cg); }
+    }
+    xs.push(colX[C - 1] + colW[C - 1] + OUT); xw.push(2 * OUT);
+    for (var r = 0; r < R; r++) {
+      ys.push(rowY[r] + rowH[r] / 2); yw.push(rowH[r] * 0.55);
+      if (r < R - 1) { ys.push(rowY[r] + rowH[r] + rg / 2); yw.push(rg); }
+    }
+    ys.push(rowY[R - 1] + rowH[R - 1] + OUT); yw.push(2 * OUT);
+    var occ = {}, cellOf = {};
+    m.slots.forEach(function (s) {
+      if (!rects[s.id]) return;
+      cellOf[s.id] = { c: s.col - 1, r: s.row - 1 };
+      occ[(s.col - 1) + ',' + (s.row - 1)] = s.id;
+    });
+
+    var strokes = [];          // drawn arrows: {pts, style, heads: [start, end], label, owner}
+    var obstacleSegs = [];     // segments labels must stay clear of: {p, q, owner}
+    var preSegs = [];          // rough geometry of placed connectors, used to count crossings
+    var frameRect = null;
+
+    /* Group links by box pair. */
+    var groupMap = {}, groups = [];
+    m.links.forEach(function (l) {
+      if (!rects[l.from] || !rects[l.to] || l.from === l.to) return;
+      var key = l.from < l.to ? l.from + '|' + l.to : l.to + '|' + l.from;
+      var g = groupMap[key];
+      if (!g) { g = groupMap[key] = { key: key, a: l.from, b: l.to, links: [] }; groups.push(g); }
+      g.links.push(l);
+    });
+    groups.forEach(function (g) {
+      var f = g.links.filter(function (l) { return l.from === g.a; })[0];
+      var k = g.links.filter(function (l) { return l.from === g.b; })[0];
+      var dashed = function (l) { return l.style === 'dashed'; };
+      if (f && k && dashed(f) === dashed(k) && (!f.label || !k.label || f.label === k.label)) {
+        g.kind = 'both';
+        g.parts = [{ dir: 1, link: f, label: f.label || k.label, both: true }];
+      } else if (f && k) {
+        g.kind = 'twin';
+        g.parts = [{ dir: 1, link: f, label: f.label }, { dir: -1, link: k, label: k.label }];
+      } else {
+        g.kind = 'single';
+        g.parts = [{ dir: 1, link: f, label: f.label }];
+      }
+      g.weight = g.kind === 'twin' ? 2 : 1;
+    });
+
+    function addStroke(pts, part, owner) {
+      var dashedS = part.link.style === 'dashed';
+      var heads = part.both ? [true, true] : (part.dir === 1 ? [false, true] : [true, false]);
+      pts = cleanPts(pts);
+      if (pts.length < 2) return;
+      if (part.dir === -1 && !part.both) { pts = pts.slice().reverse(); heads = [false, true]; }
+      if (heads[0]) trimEnd(pts, true, END_GAP);
+      if (heads[1]) trimEnd(pts, false, END_GAP);
+      var st = { pts: pts, dashed: dashedS, heads: heads, label: part.label || '', owner: owner };
+      strokes.push(st);
+      for (var i = 0; i < pts.length - 1; i++) obstacleSegs.push({ p: pts[i], q: pts[i + 1], owner: st });
+    }
+
+    /* Context frame and its wall arrows. */
+    var ctx = contextSlot(m), ctxRowLimit = -1;
+    if (ctx && rects[ctx.id]) {
+      var hr = rects[ctx.id], hubRow = ctx.row - 1;
+      var fx0 = colX[0] - FRAME_INSET, fx1 = colX[C - 1] + colW[C - 1] + FRAME_INSET;
+      var fy0 = hr.y + hr.h / 2, fy1 = rowY[R - 1] + rowH[R - 1] + FRAME_INSET;
+      frameRect = { x: fx0, y: fy0, w: fx1 - fx0, h: fy1 - fy0 };
+      ctxRowLimit = 2 * hubRow + 1;   // lanes at or above the frame's top edge are outside the frame
+      under.append(sv('rect', { class: 'env-frame', x: fx(fx0), y: fx(fy0), width: fx(fx1 - fx0), height: fx(fy1 - fy0), rx: 14 }));
+      [[{ x: fx0, y: fy0 }, { x: fx0, y: fy1 }], [{ x: fx0, y: fy1 }, { x: fx1, y: fy1 }], [{ x: fx1, y: fy0 }, { x: fx1, y: fy1 }],
+        [{ x: fx0, y: fy0 }, { x: hr.x, y: fy0 }], [{ x: hr.x + hr.w, y: fy0 }, { x: fx1, y: fy0 }]].forEach(function (s) {
+        obstacleSegs.push({ p: s[0], q: s[1], owner: 'frame' });
+      });
+      var usedWall = {};
+      var free = function (id, dc, dr) {
+        var cc = cellOf[id];
+        for (var k = 1; k < 20; k++) {
+          var c2 = cc.c + dc * k, r2 = cc.r + dr * k;
+          if (c2 < 0 || c2 >= C || r2 <= hubRow || r2 >= R) return true;
+          if (occ[c2 + ',' + r2]) return false;
+        }
+        return true;
+      };
+      var wallPts = function (id, wall) {
+        var b = rects[id], cx = b.x + b.w / 2, cy = b.y + b.h / 2;
+        if (wall === 'top') {
+          var y0 = (cx > hr.x && cx < hr.x + hr.w) ? hr.y + hr.h : fy0;
+          return [{ x: cx, y: y0 }, { x: cx, y: b.y }];
+        }
+        if (wall === 'left') return [{ x: fx0, y: cy }, { x: b.x, y: cy }];
+        if (wall === 'right') return [{ x: fx1, y: cy }, { x: b.x + b.w, y: cy }];
+        return [{ x: cx, y: fy1 }, { x: cx, y: b.y + b.h }];
+      };
+      groups.forEach(function (g) {
+        if (g.a !== ctx.id && g.b !== ctx.id) return;
+        g.done = true;
+        var other = g.a === ctx.id ? g.b : g.a, cc = cellOf[other];
+        var near = cc.c < (C - 1) / 2 ? 'left' : 'right', far = near === 'left' ? 'right' : 'left';
+        var ok = { top: free(other, 0, -1), left: free(other, -1, 0), right: free(other, 1, 0), bottom: free(other, 0, 1) };
+        g.parts.forEach(function (part) {
+          var inbound = part.both || (part.dir === 1) === (g.a === ctx.id);
+          var prefs = inbound ? ['top', near, far, 'bottom'] : ['bottom', near, far, 'top'];
+          var wall = prefs.filter(function (w) { return ok[w] && !usedWall[other + w]; })[0] || prefs[0];
+          usedWall[other + wall] = true;
+          var pts = wallPts(other, wall);            // from the wall to the box
+          var fromHub = g.a === ctx.id;               // the group's direction 1 runs hub -> box
+          addStroke(fromHub ? pts : pts.slice().reverse(), part, g);
+          preSegs.push({ p: pts[0], q: pts[1] });
+        });
+      });
+    }
+
+    /* Routing. */
+    var NX = xs.length, NY = ys.length;
+    var edgeUse = {}, through = {};
+    function nodeKey(i, j) { return i + ',' + j; }
+    function edgeKey(i1, j1, i2, j2) { return (i1 < i2 || (i1 === i2 && j1 < j2)) ? i1 + ',' + j1 + ':' + i2 + ',' + j2 : i2 + ',' + j2 + ':' + i1 + ',' + j1; }
+    function crossings(p, q) {
+      var n = 0;
+      preSegs.forEach(function (s) { if (segsCross(p, q, s.p, s.q)) n++; });
+      return n;
+    }
+    var DIRS = [[1, 0], [0, 1], [-1, 0], [0, -1]];
+    function laneRoute(a, b) {
+      var A = cellOf[a], B = cellOf[b];
+      var si = 2 * A.c + 1, sj = 2 * A.r + 1, ti = 2 * B.c + 1, tj = 2 * B.r + 1;
+      function ok(i, j) {
+        if (i < 0 || j < 0 || i >= NX || j >= NY) return false;
+        if (j <= ctxRowLimit) return false;
+        if (i % 2 === 1 && j % 2 === 1 && occ[((i - 1) / 2) + ',' + ((j - 1) / 2)]) {
+          return i === ti && j === tj;
+        }
+        return true;
+      }
+      var distM = {}, prev = {}, open = [{ i: si, j: sj, d: -1, c: 0 }];
+      distM[si + ',' + sj + ',-1'] = 0;
+      while (open.length) {
+        var bi = 0;
+        for (var k = 1; k < open.length; k++) if (open[k].c < open[bi].c) bi = k;
+        var cur = open.splice(bi, 1)[0];
+        var ck = cur.i + ',' + cur.j + ',' + cur.d;
+        if (cur.c > distM[ck]) continue;
+        if (cur.i === ti && cur.j === tj) {
+          var nodes = [], s = ck;
+          while (s) { var parts = s.split(','); nodes.unshift({ i: +parts[0], j: +parts[1] }); s = prev[s]; }
+          return { nodes: nodes, cost: cur.c };
+        }
+        var isStart = cur.i === si && cur.j === sj;
+        if (!isStart && cur.i % 2 === 1 && cur.j % 2 === 1 && occ[((cur.i - 1) / 2) + ',' + ((cur.j - 1) / 2)]) continue;
+        for (var d = 0; d < 4; d++) {
+          if (cur.d !== -1 && (d + 2) % 4 === cur.d) continue;
+          var ni = cur.i + DIRS[d][0], nj = cur.j + DIRS[d][1];
+          if (!ok(ni, nj)) continue;
+          var p = { x: xs[cur.i], y: ys[cur.j] }, q = { x: xs[ni], y: ys[nj] };
+          var L = dist(p, q), cost = L;
+          if (cur.d !== -1 && cur.d !== d) cost += COST_BEND;
+          var use = edgeUse[edgeKey(cur.i, cur.j, ni, nj)] || 0;
+          cost += use * (14 + 0.3 * L);
+          if (!isStart && cur.d === d) {
+            var th = through[nodeKey(cur.i, cur.j)];
+            if (th) cost += COST_CROSS * (d % 2 === 0 ? th.v : th.h);
+          }
+          cost += COST_CROSS * crossings(p, q);
+          var nk = ni + ',' + nj + ',' + d, nc = cur.c + cost;
+          if (distM[nk] === undefined || nc < distM[nk]) {
+            distM[nk] = nc; prev[nk] = ck;
+            open.push({ i: ni, j: nj, d: d, c: nc });
+          }
+        }
+      }
+      return null;
+    }
+    function center(r) { return { x: r.x + r.w / 2, y: r.y + r.h / 2 }; }
+    function straightCandidate(a, b) {
+      var A = cellOf[a], B = cellOf[b];
+      if (A.c === B.c || A.r === B.r) return null;
+      var ra = rects[a], rb = rects[b], ca = center(ra), cb = center(rb);
+      var p = rayExit(ra, ca, cb), q = rayExit(rb, cb, ca);
+      for (var id in rects) {
+        if (id === a || id === b) continue;
+        if (segHitsRect(p, q, inflate(rects[id], 12))) return null;
+      }
+      if (frameRect && ctx && (a === ctx.id || b === ctx.id)) return null;
+      return { p: p, q: q, cost: dist(ca, cb) + COST_STRAIGHT + COST_CROSS * crossings(p, q) };
+    }
+
+    var todo = groups.filter(function (g) { return !g.done; });
+    todo.forEach(function (g) {
+      var A = cellOf[g.a], B = cellOf[g.b];
+      g.span = Math.abs(A.c - B.c) + Math.abs(A.r - B.r);
+      g.axis = (A.c === B.c || A.r === B.r) ? 0 : 1;
+    });
+    todo.sort(function (x, y) { return (x.span - y.span) || (x.axis - y.axis); });
+
+    var laneSegs = [];   // segments of orthogonal routes, nudged after all routes exist
+    var routes = [];
+    todo.forEach(function (g) {
+      var st = straightCandidate(g.a, g.b);
+      var ln = laneRoute(g.a, g.b);
+      if (st && (!ln || st.cost <= ln.cost)) {
+        routes.push({ g: g, straight: st });
+        preSegs.push({ p: st.p, q: st.q });
+        return;
+      }
+      if (!ln) {   // no channel route (should not happen): fall back to a straight line
+        var ca = center(rects[g.a]), cb = center(rects[g.b]);
+        var s2 = { p: rayExit(rects[g.a], ca, cb), q: rayExit(rects[g.b], cb, ca) };
+        routes.push({ g: g, straight: s2 });
+        preSegs.push(s2);
+        return;
+      }
+      var nodes = ln.nodes, segs = [];
+      for (var k = 0; k < nodes.length - 1; k++) {
+        var n0 = nodes[k], n1 = nodes[k + 1];
+        var ek = edgeKey(n0.i, n0.j, n1.i, n1.j);
+        edgeUse[ek] = (edgeUse[ek] || 0) + 1;
+        preSegs.push({ p: { x: xs[n0.i], y: ys[n0.j] }, q: { x: xs[n1.i], y: ys[n1.j] } });
+        var axis = n0.j === n1.j ? 'h' : 'v';
+        var last = segs[segs.length - 1];
+        if (last && last.axis === axis) { last.n1 = n1; } else segs.push({ axis: axis, n0: n0, n1: n1 });
+        if (k > 0) {
+          var pn = nodes[k - 1], wasH = pn.j === n0.j;
+          if (wasH === (axis === 'h')) {
+            var tk = nodeKey(n0.i, n0.j);
+            through[tk] = through[tk] || { h: 0, v: 0 };
+            through[tk][axis]++;
+          }
+        }
+      }
+      var route = { g: g, segs: segs };
+      segs.forEach(function (s, idx) {
+        s.route = route; s.idx = idx;
+        if (s.axis === 'h') { s.lane = 'h' + s.n0.j; s.lo = Math.min(xs[s.n0.i], xs[s.n1.i]); s.hi = Math.max(xs[s.n0.i], xs[s.n1.i]); s.base = ys[s.n0.j]; s.width = yw[s.n0.j]; s.cell = s.n0.j % 2 === 1; }
+        else { s.lane = 'v' + s.n0.i; s.lo = Math.min(ys[s.n0.j], ys[s.n1.j]); s.hi = Math.max(ys[s.n0.j], ys[s.n1.j]); s.base = xs[s.n0.i]; s.width = xw[s.n0.i]; s.cell = s.n0.i % 2 === 1; }
+        s.off = 0;
+        laneSegs.push(s);
+      });
+      routes.push(route);
+    });
+
+    /* Nudging: spread segments that share a lane. */
+    function turnSign(s, atLo) {
+      // Which way the route turns at the lo or hi end of segment s: -1, 0 (ends in a box) or +1.
+      var segs = s.route.segs;
+      var forward = s.axis === 'h' ? xs[s.n1.i] >= xs[s.n0.i] : ys[s.n1.j] >= ys[s.n0.j];
+      var neighbor = (atLo === forward) ? segs[s.idx - 1] : segs[s.idx + 1];
+      if (!neighbor) return 0;
+      var far = (atLo === forward) ? neighbor.n0 : neighbor.n1;
+      var v = s.axis === 'h' ? ys[far.j] - s.base : xs[far.i] - s.base;
+      return v > 0 ? 1 : (v < 0 ? -1 : 0);
+    }
+    var byLane = {};
+    laneSegs.forEach(function (s) { (byLane[s.lane] = byLane[s.lane] || []).push(s); });
+    Object.keys(byLane).forEach(function (k) {
+      var list = byLane[k].sort(function (a, b) { return a.lo - b.lo; });
+      var clusters = [], cur = null, curHi = -Infinity;
+      list.forEach(function (s) {
+        if (cur && s.lo < curHi - 0.5) { cur.push(s); curHi = Math.max(curHi, s.hi); }
+        else { cur = [s]; clusters.push(cur); curHi = s.hi; }
+      });
+      clusters.forEach(function (cl) {
+        if (cl.length < 2) return;
+        cl.forEach(function (s) {
+          var a = turnSign(s, true), b = turnSign(s, false);
+          // Segments go toward the side they turn to; of two that turn the same way, the longer one
+          // stays on the far side so the shorter one can turn off without crossing it.
+          s.key = (a + b) * (1 - (s.hi - s.lo) / 5000) + (a - b) * 0.01 * (s.lo / 1000 + 1);
+        });
+        cl.sort(function (x, y) { return x.key - y.key; });
+        var total = 0;
+        cl.forEach(function (s) { total += s.route.g.weight; });
+        var room = Math.max(8, Math.min.apply(null, cl.map(function (s) { return s.width; })) - 14);
+        // Lanes through cells (where connectors meet a box side) get wider spacing than the gaps.
+        var sp = Math.min(cl[0].cell ? PORT_SP : LANE_SP, room / Math.max(1, total - 1));
+        var cum = 0;
+        cl.forEach(function (s) {
+          var w = s.route.g.weight;
+          s.off = (cum + w / 2 - total / 2) * sp;
+          cum += w;
+        });
+      });
+    });
+
+    /* Turn routes into strokes. */
+    routes.forEach(function (rt) {
+      var g = rt.g, pts;
+      if (rt.straight) {
+        pts = [rt.straight.p, rt.straight.q];
+        if (g.kind === 'twin') {
+          var ra = rects[g.a], rb = rects[g.b], ca = center(ra), cb = center(rb);
+          g.parts.forEach(function (part) {
+            var o = offsetPolyline([ca, cb], part.dir === 1 ? TWIN_HALF : -TWIN_HALF);
+            addStroke([rayExit(ra, o[0], o[1]), rayExit(rb, o[1], o[0])], part, g);
+          });
+          return;
+        }
+      } else {
+        var segs = rt.segs;
+        var coord = function (s) { return s.base + s.off; };
+        pts = [];
+        var first = segs[0], lastS = segs[segs.length - 1];
+        var ra2 = rects[g.a], rb2 = rects[g.b];
+        if (first.axis === 'v') {
+          var down = ys[first.n1.j] > ys[first.n0.j];
+          pts.push({ x: coord(first), y: down ? ra2.y + ra2.h : ra2.y });
+        } else {
+          var right = xs[first.n1.i] > xs[first.n0.i];
+          pts.push({ x: right ? ra2.x + ra2.w : ra2.x, y: coord(first) });
+        }
+        for (var k = 0; k < segs.length - 1; k++) {
+          var s1 = segs[k], s2 = segs[k + 1];
+          pts.push(s1.axis === 'v' ? { x: coord(s1), y: coord(s2) } : { x: coord(s2), y: coord(s1) });
+        }
+        if (lastS.axis === 'v') {
+          var down2 = ys[lastS.n1.j] > ys[lastS.n0.j];
+          pts.push({ x: coord(lastS), y: down2 ? rb2.y : rb2.y + rb2.h });
+        } else {
+          var right2 = xs[lastS.n1.i] > xs[lastS.n0.i];
+          pts.push({ x: right2 ? rb2.x : rb2.x + rb2.w, y: coord(lastS) });
+        }
+        pts = cleanPts(pts);
+      }
+      if (g.kind === 'twin') {
+        g.parts.forEach(function (part) { addStroke(offsetPolyline(pts, part.dir === 1 ? TWIN_HALF : -TWIN_HALF), part, g); });
+      } else {
+        addStroke(pts, g.parts[0], g);
+      }
+    });
+
+    strokes.forEach(function (st) {
+      var attrs = { d: pathD(st.pts), class: 'lnk-path' + (st.dashed ? ' dashed' : '') };
+      var mk = 'url(#' + (st.dashed ? 'ah-dashed' : 'ah-solid') + ')';
+      if (st.heads[0]) attrs['marker-start'] = mk;
+      if (st.heads[1]) attrs['marker-end'] = mk;
+      svg.append(sv('path', attrs));
+    });
+
+    /* Labels. */
+    if (!measureCtx) measureCtx = document.createElement('canvas').getContext('2d');
+    measureCtx.font = '600 11px ' + getComputedStyle(document.body).fontFamily;
+    var boxRects = Object.keys(rects).map(function (id) { return rects[id]; });
+    var tips = [];
+    strokes.forEach(function (st) {
+      if (st.heads[0]) tips.push(st.pts[0]);
+      if (st.heads[1]) tips.push(st.pts[st.pts.length - 1]);
+    });
+    var placed = [], need = { l: 0, r: 0, t: 0, b: 0 };
+    var labelled = strokes.filter(function (st) { return st.label; });
+    labelled.sort(function (a, b) { return b.label.length - a.label.length; });
+    labelled.forEach(function (st) {
+      var options = [], seen = {};
+      [200, 18, 12].forEach(function (mx) {
+        var lines = wrapText(st.label, mx), key = lines.join('\n');
+        if (!seen[key]) { seen[key] = true; options.push(lines); }
+      });
+      var segsOwn = [], maxL = 0;
+      for (var i = 0; i < st.pts.length - 1; i++) {
+        var L = dist(st.pts[i], st.pts[i + 1]);
+        segsOwn.push({ p: st.pts[i], q: st.pts[i + 1], L: L });
+        maxL = Math.max(maxL, L);
+      }
+      var best = null, grow = null;
+      function consider(bb, lines, sOff, t, sg, online) {
+        var sc = 0, ib = inflate(bb, 3);
+        var over = { l: Math.max(0, 4 - bb.x), r: Math.max(0, bb.x + bb.w - (W - 4)), t: Math.max(0, 4 - bb.y), b: Math.max(0, bb.y + bb.h - (H - 4)) };
+        var outside = over.l + over.r + over.t + over.b > 0;
+        boxRects.forEach(function (r) { if (rectsOverlap(ib, r)) sc += 1000; });
+        obstacleSegs.forEach(function (o) {
+          if (online && o.owner === st && o.p === sg.p && o.q === sg.q) return;
+          if (segHitsRect(o.p, o.q, ib)) sc += 400;
+        });
+        placed.forEach(function (p) { if (rectsOverlap(ib, p)) sc += 800; });
+        tips.forEach(function (tp) { if (tp.x > bb.x - 8 && tp.x < bb.x + bb.w + 8 && tp.y > bb.y - 8 && tp.y < bb.y + bb.h + 8) sc += 300; });
+        sc += sOff * 0.5 + Math.abs(t - 0.5) * 14 + (1 - sg.L / maxL) * 12 + (online ? 35 : 0) + (lines.length - 1) * 5;
+        // A spot that is clear except for running past the canvas edge can be used by widening that margin.
+        if (outside && sc < 200 && (!grow || sc < grow.score)) grow = { score: sc, over: over };
+        if (outside) sc += 1000;
+        if (!best || sc < best.score) best = { score: sc, bb: bb, lines: lines };
+      }
+      options.forEach(function (lines) {
+        var bw = Math.max.apply(null, lines.map(function (x) { return measureCtx.measureText(x).width; })) + 8;
+        var bh = lines.length * LINE_H + 4;
+        segsOwn.forEach(function (sg) {
+          if (sg.L < 14) return;
+          var ux = (sg.q.x - sg.p.x) / sg.L, uy = (sg.q.y - sg.p.y) / sg.L, nx = -uy, ny = ux;
+          [0.5, 0.35, 0.65, 0.22, 0.78].forEach(function (t) {
+            var q = { x: sg.p.x + (sg.q.x - sg.p.x) * t, y: sg.p.y + (sg.q.y - sg.p.y) * t };
+            [1, -1].forEach(function (side) {
+              for (var s = 0; s <= 90; s += 2) {
+                var cx = q.x + nx * s * side, cy = q.y + ny * s * side;
+                var bb = { x: cx - bw / 2, y: cy - bh / 2, w: bw, h: bh };
+                if (!segHitsRect(sg.p, sg.q, inflate(bb, 4))) { consider(bb, lines, s, t, sg, false); break; }
+              }
+            });
+            consider({ x: q.x - bw / 2, y: q.y - bh / 2, w: bw, h: bh }, lines, 0, t, sg, true);
+          });
+        });
+      });
+      if (!best) return;
+      if (best.score >= 200 && grow) {
+        ['l', 'r', 't', 'b'].forEach(function (k) { need[k] = Math.max(need[k], Math.ceil(grow.over[k]) + 6); });
+      }
+      placed.push(best.bb);
+      var bb = best.bb;
+      var inFrame = frameRect && bb.x > frameRect.x && bb.x + bb.w < frameRect.x + frameRect.w &&
+        bb.y > frameRect.y && bb.y + bb.h < frameRect.y + frameRect.h;
+      svg.append(sv('rect', { class: 'lnk-label-bg' + (inFrame ? ' in-frame' : ''), x: fx(bb.x), y: fx(bb.y), width: fx(bb.w), height: fx(bb.h), rx: 3 }));
+      var cx = bb.x + bb.w / 2;
+      var text = sv('text', { class: 'lnk-label' + (st.dashed ? ' dashed' : ''), 'text-anchor': 'middle', x: fx(cx), y: fx(bb.y + 12) });
+      best.lines.forEach(function (ln, i) {
+        var ts = sv('tspan', { x: fx(cx), dy: i ? String(LINE_H) : '0' });
+        ts.textContent = ln;
+        text.append(ts);
+      });
+      svg.append(text);
+    });
+
+    // Widen a margin when a label only fits beyond it, then draw again (at most twice per model).
+    if (need.l + need.r + need.t + need.b > 0 && growPasses < 2) {
+      growPasses++;
+      var cap = function (v, k) { return Math.min(v + need[k], 180) + 'px'; };
+      canvas.style.paddingLeft = cap(pl, 'l');
+      canvas.style.paddingRight = cap(pr, 'r');
+      canvas.style.paddingTop = cap(pt, 't');
+      canvas.style.paddingBottom = cap(pb, 'b');
+      drawArrows();
+    }
+  }
+
+  if (window.ResizeObserver) {
+    new ResizeObserver(function () { scheduleArrows(); }).observe($('#diagram-canvas'));
+  } else {
+    window.addEventListener('resize', scheduleArrows);
+  }
+  function onNarrowChange() { renderDiagram(); }
+  if (mqNarrow.addEventListener) mqNarrow.addEventListener('change', onNarrowChange);
+  else if (mqNarrow.addListener) mqNarrow.addListener(onNarrowChange);
+
+  /* ---------- slot editors ---------- */
+  var pickers = {};
+  function focusSlot(sid) {
+    var card = document.getElementById('slot-' + domId(sid));
+    if (!card) return;
+    card.scrollIntoView({ block: 'start', behavior: reduceMotion ? 'auto' : 'smooth' });
+    var target = card.querySelector('input[role="combobox"]') || card.querySelector('textarea');
+    if (target) target.focus({ preventScroll: true });
+    card.classList.add('flash');
+    setTimeout(function () { card.classList.remove('flash'); }, 1400);
+  }
+
+  function renderSlots() {
+    var m = currentModel();
+    var list = $('#slot-list');
+    list.textContent = '';
+    pickers = {};
+    m.slots.forEach(function (s) { list.append(buildSlotCard(m, s)); });
+  }
+
+  function buildSlotCard(m, s) {
+    var spec = ratingSpec(s.rating);
+    var hid = 'slot-h-' + domId(s.id);
+    var card = h('section', { class: 'slot-card', id: 'slot-' + domId(s.id), 'aria-labelledby': hid });
+    var head = h('header', null, h('h3', { id: hid }, s.label));
+    if (spec) head.append(h('span', { class: 'tag', title: RATING_TYPES[s.rating] || '' }, spec.name + ': ' + spec.range));
+    if (s.multi === false) head.append(h('span', { class: 'tag' }, 'One choice'));
+    card.append(head);
+    if (s.prompt) card.append(h('p', { class: 'slot-prompt' }, h('b', null, 'Ask: '), s.prompt));
+    if (s.help) card.append(h('p', { class: 'slot-help' }, s.help));
+    var vocab = (s.vocab || []).filter(function (p) { return byPrefix[p] && byPrefix[p].concepts; });
+    if (vocab.length) card.append(buildPicker(m, s, vocab));
+    var chips = h('ul', { class: 'chips', id: 'chips-' + domId(s.id), 'aria-label': 'Chosen for ' + s.label });
+    card.append(chips);
+    renderChips(m, s, chips);
+    if (s.free_text) {
+      var tid = 'txt-' + domId(s.id);
+      var ta = h('textarea', { id: tid, rows: '2', placeholder: 'Their words, in quotes where you can' });
+      ta.value = peekSlot(m.id, s.id).text || '';
+      ta.addEventListener('input', function () {
+        slotData(m.id, s.id).text = ta.value;
+        slotChanged(m, s, false);
+      });
+      card.append(h('div', null, h('label', { class: 'sub-label', for: tid }, "Client's own words"), ta));
+    }
+    return card;
+  }
+
+  function renderChips(m, s, listEl) {
+    // The card may not be in the document yet, so the caller can pass the list directly.
+    var ul = listEl || document.getElementById('chips-' + domId(s.id));
+    if (!ul) return;
+    ul.textContent = '';
+    var d = peekSlot(m.id, s.id);
+    var spec = ratingSpec(s.rating);
+    if (!d.items.length) {
+      var hasVocab = (s.vocab || []).length > 0;
+      ul.append(h('li', { class: 'chips-empty' }, hasVocab ? 'Nothing chosen yet.' : 'Free text only for this box.'));
+      return;
+    }
+    d.items.forEach(function (it, idx) {
+      var c = CONCEPTS.get(it.id);
+      var name = c ? dispLabel(c) : it.id;
+      var plainName = c ? c.label : it.id;
+      var li = h('li', { class: 'chip' });
+      li.append(h('span', { class: 'chip-label', title: c ? (c.definition || '') : '' }, name,
+        c ? null : h('span', { class: 'missing' }, ' (not in this vocabulary version)')));
+      if (spec) {
+        var rid = 'rate-' + domId(s.id) + '-' + domId(it.id);
+        var inp = h('input', { type: 'number', id: rid, min: spec.min, max: spec.max, step: '1', inputmode: 'numeric',
+          'aria-label': spec.name + ' for ' + plainName + ', ' + spec.range });
+        inp.value = it.rating === null || it.rating === undefined ? '' : String(it.rating);
+        inp.addEventListener('input', function () {
+          var v = inp.value.trim();
+          it.rating = v === '' || isNaN(Number(v)) ? null : Math.max(spec.min, Math.min(spec.max, Math.round(Number(v))));
+          slotChanged(m, s, false);
+        });
+        inp.addEventListener('change', function () {
+          inp.value = it.rating === null ? '' : String(it.rating);
+        });
+        li.append(h('span', { class: 'chip-rate' }, inp, h('span', { 'aria-hidden': 'true' }, spec.unit || spec.suffix.trim() || '')));
+      }
+      li.append(h('button', { type: 'button', class: 'chip-x', 'aria-label': 'Remove ' + plainName + ' from ' + s.label,
+        title: 'Remove', onclick: function () {
+          var data = slotData(m.id, s.id);
+          data.items = data.items.filter(function (x) { return x.id !== it.id; });
+          announce('Removed ' + plainName + ' from ' + s.label);
+          slotChanged(m, s, true);
+          var buttons = ul.querySelectorAll('.chip-x');
+          var next = buttons[Math.min(idx, buttons.length - 1)];
+          if (next) next.focus();
+          else if (pickers[s.id]) pickers[s.id].input.focus();
+        } }, '×'));
+      ul.append(li);
+    });
+  }
+
+  function slotChanged(m, s, rerenderChips) {
+    if (rerenderChips) renderChips(m, s);
+    if (pickers[s.id]) pickers[s.id].refresh();
+    save();
+    renderDiagram();
+    renderPrint();
+  }
+
+  function toggleConcept(m, s, cid) {
+    var d = slotData(m.id, s.id);
+    var c = CONCEPTS.get(cid);
+    var name = c ? c.label : cid;
+    var i = -1;
+    d.items.forEach(function (x, k) { if (x.id === cid) i = k; });
+    if (i >= 0) {
+      d.items.splice(i, 1);
+      announce('Removed ' + name + ' from ' + s.label);
+    } else if (s.multi === false && d.items.length) {
+      var old = d.items[0].id;
+      d.items = [{ id: cid, rating: null }];
+      announce('Replaced ' + (CONCEPTS.get(old) ? CONCEPTS.get(old).label : old) + ' with ' + name + ' in ' + s.label);
+    } else {
+      d.items.push({ id: cid, rating: null });
+      announce('Added ' + name + ' to ' + s.label);
+    }
+    slotChanged(m, s, true);
+  }
+
+  function buildPicker(m, s, vocab) {
+    var base = domId(s.id);
+    var inputId = 'pick-' + base, lbId = 'lb-' + base, hintId = 'ph-' + base, detId = 'pd-' + base, cntId = 'pc-' + base;
+    var titles = vocab.map(function (p) { return byPrefix[p].title; });
+    var input = h('input', { id: inputId, type: 'text', role: 'combobox', autocomplete: 'off', spellcheck: 'false',
+      'aria-autocomplete': 'list', 'aria-expanded': 'false', 'aria-controls': lbId, 'aria-describedby': hintId,
+      placeholder: 'Search ' + titles.join(', ').toLowerCase() });
+    var toggle = h('button', { type: 'button', class: 'btn', tabindex: '-1', 'aria-controls': lbId, 'aria-expanded': 'false',
+      'aria-label': 'Show options for ' + s.label }, 'List');
+    var listbox = h('div', { class: 'listbox', role: 'listbox', id: lbId, 'aria-label': s.label + ' options' });
+    var detail = h('div', { class: 'picker-detail', id: detId });
+    var pop = h('div', { class: 'picker-pop', hidden: true }, listbox, detail);
+    var count = h('span', { class: 'sr-only', id: cntId, 'aria-live': 'polite' });
+    var wrap = h('div', { class: 'picker' },
+      h('label', { class: 'sub-label', for: inputId }, 'Add from vocabulary', h('span', { class: 'sr-only' }, ' for ' + s.label)),
+      h('div', { class: 'picker-row' }, input, toggle),
+      h('p', { class: 'picker-hint', id: hintId }, 'From ' + titles.join(' and ') + '. Type to search or press Down arrow to browse; Enter adds or removes.'),
+      pop, count);
+
+    var opts = [], active = -1, open = false;
+    var countTimer = null;
+
+    function selectedIds() {
+      var ids = {};
+      peekSlot(m.id, s.id).items.forEach(function (x) { ids[x.id] = true; });
+      return ids;
+    }
+    function render() {
+      var q = tokens(input.value);
+      var sel = selectedIds();
+      var keepId = active >= 0 && opts[active] ? opts[active].id : null;
+      listbox.textContent = '';
+      opts = [];
+      vocab.forEach(function (p) {
+        var sc = byPrefix[p];
+        var groups = [], gmap = {};
+        sc.concepts.forEach(function (c) {
+          if (!c || !c.id) return;
+          if (c.deprecated && !sel[c.id]) return;
+          if (q.length && !q.every(function (t) { return c._hay.indexOf(t) !== -1; })) return;
+          var g = c.group || 'Other';
+          if (!gmap[g]) { gmap[g] = []; groups.push(g); }
+          gmap[g].push(c);
+        });
+        groups.forEach(function (g, gi) {
+          var gid = lbId + '-g-' + domId(p) + '-' + gi;
+          var grp = h('div', { role: 'group', 'aria-labelledby': gid },
+            h('div', { class: 'lb-group-h', id: gid, role: 'presentation' }, sc.title.replace(/\s*\(.*\)$/, '') + ': ' + g));
+          gmap[g].forEach(function (c) {
+            var oid = 'opt-' + base + '-' + domId(c.id);
+            var did = oid + '-d';
+            var isSel = !!sel[c.id];
+            var o = h('div', { class: 'lb-opt', role: 'option', id: oid, 'aria-selected': isSel ? 'true' : 'false', 'aria-describedby': did },
+              h('span', null, c.label, c.deprecated ? ' (retired)' : ''),
+              isSel ? h('span', { class: 'added' }, 'Added') : null,
+              h('span', { class: 'sr-only', id: did }, c.definition || ''));
+            var index = opts.length;
+            o.addEventListener('mousedown', function (e) { e.preventDefault(); });
+            o.addEventListener('click', function () { setActive(index, false); choose(); input.focus(); });
+            o.addEventListener('mousemove', function () { if (active !== index) setActive(index, false); });
+            opts.push({ id: c.id, el: o, c: c });
+            grp.append(o);
+          });
+          listbox.append(grp);
+        });
+      });
+      if (!opts.length) {
+        listbox.append(h('div', { class: 'lb-empty' }, 'No matches. Try another word, or record it in the client’s own words.'));
+      }
+      var newActive = -1;
+      if (keepId) opts.forEach(function (o, i) { if (o.id === keepId) newActive = i; });
+      if (newActive === -1 && q.length && opts.length) newActive = 0;
+      setActive(newActive, true);
+      clearTimeout(countTimer);
+      countTimer = setTimeout(function () {
+        count.textContent = opts.length ? opts.length + ' options' : 'No matches';
+      }, 400);
+    }
+    function showDetail(c) {
+      detail.textContent = '';
+      if (!c) {
+        detail.append(h('p', { class: 'pd-meta' }, 'Move through the list to see each definition and its client wording.'));
+        return;
+      }
+      var sc = byPrefix[c._prefix];
+      detail.append(
+        h('p', { class: 'pd-title' }, c.label),
+        h('p', { class: 'pd-meta' }, (sc ? sc.title : c._prefix) + (c.group ? ', ' + c.group : '') + ' ', h('code', null, c.id)),
+        c.definition ? h('p', null, h('span', { class: 'pd-k' }, 'Definition: '), c.definition) : null,
+        c.client_wording ? h('p', null, h('span', { class: 'pd-k' }, 'Client wording: '), c.client_wording) : null,
+        c.example ? h('p', null, h('span', { class: 'pd-k' }, 'Example: '), c.example) : null);
+    }
+    function setActive(i, quiet) {
+      if (opts[active]) opts[active].el.classList.remove('active');
+      active = i;
+      if (opts[active]) {
+        opts[active].el.classList.add('active');
+        input.setAttribute('aria-activedescendant', opts[active].el.id);
+        if (!quiet || open) opts[active].el.scrollIntoView({ block: 'nearest' });
+        showDetail(opts[active].c);
+      } else {
+        input.removeAttribute('aria-activedescendant');
+        showDetail(null);
+      }
+    }
+    function setOpen(v) {
+      open = v;
+      pop.hidden = !v;
+      input.setAttribute('aria-expanded', v ? 'true' : 'false');
+      toggle.setAttribute('aria-expanded', v ? 'true' : 'false');
+      toggle.textContent = v ? 'Hide' : 'List';
+      if (v) render(); else { input.removeAttribute('aria-activedescendant'); }
+    }
+    function choose() {
+      if (!opts[active]) return;
+      toggleConcept(m, s, opts[active].id);
+    }
+    input.addEventListener('input', function () { if (!open) setOpen(true); else render(); });
+    input.addEventListener('click', function () { if (!open) setOpen(true); });
+    input.addEventListener('keydown', function (e) {
+      var k = e.key;
+      if (k === 'ArrowDown' || k === 'ArrowUp') {
+        e.preventDefault();
+        if (!open) { setOpen(true); if (opts.length) setActive(k === 'ArrowDown' ? 0 : opts.length - 1, false); return; }
+        if (e.altKey && k === 'ArrowUp') { setOpen(false); return; }
+        if (!opts.length) return;
+        var n = active + (k === 'ArrowDown' ? 1 : -1);
+        if (n < 0) n = opts.length - 1;
+        if (n >= opts.length) n = 0;
+        setActive(n, false);
+      } else if ((k === 'PageDown' || k === 'PageUp') && open && opts.length) {
+        e.preventDefault();
+        setActive(Math.max(0, Math.min(opts.length - 1, (active < 0 ? 0 : active) + (k === 'PageDown' ? 10 : -10))), false);
+      } else if (k === 'Enter') {
+        if (open && opts[active]) { e.preventDefault(); choose(); }
+        else if (!open) { e.preventDefault(); setOpen(true); }
+      } else if (k === 'Escape') {
+        if (open) { e.preventDefault(); setOpen(false); }
+        else if (input.value) { e.preventDefault(); input.value = ''; }
+      } else if (k === 'Tab') {
+        if (open) setOpen(false);
+      }
+    });
+    toggle.addEventListener('mousedown', function (e) { e.preventDefault(); });
+    toggle.addEventListener('click', function () { setOpen(!open); input.focus(); });
+    wrap.addEventListener('focusout', function (e) {
+      if (!wrap.contains(e.relatedTarget)) setTimeout(function () { if (!wrap.contains(document.activeElement)) setOpen(false); }, 0);
+    });
+
+    pickers[s.id] = { input: input, refresh: function () { if (open) render(); } };
+    return wrap;
+  }
+
+  /* ---------- print view ---------- */
+  function renderPrint() {
+    var m = currentModel();
+    var hd = state.header;
+    var head = $('#print-head');
+    head.textContent = '';
+    head.append(h('h1', null, 'CBT Case Formulation: ' + m.label),
+      h('dl', null,
+        h('dt', null, 'Client'), h('dd', null, hd.client || 'Not recorded'),
+        h('dt', null, 'Date'), h('dd', null, hd.date || 'Not recorded'),
+        h('dt', null, 'Therapist'), h('dd', null, hd.therapist || 'Not recorded'),
+        h('dt', null, 'Session'), h('dd', null, hd.session || 'Not recorded'),
+        h('dt', null, 'Labels'), h('dd', null, state.clientWording ? 'Client wording' : 'Clinical')));
+    var wrap = $('#print-table-wrap');
+    wrap.textContent = '';
+    var tbody = h('tbody');
+    m.slots.slice().sort(function (a, b) { return (a.row - b.row) || (a.col - b.col); }).forEach(function (s) {
+      var d = peekSlot(m.id, s.id);
+      var spec = ratingSpec(s.rating);
+      var items = d.items.map(function (it) {
+        var v = spec ? fmtRating(spec, it.rating) : '';
+        return itemLabel(it.id) + (v ? ' (' + v + ')' : '');
+      });
+      tbody.append(h('tr', null,
+        h('th', { scope: 'row' }, s.label),
+        h('td', null, items.length ? items.join('; ') : 'Not recorded'),
+        h('td', null, (d.text || '').trim() || '')));
+    });
+    wrap.append(h('table', { class: 'print-table' },
+      h('thead', null, h('tr', null, h('th', { scope: 'col' }, 'Box'), h('th', { scope: 'col' }, 'Concepts and ratings'), h('th', { scope: 'col' }, "Client's own words"))),
+      tbody),
+      h('p', { class: 'print-foot' }, 'Solid arrows: direct effects. Dashed arrows: feedback and maintaining loops. Two-headed arrows: each part affects the other. Vocabulary versions: ' +
+        SCHEMES.map(function (sc) { return sc.prefix + ' ' + sc.version; }).join(', ') + '. Built ' + (DATA.generated || '') + '.'));
+  }
+
+  window.addEventListener('beforeprint', function () {
+    printing = true;
+    document.body.classList.add('printing');
+    $('#view-formulation').hidden = false;
+    renderDiagram();
+    drawArrows();
+  });
+  window.addEventListener('afterprint', function () {
+    printing = false;
+    document.body.classList.remove('printing');
+    showView(currentView, { updateHash: false });
+    renderDiagram();
+  });
+  $('#btn-print').addEventListener('click', function () {
+    try { window.print(); } catch (e) { tell('Print is not available', h('p', null, 'Use your browser menu to print this page.')); }
+  });
+
+  /* ---------- client wording ---------- */
+  function applyWording() {
+    $('#btn-wording').setAttribute('aria-pressed', state.clientWording ? 'true' : 'false');
+  }
+  $('#btn-wording').addEventListener('click', function () {
+    state.clientWording = !state.clientWording;
+    applyWording();
+    var m = currentModel();
+    m.slots.forEach(function (s) { renderChips(m, s); });
+    renderDiagram();
+    renderPrint();
+    save();
+    announce(state.clientWording ? 'Showing client wording' : 'Showing clinical labels');
+  });
+
+  /* ---------- export and import ---------- */
+  function schemeVersions() {
+    var o = {};
+    SCHEMES.forEach(function (sc) { o[sc.prefix] = sc.version || null; });
+    return o;
+  }
+  function buildExport() {
+    var m = currentModel();
+    var hd = state.header;
+    var sn = parseInt(hd.session, 10);
+    return {
+      format: 'cbt-case-formulation',
+      format_version: 1,
+      exported: new Date().toISOString(),
+      model: { id: m.id, label: m.label },
+      header: {
+        client_code: hd.client || '',
+        date: hd.date || '',
+        therapist: hd.therapist || '',
+        session_number: isNaN(sn) ? null : sn
+      },
+      slots: m.slots.map(function (s) {
+        var d = peekSlot(m.id, s.id);
+        return {
+          id: s.id,
+          label: s.label,
+          rating_type: s.rating || null,
+          concepts: d.items.map(function (it) {
+            var c = CONCEPTS.get(it.id);
+            return { id: it.id, label: c ? c.label : null, rating: s.rating ? (it.rating === undefined ? null : it.rating) : null };
+          }),
+          free_text: d.text || ''
+        };
+      }),
+      scheme_versions: schemeVersions(),
+      vocabulary_built: DATA.generated || null
+    };
+  }
+  $('#btn-export').addEventListener('click', function () {
+    var data = buildExport();
+    var text = JSON.stringify(data, null, 2);
+    var safe = function (x) { return String(x || '').replace(/[^A-Za-z0-9_-]+/g, '-').replace(/^-+|-+$/g, ''); };
+    var name = 'formulation-' + (safe(state.header.client) || 'client') + '-' + (safe(state.header.date) || todayISO()) + '.json';
+    try {
+      var blob = new Blob([text], { type: 'application/json' });
+      var url = URL.createObjectURL(blob);
+      var a = h('a', { href: url, download: name });
+      document.body.append(a);
+      a.click();
+      a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+      setStatus('Exported ' + name + '.');
+    } catch (e) {
+      var ta = h('textarea', { readonly: true, 'aria-label': 'Formulation JSON' });
+      ta.value = text;
+      openDialog({ title: 'Copy the formulation JSON', body: [h('p', null, 'This browser blocked the download. Copy the text below and save it as ' + name + '.'), ta], okText: 'Close', focus: function () { return ta; } });
+    }
+  });
+
+  $('#btn-import').addEventListener('click', function () { $('#import-file').click(); });
+  $('#import-file').addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    e.target.value = '';
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function () { importText(String(reader.result || '')); };
+    reader.onerror = function () { tell('Import failed', h('p', null, 'The file could not be read. Choose a JSON file exported from this page.')); };
+    reader.readAsText(file);
+  });
+  function importText(text) {
+    var data;
+    try { data = JSON.parse(text); } catch (e) {
+      tell('Import failed', h('p', null, 'The file is not valid JSON. Choose a file exported with Export JSON.'));
+      return;
+    }
+    if (!data || data.format !== 'cbt-case-formulation' || !data.model || !Array.isArray(data.slots)) {
+      tell('Import failed', h('p', null, 'This JSON is not a formulation exported from this page (format "cbt-case-formulation").'));
+      return;
+    }
+    var m = MODEL_BY_ID[data.model.id];
+    if (!m) {
+      tell('Import failed', h('p', null, 'The model ' + data.model.id + ' is not in this vocabulary version.'));
+      return;
+    }
+    var notes = [];
+    var vs = data.scheme_versions || {};
+    SCHEMES.forEach(function (sc) {
+      if (vs[sc.prefix] && sc.version && vs[sc.prefix] !== sc.version) {
+        notes.push(sc.title + ' was version ' + vs[sc.prefix] + ' in the file; this page has ' + sc.version + '.');
+      }
+    });
+    var slotIds = {};
+    m.slots.forEach(function (s) { slotIds[s.id] = s; });
+    var entries = {};
+    data.slots.forEach(function (sd) {
+      if (!sd || !slotIds[sd.id]) { notes.push('Skipped unknown box "' + (sd && sd.id) + '".'); return; }
+      var s = slotIds[sd.id];
+      var spec = ratingSpec(s.rating);
+      var items = [];
+      (Array.isArray(sd.concepts) ? sd.concepts : []).forEach(function (c) {
+        var id = c && (typeof c === 'string' ? c : c.id);
+        if (!id) return;
+        if (!CONCEPTS.has(id)) { notes.push('Skipped ' + id + ' in ' + s.label + ': not in this vocabulary.'); return; }
+        if (items.some(function (x) { return x.id === id; })) return;
+        var r = c && typeof c === 'object' ? c.rating : null;
+        r = r === null || r === undefined || r === '' || isNaN(Number(r)) || !spec ? null
+          : Math.max(spec.min, Math.min(spec.max, Math.round(Number(r))));
+        items.push({ id: id, rating: r });
+      });
+      if (s.multi === false && items.length > 1) {
+        notes.push(s.label + ' takes one choice; kept the first.');
+        items = items.slice(0, 1);
+      }
+      entries[s.id] = { items: items, text: typeof sd.free_text === 'string' ? sd.free_text : '' };
+    });
+    var hd = data.header || {};
+    state.model = m.id;
+    state.header = {
+      client: String(hd.client_code || '').slice(0, 16),
+      date: String(hd.date || ''),
+      therapist: String(hd.therapist || '').slice(0, 60),
+      session: hd.session_number === null || hd.session_number === undefined ? '' : String(hd.session_number)
+    };
+    state.entries[m.id] = entries;
+    renderAll();
+    saveNow();
+    var body = [h('p', null, 'Loaded ' + m.label + ' with ' + Object.keys(entries).length + ' boxes.')];
+    if (notes.length) {
+      body.push(h('p', null, 'Check these points:'));
+      body.push(h('ul', null, notes.map(function (n) { return h('li', null, n); })));
+    }
+    tell('Formulation imported', body);
+  }
+
+  $('#btn-clear').addEventListener('click', function () {
+    ask('Clear this formulation?',
+      'This removes the session details and the entries for every model from this page and from this browser. Export first if you want to keep them.',
+      'Clear everything', true).then(function (ok) {
+      if (!ok) return;
+      var keepModel = state.model, keepWording = state.clientWording;
+      state = freshState();
+      state.model = keepModel;
+      state.clientWording = keepWording;
+      store.remove(DRAFT_KEY);
+      renderAll();
+      saveNow();
+      announce('Formulation cleared');
+      $('#f-client').focus();
+    });
+  });
+
+  /* Worked example, invented for demonstration. */
+  var EXAMPLE = {
+    model: 'fm.five-part',
+    header: { client: 'EX-01', therapist: 'Example only', session: '2' },
+    slots: {
+      situation: { items: [['sit.performance-evaluation', null]], text: 'Manager asked to see my report before Friday.' },
+      thoughts: { items: [['tt.inadequacy-and-failure', 85], ['cd.catastrophizing', 70]], text: "She'll see I'm not up to the job and I'll be let go." },
+      emotions: { items: [['em.anxious', 80], ['em.ashamed', 50]], text: '' },
+      physical: { items: [['bs.racing-heart', 60], ['bs.butterflies', 55], ['bs.muscle-tension', 40]], text: '' },
+      behaviors: { items: [['bh.procrastination', null], ['cs.overpreparation', null]], text: 'Put it off all day, then stayed up rewriting it three times.' }
+    }
+  };
+  $('#btn-example').addEventListener('click', function () {
+    var m = MODEL_BY_ID[EXAMPLE.model];
+    if (!m) return;
+    var go = function () {
+      state.model = m.id;
+      state.header = { client: EXAMPLE.header.client, date: todayISO(), therapist: EXAMPLE.header.therapist, session: EXAMPLE.header.session };
+      var entries = {};
+      Object.keys(EXAMPLE.slots).forEach(function (sid) {
+        var ex = EXAMPLE.slots[sid];
+        entries[sid] = {
+          items: ex.items.filter(function (p) { return CONCEPTS.has(p[0]); }).map(function (p) { return { id: p[0], rating: p[1] }; }),
+          text: ex.text
+        };
+      });
+      state.entries[m.id] = entries;
+      renderAll();
+      saveNow();
+      announce('Example loaded. It is invented for demonstration.');
+      setStatus('Example loaded (invented for demonstration). Clear it before real use.');
+    };
+    var busy = modelHasContent(m.id) || state.header.client || state.header.therapist;
+    if (!busy) { go(); return; }
+    ask('Replace with the example?', 'The example replaces the session details and the ' + m.label + ' entries in this draft.', 'Load example', false)
+      .then(function (ok) { if (ok) go(); });
+  });
+
+  /* ---------- vocabulary browser ---------- */
+  var vbSearch = $('#vb-search'), vbScheme = $('#vb-scheme');
+  (function buildSchemeSelect() {
+    vbScheme.append(h('option', { value: '' }, 'All schemes'));
+    SCHEMES.forEach(function (sc) {
+      var n = sc.prefix === 'fm' ? MODELS.length + ' models' : (sc.concepts || []).length;
+      vbScheme.append(h('option', { value: sc.prefix }, (sc.title || sc.prefix) + ' (' + n + ')'));
+    });
+    $('#vb-total').textContent = conceptTotal + ' concepts, ' + MODELS.length + ' models';
+  })();
+
+  function conceptRef(id) {
+    var c = CONCEPTS.get(id) || MODEL_BY_ID[id];
+    if (!c) return h('code', null, id);
+    return h('button', { type: 'button', class: 'btn-quiet btn', style: 'min-height:0;padding:1px 6px',
+      onclick: function () { jumpTo(id); }, 'aria-label': 'Show ' + c.label + ' (' + id + ')' }, c.label);
+  }
+  var CORE_KEYS = { id: 1, label: 1, alt_labels: 1, definition: 1, client_wording: 1, example: 1, group: 1, broader: 1,
+    related: 1, see: 1, sources: 1, page: 1, deprecated: 1, replaced_by: 1, _prefix: 1, _hay: 1 };
+  function fmtExtra(v) {
+    if (Array.isArray(v)) {
+      if (v.length && v.every(function (x) { return typeof x === 'string' && CONCEPTS.has(x); })) {
+        return h('ul', { class: 'inline-list' }, v.map(function (x) { return h('li', null, conceptRef(x)); }));
+      }
+      return v.map(function (x) { return typeof x === 'object' ? JSON.stringify(x) : String(x); }).join(', ');
+    }
+    if (v && typeof v === 'object') return JSON.stringify(v);
+    return String(v);
+  }
+  function conceptBody(c) {
+    var dl = h('dl');
+    var row = function (k, v) { if (v === null || v === undefined || v === '' || (Array.isArray(v) && !v.length)) return; dl.append(h('dt', null, k), h('dd', null, v)); };
+    row('Definition', c.definition);
+    row('Client wording', c.client_wording);
+    row('Example', c.example);
+    row('Also called', (c.alt_labels || []).join(', '));
+    row('Broader', c.broader ? conceptRef(c.broader) : null);
+    row('Related', (c.related || []).length ? h('ul', { class: 'inline-list' }, c.related.map(function (r) { return h('li', null, conceptRef(r)); })) : null);
+    if (c.deprecated) row('Retired', c.replaced_by ? ['Replaced by ', conceptRef(c.replaced_by)] : 'Yes');
+    Object.keys(c).forEach(function (k) {
+      if (CORE_KEYS[k]) return;
+      row(cap(k.replace(/_/g, ' ')), fmtExtra(c[k]));
+    });
+    row('Reference page', c.page ? h('code', null, c.page) : null);
+    dl.append(h('dt', null, 'Pages that tag it'), h('dd', null, (c.see || []).length
+      ? h('ul', { class: 'inline-list' }, c.see.map(function (p) { return h('li', null, h('code', null, p)); }))
+      : 'No pages tag this concept yet.'));
+    row('Sources', (c.sources || []).join('; '));
+    return h('div', { class: 'vc-body' }, dl);
+  }
+  function modelBody(m) {
+    var dl = h('dl');
+    var row = function (k, v) { if (!v || (Array.isArray(v) && !v.length)) return; dl.append(h('dt', null, k), h('dd', null, v)); };
+    row('Summary', m.summary);
+    row('Use when', m.use_when);
+    row('Group', cap(m.group || ''));
+    row('Topics', (m.topics || []).join(', '));
+    row('Reference page', m.page ? h('code', null, m.page) : null);
+    row('Boxes', h('ul', { class: 'inline-list' }, m.slots.map(function (s) {
+      return h('li', null, h('span', { class: 'tag' }, s.label + ((s.vocab || []).length ? ': ' + s.vocab.join(', ') : '')));
+    })));
+    row('Sources', (m.sources || []).join('; '));
+    return h('div', { class: 'vc-body' }, dl,
+      h('p', null, h('button', { type: 'button', class: 'btn', onclick: function () {
+        setModel(m.id);
+        showView('formulation', { updateHash: true });
+        $('#h-model').scrollIntoView({ block: 'start' });
+      } }, 'Use this model')));
+  }
+  function vcItem(item, isModel) {
+    var det = h('details', { class: 'vc', id: 'vc-' + domId(item.id) });
+    det.append(h('summary', null,
+      h('span', { class: 'vc-label' }, item.label),
+      h('code', null, item.id),
+      item.deprecated ? h('span', { class: 'retired' }, 'Retired') : null));
+    var filled = false;
+    det.addEventListener('toggle', function () {
+      if (det.open && !filled) { filled = true; det.append(isModel ? modelBody(item) : conceptBody(item)); }
+    });
+    return h('li', null, det);
+  }
+  var vbTimer = null;
+  function renderBrowser() {
+    var q = tokens(vbSearch.value);
+    var pf = vbScheme.value;
+    var host = $('#vb-results');
+    host.textContent = '';
+    var shown = 0, schemesShown = 0;
+    SCHEMES.forEach(function (sc) {
+      if (pf && pf !== sc.prefix) return;
+      var isModel = sc.prefix === 'fm';
+      var list = isModel ? MODELS : (sc.concepts || []);
+      var match = list.filter(function (c) { return c && c.id && (!q.length || q.every(function (t) { return (c._hay || '').indexOf(t) !== -1; })); });
+      if (!match.length) return;
+      schemesShown++;
+      shown += match.length;
+      var sec = h('section', { class: 'vb-scheme panel', 'aria-labelledby': 'vbh-' + sc.prefix });
+      sec.append(h('header', null,
+        h('h3', { id: 'vbh-' + sc.prefix }, sc.title || sc.prefix, h('code', null, sc.prefix), h('span', { class: 'tag' }, 'version ' + (sc.version || '?'))),
+        sc.description ? h('p', { class: 'lede' }, sc.description) : null));
+      var groups = [], gmap = {};
+      match.forEach(function (c) {
+        var g = c.group || 'Other';
+        if (!gmap[g]) { gmap[g] = []; groups.push(g); }
+        gmap[g].push(c);
+      });
+      groups.forEach(function (g) {
+        sec.append(h('h4', null, cap(g)));
+        var ul = h('ul', { class: 'vb-list' });
+        gmap[g].forEach(function (c) { ul.append(vcItem(c, isModel)); });
+        sec.append(ul);
+      });
+      host.append(sec);
+    });
+    var total = conceptTotal + MODELS.length;
+    $('#vb-count').textContent = shown
+      ? 'Showing ' + shown + ' of ' + total + ' entries in ' + schemesShown + (schemesShown === 1 ? ' scheme.' : ' schemes.')
+      : 'No entries match. Try a shorter word or choose All schemes.';
+  }
+  vbSearch.addEventListener('input', function () { clearTimeout(vbTimer); vbTimer = setTimeout(renderBrowser, 150); });
+  vbScheme.addEventListener('change', renderBrowser);
+  function jumpTo(id) {
+    var c = CONCEPTS.get(id);
+    var prefix = c ? c._prefix : 'fm';
+    vbSearch.value = '';
+    vbScheme.value = prefix;
+    renderBrowser();
+    var det = document.getElementById('vc-' + domId(id));
+    if (!det) return;
+    det.open = true;
+    det.dispatchEvent(new Event('toggle'));
+    var sum = det.querySelector('summary');
+    det.scrollIntoView({ block: 'start', behavior: reduceMotion ? 'auto' : 'smooth' });
+    sum.focus({ preventScroll: true });
+  }
+
+  /* ---------- views ---------- */
+  var currentView = 'formulation';
+  var browserBuilt = false;
+  function showView(name, opts) {
+    opts = opts || {};
+    currentView = name === 'vocabulary' ? 'vocabulary' : 'formulation';
+    var isF = currentView === 'formulation';
+    $('#view-formulation').hidden = !isF;
+    $('#view-vocab').hidden = isF;
+    [['#tab-formulation', isF], ['#tab-vocabulary', !isF]].forEach(function (p) {
+      var t = $(p[0]);
+      t.setAttribute('aria-selected', p[1] ? 'true' : 'false');
+      t.tabIndex = p[1] ? 0 : -1;
+    });
+    if (!isF && !browserBuilt) { browserBuilt = true; renderBrowser(); }
+    if (isF) scheduleArrows();
+    if (opts.focusTab) $(isF ? '#tab-formulation' : '#tab-vocabulary').focus();
+    if (opts.updateHash !== false) {
+      var want = isF ? '' : '#vocabulary';
+      if (location.hash !== want) {
+        try { history.replaceState(null, '', want || location.pathname + location.search); } catch (e) { /* file:// may refuse */ }
+      }
+    }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[role="tab"]'), function (t) {
+    t.addEventListener('click', function () { showView(t.getAttribute('data-view')); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'Home' || e.key === 'End') {
+        e.preventDefault();
+        var other = currentView === 'formulation' ? 'vocabulary' : 'formulation';
+        if (e.key === 'Home') other = 'formulation';
+        if (e.key === 'End') other = 'vocabulary';
+        showView(other, { focusTab: true });
+      }
+    });
+  });
+  window.addEventListener('hashchange', function () {
+    showView(location.hash === '#vocabulary' ? 'vocabulary' : 'formulation', { updateHash: false });
+  });
+
+  /* ---------- app bar height for sticky diagram ---------- */
+  function measureBar() {
+    var bar = $('#appbar');
+    var sticky = getComputedStyle(bar).position === 'sticky';
+    document.documentElement.style.setProperty('--appbar-h', (sticky ? bar.offsetHeight : 0) + 'px');
+  }
+  if (window.ResizeObserver) new ResizeObserver(measureBar).observe($('#appbar'));
+  window.addEventListener('resize', measureBar);
+
+  /* ---------- boot ---------- */
+  function renderModel() {
+    renderModelInfo();
+    renderSlots();
+    renderDiagram();
+    renderPrint();
+  }
+  function renderAll() {
+    renderHeaderFields();
+    applyWording();
+    var r = document.getElementById('mo-' + domId(state.model));
+    if (r) r.checked = true;
+    renderModel();
+  }
+  $('#build-info').textContent = 'Vocabulary built ' + (DATA.generated || 'unknown') + ': ' +
+    conceptTotal + ' concepts in ' + CONCEPT_SCHEMES.length + ' schemes, ' + MODELS.length + ' models';
+  if (!MODELS.length) {
+    var fe = $('#fatal');
+    fe.hidden = false;
+    fe.textContent = 'No formulation models were found in the vocabulary data.';
+    return;
+  }
+  (function modelFromQuery() {
+    // ?model=<model id> opens that model (for links and headless checks); it is not saved until edited.
+    try {
+      var want = new URLSearchParams(location.search).get('model');
+      if (want && MODEL_BY_ID[want]) state.model = want;
+    } catch (e) { /* old browser: keep the saved model */ }
+  })();
+  buildModelOptions();
+  renderAll();
+  measureBar();
+  setStatus(storageOK ? 'Drafts save automatically in this browser.'
+    : 'This browser is not keeping drafts. Use Export JSON to keep your work.');
+  showView(location.hash === '#vocabulary' ? 'vocabulary' : 'formulation', { updateHash: false });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleArrows);
+
+  /* Test hook: lets a headless check render every model. */
+  window.__formulation = {
+    models: MODELS.map(function (m) { return m.id; }),
+    render: function (id) { state.model = id; renderModel(); drawArrows(); return document.querySelectorAll('#diagram-svg path').length; }
+  };
+})();
+</script>
+</body>
+</html>

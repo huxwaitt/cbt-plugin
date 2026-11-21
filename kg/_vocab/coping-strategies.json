@@ -1,0 +1,817 @@
+{
+  "scheme": "coping-strategies",
+  "prefix": "cs",
+  "title": "Coping strategies (compensatory and adaptive)",
+  "description": "Enduring coping patterns a client uses across situations. Group compensatory holds strategies developed to cope with core beliefs and conditional assumptions, as in the coping strategies box of the cognitive conceptualization diagram. Group adaptive holds flexible, helpful coping that a formulation names as strengths or treatment goals. Situation-level acts are in bh.",
+  "version": "1.0.0",
+  "sources": [
+    "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+    "BeckInstitute-CCD-Example § Coping strategies box",
+    "Beck-etal-2015 § Ch. 2 Theory of Personality Disorders",
+    "Young-etal-2003 § Ch. 1 Coping styles",
+    "Carver-1997 § Brief COPE scales"
+  ],
+  "concepts": [
+    {
+      "id": "cs.avoiding-negative-emotion",
+      "label": "Avoiding negative emotion",
+      "alt_labels": [
+        "suppressing feelings"
+      ],
+      "definition": "Habitually avoiding, suppressing or numbing unpleasant emotions, and situations that might trigger them, to protect against feared vulnerability.",
+      "client_wording": "Doing whatever it takes not to feel upset, sad or scared.",
+      "example": "Never talking about feelings and keeping constantly busy after a loss.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "bh.distraction-to-avoid",
+        "bh.numbing-activities",
+        "bh.substance-use-to-cope",
+        "cs.acceptance",
+        "mp.experiential-avoidance",
+        "ib.emotions-unacceptable"
+      ],
+      "see": ["15-transdiagnostic-processes.avoidance", "15-transdiagnostic-processes.emotion-regulation"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Young-etal-2003 § Ch. 1 Coping styles"
+      ]
+    },
+    {
+      "id": "cs.perfectionistic-striving",
+      "label": "Perfectionistic striving",
+      "alt_labels": [
+        "displaying high standards",
+        "trying to be perfect"
+      ],
+      "definition": "Persistently pursuing very high standards and judging self-worth by meeting them, despite costs, to avoid failure or criticism.",
+      "client_wording": "Pushing yourself to be perfect, because anything less feels like failing.",
+      "example": "Spending every weekend polishing reports that already meet the brief.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.overpreparation",
+        "cs.seeking-recognition",
+        "bh.redoing-and-overcorrecting",
+        "bh.overworking",
+        "mp.clinical-perfectionism",
+        "ib.must-be-perfect"
+      ],
+      "see": ["15-transdiagnostic-processes.perfectionism", "personality-disorders.other-personality-disorders"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Shafran-etal-2002 § Definition of clinical perfectionism"
+      ]
+    },
+    {
+      "id": "cs.overpreparation",
+      "label": "Overpreparation",
+      "alt_labels": [
+        "overpreparing"
+      ],
+      "definition": "Preparing far beyond what a task requires, to prevent failure, exposure of inadequacy or uncertainty.",
+      "client_wording": "Preparing much more than needed so nothing can possibly go wrong.",
+      "example": "Scripting every word of a five-minute team update.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.perfectionistic-striving",
+        "bh.mental-rehearsal"
+      ],
+      "see": ["15-transdiagnostic-processes.intolerance-of-uncertainty", "cognitive.modifying-intermediate-beliefs", "gad.assessment", "gad.cbt-model"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Shafran-etal-2002 § Maintenance of clinical perfectionism"
+      ]
+    },
+    {
+      "id": "cs.overresponsibility",
+      "label": "Overresponsibility",
+      "alt_labels": [
+        "being overly responsible",
+        "caretaking"
+      ],
+      "definition": "Taking excessive responsibility for others' wellbeing and for preventing harm, beyond one's real role or control.",
+      "client_wording": "Feeling it is your job to keep everyone safe and everything on track.",
+      "example": "Checking on adult siblings daily and fixing their problems for them.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.self-sacrifice",
+        "cs.overcontrol",
+        "ib.inflated-responsibility"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Salkovskis-1985 § Responsibility appraisals"
+      ]
+    },
+    {
+      "id": "cs.avoiding-intimacy",
+      "label": "Avoiding intimacy",
+      "alt_labels": [
+        "keeping people at a distance"
+      ],
+      "definition": "Keeping relationships distant, limiting self-disclosure or ending closeness, to avoid rejection, hurt or exposure.",
+      "client_wording": "Keeping people at arm's length so they cannot get close enough to hurt you.",
+      "example": "Ending relationships once they become serious.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "bh.social-withdrawal",
+        "cs.concealing-vulnerability",
+        "cs.excessive-self-reliance",
+        "ib.closeness-leads-to-rejection"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Beck-etal-2015 § Ch. 9 Avoidant Personality Disorder"
+      ]
+    },
+    {
+      "id": "cs.seeking-recognition",
+      "label": "Seeking recognition",
+      "alt_labels": [
+        "overachieving",
+        "status seeking"
+      ],
+      "definition": "Pursuing achievement, status or admiration to prove worth and offset an underlying sense of inadequacy.",
+      "client_wording": "Needing to achieve and be admired to feel good enough.",
+      "example": "Taking on every high-profile project to be seen as the best.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.perfectionistic-striving",
+        "cs.attention-seeking",
+        "bh.overworking"
+      ],
+      "see": ["personality-disorders.other-personality-disorders"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Young-etal-2003 § Ch. 1 Coping styles"
+      ]
+    },
+    {
+      "id": "cs.attention-seeking",
+      "label": "Attention seeking",
+      "alt_labels": [
+        "dramatizing"
+      ],
+      "definition": "Drawing others' attention through dramatic, emotional or entertaining displays, to secure care, approval or connection.",
+      "client_wording": "Needing to be noticed and finding ways to make people pay attention to you.",
+      "example": "Escalating stories of crises when friends seem distracted.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.seeking-recognition",
+        "cs.dependence-on-others"
+      ],
+      "see": ["personality-disorders.other-personality-disorders"],
+      "sources": [
+        "Beck-etal-2015 § Ch. 15 Histrionic Personality Disorder",
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization"
+      ]
+    },
+    {
+      "id": "cs.avoiding-confrontation",
+      "label": "Avoiding confrontation",
+      "alt_labels": [
+        "conflict avoidance",
+        "keeping the peace"
+      ],
+      "definition": "Habitually avoiding disagreement, criticism or conflict, even when important issues need raising.",
+      "client_wording": "Keeping the peace at any cost and never raising problems with people.",
+      "example": "Never telling a partner about an ongoing hurt, to avoid an argument.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.pleasing-others",
+        "bh.self-silencing",
+        "cs.assertive-communication",
+        "ib.assertion-leads-to-rejection"
+      ],
+      "see": ["behavioral.skills-training"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization"
+      ]
+    },
+    {
+      "id": "cs.overcontrol",
+      "label": "Overcontrol",
+      "alt_labels": [
+        "trying to control situations",
+        "controlling others"
+      ],
+      "definition": "Trying to control situations, people and outcomes tightly, leaving little room for others' input, uncertainty or spontaneity.",
+      "client_wording": "Needing to be in charge of everything so nothing goes wrong.",
+      "example": "Redoing a partner's chores because they were not done \"properly\".",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.rigid-rule-following",
+        "cs.overresponsibility",
+        "bh.dietary-restriction",
+        "ib.must-stay-in-control"
+      ],
+      "see": ["personality-disorders.other-personality-disorders"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Beck-etal-2015 § Ch. 10 Obsessive-Compulsive Personality Disorder"
+      ]
+    },
+    {
+      "id": "cs.dependence-on-others",
+      "label": "Dependence on others",
+      "alt_labels": [
+        "acting helpless",
+        "acting childlike"
+      ],
+      "definition": "Relying on others to decide, protect or do tasks, and presenting as helpless, to cope with feeling incapable or alone.",
+      "client_wording": "Leaning on others to decide or do things because you feel you cannot manage alone.",
+      "example": "Asking a parent to call the bank and make every decision.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "bh.relying-on-safe-person",
+        "bh.reassurance-seeking",
+        "cs.excessive-self-reliance"
+      ],
+      "see": ["personality-disorders.other-personality-disorders"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Beck-etal-2015 § Ch. 8 Dependent Personality Disorder"
+      ]
+    },
+    {
+      "id": "cs.pleasing-others",
+      "label": "Pleasing others",
+      "alt_labels": [
+        "people-pleasing",
+        "approval seeking"
+      ],
+      "definition": "A lasting pattern of putting others' wishes first and seeking their approval, to avoid rejection or disapproval.",
+      "client_wording": "Always trying to keep people happy with you, even at your own expense.",
+      "example": "Shaping career, clothes and opinions around what others might want.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "bh.appeasing",
+        "cs.self-sacrifice",
+        "cs.avoiding-confrontation",
+        "ib.must-be-liked"
+      ],
+      "see": ["cognitive.modifying-intermediate-beliefs"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Young-etal-2003 § Ch. 1 Coping styles"
+      ]
+    },
+    {
+      "id": "cs.excessive-self-reliance",
+      "label": "Excessive self-reliance",
+      "alt_labels": [
+        "avoiding help-seeking",
+        "never asking for help"
+      ],
+      "definition": "Refusing or avoiding help and insisting on handling everything alone, to avoid appearing weak, incompetent or indebted.",
+      "client_wording": "Never asking for help, because needing help feels like weakness or failure.",
+      "example": "Struggling for weeks with a task rather than asking a colleague.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.seeking-practical-help",
+        "cs.dependence-on-others",
+        "cs.avoiding-intimacy",
+        "ib.must-cope-alone"
+      ],
+      "see": ["03-formulation.cognitive-model-levels"],
+      "sources": [
+        "BeckInstitute-CCD-Example § Coping strategies box",
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization"
+      ]
+    },
+    {
+      "id": "cs.hypervigilance-to-others",
+      "label": "Hypervigilance to others",
+      "alt_labels": [
+        "guardedness",
+        "mistrustful watching"
+      ],
+      "definition": "Watching others closely for signs of hostility, rejection or deception, and staying guarded and slow to trust.",
+      "client_wording": "Always watching people for signs they might hurt, reject or trick you.",
+      "example": "Rereading a friend's messages for hidden criticism.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.avoiding-intimacy",
+        "bh.in-situation-safety-behavior"
+      ],
+      "see": ["10-diagnosis.pitfall-culture-misread-as-pathology"],
+      "sources": [
+        "Beck-etal-2015 § Ch. 12 Paranoid, Schizotypal, and Schizoid Personality Disorders",
+        "Beck-etal-2015 § Ch. 2 Theory of Personality Disorders"
+      ]
+    },
+    {
+      "id": "cs.self-sacrifice",
+      "label": "Self-sacrifice",
+      "alt_labels": [
+        "putting others first"
+      ],
+      "definition": "Routinely meeting others' needs at the expense of one's own, to avoid guilt or causing others pain.",
+      "client_wording": "Always putting other people's needs before your own, even when it costs you.",
+      "example": "Caring for relatives every evening while one's own health suffers.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.pleasing-others",
+        "cs.overresponsibility",
+        "bh.appeasing",
+        "ib.must-put-others-first"
+      ],
+      "see": [],
+      "sources": [
+        "Young-etal-2003 § Ch. 1 Coping styles"
+      ]
+    },
+    {
+      "id": "cs.avoiding-challenges",
+      "label": "Avoiding challenges",
+      "alt_labels": [
+        "playing it safe"
+      ],
+      "definition": "Steering away from new tasks, goals or opportunities where failure or inadequacy might be exposed.",
+      "client_wording": "Not trying new or hard things in case you fail.",
+      "example": "Not applying for a promotion despite encouragement.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "bh.overt-avoidance",
+        "bh.procrastination",
+        "cs.excessive-self-reliance",
+        "ib.trying-leads-to-failure"
+      ],
+      "see": ["03-formulation.cognitive-conceptualization-diagram", "03-formulation.cognitive-model-levels"],
+      "sources": [
+        "BeckInstitute-CCD-Example § Coping strategies box",
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization"
+      ]
+    },
+    {
+      "id": "cs.asserting-superiority",
+      "label": "Asserting superiority",
+      "alt_labels": [
+        "dominance",
+        "overcompensating"
+      ],
+      "definition": "Acting superior, entitled, dominant or critical of others, to ward off underlying feelings of inferiority or vulnerability.",
+      "client_wording": "Putting others down or acting above them so you never feel small.",
+      "example": "Belittling colleagues' ideas in meetings.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.seeking-recognition",
+        "bh.aggression"
+      ],
+      "see": ["personality-disorders.other-personality-disorders"],
+      "sources": [
+        "Young-etal-2003 § Ch. 1 Coping styles",
+        "Beck-etal-2015 § Ch. 14 Narcissistic Personality Disorder"
+      ]
+    },
+    {
+      "id": "cs.rigid-rule-following",
+      "label": "Rigid rule-following",
+      "alt_labels": [
+        "systematizing",
+        "strict routines"
+      ],
+      "definition": "Relying on strict rules, routines, lists and order to manage uncertainty and avoid mistakes.",
+      "client_wording": "Sticking tightly to rules and routines, and feeling uneasy when things change.",
+      "example": "Refusing any change to a weekly schedule, even for a celebration.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.overcontrol",
+        "cs.perfectionistic-striving"
+      ],
+      "see": ["personality-disorders.other-personality-disorders"],
+      "sources": [
+        "Beck-etal-2015 § Ch. 10 Obsessive-Compulsive Personality Disorder",
+        "Beck-etal-2015 § Ch. 2 Theory of Personality Disorders"
+      ]
+    },
+    {
+      "id": "cs.concealing-vulnerability",
+      "label": "Concealing vulnerability",
+      "alt_labels": [
+        "putting on a front",
+        "hiding the true self"
+      ],
+      "definition": "Hiding perceived flaws, needs or true feelings behind a competent or cheerful front, to avoid rejection or judgment.",
+      "client_wording": "Hiding your real self or struggles behind a front so no one sees weakness.",
+      "example": "Always appearing upbeat at work while privately struggling.",
+      "group": "compensatory",
+      "broader": null,
+      "related": [
+        "cs.avoiding-intimacy",
+        "cs.avoiding-negative-emotion",
+        "bh.concealing-anxiety-signs"
+      ],
+      "see": ["13-context-culture-development.identity-and-minority-stress", "adhd.underdiagnosis-in-women-and-adults"],
+      "sources": [
+        "Beck-2021 § Ch. 3 Cognitive Conceptualization",
+        "Beck-etal-2015 § Ch. 9 Avoidant Personality Disorder"
+      ]
+    },
+    {
+      "id": "cs.problem-solving",
+      "label": "Problem solving",
+      "alt_labels": [
+        "active coping",
+        "planning"
+      ],
+      "definition": "Defining a problem, generating options, weighing them, choosing and trying one, then reviewing the result.",
+      "client_wording": "Breaking a problem into steps and working through options to sort it out.",
+      "example": "Listing three ways to handle rent arrears, then calling the landlord.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.seeking-practical-help",
+        "bh.procrastination",
+        "iv.problem-solving-therapy",
+        "bf.coping-skills"
+      ],
+      "see": ["behavioral.problem-solving-therapy", "chronic-pain-and-physical-health.adaptations", "personality-disorders.dbt-informed-skills"],
+      "sources": [
+        "Nezu-etal-2013 § Planful problem-solving steps",
+        "Carver-1997 § Brief COPE scales"
+      ]
+    },
+    {
+      "id": "cs.seeking-emotional-support",
+      "label": "Seeking emotional support",
+      "alt_labels": [
+        "talking it through",
+        "confiding"
+      ],
+      "definition": "Turning to trusted people for comfort, understanding or a chance to talk feelings through.",
+      "client_wording": "Talking to someone you trust about how you feel.",
+      "example": "Calling a friend after a hard day to talk it through.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.seeking-practical-help",
+        "bh.social-withdrawal",
+        "bh.reassurance-seeking",
+        "bf.social-support"
+      ],
+      "see": ["02-risk.safety-planning"],
+      "sources": [
+        "Carver-1997 § Brief COPE scales"
+      ]
+    },
+    {
+      "id": "cs.seeking-practical-help",
+      "label": "Seeking practical help",
+      "alt_labels": [
+        "instrumental support",
+        "asking for advice"
+      ],
+      "definition": "Asking others for advice, information or practical assistance with a problem.",
+      "client_wording": "Asking people for advice or hands-on help when you need it.",
+      "example": "Asking a colleague to show how to use new software.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.problem-solving",
+        "cs.excessive-self-reliance"
+      ],
+      "see": ["02-risk.safety-planning", "13-context-culture-development.socioeconomic-context", "ptsd.early-intervention", "ptsd.pitfall-routine-debriefing"],
+      "sources": [
+        "Carver-1997 § Brief COPE scales"
+      ]
+    },
+    {
+      "id": "cs.self-soothing",
+      "label": "Self-soothing",
+      "alt_labels": [
+        "comforting yourself"
+      ],
+      "definition": "Using comforting sensory or caring actions, such as warmth, music or gentle touch, to calm distress kindly.",
+      "client_wording": "Doing gentle, comforting things for yourself when you are upset.",
+      "example": "Taking a warm bath with calming music after a panic attack.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.self-compassion",
+        "cs.calming-the-body",
+        "bh.self-harm",
+        "iv.distress-tolerance-skills"
+      ],
+      "see": [],
+      "sources": [
+        "Linehan-2025 § Distress tolerance skills",
+        "Gilbert-2009 § Soothing and affiliation system"
+      ]
+    },
+    {
+      "id": "cs.acceptance",
+      "label": "Acceptance",
+      "alt_labels": [
+        "willingness",
+        "radical acceptance"
+      ],
+      "definition": "Allowing unwanted thoughts, feelings and unchangeable realities to be present without struggle, while still choosing helpful action.",
+      "client_wording": "Letting feelings or facts be there without fighting them, so you can move forward.",
+      "example": "Making room for grief while still going to work.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.mindful-awareness",
+        "cs.avoiding-negative-emotion"
+      ],
+      "see": ["15-transdiagnostic-processes.pitfall-telling-clients-to-stop-thinking", "15-transdiagnostic-processes.thought-suppression", "chronic-pain-and-physical-health.pitfall-pain-relief-as-the-goal", "chronic-pain-and-physical-health.treatment", "cognitive.pitfall-challenging-accurate-thoughts"],
+      "sources": [
+        "Hayes-etal-2011 § Acceptance",
+        "Linehan-2025 § Distress tolerance skills",
+        "Carver-1997 § Brief COPE scales"
+      ]
+    },
+    {
+      "id": "cs.balanced-thinking",
+      "label": "Balanced thinking",
+      "alt_labels": [
+        "positive reframing",
+        "coping statements",
+        "reappraisal"
+      ],
+      "definition": "Deliberately weighing the evidence and generating a more balanced or helpful view of a situation.",
+      "client_wording": "Stepping back to look at the whole picture and find a fairer way to see things.",
+      "example": "\"One mistake does not cancel years of good work.\"",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.self-compassion",
+        "cs.problem-solving",
+        "iv.cognitive-restructuring"
+      ],
+      "see": ["cognitive.cognitive-restructuring", "cognitive.thought-records"],
+      "sources": [
+        "Greenberger-Padesky-2016 § Ch. 9 Alternative or Balanced Thinking",
+        "Carver-1997 § Brief COPE scales"
+      ]
+    },
+    {
+      "id": "cs.self-compassion",
+      "label": "Self-compassion",
+      "alt_labels": [
+        "self-kindness"
+      ],
+      "definition": "Responding to one's own suffering or mistakes with warmth, understanding and encouragement rather than criticism.",
+      "client_wording": "Treating yourself with the kindness you would show a good friend.",
+      "example": "\"Anyone would struggle with this; I am doing my best.\"",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.self-soothing",
+        "cs.balanced-thinking",
+        "iv.compassionate-mind-training",
+        "mp.self-criticism"
+      ],
+      "see": ["15-transdiagnostic-processes.self-criticism-and-shame", "bipolar-and-psychosis.cbtp", "cognitive.pitfall-challenging-accurate-thoughts", "cognitive.self-compassion-techniques", "responding-in-session.responding-to-hopelessness-and-self-criticism"],
+      "sources": [
+        "Gilbert-2009 § Compassionate mind training"
+      ]
+    },
+    {
+      "id": "cs.mindful-awareness",
+      "label": "Mindful awareness",
+      "alt_labels": [
+        "decentering",
+        "defusion"
+      ],
+      "definition": "Noticing thoughts, feelings and sensations in the present moment as passing events, without judging or acting on them.",
+      "client_wording": "Noticing thoughts and feelings as they come and go without getting caught up in them.",
+      "example": "Noticing \"I am having the thought that I will fail\" and returning to the task.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.acceptance",
+        "cs.urge-surfing",
+        "iv.mindfulness-based-cognitive-therapy"
+      ],
+      "see": ["chronic-pain-and-physical-health.treatment", "depression.relapse-prevention-mbct", "personality-disorders.dbt-informed-skills"],
+      "sources": [
+        "Hayes-etal-2011 § Defusion and present-moment awareness",
+        "Linehan-2025 § Mindfulness skills"
+      ]
+    },
+    {
+      "id": "cs.calming-the-body",
+      "label": "Calming the body",
+      "alt_labels": [
+        "relaxation",
+        "paced breathing"
+      ],
+      "definition": "Using slow breathing, muscle relaxation or similar methods to lower physical arousal, used flexibly rather than as a safety behavior.",
+      "client_wording": "Using slow breathing or relaxing your muscles to settle your body.",
+      "example": "Doing slow breathing for five minutes before a hard conversation.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.self-soothing",
+        "bh.in-situation-safety-behavior",
+        "iv.relaxation-training"
+      ],
+      "see": ["15-transdiagnostic-processes.pitfall-coping-that-becomes-avoidance", "behavioral.relaxation-and-arousal-reduction", "personality-disorders.dbt-informed-skills"],
+      "sources": [
+        "Linehan-2025 § Distress tolerance skills",
+        "Thwaites-Freeston-2005 § Safety behaviors versus adaptive coping"
+      ]
+    },
+    {
+      "id": "cs.healthy-distraction",
+      "label": "Planned distraction",
+      "alt_labels": [
+        "healthy distraction",
+        "self-distraction"
+      ],
+      "definition": "Briefly and deliberately shifting attention to absorbing activities to get through acute distress, then returning to the problem.",
+      "client_wording": "Doing something absorbing for a while to get through a hard moment.",
+      "example": "Doing a puzzle for 20 minutes until an urge to drink passes.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "bh.distraction-to-avoid",
+        "cs.urge-surfing",
+        "iv.distress-tolerance-skills"
+      ],
+      "see": ["02-risk.safety-planning", "15-transdiagnostic-processes.pitfall-coping-that-becomes-avoidance", "15-transdiagnostic-processes.pitfall-telling-clients-to-stop-thinking", "15-transdiagnostic-processes.thought-suppression"],
+      "sources": [
+        "Linehan-2025 § Distress tolerance skills",
+        "Carver-1997 § Brief COPE scales"
+      ]
+    },
+    {
+      "id": "cs.physical-activity",
+      "label": "Physical activity",
+      "alt_labels": [
+        "exercise",
+        "movement"
+      ],
+      "definition": "Using exercise or movement in moderation to lift mood, reduce tension and support sleep.",
+      "client_wording": "Moving your body, like walking or dancing, to help your mood and stress.",
+      "example": "Walking for 20 minutes at lunch on low days.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.values-based-action",
+        "bh.inactivity",
+        "bh.driven-exercise"
+      ],
+      "see": ["health-anxiety.persistent-physical-symptoms"],
+      "sources": [
+        "Martell-etal-2022 § Ch. 5 Activity Scheduling and Structuring",
+        "Linehan-2025 § Distress tolerance skills"
+      ]
+    },
+    {
+      "id": "cs.values-based-action",
+      "label": "Values-based action",
+      "alt_labels": [
+        "committed action",
+        "acting on values"
+      ],
+      "definition": "Choosing and taking actions guided by personal values, even when mood or motivation is low.",
+      "client_wording": "Doing things that matter to you, even when you do not feel like it.",
+      "example": "Attending a child's school event despite low energy.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.physical-activity",
+        "cs.opposite-action",
+        "bh.inactivity",
+        "bf.values-and-purpose"
+      ],
+      "see": ["behavioral.behavioral-activation", "behavioral.pitfall-activity-without-function", "chronic-pain-and-physical-health.pitfall-pain-relief-as-the-goal", "chronic-pain-and-physical-health.treatment"],
+      "sources": [
+        "Hayes-etal-2011 § Values and committed action",
+        "Martell-etal-2022 § Ch. 6 Avoidance Modification, Solving Problems, and Value-Directed Behavior"
+      ]
+    },
+    {
+      "id": "cs.assertive-communication",
+      "label": "Assertive communication",
+      "alt_labels": [
+        "assertiveness",
+        "saying no"
+      ],
+      "definition": "Clearly and respectfully stating needs, opinions, requests or refusals while considering the other person.",
+      "client_wording": "Saying what you need, or saying no, clearly and kindly.",
+      "example": "\"I cannot take this on this week, but I can help next Monday.\"",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "bh.self-silencing",
+        "bh.appeasing",
+        "cs.avoiding-confrontation",
+        "iv.interpersonal-effectiveness-training"
+      ],
+      "see": ["behavioral.skills-training", "depression.persistent-depression"],
+      "sources": [
+        "Linehan-2025 § Interpersonal effectiveness skills"
+      ]
+    },
+    {
+      "id": "cs.opposite-action",
+      "label": "Opposite action",
+      "alt_labels": [
+        "acting opposite to the urge"
+      ],
+      "definition": "Acting opposite to an emotion's action urge when the emotion does not fit the facts or acting on it would not help.",
+      "client_wording": "Doing the opposite of what a feeling urges, when acting on it would not help.",
+      "example": "Calling a friend when sadness urges hiding at home.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.values-based-action",
+        "bh.social-withdrawal",
+        "bh.overt-avoidance",
+        "iv.emotion-regulation-skills"
+      ],
+      "see": ["personality-disorders.dbt-informed-skills"],
+      "sources": [
+        "Linehan-2025 § Emotion regulation skills"
+      ]
+    },
+    {
+      "id": "cs.urge-surfing",
+      "label": "Urge surfing",
+      "alt_labels": [
+        "riding out urges"
+      ],
+      "definition": "Observing a craving or urge rise, peak and fall like a wave, without acting on it.",
+      "client_wording": "Riding out an urge like a wave until it passes, without giving in.",
+      "example": "Noticing the urge to binge, rating it, and watching it fade over 20 minutes.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.mindful-awareness",
+        "bh.substance-use-to-cope",
+        "bh.binge-eating",
+        "bh.self-harm",
+        "iv.high-risk-situation-coping",
+        "sit.urge-or-craving"
+      ],
+      "see": ["eating-disorders.cbt-e-stages", "health-anxiety.reassurance-seeking", "substance-use.cbt-model", "substance-use.relapse-prevention-model", "substance-use.treatment"],
+      "sources": [
+        "Bowen-Marlatt-2009 § Urge surfing instructions"
+      ]
+    },
+    {
+      "id": "cs.expressive-writing",
+      "label": "Expressive writing",
+      "alt_labels": [
+        "journaling",
+        "putting feelings into words"
+      ],
+      "definition": "Putting thoughts and feelings about stressful events into words, in writing or speech, to make sense of them.",
+      "client_wording": "Writing or talking about what happened and how you feel, to make sense of it.",
+      "example": "Writing for 15 minutes about a difficult week.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.seeking-emotional-support",
+        "cs.avoiding-negative-emotion"
+      ],
+      "see": [],
+      "sources": [
+        "Pennebaker-1997 § Writing about emotional experiences"
+      ]
+    },
+    {
+      "id": "cs.spiritual-coping",
+      "label": "Spiritual or religious coping",
+      "alt_labels": [
+        "faith-based coping"
+      ],
+      "definition": "Drawing on religious or spiritual beliefs, practices or community for comfort, meaning or guidance.",
+      "client_wording": "Finding strength or comfort in your faith, prayer or spiritual practice.",
+      "example": "Praying and attending services for support after a bereavement.",
+      "group": "adaptive",
+      "broader": null,
+      "related": [
+        "cs.seeking-emotional-support",
+        "bh.mental-ritual",
+        "bf.faith-or-spiritual-community"
+      ],
+      "see": ["13-context-culture-development.religion-and-spirituality", "grief-and-loss.adaptations"],
+      "sources": [
+        "Carver-1997 § Brief COPE scales"
+      ]
+    }
+  ]
+}

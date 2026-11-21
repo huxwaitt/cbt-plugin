@@ -1,0 +1,1055 @@
+{
+  "scheme": "intermediate-beliefs",
+  "prefix": "ib",
+  "title": "Intermediate beliefs (rules, assumptions, attitudes)",
+  "description": "Rules, conditional assumptions and attitudes that link core beliefs to automatic thoughts and coping, including metacognitive, OCD, emotion, health, sleep, eating, substance and mood-specific beliefs. Fills the intermediate beliefs slot of the cognitive conceptualization diagram. Each concept carries kind: rule, assumption or attitude. It also holds the belief domains of the OCD and eating disorder models: inflated responsibility, thought-action fusion and overvaluation of shape and weight.",
+  "version": "1.1.0",
+  "sources": [
+    "Beck-2021 § Ch. 17 Introduction to Beliefs",
+    "Beck-2021 § Ch. 18 Modifying Beliefs",
+    "Beck-etal-2024 § Ch. 7 Schemas: Core Beliefs and Underlying Assumptions",
+    "Greenberger-Padesky-2016 § Ch. 11 Underlying Assumptions and Behavioral Experiments",
+    "BeckInstitute-Worksheet-Packet-2020 § Cognitive Conceptualization Diagram"
+  ],
+  "concepts": [
+    {
+      "id": "ib.must-be-perfect",
+      "label": "I must do everything perfectly",
+      "alt_labels": [
+        "I must never make mistakes",
+        "perfectionism rule",
+        "unrelenting standards"
+      ],
+      "definition": "Rule demanding flawless performance and no mistakes, with self-evaluation hinging on meeting rigid, very high standards.",
+      "client_wording": "I have to do everything perfectly; mistakes aren't okay.",
+      "example": "\"I must never hand in work with a single error.\"",
+      "group": "Rules and standards",
+      "kind": "rule",
+      "broader": null,
+      "related": [
+        "cb.not-good-enough",
+        "ib.worth-depends-on-achievement",
+        "ib.need-for-certainty",
+        "mp.clinical-perfectionism",
+        "cs.perfectionistic-striving",
+        "cd.should-statements"
+      ],
+      "see": ["15-transdiagnostic-processes.perfectionism", "cognitive.modifying-intermediate-beliefs"],
+      "sources": [
+        "Shafran-etal-2002 § Definition of clinical perfectionism",
+        "Beck-etal-1991 § Factor structure of the Dysfunctional Attitude Scale",
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "ib.must-be-liked",
+      "label": "I must be liked by everyone",
+      "alt_labels": [
+        "need for approval",
+        "I must please everyone",
+        "approval-seeking"
+      ],
+      "definition": "Rule that one must win everyone's approval and avoid any disapproval, so self-esteem rests on others' reactions.",
+      "client_wording": "I need everyone to like me; I can't bear anyone being displeased with me.",
+      "example": "\"If even one person is annoyed with me, I've failed.\"",
+      "group": "Rules and standards",
+      "kind": "rule",
+      "broader": null,
+      "related": [
+        "cb.unlikeable",
+        "ib.assertion-leads-to-rejection",
+        "cs.pleasing-others"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-etal-1991 § Factor structure of the Dysfunctional Attitude Scale",
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "ib.must-put-others-first",
+      "label": "I must always put others first",
+      "alt_labels": [
+        "my needs don't count",
+        "saying no is selfish"
+      ],
+      "definition": "Rule that others' needs must always come before one's own, so saying no or self-care feels selfish or guilt-inducing.",
+      "client_wording": "I should always put other people first, whatever it costs me.",
+      "example": "\"I can't rest until everyone else is taken care of.\"",
+      "group": "Rules and standards",
+      "kind": "rule",
+      "broader": null,
+      "related": [
+        "ib.assertion-leads-to-rejection",
+        "cb.unwanted",
+        "cs.self-sacrifice"
+      ],
+      "see": [],
+      "sources": [
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)",
+        "Beck-2021 § Ch. 17 Introduction to Beliefs"
+      ]
+    },
+    {
+      "id": "ib.must-stay-in-control",
+      "label": "I must stay in control",
+      "alt_labels": [
+        "I must never lose control",
+        "need for control"
+      ],
+      "definition": "Rule that one must keep tight control of oneself, others or events, because losing control would be intolerable or dangerous.",
+      "client_wording": "I have to stay in control at all times.",
+      "example": "\"If I'm not on top of everything, it will all fall apart.\"",
+      "group": "Rules and standards",
+      "kind": "rule",
+      "broader": null,
+      "related": [
+        "cb.powerless",
+        "cb.others-incompetent",
+        "ib.must-control-thoughts",
+        "cs.overcontrol"
+      ],
+      "see": [],
+      "sources": [
+        "Beck-etal-2015 § Ch. 10 Obsessive-Compulsive Personality Disorder",
+        "Beck-2021 § Ch. 17 Introduction to Beliefs"
+      ]
+    },
+    {
+      "id": "ib.must-cope-alone",
+      "label": "I must handle things on my own",
+      "alt_labels": [
+        "asking for help is weakness",
+        "I must never show weakness",
+        "I should solve problems myself"
+      ],
+      "definition": "Rule that one should solve problems without help, because needing or asking for help would expose weakness or incompetence.",
+      "client_wording": "I should be able to sort this out myself; asking for help means I'm weak.",
+      "example": "\"I should be able to do this on my own.\"",
+      "group": "Rules and standards",
+      "kind": "rule",
+      "broader": null,
+      "related": [
+        "cb.incompetent",
+        "cb.others-uncaring",
+        "cs.excessive-self-reliance"
+      ],
+      "see": ["03-formulation.cognitive-model-levels", "cognitive.modifying-intermediate-beliefs"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Cognitive Conceptualization Diagram Example and Case Write-Up"
+      ]
+    },
+    {
+      "id": "ib.others-must-be-fair",
+      "label": "Others must treat me fairly",
+      "alt_labels": [
+        "people should do what's right",
+        "others must follow the rules",
+        "demands on others"
+      ],
+      "definition": "Rule that other people must behave fairly or as expected, so breaches are judged intolerable and provoke anger.",
+      "client_wording": "People should treat me fairly, and it's unacceptable when they don't.",
+      "example": "\"He should have called. It's completely out of line.\"",
+      "group": "Rules and standards",
+      "kind": "rule",
+      "broader": null,
+      "related": [
+        "cb.world-unfair",
+        "cb.others-inferior",
+        "tt.violation-and-unfairness",
+        "cd.should-statements"
+      ],
+      "see": [],
+      "sources": [
+        "Greenberger-Padesky-2016 § Ch. 15 Understanding Your Anger, Guilt, and Shame"
+      ]
+    },
+    {
+      "id": "ib.self-criticism-motivates",
+      "label": "If I'm not hard on myself, I'll fail",
+      "alt_labels": [
+        "self-criticism keeps me in line",
+        "being kind to myself is weak",
+        "fear of self-compassion"
+      ],
+      "definition": "Assumption that harsh self-criticism is needed to improve or avoid mistakes, and that self-kindness would lead to laziness or failure.",
+      "client_wording": "If I go easy on myself, I'll get lazy and fail.",
+      "example": "\"If I stop beating myself up, I'll never get anything done.\"",
+      "group": "Rules and standards",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.must-be-perfect",
+        "cb.not-good-enough",
+        "mp.self-criticism"
+      ],
+      "see": ["15-transdiagnostic-processes.self-criticism-and-shame", "cognitive.self-compassion-techniques", "responding-in-session.responding-to-hopelessness-and-self-criticism"],
+      "sources": [
+        "Gilbert-etal-2004 § Functions of self-criticism (self-improving/correction)"
+      ]
+    },
+    {
+      "id": "ib.worth-depends-on-achievement",
+      "label": "If I fail, I'm worthless",
+      "alt_labels": [
+        "my worth depends on achievement",
+        "performance evaluation",
+        "I'm only as good as my results"
+      ],
+      "definition": "Assumption that personal worth depends on achievement, so any failure or poor performance shows one is worthless or a failure.",
+      "client_wording": "If I don't succeed, I'm worthless.",
+      "example": "\"If I don't get this promotion, it proves I'm nothing.\"",
+      "group": "Assumptions about worth and relationships",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "cb.failure",
+        "cb.worthless",
+        "ib.must-be-perfect"
+      ],
+      "see": ["15-transdiagnostic-processes.perfectionism", "cognitive.modifying-intermediate-beliefs"],
+      "sources": [
+        "Beck-etal-1991 § Factor structure of the Dysfunctional Attitude Scale",
+        "Shafran-etal-2002 § Definition of clinical perfectionism",
+        "BeckInstitute-Worksheet-Packet-2020 § Cognitive Conceptualization Diagram Example and Case Write-Up"
+      ]
+    },
+    {
+      "id": "ib.closeness-leads-to-rejection",
+      "label": "If people get close, they'll reject me",
+      "alt_labels": [
+        "if they see the real me, they'll leave",
+        "fear of intimacy"
+      ],
+      "definition": "Assumption that if others get close or see one's true self, they will discover one's flaws and reject one.",
+      "client_wording": "If people really got to know me, they'd leave.",
+      "example": "\"If I open up to her, she'll see what I'm really like and go.\"",
+      "group": "Assumptions about worth and relationships",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "cb.defective",
+        "cb.bound-to-be-rejected",
+        "cs.avoiding-intimacy"
+      ],
+      "see": ["13-context-culture-development.identity-and-minority-stress"],
+      "sources": [
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "ib.assertion-leads-to-rejection",
+      "label": "If I stand up for myself, people will reject me",
+      "alt_labels": [
+        "if I say no, they'll be angry",
+        "subjugation",
+        "my needs cause conflict"
+      ],
+      "definition": "Assumption that expressing needs, opinions or anger, or refusing requests, will lead to conflict, retaliation or abandonment.",
+      "client_wording": "If I say no or stand up for myself, people will get angry or leave.",
+      "example": "\"If I tell my partner I'm upset, he'll walk out.\"",
+      "group": "Assumptions about worth and relationships",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.must-put-others-first",
+        "ib.must-be-liked",
+        "cb.others-controlling",
+        "cs.avoiding-confrontation"
+      ],
+      "see": [],
+      "sources": [
+        "Young-etal-2003 § Ch. 1 Schema Therapy: Conceptual Model (early maladaptive schemas)"
+      ]
+    },
+    {
+      "id": "ib.trying-leads-to-failure",
+      "label": "If I try, I'll fail",
+      "alt_labels": [
+        "if I avoid challenges, I'll be okay",
+        "it's safer not to try"
+      ],
+      "definition": "Assumption that attempting difficult things will expose inadequacy and end in failure, while avoiding them keeps one safe.",
+      "client_wording": "If I try anything hard, I'll just fail, so it's safer not to.",
+      "example": "\"If I apply for that job, I'll only prove how useless I am.\"",
+      "group": "Assumptions about worth and relationships",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "cb.incompetent",
+        "cb.failure",
+        "cs.avoiding-challenges"
+      ],
+      "see": ["03-formulation.cognitive-model-levels"],
+      "sources": [
+        "BeckInstitute-Worksheet-Packet-2020 § Cognitive Conceptualization Diagram Example and Case Write-Up"
+      ]
+    },
+    {
+      "id": "ib.high-social-standards",
+      "label": "I must always come across well",
+      "alt_labels": [
+        "I must never look anxious",
+        "I must be witty and fluent",
+        "excessively high social standards"
+      ],
+      "definition": "Excessively high standards for social performance, such as always appearing confident, interesting and free of visible anxiety.",
+      "client_wording": "I must always come across as confident and never look nervous.",
+      "example": "\"I must always look cool and calm.\"",
+      "group": "Social performance beliefs",
+      "kind": "rule",
+      "broader": null,
+      "related": [
+        "ib.visible-anxiety-brings-rejection",
+        "cb.unlikeable",
+        "ib.must-be-perfect"
+      ],
+      "see": ["social-anxiety.cbt-model"],
+      "sources": [
+        "Leigh-Clark-2018 § The Clark and Wells (1995) model"
+      ]
+    },
+    {
+      "id": "ib.visible-anxiety-brings-rejection",
+      "label": "If people see I'm anxious, they'll think badly of me",
+      "alt_labels": [
+        "conditional social beliefs",
+        "if I blush, they'll think I'm weird"
+      ],
+      "definition": "Conditional belief that any visible sign of anxiety or social slip will lead others to judge, reject or humiliate one.",
+      "client_wording": "If anyone notices I'm nervous, they'll think I'm weird or weak.",
+      "example": "\"If my hands shake, everyone will think I'm pathetic.\"",
+      "group": "Social performance beliefs",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.high-social-standards",
+        "cb.others-critical",
+        "cb.unlikeable",
+        "tt.negative-evaluation"
+      ],
+      "see": ["cognitive.downward-arrow", "social-anxiety.cbt-model"],
+      "sources": [
+        "Leigh-Clark-2018 § The Clark and Wells (1995) model"
+      ]
+    },
+    {
+      "id": "ib.worry-is-helpful",
+      "label": "Worrying helps me cope",
+      "alt_labels": [
+        "positive beliefs about worry",
+        "worry prepares me",
+        "worry keeps bad things away"
+      ],
+      "definition": "Positive metacognitive belief that worrying helps one prepare, solve problems or prevent bad outcomes, motivating its use as a coping strategy.",
+      "client_wording": "Worrying helps me be ready for whatever might go wrong.",
+      "example": "\"If I worry about it now, I won't be caught off guard.\"",
+      "group": "Metacognitive beliefs about worry and rumination",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.worry-is-uncontrollable",
+        "cb.future-threatening",
+        "mp.worry"
+      ],
+      "see": ["15-transdiagnostic-processes.pitfall-disputing-repetitive-thought-content", "15-transdiagnostic-processes.worry", "cognitive.worry-and-rumination-techniques", "gad.assessment", "gad.cbt-model", "gad.pitfall-chasing-worry-content", "gad.treatment", "gad.worry-models-compared"],
+      "sources": [
+        "Wells-1995 § Meta-cognitive model of generalized anxiety disorder",
+        "Wells-CartwrightHatton-2004 § Five factors of the MCQ-30",
+        "Wells-2009 § Ch. 6 Generalized Anxiety Disorder"
+      ]
+    },
+    {
+      "id": "ib.rumination-is-helpful",
+      "label": "Going over things helps me understand",
+      "alt_labels": [
+        "positive beliefs about rumination",
+        "analyzing my mood will fix it"
+      ],
+      "definition": "Positive metacognitive belief that dwelling on problems, feelings and the causes of low mood will produce insight or solutions.",
+      "client_wording": "If I keep thinking about why I feel bad, I'll figure it out.",
+      "example": "\"I need to work out why I'm like this before I can move on.\"",
+      "group": "Metacognitive beliefs about worry and rumination",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.worry-is-helpful",
+        "mp.rumination"
+      ],
+      "see": ["15-transdiagnostic-processes.rumination"],
+      "sources": [
+        "Papageorgiou-Wells-2001 § Positive Beliefs about Rumination Scale",
+        "Wells-2009 § Ch. 9 Major Depressive Disorder"
+      ]
+    },
+    {
+      "id": "ib.worry-is-uncontrollable",
+      "label": "My worry is uncontrollable",
+      "alt_labels": [
+        "negative beliefs about uncontrollability",
+        "I can't stop worrying"
+      ],
+      "definition": "Negative metacognitive belief that worrying, once started, cannot be stopped or controlled.",
+      "client_wording": "Once I start worrying, I can't stop.",
+      "example": "\"My mind just runs away with me and I can't switch it off.\"",
+      "group": "Metacognitive beliefs about worry and rumination",
+      "kind": "attitude",
+      "broader": null,
+      "related": [
+        "ib.worry-is-dangerous",
+        "ib.worry-is-helpful",
+        "mp.worry-about-worry",
+        "iv.detached-mindfulness"
+      ],
+      "see": ["15-transdiagnostic-processes.pitfall-disputing-repetitive-thought-content", "15-transdiagnostic-processes.worry", "cognitive.worry-and-rumination-techniques", "gad.cbt-model", "gad.pitfall-chasing-worry-content", "gad.treatment"],
+      "sources": [
+        "Wells-1995 § Meta-cognitive model of generalized anxiety disorder",
+        "Wells-CartwrightHatton-2004 § Five factors of the MCQ-30",
+        "Wells-2009 § Ch. 6 Generalized Anxiety Disorder"
+      ]
+    },
+    {
+      "id": "ib.worry-is-dangerous",
+      "label": "Worrying will harm me",
+      "alt_labels": [
+        "negative beliefs about danger of worry",
+        "worry will make me go crazy",
+        "worry will make me ill"
+      ],
+      "definition": "Negative metacognitive belief that worrying itself is harmful, for example causing madness, illness or a breakdown.",
+      "client_wording": "All this worrying is going to make me ill or drive me crazy.",
+      "example": "\"If I keep worrying like this, I'll have a breakdown.\"",
+      "group": "Metacognitive beliefs about worry and rumination",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.worry-is-uncontrollable",
+        "cb.crazy",
+        "mp.worry-about-worry"
+      ],
+      "see": ["15-transdiagnostic-processes.worry", "gad.cbt-model"],
+      "sources": [
+        "Wells-1995 § Meta-cognitive model of generalized anxiety disorder",
+        "Wells-CartwrightHatton-2004 § Five factors of the MCQ-30",
+        "Wells-2009 § Ch. 6 Generalized Anxiety Disorder"
+      ]
+    },
+    {
+      "id": "ib.must-control-thoughts",
+      "label": "I must control my thoughts",
+      "alt_labels": [
+        "need to control thoughts",
+        "I shouldn't have these thoughts"
+      ],
+      "definition": "Belief that one must control or suppress unwanted thoughts, and that failing to do so is dangerous, abnormal or blameworthy.",
+      "client_wording": "I should be able to control my thoughts, and it's bad if I can't.",
+      "example": "\"If I can't push this thought away, something must be wrong.\"",
+      "group": "Metacognitive beliefs about worry and rumination",
+      "kind": "rule",
+      "broader": null,
+      "related": [
+        "ib.thoughts-reveal-true-self",
+        "ib.must-stay-in-control",
+        "mp.thought-suppression"
+      ],
+      "see": ["15-transdiagnostic-processes.pitfall-telling-clients-to-stop-thinking", "15-transdiagnostic-processes.thought-suppression", "ocd.cbt-model"],
+      "sources": [
+        "Wells-CartwrightHatton-2004 § Five factors of the MCQ-30",
+        "OCCWG-2005 § Three OBQ-44 belief factors"
+      ]
+    },
+    {
+      "id": "ib.inflated-responsibility",
+      "label": "I'm responsible for preventing any harm",
+      "alt_labels": [
+        "inflated responsibility",
+        "not preventing harm is as bad as causing it",
+        "responsibility appraisal",
+        "excessive sense of responsibility"
+      ],
+      "definition": "Belief that one has pivotal power and duty to prevent harm, so failing to prevent it equals causing it.",
+      "client_wording": "If I could prevent something bad and don't, it's my fault.",
+      "example": "\"If I don't check the stove again and there's a fire, I'll have killed them.\"",
+      "group": "Responsibility and thought-action fusion (OCD)",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.need-for-certainty",
+        "cb.dangerous",
+        "tt.inflated-responsibility",
+        "cs.overresponsibility",
+        "mp.misinterpretation-of-intrusions",
+        "cd.personalization"
+      ],
+      "see": ["ocd.cbt-model", "ocd.erp-protocol"],
+      "sources": [
+        "Salkovskis-1985 § Responsibility appraisals of intrusions",
+        "Salkovskis-etal-2000 § Responsibility attitudes",
+        "OCCWG-2005 § Three OBQ-44 belief factors",
+        "Salkovskis-1985 § Responsibility appraisal of intrusions",
+        "Clark-Beck-2010 § Obsessive-compulsive disorder"
+      ]
+    },
+    {
+      "id": "ib.thought-action-fusion-likelihood",
+      "label": "Thinking it makes it more likely",
+      "alt_labels": [
+        "likelihood thought-action fusion",
+        "TAF likelihood",
+        "magical thinking about thoughts"
+      ],
+      "definition": "Belief that thinking about an unwanted event makes it more likely to happen, to oneself or to others.",
+      "client_wording": "If I think about something bad happening, it's more likely to happen.",
+      "example": "\"If I picture Mom in a car crash, it could make it happen.\"",
+      "group": "Responsibility and thought-action fusion (OCD)",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.thought-action-fusion-moral",
+        "ib.inflated-responsibility",
+        "tt.significance-of-thoughts",
+        "mp.misinterpretation-of-intrusions"
+      ],
+      "see": ["ocd.cbt-model", "ocd.erp-protocol"],
+      "sources": [
+        "Shafran-etal-1996 § Thought-action fusion components"
+      ]
+    },
+    {
+      "id": "ib.thought-action-fusion-moral",
+      "label": "Thinking it is as bad as doing it",
+      "alt_labels": [
+        "moral thought-action fusion",
+        "TAF moral"
+      ],
+      "definition": "Belief that having an unacceptable thought is morally equivalent to carrying out the act.",
+      "client_wording": "Having a terrible thought is as bad as actually doing it.",
+      "example": "\"Thinking about hurting him makes me as bad as someone who would.\"",
+      "group": "Responsibility and thought-action fusion (OCD)",
+      "kind": "attitude",
+      "broader": null,
+      "related": [
+        "ib.thoughts-reveal-true-self",
+        "cb.bad",
+        "ib.thought-action-fusion-likelihood",
+        "mp.misinterpretation-of-intrusions"
+      ],
+      "see": ["ocd.cbt-model"],
+      "sources": [
+        "Shafran-etal-1996 § Thought-action fusion components"
+      ]
+    },
+    {
+      "id": "ib.thoughts-reveal-true-self",
+      "label": "Having this thought says something about me",
+      "alt_labels": [
+        "importance of thoughts",
+        "my thoughts reveal who I really am"
+      ],
+      "definition": "Belief that unwanted intrusive thoughts are significant, revealing one's true character or hidden wishes, such as being secretly dangerous.",
+      "client_wording": "If I have this thought, it must mean I'm secretly a bad person.",
+      "example": "\"Why would I think that unless part of me wants it?\"",
+      "group": "Responsibility and thought-action fusion (OCD)",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.thought-action-fusion-moral",
+        "cb.dangerous",
+        "ib.must-control-thoughts",
+        "mp.misinterpretation-of-intrusions",
+        "tt.significance-of-thoughts"
+      ],
+      "see": ["ocd.cbt-model", "ocd.pitfall-misreading-intrusions-as-risk"],
+      "sources": [
+        "Rachman-1997 § Misinterpretation of the significance of intrusive thoughts",
+        "OCCWG-2005 § Three OBQ-44 belief factors"
+      ]
+    },
+    {
+      "id": "ib.need-for-certainty",
+      "label": "I must be completely certain",
+      "alt_labels": [
+        "it must feel just right",
+        "I need to be 100 percent sure"
+      ],
+      "definition": "Rule that one must be completely certain, and things must be exactly right, before stopping, deciding or feeling safe.",
+      "client_wording": "I have to be 100 percent sure before I can stop or move on.",
+      "example": "\"I can't leave until I'm totally sure the door is locked.\"",
+      "group": "Responsibility and thought-action fusion (OCD)",
+      "kind": "rule",
+      "broader": null,
+      "related": [
+        "ib.must-be-perfect",
+        "ib.inflated-responsibility",
+        "cb.world-unpredictable",
+        "mp.intolerance-of-uncertainty"
+      ],
+      "see": ["15-transdiagnostic-processes.intolerance-of-uncertainty", "cognitive.pitfall-restructuring-as-reassurance", "ocd.cbt-model"],
+      "sources": [
+        "OCCWG-2005 § Three OBQ-44 belief factors"
+      ]
+    },
+    {
+      "id": "ib.emotions-unacceptable",
+      "label": "Negative feelings are weak or unacceptable",
+      "alt_labels": [
+        "showing emotion is weakness",
+        "I must hide my feelings",
+        "emotional inhibition"
+      ],
+      "definition": "Belief that experiencing or showing negative emotions is unacceptable, weak or shameful, and must be hidden or controlled.",
+      "client_wording": "Showing my feelings is a sign of weakness.",
+      "example": "\"I can't let anyone see me upset. They'd think less of me.\"",
+      "group": "Beliefs about emotions",
+      "kind": "attitude",
+      "broader": null,
+      "related": [
+        "ib.emotions-overwhelming",
+        "ib.must-cope-alone",
+        "cs.avoiding-negative-emotion",
+        "bf.invalidating-environment"
+      ],
+      "see": ["15-transdiagnostic-processes.emotion-regulation"],
+      "sources": [
+        "Rimes-Chalder-2010 § Beliefs about Emotions Scale"
+      ]
+    },
+    {
+      "id": "ib.emotions-overwhelming",
+      "label": "If I let myself feel it, it will overwhelm me",
+      "alt_labels": [
+        "my emotions will never stop",
+        "feelings are dangerous",
+        "emotions are uncontrollable"
+      ],
+      "definition": "Belief that strong emotions are uncontrollable, will last indefinitely or will overwhelm one if allowed.",
+      "client_wording": "If I start crying, I'll never stop.",
+      "example": "\"If I let myself feel the grief, I'll fall apart completely.\"",
+      "group": "Beliefs about emotions",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.emotions-unacceptable",
+        "cd.low-frustration-tolerance",
+        "mp.experiential-avoidance"
+      ],
+      "see": [],
+      "sources": [
+        "Leahy-2002 § Emotional schema dimensions (control, duration)"
+      ]
+    },
+    {
+      "id": "ib.anxiety-sensations-dangerous",
+      "label": "Anxiety symptoms are dangerous",
+      "alt_labels": [
+        "anxiety sensitivity",
+        "a racing heart means a heart attack",
+        "fear of fear"
+      ],
+      "definition": "Belief that the physical, mental or visible signs of anxiety have harmful consequences, such as heart attack, insanity or humiliation.",
+      "client_wording": "When my heart races, something terrible could happen to me.",
+      "example": "\"If I get dizzy, I'll pass out.\"",
+      "group": "Beliefs about bodily sensations and health",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.symptoms-mean-serious-illness",
+        "cb.vulnerable",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations",
+        "tt.physical-catastrophe",
+        "ms.asi-3"
+      ],
+      "see": ["panic-and-phobias.cbt-model", "panic-and-phobias.interoceptive-exposure"],
+      "sources": [
+        "Reiss-etal-1986 § Anxiety sensitivity",
+        "Taylor-etal-2007 § Physical, Cognitive and Social Concerns",
+        "Clark-1986 § Catastrophic misinterpretation of bodily sensations"
+      ]
+    },
+    {
+      "id": "ib.symptoms-mean-serious-illness",
+      "label": "Bodily changes mean something is seriously wrong",
+      "alt_labels": [
+        "hurt equals harm",
+        "symptoms always mean illness",
+        "doctors miss things"
+      ],
+      "definition": "Assumption that unexplained bodily sensations or changes are usually signs of serious illness that must not be missed.",
+      "client_wording": "If I feel something odd in my body, it's probably something serious.",
+      "example": "\"This headache isn't normal. It must be a tumor.\"",
+      "group": "Beliefs about bodily sensations and health",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.anxiety-sensations-dangerous",
+        "ib.health-worry-protects",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations",
+        "tt.serious-illness"
+      ],
+      "see": ["health-anxiety.cbt-model"],
+      "sources": [
+        "Warwick-Salkovskis-1990 § Cognitive-behavioral model of hypochondriasis",
+        "Abramowitz-etal-2007b § Cognitive-behavioral model of health anxiety"
+      ]
+    },
+    {
+      "id": "ib.health-worry-protects",
+      "label": "Worrying about my health keeps me safe",
+      "alt_labels": [
+        "if I stop checking, I'll miss something",
+        "assuming I'm healthy tempts fate",
+        "metacognitive beliefs about health"
+      ],
+      "definition": "Belief that constant health vigilance protects against illness, or that assuming one is healthy will tempt fate.",
+      "client_wording": "If I stop watching my health or assume I'm fine, something bad will happen.",
+      "example": "\"The moment I relax about my health, that's when they'll find something.\"",
+      "group": "Beliefs about bodily sensations and health",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.worry-is-helpful",
+        "ib.symptoms-mean-serious-illness"
+      ],
+      "see": [],
+      "sources": [
+        "Bailey-Wells-2015 § MCQ-HA subscales",
+        "Salkovskis-Warwick-1986 § Reassurance and checking in hypochondriasis"
+      ]
+    },
+    {
+      "id": "ib.need-eight-hours",
+      "label": "I need eight hours of sleep",
+      "alt_labels": [
+        "unrealistic sleep expectations",
+        "I must sleep a full night"
+      ],
+      "definition": "Unrealistic sleep expectation that one must get a fixed amount, often eight hours, every night to function.",
+      "client_wording": "I need a full eight hours every night or I can't function.",
+      "example": "\"I only got six hours, so today is a write-off.\"",
+      "group": "Beliefs about sleep",
+      "kind": "rule",
+      "broader": null,
+      "related": [
+        "ib.poor-sleep-ruins-functioning"
+      ],
+      "see": ["insomnia.cbt-i-components", "insomnia.pitfall-judging-progress-by-hours"],
+      "sources": [
+        "Morin-etal-2007 § DBAS-16 factors"
+      ]
+    },
+    {
+      "id": "ib.poor-sleep-ruins-functioning",
+      "label": "A bad night will ruin tomorrow",
+      "alt_labels": [
+        "perceived consequences of insomnia",
+        "poor sleep will damage my health"
+      ],
+      "definition": "Belief that poor sleep will seriously impair next-day functioning, mood or health.",
+      "client_wording": "If I don't sleep well tonight, tomorrow will be a disaster.",
+      "example": "\"If I don't fall asleep soon, I'll mess up the presentation.\"",
+      "group": "Beliefs about sleep",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.need-eight-hours",
+        "ib.sleep-out-of-control",
+        "tt.sleep-loss-consequences",
+        "mp.sleep-effort"
+      ],
+      "see": ["insomnia.cbt-model"],
+      "sources": [
+        "Morin-etal-2007 § DBAS-16 factors"
+      ]
+    },
+    {
+      "id": "ib.sleep-out-of-control",
+      "label": "I have no control over my sleep",
+      "alt_labels": [
+        "worry and helplessness about insomnia",
+        "I've lost the ability to sleep"
+      ],
+      "definition": "Worry and helplessness about insomnia: belief that sleep is unpredictable, beyond one's control or permanently damaged.",
+      "client_wording": "I've lost the ability to sleep, and there's nothing I can do.",
+      "example": "\"My sleep is broken for good.\"",
+      "group": "Beliefs about sleep",
+      "kind": "attitude",
+      "broader": null,
+      "related": [
+        "ib.poor-sleep-ruins-functioning",
+        "cb.powerless"
+      ],
+      "see": [],
+      "sources": [
+        "Morin-etal-2007 § DBAS-16 factors"
+      ]
+    },
+    {
+      "id": "ib.need-sleep-medication",
+      "label": "I need a pill to sleep",
+      "alt_labels": [
+        "beliefs about sleep medication"
+      ],
+      "definition": "Belief that sleep medication is the only way to sleep or cope, and that sleeping without it is impossible.",
+      "client_wording": "Without a sleeping pill, I won't sleep at all.",
+      "example": "\"I can't risk a night without my tablet.\"",
+      "group": "Beliefs about sleep",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.sleep-out-of-control"
+      ],
+      "see": ["12-medical-pharmacology.anxiolytics-and-hypnotics", "insomnia.adaptations", "insomnia.treatment"],
+      "sources": [
+        "Morin-etal-2007 § DBAS-16 factors"
+      ]
+    },
+    {
+      "id": "ib.worth-judged-by-shape-weight",
+      "label": "My worth depends on my shape and weight",
+      "alt_labels": [
+        "overevaluation of shape and weight",
+        "overvaluation of shape and weight",
+        "overvaluation of eating, shape, and weight",
+        "core eating disorder psychopathology",
+        "shape and weight concern",
+        "overvaluation of control over eating"
+      ],
+      "definition": "Belief that one's worth as a person depends largely or exclusively on shape, weight and controlling them, the core eating disorder belief.",
+      "client_wording": "How I feel about myself depends on my weight and shape.",
+      "example": "\"I gained a pound, so I'm disgusting and worthless.\"",
+      "group": "Beliefs about shape, weight and eating",
+      "kind": "attitude",
+      "broader": null,
+      "related": [
+        "cb.unattractive",
+        "ib.strict-dietary-rules",
+        "ib.worth-depends-on-achievement",
+        "bh.body-checking",
+        "mp.dietary-restraint-cycle",
+        "ms.ede-q"
+      ],
+      "see": ["eating-disorders.cbt-model", "eating-disorders.overview"],
+      "sources": [
+        "Fairburn-2008 § Ch. 2 Eating Disorders: The Transdiagnostic View and the Cognitive Behavioral Theory",
+        "Fairburn-2008 § Ch. 8 Shape Concern, Shape Checking, Feeling Fat and Mindsets",
+        "Fairburn-etal-2003 § Transdiagnostic theory",
+        "Fairburn-etal-2003 § Core psychopathology",
+        "Murphy-etal-2010 § The transdiagnostic theory"
+      ]
+    },
+    {
+      "id": "ib.strict-dietary-rules",
+      "label": "I must follow strict eating rules",
+      "alt_labels": [
+        "dietary rules",
+        "food rules"
+      ],
+      "definition": "Rigid rules about when, what and how much to eat, where any break is judged a failure.",
+      "client_wording": "I must stick to my food rules, like never eating after six.",
+      "example": "\"I must stay under 1,000 calories every day.\"",
+      "group": "Beliefs about shape, weight and eating",
+      "kind": "rule",
+      "broader": null,
+      "related": [
+        "ib.worth-judged-by-shape-weight",
+        "ib.eating-means-losing-control",
+        "ib.must-be-perfect",
+        "mp.dietary-restraint-cycle",
+        "bh.dietary-restriction"
+      ],
+      "see": ["eating-disorders.cbt-e-stages", "eating-disorders.cbt-model", "eating-disorders.pitfall-weight-loss-goals-in-binge-eating"],
+      "sources": [
+        "Fairburn-2008 § Ch. 9 Dietary Restraint, Dietary Rules and Controlling Eating",
+        "Fairburn-etal-2003 § Transdiagnostic theory"
+      ]
+    },
+    {
+      "id": "ib.eating-means-losing-control",
+      "label": "If I eat this, I'll lose control",
+      "alt_labels": [
+        "forbidden foods",
+        "fear of losing control over eating"
+      ],
+      "definition": "Assumption that eating certain foods or amounts will lead to uncontrolled eating or rapid weight gain.",
+      "client_wording": "If I eat one cookie, I won't be able to stop.",
+      "example": "\"If I have one slice of pizza, I'll binge on the whole thing.\"",
+      "group": "Beliefs about shape, weight and eating",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.strict-dietary-rules"
+      ],
+      "see": [],
+      "sources": [
+        "Fairburn-2008 § Ch. 9 Dietary Restraint, Dietary Rules and Controlling Eating",
+        "Fairburn-etal-2003 § Transdiagnostic theory"
+      ]
+    },
+    {
+      "id": "ib.substance-anticipatory",
+      "label": "Using will make things better",
+      "alt_labels": [
+        "anticipatory beliefs",
+        "positive expectancies"
+      ],
+      "definition": "Anticipatory belief that using a substance, or an addictive behavior, will bring pleasure, energy, confidence or social ease.",
+      "client_wording": "A few drinks will make the party fun and help me relax.",
+      "example": "\"I'm much funnier after a couple of drinks.\"",
+      "group": "Beliefs about substance use",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.substance-relief",
+        "ib.substance-permissive"
+      ],
+      "see": ["substance-use.cbt-model", "substance-use.relapse-prevention-model"],
+      "sources": [
+        "Liese-Beck-2022 § Ch. 10 Thoughts and Beliefs",
+        "Newman-2019 § Addiction-related beliefs"
+      ]
+    },
+    {
+      "id": "ib.substance-relief",
+      "label": "I need it to cope",
+      "alt_labels": [
+        "relief-oriented beliefs",
+        "I can't cope without it"
+      ],
+      "definition": "Relief-oriented belief that using is needed to relieve craving, withdrawal, pain or distress, and that one cannot cope without it.",
+      "client_wording": "I can't handle this feeling without using.",
+      "example": "\"I'll never get through tonight without a drink.\"",
+      "group": "Beliefs about substance use",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "cd.low-frustration-tolerance",
+        "ib.substance-permissive",
+        "mp.substance-relief-cycle",
+        "bh.substance-use-to-cope"
+      ],
+      "see": ["substance-use.cbt-model"],
+      "sources": [
+        "Liese-Beck-2022 § Ch. 10 Thoughts and Beliefs",
+        "Newman-2019 § Addiction-related beliefs"
+      ]
+    },
+    {
+      "id": "ib.substance-permissive",
+      "label": "It's okay to use this time",
+      "alt_labels": [
+        "permission-giving beliefs",
+        "permissive beliefs",
+        "facilitating beliefs"
+      ],
+      "definition": "Permission-giving belief that justifies using despite risks or goals, such as deserving it or one time not mattering.",
+      "client_wording": "I deserve it, and just one won't hurt.",
+      "example": "\"After the week I've had, I've earned a drink.\"",
+      "group": "Beliefs about substance use",
+      "kind": "attitude",
+      "broader": null,
+      "related": [
+        "ib.substance-anticipatory",
+        "ib.substance-relief",
+        "cd.permission-giving-thoughts"
+      ],
+      "see": ["substance-use.cbt-model", "substance-use.relapse-prevention-model"],
+      "sources": [
+        "Liese-Beck-2022 § Ch. 10 Thoughts and Beliefs",
+        "Newman-2019 § Addiction-related beliefs"
+      ]
+    },
+    {
+      "id": "ib.high-mood-is-best",
+      "label": "When I'm high, I'm at my best",
+      "alt_labels": [
+        "positive appraisals of hypomania",
+        "extreme appraisals of activated states"
+      ],
+      "definition": "Extreme positive appraisal of activated states: belief that elevated mood or energy makes one more creative, productive or successful.",
+      "client_wording": "When my mood is up, I'm at my best and get so much done.",
+      "example": "\"I don't need sleep when I'm like this. I'm finally achieving things.\"",
+      "group": "Beliefs about mood states and voices",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "ib.worth-depends-on-achievement",
+        "mp.extreme-appraisals-of-internal-states",
+        "tt.personal-gain-and-grandiosity"
+      ],
+      "see": ["bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.cbt-model", "bipolar-and-psychosis.pitfall-sleep-loss-and-activation"],
+      "sources": [
+        "Mansell-2006 § HAPPI item categories",
+        "Dodd-etal-2011 § Extreme appraisals of internal states"
+      ]
+    },
+    {
+      "id": "ib.voices-powerful",
+      "label": "The voices are powerful",
+      "alt_labels": [
+        "omnipotence of voices",
+        "malevolent voices",
+        "beliefs about voices"
+      ],
+      "definition": "Belief that hallucinated voices are omnipotent and all-knowing, and may be malevolent, so they must be obeyed or resisted.",
+      "client_wording": "The voices are powerful and know everything; I have to do what they say.",
+      "example": "\"If I don't do what the voice says, it will punish my family.\"",
+      "group": "Beliefs about mood states and voices",
+      "kind": "attitude",
+      "broader": null,
+      "related": [
+        "cb.powerless"
+      ],
+      "see": ["bipolar-and-psychosis.cbt-model", "bipolar-and-psychosis.cbtp"],
+      "sources": [
+        "Chadwick-Birchwood-1994 § Beliefs about omnipotence, identity and meaning of voices"
+      ]
+    },
+    {
+      "id": "ib.pain-means-harm",
+      "label": "If it hurts, I'm doing damage",
+      "alt_labels": [
+        "hurt means harm",
+        "pain signals damage"
+      ],
+      "definition": "The belief that pain signals bodily damage or reinjury, so any activity that hurts must be stopped or avoided.",
+      "client_wording": "If it hurts, I'm damaging myself, so I must stop.",
+      "example": "\"If I bend and it hurts, I'll make the disc worse.\"",
+      "group": "Beliefs about pain",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "mp.fear-avoidance-cycle",
+        "mp.pain-catastrophizing",
+        "bh.movement-avoidance",
+        "ib.symptoms-mean-serious-illness"
+      ],
+      "see": ["chronic-pain-and-physical-health.assessment", "chronic-pain-and-physical-health.cbt-model"],
+      "sources": [
+        "Vlaeyen-Linton-2000 § Precursors of pain-related fear",
+        "Leeuw-etal-2007 § Pain-related fear"
+      ]
+    },
+    {
+      "id": "ib.grief-reactions-dangerous",
+      "label": "If I let the grief in, I'll fall apart",
+      "alt_labels": [
+        "threatening misinterpretation of grief reactions"
+      ],
+      "definition": "Catastrophic interpretations of one's own grief reactions as signs of going mad or losing control, which drive avoidance of the loss.",
+      "client_wording": "If I really let myself feel this, I'll fall apart or lose my mind.",
+      "example": "\"If I look at his photos I'll break down and never stop crying.\"",
+      "group": "Beliefs about grief and loss",
+      "kind": "assumption",
+      "broader": null,
+      "related": [
+        "mp.anxious-avoidance-of-loss",
+        "ib.emotions-overwhelming",
+        "em.grief"
+      ],
+      "see": ["grief-and-loss.cbt-model", "grief-and-loss.pitfall-colluding-with-avoidance", "grief-and-loss.treatment"],
+      "sources": [
+        "Boelen-etal-2006 § Negative global beliefs and misinterpretations of grief reactions"
+      ]
+    }
+  ]
+}

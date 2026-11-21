@@ -1,0 +1,1130 @@
+{
+  "scheme": "maintenance-processes",
+  "prefix": "mp",
+  "title": "Maintenance processes (what keeps problems going)",
+  "description": "Transdiagnostic and disorder-specific processes that keep a problem going once it has started: avoidance and safety seeking, repetitive negative thinking, attention, memory and reasoning biases, appraisals of intrusions, bodies and trauma, and eating, sleep, mood, interpersonal, substance use and bipolar cycles. Fills the maintenance (what keeps it going) slots and feedback links of formulation models. Specific behaviors, beliefs and thinking traps live in the bh, cs, cb, ib and cd schemes; concepts here name the cycle or process that links them. Belief content that a process acts on (inflated responsibility, thought-action fusion, overvaluation of shape and weight) is coded in ib.",
+  "version": "1.1.0",
+  "sources": [
+    "Harvey-etal-2004 § Transdiagnostic approach to cognitive behavioral processes",
+    "Clark-Beck-2010 § Cognitive model of anxiety",
+    "Beck-2021 § Cognitive conceptualization",
+    "Fairburn-etal-2003 § Transdiagnostic theory"
+  ],
+  "concepts": [
+    {
+      "id": "mp.avoidance-cycle",
+      "label": "Avoidance cycle",
+      "alt_labels": [
+        "escape and avoidance",
+        "behavioral avoidance",
+        "negative reinforcement of avoidance"
+      ],
+      "definition": "Avoiding or escaping feared situations brings short-term relief that negatively reinforces avoidance and prevents learning that the feared outcome is unlikely or manageable.",
+      "client_wording": "Staying away from what scares you feels better now, but keeps the fear going.",
+      "example": "Skips the team meeting, feels relief, and finds the next meeting even harder to face.",
+      "group": "Avoidance and safety seeking",
+      "broader": null,
+      "related": [
+        "mp.safety-behavior-cycle",
+        "mp.experiential-avoidance",
+        "mp.procrastination-cycle",
+        "mp.withdrawal-inactivity-loop",
+        "bh.overt-avoidance",
+        "bh.escape",
+        "bh.trauma-reminder-avoidance"
+      ],
+      "see": ["03-formulation.five-part-model", "03-formulation.five-ps-formulation", "03-formulation.functional-analysis", "03-formulation.maintenance-cycles", "09-ending.booster-sessions", "09-ending.ending-criteria", "09-ending.pitfall-ending-with-residual-symptoms", "09-ending.relapse-prevention-blueprint", "10-diagnosis.comorbidity", "13-context-culture-development.identity-and-minority-stress", "15-transdiagnostic-processes.avoidance", "15-transdiagnostic-processes.transdiagnostic-overview", "adhd.cbt-model", "behavioral.behavioral-activation", "behavioral.exposure-principles", "behavioral.pitfall-activity-without-function", "depression.cbt-model", "eating-disorders.pitfall-avoiding-in-session-weighing", "panic-and-phobias.agoraphobia", "panic-and-phobias.cbt-model", "panic-and-phobias.overview", "panic-and-phobias.pitfall-exposure-stopped-before-the-test", "panic-and-phobias.specific-phobia", "ptsd.cbt-model"],
+      "sources": [
+        "Harvey-etal-2004 § Behavioral processes: avoidance",
+        "Salkovskis-1991 § Avoidance, escape and safety seeking",
+        "Clark-Beck-2010 § Cognitive model of anxiety"
+      ],
+      "page": "15-transdiagnostic-processes.avoidance"
+    },
+    {
+      "id": "mp.procrastination-cycle",
+      "label": "Procrastination cycle",
+      "alt_labels": [
+        "task avoidance loop"
+      ],
+      "definition": "Putting off difficult or boring tasks brings brief relief, but tasks pile up, setbacks confirm negative beliefs, and avoidance grows.",
+      "client_wording": "Putting things off feels easier today, but the pile grows and I feel worse about myself.",
+      "example": "Leaves a tax form unopened for weeks, then thinks \"I'm hopeless with paperwork\" and avoids it more.",
+      "group": "Avoidance and safety seeking",
+      "broader": "mp.avoidance-cycle",
+      "related": [
+        "mp.clinical-perfectionism",
+        "mp.self-criticism",
+        "bh.procrastination",
+        "cd.permission-giving-thoughts",
+        "cd.overly-optimistic-thinking"
+      ],
+      "see": ["adhd.cbt-model", "adhd.pitfall-disputing-optimistic-thoughts", "adhd.treatment"],
+      "sources": [
+        "Safren-etal-2004 § Cognitive behavioral model of adult ADHD",
+        "Shafran-etal-2002 § Maintenance of clinical perfectionism"
+      ],
+      "page": "adhd.cbt-model"
+    },
+    {
+      "id": "mp.safety-behavior-cycle",
+      "label": "Safety behavior cycle",
+      "alt_labels": [
+        "within-situation avoidance"
+      ],
+      "definition": "Actions taken in a feared situation to prevent a feared outcome; the non-occurrence is credited to the behavior, so threat beliefs are never disconfirmed.",
+      "client_wording": "The things I do to stay safe stop me finding out I'd have been okay anyway.",
+      "example": "Grips a shopping cart so as not to faint, then thinks \"I'd have collapsed if I hadn't held on.\"",
+      "group": "Avoidance and safety seeking",
+      "broader": null,
+      "related": [
+        "mp.avoidance-cycle",
+        "mp.reassurance-cycle",
+        "mp.self-focused-attention",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations",
+        "bh.subtle-avoidance",
+        "bh.in-situation-safety-behavior"
+      ],
+      "see": ["03-formulation.five-ps-formulation", "03-formulation.maintenance-cycles", "10-diagnosis.comorbidity", "12-medical-pharmacology.anxiolytics-and-hypnotics", "12-medical-pharmacology.medication-and-cbt-interactions", "12-medical-pharmacology.pitfall-medication-as-safety-behavior", "15-transdiagnostic-processes.pitfall-coping-that-becomes-avoidance", "15-transdiagnostic-processes.safety-behaviors", "15-transdiagnostic-processes.transdiagnostic-overview", "behavioral.behavioral-experiments", "behavioral.exposure-principles", "behavioral.pitfall-chasing-habituation", "behavioral.pitfall-unnoticed-safety-behaviors", "behavioral.relaxation-and-arousal-reduction", "behavioral.safety-behavior-reduction", "bipolar-and-psychosis.cbt-model", "bipolar-and-psychosis.cbtp", "bipolar-and-psychosis.pitfall-arguing-with-delusions", "insomnia.cbt-model", "panic-and-phobias.adaptations", "panic-and-phobias.agoraphobia", "panic-and-phobias.cbt-model", "panic-and-phobias.pitfall-hidden-safety-behaviors", "ptsd.cbt-model", "social-anxiety.cbt-model", "social-anxiety.pitfall-safety-behaviors-during-exposure", "social-anxiety.treatment"],
+      "sources": [
+        "Salkovskis-1991 § Safety-seeking behavior and disconfirmation",
+        "Clark-Wells-1995 § Safety behaviors",
+        "Clark-1986 § Vicious circle of panic"
+      ],
+      "page": "15-transdiagnostic-processes.safety-behaviors"
+    },
+    {
+      "id": "mp.reassurance-cycle",
+      "label": "Reassurance-seeking cycle",
+      "alt_labels": [
+        "excessive reassurance seeking",
+        "checking for reassurance"
+      ],
+      "definition": "Repeatedly seeking reassurance from others, online searches, or doctors lowers anxiety briefly, then doubt returns stronger, maintaining preoccupation and straining relationships.",
+      "client_wording": "Asking \"are you sure?\" calms me for a moment, then the doubt comes back worse.",
+      "example": "Asks their partner several times a day whether a mole looks cancerous and searches symptoms online at night.",
+      "group": "Avoidance and safety seeking",
+      "broader": "mp.safety-behavior-cycle",
+      "related": [
+        "mp.body-focused-monitoring",
+        "mp.intolerance-of-uncertainty",
+        "mp.family-accommodation",
+        "mp.interpersonal-cycle",
+        "bh.reassurance-seeking",
+        "ts.premature-reassurance"
+      ],
+      "see": ["15-transdiagnostic-processes.intolerance-of-uncertainty", "15-transdiagnostic-processes.pitfall-disputing-repetitive-thought-content", "behavioral.exposure-and-response-prevention", "cognitive.pitfall-restructuring-as-reassurance", "gad.pitfall-chasing-worry-content", "health-anxiety.cbt-model", "health-anxiety.pitfall-reassurance-loop", "health-anxiety.reassurance-seeking", "health-anxiety.treatment", "ocd.cbt-model", "ocd.family-accommodation", "ocd.pitfall-therapist-reassurance", "panic-and-phobias.pitfall-reassurance-instead-of-testing"],
+      "sources": [
+        "Salkovskis-Warwick-1986 § Reassurance as a maintaining factor",
+        "Joiner-etal-1999 § Excessive reassurance seeking"
+      ],
+      "page": "15-transdiagnostic-processes.safety-behaviors"
+    },
+    {
+      "id": "mp.experiential-avoidance",
+      "label": "Experiential avoidance",
+      "alt_labels": [
+        "emotional avoidance",
+        "avoidance of private experience"
+      ],
+      "definition": "Unwillingness to stay in contact with unwanted thoughts, feelings, sensations, or memories, with efforts to change or escape them even when this causes harm.",
+      "client_wording": "Doing almost anything to not feel or think something painful, even when it costs me.",
+      "example": "Drinks every evening to numb sadness after a breakup and avoids photos, songs, and conversations that bring it up.",
+      "group": "Avoidance and safety seeking",
+      "broader": null,
+      "related": [
+        "mp.avoidance-cycle",
+        "mp.thought-suppression",
+        "mp.emotion-dysregulation",
+        "mp.substance-relief-cycle",
+        "bh.distraction-to-avoid",
+        "cs.avoiding-negative-emotion",
+        "ib.emotions-overwhelming"
+      ],
+      "see": ["03-formulation.functional-analysis", "15-transdiagnostic-processes.assessing-transdiagnostic-processes", "15-transdiagnostic-processes.avoidance", "gad.worry-models-compared", "grief-and-loss.cbt-model", "grief-and-loss.pitfall-colluding-with-avoidance"],
+      "sources": [
+        "Hayes-etal-1996 § Experiential avoidance as a functional dimension",
+        "Harvey-etal-2004 § Behavioral processes: avoidance"
+      ],
+      "page": "15-transdiagnostic-processes.avoidance"
+    },
+    {
+      "id": "mp.rumination",
+      "label": "Rumination",
+      "alt_labels": [
+        "depressive rumination",
+        "brooding"
+      ],
+      "definition": "Repetitive, passive dwelling on one's distress, its causes, meanings, and consequences, without moving to problem solving; deepens and prolongs low mood.",
+      "client_wording": "Going over and over why I feel bad and what's wrong with me, without getting anywhere.",
+      "example": "Lies awake for two hours replaying \"Why do I always mess things up? What's wrong with me?\"",
+      "group": "Repetitive negative thinking",
+      "broader": null,
+      "related": [
+        "mp.worry",
+        "mp.post-event-processing",
+        "mp.withdrawal-inactivity-loop",
+        "mp.self-criticism",
+        "ib.rumination-is-helpful",
+        "ms.rrs"
+      ],
+      "see": ["03-formulation.maintenance-cycles", "09-ending.ending-criteria", "09-ending.pitfall-ending-with-residual-symptoms", "09-ending.relapse-prevention-blueprint", "10-diagnosis.comorbidity", "10-diagnosis.differential-diagnosis-process", "13-context-culture-development.identity-and-minority-stress", "15-transdiagnostic-processes.pitfall-disputing-repetitive-thought-content", "15-transdiagnostic-processes.rumination", "15-transdiagnostic-processes.transdiagnostic-overview", "15-transdiagnostic-processes.transdiagnostic-treatments", "behavioral.behavioral-activation", "behavioral.pitfall-activity-without-function", "bipolar-and-psychosis.cbt-model", "cognitive.worry-and-rumination-techniques", "depression.cbt-model", "depression.persistent-depression", "depression.relapse-prevention-mbct", "gad.pitfall-worry-misread-as-gad", "grief-and-loss.cbt-model", "grief-and-loss.pitfall-colluding-with-avoidance", "ptsd.cbt-model", "ptsd.cognitive-therapy-for-ptsd"],
+      "sources": [
+        "Nolen-Hoeksema-etal-2008 § Response styles theory",
+        "Watkins-2008 § Unconstructive repetitive thought",
+        "Harvey-etal-2004 § Thought processes: repetitive thought"
+      ],
+      "page": "15-transdiagnostic-processes.rumination"
+    },
+    {
+      "id": "mp.worry",
+      "label": "Worry",
+      "alt_labels": [
+        "pathological worry",
+        "chain of what-ifs"
+      ],
+      "definition": "A chain of negative, relatively uncontrollable thoughts about possible future threats, an attempt at mental problem solving that rarely reaches a resolution.",
+      "client_wording": "My mind jumps from one \"what if\" to the next and I can't switch it off.",
+      "example": "\"What if I lose my job? Then we can't pay rent, then the kids...\" running through the whole commute.",
+      "group": "Repetitive negative thinking",
+      "broader": null,
+      "related": [
+        "mp.rumination",
+        "mp.intolerance-of-uncertainty",
+        "mp.worry-about-worry",
+        "mp.anticipatory-processing",
+        "ib.worry-is-helpful",
+        "ms.pswq"
+      ],
+      "see": ["10-diagnosis.comorbidity", "10-diagnosis.differential-diagnosis-process", "15-transdiagnostic-processes.pitfall-disputing-repetitive-thought-content", "15-transdiagnostic-processes.transdiagnostic-overview", "15-transdiagnostic-processes.worry", "behavioral.problem-solving-therapy", "bipolar-and-psychosis.cbt-model", "bipolar-and-psychosis.cbtp", "cognitive.pitfall-restructuring-as-reassurance", "cognitive.worry-and-rumination-techniques", "gad.adaptations", "gad.assessment", "gad.cbt-model", "gad.overview", "gad.pitfall-chasing-worry-content", "gad.pitfall-eclectic-anxiety-management", "gad.pitfall-worry-misread-as-gad", "gad.worry-models-compared", "insomnia.cbt-model"],
+      "sources": [
+        "Borkovec-etal-1983b § Definition of worry",
+        "Dugas-etal-1998 § Conceptual model of GAD",
+        "Harvey-etal-2004 § Thought processes: repetitive thought"
+      ],
+      "page": "15-transdiagnostic-processes.worry"
+    },
+    {
+      "id": "mp.worry-about-worry",
+      "label": "Worry about worry (meta-worry)",
+      "alt_labels": [
+        "type 2 worry",
+        "negative beliefs about worry"
+      ],
+      "definition": "Negative appraisal of one's own worrying as uncontrollable or dangerous, which raises anxiety and drives unhelpful attempts to control or avoid worry.",
+      "client_wording": "Worrying that my worrying is out of control or will make me ill or crazy.",
+      "example": "\"If I can't stop worrying I'll have a breakdown,\" so tries to push worries away, and they keep coming back.",
+      "group": "Repetitive negative thinking",
+      "broader": "mp.worry",
+      "related": [
+        "mp.thought-suppression",
+        "mp.intolerance-of-uncertainty",
+        "ib.worry-is-uncontrollable",
+        "ib.worry-is-dangerous"
+      ],
+      "see": ["15-transdiagnostic-processes.worry", "cognitive.worry-and-rumination-techniques", "gad.cbt-model", "gad.worry-models-compared", "health-anxiety.adaptations"],
+      "sources": [
+        "Wells-1995 § Type 1 and type 2 worry"
+      ],
+      "page": "gad.worry-models-compared"
+    },
+    {
+      "id": "mp.anticipatory-processing",
+      "label": "Anticipatory processing",
+      "alt_labels": [
+        "pre-event rumination",
+        "anticipatory worry (social)"
+      ],
+      "definition": "Detailed rehearsal before a feared social event of likely failures and negative self-images, which raises anxiety, primes self-focus, and often prompts avoidance.",
+      "client_wording": "Going over everything that could go wrong for days before something I'm dreading.",
+      "example": "Spends the week before a wedding toast imagining going red and forgetting the words.",
+      "group": "Repetitive negative thinking",
+      "broader": null,
+      "related": [
+        "mp.worry",
+        "mp.post-event-processing",
+        "mp.self-focused-attention",
+        "bh.mental-rehearsal"
+      ],
+      "see": ["social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.cbt-model"],
+      "sources": [
+        "Clark-Wells-1995 § Anticipatory processing"
+      ],
+      "page": "social-anxiety.cbt-model"
+    },
+    {
+      "id": "mp.post-event-processing",
+      "label": "Post-event processing",
+      "alt_labels": [
+        "post-mortem",
+        "post-event rumination"
+      ],
+      "definition": "Detailed, self-focused review after a social event that dwells on perceived failures and negative self-impressions, strengthening beliefs of social inadequacy.",
+      "client_wording": "Replaying a conversation afterward and picking apart everything I think I did wrong.",
+      "example": "After a dinner party, replays for hours how awkward they sounded and concludes everyone found them boring.",
+      "group": "Repetitive negative thinking",
+      "broader": null,
+      "related": [
+        "mp.rumination",
+        "mp.anticipatory-processing",
+        "mp.self-focused-attention",
+        "mp.memory-bias",
+        "sit.social-interaction"
+      ],
+      "see": ["social-anxiety.behavioral-experiments-and-surveys", "social-anxiety.cbt-model"],
+      "sources": [
+        "Clark-Wells-1995 § Post-event processing"
+      ],
+      "page": "social-anxiety.cbt-model"
+    },
+    {
+      "id": "mp.self-focused-attention",
+      "label": "Self-focused attention",
+      "alt_labels": [
+        "observer-perspective processing"
+      ],
+      "definition": "Attention shifts inward to anxious sensations, behavior, and a distorted self-image, used as evidence of how one appears while external cues are missed.",
+      "client_wording": "Being so focused on how I'm coming across that I miss what's actually happening.",
+      "example": "During a meeting, pictures their own red face and shaky voice and doesn't notice colleagues nodding.",
+      "group": "Attention and information-processing biases",
+      "broader": null,
+      "related": [
+        "mp.threat-monitoring",
+        "mp.body-focused-monitoring",
+        "mp.safety-behavior-cycle",
+        "mp.post-event-processing",
+        "bh.concealing-anxiety-signs"
+      ],
+      "see": ["15-transdiagnostic-processes.attention-processes", "15-transdiagnostic-processes.transdiagnostic-overview", "ocd.related-disorders", "social-anxiety.assessment", "social-anxiety.cbt-model", "social-anxiety.pitfall-safety-behaviors-during-exposure", "social-anxiety.pitfall-unprepared-video-feedback", "social-anxiety.treatment", "social-anxiety.video-feedback-and-attention-training"],
+      "sources": [
+        "Clark-Wells-1995 § Processing of the self as a social object",
+        "Ingram-1990 § Self-focused attention across disorders",
+        "Harvey-etal-2004 § Attentional processes"
+      ],
+      "page": "15-transdiagnostic-processes.attention-processes"
+    },
+    {
+      "id": "mp.threat-monitoring",
+      "label": "Attentional bias and threat monitoring",
+      "alt_labels": [
+        "hypervigilance",
+        "selective attention to threat",
+        "scanning for danger"
+      ],
+      "definition": "Preferential, often automatic, attention to threat-related cues in the environment and repeated scanning for danger, which inflates perceived threat and sustains anxiety.",
+      "client_wording": "Always on the lookout for danger, so I notice every possible threat around me.",
+      "example": "After an assault, constantly checks faces and exits in every room and notices every raised voice.",
+      "group": "Attention and information-processing biases",
+      "broader": null,
+      "related": [
+        "mp.self-focused-attention",
+        "mp.body-focused-monitoring",
+        "mp.interpretation-bias",
+        "tt.threat-and-danger"
+      ],
+      "see": ["03-formulation.maintenance-cycles", "13-context-culture-development.identity-and-minority-stress", "15-transdiagnostic-processes.attention-processes", "15-transdiagnostic-processes.transdiagnostic-overview", "chronic-pain-and-physical-health.cbt-model", "gad.worry-models-compared", "health-anxiety.cbt-model", "insomnia.cbt-model", "ocd.cbt-model", "social-anxiety.video-feedback-and-attention-training"],
+      "sources": [
+        "Bar-Haim-etal-2007 § Threat-related attentional bias",
+        "Mathews-MacLeod-2005 § Attentional bias",
+        "Harvey-etal-2004 § Attentional processes"
+      ],
+      "page": "15-transdiagnostic-processes.attention-processes"
+    },
+    {
+      "id": "mp.body-focused-monitoring",
+      "label": "Body-focused monitoring",
+      "alt_labels": [
+        "body vigilance",
+        "interoceptive hypervigilance"
+      ],
+      "definition": "Repeated attention to and checking of bodily sensations, which makes normal sensations more noticeable and supplies apparent evidence of illness or danger.",
+      "client_wording": "Keeping a close eye on my body, so I notice every twinge and worry about it.",
+      "example": "Takes their pulse several times an hour and prods a sore lymph node each morning.",
+      "group": "Attention and information-processing biases",
+      "broader": null,
+      "related": [
+        "mp.threat-monitoring",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations",
+        "mp.reassurance-cycle",
+        "bh.symptom-checking"
+      ],
+      "see": ["03-formulation.maintenance-cycles", "15-transdiagnostic-processes.attention-processes", "health-anxiety.cbt-model", "health-anxiety.persistent-physical-symptoms", "panic-and-phobias.cbt-model"],
+      "sources": [
+        "Salkovskis-Warwick-1986 § Body checking and selective attention",
+        "Clark-1986 § Vicious circle of panic",
+        "Harvey-etal-2004 § Attentional processes"
+      ],
+      "page": "health-anxiety.cbt-model"
+    },
+    {
+      "id": "mp.interpretation-bias",
+      "label": "Interpretation bias",
+      "alt_labels": [
+        "negative interpretation of ambiguity",
+        "threat interpretation bias"
+      ],
+      "definition": "A habitual tendency to resolve ambiguous situations, sensations, or social cues in a negative or threatening direction.",
+      "client_wording": "When something could mean several things, I tend to read it the worst way.",
+      "example": "A friend doesn't reply for an hour and the immediate reading is \"She's annoyed with me.\"",
+      "group": "Attention and information-processing biases",
+      "broader": null,
+      "related": [
+        "mp.threat-monitoring",
+        "mp.memory-bias",
+        "mp.catastrophic-misinterpretation-of-bodily-sensations",
+        "mp.belief-confirming-processing",
+        "cd.jumping-to-conclusions"
+      ],
+      "see": ["15-transdiagnostic-processes.attention-processes", "gad.worry-models-compared"],
+      "sources": [
+        "Mathews-MacLeod-2005 § Interpretive bias",
+        "Harvey-etal-2004 § Reasoning processes: interpretation"
+      ],
+      "page": "15-transdiagnostic-processes.transdiagnostic-overview"
+    },
+    {
+      "id": "mp.memory-bias",
+      "label": "Memory bias",
+      "alt_labels": [
+        "mood-congruent recall",
+        "negative recall bias"
+      ],
+      "definition": "Selective recall of negative or threat-related information, and overgeneral rather than specific memories, which keep negative views of self and world feeling true.",
+      "client_wording": "The bad memories come easily and the good ones are hard to reach.",
+      "example": "Asked about a happy time, can only say \"I've never really been happy,\" but recalls failures in detail.",
+      "group": "Attention and information-processing biases",
+      "broader": null,
+      "related": [
+        "mp.interpretation-bias",
+        "mp.rumination",
+        "mp.belief-confirming-processing",
+        "mp.disjointed-trauma-memory"
+      ],
+      "see": ["03-formulation.five-ps-formulation"],
+      "sources": [
+        "Mathews-MacLeod-2005 § Memory bias",
+        "Harvey-etal-2004 § Memory processes"
+      ],
+      "page": "15-transdiagnostic-processes.transdiagnostic-overview"
+    },
+    {
+      "id": "mp.belief-confirming-processing",
+      "label": "Belief-confirming processing",
+      "alt_labels": [
+        "schema maintenance",
+        "schema as self-prejudice",
+        "confirmation bias for core beliefs"
+      ],
+      "definition": "Information fitting a core belief is noticed and remembered, while contradicting information is ignored, discounted, or distorted, so the belief survives contrary evidence.",
+      "client_wording": "I notice everything that fits how I see myself and brush off anything that doesn't.",
+      "example": "Believes \"I'm unlikable,\" dismisses three invitations as pity, but treats one unanswered text as proof.",
+      "group": "Attention and information-processing biases",
+      "broader": null,
+      "related": [
+        "mp.interpretation-bias",
+        "mp.memory-bias",
+        "mp.self-criticism",
+        "mp.interpersonal-cycle",
+        "cd.disqualifying-the-positive",
+        "cd.mental-filter",
+        "iv.positive-data-log"
+      ],
+      "see": ["03-formulation.cognitive-model-levels", "bipolar-and-psychosis.cbt-model", "bipolar-and-psychosis.pitfall-arguing-with-delusions", "cognitive.core-belief-work", "depression.cbt-model", "personality-disorders.cbt-model"],
+      "sources": [
+        "Padesky-1994 § Schema maintenance despite contradictory evidence",
+        "Beck-2021 § Core beliefs and information processing"
+      ],
+      "page": "cognitive.core-belief-work"
+    },
+    {
+      "id": "mp.hasty-data-gathering",
+      "label": "Hasty data-gathering bias",
+      "alt_labels": [
+        "jumping-to-conclusions bias (reasoning)",
+        "reduced data gathering"
+      ],
+      "definition": "Reaching firm conclusions on little evidence and gathering less information before deciding; linked to the formation and persistence of delusional beliefs.",
+      "client_wording": "Making up my mind very quickly, before I've checked all the facts.",
+      "example": "Hears neighbors laugh once and becomes certain they are plotting against them, without seeking other explanations.",
+      "group": "Attention and information-processing biases",
+      "broader": null,
+      "related": [
+        "mp.interpretation-bias",
+        "mp.threat-monitoring",
+        "mp.safety-behavior-cycle",
+        "cd.jumping-to-conclusions"
+      ],
+      "see": ["bipolar-and-psychosis.cbt-model", "bipolar-and-psychosis.cbtp", "bipolar-and-psychosis.pitfall-arguing-with-delusions"],
+      "sources": [
+        "Garety-etal-2001 § Reasoning biases in delusion formation and maintenance",
+        "Dudley-etal-2016 § Meta-analytic findings"
+      ],
+      "page": "bipolar-and-psychosis.cbt-model"
+    },
+    {
+      "id": "mp.thought-suppression",
+      "label": "Thought suppression",
+      "alt_labels": [
+        "trying not to think",
+        "thought control attempts"
+      ],
+      "definition": "Deliberately trying to push unwanted thoughts out of mind, which often produces rebound, more frequent intrusions, and a sense that thoughts are out of control.",
+      "client_wording": "Trying hard not to think about something, which makes it pop up even more.",
+      "example": "Tells themself \"Don't think about harming anyone\" and the image returns dozens of times that day.",
+      "group": "Thought control and appraisal of intrusions",
+      "broader": "mp.experiential-avoidance",
+      "related": [
+        "mp.misinterpretation-of-intrusions",
+        "mp.worry-about-worry",
+        "mp.disjointed-trauma-memory",
+        "ib.must-control-thoughts"
+      ],
+      "see": ["15-transdiagnostic-processes.pitfall-telling-clients-to-stop-thinking", "15-transdiagnostic-processes.thought-suppression", "15-transdiagnostic-processes.transdiagnostic-overview", "cognitive.worry-and-rumination-techniques", "gad.cbt-model", "ocd.cbt-model", "ocd.erp-protocol", "ptsd.cbt-model", "ptsd.cognitive-therapy-for-ptsd"],
+      "sources": [
+        "Wegner-etal-1987 § Paradoxical effects of suppression",
+        "Harvey-etal-2004 § Thought processes: thought suppression"
+      ],
+      "page": "15-transdiagnostic-processes.thought-suppression"
+    },
+    {
+      "id": "mp.misinterpretation-of-intrusions",
+      "label": "Catastrophic misinterpretation of intrusive thoughts",
+      "alt_labels": [
+        "appraisal of intrusions",
+        "obsessional appraisal"
+      ],
+      "definition": "Normal unwanted thoughts, images, or urges are read as significant, revealing, or dangerous, which turns ordinary intrusions into persistent, distressing obsessions.",
+      "client_wording": "Taking a random nasty thought as a sign of who I really am or what might happen.",
+      "example": "\"Having this thought about harming my baby means I'm secretly dangerous.\"",
+      "group": "Thought control and appraisal of intrusions",
+      "broader": null,
+      "related": [
+        "ib.thought-action-fusion-likelihood",
+        "ib.thought-action-fusion-moral",
+        "ib.inflated-responsibility",
+        "mp.thought-suppression",
+        "bh.checking",
+        "bh.neutralizing",
+        "tt.significance-of-thoughts",
+        "sit.intrusive-thought-or-impulse"
+      ],
+      "see": ["13-context-culture-development.perinatal-mental-health", "ocd.cbt-model", "ocd.overview", "ocd.pitfall-misreading-intrusions-as-risk"],
+      "sources": [
+        "Rachman-1997 § Cognitive theory of obsessions",
+        "Salkovskis-1985 § Intrusions and automatic thoughts"
+      ],
+      "page": "ocd.cbt-model"
+    },
+    {
+      "id": "mp.intolerance-of-uncertainty",
+      "label": "Intolerance of uncertainty",
+      "alt_labels": [
+        "IU",
+        "need for certainty"
+      ],
+      "definition": "A tendency to find uncertainty unacceptable and threatening regardless of likely outcome, driving worry, checking, reassurance seeking, and avoidance of ambiguous situations.",
+      "client_wording": "Not knowing for sure feels unbearable, even when the bad outcome is unlikely.",
+      "example": "Can't settle until routine test results arrive and plans for every possible outcome in the meantime.",
+      "group": "Uncertainty and standards",
+      "broader": null,
+      "related": [
+        "mp.worry",
+        "mp.reassurance-cycle",
+        "mp.clinical-perfectionism",
+        "ib.need-for-certainty",
+        "ms.ius-12"
+      ],
+      "see": ["15-transdiagnostic-processes.intolerance-of-uncertainty", "15-transdiagnostic-processes.transdiagnostic-overview", "15-transdiagnostic-processes.worry", "gad.cbt-model", "gad.pitfall-chasing-worry-content", "gad.pitfall-eclectic-anxiety-management", "gad.treatment", "gad.worry-models-compared", "health-anxiety.cbt-model", "health-anxiety.reassurance-seeking", "ocd.pitfall-therapist-reassurance"],
+      "sources": [
+        "Dugas-etal-1998 § Intolerance of uncertainty in GAD"
+      ],
+      "page": "15-transdiagnostic-processes.intolerance-of-uncertainty"
+    },
+    {
+      "id": "mp.clinical-perfectionism",
+      "label": "Clinical perfectionism",
+      "alt_labels": [
+        "dysfunctional perfectionism"
+      ],
+      "definition": "Self-worth depends heavily on pursuing demanding self-imposed standards despite adverse consequences; performance is judged all-or-nothing and standards rise when met.",
+      "client_wording": "Feeling only as good as my last performance, and it's never quite good enough.",
+      "example": "Rewrites a report until 3 a.m., calls the A-minus a failure, and sets a higher target next time.",
+      "group": "Uncertainty and standards",
+      "broader": null,
+      "related": [
+        "mp.self-criticism",
+        "mp.procrastination-cycle",
+        "ib.worth-judged-by-shape-weight",
+        "ib.must-be-perfect",
+        "cs.perfectionistic-striving"
+      ],
+      "see": ["15-transdiagnostic-processes.perfectionism", "15-transdiagnostic-processes.transdiagnostic-overview", "15-transdiagnostic-processes.transdiagnostic-treatments", "eating-disorders.cbt-model"],
+      "sources": [
+        "Shafran-etal-2002 § Definition and maintenance model",
+        "Fairburn-etal-2003 § Additional maintaining mechanisms"
+      ],
+      "page": "15-transdiagnostic-processes.perfectionism"
+    },
+    {
+      "id": "mp.catastrophic-misinterpretation-of-bodily-sensations",
+      "label": "Catastrophic misinterpretation of bodily sensations",
+      "alt_labels": [
+        "misinterpretation of body sensations",
+        "fear of bodily sensations"
+      ],
+      "definition": "Normal or anxiety-related bodily sensations are read as signs of imminent disaster (panic) or serious illness (health anxiety), increasing anxiety and the sensations themselves.",
+      "client_wording": "Taking normal body feelings, like a racing heart, as a sign something terrible is happening.",
+      "example": "Notices palpitations after climbing stairs and thinks \"I'm having a heart attack,\" so the heart races faster.",
+      "group": "Body and threat appraisal",
+      "broader": null,
+      "related": [
+        "mp.body-focused-monitoring",
+        "mp.safety-behavior-cycle",
+        "mp.interpretation-bias",
+        "mp.reassurance-cycle",
+        "bh.interoceptive-avoidance",
+        "tt.physical-catastrophe",
+        "ib.anxiety-sensations-dangerous",
+        "bs.racing-heart",
+        "sit.arousal-sensations"
+      ],
+      "see": ["health-anxiety.cbt-model", "health-anxiety.overview", "panic-and-phobias.cbt-model", "panic-and-phobias.overview", "panic-and-phobias.treatment"],
+      "sources": [
+        "Clark-1986 § Catastrophic misinterpretation",
+        "Salkovskis-Warwick-1986 § Misinterpretation of bodily variations"
+      ],
+      "page": "panic-and-phobias.cbt-model"
+    },
+    {
+      "id": "mp.negative-appraisal-of-trauma",
+      "label": "Negative appraisal of trauma and its aftermath",
+      "alt_labels": [
+        "trauma-related appraisals",
+        "appraisals of trauma sequelae"
+      ],
+      "definition": "Excessively negative meanings given to the trauma or its consequences (symptoms, others' reactions, life changes), producing a sense of serious current threat.",
+      "client_wording": "What happened, and how I've reacted since, seems to mean I'm damaged or still in danger.",
+      "example": "\"It happened because I'm weak,\" and \"These flashbacks mean I'm going mad.\"",
+      "group": "Trauma processes",
+      "broader": null,
+      "related": [
+        "mp.disjointed-trauma-memory",
+        "mp.threat-monitoring",
+        "mp.rumination",
+        "mp.thought-suppression",
+        "tt.permanent-change-after-trauma"
+      ],
+      "see": ["ptsd.cbt-model", "ptsd.cognitive-therapy-for-ptsd"],
+      "sources": [
+        "Ehlers-Clark-2000 § Negative appraisals of the trauma and its sequelae"
+      ],
+      "page": "ptsd.cbt-model"
+    },
+    {
+      "id": "mp.disjointed-trauma-memory",
+      "label": "Disjointed trauma memory",
+      "alt_labels": [
+        "poorly elaborated trauma memory",
+        "fragmented trauma memory"
+      ],
+      "definition": "Trauma memory is poorly elaborated and contextualized, with strong perceptual priming, so reminders trigger intrusive reexperiencing with a here-and-now quality.",
+      "client_wording": "Memories of what happened come back in pieces and feel like it's happening all over again.",
+      "example": "The smell of gasoline brings back the crash so vividly they duck, without knowing why they feel scared.",
+      "group": "Trauma processes",
+      "broader": null,
+      "related": [
+        "mp.negative-appraisal-of-trauma",
+        "mp.thought-suppression",
+        "mp.avoidance-cycle",
+        "mp.memory-bias",
+        "sit.intrusive-memory",
+        "sit.trauma-reminder"
+      ],
+      "see": ["ptsd.cbt-model", "ptsd.cognitive-therapy-for-ptsd"],
+      "sources": [
+        "Ehlers-Clark-2000 § Nature of the trauma memory"
+      ],
+      "page": "ptsd.cbt-model"
+    },
+    {
+      "id": "mp.dietary-restraint-cycle",
+      "label": "Dietary restraint and binge cycle",
+      "alt_labels": [
+        "restrict-binge-purge cycle",
+        "binge-restraint cycle"
+      ],
+      "definition": "Rigid dietary rules and restriction lead to rule breaks and binge eating; compensatory purging or further restriction follows, which in turn invites more binges.",
+      "client_wording": "Strict dieting makes me more likely to binge, then I cut back harder, and it repeats.",
+      "example": "Eats nothing until evening, breaks a \"no bread\" rule, thinks \"I've blown it,\" binges, then skips breakfast.",
+      "group": "Eating disorder processes",
+      "broader": null,
+      "related": [
+        "ib.worth-judged-by-shape-weight",
+        "mp.mood-intolerance",
+        "mp.abstinence-violation-effect",
+        "bh.dietary-restriction",
+        "bh.binge-eating",
+        "bh.compensatory-behaviors",
+        "ib.strict-dietary-rules"
+      ],
+      "see": ["eating-disorders.cbt-model", "eating-disorders.pitfall-weight-loss-goals-in-binge-eating"],
+      "sources": [
+        "Fairburn-etal-2003 § Dietary restraint and binge eating",
+        "Fairburn-2008 § Transdiagnostic formulation"
+      ],
+      "page": "eating-disorders.cbt-model"
+    },
+    {
+      "id": "mp.mood-intolerance",
+      "label": "Mood intolerance",
+      "alt_labels": [
+        "dysfunctional mood modulation"
+      ],
+      "definition": "Difficulty tolerating intense mood states, managed with behaviors such as bingeing, vomiting, exercising, or self-harm that relieve emotion briefly and maintain the eating disorder.",
+      "client_wording": "Strong feelings feel unbearable, so I use food, purging, or exercise to shut them off.",
+      "example": "After an argument, binges and vomits to get rid of the tension, then feels calm for an hour.",
+      "group": "Eating disorder processes",
+      "broader": "mp.emotion-dysregulation",
+      "related": [
+        "mp.dietary-restraint-cycle",
+        "mp.experiential-avoidance",
+        "bh.binge-eating",
+        "sit.mood-shift"
+      ],
+      "see": ["eating-disorders.cbt-model"],
+      "sources": [
+        "Fairburn-etal-2003 § Additional maintaining mechanisms",
+        "Fairburn-2008 § Mood intolerance module"
+      ],
+      "page": "eating-disorders.cbt-model"
+    },
+    {
+      "id": "mp.sleep-effort",
+      "label": "Sleep effort and sleep-related worry",
+      "alt_labels": [
+        "attention-intention-effort",
+        "trying to sleep",
+        "sleep preoccupation"
+      ],
+      "definition": "Worry about sleep and its daytime effects, monitoring for signs of poor sleep, and deliberate effort to sleep raise arousal and inhibit automatic sleep onset.",
+      "client_wording": "The harder I try to fall asleep, and the more I worry about it, the more awake I get.",
+      "example": "Checks the clock at 1 a.m.: \"If I don't sleep now I'll fail tomorrow's presentation,\" and feels wide awake.",
+      "group": "Sleep processes",
+      "broader": null,
+      "related": [
+        "mp.conditioned-arousal",
+        "mp.sleep-compensation",
+        "mp.worry",
+        "mp.body-focused-monitoring",
+        "bh.clock-monitoring",
+        "tt.sleep-loss-consequences",
+        "ib.poor-sleep-ruins-functioning"
+      ],
+      "see": ["insomnia.cbt-i-components", "insomnia.cbt-model"],
+      "sources": [
+        "Harvey-2002 § Cognitive model of insomnia",
+        "Espie-etal-2006 § Attention-intention-effort pathway"
+      ],
+      "page": "insomnia.cbt-model"
+    },
+    {
+      "id": "mp.conditioned-arousal",
+      "label": "Conditioned arousal to bed and bedtime",
+      "alt_labels": [
+        "learned bed-wakefulness association",
+        "conditioned cortical arousal"
+      ],
+      "definition": "Repeated wakefulness, frustration, and activity in bed turn the bed and bedtime into cues for arousal rather than sleep.",
+      "client_wording": "My bed has become a place where I lie awake, so I feel alert as soon as I get in.",
+      "example": "Nods off on the sofa, but feels wired the moment their head touches the pillow.",
+      "group": "Sleep processes",
+      "broader": null,
+      "related": [
+        "mp.sleep-effort",
+        "mp.sleep-compensation",
+        "bh.non-sleep-activities-in-bed"
+      ],
+      "see": ["insomnia.cbt-i-components", "insomnia.cbt-model", "insomnia.pitfall-sleep-hygiene-only"],
+      "sources": [
+        "Bootzin-1972 § Stimulus control rationale",
+        "Perlis-etal-1997 § Behavioral model and conditioned arousal"
+      ],
+      "page": "insomnia.cbt-model"
+    },
+    {
+      "id": "mp.sleep-compensation",
+      "label": "Sleep compensation",
+      "alt_labels": [
+        "sleep extension",
+        "perpetuating sleep behaviors"
+      ],
+      "definition": "Coping with poor sleep by spending more time in bed, napping, sleeping in, or keeping irregular schedules, which weakens sleep drive and fragments sleep.",
+      "client_wording": "Trying to catch up on sleep by going to bed early or napping, which backfires.",
+      "example": "Goes to bed at 9 p.m. \"to get more chances to sleep\" and naps after lunch, then lies awake for hours.",
+      "group": "Sleep processes",
+      "broader": null,
+      "related": [
+        "mp.conditioned-arousal",
+        "mp.sleep-effort",
+        "bh.excess-time-in-bed",
+        "bh.daytime-napping",
+        "bh.irregular-sleep-schedule"
+      ],
+      "see": ["insomnia.cbt-model", "insomnia.overview", "insomnia.pitfall-insomnia-treated-as-a-symptom", "insomnia.pitfall-sleep-hygiene-only"],
+      "sources": [
+        "Spielman-etal-1987 § Perpetuating factors and sleep extension"
+      ],
+      "page": "insomnia.cbt-model"
+    },
+    {
+      "id": "mp.withdrawal-inactivity-loop",
+      "label": "Withdrawal and inactivity loop",
+      "alt_labels": [
+        "TRAP pattern",
+        "depressive avoidance",
+        "loss of positive reinforcement"
+      ],
+      "definition": "Low mood leads to withdrawal from activities and people; reduced reward and mounting problems deepen low mood, prompting further inactivity.",
+      "client_wording": "Feeling low makes me do less, and doing less makes me feel even lower.",
+      "example": "Stops going to the gym and seeing friends, spends weekends in bed, and feels more worthless each week.",
+      "group": "Mood, activity, and self-relating",
+      "broader": null,
+      "related": [
+        "mp.avoidance-cycle",
+        "mp.rumination",
+        "mp.self-criticism",
+        "mp.procrastination-cycle",
+        "bh.social-withdrawal",
+        "bh.inactivity"
+      ],
+      "see": ["03-formulation.maintenance-cycles", "15-transdiagnostic-processes.avoidance", "behavioral.behavioral-activation", "chronic-pain-and-physical-health.cbt-model", "depression.cbt-model", "ptsd.cbt-model"],
+      "sources": [
+        "Martell-etal-2001 § Avoidance patterns in depression",
+        "Beck-2021 § Behavioral activation"
+      ],
+      "page": "depression.cbt-model"
+    },
+    {
+      "id": "mp.self-criticism",
+      "label": "Self-criticism",
+      "alt_labels": [
+        "self-attacking",
+        "harsh inner critic"
+      ],
+      "definition": "A habitual hostile, condemning stance toward oneself after setbacks, which activates threat and shame and blocks self-soothing and recovery.",
+      "client_wording": "Talking to myself in a harsh, attacking way when things go wrong.",
+      "example": "Drops a glass and thinks \"You useless idiot, you ruin everything.\"",
+      "group": "Mood, activity, and self-relating",
+      "broader": null,
+      "related": [
+        "mp.rumination",
+        "mp.clinical-perfectionism",
+        "mp.withdrawal-inactivity-loop",
+        "mp.belief-confirming-processing",
+        "ib.self-criticism-motivates",
+        "em.ashamed",
+        "bf.childhood-criticism",
+        "cs.self-compassion"
+      ],
+      "see": ["02-risk.suicide-focused-cbt", "03-formulation.maintenance-cycles", "15-transdiagnostic-processes.assessing-transdiagnostic-processes", "15-transdiagnostic-processes.perfectionism", "15-transdiagnostic-processes.self-criticism-and-shame", "15-transdiagnostic-processes.transdiagnostic-overview", "adhd.underdiagnosis-in-women-and-adults", "cognitive.self-compassion-techniques", "personality-disorders.schema-therapy-link", "responding-in-session.responding-to-hopelessness-and-self-criticism", "social-anxiety.pitfall-unprepared-video-feedback", "social-anxiety.video-feedback-and-attention-training"],
+      "sources": [
+        "Gilbert-Procter-2006 § Shame, self-criticism, and the threat system"
+      ],
+      "page": "15-transdiagnostic-processes.self-criticism-and-shame"
+    },
+    {
+      "id": "mp.emotion-dysregulation",
+      "label": "Emotion dysregulation",
+      "alt_labels": [
+        "difficulties in emotion regulation"
+      ],
+      "definition": "Difficulty noticing, accepting, and modulating emotions, with high sensitivity, intense reactions, slow return to baseline, and impulsive or avoidant regulation attempts.",
+      "client_wording": "Feelings hit hard and fast, take a long time to settle, and push me to act rashly.",
+      "example": "A brief criticism at work sparks rage within seconds, a slammed door, and hours of distress.",
+      "group": "Emotion regulation",
+      "broader": null,
+      "related": [
+        "mp.experiential-avoidance",
+        "mp.mood-intolerance",
+        "mp.substance-relief-cycle",
+        "mp.interpersonal-cycle",
+        "bf.invalidating-environment",
+        "ms.ders"
+      ],
+      "see": ["02-risk.self-harm", "13-context-culture-development.identity-and-minority-stress", "15-transdiagnostic-processes.emotion-regulation", "15-transdiagnostic-processes.transdiagnostic-overview", "15-transdiagnostic-processes.transdiagnostic-treatments", "adhd.emotional-dysregulation-and-associated-features", "gad.worry-models-compared", "personality-disorders.adaptations", "personality-disorders.assessment", "personality-disorders.cbt-model", "personality-disorders.dbt-informed-skills", "personality-disorders.overview", "personality-disorders.pitfall-change-before-validation", "personality-disorders.treatment", "ptsd.complex-ptsd", "ptsd.pitfall-indefinite-stabilization"],
+      "sources": [
+        "Linehan-1993 § Biosocial theory: emotional vulnerability",
+        "Gratz-Roemer-2004 § Dimensions of emotion dysregulation"
+      ],
+      "page": "15-transdiagnostic-processes.emotion-regulation"
+    },
+    {
+      "id": "mp.interpersonal-cycle",
+      "label": "Cognitive-interpersonal cycle",
+      "alt_labels": [
+        "interpersonal maintenance cycle",
+        "self-fulfilling interpersonal pattern"
+      ],
+      "definition": "Expectations about others prompt behavior that elicits responses confirming those expectations, so beliefs and relationship problems maintain each other.",
+      "client_wording": "Expecting people to reject me, I act in ways that end up pushing them away.",
+      "example": "Expecting rejection, stays quiet and cool at a party; others drift away, \"proving\" nobody likes them.",
+      "group": "Interpersonal and family processes",
+      "broader": null,
+      "related": [
+        "mp.reassurance-cycle",
+        "mp.safety-behavior-cycle",
+        "mp.family-accommodation",
+        "mp.belief-confirming-processing"
+      ],
+      "see": ["depression.persistent-depression", "personality-disorders.cbt-model", "social-anxiety.cbt-model", "social-anxiety.pitfall-skills-deficit-assumption"],
+      "sources": [
+        "Safran-Segal-1990 § Cognitive-interpersonal cycle",
+        "Joiner-etal-1999 § Interpersonal consequences of reassurance seeking"
+      ],
+      "page": "03-formulation.maintenance-cycles"
+    },
+    {
+      "id": "mp.family-accommodation",
+      "label": "Family accommodation",
+      "alt_labels": [
+        "accommodation of symptoms"
+      ],
+      "definition": "Family members change their behavior to reduce a relative's distress, by joining rituals, giving reassurance, or enabling avoidance, which maintains anxiety or obsessive-compulsive symptoms.",
+      "client_wording": "When family steps in to ease my anxiety, it helps today but keeps the problem going.",
+      "example": "A parent rewashes the child's clothes three times and answers \"Are you sure it's clean?\" twenty times.",
+      "group": "Interpersonal and family processes",
+      "broader": null,
+      "related": [
+        "mp.reassurance-cycle",
+        "mp.avoidance-cycle",
+        "mp.interpersonal-cycle",
+        "mp.safety-behavior-cycle",
+        "bf.overprotective-parenting"
+      ],
+      "see": ["13-context-culture-development.child-anxiety", "13-context-culture-development.children-and-adolescents", "behavioral.exposure-and-response-prevention", "behavioral.pitfall-unnoticed-safety-behaviors", "cognitive.pitfall-restructuring-as-reassurance", "gad.assessment", "health-anxiety.adaptations", "health-anxiety.pitfall-reassurance-loop", "health-anxiety.reassurance-seeking", "ocd.adaptations", "ocd.assessment", "ocd.cbt-model", "ocd.family-accommodation", "panic-and-phobias.adaptations", "panic-and-phobias.agoraphobia", "panic-and-phobias.assessment"],
+      "sources": [
+        "Lebowitz-etal-2012 § Definition and forms of accommodation",
+        "Lebowitz-etal-2016 § Accommodation in anxiety disorders"
+      ],
+      "page": "ocd.cbt-model"
+    },
+    {
+      "id": "mp.substance-relief-cycle",
+      "label": "Substance relief cycle",
+      "alt_labels": [
+        "self-medication cycle",
+        "drinking or using to cope",
+        "negative reinforcement of use"
+      ],
+      "definition": "Using a substance relieves distress, craving, or withdrawal quickly, negatively reinforcing use, while consequences and withdrawal raise distress that cues further use.",
+      "client_wording": "Using takes the edge off fast, but the fallout makes me feel worse and want more.",
+      "example": "Drinks to calm social nerves, wakes anxious and hungover, and drinks again by afternoon to settle.",
+      "group": "Substance use processes",
+      "broader": null,
+      "related": [
+        "mp.experiential-avoidance",
+        "mp.abstinence-violation-effect",
+        "mp.emotion-dysregulation",
+        "bh.substance-use-to-cope"
+      ],
+      "see": ["03-formulation.functional-analysis", "substance-use.cbt-model", "substance-use.pitfall-waiting-for-sobriety"],
+      "sources": [
+        "Marlatt-Donovan-2005 § Cognitive-behavioral model of the relapse process"
+      ],
+      "page": "substance-use.cbt-model"
+    },
+    {
+      "id": "mp.abstinence-violation-effect",
+      "label": "Abstinence violation effect",
+      "alt_labels": [
+        "AVE",
+        "what-the-hell effect"
+      ],
+      "definition": "After a lapse, self-blame, guilt, and a sense of lost control lead the person to abandon the goal, turning a single lapse into full relapse.",
+      "client_wording": "One slip makes me feel I've blown it completely, so I give up and keep going.",
+      "example": "Has one drink after 60 days sober, thinks \"I'm a failure, I've ruined it,\" and drinks all weekend.",
+      "group": "Substance use processes",
+      "broader": null,
+      "related": [
+        "mp.substance-relief-cycle",
+        "mp.dietary-restraint-cycle",
+        "mp.self-criticism",
+        "bh.substance-use-to-cope"
+      ],
+      "see": ["09-ending.lapse-relapse-and-recurrence", "substance-use.pitfall-lapse-treated-as-failure", "substance-use.relapse-prevention-model"],
+      "sources": [
+        "Marlatt-Donovan-2005 § Abstinence violation effect"
+      ],
+      "page": "substance-use.relapse-prevention-model"
+    },
+    {
+      "id": "mp.extreme-appraisals-of-internal-states",
+      "label": "Extreme appraisals of mood and energy changes",
+      "alt_labels": [
+        "ascent and descent appraisals",
+        "extreme personal meaning of internal states"
+      ],
+      "definition": "Changes in energy, mood, or arousal are given extreme personal meanings (success, catastrophe), prompting ascent or descent behaviors that escalate mood swings.",
+      "client_wording": "When my energy shifts, I read it as huge news, and how I respond makes swings bigger.",
+      "example": "Feeling energized at 2 a.m., thinks \"This is my genius coming through,\" skips sleep, and starts three projects.",
+      "group": "Bipolar and psychosis processes",
+      "broader": null,
+      "related": [
+        "mp.emotion-dysregulation",
+        "mp.rumination",
+        "mp.withdrawal-inactivity-loop",
+        "ib.high-mood-is-best",
+        "tt.personal-gain-and-grandiosity"
+      ],
+      "see": ["bipolar-and-psychosis.bipolar-cbt", "bipolar-and-psychosis.cbt-model"],
+      "sources": [
+        "Mansell-etal-2007 § Integrative cognitive model of internal states"
+      ],
+      "page": "bipolar-and-psychosis.cbt-model"
+    },
+    {
+      "id": "mp.pain-catastrophizing",
+      "label": "Pain catastrophizing",
+      "alt_labels": [
+        "catastrophic thinking about pain"
+      ],
+      "definition": "An exaggerated negative mental set toward actual or expected pain: ruminating on it, magnifying its threat and feeling helpless to manage it.",
+      "client_wording": "Getting stuck on the pain, expecting the worst from it and feeling unable to cope.",
+      "example": "\"This pain is terrible and it's never going to get any better.\"",
+      "group": "Pain processes",
+      "broader": null,
+      "related": [
+        "cd.catastrophizing",
+        "mp.fear-avoidance-cycle",
+        "mp.rumination",
+        "tt.physical-catastrophe",
+        "em.helpless",
+        "sit.pain-or-illness-flare"
+      ],
+      "see": ["chronic-pain-and-physical-health.assessment", "chronic-pain-and-physical-health.cbt-model", "chronic-pain-and-physical-health.overview"],
+      "sources": [
+        "Sullivan-etal-1995 § Rumination, magnification and helplessness subscales",
+        "Leeuw-etal-2007 § Pain catastrophizing"
+      ]
+    },
+    {
+      "id": "mp.fear-avoidance-cycle",
+      "label": "Fear-avoidance cycle (pain)",
+      "alt_labels": [
+        "fear-avoidance model",
+        "pain-related fear and avoidance"
+      ],
+      "definition": "Pain read as threatening breeds pain-related fear, avoidance and hypervigilance, leading to disuse, low mood and disability that maintain pain.",
+      "client_wording": "Fear of pain makes me avoid moving, which leaves me weaker, lower and in more pain.",
+      "example": "After a back twinge, stops walking and lifting, loses fitness, and every movement hurts more.",
+      "group": "Pain processes",
+      "broader": null,
+      "related": [
+        "mp.pain-catastrophizing",
+        "mp.avoidance-cycle",
+        "mp.body-focused-monitoring",
+        "bh.movement-avoidance",
+        "ib.pain-means-harm",
+        "em.afraid"
+      ],
+      "see": ["chronic-pain-and-physical-health.cbt-model", "chronic-pain-and-physical-health.overview", "chronic-pain-and-physical-health.treatment"],
+      "sources": [
+        "Vlaeyen-Linton-2000 § Abstract",
+        "Leeuw-etal-2007 § Abstract"
+      ]
+    },
+    {
+      "id": "mp.activity-cycling",
+      "label": "Overactivity and underactivity cycle",
+      "alt_labels": [
+        "boom and bust",
+        "activity cycling"
+      ],
+      "definition": "Overdoing activity when pain is lower, then resting for long periods after the resulting flare, so activity and pain swing widely.",
+      "client_wording": "On good days I overdo it, then pay for it with days stuck resting.",
+      "example": "Cleans the whole house on a good day, then spends two days in bed.",
+      "group": "Pain processes",
+      "broader": null,
+      "related": [
+        "bh.pain-overactivity",
+        "bh.inactivity",
+        "mp.fear-avoidance-cycle",
+        "iv.activity-pacing"
+      ],
+      "see": ["chronic-pain-and-physical-health.cbt-model"],
+      "sources": [
+        "Nielson-etal-2013 § Abstract; overactivity and underactivity pacing problems"
+      ]
+    },
+    {
+      "id": "mp.poor-loss-integration",
+      "label": "Poor integration of the loss",
+      "alt_labels": [
+        "loss not integrated into memory",
+        "sense of unreality about the loss"
+      ],
+      "definition": "The loss is not integrated into autobiographical memory and self-knowledge, so it feels unreal and reminders trigger intense, intrusive grief.",
+      "client_wording": "Part of me still can't take in that they're gone, so reminders hit hard.",
+      "example": "Two years on, still expects her husband to walk through the door each evening.",
+      "group": "Grief processes",
+      "broader": null,
+      "related": [
+        "mp.anxious-avoidance-of-loss",
+        "em.yearning",
+        "em.grief",
+        "sit.loss-reminder",
+        "mp.disjointed-trauma-memory"
+      ],
+      "see": ["grief-and-loss.cbt-model"],
+      "sources": [
+        "Boelen-etal-2006 § Insufficient integration of the loss into the autobiographical knowledge base"
+      ]
+    },
+    {
+      "id": "mp.anxious-avoidance-of-loss",
+      "label": "Anxious avoidance of the loss",
+      "alt_labels": [
+        "avoiding the reality of the loss",
+        "grief avoidance"
+      ],
+      "definition": "Avoiding reminders, thoughts and feelings about the loss, often from fear of being overwhelmed, which blocks integration and keeps grief intense.",
+      "client_wording": "Steering clear of anything about the death, because facing it feels too dangerous.",
+      "example": "Keeps the bedroom door shut and never says his name.",
+      "group": "Grief processes",
+      "broader": null,
+      "related": [
+        "mp.poor-loss-integration",
+        "mp.experiential-avoidance",
+        "mp.avoidance-cycle",
+        "bh.loss-reminder-avoidance",
+        "ib.grief-reactions-dangerous"
+      ],
+      "see": ["grief-and-loss.cbt-model", "grief-and-loss.pitfall-colluding-with-avoidance"],
+      "sources": [
+        "Boelen-etal-2006 § Anxious and depressive avoidance strategies"
+      ]
+    },
+    {
+      "id": "mp.depressive-avoidance-after-loss",
+      "label": "Depressive avoidance after loss",
+      "alt_labels": [
+        "withdrawal after bereavement"
+      ],
+      "definition": "Withdrawing from activities, relationships and plans that could foster adjustment, often from beliefs that life is meaningless without the deceased.",
+      "client_wording": "Giving up on people and things I used to do, because nothing seems worth it now.",
+      "example": "Stops seeing friends and quits the choir because \"there's no point without her.\"",
+      "group": "Grief processes",
+      "broader": null,
+      "related": [
+        "mp.withdrawal-inactivity-loop",
+        "mp.anxious-avoidance-of-loss",
+        "bh.social-withdrawal",
+        "tt.loss-and-defeat"
+      ],
+      "see": ["grief-and-loss.cbt-model"],
+      "sources": [
+        "Boelen-etal-2006 § Anxious and depressive avoidance strategies"
+      ]
+    }
+  ]
+}
