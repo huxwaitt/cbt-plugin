@@ -354,7 +354,7 @@ async function renderWiki($: any, rec: CbtRecord) {
   await $.fs.write(`${DATA}\\topics\\_index.md`, [
     '# Topics',
     '',
-    'What is understood about each theme so far, written and revised by Claude across sessions.',
+    'What is understood about each theme so far, written and revised across sessions.',
     'Each claim cites the session it came from. Read them, and correct anything that is wrong.',
     '',
     '| Topic | Summary | Updated |',
