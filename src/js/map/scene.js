@@ -468,12 +468,17 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
     }
     for (const a of active.filter(a => a.layer === 'record')) {
       light(a.id, 1, STAGE.record + 0.3)
-      if (a.how === 'recordRead') edge(a.id, 'turn', STAGE.record - 0.6, 0.35, true)
+      // A read comes up from the file as a faint cool line, the way other reads are drawn.
+      if (a.how === 'recordRead') edge(a.id, 'turn', STAGE.record - 0.6, 0.3, false)
+      // A write is drawn as the turn sending something down into the file:
+      // a firm amber line, with three pulses following each other along it.
+      if (a.how === 'written')
+        for (const k of [0, 1, 2]) edge('turn', a.id, STAGE.record + k * 0.22, 0.95, true)
       for (const linked of a.links ?? []) edge(a.id, linked, STAGE.record, 0.8, true)
     }
 
     turnEdges = edges
-    turnLength = STAGE.record + 1.2
+    turnLength = STAGE.record + 1.6
     clock = animate && !reduce ? 0 : turnLength + 1
     render()
     if (animate && !reduce) wake(turnLength + 0.8)
