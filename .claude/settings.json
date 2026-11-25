@@ -1,13 +1,20 @@
 {
+  "enabledPlugins": {
+    "impeccable@impeccable": true,
+    "hallmark@hallmark": true
+  },
   "extraKnownMarketplaces": {
     "impeccable": {
       "source": {
         "source": "github",
         "repo": "pbakaus/impeccable"
       }
+    },
+    "hallmark": {
+      "source": {
+        "source": "github",
+        "repo": "Nutlope/hallmark"
+      }
     }
-  },
-  "enabledPlugins": {
-    "impeccable@impeccable": true
   }
 }
