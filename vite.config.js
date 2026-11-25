@@ -49,7 +49,7 @@ function markdown(text) {
 }
 
 // <!-- @nav home -->, <!-- @footer -->, <!-- @protocol <section id> -->,
-// <!-- @excerpt <name> -->, <!-- @record <id> --> and {{n:pages}} are filled in
+// <!-- @excerpt <name> -->, <!-- @record <id> -->, {{n:pages}} and {{lines:<page file>}} are filled in
 // at build time, so the three pages share one nav and footer, and every figure
 // and quoted passage comes from the generated data.
 function partials() {
@@ -70,6 +70,11 @@ function partials() {
       handler(html) {
         const n = counts()
         const sections = JSON.parse(read('src/data/protocol.json')).sections
+        const excerpts = JSON.parse(read('src/data/excerpts.json'))
+        const excerpt = name => {
+          if (!(name in excerpts)) throw new Error(`No excerpt "${name}"`)
+          return excerpts[name]
+        }
         return html
           .replace(/<!--\s*@nav\s+(\w+)\s*-->/g, (_, current) =>
             read('src/partials/nav.html').replace(
@@ -83,10 +88,16 @@ function partials() {
             if (!section) throw new Error(`No protocol section "${id}"`)
             return markdown(section.text)
           })
-          .replace(/<!--\s*@excerpt\s+([\w.-]+)\s*-->/g, (_, name) => {
-            const excerpts = JSON.parse(read('src/data/excerpts.json'))
-            if (!(name in excerpts)) throw new Error(`No excerpt "${name}"`)
-            return esc(excerpts[name])
+          // <!-- @excerpt notice 4 --> gives the first four lines; {{rest:notice:4}} counts the others
+          .replace(/<!--\s*@excerpt\s+([\w.-]+)(?:\s+(\d+))?\s*-->/g, (_, name, head) => {
+            const text = excerpt(name)
+            return esc(head ? text.split('\n').slice(0, Number(head)).join('\n') : text)
+          })
+          .replace(/\{\{rest:([\w.-]+):(\d+)\}\}/g, (_, name, head) => String(excerpt(name).split('\n').length - Number(head)))
+          .replace(/\{\{lines:([\w./-]+)\}\}/g, (_, file) => {
+            const page = Object.values(JSON.parse(read('src/data/kb-detail.json')).pages).find(p => p.f === file)
+            if (!page) throw new Error(`No knowledge base page at "${file}"`)
+            return String(page.ln)
           })
           .replace(/<!--\s*@record\s+([\w.-]+)\s*-->/g, (_, id) => {
             const file = JSON.parse(read('src/data/session.json')).record.find(r => r.id === id)

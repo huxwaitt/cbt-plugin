@@ -20,7 +20,8 @@ const GROUPS = [
   ['vocab', 'Vocabulary'],
   ['record', 'Your record'],
 ]
-const WHO = { person: 'You', guide: 'Guide', plugin: 'Plugin' }
+const WHO = { person: 'You', guide: 'Claude', plugin: 'Output' }
+const ROW = { person: 'you', guide: 'say', plugin: 'out' }
 
 const el = (tag, attrs = {}, ...children) => {
   const node = document.createElement(tag)
@@ -204,9 +205,9 @@ export async function initMap(root) {
       step.turns.map(turn =>
         el(
           'li',
-          { class: `line line--${turn.who}${turn.cmd ? ' line--cmd' : ''}` },
-          el('span', { class: 'line__who', text: WHO[turn.who] }),
-          el('p', { class: 'line__say', text: turn.text }),
+          { class: `tl tl--${ROW[turn.who]}` },
+          el('span', { class: 'visually-hidden', text: `${WHO[turn.who]}: ` }),
+          el('p', { class: turn.who === 'plugin' ? 'tl__res' : 'tl__b', text: turn.text }),
         ),
       ),
     )

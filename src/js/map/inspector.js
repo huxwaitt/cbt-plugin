@@ -124,6 +124,7 @@ export function card(id, { data, step, activation }) {
               facts([
                 ['Path', `kg\\${win(d.f)}`, true],
                 ['Type', page.ty],
+                ['Length', d.ln ? `${d.ln} lines` : ''],
                 ['Depth', d.d.split('-').map(k => `${k} ${DEPTH[k]}`).join(' to ')],
                 ['Stage', d.st.join(', ')],
                 ['Topics', d.tp.join(', ')],

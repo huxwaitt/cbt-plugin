@@ -48,7 +48,7 @@ At build time `vite.config.js` fills a few markers in the HTML from that data: `
 index.html  features.html  safety.html
 src/
   styles/   tokens.css (the palette, type and spacing), base.css, site.css
-  js/       main.js, switch.js (tabs), chat.js (transcript playback)
+  js/       main.js, switch.js (tabs), chat.js (session playback)
   js/map/   index.js (the instrument), scene.js (three.js), inspector.js (detail cards)
   data/     generated JSON, plus session.json (the sample session, written by hand)
   partials/ nav.html, footer.html

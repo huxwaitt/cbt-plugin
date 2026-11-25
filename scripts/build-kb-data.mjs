@@ -75,6 +75,7 @@ function parsePage(file) {
       .filter(Boolean)
       .map(r => [r[1].trim(), r[2].trim()]),
     rev: fm.reviewed ?? '',
+    ln: (text.match(/\n/g) ?? []).length,
   }
 }
 
@@ -180,7 +181,7 @@ const core = {
 }
 const detail = {
   pages: Object.fromEntries(
-    pages.map(({ id, d, f, s, st, tp, when, b, src, rev }) => [id, { d, f, s, st, tp, when, b, src, rev }]),
+    pages.map(({ id, d, f, s, st, tp, when, b, src, rev, ln }) => [id, { d, f, s, st, tp, when, b, src, rev, ln }]),
   ),
   concepts: Object.fromEntries(concepts.map(({ id, g, def, cw, ex, see }) => [id, { g, def, cw, ex, see }])),
   schemes: Object.fromEntries(schemes.map(({ p, d, file }) => [p, { d, file }])),

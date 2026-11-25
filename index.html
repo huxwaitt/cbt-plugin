@@ -29,7 +29,7 @@
   <div class="container">
     <div class="head head--split">
       <h2>What a session sounds like</h2>
-      <p class="lead">Four moments from sample sessions, with the tool calls left in.</p>
+      <p class="lead">Four moments from sample sessions, as they look in Claude Code.</p>
     </div>
 
     <div class="switch" data-switch>
@@ -55,17 +55,20 @@
       <div class="switch__panels">
         <section class="switch__panel" role="tabpanel" id="chat-start" aria-labelledby="tab-start">
           <h3>The first minute</h3>
-          <figure class="chat deep" data-slot="chat-start" data-kind="product" data-alt="Sample transcript of the first minute of a first session">
-            <ol class="chat__log">
-              <li class="line line--person line--cmd"><span class="line__who">You</span><p class="line__say">/cbt-session</p></li>
-              <li class="line line--plugin"><span class="line__who">Plugin</span><p class="line__say"><!-- @excerpt notice --></p></li>
-              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">record_read: No record yet: this is the first session.</p></li>
-              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Hello, and welcome. What would you like me to call you?</p></li>
-              <li class="line line--person"><span class="line__who">You</span><p class="line__say">Dev is fine.</p></li>
-              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Good to meet you, Dev. Sessions take about 30 to 50 minutes. They are structured, we work together, and there is a small practice task between them. To start, how has your mood been today, from 0 to 10?</p></li>
+          <figure class="term deep" data-slot="chat-start" data-kind="product" data-alt="Sample Claude Code session: the first minute of a first session">
+            <ol class="term__log">
+              <li class="tl tl--you tl--cmd"><span class="visually-hidden">You: </span><p class="tl__b">/cbt-session</p></li>
+              <li class="tl tl--out"><span class="visually-hidden">Output: </span><p class="tl__res tl__res--pre"><!-- @excerpt notice 4 -->
+<a href="./safety.html#notice">… +{{rest:notice:4}} lines</a></p></li>
+              <li class="tl tl--tool"><span class="visually-hidden">Tool call: </span><p class="tl__b"><b>cbt-self-help - record_read</b> (MCP)</p><p class="tl__res">No record yet: this is the first session.</p></li>
+              <li class="tl tl--say"><span class="visually-hidden">Claude: </span><p class="tl__b" data-stream>Hello, and welcome. What would you like me to call you?</p></li>
+              <li class="tl tl--you"><span class="visually-hidden">You: </span><p class="tl__b">Dev</p></li>
+              <li class="tl tl--say"><span class="visually-hidden">Claude: </span><p class="tl__b" data-stream>Good to meet you, Dev. How has your mood been today, from 0 to 10?</p></li>
             </ol>
-            <figcaption class="chat__foot">
-              <p>The notice is the plugin’s own text. The person is invented.</p>
+            <div class="term__prompt" aria-hidden="true"><span class="term__gt">&gt;</span><span class="term__in"><i class="term__caret"></i></span></div>
+            <p class="term__status"><span>CBT self-help session</span></p>
+            <figcaption class="term__foot">
+              <p>A sample. The notice and the tool result are the plugin’s own text.</p>
               <button class="btn btn--quiet btn--small" type="button" data-replay>Replay</button>
             </figcaption>
           </figure>
@@ -73,19 +76,21 @@
 
         <section class="switch__panel" role="tabpanel" id="chat-map" aria-labelledby="tab-map">
           <h3>One moment, mapped</h3>
-          <figure class="chat deep" data-slot="chat-map" data-kind="product" data-alt="Sample transcript of a session mapping one moment with the five-part model">
-            <ol class="chat__log">
-              <li class="line line--person"><span class="line__who">You</span><p class="line__say">Sunday night I opened my inbox and my stomach just dropped.</p></li>
-              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">Read kg\03-formulation\five-part-model.md</p></li>
-              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Your stomach dropped the moment the inbox opened. Let’s slow that one moment down. What went through your mind just then?</p></li>
-              <li class="line line--person"><span class="line__who">You</span><p class="line__say">That I’m behind on everything and Monday will be a disaster.</p></li>
-              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>So the thought was “I’m behind on everything, and Monday will be a disaster.” What did you do next?</p></li>
-              <li class="line line--person"><span class="line__who">You</span><p class="line__say">Closed the laptop and scrolled my phone until one.</p></li>
-              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">formulation_update: Formulation saved (Five-part model (hot cross bun)).</p></li>
-              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>That gives us a map: the inbox, the thought, the drop in your stomach, and closing the laptop. Does that match how it felt?</p></li>
+          <figure class="term deep" data-slot="chat-map" data-kind="product" data-alt="Sample Claude Code session: one moment mapped with the five-part model">
+            <ol class="term__log">
+              <li class="tl tl--you"><span class="visually-hidden">You: </span><p class="tl__b">Sunday night I opened my inbox and my stomach dropped.</p></li>
+              <li class="tl tl--tool"><span class="visually-hidden">Tool call: </span><p class="tl__b"><b>Read</b>(kg\03-formulation\five-part-model.md)</p><p class="tl__res">Read {{lines:03-formulation/five-part-model.md}} lines</p></li>
+              <li class="tl tl--say"><span class="visually-hidden">Claude: </span><p class="tl__b" data-stream>Let’s slow that moment down. What went through your mind?</p></li>
+              <li class="tl tl--you"><span class="visually-hidden">You: </span><p class="tl__b">That Monday will be a disaster.</p></li>
+              <li class="tl tl--say"><span class="visually-hidden">Claude: </span><p class="tl__b" data-stream>And what did you do next?</p></li>
+              <li class="tl tl--you"><span class="visually-hidden">You: </span><p class="tl__b">Closed the laptop and scrolled until one.</p></li>
+              <li class="tl tl--tool"><span class="visually-hidden">Tool call: </span><p class="tl__b"><b>cbt-self-help - formulation_update</b> (MCP)(model_id: "fm.five-part")</p><p class="tl__res">Formulation saved (Five-part model (hot cross bun)).</p></li>
+              <li class="tl tl--say"><span class="visually-hidden">Claude: </span><p class="tl__b" data-stream>So: the inbox, the thought, the drop, the scrolling. Does that match?</p></li>
             </ol>
-            <figcaption class="chat__foot">
-              <p>A sample exchange. The file and the tool result are the plugin’s own.</p>
+            <div class="term__prompt" aria-hidden="true"><span class="term__gt">&gt;</span><span class="term__in"><i class="term__caret"></i></span></div>
+            <p class="term__status"><span>CBT self-help session</span></p>
+            <figcaption class="term__foot">
+              <p>A sample. The file and the tool result are the plugin’s own.</p>
               <button class="btn btn--quiet btn--small" type="button" data-replay>Replay</button>
             </figcaption>
           </figure>
@@ -93,18 +98,20 @@
 
         <section class="switch__panel" role="tabpanel" id="chat-task" aria-labelledby="tab-task">
           <h3>A task not done</h3>
-          <figure class="chat deep" data-slot="chat-task" data-kind="product" data-alt="Sample transcript of a session reviewing a practice task that was not done">
-            <ol class="chat__log">
-              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Last time you were going to try a ten minute walk on three mornings. How did that go?</p></li>
-              <li class="line line--person"><span class="line__who">You</span><p class="line__say">I didn’t do any of them. I know, I’m useless at this.</p></li>
-              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">Read kg\05-session-structure\homework-review-and-adherence.md</p></li>
-              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>None of the walks happened, and you are being hard on yourself about it. A task not done tells us something about the task. What got in the way on the first morning?</p></li>
-              <li class="line line--person"><span class="line__who">You</span><p class="line__say">I woke up late and it felt pointless to start.</p></li>
-              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Waking late, and then a thought that it was pointless. Would a smaller version be worth testing, say five minutes, right after your coffee?</p></li>
-              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">session_note: Saved to session 4.</p></li>
+          <figure class="term deep" data-slot="chat-task" data-kind="product" data-alt="Sample Claude Code session: reviewing a practice task that was not done">
+            <ol class="term__log">
+              <li class="tl tl--say"><span class="visually-hidden">Claude: </span><p class="tl__b" data-stream>You planned three ten minute walks. How did that go?</p></li>
+              <li class="tl tl--you"><span class="visually-hidden">You: </span><p class="tl__b">Didn’t do any. I’m useless at this.</p></li>
+              <li class="tl tl--tool"><span class="visually-hidden">Tool call: </span><p class="tl__b"><b>Read</b>(kg\05-session-structure\homework-review-and-adherence.md)</p><p class="tl__res">Read {{lines:05-session-structure/homework-review-and-adherence.md}} lines</p></li>
+              <li class="tl tl--say"><span class="visually-hidden">Claude: </span><p class="tl__b" data-stream>A task not done tells us about the task, not about you. What got in the way?</p></li>
+              <li class="tl tl--you"><span class="visually-hidden">You: </span><p class="tl__b">Woke up late and it felt pointless.</p></li>
+              <li class="tl tl--tool"><span class="visually-hidden">Tool call: </span><p class="tl__b"><b>cbt-self-help - session_note</b> (MCP)(homework_review: "No walks. Woke late, felt pointless.")</p><p class="tl__res">Saved to session 4.</p></li>
+              <li class="tl tl--say"><span class="visually-hidden">Claude: </span><p class="tl__b" data-stream>Would five minutes, right after coffee, be worth testing?</p></li>
             </ol>
-            <figcaption class="chat__foot">
-              <p>A sample exchange. The page it reads says to adjust the task rather than blame the person.</p>
+            <div class="term__prompt" aria-hidden="true"><span class="term__gt">&gt;</span><span class="term__in"><i class="term__caret"></i></span></div>
+            <p class="term__status"><span>CBT self-help session</span></p>
+            <figcaption class="term__foot">
+              <p>A sample. The page it reads says to adjust the task, not blame the person.</p>
               <button class="btn btn--quiet btn--small" type="button" data-replay>Replay</button>
             </figcaption>
           </figure>
@@ -112,17 +119,19 @@
 
         <section class="switch__panel" role="tabpanel" id="chat-stop" aria-labelledby="tab-stop">
           <h3>When it stops</h3>
-          <figure class="chat deep" data-slot="chat-stop" data-kind="product" data-alt="Sample transcript of a session switching from an exercise to safety">
-            <ol class="chat__log">
-              <li class="line line--person"><span class="line__who">You</span><p class="line__say">Honestly, some nights I think everyone would be better off without me.</p></li>
-              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">Read kg\02-risk\crisis-response.md</p></li>
-              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Thank you for telling me. That sounds really hard. I want to stop what we were doing, because this matters more. When you think that, are you having thoughts of ending your life?</p></li>
-              <li class="line line--person"><span class="line__who">You</span><p class="line__say">Sometimes. I don’t have a plan.</p></li>
-              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>I’m glad you said it out loud. I am an AI and cannot call anyone, so please keep these close: in the US, call or text 988. In the UK, Samaritans on 116 123. Is there someone who could be with you tonight?</p></li>
-              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">session_note: risk_flag true. Saved to session 5.</p></li>
+          <figure class="term deep" data-slot="chat-stop" data-kind="product" data-alt="Sample Claude Code session: switching from an exercise to safety">
+            <ol class="term__log">
+              <li class="tl tl--you"><span class="visually-hidden">You: </span><p class="tl__b">Some nights I think everyone would be better off without me.</p></li>
+              <li class="tl tl--tool"><span class="visually-hidden">Tool call: </span><p class="tl__b"><b>Read</b>(kg\02-risk\crisis-response.md)</p><p class="tl__res">Read {{lines:02-risk/crisis-response.md}} lines</p></li>
+              <li class="tl tl--say"><span class="visually-hidden">Claude: </span><p class="tl__b" data-stream>Thank you for telling me. I want to stop the exercise, because this matters more. Are you having thoughts of ending your life?</p></li>
+              <li class="tl tl--you"><span class="visually-hidden">You: </span><p class="tl__b">Sometimes. No plan.</p></li>
+              <li class="tl tl--tool"><span class="visually-hidden">Tool call: </span><p class="tl__b"><b>cbt-self-help - session_note</b> (MCP)(risk_flag: true)</p><p class="tl__res">Saved to session 5.</p></li>
+              <li class="tl tl--say"><span class="visually-hidden">Claude: </span><p class="tl__b" data-stream>I’m an AI and can’t call anyone. In the US, call or text 988. In the UK, Samaritans on 116 123. Is there someone who could be with you tonight?</p></li>
             </ol>
-            <figcaption class="chat__foot">
-              <p>A sample exchange. A session with a risk flag cannot be discarded from the record.</p>
+            <div class="term__prompt" aria-hidden="true"><span class="term__gt">&gt;</span><span class="term__in"><i class="term__caret"></i></span></div>
+            <p class="term__status"><span>CBT self-help session</span></p>
+            <figcaption class="term__foot">
+              <p>A sample. A session with a risk flag cannot be discarded from the record.</p>
               <button class="btn btn--quiet btn--small" type="button" data-replay>Replay</button>
             </figcaption>
           </figure>

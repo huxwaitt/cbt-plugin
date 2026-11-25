@@ -4,6 +4,7 @@
 /* Hallmark · pre-emit critique: P4 H4 E4 S5 R4 V4 · weakest: H, three dense instruments on one page; each gets one head, one line and its own paper step, and the limits are set as plain rows between them */
 /* Hallmark · finish-review: subagent · 8 findings · 7 resolved, 1 partial (the hero stays a text banner; the transcript's first lines now clear the fold at 1280 x 800) · hero-review: folded into the finish review */
 /* Hallmark · dismissed 58 · the static count includes four session transcripts, verbatim protocol text and the map's no-script list, all inside product slots; the rendered screens stay within the 80-word budget */
+/* Hallmark · waive 47b · one frame on screen at a time, holding the plugin's real command, tool names and results · the plugin runs inside Claude Code, so a sample session is set as the terminal prints it */
 /* Hallmark · answered F1 · the protocol and the notice are shown as the plugin ships them, straight quotes included, because the page calls them word for word */
 /* Hallmark · answered F18 · every slot holds the built product or a live instrument drawn from the plugin's files, not a picture waiting for a file */
 @import url("./tokens.css");
@@ -91,37 +92,74 @@ main { display: block; }
 [data-slot][data-kind="product"] { background: var(--color-paper-2); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); }
 [data-slot].deep { background: var(--color-paper-3); }
 
-/* ------------------------------------------------------------------ transcript */
-.chat { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; min-height: 30rem; }
-.chat__log { display: grid; gap: var(--space-lg); padding: var(--space-xl); align-content: start; }
-.line { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); column-gap: var(--space-md); align-items: baseline; }
-.line__who { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); }
-.line__say { max-width: 62ch; color: var(--color-ink-2); font-size: var(--text-md); line-height: 1.55; }
-.line--person .line__who { color: var(--color-accent); }
-.line--person .line__say { color: var(--color-ink); }
-.line--tool .line__who, .line--tool .line__say { color: var(--color-cool); }
-.line--tool .line__say, .line--plugin .line__say { font-family: var(--font-outlier); font-size: var(--text-sm); font-variant-numeric: tabular-nums slashed-zero; overflow-wrap: anywhere; }
-.line--plugin .line__say { color: var(--color-muted); white-space: pre-line; }
-.line--cmd .line__say { font-family: var(--font-outlier); color: var(--color-accent); }
-.chat__foot { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-md) var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); font-size: var(--text-sm); color: var(--color-muted); }
-.chat__foot p { font-size: var(--text-sm); max-width: 60ch; }
+/* ------------------------------------------------------------------ session terminal */
+/* One frame per sample, set the way Claude Code prints a session: a prompt mark
+   for the person, a disc for the model, an elbow under a call for its result. */
+.term { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto auto auto; min-height: 34.5rem; font-family: var(--font-outlier); font-size: var(--text-sm); line-height: 1.6; font-variant-numeric: tabular-nums slashed-zero; }
+.term__log, .turn__log { display: grid; align-content: start; gap: var(--space-sm); }
+.term__log { padding: var(--space-lg) var(--space-lg) var(--space-md); }
+.tl { position: relative; display: grid; grid-template-columns: 2ch minmax(0, 1fr); color: var(--color-ink-2); }
+.tl > p { grid-column: 2; max-width: 72ch; font-size: inherit; line-height: inherit; color: inherit; overflow-wrap: anywhere; }
+.tl::before { grid-area: 1 / 1; }
+.tl--you { margin-inline: calc(-1 * var(--space-xs)); padding: var(--space-3xs) var(--space-xs); border-radius: 4px; background: var(--color-paper-2); color: var(--color-ink); }
+.tl--you::before { content: ">"; color: var(--color-accent); }
+.tl--say::before, .tl--tool::before { content: ""; width: 0.55em; height: 0.55em; margin-top: 0.525em; border-radius: 50%; background: var(--color-ink-2); }
+.tl--tool::before { background: var(--color-cool); }
+.tl--tool .tl__b { color: var(--color-muted); }
+.tl--tool b { font-weight: 500; color: var(--color-cool); }
+.tl--out { margin-top: calc(-1 * var(--space-xs)); }
+.tl .tl__res { position: relative; padding-left: 3ch; color: var(--color-muted); }
+.tl__res::before { content: ""; position: absolute; left: 0.5ch; top: 0.3em; width: 1ch; height: 0.55em; border: solid var(--color-rule-2); border-width: 0 0 var(--rule-hair) var(--rule-hair); }
+.tl__res--pre { white-space: pre-line; }
+.tl__res a { color: var(--color-muted); }
+.tl__res a:hover { color: var(--color-accent); }
+.term__prompt { display: grid; grid-template-columns: 2ch minmax(0, 1fr); margin-inline: var(--space-lg); padding: var(--space-xs) var(--space-sm); border: var(--rule-hair) solid var(--color-rule-2); border-radius: var(--radius-pill); color: var(--color-ink); }
+.term__gt { color: var(--color-muted); }
+.term__in { display: grid; min-width: 0; }
+.term__in > * { grid-area: 1 / 1; }
+.term__caret { width: 1ch; height: 1.3em; margin-top: 0.15em; background: var(--color-ink-2); }
+.typed { justify-self: start; background: var(--color-paper-3); white-space: pre-wrap; overflow-wrap: anywhere; opacity: 0; visibility: hidden; }
+.typed .c { position: relative; opacity: 0; }
+.typed .c::after { content: ""; position: absolute; left: 100%; top: 0.1em; width: 1ch; height: 1.3em; background: var(--color-ink-2); opacity: 0; }
+.think { position: absolute; left: 0; top: 0; display: flex; gap: 1ch; color: var(--color-muted); white-space: nowrap; opacity: 0; visibility: hidden; }
+.think i { width: 1ch; font-style: normal; text-align: center; color: var(--color-cool); }
+.term__status { min-height: 1.6em; box-sizing: content-box; padding: var(--space-2xs) var(--space-lg) var(--space-md); padding-left: calc(var(--space-lg) + var(--space-sm)); font-size: var(--text-xs); line-height: 1.6; color: var(--color-muted); }
+.term__foot { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-md) var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); font-family: var(--font-body); color: var(--color-muted); }
+.term__foot p { font-size: var(--text-sm); line-height: 1.55; max-width: 60ch; }
+
 html:not(.js) [data-replay] { display: none; }
 @media (max-width: 40rem) {
   .switch__tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .chat__log { padding: var(--space-lg) var(--space-md); gap: var(--space-md); }
-  .chat__foot { padding: var(--space-md); flex-direction: column; align-items: flex-start; }
-  .line { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-2xs); }
+  .term { min-height: 0; font-size: var(--text-xs); }
+  .term__log { padding: var(--space-md) var(--space-md) var(--space-sm); }
+  .term__prompt { margin-inline: var(--space-md); }
+  .term__status { padding-inline: calc(var(--space-md) + var(--space-sm)) var(--space-md); }
+  .term__foot { padding: var(--space-md); flex-direction: column; align-items: flex-start; }
 }
 
-/* lines arrive in order; words of a reply stream in. Scoped to .js-chat, which
-   the chat script sets only once it is running, so a failed script hides nothing. */
-@keyframes line-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-@keyframes word-in { from { opacity: 0; } to { opacity: 1; } }
-.js-chat .chat .line { opacity: 0; }
-.js-chat .chat.is-playing .line { animation: line-in var(--dur-long) var(--ease-out) both; animation-delay: calc(var(--t, 0) * 1ms); }
-.js-chat .chat.is-playing .w { animation: word-in var(--dur-short) var(--ease-out) both; animation-delay: calc((var(--t, 0) + var(--w, 0) * 42) * 1ms); }
+/* The session plays as CSS animation: the person's line is typed at the prompt,
+   then lands in the log; a call prints, then its result; a reply streams by word.
+   The script only sets start times (--t) and toggles .is-playing. All of it is
+   scoped to .js-chat, which the script sets once running, so a failed script
+   hides nothing. */
+@keyframes row-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes on { from { opacity: 0; } to { opacity: 1; } }
+@keyframes held { from, to { opacity: 1; visibility: visible; } }
+@keyframes tick { from { transform: rotate(0deg); } to { transform: rotate(180deg); } }
+.js-chat .term .tl--you, .js-chat .term .tl:not(.tl--you)::before, .js-chat .term .tl:not(.tl--you) > p, .js-chat .term .term__status span { opacity: 0; }
+.js-chat .term.is-playing .tl--you, .js-chat .term.is-playing .tl:not(.tl--you)::before, .js-chat .term.is-playing .tl:not(.tl--you) > p { animation: row-in var(--dur-short) var(--ease-out) calc(var(--t, 0) * 1ms) both; }
+.js-chat .term.is-playing .tl > .tl__b + .tl__res { animation-delay: calc((var(--t, 0) + 320) * 1ms); }
+.js-chat .term.is-playing .w { animation: on var(--dur-micro) linear calc((var(--t, 0) + var(--w, 0) * 38) * 1ms) both; }
+.js-chat .term.is-playing .term__status span { animation: on var(--dur-short) var(--ease-out) calc(var(--t, 0) * 1ms) both; }
+.js-chat .term.is-playing .typed, .js-chat .term.is-playing .think { animation: held calc(var(--d, 0) * 1ms) steps(1) calc(var(--t, 0) * 1ms) 1; }
+.js-chat .term.is-playing .c { animation: on 1ms steps(1) calc((var(--t, 0) + var(--c, 0) * var(--k, 26)) * 1ms) both; }
+.js-chat .term.is-playing .c::after { animation: held calc(var(--h, var(--k, 26)) * 1ms) steps(1) calc((var(--t, 0) + var(--c, 0) * var(--k, 26)) * 1ms) 1; }
+.js-chat .term.is-playing .think i { animation: tick 600ms steps(6) calc(var(--t, 0) * 1ms) calc(var(--d, 600) / 600); }
 @media (prefers-reduced-motion: reduce) {
-  .js-chat .chat .line, .js-chat .chat.is-playing .line, .js-chat .chat.is-playing .w { opacity: 1; transform: none; animation: none; }
+  .js-chat .term .tl--you, .js-chat .term .tl:not(.tl--you)::before, .js-chat .term .tl:not(.tl--you) > p, .js-chat .term .term__status span,
+  .js-chat .term.is-playing .tl--you, .js-chat .term.is-playing .tl:not(.tl--you)::before, .js-chat .term.is-playing .tl:not(.tl--you) > p, .js-chat .term.is-playing .term__status span,
+  .js-chat .term.is-playing .w { opacity: 1; transform: none; animation: none; }
+  .js-chat .term.is-playing .typed, .js-chat .term.is-playing .think, .js-chat .term.is-playing .think i, .js-chat .term.is-playing .c, .js-chat .term.is-playing .c::after { animation: none; }
 }
 
 /* ------------------------------------------------------------------ switcher */
@@ -167,9 +205,8 @@ html:not(.js) .map__bar { display: none; }
 .map__pane { min-width: 0; min-height: 0; }
 .map__turn { display: grid; align-content: start; gap: var(--space-lg); padding: var(--space-lg); border-right: var(--rule-hair) solid var(--color-rule); overflow-y: auto; height: 44rem; }
 .map__turn h3 { font-size: var(--text-lg); letter-spacing: -0.02em; }
-.map__turn .line { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-2xs); }
-.map__turn .line__say { font-size: var(--text-sm); line-height: 1.55; }
-.turn__log { display: grid; gap: var(--space-md); }
+.turn__log { font-family: var(--font-outlier); font-size: var(--text-xs); line-height: 1.6; }
+.turn__log .tl--you { margin-inline: 0; }
 .calls { display: grid; gap: var(--space-2xs); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); }
 .calls__head { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); margin-bottom: var(--space-2xs); }
 .call { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--space-xs); align-items: baseline; width: 100%; padding: var(--space-2xs) var(--space-xs); border: 0; border-radius: 4px; background: none; color: var(--color-cool); font-family: var(--font-outlier); font-size: var(--text-xs); text-align: left; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out); }
