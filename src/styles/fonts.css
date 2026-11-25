@@ -1,0 +1,5 @@
+/* The two families, self-hosted from @fontsource, woff2 only. */
+@font-face { font-family: "Host Grotesk"; font-style: normal; font-display: swap; font-weight: 400; src: url("@fontsource/host-grotesk/files/host-grotesk-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Host Grotesk"; font-style: normal; font-display: swap; font-weight: 500; src: url("@fontsource/host-grotesk/files/host-grotesk-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Atkinson Hyperlegible Mono"; font-style: normal; font-display: swap; font-weight: 400; src: url("@fontsource/atkinson-hyperlegible-mono/files/atkinson-hyperlegible-mono-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Atkinson Hyperlegible Mono"; font-style: normal; font-display: swap; font-weight: 500; src: url("@fontsource/atkinson-hyperlegible-mono/files/atkinson-hyperlegible-mono-latin-500-normal.woff2") format("woff2"); }

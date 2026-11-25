@@ -104,6 +104,10 @@ function partials() {
             if (!file) throw new Error(`No record file "${id}"`)
             return esc(file.preview)
           })
+          // a figure's description is also its accessible name
+          .replace(/<figure\b[^>]*\sdata-alt="([^"]*)"[^>]*>/g, (tag, alt) =>
+            tag.includes('aria-label') ? tag : tag.replace(/>$/, ` aria-label="${alt}">`),
+          )
           .replace(/\{\{n:(\w+)\}\}/g, (_, key) => {
             if (!(key in n)) throw new Error(`No count "${key}"`)
             return n[key].toLocaleString('en-US')
@@ -113,9 +117,29 @@ function partials() {
   }
 }
 
+// The two text faces are needed for first paint, so the built pages preload them.
+function preloadFonts() {
+  return {
+    name: 'cbt-preload-fonts',
+    transformIndexHtml: {
+      order: 'post',
+      handler(html, ctx) {
+        if (!ctx.bundle) return
+        return Object.keys(ctx.bundle)
+          .filter(file => /host-grotesk-latin-(400|500)-normal-.*\.woff2$/.test(file))
+          .map(file => ({
+            tag: 'link',
+            attrs: { rel: 'preload', as: 'font', type: 'font/woff2', href: `./${file}`, crossorigin: '' },
+            injectTo: 'head',
+          }))
+      },
+    },
+  }
+}
+
 export default defineConfig({
   base: './',
-  plugins: [partials()],
+  plugins: [partials(), preloadFonts()],
   build: {
     target: 'es2022',
     // three.js and the knowledge base data are large by nature and load lazily.

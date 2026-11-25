@@ -3,7 +3,8 @@
 // splits replies into words so they can stream, and toggles the class that runs
 // it all. Times are passed to the stylesheet as custom properties.
 const TYPE_MS = 26 // per character at the prompt
-const WORD_MS = 38 // per word of a reply; the stylesheet uses the same step
+const WORD_MS = 38 // per word of a reply
+const RES_MS = 320 // a call's result prints this long after the call
 const THINK_MS = 600
 
 const set = (node, name, value) => node.style.setProperty(name, String(Math.round(value)))
@@ -42,6 +43,8 @@ function thinking(start) {
 function schedule(term) {
   const rows = [...term.querySelectorAll('.tl')]
   const input = term.querySelector('.term__in')
+  set(term, '--word', WORD_MS)
+  set(term, '--res', RES_MS)
   let t = 300
   let waiting = false // the person has spoken and the model has not answered yet
   for (const row of rows) {
@@ -74,7 +77,7 @@ function schedule(term) {
           body.append(w, ' ')
         })
         t += words.length * WORD_MS + 400 + Math.min(900, words.length * 45)
-      } else t += 760
+      } else t += RES_MS + 440
     }
   }
   // The status line is the plugin's; in a first session it appears with the command.

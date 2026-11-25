@@ -251,6 +251,27 @@ const conceptEntry = (file, id) => {
   if (!entry) throw new Error(`No concept ${id} in ${file}`)
   return JSON.stringify(entry, null, 2)
 }
+// The sample sessions on the home page name tools, arguments and results by
+// hand. Each must still exist in the plugin's code, or the build stops.
+{
+  const home = read(join(root, 'index.html'))
+  const source = read(join(plugin, 'hooks', 'register.ts'))
+  const shown = [...home.matchAll(/<b>cbt-self-help - (\w+)<\/b> \(MCP\)(?:\(([^)]*)\))?<\/p><p class="tl__res">([^<]*)<\/p>/g)]
+  for (const [, tool, args = '', result] of shown) {
+    const fail = what => {
+      throw new Error(`index.html shows ${what}, which the plugin does not have (tool ${tool})`)
+    }
+    if (!source.includes(`name: '${tool}'`)) fail(`the tool "${tool}"`)
+    const key = args.match(/^(\w+):/)?.[1]
+    if (key && !new RegExp(`\\b${key}: \\{`).test(source)) fail(`the argument "${key}"`)
+    const model = args.match(/model_id: "([^"]+)"/)?.[1]
+    if (model && !models.some(m => m.id === model)) fail(`the formulation model "${model}"`)
+    const stem = result.split(/[(\d]/)[0].trim()
+    if (!stem || !source.includes(stem)) fail(`the result "${result}"`)
+  }
+  if (!shown.length) throw new Error('index.html: no sample tool calls found to check')
+}
+
 // The refusals the plugin returns, copied from the code that enforces them.
 const refusal = fragment => {
   const source = read(join(plugin, 'hooks', 'register.ts'))

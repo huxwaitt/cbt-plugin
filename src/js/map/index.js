@@ -52,11 +52,19 @@ export async function initMap(root) {
     import('../../data/kb-core.json'),
     import('./scene.js').catch(() => null),
   ])
+  // The inspector's long text is the largest file here, so it is fetched when
+  // someone first looks at a point, not when the map starts.
   let detail = null
-  import('../../data/kb-detail.json').then(m => {
-    detail = m.default
-    if (shown) show(shown.id, shown.pinned)
-  })
+  let detailAsked = false
+  const wantDetail = () => {
+    if (detailAsked) return
+    detailAsked = true
+    import('../../data/kb-detail.json').then(m => {
+      detail = m.default
+      if (shown) show(shown.id, shown.pinned)
+    })
+  }
+  stage.addEventListener('pointerover', event => event.pointerType === 'mouse' && wantDetail(), { passive: true })
 
   const data = {
     core,
@@ -165,6 +173,7 @@ export async function initMap(root) {
   }
 
   function show(id, pinned) {
+    wantDetail()
     shown = { id, pinned }
     back.hidden = !pinned
     inspectTitle.textContent = pinned ? 'Pinned' : 'Under the pointer'

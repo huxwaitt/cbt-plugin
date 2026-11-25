@@ -17,7 +17,7 @@ if (map) {
           load()
         }
       },
-      { rootMargin: '900px 0px' },
+      { rootMargin: '50% 0px' },
     )
     io.observe(map)
   } else load()

@@ -109,20 +109,24 @@
         <button role="tab" type="button" id="seg-thoughts" aria-controls="tech-thoughts" aria-selected="true">For thoughts</button>
         <button role="tab" type="button" id="seg-actions" aria-controls="tech-actions" aria-selected="false" tabindex="-1">For actions</button>
       </div>
-      <dl class="index" role="tabpanel" id="tech-thoughts" aria-labelledby="seg-thoughts">
-        <div class="index__row"><dt>Catching the thought</dt><dd>Find the thought behind the feeling.</dd><dd class="mono">cognitive\identifying-automatic-thoughts.md</dd></div>
-        <div class="index__row"><dt>Thought records</dt><dd>One upsetting moment, in columns.</dd><dd class="mono">cognitive\thought-records.md</dd></div>
-        <div class="index__row"><dt>Examining the evidence</dt><dd>What you saw against what you assumed.</dd><dd class="mono">cognitive\cognitive-restructuring.md</dd></div>
-        <div class="index__row"><dt>Decatastrophizing</dt><dd>The worst case, and how you would cope.</dd><dd class="mono">cognitive\cognitive-restructuring.md</dd></div>
-        <div class="index__row"><dt>Worry postponement</dt><dd>A set time for worry, not all day.</dd><dd class="mono">cognitive\worry-and-rumination-techniques.md</dd></div>
-        <div class="index__row"><dt>Self-compassion</dt><dd>Answer yourself as you would a friend.</dd><dd class="mono">cognitive\self-compassion-techniques.md</dd></div>
-      </dl>
-      <dl class="index" role="tabpanel" id="tech-actions" aria-labelledby="seg-actions">
-        <div class="index__row"><dt>Behavioral activation</dt><dd>Small activities that matter, scheduled.</dd><dd class="mono">behavioral\behavioral-activation.md</dd></div>
-        <div class="index__row"><dt>Behavioral experiments</dt><dd>Turn a prediction into a small test.</dd><dd class="mono">behavioral\behavioral-experiments.md</dd></div>
-        <div class="index__row"><dt>Exposure ladders</dt><dd>Planning only, in small steps, never trauma memories.</dd><dd class="mono">behavioral\exposure-hierarchy.md</dd></div>
-        <div class="index__row"><dt>Problem solving</dt><dd>Define it, list options, choose one, review.</dd><dd class="mono">behavioral\problem-solving-therapy.md</dd></div>
-      </dl>
+      <div role="tabpanel" id="tech-thoughts" aria-labelledby="seg-thoughts">
+        <dl class="index">
+          <div class="index__row"><dt>Catching the thought</dt><dd>Find the thought behind the feeling.</dd><dd class="mono">cognitive\identifying-automatic-thoughts.md</dd></div>
+          <div class="index__row"><dt>Thought records</dt><dd>One upsetting moment, in columns.</dd><dd class="mono">cognitive\thought-records.md</dd></div>
+          <div class="index__row"><dt>Examining the evidence</dt><dd>What you saw against what you assumed.</dd><dd class="mono">cognitive\cognitive-restructuring.md</dd></div>
+          <div class="index__row"><dt>Decatastrophizing</dt><dd>The worst case, and how you would cope.</dd><dd class="mono">cognitive\cognitive-restructuring.md</dd></div>
+          <div class="index__row"><dt>Worry postponement</dt><dd>A set time for worry, not all day.</dd><dd class="mono">cognitive\worry-and-rumination-techniques.md</dd></div>
+          <div class="index__row"><dt>Self-compassion</dt><dd>Answer yourself as you would a friend.</dd><dd class="mono">cognitive\self-compassion-techniques.md</dd></div>
+        </dl>
+      </div>
+      <div role="tabpanel" id="tech-actions" aria-labelledby="seg-actions">
+        <dl class="index">
+          <div class="index__row"><dt>Behavioral activation</dt><dd>Small activities that matter, scheduled.</dd><dd class="mono">behavioral\behavioral-activation.md</dd></div>
+          <div class="index__row"><dt>Behavioral experiments</dt><dd>Turn a prediction into a small test.</dd><dd class="mono">behavioral\behavioral-experiments.md</dd></div>
+          <div class="index__row"><dt>Exposure ladders</dt><dd>Planning only, in small steps, never trauma memories.</dd><dd class="mono">behavioral\exposure-hierarchy.md</dd></div>
+          <div class="index__row"><dt>Problem solving</dt><dd>Define it, list options, choose one, review.</dd><dd class="mono">behavioral\problem-solving-therapy.md</dd></div>
+        </dl>
+      </div>
     </div>
   </div>
 </section>
@@ -130,10 +134,10 @@
 <section class="section section--s" id="measures">
   <div class="container">
     <div class="head head--split">
-      <h2>What it measures, and when</h2>
+      <h2 id="measures-title">What it measures, and when</h2>
       <p class="lead">A number and a plain band. Never a diagnosis.</p>
     </div>
-    <table class="table">
+    <table class="table" aria-labelledby="measures-title">
       <thead><tr><th scope="col">Measure</th><th scope="col">When</th><th scope="col">What you see</th></tr></thead>
       <tbody>
         <tr><td>Mood, 0 to 10</td><td>Every session</td><td>A number to compare</td></tr>
