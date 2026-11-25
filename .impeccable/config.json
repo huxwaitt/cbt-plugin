@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-25T06:20:21.947Z",
+        "reason": "assistant triage, not user confirmed: rendered sizes measured at 1440px are h1 84, h2 52, title 25, lead 21, body 16, small 14 (and 44/32/20/18/16 at 390px); the sizes are fluid clamp() tokens in src/styles/tokens.css that a static read of the HTML cannot resolve"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "features.html"
+        ],
+        "createdAt": "2026-11-25T06:20:21.955Z",
+        "reason": "assistant triage, not user confirmed: rendered sizes measured at 1440px are h1 84, h2 52, title 25, lead 21, body 16, small 14 (and 44/32/20/18/16 at 390px); the sizes are fluid clamp() tokens in src/styles/tokens.css that a static read of the HTML cannot resolve"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "safety.html"
+        ],
+        "createdAt": "2026-11-25T06:20:21.965Z",
+        "reason": "assistant triage, not user confirmed: rendered sizes measured at 1440px are h1 84, h2 52, title 25, lead 21, body 16, small 14 (and 44/32/20/18/16 at 390px); the sizes are fluid clamp() tokens in src/styles/tokens.css that a static read of the HTML cannot resolve"
+      }
+    ]
+  }
+}
