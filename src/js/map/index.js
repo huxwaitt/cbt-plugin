@@ -1,5 +1,5 @@
-// The map instrument: one turn of a sample session and why it does what it
-// does, the knowledge base and the person's record drawn side by side, and an
+// The map instrument: one turn of a sample session and what it does, the
+// knowledge base and the person's record drawn side by side, and an
 // inspector that says exactly what each lit point is.
 import session from '../../data/session.json'
 import { card } from './inspector.js'
@@ -31,7 +31,7 @@ const PARTS = [
     name: 'Your record',
     amber: true,
     note: 'A wiki the model keeps on your computer. Read when a session opens, written as it goes.',
-    groups: [['record', 'Files', 'What it knows about you, in pages you can open.']],
+    groups: [['record', 'Files', 'Your profile, formulation, sessions and topic pages.']],
   },
 ]
 const WHO = { person: 'You', guide: 'Claude', plugin: 'Output' }
@@ -266,7 +266,6 @@ export async function initMap(root) {
       'div',
       { class: 'turn__head' },
       el('h3', { text: step.title }),
-      el('p', { class: 'turn__label', text: 'Why it does this' }),
       el('p', { class: 'turn__gain', text: step.gain }),
     )
     turnEl.replaceChildren(head, log, calls)

@@ -61,8 +61,8 @@
   {
    "id": "open",
    "label": "Open",
-   "title": "A command opens the session",
-   "gain": "The rules are loaded before anything is said. What this is, what it must not do and what happens if you are in danger are in front of the model for every reply, so none of it depends on the model remembering.",
+   "title": "The command adds the protocol to the system prompt",
+   "gain": "protocol.md stays in the system prompt for the whole session. It holds the session structure, the safety rules and the limits on what the model may say.",
    "turns": [
     {
      "who": "person",
@@ -171,8 +171,8 @@
   {
    "id": "record",
    "label": "Record",
-   "title": "It reads your record before it speaks",
-   "gain": "So you don’t have to explain yourself again. Your name, where the last session ended and the task you took away all come from the pages it has just read.",
+   "title": "Reads your record first",
+   "gain": "record_read returns your profile, formulation, earlier sessions and topic pages. The greeting and the question about last week’s task are taken from them.",
    "turns": [
     {
      "who": "guide",
@@ -248,8 +248,8 @@
   {
    "id": "screen",
    "label": "Safety check",
-   "title": "It asks about your mood, then about safety",
-   "gain": "The question is asked every session because the protocol says so, not because the model happened to think of it. The crisis pages are named in advance, so a worrying answer is met with a written procedure.",
+   "title": "Asks for a mood score, then the safety question",
+   "gain": "The protocol requires both at the start of every session. The answers are saved to the session page. The risk pages are read only if the answer is anything but no.",
    "turns": [
     {
      "who": "person",
@@ -322,8 +322,8 @@
   {
    "id": "review",
    "label": "Practice task",
-   "title": "It asks what got in the way of the task",
-   "gain": "A missed task could be met with a pep talk. The page it read says to look for the practical obstacle and change the task, and that is the question it asks.",
+   "title": "Reads the page on reviewing practice tasks",
+   "gain": "The page says to ask what got in the way and to adjust the task. The reply does that, and the review is saved to the session page.",
    "turns": [
     {
      "who": "person",
@@ -386,8 +386,8 @@
   {
    "id": "moment",
    "label": "One moment",
-   "title": "It listens first, then writes down what happened",
-   "gain": "The pages on reflection and validation are why you are heard before anything is suggested. Saving the moment in fixed terms means the same pattern carries the same name next week, so it can be recognized.",
+   "title": "Reads the listening and formulation pages, saves the formulation",
+   "gain": "The reply reflects what was said and asks for the feeling, as the pages on reflective listening and validation describe. The moment is saved to formulation.md with vocabulary ids.",
    "turns": [
     {
      "who": "person",
@@ -593,8 +593,8 @@
   {
    "id": "evidence",
    "label": "The thought",
-   "title": "It asks what you saw and heard",
-   "gain": "Being told a thought is wrong rarely changes it. The page on Socratic dialogue is why the reply asks what you saw, and the vocabulary is why “mind reading” means here what it means in the sources.",
+   "title": "Reads the pages on Socratic dialogue and thought records",
+   "gain": "The reply asks what was seen and heard, then names the pattern by its vocabulary entry, cd.mind-reading. The change in belief is saved to the session page.",
    "turns": [
     {
      "who": "guide",
@@ -726,8 +726,8 @@
   {
    "id": "close",
    "label": "Close",
-   "title": "It sums up, agrees a task and saves the session",
-   "gain": "What was worked out is written down before the session ends, in pages you can open and edit. The next session starts by reading them.",
+   "title": "Writes the summary, task and topic page, then closes",
+   "gain": "The pages on practice tasks and session summaries are read first. The summary, the task and the topic page go to your record. The next session reads them when it opens.",
    "turns": [
     {
      "who": "guide",

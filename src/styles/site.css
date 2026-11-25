@@ -201,13 +201,12 @@ html:not(.js) .map__bar { display: none; }
 
 .map__body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 24rem); min-height: 0; }
 .map__pane { min-width: 0; min-height: 0; }
-/* What was said and why, above the two structures it touched. The height is
+/* What the turn did and what was said, above the two structures it touched. The height is
    held so the diagram does not move as the session plays. */
 .map__turn { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.5fr) minmax(0, 0.8fr); align-items: start; gap: var(--space-xl); padding: var(--space-lg); min-height: 17rem; border-bottom: var(--rule-hair) solid var(--color-rule); }
 .turn__head { display: grid; gap: var(--space-xs); }
 .map__turn h3 { font-size: var(--text-lg); letter-spacing: -0.02em; margin-bottom: var(--space-xs); }
-.turn__label { font-size: var(--text-sm); font-weight: 500; color: var(--color-accent); }
-.turn__gain { font-size: var(--text-md); line-height: 1.5; color: var(--color-ink); max-width: 44ch; }
+.turn__gain { font-size: var(--text-md); line-height: 1.5; color: var(--color-ink-2); max-width: 44ch; }
 html:not(.js) .map__turn { display: none; }
 .turn__log { font-family: var(--font-outlier); font-size: var(--text-xs); line-height: 1.6; }
 .turn__log .tl--you { margin-inline: 0; }
