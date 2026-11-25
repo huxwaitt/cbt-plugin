@@ -522,7 +522,7 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
       projected[node.i * 2 + 1] = (-v.y * 0.5 + 0.5) * height
     }
   }
-  const pick = (x, y) => {
+  const pick = (x, y, wide = 1) => {
     let best = null
     let bestScore = Infinity
     for (const node of nodes) {
@@ -530,7 +530,7 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
       const dy = projected[node.i * 2 + 1] - y
       const d = Math.hypot(dx, dy)
       const lit = to[node.i] >= 1
-      const reach = lit ? 20 : to[node.i] > 0 ? 12 : node.layer === 'sources' ? 5 : 8
+      const reach = (lit ? 20 : to[node.i] > 0 ? 12 : node.layer === 'sources' ? 5 : 8) * wide
       if (d > reach) continue
       const score = d / reach - (lit ? 1 : 0) // a lit point wins over its neighbours
       if (score < bestScore) {
@@ -563,7 +563,7 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
     const rect = canvas.getBoundingClientRect()
     if (down && !down.moved) {
       project()
-      const node = pick(event.clientX - rect.left, event.clientY - rect.top)
+      const node = pick(event.clientX - rect.left, event.clientY - rect.top, event.pointerType === 'mouse' ? 1 : 1.8)
       if (node) onPick?.(node.id)
       if (event.pointerType !== 'mouse') setHovered(node)
     }
@@ -588,7 +588,8 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
       const y = (-v.y * 0.5 + 0.5) * height
       el.style.transform = `translate(${Math.max(8, Math.round(x))}px, ${Math.round(y + 6)}px)`
     }
-    const node = hovered ?? hot
+    const found = hovered ?? hot
+    const node = found && found.id !== 'turn' ? found : null // the turn already carries a label
     nodeLabel.hidden = !node
     if (node) {
       v.set(node.x, node.y, node.z).project(camera)

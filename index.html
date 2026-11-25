@@ -17,7 +17,7 @@
 <section class="hero">
   <div class="container">
     <h1>Guided CBT self-help, inside Claude Code.</h1>
-    <p class="lead">Sessions backed by a researched CBT knowledge graph. Not therapy.</p>
+    <p class="lead">Sessions that read from {{n:pagesAll}} written pages citing {{n:sources}} sources. Not therapy.</p>
     <div class="actions">
       <a class="btn" href="#install">Install the plugin</a>
       <a class="btn btn--quiet" href="safety.html">Read the safety limits</a>
@@ -27,7 +27,7 @@
 
 <section class="section" id="sessions">
   <div class="container">
-    <div class="head">
+    <div class="head head--split">
       <h2>What a session sounds like</h2>
       <p class="lead">Four moments from sample sessions, with the tool calls left in.</p>
     </div>
@@ -55,7 +55,7 @@
       <div class="switch__panels">
         <section class="switch__panel" role="tabpanel" id="chat-start" aria-labelledby="tab-start">
           <h3>The first minute</h3>
-          <figure class="chat deep" data-slot="chat-start" data-kind="product" data-alt="Terminal capture of the first minute of a first session">
+          <figure class="chat deep" data-slot="chat-start" data-kind="product" data-alt="Sample transcript of the first minute of a first session">
             <ol class="chat__log">
               <li class="line line--person line--cmd"><span class="line__who">You</span><p class="line__say">/cbt-session</p></li>
               <li class="line line--plugin"><span class="line__who">Plugin</span><p class="line__say"><!-- @excerpt notice --></p></li>
@@ -73,7 +73,7 @@
 
         <section class="switch__panel" role="tabpanel" id="chat-map" aria-labelledby="tab-map">
           <h3>One moment, mapped</h3>
-          <figure class="chat deep" data-slot="chat-map" data-kind="product" data-alt="Terminal capture of a session mapping one moment with the five-part model">
+          <figure class="chat deep" data-slot="chat-map" data-kind="product" data-alt="Sample transcript of a session mapping one moment with the five-part model">
             <ol class="chat__log">
               <li class="line line--person"><span class="line__who">You</span><p class="line__say">Sunday night I opened my inbox and my stomach just dropped.</p></li>
               <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">Read kg\03-formulation\five-part-model.md</p></li>
@@ -93,7 +93,7 @@
 
         <section class="switch__panel" role="tabpanel" id="chat-task" aria-labelledby="tab-task">
           <h3>A task not done</h3>
-          <figure class="chat deep" data-slot="chat-task" data-kind="product" data-alt="Terminal capture of a session reviewing a practice task that was not done">
+          <figure class="chat deep" data-slot="chat-task" data-kind="product" data-alt="Sample transcript of a session reviewing a practice task that was not done">
             <ol class="chat__log">
               <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Last time you were going to try a ten minute walk on three mornings. How did that go?</p></li>
               <li class="line line--person"><span class="line__who">You</span><p class="line__say">I didn’t do any of them. I know, I’m useless at this.</p></li>
@@ -112,7 +112,7 @@
 
         <section class="switch__panel" role="tabpanel" id="chat-stop" aria-labelledby="tab-stop">
           <h3>When it stops</h3>
-          <figure class="chat deep" data-slot="chat-stop" data-kind="product" data-alt="Terminal capture of a session switching from an exercise to safety">
+          <figure class="chat deep" data-slot="chat-stop" data-kind="product" data-alt="Sample transcript of a session switching from an exercise to safety">
             <ol class="chat__log">
               <li class="line line--person"><span class="line__who">You</span><p class="line__say">Honestly, some nights I think everyone would be better off without me.</p></li>
               <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">Read kg\02-risk\crisis-response.md</p></li>
@@ -184,12 +184,12 @@
   <div class="container">
     <div class="head head--split">
       <h2>Your record is a local folder</h2>
-      <p class="lead">Plain Markdown and JSON on your computer. Only the conversation goes to the model.</p>
+      <p class="lead">Plain Markdown and JSON on your computer. The conversation goes to the model, including what the plugin reads from your record.</p>
     </div>
 
     <div class="home">
       <figure class="machine" data-slot="machine" data-kind="product" data-alt="Diagram of the two folders the plugin uses on your computer">
-        <div class="machine__name">This computer <span>where everything is stored</span></div>
+        <div class="machine__name">This computer <span>where it is stored</span></div>
         <div class="machine__parts">
           <div class="part part--record">
             <h3>Your record</h3>
@@ -230,25 +230,22 @@
       </figure>
     </div>
 
-    <ul class="never never--three">
-      <li><b>No server</b>Only local files are read and written.</li>
-      <li><b>No account</b>Just Claude Code itself.</li>
-      <li><b>No analytics</b>It sends nothing itself.</li>
-    </ul>
+    <p class="adds">The plugin adds no server, no new account and no analytics.</p>
   </div>
 </section>
 
 <section class="section section--s" id="limits">
   <div class="container rows">
     <div class="rows__head">
-      <h2>What it will not do</h2>
+      <h2>What it is told not to do</h2>
+      <p class="lead">Instructions in its protocol. A model can get one wrong.</p>
       <div class="actions"><a class="btn btn--quiet" href="safety.html">Read every limit</a></div>
     </div>
     <dl class="rows__list">
-      <div class="row"><dt>Call itself therapy</dt><dd>Every session starts by saying so.</dd></div>
-      <div class="row"><dt>Diagnose you</dt><dd>It names patterns. A score is never a diagnosis.</dd></div>
+      <div class="row"><dt>Call itself therapy</dt><dd>It opens every session saying so.</dd></div>
+      <div class="row"><dt>Diagnose you</dt><dd>A score is never called a diagnosis.</dd></div>
       <div class="row"><dt>Act in an emergency</dt><dd>It cannot call anyone. It gives crisis contacts.</dd></div>
-      <div class="row"><dt>Guide trauma exposure</dt><dd>Trauma, eating disorders, psychosis and medication go to professionals.</dd></div>
+      <div class="row"><dt>Guide trauma exposure</dt><dd>That work belongs with a professional.</dd></div>
     </dl>
   </div>
 </section>

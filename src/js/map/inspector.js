@@ -21,7 +21,7 @@ const el = (tag, attrs = {}, ...children) => {
     else if (key === 'text') node.textContent = value
     else node.setAttribute(key, value === true ? '' : value)
   }
-  node.append(...children.flat().filter(c => c !== null && c !== undefined && c !== false))
+  node.append(...children.flat(Infinity).filter(c => c !== null && c !== undefined && c !== false))
   return node
 }
 const section = (title, ...children) => el('div', { class: 'card__sec' }, el('h4', { text: title }), children)
@@ -42,17 +42,38 @@ const idList = (items, limit, noun) => [
 ]
 const pending = () => el('p', { class: 'card__more', text: 'Loading the text of this item.' })
 
-function why(activation, step) {
-  if (!activation.length) return section('This turn', el('p', { text: 'Not used in this turn. It is part of the knowledge base the session can reach.' }))
-  return activation.map(a => {
-    const call = a.call !== undefined ? step.calls[a.call] : null
-    return section(
-      'Why it lit up',
-      el('p', { class: 'why', text: a.why }),
-      a.quote ? el('p', { class: 'card__quote', text: `“${a.quote}”` }) : null,
-      call ? el('pre', { text: call.args ? `${call.tool} ${call.args}\n→ ${call.result}` : `${call.tool}\n→ ${call.result}` }) : null,
-    )
-  })
+// A long payload is cut to the lines that carry this item, with the item marked.
+function payload(call, id) {
+  const pre = el('pre')
+  let lines = call.args ? `${call.tool} ${call.args}`.split('\n') : [call.tool]
+  const carries = id && lines.some(line => line.includes(`"${id}"`))
+  if (carries && lines.length > 4) {
+    const kept = lines.filter((line, k) => k === 0 || line.includes(`"${id}"`))
+    lines = kept.length < lines.length ? [...kept, '  …'] : kept
+  }
+  for (const line of [...lines, `→ ${call.result}`]) {
+    const at = carries ? line.indexOf(`"${id}"`) : -1
+    if (at < 0) pre.append(line, '\n')
+    else pre.append(line.slice(0, at), el('mark', { text: `"${id}"` }), line.slice(at + id.length + 2), '\n')
+  }
+  return pre
+}
+
+// Why an item lit up this turn, and the call that touched it.
+function reasons(activation, step, id) {
+  if (!activation.length)
+    return { why: [section('This turn', el('p', { text: 'Not used in this turn. It is part of the knowledge base the session can reach.' }))], calls: [] }
+  const why = activation.map(a =>
+    section('Why it lit up', el('p', { class: 'why', text: a.why }), a.quote ? el('p', { class: 'card__quote', text: `“${a.quote}”` }) : null),
+  )
+  const calls = activation
+    .filter(a => a.call !== undefined)
+    .map(a => section('The call', payload(step.calls[a.call], id)))
+  return { why, calls }
+}
+const why = (activation, step, id) => {
+  const r = reasons(activation, step, id)
+  return [...r.why, ...r.calls]
 }
 
 function top(kind, title, id, activation, amber = false) {
@@ -94,7 +115,7 @@ export function card(id, { data, step, activation }) {
       'div',
       { class: 'card' },
       top(pitfall ? 'Pitfall page' : 'Reference page', page.t, id, activation),
-      why(activation, step),
+      why(activation, step, id),
       d
         ? [
             section('Bottom line', el('p', { text: d.b })),
@@ -138,7 +159,7 @@ export function card(id, { data, step, activation }) {
       'div',
       { class: 'card' },
       top('Formulation model', model.l, id, activation),
-      why(activation, step),
+      why(activation, step, id),
       d
         ? [
             section('What it maps', el('p', { text: d.s })),
@@ -166,12 +187,13 @@ export function card(id, { data, step, activation }) {
       'div',
       { class: 'card' },
       top('Vocabulary concept', concept.l, id, activation),
-      why(activation, step),
+      reasons(activation, step, id).why,
       d
         ? [
-            d.def ? section('Definition', el('p', { text: d.def })) : null,
             d.cw ? section('In plain words', el('p', { text: d.cw })) : null,
+            d.def ? section('Definition', el('p', { text: d.def })) : null,
             d.ex ? section('Example', el('p', { text: d.ex })) : null,
+            reasons(activation, step, id).calls,
             section('The scheme', facts([['Scheme', `${scheme.t} (${scheme.n})`], ['Group', d.g], ['Path', file ? `kg\\${win(file)}` : '', true]])),
             d.see.length
               ? section(`Pages that discuss it (${d.see.length})`, idList(d.see.map(p => [p, data.pages.get(p)?.t ?? '']), 6, 'pages'))
@@ -189,7 +211,7 @@ export function card(id, { data, step, activation }) {
       'div',
       { class: 'card' },
       top('Domain', domain.l, id, activation),
-      why(activation, step),
+      why(activation, step, id),
       section('The folder', facts([['Path', `kg\\${win(domain.p)}\\`, true], ['Index', `kg\\${win(domain.p)}\\_index.md`, true], ['Holds', `${pages.length - pitfalls} pages, ${pitfalls} pitfalls`]])),
       section('Its pages', idList(pages.filter(p => p.ty !== 'pitfall').map(p => [p.id.split('.').pop(), p.t]), 8, 'pages')),
     )
@@ -201,7 +223,7 @@ export function card(id, { data, step, activation }) {
       'div',
       { class: 'card' },
       top('Protocol section', part.t, 'protocol.md', activation),
-      why(activation, step),
+      why(activation, step, id),
       section('The file', facts([['Path', 'protocol.md, in the plugin folder', true], ['Length', `${part.words} words`], ['Loaded', 'into the system prompt while a session is open']])),
       section('The whole section', detail ? el('pre', { text: detail.protocol[id] }) : pending()),
     )
@@ -226,7 +248,7 @@ export function card(id, { data, step, activation }) {
     'div',
     { class: 'card card--amber' },
     top('Record file', file.file, `.cbt-self-help\\${file.file}`, activation, true),
-    why(activation, step),
+    why(activation, step, id),
     section('What it holds', el('p', { text: file.what })),
     section('What it looks like', el('pre', { text: file.preview }), el('p', { class: 'card__more', text: 'A sample in the plugin\'s real format. Yours stays on your computer.' })),
   )

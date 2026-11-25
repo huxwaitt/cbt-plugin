@@ -30,7 +30,7 @@ const el = (tag, attrs = {}, ...children) => {
     else if (key === 'text') node.textContent = value
     else node.setAttribute(key, value === true ? '' : value)
   }
-  node.append(...children.flat().filter(c => c !== null && c !== undefined && c !== false))
+  node.append(...children.flat(Infinity).filter(c => c !== null && c !== undefined && c !== false))
   return node
 }
 
