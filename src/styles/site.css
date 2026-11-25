@@ -71,6 +71,7 @@ main { display: block; }
 .hero h1 { max-width: 22ch; }
 .hero .lead { margin-top: var(--space-lg); max-width: 40ch; }
 .hero .actions { margin-top: var(--space-xl); }
+.hero__note { margin-top: var(--space-lg); font-size: var(--text-sm); line-height: 1.55; color: var(--color-muted); max-width: 64ch; }
 .hero--page h1 { max-width: 18ch; }
 
 .section { padding-block-end: var(--section-gap); }
