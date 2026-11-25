@@ -1,0 +1,863 @@
+{
+ "note": "An illustrative third session. The person and their words are written for this page. Every file name, page id, concept id, tool name and quoted rule is the one the plugin ships.",
+ "number": 3,
+ "record": [
+  {
+   "id": "record._data",
+   "file": "_data.json",
+   "what": "The plugin’s working copy of the record. The Markdown pages beside it are regenerated from it after every change.",
+   "preview": "{\n  \"format\": \"cbt-self-help-record\",\n  \"version\": 1,\n  \"created\": \"2026-11-05\",\n  \"profile\": { \"preferred_name\": \"Mara\", \"goals\": [ … ] },\n  \"formulation\": { \"model_id\": \"fm.five-part\", \"slots\": { … } },\n  \"sessions\": [ … 3 … ],\n  \"topics\": [ { \"slug\": \"work-stress\", … } ]\n}"
+  },
+  {
+   "id": "record.profile",
+   "file": "profile.md",
+   "what": "Name, goals, concerns, strengths, supports, current care.",
+   "preview": "---\nid: record.profile\nname: \"Mara\"\nsessions: 3\nupdated: 2026-11-19\n---\n\n# Profile: Mara\n\n## Goals\n- Speak at least once in each team meeting\n- Stop replaying meetings in the evening\n\n## Main concerns\nDread before meetings at work; going quiet when attention turns to me.\n\n## Strengths\nPrepared, well liked by the team, keeps going with tasks.\n\n## Supports\nPartner; a colleague I trust.\n\n## Current care\nNo current therapy. GP aware of low mood."
+  },
+  {
+   "id": "record.formulation",
+   "file": "formulation.md",
+   "what": "The current CBT formulation, coded with the vocabulary.",
+   "preview": "---\nid: record.formulation\nmodel: fm.five-part\nconcepts: [sit.being-observed, tt.negative-evaluation, cd.mind-reading, em.ashamed, bs.racing-heart, bs.freeze, bh.self-silencing]\nupdated: 2026-11-19\n---\n\n# Formulation: Five-part model (hot cross bun)\n\n## Situation (environment)\n- Being observed (`sit.being-observed`)\n> Team meeting. Manager looked at me when the numbers came up.\n\n## Thoughts\n- Negative evaluation (`tt.negative-evaluation`): 80/100\n- Mind reading (`cd.mind-reading`)\n> She thinks I'm useless.\n\n## Emotions (moods)\n- Ashamed (`em.ashamed`): 70/100\n\n## Physical reactions\n- Racing or pounding heart (`bs.racing-heart`): 60/100\n- Frozen (freeze response) (`bs.freeze`)\n\n## Behaviors\n- Self-silencing (`bh.self-silencing`)\n> Said nothing for the rest of the meeting."
+  },
+  {
+   "id": "record.topics-index",
+   "file": "topics\\_index.md",
+   "what": "What is understood about each theme so far, written and revised across sessions.",
+   "preview": "# Topics\n\nWhat is understood about each theme so far, written and revised across sessions.\nEach claim cites the session it came from. Read them, and correct anything that is wrong.\n\n| Topic | Summary | Updated |\n|---|---|---|\n| [Work stress](work-stress.md) | Meetings where attention turns to me set off dread and going quiet. | 2026-11-19 |"
+  },
+  {
+   "id": "record.topic-work-stress",
+   "file": "topics\\work-stress.md",
+   "what": "A topic page: what is understood so far about one theme, in plain prose. You can edit it by hand and your edits are treated as authoritative.",
+   "preview": "---\nid: topics.work-stress\ntitle: \"Work stress\"\nsummary: \"Meetings where attention turns to me set off dread and going quiet.\"\nconcepts: [sit.being-observed, cd.mind-reading, bh.self-silencing]\nsessions: [session-001, session-002, session-003]\nrelated:\n  - {id: cognitive.thought-records, rel: see-also}\nupdated: 2026-11-19\n---\n\n# Work stress\n\nThe dread starts before meetings and is strongest when attention turns to me [session-002]. In Thursday's meeting a look from my manager set off the thought \"she thinks I'm useless\"; I felt ashamed and went quiet [session-003]. Looking at what I saw and heard brought my belief in that thought from 80 to 45 [session-003].\n\nOpen question: does speaking early in a meeting change how the rest of it feels?"
+  },
+  {
+   "id": "record.sessions-index",
+   "file": "sessions\\_index.md",
+   "what": "One row per session: date, status, mood, PHQ-9, GAD-7 and the practice task.",
+   "preview": "# Sessions\n\n| Session | Date | Status | Mood | PHQ-9 | GAD-7 | Practice task |\n|---|---|---|---|---|---|---|\n| [001](session-001.md) | 2026-11-05 | closed | 5 | 9 | 11 | Notice one moment of dread and note it |\n| [002](session-002.md) | 2026-11-12 | closed | 5 |  |  | Note two moments when the same dread shows up |\n| [003](session-003.md) | 2026-11-19 | closed | 4 |  |  | One moment in three columns, straight after stand-up |"
+  },
+  {
+   "id": "record.session-001",
+   "file": "sessions\\session-001.md",
+   "what": "The first session: welcome, baseline PHQ-9 and GAD-7, one moment mapped, goals agreed.",
+   "preview": "---\nid: sessions.session-001\ndate: 2026-11-05\nstatus: closed\nmood: 5\nphq9: 9\ngad7: 11\nrisk_screened: true\nrisk_flag: false\nconcepts: [sit.performance-evaluation, em.dread]\nrelated:\n  - {id: 03-formulation.five-part-model, rel: see-also}\n---\n\n# Session 1: 2026-11-05"
+  },
+  {
+   "id": "record.session-002",
+   "file": "sessions\\session-002.md",
+   "what": "The second session: the moment before Monday stand-up, mapped with the five-part model.",
+   "preview": "---\nid: sessions.session-002\ndate: 2026-11-12\nstatus: closed\nmood: 5\nphq9: null\ngad7: null\nrisk_screened: true\nrisk_flag: false\nconcepts: [sit.performance-evaluation, em.dread, bs.butterflies]\nrelated:\n  - {id: cognitive.identifying-automatic-thoughts, rel: see-also}\n---\n\n# Session 2: 2026-11-12"
+  },
+  {
+   "id": "record.session-003",
+   "file": "sessions\\session-003.md",
+   "what": "This session. Written step by step, so a chat that closes early loses nothing already noted.",
+   "preview": "---\nid: sessions.session-003\ndate: 2026-11-19\nstatus: closed\nmood: 4\nphq9: null\ngad7: null\nrisk_screened: true\nrisk_flag: false\nconcepts: [sit.being-observed, tt.negative-evaluation, cd.mind-reading, em.ashamed, bs.racing-heart, bs.freeze, bh.self-silencing]\nrelated:\n  - {id: 05-session-structure.homework-review-and-adherence, rel: see-also}\n  - {id: responding-in-session.reflective-listening, rel: see-also}\n  - {id: responding-in-session.validation, rel: see-also}\n  - {id: cognitive.identifying-automatic-thoughts, rel: see-also}\n  - {id: 03-formulation.five-part-model, rel: see-also}\n  - {id: responding-in-session.socratic-dialogue, rel: see-also}\n  - {id: cognitive.thought-records, rel: see-also}\n---\n\n# Session 3: 2026-11-19\n\n## Summary\nA look in a meeting set off \"she thinks I'm useless\", shame and a racing heart, and I went quiet. Checking what I saw moved the belief from 80 to 45.\n\n## Notes\n- 18:02 Mood 4 of 10. Safety screen asked directly: no thoughts of harming self or others.\n- 18:09 Noted one moment of two; straight into the next meeting each time.\n- 18:21 Mapped Thursday's meeting with the five-part model.\n- 18:34 Belief in the thought went from 80 to 45.\n\n## Practice task for next time\nOne moment in three columns, straight after stand-up."
+  }
+ ],
+ "steps": [
+  {
+   "id": "open",
+   "label": "Open",
+   "title": "A command opens the session",
+   "turns": [
+    {
+     "who": "person",
+     "cmd": true,
+     "text": "/cbt-session"
+    },
+    {
+     "who": "plugin",
+     "text": "CBT self-help session. This is a guided self-help tool based on cognitive behavioral therapy (CBT) techniques. It is not therapy and does not replace a therapist, doctor or other professional care."
+    }
+   ],
+   "calls": [
+    {
+     "tool": "/cbt-session",
+     "args": "",
+     "result": "Session 3 opened in the record. protocol.md added to the system prompt. The notice is shown."
+    }
+   ],
+   "activates": [
+    {
+     "id": "protocol.session-mode",
+     "layer": "protocol",
+     "how": "context",
+     "why": "While a session is open the plugin adds protocol.md to the system prompt. All nine sections stay in context for every turn that follows.",
+     "quote": "This mode replaces your usual coding work until the session ends."
+    },
+    {
+     "id": "protocol.what-you-are-and-are-not",
+     "layer": "protocol",
+     "how": "context",
+     "why": "In context from the first turn.",
+     "quote": "You are not a therapist, this is not therapy, and you never call it therapy. You do not diagnose."
+    },
+    {
+     "id": "protocol.safety-comes-first-every-session",
+     "layer": "protocol",
+     "how": "context",
+     "why": "In context from the first turn, and it overrides every other section.",
+     "quote": "This section overrides everything else in this protocol."
+    },
+    {
+     "id": "protocol.recommend-professional-care-when",
+     "layer": "protocol",
+     "how": "context",
+     "why": "In context from the first turn.",
+     "quote": "Say it plainly and warmly, give the reason, and keep helping with what is safe to do here."
+    },
+    {
+     "id": "protocol.the-knowledge-base",
+     "layer": "protocol",
+     "how": "context",
+     "why": "In context from the first turn.",
+     "quote": "Use it; do not answer clinical questions from general knowledge when a page covers them."
+    },
+    {
+     "id": "protocol.the-session-record",
+     "layer": "protocol",
+     "how": "context",
+     "why": "In context from the first turn.",
+     "quote": "Write as you go, never only at the end: if the chat closes mid-session, everything written so far is kept."
+    },
+    {
+     "id": "protocol.session-structure",
+     "layer": "protocol",
+     "how": "context",
+     "why": "In context from the first turn.",
+     "quote": "Read the record. Greet them by name and say briefly where you left off."
+    },
+    {
+     "id": "protocol.how-to-talk",
+     "layer": "protocol",
+     "how": "context",
+     "why": "In context from the first turn.",
+     "quote": "Short turns: usually two to five sentences. One question at a time."
+    },
+    {
+     "id": "protocol.leaving-session-mode",
+     "layer": "protocol",
+     "how": "context",
+     "why": "In context from the first turn.",
+     "quote": "If the person asks for something unrelated (coding, files), ask whether they want to end the session first."
+    },
+    {
+     "id": "record.session-003",
+     "layer": "record",
+     "how": "written",
+     "why": "The plugin opens session 3 and saves it at once with status open. A session left open by an earlier chat is marked “not wrapped up”.",
+     "call": 0
+    },
+    {
+     "id": "record._data",
+     "layer": "record",
+     "how": "written",
+     "why": "Every change is written to _data.json first; the Markdown pages are regenerated from it.",
+     "call": 0
+    },
+    {
+     "id": "record.sessions-index",
+     "layer": "record",
+     "how": "written",
+     "why": "Regenerated with a new row for session 3.",
+     "call": 0
+    }
+   ]
+  },
+  {
+   "id": "record",
+   "label": "Record",
+   "title": "It reads your record before it speaks",
+   "turns": [
+    {
+     "who": "guide",
+     "text": "Welcome back, Mara. Last time we mapped the moment before Monday stand-up, and you were going to note two moments this week when the same dread showed up. Before we pick that up, how has your mood been this week, from 0 to 10?"
+    }
+   ],
+   "calls": [
+    {
+     "tool": "record_read",
+     "args": "{}",
+     "result": "RECORD OVERVIEW: 3 sessions, 1 topic pages. Profile, formulation, one row per session, sessions 1 and 2 in full, topics\\work-stress.md in full."
+    }
+   ],
+   "activates": [
+    {
+     "id": "protocol.the-session-record",
+     "layer": "protocol",
+     "how": "context",
+     "why": "The rule that makes this the first call of every session.",
+     "quote": "record_read: call it first, every session, with no arguments."
+    },
+    {
+     "id": "protocol.session-structure",
+     "layer": "protocol",
+     "how": "context",
+     "why": "Later sessions, step 1.",
+     "quote": "Read the record. Greet them by name and say briefly where you left off."
+    },
+    {
+     "id": "record._data",
+     "layer": "record",
+     "how": "recordRead",
+     "why": "record_read builds its overview from this file and keeps it under 40,000 bytes so it always fits in one result.",
+     "call": 0
+    },
+    {
+     "id": "record.profile",
+     "layer": "record",
+     "how": "recordRead",
+     "why": "Always in the overview: the name, goals, concerns, strengths, supports and current care.",
+     "call": 0
+    },
+    {
+     "id": "record.formulation",
+     "layer": "record",
+     "how": "recordRead",
+     "why": "Always in the overview: the shared formulation, coded with vocabulary ids.",
+     "call": 0
+    },
+    {
+     "id": "record.session-001",
+     "layer": "record",
+     "how": "recordRead",
+     "why": "Every session has a row in the overview; the last two are returned in full.",
+     "call": 0
+    },
+    {
+     "id": "record.session-002",
+     "layer": "record",
+     "how": "recordRead",
+     "why": "The last session, in full: this is where “where we left off” comes from.",
+     "call": 0
+    },
+    {
+     "id": "record.topic-work-stress",
+     "layer": "record",
+     "how": "recordRead",
+     "why": "Topic pages are read at the start of each session and used, not only the last session, to pick up the thread.",
+     "call": 0
+    }
+   ]
+  },
+  {
+   "id": "screen",
+   "label": "Safety check",
+   "title": "Mood, then a direct safety question",
+   "turns": [
+    {
+     "who": "person",
+     "text": "About a 4. Rough week."
+    },
+    {
+     "who": "guide",
+     "text": "A 4, and a rough week. I ask this every session: since we last spoke, have you had any thoughts of harming yourself, ending your life, or harming someone else?"
+    },
+    {
+     "who": "person",
+     "text": "No. Nothing like that."
+    }
+   ],
+   "calls": [
+    {
+     "tool": "session_note",
+     "args": "{ \"mood\": 4, \"risk_screened\": true,\n  \"note\": \"Mood 4 of 10. Safety screen asked directly: no thoughts of harming self or others.\" }",
+     "result": "Saved to session 3."
+    }
+   ],
+   "activates": [
+    {
+     "id": "protocol.safety-comes-first-every-session",
+     "layer": "protocol",
+     "how": "context",
+     "why": "The screen is asked at the start of every session, whatever the mood score.",
+     "quote": "After the mood check, ask directly and kindly whether, since you last spoke, they have had thoughts of harming themselves, ending their life, or harming someone else. Asking directly does not increase risk."
+    },
+    {
+     "id": "protocol.session-structure",
+     "layer": "protocol",
+     "how": "context",
+     "why": "Later sessions, step 2.",
+     "quote": "Mood check (0 to 10) and the safety screen."
+    },
+    {
+     "id": "02-risk",
+     "layer": "router",
+     "how": "armed",
+     "why": "The risk domain is not opened this turn. It is where the session goes the moment an answer is anything but no."
+    },
+    {
+     "id": "02-risk.crisis-response",
+     "layer": "pages",
+     "how": "armed",
+     "why": "Not read this turn. One of three pages the protocol names to read when safety is triggered."
+    },
+    {
+     "id": "02-risk.safety-planning",
+     "layer": "pages",
+     "how": "armed",
+     "why": "Not read this turn. One of three pages the protocol names to read when safety is triggered."
+    },
+    {
+     "id": "02-risk.suicide-risk-assessment",
+     "layer": "pages",
+     "how": "armed",
+     "why": "Not read this turn. One of three pages the protocol names to read when safety is triggered."
+    },
+    {
+     "id": "record.session-003",
+     "layer": "record",
+     "how": "written",
+     "why": "The mood score and the fact that the screen was asked are written straight away, not at the end.",
+     "call": 0
+    }
+   ]
+  },
+  {
+   "id": "review",
+   "label": "Practice task",
+   "title": "A task not done is information",
+   "turns": [
+    {
+     "who": "person",
+     "text": "I only caught one moment. I kept forgetting to write them down."
+    },
+    {
+     "who": "guide",
+     "text": "One moment caught, and the forgetting got in the way of the rest. That tells us something about the task, not about you. What was happening at the times you meant to write and didn’t?"
+    },
+    {
+     "who": "person",
+     "text": "I was straight into the next meeting."
+    }
+   ],
+   "calls": [
+    {
+     "tool": "Read",
+     "args": "kg\\05-session-structure\\homework-review-and-adherence.md",
+     "result": "Bottom line read first."
+    },
+    {
+     "tool": "session_note",
+     "args": "{ \"homework_review\": \"Noted one moment of two. Straight into the next meeting each time.\",\n  \"pages_used\": [\"05-session-structure.homework-review-and-adherence\"] }",
+     "result": "Saved to session 3."
+    }
+   ],
+   "activates": [
+    {
+     "id": "protocol.session-structure",
+     "layer": "protocol",
+     "how": "context",
+     "why": "Later sessions, step 3.",
+     "quote": "A task not done is information, not failure: explore what got in the way."
+    },
+    {
+     "id": "05-session-structure",
+     "layer": "router",
+     "how": "routed",
+     "why": "The router sends “homework design and review” questions to this domain."
+    },
+    {
+     "id": "05-session-structure.homework-review-and-adherence",
+     "layer": "pages",
+     "how": "read",
+     "why": "Read with the Read tool before replying. The reply follows its bottom line: look for practical obstacles and adjust the task rather than blame the person.",
+     "call": 0
+    },
+    {
+     "id": "record.session-003",
+     "layer": "record",
+     "how": "written",
+     "why": "The review is noted, and the page relied on is listed in pages_used so the session page links to it.",
+     "call": 1,
+     "links": [
+      "05-session-structure.homework-review-and-adherence"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "moment",
+   "label": "One moment",
+   "title": "One moment, mapped in five parts",
+   "turns": [
+    {
+     "who": "person",
+     "text": "Thursday’s team meeting. My manager looked straight at me when the numbers came up and I froze. I thought, she thinks I’m useless."
+    },
+    {
+     "who": "guide",
+     "text": "She looked at you just as the numbers came up, you froze, and the thought was that she sees you as useless. That sounds like a horrible few seconds. When that thought landed, what did you feel?"
+    },
+    {
+     "who": "person",
+     "text": "Ashamed. My heart was going and I didn’t say a word for the rest of the meeting."
+    }
+   ],
+   "calls": [
+    {
+     "tool": "Read",
+     "args": "kg\\06-therapeutic-relationship\\responding-in-session\\reflective-listening.md",
+     "result": "Bottom line read first."
+    },
+    {
+     "tool": "Read",
+     "args": "kg\\06-therapeutic-relationship\\responding-in-session\\validation.md",
+     "result": "Bottom line read first."
+    },
+    {
+     "tool": "Read",
+     "args": "kg\\07-interventions\\cognitive\\identifying-automatic-thoughts.md",
+     "result": "Bottom line read first."
+    },
+    {
+     "tool": "Read",
+     "args": "kg\\03-formulation\\five-part-model.md",
+     "result": "Bottom line read first."
+    },
+    {
+     "tool": "formulation_update",
+     "args": "{ \"model_id\": \"fm.five-part\", \"slots\": [\n  { \"slot\": \"situation\", \"concepts\": [{ \"id\": \"sit.being-observed\" }],\n    \"free_text\": \"Team meeting. Manager looked at me when the numbers came up.\" },\n  { \"slot\": \"thoughts\", \"concepts\": [{ \"id\": \"tt.negative-evaluation\", \"rating\": 80 }, { \"id\": \"cd.mind-reading\" }],\n    \"free_text\": \"She thinks I'm useless.\" },\n  { \"slot\": \"emotions\", \"concepts\": [{ \"id\": \"em.ashamed\", \"rating\": 70 }] },\n  { \"slot\": \"physical\", \"concepts\": [{ \"id\": \"bs.racing-heart\", \"rating\": 60 }, { \"id\": \"bs.freeze\" }] },\n  { \"slot\": \"behaviors\", \"concepts\": [{ \"id\": \"bh.self-silencing\" }],\n    \"free_text\": \"Said nothing for the rest of the meeting.\" } ] }",
+     "result": "Formulation saved (Five-part model (hot cross bun))."
+    },
+    {
+     "tool": "session_note",
+     "args": "{ \"note\": \"Mapped Thursday's meeting with the five-part model.\",\n  \"concepts\": [\"sit.being-observed\", \"tt.negative-evaluation\", \"cd.mind-reading\", \"em.ashamed\", \"bs.racing-heart\", \"bs.freeze\", \"bh.self-silencing\"],\n  \"pages_used\": [\"responding-in-session.reflective-listening\", \"responding-in-session.validation\", \"cognitive.identifying-automatic-thoughts\", \"03-formulation.five-part-model\"] }",
+     "result": "Saved to session 3."
+    }
+   ],
+   "activates": [
+    {
+     "id": "protocol.how-to-talk",
+     "layer": "protocol",
+     "how": "context",
+     "why": "Why the reply repeats her words back and names the feeling before it asks anything.",
+     "quote": "Reflect before you ask. Validate the feeling before inviting change. Use their words."
+    },
+    {
+     "id": "protocol.the-knowledge-base",
+     "layer": "protocol",
+     "how": "context",
+     "why": "Why the response pages are opened rather than answered from memory.",
+     "quote": "Read the relevant ones early in each session and follow them."
+    },
+    {
+     "id": "protocol.session-structure",
+     "layer": "protocol",
+     "how": "context",
+     "why": "Why the first map is always the five-part model.",
+     "quote": "Choose the formulation model with the person's presentation: start with the five-part model"
+    },
+    {
+     "id": "06-therapeutic-relationship/responding-in-session",
+     "layer": "router",
+     "how": "routed",
+     "why": "The router sends “how to respond to what a client just said” here."
+    },
+    {
+     "id": "07-interventions/cognitive",
+     "layer": "router",
+     "how": "routed",
+     "why": "The router sends techniques for thoughts, images and beliefs here."
+    },
+    {
+     "id": "03-formulation",
+     "layer": "router",
+     "how": "routed",
+     "why": "The router sends “turning what was said into a shared explanation” here."
+    },
+    {
+     "id": "responding-in-session.reflective-listening",
+     "layer": "pages",
+     "how": "read",
+     "why": "Read before replying. The first sentence of the reply is a reflection: a statement, not a question, that returns what she said.",
+     "call": 0
+    },
+    {
+     "id": "responding-in-session.validation",
+     "layer": "pages",
+     "how": "read",
+     "why": "Read before replying. “That sounds like a horrible few seconds” validates the feeling without agreeing that the thought is true.",
+     "call": 1
+    },
+    {
+     "id": "cognitive.identifying-automatic-thoughts",
+     "layer": "pages",
+     "how": "read",
+     "why": "Read before replying. The question follows the emotion to find the hot thought.",
+     "call": 2
+    },
+    {
+     "id": "03-formulation.five-part-model",
+     "layer": "pages",
+     "how": "read",
+     "why": "Read before the map is drawn: one specific, recent episode, in her own words.",
+     "call": 3
+    },
+    {
+     "id": "fm.five-part",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "The formulation model chosen. Its five slots decide which vocabulary schemes can fill each box.",
+     "call": 4
+    },
+    {
+     "id": "sit.being-observed",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "Situation slot. “My manager looked straight at me.”",
+     "call": 4
+    },
+    {
+     "id": "tt.negative-evaluation",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "Thoughts slot, the content of the thought, believed 80 of 100. “She thinks I’m useless.”",
+     "call": 4
+    },
+    {
+     "id": "cd.mind-reading",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "Thoughts slot, the bias in how the thought was reached: assuming what another person thinks.",
+     "call": 4
+    },
+    {
+     "id": "em.ashamed",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "Emotions slot, rated 70 of 100. “Ashamed.”",
+     "call": 4
+    },
+    {
+     "id": "bs.racing-heart",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "Physical reactions slot, rated 60 of 100. “My heart was going.”",
+     "call": 4
+    },
+    {
+     "id": "bs.freeze",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "Physical reactions slot. “I froze.”",
+     "call": 4
+    },
+    {
+     "id": "bh.self-silencing",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "Behaviors slot. “I didn’t say a word for the rest of the meeting.”",
+     "call": 4
+    },
+    {
+     "id": "record.formulation",
+     "layer": "record",
+     "how": "written",
+     "why": "formulation_update checks every id against the vocabulary and refuses the save if one is unknown.",
+     "call": 4,
+     "links": [
+      "fm.five-part",
+      "sit.being-observed",
+      "tt.negative-evaluation",
+      "cd.mind-reading",
+      "em.ashamed",
+      "bs.racing-heart",
+      "bs.freeze",
+      "bh.self-silencing"
+     ]
+    },
+    {
+     "id": "record.session-003",
+     "layer": "record",
+     "how": "written",
+     "why": "The note carries the concept ids and page ids, which link this session into the knowledge graph.",
+     "call": 5,
+     "links": [
+      "responding-in-session.reflective-listening",
+      "responding-in-session.validation",
+      "cognitive.identifying-automatic-thoughts",
+      "03-formulation.five-part-model"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "evidence",
+   "label": "The thought",
+   "title": "A question, not an argument",
+   "turns": [
+    {
+     "who": "guide",
+     "text": "You believed “she thinks I’m useless” at about 80 out of 100. I wonder what you actually saw and heard from her in that moment?"
+    },
+    {
+     "who": "person",
+     "text": "She looked at me. Then she asked Priya about the forecast."
+    },
+    {
+     "who": "guide",
+     "text": "So what you saw was a look, and then a question to someone else. CBT has a name for filling in what another person is thinking: mind reading. How does that sit with what happened?"
+    },
+    {
+     "who": "person",
+     "text": "It fits. I’d say I believe it about 45 now."
+    }
+   ],
+   "calls": [
+    {
+     "tool": "Read",
+     "args": "kg\\06-therapeutic-relationship\\responding-in-session\\socratic-dialogue.md",
+     "result": "Bottom line read first."
+    },
+    {
+     "tool": "Read",
+     "args": "kg\\07-interventions\\cognitive\\thought-records.md",
+     "result": "Bottom line read first."
+    },
+    {
+     "tool": "Read",
+     "args": "kg\\07-interventions\\cognitive\\identifying-cognitive-distortions.md",
+     "result": "Bottom line read first."
+    },
+    {
+     "tool": "Read",
+     "args": "kg\\07-interventions\\cognitive\\pitfall-debating-the-client.md",
+     "result": "Bottom line read first."
+    },
+    {
+     "tool": "session_note",
+     "args": "{ \"techniques\": [\"examining the evidence\"],\n  \"note\": \"Belief in the thought went from 80 to 45 after looking at what was seen and heard.\",\n  \"concepts\": [\"cd.mind-reading\"],\n  \"pages_used\": [\"responding-in-session.socratic-dialogue\", \"cognitive.thought-records\"] }",
+     "result": "Saved to session 3."
+    }
+   ],
+   "activates": [
+    {
+     "id": "protocol.how-to-talk",
+     "layer": "protocol",
+     "how": "context",
+     "why": "Why the reply asks what she saw instead of telling her the thought is wrong.",
+     "quote": "Socratic questions over explanations: help them find the answer. Use tentative language (\"I wonder if...\", \"Could it be that...?\")."
+    },
+    {
+     "id": "protocol.what-you-are-and-are-not",
+     "layer": "protocol",
+     "how": "context",
+     "why": "Naming a pattern is allowed; a diagnosis is not.",
+     "quote": "You may name patterns the person describes (\"that sounds like what CBT calls catastrophizing\") and suggest a professional assessment."
+    },
+    {
+     "id": "protocol.session-structure",
+     "layer": "protocol",
+     "how": "context",
+     "why": "Later sessions, step 5.",
+     "quote": "Work on the item with a technique that fits the formulation […] Read the technique's page first."
+    },
+    {
+     "id": "06-therapeutic-relationship/responding-in-session",
+     "layer": "router",
+     "how": "routed",
+     "why": "Socratic dialogue is a way of responding, so it lives in this domain."
+    },
+    {
+     "id": "07-interventions/cognitive",
+     "layer": "router",
+     "how": "routed",
+     "why": "Thought records and thinking traps are cognitive techniques."
+    },
+    {
+     "id": "responding-in-session.socratic-dialogue",
+     "layer": "pages",
+     "how": "read",
+     "why": "Read before the question is asked: informational question, listen, summarize, then a question that applies what was found.",
+     "call": 0
+    },
+    {
+     "id": "cognitive.thought-records",
+     "layer": "pages",
+     "how": "read",
+     "why": "Read before the technique is used. Its three-column start becomes the practice task.",
+     "call": 1
+    },
+    {
+     "id": "cognitive.identifying-cognitive-distortions",
+     "layer": "pages",
+     "how": "read",
+     "why": "Read before the pattern is named, in plain words, the first time it is used.",
+     "call": 2
+    },
+    {
+     "id": "cognitive.pitfall-debating-the-client",
+     "layer": "pages",
+     "how": "read",
+     "why": "A pitfall page: what going wrong looks like. Leading questions that end in “so how can you still think that?” are a debate, not discovery.",
+     "call": 3
+    },
+    {
+     "id": "cd.mind-reading",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "Attached to the note. The same id is already in the formulation, so the pattern has one name across the record.",
+     "call": 4
+    },
+    {
+     "id": "record.session-003",
+     "layer": "record",
+     "how": "written",
+     "why": "One line for the timeline, the technique used, and the pages relied on.",
+     "call": 4,
+     "links": [
+      "cd.mind-reading",
+      "responding-in-session.socratic-dialogue",
+      "cognitive.thought-records"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "close",
+   "label": "Close",
+   "title": "Summary, practice task, and the record closes",
+   "turns": [
+    {
+     "who": "guide",
+     "text": "Here is where we got to. A look in a meeting set off “she thinks I’m useless”, shame and a racing heart, and you went quiet. Checking what you saw moved the belief from 80 to 45. This week, would you note one moment like it in three columns: what happened, what you felt, what went through your mind?"
+    },
+    {
+     "who": "person",
+     "text": "Yes. I’ll set a reminder for straight after stand-up."
+    }
+   ],
+   "calls": [
+    {
+     "tool": "Read",
+     "args": "kg\\05-session-structure\\homework-design.md",
+     "result": "Bottom line read first."
+    },
+    {
+     "tool": "Read",
+     "args": "kg\\05-session-structure\\session-summaries-and-feedback.md",
+     "result": "Bottom line read first."
+    },
+    {
+     "tool": "topic_write",
+     "args": "{ \"slug\": \"work-stress\", \"title\": \"Work stress\",\n  \"summary\": \"Meetings where attention turns to me set off dread and going quiet.\",\n  \"concepts\": [\"sit.being-observed\", \"cd.mind-reading\", \"bh.self-silencing\"],\n  \"related\": [\"cognitive.thought-records\"], \"sessions\": [1, 2, 3],\n  \"body\": \"The dread starts before meetings… [session-003]\" }",
+     "result": "Topic page topics\\work-stress.md saved."
+    },
+    {
+     "tool": "session_close",
+     "args": "{ \"summary\": \"A look in a meeting set off the thought…\",\n  \"homework\": \"One moment in three columns, straight after stand-up.\",\n  \"feedback\": \"Helpful to slow one moment down.\" }",
+     "result": "Session 3 closed and saved. Session mode is now off."
+    }
+   ],
+   "activates": [
+    {
+     "id": "protocol.session-structure",
+     "layer": "protocol",
+     "how": "context",
+     "why": "Later sessions, step 6.",
+     "quote": "Summary in their words, a new practice task, feedback."
+    },
+    {
+     "id": "protocol.the-session-record",
+     "layer": "protocol",
+     "how": "context",
+     "why": "Why a topic page is revised before the session closes.",
+     "quote": "Before closing each session, create or update the topic pages this session touched: keep what is still true, add what was learned, cite sessions as [session-004], and mark open questions as open."
+    },
+    {
+     "id": "05-session-structure",
+     "layer": "router",
+     "how": "routed",
+     "why": "Summaries, feedback and practice tasks are session structure."
+    },
+    {
+     "id": "05-session-structure.homework-design",
+     "layer": "pages",
+     "how": "read",
+     "why": "Read before the task is agreed: designed with the person, specific about when and where, with the obstacle planned for.",
+     "call": 0
+    },
+    {
+     "id": "05-session-structure.session-summaries-and-feedback",
+     "layer": "pages",
+     "how": "read",
+     "why": "Read before the summary and the request for feedback.",
+     "call": 1
+    },
+    {
+     "id": "sit.being-observed",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "Attached to the topic page, so the theme is linked to the same concept as the formulation.",
+     "call": 2
+    },
+    {
+     "id": "cd.mind-reading",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "Attached to the topic page.",
+     "call": 2
+    },
+    {
+     "id": "bh.self-silencing",
+     "layer": "vocab",
+     "how": "tagged",
+     "why": "Attached to the topic page.",
+     "call": 2
+    },
+    {
+     "id": "cognitive.thought-records",
+     "layer": "pages",
+     "how": "linked",
+     "why": "Listed as a related page on the topic page: the record points back into the knowledge base.",
+     "call": 2
+    },
+    {
+     "id": "record.topic-work-stress",
+     "layer": "record",
+     "how": "written",
+     "why": "The whole page is rewritten in plain prose, keeping what is still true. Each claim cites its session.",
+     "call": 2,
+     "links": [
+      "sit.being-observed",
+      "cd.mind-reading",
+      "bh.self-silencing",
+      "cognitive.thought-records"
+     ]
+    },
+    {
+     "id": "record.topics-index",
+     "layer": "record",
+     "how": "written",
+     "why": "Regenerated with the topic’s new summary and date.",
+     "call": 2
+    },
+    {
+     "id": "record.session-003",
+     "layer": "record",
+     "how": "written",
+     "why": "Summary, practice task and feedback are written, the status becomes closed, and session mode ends.",
+     "call": 3
+    },
+    {
+     "id": "record.sessions-index",
+     "layer": "record",
+     "how": "written",
+     "why": "Regenerated with this session’s status and practice task.",
+     "call": 3
+    },
+    {
+     "id": "record._data",
+     "layer": "record",
+     "how": "written",
+     "why": "The working copy every page is generated from.",
+     "call": 3
+    }
+   ]
+  }
+ ]
+}

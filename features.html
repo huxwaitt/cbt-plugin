@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Features: the four context layers and ten techniques of cbt-self-help</title>
+<meta name="description" content="What cbt-self-help draws on in a session: a fixed protocol, a 394-page knowledge base, a controlled vocabulary and your own record, and the CBT techniques it can work through with you.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="./src/styles/site.css">
+</head>
+<body>
+<!-- @nav features -->
+<main id="main">
+
+<section class="hero hero--page">
+  <div class="container">
+    <h1>Four layers of context, ten techniques.</h1>
+    <p class="lead">Each one is a file you can open and read.</p>
+    <div class="actions">
+      <a class="btn" href="./#activates">See one message at work</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="layers">
+  <div class="container">
+    <div class="head">
+      <h2>Four layers sit behind every reply</h2>
+    </div>
+
+    <div class="layers" data-switch>
+      <div class="layers__list" role="tablist" aria-label="Context layers">
+        <button class="layer" role="tab" type="button" id="layer-protocol" aria-controls="view-protocol" aria-selected="true">
+          <span class="layer__name">The session protocol</span>
+          <span class="layer__line">Every session runs the same way: mood, safety, agenda, one piece of work, a summary.</span>
+        </button>
+        <button class="layer" role="tab" type="button" id="layer-kb" aria-controls="view-kb" aria-selected="false" tabindex="-1">
+          <span class="layer__name">The knowledge base</span>
+          <span class="layer__line">Clinical answers come from {{n:pagesAll}} written pages, each with its sources, not from memory.</span>
+        </button>
+        <button class="layer" role="tab" type="button" id="layer-vocab" aria-controls="view-vocab" aria-selected="false" tabindex="-1">
+          <span class="layer__name">A fixed vocabulary</span>
+          <span class="layer__line">A pattern gets the same name in every session, so your record adds up over time.</span>
+        </button>
+        <button class="layer layer--amber" role="tab" type="button" id="layer-record" aria-controls="view-record" aria-selected="false" tabindex="-1">
+          <span class="layer__name">Your record</span>
+          <span class="layer__line">It picks up where you left off, and you can read or correct every word of it.</span>
+        </button>
+      </div>
+
+      <div class="layers__view">
+        <section role="tabpanel" id="view-protocol" aria-labelledby="layer-protocol">
+          <figure class="file deep" data-slot="file-protocol" data-kind="product" data-alt="The session structure section of protocol.md">
+            <figcaption class="file__name">protocol.md <span>Session structure, word for word</span></figcaption>
+            <div class="file__body doc" tabindex="0">
+<!-- @protocol session-structure -->
+            </div>
+          </figure>
+        </section>
+        <section role="tabpanel" id="view-kb" aria-labelledby="layer-kb">
+          <figure class="file deep" data-slot="file-kb" data-kind="product" data-alt="The head of one knowledge base page">
+            <figcaption class="file__name">kg\06-therapeutic-relationship\responding-in-session\validation.md <span>one of {{n:pagesAll}}</span></figcaption>
+            <div class="file__body" tabindex="0"><pre><!-- @excerpt page-validation --></pre></div>
+          </figure>
+        </section>
+        <section role="tabpanel" id="view-vocab" aria-labelledby="layer-vocab">
+          <figure class="file deep" data-slot="file-vocab" data-kind="product" data-alt="One entry of the cognitive distortions vocabulary">
+            <figcaption class="file__name">kg\_vocab\cognitive-distortions.json <span>one of {{n:concepts}} concepts</span></figcaption>
+            <div class="file__body" tabindex="0"><pre><!-- @excerpt concept-mind-reading --></pre></div>
+          </figure>
+        </section>
+        <section role="tabpanel" id="view-record" aria-labelledby="layer-record">
+          <figure class="file file--amber deep" data-slot="file-record" data-kind="product" data-alt="A sample topic page from a record">
+            <figcaption class="file__name">.cbt-self-help\topics\work-stress.md <span>a sample, in the real format</span></figcaption>
+            <div class="file__body" tabindex="0"><pre><!-- @record record.topic-work-stress --></pre></div>
+          </figure>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--s" id="voice">
+  <div class="container rows">
+    <div class="rows__head">
+      <h2>How it talks to you</h2>
+    </div>
+    <dl class="rows__list">
+      <div class="row"><dt>Short turns</dt><dd>Two to five sentences. One question at a time.</dd></div>
+      <div class="row"><dt>Your words first</dt><dd>It reflects before it asks.</dd></div>
+      <div class="row"><dt>Questions over answers</dt><dd>You reach the conclusion yourself.</dd></div>
+      <div class="row"><dt>Strain gets named</dt><dd>Frustration is asked about, not pushed through.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band" id="techniques">
+  <div class="container">
+    <div class="head head--split">
+      <h2>Ten techniques it can work through</h2>
+      <p class="lead">It reads the technique’s page before it starts.</p>
+    </div>
+
+    <div data-switch>
+      <div class="seg" role="tablist" aria-label="Techniques by kind">
+        <button role="tab" type="button" id="seg-thoughts" aria-controls="tech-thoughts" aria-selected="true">For thoughts</button>
+        <button role="tab" type="button" id="seg-actions" aria-controls="tech-actions" aria-selected="false" tabindex="-1">For actions</button>
+      </div>
+      <dl class="index" role="tabpanel" id="tech-thoughts" aria-labelledby="seg-thoughts">
+        <div class="index__row"><dt>Catching the thought</dt><dd>Find the thought behind the feeling.</dd><dd class="mono">cognitive\identifying-automatic-thoughts.md</dd></div>
+        <div class="index__row"><dt>Thought records</dt><dd>One upsetting moment, in columns.</dd><dd class="mono">cognitive\thought-records.md</dd></div>
+        <div class="index__row"><dt>Examining the evidence</dt><dd>What you saw against what you assumed.</dd><dd class="mono">cognitive\cognitive-restructuring.md</dd></div>
+        <div class="index__row"><dt>Decatastrophizing</dt><dd>The worst case, and how you would cope.</dd><dd class="mono">cognitive\cognitive-restructuring.md</dd></div>
+        <div class="index__row"><dt>Worry postponement</dt><dd>A set time for worry, not all day.</dd><dd class="mono">cognitive\worry-and-rumination-techniques.md</dd></div>
+        <div class="index__row"><dt>Self-compassion</dt><dd>Answer yourself as you would a friend.</dd><dd class="mono">cognitive\self-compassion-techniques.md</dd></div>
+      </dl>
+      <dl class="index" role="tabpanel" id="tech-actions" aria-labelledby="seg-actions">
+        <div class="index__row"><dt>Behavioral activation</dt><dd>Small activities that matter, scheduled.</dd><dd class="mono">behavioral\behavioral-activation.md</dd></div>
+        <div class="index__row"><dt>Behavioral experiments</dt><dd>Turn a prediction into a small test.</dd><dd class="mono">behavioral\behavioral-experiments.md</dd></div>
+        <div class="index__row"><dt>Exposure ladders</dt><dd>Planning only, in small steps, never trauma memories.</dd><dd class="mono">behavioral\exposure-hierarchy.md</dd></div>
+        <div class="index__row"><dt>Problem solving</dt><dd>Define it, list options, choose one, review.</dd><dd class="mono">behavioral\problem-solving-therapy.md</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="measures">
+  <div class="container">
+    <div class="head head--split">
+      <h2>What it measures, and when</h2>
+      <p class="lead">A number and a plain band. Never a diagnosis.</p>
+    </div>
+    <table class="table">
+      <thead><tr><th scope="col">Measure</th><th scope="col">When</th><th scope="col">What you see</th></tr></thead>
+      <tbody>
+        <tr><td>Mood, 0 to 10</td><td>Every session</td><td>A number to compare</td></tr>
+        <tr><td>PHQ-9</td><td>First session, then every fourth</td><td>Total and severity band</td></tr>
+        <tr><td>GAD-7</td><td>First session, then every fourth</td><td>Total and severity band</td></tr>
+        <tr><td>Your formulation</td><td>Built as you go</td><td>A five-part map first</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="band" id="next">
+  <div class="container">
+    <p class="statement">Nothing here is hidden behind the model.</p>
+    <div class="actions">
+      <a class="btn btn--quiet" href="https://github.com/huxwaitt/cbt-plugin">Browse the source</a>
+      <a class="btn btn--quiet" href="safety.html">Read the safety limits</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- @footer -->
+<script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

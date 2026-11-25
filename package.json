@@ -1,0 +1,21 @@
+{
+  "name": "cbt-plugin-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Website for cbt-self-help, a Claude Code plugin for guided CBT self-help sessions.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "data": "node scripts/build-kb-data.mjs"
+  },
+  "dependencies": {
+    "@fontsource/atkinson-hyperlegible-mono": "^5.3.0",
+    "@fontsource/host-grotesk": "^5.3.0",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.8"
+  }
+}

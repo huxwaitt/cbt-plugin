@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cbt-self-help: guided CBT self-help sessions inside Claude Code</title>
+<meta name="description" content="A Claude Code plugin that runs structured CBT self-help sessions from a researched knowledge base and keeps your record in a folder on your computer. Not therapy.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="./src/styles/site.css">
+</head>
+<body>
+<!-- @nav home -->
+<main id="main">
+
+<section class="hero">
+  <div class="container">
+    <h1>Guided CBT self-help, inside Claude Code.</h1>
+    <p class="lead">Sessions backed by a researched CBT knowledge graph. Not therapy.</p>
+    <div class="actions">
+      <a class="btn" href="#install">Install the plugin</a>
+      <a class="btn btn--quiet" href="safety.html">Read the safety limits</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sessions">
+  <div class="container">
+    <div class="head">
+      <h2>What a session sounds like</h2>
+      <p class="lead">Four moments from sample sessions, with the tool calls left in.</p>
+    </div>
+
+    <div class="switch" data-switch>
+      <div class="switch__tabs" role="tablist" aria-label="Sample moments">
+        <button class="switch__tab" role="tab" type="button" id="tab-start" aria-controls="chat-start" aria-selected="true">
+          <span class="switch__name">The first minute</span>
+          <span class="switch__note">The notice, a name, a mood score</span>
+        </button>
+        <button class="switch__tab" role="tab" type="button" id="tab-map" aria-controls="chat-map" aria-selected="false" tabindex="-1">
+          <span class="switch__name">One moment, mapped</span>
+          <span class="switch__note">Situation, thought, body, action</span>
+        </button>
+        <button class="switch__tab" role="tab" type="button" id="tab-task" aria-controls="chat-task" aria-selected="false" tabindex="-1">
+          <span class="switch__name">A task not done</span>
+          <span class="switch__note">Treated as information, not failure</span>
+        </button>
+        <button class="switch__tab" role="tab" type="button" id="tab-stop" aria-controls="chat-stop" aria-selected="false" tabindex="-1">
+          <span class="switch__name">When it stops</span>
+          <span class="switch__note">Safety comes before the exercise</span>
+        </button>
+      </div>
+
+      <div class="switch__panels">
+        <section class="switch__panel" role="tabpanel" id="chat-start" aria-labelledby="tab-start">
+          <h3>The first minute</h3>
+          <figure class="chat deep" data-slot="chat-start" data-kind="product" data-alt="Terminal capture of the first minute of a first session">
+            <ol class="chat__log">
+              <li class="line line--person line--cmd"><span class="line__who">You</span><p class="line__say">/cbt-session</p></li>
+              <li class="line line--plugin"><span class="line__who">Plugin</span><p class="line__say"><!-- @excerpt notice --></p></li>
+              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">record_read: No record yet: this is the first session.</p></li>
+              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Hello, and welcome. What would you like me to call you?</p></li>
+              <li class="line line--person"><span class="line__who">You</span><p class="line__say">Dev is fine.</p></li>
+              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Good to meet you, Dev. Sessions take about 30 to 50 minutes. They are structured, we work together, and there is a small practice task between them. To start, how has your mood been today, from 0 to 10?</p></li>
+            </ol>
+            <figcaption class="chat__foot">
+              <p>The notice is the plugin’s own text. The person is invented.</p>
+              <button class="btn btn--quiet btn--small" type="button" data-replay>Replay</button>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="switch__panel" role="tabpanel" id="chat-map" aria-labelledby="tab-map">
+          <h3>One moment, mapped</h3>
+          <figure class="chat deep" data-slot="chat-map" data-kind="product" data-alt="Terminal capture of a session mapping one moment with the five-part model">
+            <ol class="chat__log">
+              <li class="line line--person"><span class="line__who">You</span><p class="line__say">Sunday night I opened my inbox and my stomach just dropped.</p></li>
+              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">Read kg\03-formulation\five-part-model.md</p></li>
+              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Your stomach dropped the moment the inbox opened. Let’s slow that one moment down. What went through your mind just then?</p></li>
+              <li class="line line--person"><span class="line__who">You</span><p class="line__say">That I’m behind on everything and Monday will be a disaster.</p></li>
+              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>So the thought was “I’m behind on everything, and Monday will be a disaster.” What did you do next?</p></li>
+              <li class="line line--person"><span class="line__who">You</span><p class="line__say">Closed the laptop and scrolled my phone until one.</p></li>
+              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">formulation_update: Formulation saved (Five-part model (hot cross bun)).</p></li>
+              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>That gives us a map: the inbox, the thought, the drop in your stomach, and closing the laptop. Does that match how it felt?</p></li>
+            </ol>
+            <figcaption class="chat__foot">
+              <p>A sample exchange. The file and the tool result are the plugin’s own.</p>
+              <button class="btn btn--quiet btn--small" type="button" data-replay>Replay</button>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="switch__panel" role="tabpanel" id="chat-task" aria-labelledby="tab-task">
+          <h3>A task not done</h3>
+          <figure class="chat deep" data-slot="chat-task" data-kind="product" data-alt="Terminal capture of a session reviewing a practice task that was not done">
+            <ol class="chat__log">
+              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Last time you were going to try a ten minute walk on three mornings. How did that go?</p></li>
+              <li class="line line--person"><span class="line__who">You</span><p class="line__say">I didn’t do any of them. I know, I’m useless at this.</p></li>
+              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">Read kg\05-session-structure\homework-review-and-adherence.md</p></li>
+              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>None of the walks happened, and you are being hard on yourself about it. A task not done tells us something about the task. What got in the way on the first morning?</p></li>
+              <li class="line line--person"><span class="line__who">You</span><p class="line__say">I woke up late and it felt pointless to start.</p></li>
+              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Waking late, and then a thought that it was pointless. Would a smaller version be worth testing, say five minutes, right after your coffee?</p></li>
+              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">session_note: Saved to session 4.</p></li>
+            </ol>
+            <figcaption class="chat__foot">
+              <p>A sample exchange. The page it reads says to adjust the task rather than blame the person.</p>
+              <button class="btn btn--quiet btn--small" type="button" data-replay>Replay</button>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="switch__panel" role="tabpanel" id="chat-stop" aria-labelledby="tab-stop">
+          <h3>When it stops</h3>
+          <figure class="chat deep" data-slot="chat-stop" data-kind="product" data-alt="Terminal capture of a session switching from an exercise to safety">
+            <ol class="chat__log">
+              <li class="line line--person"><span class="line__who">You</span><p class="line__say">Honestly, some nights I think everyone would be better off without me.</p></li>
+              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">Read kg\02-risk\crisis-response.md</p></li>
+              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>Thank you for telling me. That sounds really hard. I want to stop what we were doing, because this matters more. When you think that, are you having thoughts of ending your life?</p></li>
+              <li class="line line--person"><span class="line__who">You</span><p class="line__say">Sometimes. I don’t have a plan.</p></li>
+              <li class="line line--guide"><span class="line__who">Guide</span><p class="line__say" data-stream>I’m glad you said it out loud. I am an AI and cannot call anyone, so please keep these close: in the US, call or text 988. In the UK, Samaritans on 116 123. Is there someone who could be with you tonight?</p></li>
+              <li class="line line--tool"><span class="line__who">Tool</span><p class="line__say">session_note: risk_flag true. Saved to session 5.</p></li>
+            </ol>
+            <figcaption class="chat__foot">
+              <p>A sample exchange. A session with a risk flag cannot be discarded from the record.</p>
+              <button class="btn btn--quiet btn--small" type="button" data-replay>Replay</button>
+            </figcaption>
+          </figure>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="activates">
+  <div class="container">
+    <div class="head head--split">
+      <h2>What one message activates</h2>
+      <p class="lead">Step through a sample session. Every point is a real file or vocabulary entry in the plugin.</p>
+    </div>
+
+    <figure class="map" id="map" data-slot="map" data-kind="product" data-alt="Interactive diagram of the knowledge base and what each turn of a session reads and writes">
+      <div class="map__bar">
+        <ol class="steps" data-steps aria-label="Turns of the sample session"></ol>
+        <div class="map__ctl">
+          <button class="btn btn--quiet btn--small" type="button" data-map-play>Play the session</button>
+        </div>
+      </div>
+      <div class="map__body">
+        <div class="map__pane map__turn" data-turn></div>
+        <div class="map__pane map__stage" data-stage>
+          <canvas class="map__canvas diagram" role="img" aria-label="Diagram of the plugin's knowledge base as six layers: session protocol, router, reference pages, vocabulary, sources and your record. Points that light up are what the selected turn used. The same items are listed in the panel beside it."></canvas>
+          <div class="map__labels" data-labels aria-hidden="true"></div>
+          <div class="map__legend" aria-hidden="true">
+            <span class="key key--amber"><i></i>You and your record</span>
+            <span class="key"><i></i>Used this turn</span>
+            <span class="key key--ring"><i></i>Standing by</span>
+            <span class="key key--dim"><i></i>Not used</span>
+          </div>
+          <p class="map__still" data-still hidden>The 3D view needs WebGL. Everything it shows is in the two panels beside it.</p>
+        </div>
+        <div class="map__pane map__inspect">
+          <div class="inspect__head">
+            <span data-inspect-title>Used this turn</span>
+            <button class="btn btn--quiet btn--small inspect__back" type="button" data-inspect-back hidden>Back to the list</button>
+          </div>
+          <div class="inspect__body" data-inspect tabindex="0" aria-live="polite" aria-label="Details"></div>
+        </div>
+      </div>
+      <ol class="map__fallback">
+        <li><b>Open</b><span>The plugin adds protocol.md to the system prompt and opens session 3 in your record.</span></li>
+        <li><b>Record</b><span>record_read returns your profile, formulation, sessions and topic pages.</span></li>
+        <li><b>Safety check</b><span>A mood score, then a direct safety question. Three risk pages stand by.</span></li>
+        <li><b>Practice task</b><span>Reads 05-session-structure\homework-review-and-adherence.md.</span></li>
+        <li><b>One moment</b><span>Reads four pages and saves a five-part formulation with seven vocabulary ids.</span></li>
+        <li><b>The thought</b><span>Reads socratic-dialogue.md, thought-records.md and a pitfall page.</span></li>
+        <li><b>Close</b><span>Writes the summary, the practice task and a topic page, then closes the session.</span></li>
+      </ol>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="record">
+  <div class="container">
+    <div class="head head--split">
+      <h2>Your record is a local folder</h2>
+      <p class="lead">Plain Markdown and JSON on your computer. Only the conversation goes to the model.</p>
+    </div>
+
+    <div class="home">
+      <figure class="machine" data-slot="machine" data-kind="product" data-alt="Diagram of the two folders the plugin uses on your computer">
+        <div class="machine__name">This computer <span>where everything is stored</span></div>
+        <div class="machine__parts">
+          <div class="part part--record">
+            <h3>Your record</h3>
+            <p class="mono amber">.cbt-self-help\ in your user folder</p>
+            <ul class="tree">
+              <li>_data.json <span>the working copy</span></li>
+              <li>profile.md <span>name, goals, supports</span></li>
+              <li>formulation.md <span>the map you built together</span></li>
+              <li>topics\ <span>a page per theme, yours to edit</span></li>
+              <li>sessions\ <span>a page per session</span></li>
+            </ul>
+          </div>
+          <div class="part part--kb">
+            <h3>The knowledge base</h3>
+            <p class="mono cool">kg\ inside the plugin folder</p>
+            <ul class="tree">
+              <li>_index.md <span>routes a question to {{n:domains}} domains</span></li>
+              <li>01-intake\ to 15-…\ <span>{{n:pagesAll}} pages</span></li>
+              <li>_vocab\ <span>{{n:concepts}} concepts, {{n:models}} models</span></li>
+              <li>_sources.md <span>{{n:sources}} cited works</span></li>
+              <li>..\protocol.md <span>the session rules</span></li>
+            </ul>
+          </div>
+        </div>
+      </figure>
+
+      <figure class="surface wire" data-slot="wire" data-kind="product" data-alt="What is sent to the model during a session">
+        <div class="machine__name">Leaves this computer <span>through Claude Code</span></div>
+        <div class="wire__in">
+          <h3>The conversation</h3>
+          <ul>
+            <li>What you type</li>
+            <li>What the guide replies</li>
+            <li>What it reads in to reply: knowledge pages, and an overview of your record capped at 40,000 bytes</li>
+          </ul>
+          <p>It goes to the model your Claude Code is set up with, under <a href="https://code.claude.com/docs/en/data-usage">that account’s data terms</a>.</p>
+        </div>
+      </figure>
+    </div>
+
+    <ul class="never never--three">
+      <li><b>No server</b>Only local files are read and written.</li>
+      <li><b>No account</b>Just Claude Code itself.</li>
+      <li><b>No analytics</b>It sends nothing itself.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--s" id="limits">
+  <div class="container rows">
+    <div class="rows__head">
+      <h2>What it will not do</h2>
+      <div class="actions"><a class="btn btn--quiet" href="safety.html">Read every limit</a></div>
+    </div>
+    <dl class="rows__list">
+      <div class="row"><dt>Call itself therapy</dt><dd>Every session starts by saying so.</dd></div>
+      <div class="row"><dt>Diagnose you</dt><dd>It names patterns. A score is never a diagnosis.</dd></div>
+      <div class="row"><dt>Act in an emergency</dt><dd>It cannot call anyone. It gives crisis contacts.</dd></div>
+      <div class="row"><dt>Guide trauma exposure</dt><dd>Trauma, eating disorders, psychosis and medication go to professionals.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band" id="install">
+  <div class="container">
+    <div class="head">
+      <h2>Install it, then type one command</h2>
+    </div>
+    <div class="start">
+      <figure class="shell deep" data-slot="shell" data-kind="product" data-alt="The three commands that install and start the plugin">
+        <div class="shell__name">In a terminal</div>
+        <pre><span class="c"># get the plugin</span>
+git clone https://github.com/huxwaitt/cbt-plugin
+
+<span class="c"># start Claude Code with it loaded</span>
+claude --plugin-dir ./cbt-plugin
+
+<span class="c"># begin a session</span>
+<span class="amber">/cbt-session</span></pre>
+      </figure>
+      <table class="table" aria-label="The five commands the plugin adds">
+        <thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">/cbt-session</td><td>Starts a guided session</td></tr>
+          <tr><td class="mono">/cbt-end</td><td>Wraps up and saves it</td></tr>
+          <tr><td class="mono">/cbt-record</td><td>Shows your saved record</td></tr>
+          <tr><td class="mono">/cbt-formulation</td><td>Exports your formulation</td></tr>
+          <tr><td class="mono">/cbt-forget confirm</td><td>Erases your saved record</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- @footer -->
+<script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
