@@ -62,6 +62,7 @@
    "id": "open",
    "label": "Open",
    "title": "A command opens the session",
+   "gain": "The rules are loaded before anything is said. What this is, what it must not do and what happens if you are in danger are in front of the model for every reply, so none of it depends on the model remembering.",
    "turns": [
     {
      "who": "person",
@@ -171,6 +172,7 @@
    "id": "record",
    "label": "Record",
    "title": "It reads your record before it speaks",
+   "gain": "So you don’t have to explain yourself again. Your name, where the last session ended and the task you took away all come from the pages it has just read.",
    "turns": [
     {
      "who": "guide",
@@ -247,6 +249,7 @@
    "id": "screen",
    "label": "Safety check",
    "title": "Mood, then a direct safety question",
+   "gain": "The question is asked every session because the protocol says so, not because the model happened to think of it. The crisis pages are named in advance, so a worrying answer is met with a written procedure.",
    "turns": [
     {
      "who": "person",
@@ -320,6 +323,7 @@
    "id": "review",
    "label": "Practice task",
    "title": "A task not done is information",
+   "gain": "A missed task could be met with a pep talk. The page it read says to look for the practical obstacle and change the task, and that is the question it asks.",
    "turns": [
     {
      "who": "person",
@@ -383,6 +387,7 @@
    "id": "moment",
    "label": "One moment",
    "title": "One moment, mapped in five parts",
+   "gain": "The pages on reflection and validation are why you are heard before anything is suggested. Saving the moment in fixed terms means the same pattern carries the same name next week, so it can be recognized.",
    "turns": [
     {
      "who": "person",
@@ -589,6 +594,7 @@
    "id": "evidence",
    "label": "The thought",
    "title": "A question, not an argument",
+   "gain": "Being told a thought is wrong rarely changes it. The page on Socratic dialogue is why the reply asks what you saw, and the vocabulary is why “mind reading” means here what it means in the sources.",
    "turns": [
     {
      "who": "guide",
@@ -721,6 +727,7 @@
    "id": "close",
    "label": "Close",
    "title": "Summary, practice task, and the record closes",
+   "gain": "What was worked out is written down before the session ends, in pages you can open and edit. The next session starts by reading them.",
    "turns": [
     {
      "who": "guide",

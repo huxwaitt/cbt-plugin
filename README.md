@@ -6,8 +6,8 @@ Three pages, built as a static site:
 
 | Page | File | What it shows |
 |---|---|---|
-| Sessions | `index.html` | Sample session transcripts, a 3D map of what one message activates in the knowledge base, where the record is stored, and how to install |
-| Features | `features.html` | The context layers and the techniques, each shown as the file behind it |
+| Sessions | `index.html` | Sample session transcripts, a 3D map of what each turn reads in the knowledge base and writes to the record, and why, where the record is stored, and how to install |
+| Features | `features.html` | The knowledge base, the record and the techniques, each shown as the file behind it |
 | Licensing and safety | `safety.html` | The notice, the safety protocol word for word, the limits enforced in code, and the licenses |
 
 ## Run it

@@ -1,5 +1,6 @@
-// The map instrument: a sample session on the left, the knowledge base in the
-// middle, and an inspector on the right that says exactly what each lit point is.
+// The map instrument: one turn of a sample session and why it does what it
+// does, the knowledge base and the person's record drawn side by side, and an
+// inspector that says exactly what each lit point is.
 import session from '../../data/session.json'
 import { card } from './inspector.js'
 
@@ -13,12 +14,25 @@ const HOW = {
   recordRead: 'Read',
   written: 'Written',
 }
-const GROUPS = [
-  ['protocol', 'Session protocol'],
-  ['router', 'Router'],
-  ['pages', 'Reference pages'],
-  ['vocab', 'Vocabulary'],
-  ['record', 'Your record'],
+// The two structures a turn can touch, each with the parts that lit up and
+// what that part is for.
+const PARTS = [
+  {
+    name: 'Knowledge base',
+    note: 'Ships with the plugin and is the same for everyone. A session only reads it.',
+    groups: [
+      ['protocol', 'Session protocol', 'Rules that hold for the whole session.'],
+      ['router', 'Router', 'Finds the part of the knowledge base that covers what was just said.'],
+      ['pages', 'Reference pages', 'The written method the reply follows, with its sources.'],
+      ['vocab', 'Vocabulary', 'Fixed names, so a pattern is called the same thing every session.'],
+    ],
+  },
+  {
+    name: 'Your record',
+    amber: true,
+    note: 'A wiki the model keeps on your computer. Read when a session opens, written as it goes.',
+    groups: [['record', 'Files', 'What it knows about you, in pages you can open.']],
+  },
 ]
 const WHO = { person: 'You', guide: 'Claude', plugin: 'Output' }
 const ROW = { person: 'you', guide: 'say', plugin: 'out' }
@@ -90,7 +104,8 @@ export async function initMap(root) {
     pages: ['Reference pages', 'pages and pitfalls'],
     vocab: ['Vocabulary', 'concepts and formulation models'],
     sources: ['Sources', 'cited works'],
-    record: ['Your record', 'files on your computer'],
+    kb: ['Knowledge base', 'the same for everyone, only read'],
+    record: ['Your record', 'a wiki the model keeps on your computer'],
   }
   for (const [key, [name, note]] of Object.entries(layerText))
     labels.append(
@@ -135,18 +150,18 @@ export async function initMap(root) {
     back.hidden = true
     inspectTitle.textContent = 'Used this turn'
     const step = session.steps[current]
-    const groups = GROUPS.map(([layer, name]) => {
+    const group = ([layer, name, purpose]) => {
       const items = step.activates.filter(a => a.layer === layer)
       if (!items.length) return null
       return el(
         'div',
         { class: 'hits__group' },
         el('div', { class: 'hits__name' }, name, el('span', { text: String(items.length) })),
+        el('p', { class: 'hits__for', text: purpose }),
         items.map(a => {
-          const amber = layer === 'record'
           const button = el(
             'button',
-            { class: `hit${amber ? ' hit--amber' : ''}${a.how === 'armed' ? ' hit--armed' : ''}`, type: 'button', 'data-id': a.id },
+            { class: `hit${a.how === 'written' ? ' hit--amber' : ''}${a.how === 'armed' ? ' hit--armed' : ''}`, type: 'button', 'data-id': a.id },
             el('span', { class: 'hit__how', text: HOW[a.how] }),
             el('span', { class: 'hit__what' }, nameOf(a.id).map((text, k) => el('span', { class: k ? 'hit__id' : 'hit__name', text }))),
           )
@@ -158,8 +173,19 @@ export async function initMap(root) {
           return button
         }),
       )
+    }
+    const parts = PARTS.map(part => {
+      const groups = part.groups.map(group).filter(Boolean)
+      if (!groups.length) return null
+      return el(
+        'section',
+        { class: `hits__part${part.amber ? ' hits__part--amber' : ''}` },
+        el('h4', { text: part.name }),
+        el('p', { class: 'hits__note', text: part.note }),
+        groups,
+      )
     })
-    inspect.replaceChildren(el('div', { class: 'hits' }, groups))
+    inspect.replaceChildren(el('div', { class: 'hits' }, parts))
     inspect.scrollTop = 0
   }
 
@@ -236,7 +262,14 @@ export async function initMap(root) {
         return button
       }),
     )
-    turnEl.replaceChildren(el('h3', { text: step.title }), log, calls)
+    const head = el(
+      'div',
+      { class: 'turn__head' },
+      el('h3', { text: step.title }),
+      el('p', { class: 'turn__label', text: 'Why it does this' }),
+      el('p', { class: 'turn__gain', text: step.gain }),
+    )
+    turnEl.replaceChildren(head, log, calls)
     turnEl.scrollTop = 0
     scene?.setStep(i, { animate })
     list()

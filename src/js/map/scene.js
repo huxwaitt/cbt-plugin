@@ -1,7 +1,9 @@
-// The knowledge base drawn as six stacked layers. Every point is a real item
-// from the plugin: a protocol section, a domain, a page, a vocabulary concept,
-// a cited source or a file in the person's record. A turn of the sample
-// session lights the points it used and the links between them.
+// Two structures, drawn apart because they are built differently. The
+// knowledge base is a stack of layers that ships with the plugin and is only
+// read: protocol sections, domains, pages, vocabulary concepts, cited sources.
+// The person's record is a small wiki the model writes: a working copy, the
+// pages generated from it, and the indexes that link them. A turn of the
+// sample session lights what it used in each, and the links between them.
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 
@@ -13,9 +15,15 @@ export const LAYERS = [
   { key: 'pages', y: 1.3, w: W, d: D },
   { key: 'vocab', y: -0.5, w: W, d: D },
   { key: 'sources', y: -2.2, w: W, d: D },
-  { key: 'record', y: -4.2, w: 5.6, d: 2.2 },
 ]
-const STAGE = { turn: 0, protocol: 0.1, router: 0.5, pages: 0.9, vocab: 1.3, sources: 1.5, record: 1.8 }
+// Where the record stands: beside the stack when the view is wide, under it
+// when the view is tall. The turn sits where it can reach both.
+const WIKI = {
+  wide: { x: 7.7, y: 1.15, w: 4.4, h: 5, turn: [4.7, 6.05] },
+  tall: { x: 0, y: -7.1, w: W, h: 4.4, turn: [1.9, 5.9] },
+}
+const DOC = { a: 0.2, b: 0.26, fold: 0.11 } // half width, half height, folded corner
+const STAGE = { turn: 0, protocol: 0.1, router: 0.5, pages: 0.9, vocab: 1.3, sources: 1.5, read: 0.45, record: 1.8 }
 const GOLDEN = Math.PI * (3 - Math.sqrt(5))
 
 // Colors come from the page's own tokens, so the scene and the page cannot drift apart.
@@ -153,13 +161,44 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
     add({ id: `src:${key}`, layer: 'sources', x, y: layerOf.sources.y, z, size: 0.95, dim: true, label: key })
   })
 
-  // The person's record: a small plate of files beneath the stack.
-  session.record.forEach((file, k) => {
-    const per = Math.ceil(session.record.length / 2)
-    const x = -layerOf.record.w / 2 + 0.6 + ((k % per) * (layerOf.record.w - 1.2)) / (per - 1)
-    const z = k < per ? -0.45 : 0.45
-    add({ id: file.id, layer: 'record', x, y: layerOf.record.y, z, size: 2.4, person: true, label: file.file })
-  })
+  // The person's record is a tree: the working copy at the root, the pages
+  // generated from it below, and each index above the pages it lists. Places
+  // are in sheet units (u across, v up, both -1 to 1) and set by arrange().
+  const wiki = { hub: null, parent: new Map(), kids: new Map(), cites: [] }
+  {
+    const files = session.record
+    const folder = f => (f.file.includes('\\') ? f.file.split('\\')[0] : null)
+    const isIndex = f => /\\_index\.md$/.test(f.file)
+    const hub = files.find(f => f.file === '_data.json') ?? files[0]
+    const indexes = files.filter(isIndex).sort((a, b) => a.file.localeCompare(b.file))
+    const loose = files.filter(f => f !== hub && !folder(f))
+    const row = [...loose, ...indexes]
+    const put = (file, u, v, parent) => {
+      const node = add({ id: file.id, layer: 'record', x: 0, y: 0, z: 0, u, v, size: 1.5, person: true, label: file.file })
+      if (parent) {
+        wiki.parent.set(node.id, parent.id)
+        ;(wiki.kids.get(parent.id) ?? wiki.kids.set(parent.id, []).get(parent.id)).push(node.id)
+      }
+      return node
+    }
+    wiki.hub = put(hub, 0, 0.84).id
+    row.forEach((file, k) => put(file, row.length > 1 ? -0.9 + (1.8 * k) / (row.length - 1) : 0, 0.18, hub))
+    indexes.forEach((indexFile, k) => {
+      const own = files.filter(f => f !== indexFile && folder(f) === folder(indexFile))
+      const at = index.get(indexFile.id)
+      // Each index hangs its pages on a row of its own, so two fans never collide.
+      const v = k % 2 ? -0.34 : -0.8
+      const step = 0.34
+      const first = Math.max(-0.92, Math.min(at.u - ((own.length - 1) * step) / 2, 0.92 - (own.length - 1) * step))
+      own.forEach((file, j) => put(file, first + j * step, v, indexFile))
+    })
+    // A page that cites a session, as [session-002], links to that session's page.
+    for (const file of files)
+      for (const [, n] of (file.preview ?? '').matchAll(/\[session-(\d+)\]/g)) {
+        const cited = files.find(f => f.file.endsWith(`session-${n}.md`))
+        if (cited && cited !== file && !wiki.cites.some(c => c[0] === file.id && c[1] === cited.id)) wiki.cites.push([file.id, cited.id])
+      }
+  }
 
   // Reverse links, used when a point is hovered.
   const pagesOfConcept = new Map()
@@ -227,7 +266,6 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
   // Bottom layers draw first, so each plate dims what lies beneath it.
   ;[...LAYERS].reverse().forEach((layer, k) => {
     const order = k * 10
-    const person = layer.key === 'record'
     const plate = new THREE.Mesh(
       new THREE.PlaneGeometry(layer.w, layer.d),
       new THREE.MeshBasicMaterial({
@@ -249,13 +287,63 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
       new THREE.BufferGeometry().setFromPoints(
         [[-hw, -hd], [hw, -hd], [hw, hd], [-hw, hd], [-hw, -hd]].map(([x, z]) => new THREE.Vector3(x, layer.y, z)),
       ),
-      new THREE.LineBasicMaterial({ color: person ? colors.amber : colors.rule2, transparent: true, opacity: person ? 0.55 : 1, depthTest: false }),
+      new THREE.LineBasicMaterial({ color: colors.rule2, transparent: true, depthTest: false }),
     )
     edge.renderOrder = order + 1
     scene.add(edge)
     makePoints(layer.key, order + 3)
     layer.order = order
   })
+
+  // The record: a standing sheet, a file drawn for each page, and the links
+  // between them. It is laid out again whenever the view changes shape.
+  const sheet = new THREE.Mesh(
+    new THREE.PlaneGeometry(1, 1),
+    new THREE.MeshBasicMaterial({ color: colors.paper2, transparent: true, opacity: 0.55, depthTest: false, depthWrite: false, side: THREE.DoubleSide }),
+  )
+  sheet.renderOrder = 50
+  scene.add(sheet)
+  const sheetEdge = new THREE.LineLoop(
+    new THREE.BufferGeometry().setFromPoints([[-0.5, -0.5], [0.5, -0.5], [0.5, 0.5], [-0.5, 0.5]].map(([x, y]) => new THREE.Vector3(x, y, 0))),
+    new THREE.LineBasicMaterial({ color: colors.amber, transparent: true, opacity: 0.5, depthTest: false }),
+  )
+  sheetEdge.renderOrder = 51
+  scene.add(sheetEdge)
+  const recordNodes = nodes.filter(n => n.layer === 'record')
+  const treeGeometry = new THREE.BufferGeometry()
+  treeGeometry.setAttribute(
+    'position',
+    new THREE.BufferAttribute(new Float32Array((wiki.parent.size + wiki.cites.length) * 6), 3),
+  )
+  const tree = new THREE.LineSegments(
+    treeGeometry,
+    new THREE.LineBasicMaterial({ color: colors.amber, transparent: true, opacity: 0.3, depthTest: false }),
+  )
+  tree.frustumCulled = false
+  tree.renderOrder = 52
+  scene.add(tree)
+  const docShape = [
+    [-DOC.a, -DOC.b], [DOC.a, -DOC.b], [DOC.a, DOC.b - DOC.fold], [DOC.a - DOC.fold, DOC.b], [-DOC.a, DOC.b],
+  ]
+  const docFill = new THREE.ShapeGeometry(new THREE.Shape(docShape.map(([x, y]) => new THREE.Vector2(x, y))))
+  const docLine = new THREE.BufferGeometry().setFromPoints(docShape.map(([x, y]) => new THREE.Vector3(x, y, 0)))
+  for (const node of recordNodes) {
+    const doc = new THREE.Group()
+    const fill = new THREE.Mesh(
+      docFill,
+      new THREE.MeshBasicMaterial({ color: colors.amber, transparent: true, opacity: 0.1, depthTest: false, depthWrite: false, side: THREE.DoubleSide }),
+    )
+    fill.renderOrder = 54
+    const line = new THREE.LineLoop(docLine, new THREE.LineBasicMaterial({ color: colors.amber, transparent: true, opacity: 0.6, depthTest: false }))
+    line.renderOrder = 55
+    doc.add(fill, line)
+    if (node.id === wiki.hub) doc.scale.setScalar(1.25)
+    scene.add(doc)
+    node.doc = doc
+    node.fill = fill.material
+    node.line = line.material
+  }
+  makePoints('record', 56)
   makePoints('turn', 70)
 
   // Faint fans from each domain to its pages: the structure of the router.
@@ -355,6 +443,14 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
       aAlpha[i] = baseAlpha + (1 - baseAlpha) * Math.min(1, v * 1.6)
       aSize[i] = node.size * (1 + 1.5 * v) * emphasis
       aRing[i] = ring[i] && v > 0.5 ? 1 : 0
+      if (node.doc) {
+        // A file fills as it is used: cool while it is read, amber once written.
+        const w = Math.min(1, v * 1.3)
+        node.fill.color.copy(node.wrote || !w ? colors.amber : colors.cool)
+        node.fill.opacity = 0.1 + (node.wrote ? 0.55 : 0.3) * w
+        node.line.color.copy(colors.amber).lerp(node.wrote ? colors.amber : colors.cool, w)
+        node.line.opacity = 0.6 + 0.4 * w
+      }
     }
     for (const geometry of pointSets)
       for (const name of ['aColor', 'aAlpha', 'aSize', 'aRing']) geometry.attributes[name].needsUpdate = true
@@ -369,7 +465,10 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
       const v = time === null ? 1 : ease((time - e.delay) / 0.5)
       const c = e.person ? colors.amber : colors.cool
       const s = v * e.strength
-      pos.set([e.a.x, e.a.y, e.a.z, e.b.x, e.b.y, e.b.z], k * 6)
+      // A line that has not started yet is drawn with no length, so it cannot
+      // show as a dark stroke over a lighter plate.
+      if (s <= 0) pos.set([e.a.x, e.a.y, e.a.z, e.a.x, e.a.y, e.a.z], k * 6)
+      else pos.set([e.a.x, e.a.y, e.a.z, e.b.x, e.b.y, e.b.z], k * 6)
       // Faded by mixing toward the ground, so a faint line never glows.
       for (const o of [0, 3])
         col.set(
@@ -466,19 +565,44 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
       const model = modelById.get(a.id)
       if (model && has(model.page)) edge(model.page, a.id, STAGE.vocab, 0.8)
     }
-    for (const a of active.filter(a => a.layer === 'record')) {
-      light(a.id, 1, STAGE.record + 0.3)
-      // A read comes up from the file as a faint cool line, the way other reads are drawn.
-      if (a.how === 'recordRead') edge(a.id, 'turn', STAGE.record - 0.6, 0.3, false)
-      // A write is drawn as the turn sending something down into the file:
-      // a firm amber line, with three pulses following each other along it.
-      if (a.how === 'written')
-        for (const k of [0, 1, 2]) edge('turn', a.id, STAGE.record + k * 0.22, 0.95, true)
-      for (const linked of a.links ?? []) edge(a.id, linked, STAGE.record, 0.8, true)
+    // The record. A read goes out to the working copy and comes back with the
+    // pages in the overview, drawn cool like every other read. A write goes
+    // down as amber pulses, lands in the working copy, and regenerates the
+    // page it changed; from there the page links to what it cites.
+    const depth = id => (wiki.parent.has(id) ? 1 + depth(wiki.parent.get(id)) : 0)
+    const branch = (id, when, strength, person) => {
+      for (let child = id; wiki.parent.has(child); child = wiki.parent.get(child)) {
+        const parent = wiki.parent.get(child)
+        edge(parent, child, when + (depth(child) - 1) * 0.28, strength, person)
+        if (person) index.get(parent).wrote = true
+        if (!has(parent)) light(parent, 0.45, when + (depth(child) - 1) * 0.28)
+      }
+    }
+    for (const node of recordNodes) node.wrote = false
+    const reads = active.filter(a => a.how === 'recordRead')
+    const writes = active.filter(a => a.how === 'written')
+    if (reads.length) {
+      edge('turn', wiki.hub, STAGE.read, 0.45)
+      for (const a of reads) {
+        light(a.id, 1, STAGE.read + 0.5 + depth(a.id) * 0.28)
+        branch(a.id, STAGE.read + 0.45, 0.6, false)
+      }
+      edge(wiki.hub, 'turn', STAGE.read + 1.3, 0.7)
+    }
+    if (writes.length) {
+      for (const k of [0, 1, 2]) edge('turn', wiki.hub, STAGE.record + k * 0.22, 0.95, true)
+      for (const a of writes) {
+        const landed = STAGE.record + 0.55 + depth(a.id) * 0.28
+        index.get(a.id).wrote = true
+        light(a.id, 1, landed)
+        branch(a.id, STAGE.record + 0.55, 0.9, true)
+        for (const linked of a.links ?? []) edge(a.id, linked, landed + 0.35, 0.8, true)
+      }
+      index.get(wiki.hub).wrote = true
     }
 
     turnEdges = edges
-    turnLength = STAGE.record + 1.6
+    turnLength = (writes.length ? STAGE.record + 1.9 : STAGE.read) + 1.6
     clock = animate && !reduce ? 0 : turnLength + 1
     render()
     if (animate && !reduce) wake(turnLength + 0.8)
@@ -506,7 +630,12 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
     } else if (node.layer === 'sources') {
       for (const id of pagesOfSource.get(node.id.slice(4)) ?? []) link(id, 0.9)
     } else if (node.layer === 'record') {
-      for (const e of turnEdges) if (e.a === node) out.push({ ...e, delay: 0, strength: 1 })
+      if (wiki.parent.has(node.id)) link(wiki.parent.get(node.id), 0.9)
+      for (const id of wiki.kids.get(node.id) ?? []) link(id, 0.9)
+      for (const [from, to] of wiki.cites) if (from === node.id || to === node.id) link(from === node.id ? to : from, 0.6)
+      // What this turn tied the file to outside the record.
+      for (const e of turnEdges)
+        if ((e.a === node || e.b === node) && (e.a.layer !== 'record' || e.b.layer !== 'record')) out.push({ ...e, delay: 0, strength: 1 })
     }
     return out
   }
@@ -581,17 +710,26 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
   // ---------------------------------------------------------------- labels
   const layerLabels = LAYERS.map(layer => {
     const el = labels.querySelector(`[data-layer="${layer.key}"]`)
-    return { el, anchor: new THREE.Vector3(-layer.w / 2, layer.y, layer.d / 2) }
+    return { el, anchor: new THREE.Vector3(-layer.w / 2, layer.y, layer.d / 2), dy: 6 }
   })
-  layerLabels.push({ el: labels.querySelector('[data-layer="turn"]'), anchor: new THREE.Vector3(0.25, 5.95, 0) })
+  // The two structures are named above their top left corners.
+  const turnLabel = { el: labels.querySelector('[data-layer="turn"]'), anchor: new THREE.Vector3(), dy: 6 }
+  const recordLabel = { el: labels.querySelector('[data-layer="record"]'), anchor: new THREE.Vector3(), dy: 0, above: true }
+  layerLabels.push(turnLabel, recordLabel, {
+    el: labels.querySelector('[data-layer="kb"]'),
+    anchor: new THREE.Vector3(-W / 2, LAYERS[0].y, -LAYERS[0].d / 2),
+    dy: 0,
+    above: true,
+  })
   const nodeLabel = labels.querySelector('[data-node-label]')
   const placeLabels = () => {
-    for (const { el, anchor } of layerLabels) {
+    for (const { el, anchor, dy, above } of layerLabels) {
       if (!el) continue
       v.copy(anchor).project(camera)
       const x = (v.x * 0.5 + 0.5) * width
-      const y = (-v.y * 0.5 + 0.5) * height
-      el.style.transform = `translate(${Math.max(8, Math.round(x))}px, ${Math.round(y + 6)}px)`
+      const y = (-v.y * 0.5 + 0.5) * height - (above ? el.offsetHeight + 8 : 0)
+      const lx = Math.max(8, Math.min(Math.round(x), width - el.offsetWidth - 8))
+      el.style.transform = `translate(${lx}px, ${Math.round(y + dy)}px)`
     }
     const found = hovered ?? hot
     const node = found && found.id !== 'turn' ? found : null // the turn already carries a label
@@ -610,9 +748,64 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
   // ---------------------------------------------------------------- frames
   // The stack is framed by its own corners: pull back until they fit, then
   // center them, leaving room at the foot for the legend.
-  const corners = [new THREE.Vector3(0, 5.7, 0)]
+  const stackCorners = []
   for (const layer of LAYERS)
-    for (const sx of [-1, 1]) for (const sz of [-1, 1]) corners.push(new THREE.Vector3((sx * layer.w) / 2, layer.y, (sz * layer.d) / 2))
+    for (const sx of [-1, 1]) for (const sz of [-1, 1]) stackCorners.push(new THREE.Vector3((sx * layer.w) / 2, layer.y, (sz * layer.d) / 2))
+  let corners = stackCorners
+  let wide = null
+  // Stands the record beside the stack or under it, and moves the turn,
+  // the links and the labels to match.
+  function arrange(nowWide) {
+    if (nowWide === wide) return
+    wide = nowWide
+    const at = wide ? WIKI.wide : WIKI.tall
+    const turn = index.get('turn')
+    turn.x = at.turn[0]
+    turn.y = at.turn[1]
+    const su = at.w / 2 - 0.55
+    const sv = at.h / 2 - 0.5
+    for (const node of recordNodes) {
+      node.x = at.x + node.u * su
+      node.y = at.y + node.v * sv
+      node.doc.position.set(node.x, node.y, 0)
+    }
+    for (const node of [turn, ...recordNodes]) position.set([node.x, node.y, node.z], node.i * 3)
+    for (const geometry of pointSets) geometry.attributes.position.needsUpdate = true
+    sheet.position.set(at.x, at.y, 0)
+    sheet.scale.set(at.w, at.h, 1)
+    sheetEdge.position.copy(sheet.position)
+    sheetEdge.scale.copy(sheet.scale)
+    // Links run from the foot of one file to the head of the next.
+    const lines = treeGeometry.attributes.position.array
+    let k = 0
+    const join = (from, to) => {
+      const a = index.get(from)
+      const b = index.get(to)
+      const ha = DOC.b * a.doc.scale.y
+      const hb = DOC.b * b.doc.scale.y
+      const down = a.y > b.y + 0.01
+      const level = Math.abs(a.y - b.y) <= 0.01
+      if (level) lines.set([a.x + Math.sign(b.x - a.x) * DOC.a, a.y, 0, b.x - Math.sign(b.x - a.x) * DOC.a, b.y, 0], k)
+      else lines.set([a.x, a.y + (down ? -ha : ha), 0, b.x, b.y + (down ? hb : -hb), 0], k)
+      k += 6
+    }
+    for (const [child, parent] of wiki.parent) join(parent, child)
+    for (const [from, to] of wiki.cites) join(from, to)
+    treeGeometry.attributes.position.needsUpdate = true
+    turnLabel.anchor.set(turn.x + 0.25, turn.y + 0.25, 0)
+    // Beside the stack the record is named above its sheet; under the stack
+    // there is no room above it, so the name goes inside the top corner.
+    recordLabel.anchor.set(at.x - at.w / 2, at.y + at.h / 2, 0)
+    recordLabel.above = wide
+    recordLabel.dy = wide ? 0 : 6
+    corners = [
+      ...stackCorners,
+      new THREE.Vector3(turn.x, turn.y + 0.5, 0),
+      ...[-1, 1].flatMap(sx => [-1, 1].map(sy => new THREE.Vector3(at.x + (sx * at.w) / 2, at.y + (sy * at.h) / 2, 0))),
+    ]
+    controls.target.copy(target)
+    camera.position.setFromSphericalCoords(1, POLAR, AZIMUTH).add(target)
+  }
   function fit() {
     const offset = new THREE.Vector3()
     const up = new THREE.Vector3()
@@ -648,6 +841,7 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
     renderer.setSize(width, height, false)
     camera.aspect = width / height
     camera.updateProjectionMatrix()
+    arrange(width / height >= 1.05)
     fit()
     pointMaterial.uniforms.uScale.value = (height * renderer.getPixelRatio()) / 17
     render()
