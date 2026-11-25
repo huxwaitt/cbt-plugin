@@ -18,7 +18,7 @@ export const LAYERS = [
 const STAGE = { turn: 0, protocol: 0.1, router: 0.5, pages: 0.9, vocab: 1.3, sources: 1.5, record: 1.8 }
 const GOLDEN = Math.PI * (3 - Math.sqrt(5))
 
-// Colours come from the page's own tokens, so the scene and the page cannot drift apart.
+// Colors come from the page's own tokens, so the scene and the page cannot drift apart.
 function tokenColors() {
   const probe = document.createElement('canvas').getContext('2d', { willReadFrequently: true })
   const style = getComputedStyle(document.documentElement)
@@ -532,7 +532,7 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
       const lit = to[node.i] >= 1
       const reach = (lit ? 20 : to[node.i] > 0 ? 12 : node.layer === 'sources' ? 5 : 8) * wide
       if (d > reach) continue
-      const score = d / reach - (lit ? 1 : 0) // a lit point wins over its neighbours
+      const score = d / reach - (lit ? 1 : 0) // a lit point wins over its neighbors
       if (score < bestScore) {
         bestScore = score
         best = node
@@ -604,7 +604,7 @@ export function createScene({ canvas, labels, core, session, onHover, onPick }) 
 
   // ---------------------------------------------------------------- frames
   // The stack is framed by its own corners: pull back until they fit, then
-  // centre them, leaving room at the foot for the legend.
+  // center them, leaving room at the foot for the legend.
   const corners = [new THREE.Vector3(0, 5.7, 0)]
   for (const layer of LAYERS)
     for (const sx of [-1, 1]) for (const sz of [-1, 1]) corners.push(new THREE.Vector3((sx * layer.w) / 2, layer.y, (sz * layer.d) / 2))

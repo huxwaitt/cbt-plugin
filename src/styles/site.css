@@ -451,12 +451,12 @@ html:not(.js) .seg { display: none; }
   .btn, .step, .hit, .call, .switch__tab, .layer, .seg button, a { transition: none; }
 }
 
-/* ------------------------------------------------------------------ touch and forced colours */
+/* ------------------------------------------------------------------ touch and forced colors */
 @media (max-width: 60rem), (pointer: coarse) {
   .call, .hit { min-height: 44px; align-content: center; }
 }
-/* A forced-colours theme drops fills and shadows, so each selected state gets a
-   border or an underline, and the map keeps its own colours to stay readable. */
+/* A forced-colors theme drops fills and shadows, so each selected state gets a
+   border or an underline, and the map keeps its own colors to stay readable. */
 @media (forced-colors: active) {
   .switch__tab[aria-selected="true"], .layer[aria-selected="true"] { border-bottom: 3px solid Highlight; }
   .seg button[aria-selected="true"] { border-bottom: 3px solid Highlight; }
