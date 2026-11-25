@@ -83,14 +83,13 @@ export async function initMap(root) {
   }
 
   // ---------------------------------------------------------------- labels
-  const c = core.counts
   const layerText = {
     turn: ['This turn', 'what was just said'],
-    protocol: ['Session protocol', `${core.protocol.length} sections, in context all session`],
-    router: ['Router', `${c.domains} domains`],
-    pages: ['Reference pages', `${c.pages} pages, ${c.pitfalls} pitfalls`],
-    vocab: ['Vocabulary', `${c.concepts} concepts, ${c.models} models`],
-    sources: ['Sources', `${c.sources.toLocaleString('en-US')} cited works`],
+    protocol: ['Session protocol', 'in context all session'],
+    router: ['Router', 'routes a question to a domain'],
+    pages: ['Reference pages', 'pages and pitfalls'],
+    vocab: ['Vocabulary', 'concepts and formulation models'],
+    sources: ['Sources', 'cited works'],
     record: ['Your record', 'files on your computer'],
   }
   for (const [key, [name, note]] of Object.entries(layerText))

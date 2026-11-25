@@ -17,7 +17,7 @@
 <section class="hero">
   <div class="container">
     <h1>Guided CBT self-help, inside Claude Code.</h1>
-    <p class="lead">Sessions that read from {{n:pagesAll}} written pages citing {{n:sources}} sources. Not therapy.</p>
+    <p class="lead">Sessions that work from a written, cited knowledge base. Not therapy.</p>
     <div class="actions">
       <a class="btn" href="#install">Install the plugin</a>
       <a class="btn btn--quiet" href="safety.html">Read the safety limits</a>
@@ -29,7 +29,7 @@
   <div class="container">
     <div class="head head--split">
       <h2>What a session sounds like</h2>
-      <p class="lead">Four moments from sample sessions, as they look in Claude Code.</p>
+      <p class="lead">Moments from sample sessions, as they look in Claude Code.</p>
     </div>
 
     <div class="switch" data-switch>
@@ -158,7 +158,7 @@
       <div class="map__body">
         <div class="map__pane map__turn" data-turn></div>
         <div class="map__pane map__stage" data-stage>
-          <canvas class="map__canvas diagram" role="img" aria-label="Diagram of the plugin's knowledge base as six layers: session protocol, router, reference pages, vocabulary, sources and your record. Points that light up are what the selected turn used. The same items are listed in the panel beside it."></canvas>
+          <canvas class="map__canvas diagram" role="img" aria-label="Diagram of the plugin's knowledge base in layers: session protocol, router, reference pages, vocabulary, sources and your record. Points that light up are what the selected turn used. The same items are listed in the panel beside it."></canvas>
           <div class="map__labels" data-labels aria-hidden="true"></div>
           <div class="map__legend" aria-hidden="true">
             <span class="key key--amber"><i></i>You and your record</span>
@@ -166,7 +166,7 @@
             <span class="key key--ring"><i></i>Standing by</span>
             <span class="key key--dim"><i></i>Not used</span>
           </div>
-          <p class="map__still" data-still hidden>The 3D view needs WebGL. Everything it shows is in the two panels beside it.</p>
+          <p class="map__still" data-still hidden>The 3D view needs WebGL. Everything it shows is in the panels beside it.</p>
         </div>
         <div class="map__pane map__inspect">
           <div class="inspect__head">
@@ -179,9 +179,9 @@
       <ol class="map__fallback">
         <li><b>Open</b><span>The plugin adds protocol.md to the system prompt and opens session 3 in your record.</span></li>
         <li><b>Record</b><span>record_read returns your profile, formulation, sessions and topic pages.</span></li>
-        <li><b>Safety check</b><span>A mood score, then a direct safety question. Three risk pages stand by.</span></li>
+        <li><b>Safety check</b><span>A mood score, then a direct safety question. The risk pages stand by.</span></li>
         <li><b>Practice task</b><span>Reads 05-session-structure\homework-review-and-adherence.md.</span></li>
-        <li><b>One moment</b><span>Reads four pages and saves a five-part formulation with seven vocabulary ids.</span></li>
+        <li><b>One moment</b><span>Reads the formulation pages and saves a five-part formulation in the fixed vocabulary.</span></li>
         <li><b>The thought</b><span>Reads socratic-dialogue.md, thought-records.md and a pitfall page.</span></li>
         <li><b>Close</b><span>Writes the summary, the practice task and a topic page, then closes the session.</span></li>
       </ol>
@@ -197,7 +197,7 @@
     </div>
 
     <div class="home">
-      <figure class="machine" data-slot="machine" data-kind="product" data-alt="Diagram of the two folders the plugin uses on your computer">
+      <figure class="machine" data-slot="machine" data-kind="product" data-alt="Diagram of the folders the plugin uses on your computer">
         <div class="machine__name">This computer <span>where it is stored</span></div>
         <div class="machine__parts">
           <div class="part part--record">
@@ -215,10 +215,10 @@
             <h3>The knowledge base</h3>
             <p class="mono cool">kg\ inside the plugin folder</p>
             <ul class="tree">
-              <li>_index.md <span>routes a question to {{n:domains}} domains</span></li>
-              <li>01-intake\ to 15-…\ <span>{{n:pagesAll}} pages</span></li>
-              <li>_vocab\ <span>{{n:concepts}} concepts, {{n:models}} models</span></li>
-              <li>_sources.md <span>{{n:sources}} cited works</span></li>
+              <li>_index.md <span>routes a question to a domain</span></li>
+              <li>01-intake\ to 15-…\ <span>the reference pages</span></li>
+              <li>_vocab\ <span>the fixed vocabulary</span></li>
+              <li>_sources.md <span>every cited work</span></li>
               <li>..\protocol.md <span>the session rules</span></li>
             </ul>
           </div>
@@ -265,7 +265,7 @@
       <h2>Install it, then type one command</h2>
     </div>
     <div class="start">
-      <figure class="shell deep" data-slot="shell" data-kind="product" data-alt="The three commands that install and start the plugin">
+      <figure class="shell deep" data-slot="shell" data-kind="product" data-alt="The commands that install and start the plugin">
         <div class="shell__name">In a terminal</div>
         <pre><span class="c"># get the plugin</span>
 git clone https://github.com/huxwaitt/cbt-plugin
@@ -276,7 +276,7 @@ claude --plugin-dir ./cbt-plugin
 <span class="c"># begin a session</span>
 <span class="amber">/cbt-session</span></pre>
       </figure>
-      <table class="table" aria-label="The five commands the plugin adds">
+      <table class="table" aria-label="The commands the plugin adds">
         <thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead>
         <tbody>
           <tr><td class="mono">/cbt-session</td><td>Starts a guided session</td></tr>
